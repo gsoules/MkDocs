@@ -6,9 +6,11 @@ nav:
         - About: user-about.md
         - Advanced search: user-advanced-search.md
         - Relationships: user-relationships.md
-        - Add a new item: user-how-add-new-item.md
     - Archivist:
         - About: arch-about.md
+        - Add a new item: arch-add-new-item.md
+        - Field descriptions: arch-field-descriptions.md
+        - Instructions field: arch-instructions.md
     - Administrator:
         - About: admin-about.md
     - Superuser:
