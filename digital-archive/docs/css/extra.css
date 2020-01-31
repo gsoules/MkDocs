@@ -1,0 +1,139 @@
+body, input {
+    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+	background-color: #fff;
+}
+
+/* Override Windmill's styling for headers. */
+h1 {
+    color: #777;
+	font-size: 32px;
+}
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-top: 28px;
+}
+
+/* Override Windmill's styling for the block quotes and code. */
+blockquote {
+	color: #777;
+	line-height: 1.6;
+}
+
+code {
+    background-color: #f0f0f0;
+}
+
+/* Override Windmill's styling for admonitions. */
+.admonition {
+    font-size: 15px;
+    padding: 8px 12px 2px 12px;
+}
+
+.admonition-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Center table column headers. Note that MkDocs is emitting an unsupported 'align'
+   attribute for th which means that using the Markdown colon syntax for alignment
+   only works in the body rows where 'align' is supported for td tags. Thus, our
+   headers will always be centered. */
+th {
+    text-align: center;
+}
+
+/* Indent description lists which are indicated by a colon preceding indented text like this
+:   This line and
+
+    this will be indented
+*/
+dd {
+    padding-left: 20px;
+}
+
+/* Don't show a version number below the header title. */
+.wm-top-version {
+    display: none;
+}
+
+/* Change Windmill's green header color to our own. */
+.navbar {
+    background-color: #2196f3;
+}
+
+/* Show the Digital Archive logo in the Table of Contents (TOC) background. */
+.wm-toc-pane {
+    background-image: url("../img/logo.png");
+    background-position: center 400px;
+    background-repeat: no-repeat;
+    padding-left: 0;
+}
+
+/* Change Windmill's green color scheme for the highlighted item to our own. */
+.wm-toc-li.wm-current, .wm-toc-li.wm-current:hover {
+    background-color: #ccc;
+    color: white;
+}
+
+/* Change Windmill's green color scheme for the TOC to our own. */
+.wm-toctree a,
+.wm-toctree a:visited,
+.wm-toctree a:hover,
+.wm-toctree a:focus,
+.wm-toc-lev1 {
+    color: #0478d6;
+}
+
+/* Make level-1 TOC entires bold. */
+.wm-toc-lev1.wm-toc-opener > .wm-toc-text {
+    font-weight: bold;
+}
+
+/* Make level-2 TOC entires a little larger. */
+.wm-toc-li-nested.wm-page-toc {
+    font-size: 15px;
+}
+
+/* Make level-2 TOC entires more subtle. */
+.wm-toc-li a.wm-article-link.wm-page-toc-text {
+    color: #555;
+}
+
+/* Make level-2 TOC entry vertical spacing a little taller. */
+.wm-page-toc-text {
+    padding-bottom: 6px;
+  }
+  
+/* Don't center the content */
+.container-fluid {
+    margin-right: 12px;
+    margin-left: 12px;
+}
+
+/* Fix the panel width so that it does not get wider/narrower based on the width of TOC entries.
+   260px is the magic number to prevent the main content (container-fluid) from getting
+   hidden behind the TOC panel as the browser width changes (a bug in the Windmill theme). */
+.wm-toc-pane {
+    min-width: 260px;
+    max-width: 260px;
+}
+
+/* Replace Windmill's list icon with the hamburger icon. */
+.fa-th-list::before {
+    content: "\f0c9";
+}    
+
+/* Hide the hamburger button by default. */
+#wm-toc-button {
+    display: none;
+}
+
+/* Show the hamburger menu icon when the width is narrow e.g. on a phone. */
+@media (max-width: 600px)
+{
+    #wm-toc-button {
+        display: inline-block;
+    }
+}    
