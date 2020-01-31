@@ -31,6 +31,12 @@ code {
     padding: 8px 12px 2px 12px;
 }
 
+.admonition.note,
+.admonition.warning,
+.admonition.danger {
+    color: #333;
+}
+
 .admonition-title {
     font-weight: bold;
     font-size: 18px;
@@ -42,6 +48,7 @@ code {
    headers will always be centered. */
 th {
     text-align: center;
+    text-align: left;
 }
 
 /* Indent description lists which are indicated by a colon preceding indented text like this
@@ -51,6 +58,12 @@ th {
 */
 dd {
     padding-left: 20px;
+}
+
+/* Override Windmill's styling where there is no margin below a set of 2nd level list items.
+   The spacing is needed so that the last 2nd level item isn't right on top of the next 1st level item. */
+ul ul {
+    margin-bottom: 16px;
 }
 
 /* Don't show a version number below the header title. */
