@@ -1,48 +1,47 @@
-# Instructions field guide
+# Using the Instructions field
 
-Some Digital Archive installations have an Instructions field that is used to record information
-about what work still needs to be performed on a specific item. This is in contrast to a Notes field
-which is used for additional information that does not belong in any other field.
+Some Digital Archive installations have an `Instructions` field that is used to record information
+about work that still needs to be performed on a specific item. In contrast, the `Notes` field
+is used for miscellaneous information that is not appropriate for any other field.
+
+This page lists syntax for a variety of instructions, and shows [examples](#examples) at the end. By using the
+syntax consistently, you make it possible to search for all items that contain a specific instruction.
+
+The purpose of the `Instructions` field is to let you record important actions that you cannot perform
+at the moment, but that you want to remember them so that someone can perform them in the future. 
 
 ---
 
-Add Image: `image filename`
-:   Add a new item of type Image.  
-    Use when the backlog contains a specific image that should
-    be added to the collection and related to this item. Often used with the `Relate` instruction.
+Add Document: *description of document*
+:   Add a new item of type Document to the collection.
 
-    Example: `Add Image: mbaxter-portrait.tif`
+Add Image: *image filename*
+:   Add a new item of type Image to the collection.
 
-Add Reference: `reference item title`
-:   Add a new item of type Reference.  
-    Use when the collection requires a new reference item that is related to this item.
-     Often used with the `Relate` instruction.
-     
-    Example: `Add Reference: Edgar Robbins (1883-1920)`
+Add Reference: *title of reference*
+:   Add a new item of type Reference to the collection.  
+    *Example:* `Add Reference: Merrill Baxter King House`
+
+!!! note "Add instruction"
+    The `Add` instruction is often used along with the `Relate` instruction. What sometimes happens is
+    that while working on one item you realize that it should be related to another item that is
+    not yet in the collection. The `Add` instruction records that realization so it won't be forgotten.
+
+Attach: `filename`
+:   Attach a specific image or PDF file to this item.  
+    *Example:* `Attach: Lawler – James Whitmore Lawler (1847-1877).pfd`
+
+Combine: `explanation`
+:   Combine this item with one or more other items as described in the explanation.
+    Usually used when you find another item that is duplicating this item.
 
 Locate: `image filename`
-:   Locate the item’s missing image file and attach to this item.
+:   Locate the item’s missing image file and attach it to this item.
 
-Add Document: `title`  
+Metadata: `explanation`
+:   Add metadata to this item as specified in the explanation.
+
 Add Publication: `title`  
-
-Example: *Add Article: Merrill Baxter King House*
-
-!!! warning ""
-    Meaning:
-    
-    - Add a new Omeka item for the specified title.  
-    - Implies also adding metadata and attaching the PDF or image files, or writing Instructions for the new item.
-
-    Example: *Add Article: Merrill Baxter King House*
-
----
-
-Attach: [PDF filename]
-xxx
-:   This line and
-
-    this will be indented
 
 Instruction	Use
 Add Article: [title]
