@@ -7,14 +7,17 @@ nav:
         - Advanced search: user-advanced-search.md
         - Relationships: user-relationships.md
     - Archivist:
-        - About: arch-about.md
-        - Add a new item: arch-add-new-item.md
-        - Field descriptions: arch-field-descriptions.md
-        - Instructions field: arch-instructions.md
+        - Items:
+            - Add a new item: arch-add-new-item.md
+            - Edit an existing item: arch-edit-item.md
+        - Fields:
+            - Field descriptions: arch-field-descriptions.md
+            - Instructions field: arch-instructions-field.md
+            - Status field: arch-status-field.md
     - Administrator:
         - About: admin-about.md
     - Superuser:
-        - About: super-about.md
+        - Superuser documentaton: super-about.md
         - MkDocs: super-mkdocs.md
         - Passwords: super-passwords.md
         - WordPress: super-wordpress.md
