@@ -40,7 +40,7 @@ code {
 
 .admonition-title {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 /* Center table column headers. Note that MkDocs is emitting an unsupported 'align'
@@ -109,12 +109,16 @@ ul ul {
     color: #0478d6;
 }
 
+.wm-toc-text {
+    color: #0262b1;
+}
+
 /* Make level-1 TOC entires bold. */
 .wm-toc-lev1.wm-toc-opener > .wm-toc-text {
     font-weight: bold;
 }
 
-/* Hide the the first level-2 TOC entry since it is usually the same text as its parent entry. */
+/* Hide the TOC entry for a page's title since it the same or similar to the page's nav text. */
 .wm-toc-li-nested.wm-page-toc > ul > :first-child {
     display: none;
 }
@@ -127,6 +131,12 @@ ul ul {
 /* Make level-2 TOC entires more subtle. */
 .wm-toc-li a.wm-article-link.wm-page-toc-text {
     color: #555;
+}
+
+/* Make level-2 expanders bold blue. */
+.wm-toc-li.wm-toc-lev2.wm-toc-opener span.wm-toc-text {
+    font-weight: bold;
+    color:#5e8eb6;
 }
 
 /* Make level-2 TOC entry vertical spacing a little taller. */
