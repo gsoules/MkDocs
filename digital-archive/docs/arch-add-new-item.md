@@ -4,6 +4,9 @@ Follow the steps below to create a new item in the Omeka database
 
 ---
 
+!!! note ""
+    You must be logged into your Omeka account to perform these steps.
+
 ||Action|
 :---:|---
 **[Step 1](#step-1)**|**Go to** the `Add an Item` page|
@@ -54,10 +57,10 @@ if you know the information:
 * `Date`
 * `Creator`
 
-!!! note
+!!! note ""
     If the item needs more information, an image, or relationships, but you don’t
-    have those things right now, or you just don't have time, say in the Instructions
-    field what still needs to be done. See the [Instructions field guide](arch-instructions.md).
+    have time to work on those things right now, record in the
+    [Instructions field ](arch-instructions.md) what still needs to be done.
 
 See [Field descriptions guide](arch-field-descriptions.md) to learn about all fields.
 
@@ -86,13 +89,9 @@ To add the new item to the Omeka database:
   to a newly added item)
 * If red errors appear at the top of the page, correct them and try again
 
-!!! warning
-    The item is now in the Omeka database. To make changes to the item, follow these steps ???
+  The item is now in the Omeka database. You can [edit the item](arch-edit-item.md) to make changes.
 
 ---
-
-!!! note ""
-    **Perform the following steps after the item has been saved and added to the database**
 
 ## Step 6 (optional)
 > **Attach files** to the item
@@ -114,3 +113,10 @@ See [How to add a relationship between two items]()
 * Click the **View Public Page** button
 * Make sure that the information appears the way you want it
 * To make corrections, click the **Edit link** below the last field and go to Step 2
+
+---
+
+!!! note "See Also"
+    To learn more, see the [Omeka documentation on adding an item](https://omeka.org/classic/docs/Content/Items/).
+    However, keep in mind that the user interface for a basic Omeka site
+    does not have all the features of the Digital Archive and therefore does not look exactly the same.
