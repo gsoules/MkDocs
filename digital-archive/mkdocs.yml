@@ -3,7 +3,6 @@ copyright: 'Copyright &copy; 2020 AvantLogic Corporation'
 
 nav:
     - User:
-        - About: user-about.md
         - Advanced search: user-advanced-search.md
         - Relationships: user-relationships.md
     - Archivist:
@@ -12,12 +11,10 @@ nav:
             - Edit an existing item: arch-edit-item.md
         - Fields:
             - Field descriptions: arch-field-descriptions.md
-            - Instructions field: arch-instructions-field.md
-            - Status field: arch-status-field.md
+            - Workflow fields: arch-workflow-fields.md
     - Administrator:
-        - About: admin-about.md
+        - Relationships: admin-relationships.md
     - Superuser:
-        - Superuser documentaton: super-about.md
         - MkDocs: super-mkdocs.md
         - Passwords: super-passwords.md
         - WordPress: super-wordpress.md
@@ -28,7 +25,6 @@ nav:
         - Beyond Compare: super-beyond-compare.md
         - cPanel: super-cpanel.md
     - Developer:
-        - About: dev-about.md
         - Omeka: dev-omeka.md
         - MySQL: dev-mysql.md
         - MySQL Workbench: dev-mysql-workbench.md
