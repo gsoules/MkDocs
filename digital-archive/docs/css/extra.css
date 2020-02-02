@@ -35,11 +35,12 @@ code {
 .admonition.warning,
 .admonition.danger {
     color: #333;
+    font-size: 14px;
 }
 
 .admonition-title {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 /* Center table column headers. Note that MkDocs is emitting an unsupported 'align'
@@ -51,17 +52,26 @@ th {
     text-align: left;
 }
 
-/* Indent description lists which are indicated by a colon preceding indented text like this
-:   This line and
-
-    this will be indented
+/* Styling for description lists follows. The Markdown syntax is
+:   Term
+    Description
 */
+
+/* Add spacing above description list terms. */
+dt {
+    margin-top: 12px;
+}
+
+/* Indent description list descriptions. */
 dd {
     padding-left: 20px;
 }
 
-/* Override Windmill's styling where there is no margin below a set of 2nd level list items.
-   The spacing is needed so that the last 2nd level item isn't right on top of the next 1st level item. */
+/* Override Windmill's styling where there is no spacing below a set of 2nd level bullet list items.
+   To prevent this from affecting 2nd level items in the TOC, first set their spacing to 0. */
+nav > ul ul {
+    margin-bottom: 0px;
+}
 ul ul {
     margin-bottom: 16px;
 }
@@ -102,6 +112,11 @@ ul ul {
 /* Make level-1 TOC entires bold. */
 .wm-toc-lev1.wm-toc-opener > .wm-toc-text {
     font-weight: bold;
+}
+
+/* Hide the the first level-2 TOC entry since it is usually the same text as its parent entry. */
+.wm-toc-li-nested.wm-page-toc > ul > :first-child {
+    display: none;
 }
 
 /* Make level-2 TOC entires a little larger. */
