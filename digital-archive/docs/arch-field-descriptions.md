@@ -8,19 +8,18 @@
 ## List of fields
 
 AccessDB
-:   Records a to-do list of work needed for an item. See [Instructions field](arch-instructions.md)  
+:   Records a to-do list of work needed for an item. See [Status field](arch-status-field.md)  
 - one
 - thwo
-
 
 Instructions
 :   Records a to-do list of work needed for an item. See [Instructions field](arch-instructions-field.md)  
 
 Restrictions
-:   Records a to-do list of work needed for an item. See [Instructions field](arch-instructions.md)  
+:   Records a to-do list of work needed for an item. See [Status field](arch-status-field.md)  
 
 Status
-:   Records a to-do list of work needed for an item. See [Instructions field](arch-instructions.md)  
+:   Records a to-do list of work needed for an item. See [Status field](arch-status-field.md)  
 
 Subject
 :   Based on [Nomenclature](https://www.nomenclature.info/apropos-about.app?lang=en)  

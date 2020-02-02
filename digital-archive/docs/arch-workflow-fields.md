@@ -1,4 +1,92 @@
-# Using the Instructions field
+# Workflow fields
+
+This page describes a set of fields that you can use to record an item's state within your collection management workflow.
+
+!!! note
+    This page describes how the Southwest Harbor Public Library (SWHPL) tracks the state of items in its collection.
+    Other Digital Archive installation might not use these field or might use them differently.
+
+The fields are:
+
+- [Status](#status-field)
+- [Restrictions](#restrictions-field)
+- [AccessDB](#accessdb-field) (SWHPL only)
+- [Instructions](#instructions-field)
+
+---
+
+## Status field
+The **Status** field lets you record an item's state within your collection management workflow.
+
+### Status field values
+
+Accepted
+:   This item is suitable for viewing by the public.  Its [instructions](#instructions-field), if it has any, provide
+    additional information describing how to improve the item. An item’s status can only be set to
+    Accepted if its Access DB value is Converted or blank (an unconverted Access item cannot be Accepted).
+
+Deaccession
+:   This item is slated to be deaccessioned
+
+Missing Image
+:   This item's metadata is for an image that is missing and therefore this item is rejected until the image file is located.
+
+Incomplete
+:   One or more issues make this item unsuitable for viewing by the public. The **Instructions** field
+    should indicate what work needs to be done to make this item public.
+
+Restricted
+:   This item cannot be made public due to restrictions on its usage. See the item's [Restrictions field](#restrictions-field) for
+    the nature of the restrictions.
+
+Unassigned
+:   This item was imported from Microsoft Access, but has not yet been reviewed. Items with this status must not be public.
+    Items with an Identifier between 5000 and 12754 originated from Microsoft Access.
+
+---
+
+## Restrictions field
+
+The **Restrictions** field lets you specify a restriction on the item which prevents is from being public.
+
+### Restrictions field values
+
+Need permission
+:   The item cannot be made public unless permission is granted by its donor.
+
+Research use only
+:   The item provides information that is useful for archivists, but cannot be made public, usually because
+    it's copyrighted material.
+
+Cannot be sold
+:   Digital or print copies of the item's images cannot be sold, usually because it belongs to another organization.
+
+---
+
+## AccessDB field
+
+The **AccessDB** field is unique to the Southwest Harbor Public Library. It records the conversion status
+of items that originated in the Library's original Microsoft Access database and were imported into the
+Digital Archive. The import process carried over most of the metadata for each item, but two of the Access
+fields, NOTES and SEE ALSO, needed to be imported manually.
+
+Other installations could use a similar field for the same purpose if data from another source has only
+been partially imported.
+
+### AccessDB field values
+
+Converted
+:   The item was imported from Access and all of its metadata is now in the Digital Archive.
+
+Unconverted
+:   The item was imported from Access but NOTES and SEE ALSO information from Access may be missing.
+
+blank
+:   The item originated in the Digital Archive (was never in Access)
+
+---
+
+## Instructions field
 
 The **Instructions** field lets you record a to-do list of work needed for an item.
 
@@ -9,8 +97,7 @@ won't be lost.
 
 See the [examples](#examples) at the end of this page to get a better sense of how to write instructions.
 
----
-## List of instructions
+### List of instructions
 
 Add Reference
 :   Add a new item of type Reference to the collection.  
@@ -75,7 +162,7 @@ Write
 :   Write a new reference sheet such as a biography or house history.  
     *Example:* `Write: history of the chapel`  
 
-## Examples
+#### Examples
 
 Here are a few examples on how to use the **Instructions** field.
 
@@ -105,4 +192,3 @@ Here are a few examples on how to use the **Instructions** field.
     Metadata: Set Circa date based on cars in the parking lot
     Verify: Spelling of family name - is it Elliot or Eliot 
 ```
-
