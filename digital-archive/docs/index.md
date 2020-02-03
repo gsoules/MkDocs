@@ -46,7 +46,7 @@ have all the privileges of an **Archivist**, but can also perform administrative
 The term *superuser* originates from way back in the world of computing where the superuser refers to a special user account
 that grants super powerful access to, and the ability to make changes to, virtually every aspect of a computing environment.
 
-## Developer Documentation
+## Developer documentation
 **Developer** documentation is for experienced programmers who maintain and enhance the Digital Archive software
 to fix problems or add new features.
 

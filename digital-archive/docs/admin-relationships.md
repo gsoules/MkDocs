@@ -1,4 +1,4 @@
-# Relationships
+# Relationship editor
 
 ---
 

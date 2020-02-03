@@ -60,7 +60,7 @@ if you know the information:
 !!! note ""
     If the item needs more information, an image, or relationships, but you don’t
     have time to work on those things right now, record in the
-    [Instructions field ](arch-instructions.md) what still needs to be done.
+    [Instructions field ](arch-workflow-fields.md) what still needs to be done.
 
 See [Field descriptions guide](arch-field-descriptions.md) to learn about all fields.
 
