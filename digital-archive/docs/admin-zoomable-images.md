@@ -20,13 +20,15 @@ tiles from the image’s high resolution file and then uploading a folder contai
 
 1.	Run the `Zoomify Unlimited Converter.exe` program which is located in the `Digital Archive SWHPL\Zoomify` Dropbox folder.
 
-1.	Set the Output Path to `Same as input file`
+1.  Choose these options:
 
-1.	Set the Output Format to `Zoomify folders`
+    -	Set Output Path to `Same as input file`
 
-1.	Leave the JPEG Compression Quality setting at `80`
+    -	Set Output Format to `Zoomify folders`
 
-1.	Leave the Compression Format setting at `JPEG Tile Compression`
+    -	Leave  JPEG Compression Quality setting at `80`
+
+    -	Leave the Compression Format setting at `JPEG Tile Compression`
 
 1.	Drag the high resolution file from the item’s Dropbox folder onto the converter (or choose `Open` from the converter’s menu).
 
@@ -38,28 +40,7 @@ tiles from the image’s high resolution file and then uploading a folder contai
 ## Upload tiles to the Server
 1.	Rename the newly created tiles folder to the item’s Identifier number.
 
-1.	Transfer the entire output folder to the server. There are two ways to do this. 
-    - **Method 1:** Use FTP to simply upload the entire folder, subfolders, and files. Note that a very large image will
-    have hundreds of tiles in multiple folders and can take a minute or more to upload. It also chews up bandwidth
-    and will slow your internet connection. Though this method is slow, it’s simple and easy if you are just creating a few zoomable images.
-        - Run FileZilla or other FTP program and connect to the server.
-        - Navigate  to `public_html/digitalarchive/files`
-        - Drag the tiles folder to the remote zoom folder. Be sure to drag onto the zoom folder itself, and not onto one of the tiles folders.
-    - **Method 2:** Zip everything into a single file and upload the zip file to the zoom folder on the server.
-      This method  involves more steps, but is much  faster because uploading one large file takes a lot less
-      time than FTPing several folders that each contain dozens of files
-        - Zip the zoom tiles folder into a single zip file
-        - Log into the cPanel for Reclaim Hosting
-        - Choose the File Manager
-        - Navigate to `public_html/digitalarchive/files/zoom` 
-        - Click the `Upload` button in the top menu. A new tab opens with an upload area.
-        - Drag the zip file from your computer to the upload area
-        - When the upload reaches 100%, close the tab.
-        - Click the `Reload` button above the file listing so that you can see the zip file.
-        - Right-click the zip file, choose `Extract`, and click `Extract Files` on the dialog box
-        - When the unzip finishes, close the `Extraction Results` window
-        - Delete the zip file by right-clicking on it and choosing `Delete` or pressing the `Delete` key
-        - On the Trash dialog, check the `Skip` box and click the `Confirm` button
+1.	Transfer the entire output folder to the server. See [upload methods](#upload-methods) below to learn how.
 
 1.	Delete the temporary folder you created earlier since you no longer need any of those files.
 
@@ -101,4 +82,36 @@ tiles from the image’s high resolution file and then uploading a folder contai
 
 1.	Note that the tag simply makes it easier for people to find the image.
     The image will be zoomable whether you tag it or not.
+
+## Upload methods
+
+**Method 1:**
+
+Use FTP to simply upload the entire folder, subfolders, and files. Note that a very large image will
+have hundreds of tiles in multiple folders and can take a minute or more to upload. It also chews up bandwidth
+and will slow your internet connection. Though this method is slow, it’s simple and easy if you are just creating a few zoomable images.
+
+- Run FileZilla or other FTP program and connect to the server.
+- Navigate  to `public_html/digitalarchive/files`
+- Drag the tiles folder to the remote zoom folder. Be sure to drag onto the zoom folder itself, and not onto one of the tiles folders.
+
+**Method 2:**
+
+Zip everything into a single file and upload the zip file to the zoom folder on the server.
+This method  involves more steps, but is much  faster because uploading one large file takes a lot less
+time than FTPing several folders that each contain dozens of files.
+
+- Zip the zoom tiles folder into a single zip file
+- Log into the cPanel for Reclaim Hosting
+- Choose the File Manager
+- Navigate to `public_html/digitalarchive/files/zoom` 
+- Click the `Upload` button in the top menu. A new tab opens with an upload area.
+- Drag the zip file from your computer to the upload area
+- When the upload reaches 100%, close the tab.
+- Click the `Reload` button above the file listing so that you can see the zip file.
+- Right-click the zip file, choose `Extract`, and click `Extract Files` on the dialog box
+- When the unzip finishes, close the `Extraction Results` window
+- Delete the zip file by right-clicking on it and choosing `Delete` or pressing the `Delete` key
+- On the Trash dialog, check the `Skip` box and click the `Confirm` button
+
 
