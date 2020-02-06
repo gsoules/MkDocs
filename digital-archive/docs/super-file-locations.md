@@ -9,6 +9,7 @@
 
 - Omeka installation
     - web-size images
+    - Plugin documentation
 
 - S3
     - archival images
@@ -16,6 +17,7 @@
 - Dropbox
     - SWHPL - working files for sharing among archivists
     - AvantLogic - Digital Archive technology
+        - PHP source code
 
 - GitHub
     - Source code

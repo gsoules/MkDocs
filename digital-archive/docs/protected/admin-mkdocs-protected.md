@@ -14,7 +14,7 @@ Password protection is made possible using two files:
 - `.htaccess`
 - `.htpasswd`
 
-To access these files on the server:
+To access these files on the Rockaway Hosting server:
 
 - Login here: <https://members.rockawayhosting.com/clientarea.php>
 - Under `Your Active Products/Services` click `Shared Hosting`

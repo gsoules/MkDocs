@@ -15,6 +15,11 @@ h2 {
     margin-top: 28px;
 }
 
+h3 {
+    color: #000;
+    font-size: 18px;
+}
+
 /* Override Windmill's styling for the block quotes and code. */
 blockquote {
 	color: #777;
@@ -73,7 +78,10 @@ nav > ul ul {
     margin-bottom: 0px;
 }
 ul ul {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
+}
+ol ul {
+    margin-bottom: 8px;
 }
 
 /* Don't show a version number below the header title. */

@@ -17,19 +17,18 @@ nav:
     - Administrator:
         - Zoomable images: admin-zoomable-images.md
     - Superuser:
+        - File Locations*: super-file-locations.md
         - MkDocs: super-mkdocs.md
-        #- Passwords: super-passwords.md
+        - Install Digital Archive: super-install-digital-archive.md
+        - Web host: super-web-host.md
+        - MySQL Workbench: super-mysql-workbench.md
         #- WordPress: super-wordpress.md
-        #- Reclaim Hosting: super-reclaim-hosting.md
-        #- File Locations: super-file-locations.md
         #- Elasticsearch: super-elasticsearch.md
         #- AWS S3: super-aws-s3.md
         #- Beyond Compare: super-beyond-compare.md
-        #- cPanel: super-cpanel.md
     - Developer:
         #- Omeka: dev-omeka.md
         #- MySQL: dev-mysql.md
-        #- MySQL Workbench: dev-mysql-workbench.md
         #- PHP Storm: dev-php-storm.md
         - GitHub: dev-github.md
     - Welcome: index.md

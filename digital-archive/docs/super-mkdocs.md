@@ -10,8 +10,8 @@
 > consistent looking documentation, keep it up to date, and make it accessible online.
 
 Virtually all documentation about the Digital Archive is created and maintained using MkDocs.
-Some Digital Archive sites present information about their collection using either a sister
-[WordPress](super-wordpress.md) website or the Omeka [Simple Pages plugin](https://omeka.org/classic/docs/Plugins/SimplePages/).
+Some Digital Archive sites present information about their collection using either a sister 
+WordPress website or the Omeka [Simple Pages plugin](https://omeka.org/classic/docs/Plugins/SimplePages/).
 
 ## About this MkDocs website
 
