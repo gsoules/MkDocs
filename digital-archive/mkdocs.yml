@@ -17,11 +17,11 @@ nav:
     - Administrator:
         - Zoomable images: admin-zoomable-images.md
     - Superuser:
+        - Reclaim Hosting: super-web-host.md
         - File Locations*: super-file-locations.md
         - MkDocs: super-mkdocs.md
-        - Install Digital Archive: super-install-digital-archive.md
-        - Web host: super-web-host.md
         - MySQL Workbench: super-mysql-workbench.md
+        - Install a Digital Archive site: super-install-digital-archive.md
         #- WordPress: super-wordpress.md
         #- Elasticsearch: super-elasticsearch.md
         #- AWS S3: super-aws-s3.md

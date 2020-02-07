@@ -5,27 +5,67 @@ This page explains how to perform Digital Archive related tasks on Reclaim Hosti
 ---
 
 ## cPanel
-cPanel is a web hosting control panel that facilitates the management of a web hosting server.
-[Learn more](https://en.wikipedia.org/wiki/CPanel) about cPanel.
+[cPanel](https://cpanel.net/) is a control panel that lets you manage many aspects of your
+web host environment. The cPanel home page is divided into sections like DATABASES, FILES etc.
+as shown in the screenshot below. Each section contains a set of related features you can choose from.
 
-To get to cPanel on Reclaim Hosting:
+!!! note "Tip"
+    Use the search box at the top to quickly find a feature. For example, as you type `ftp`,
+    the sections and features will immediately narrow down to just those related to FTP.
+
+![cPanel](img/super-web-host-1.jpg)
+
+To use cPanel on Reclaim Hosting:
 
 -	Login to your Reclaim Hosting account
 -   Click on `cPanel` in the top menu, and choose your domain from the dropdown list
--   The cPanel home page is divided into major sections like `APPLICATIONS`, `DOMAINS`, `FILES` etc.
--   Within a section, click on the feature you need to use.
+-   Click on the feature you want to use
+-   The user interface for the feature will appear
+
+## Upload and extract a zip file
+
+Follow these steps to upload a zip file to the web server and extract (unzip) its contents.
+
+!!! note
+    A zip file's contents are always extracted into a new folder having the same name
+    as the zip file. The contents are never extracted directly into an existing folder.
+    As such, you may have to move the contents after you unzip them.
+
+### Upload the zip file
+
+-   Go to [cpanel] and choose `File Manager`
+-   Navigate to the folder where a new folder should be created for the zip file contents
+-   Click `Upload` in the top menu        
+-	Select or drag-in the zip file to begin uploading it
+-   Wait for the upload to complete. When complete, the progress bar will:
+    -   Show 100% *and* change color from blue to green  
+        ![cPanel](img/super-web-host-2.jpg)
+-   Click the `Go Back toGo to [cpanel] and choose ` link at the bottom of the page to return to the parent folder
+-   Verify that the zip file is there. If not, click `Reload` in the menu above the file list
+
+
+### Extract the zip file contents
+
+-	Right click on the zip file name and choose `Extract`
+-   Click the `Extract File(s)` button
+-   On the `Extraction Results` dialog, click the `Close` button
+-   A new folder will appear having the same name as the zip file
+
+### Delete the zip file
+-   Right click on the file name and choose `Delete`
+-   On the `Trash` dialog, check the box that says `Skip the trash`
+-   Click the `Confirm` button
 
 ## Create a subdomain
 Follow these steps to create a subdomain in an existing account.
 
--	Login to the [Reclaim Hosting administrator account](../protected/super-accounts)
--   Click on `cPanel` in the top menu, and choose the domain from the dropdown list
--   In `cPanel` go to the `DOMAINS` section and click on `Subdomains`
+-   Go to [cpanel] and choose `Subdomains`
 -   In the `Subdomain` field enter the subdomain name
 -   Don't change the `Domain` and `Document Root` fields
 -   Click the `Create` button
--   Go to the `cPanel` File Manager to verify that a new folder for the domain exits,
-    for example `/home/avantlog/mysubdomain.avantlogic.net`
+-   Return to the [cpanel] home page and choose `File Manager`
+-   Verify that a new folder for the domain exists,  
+    for example: `/home/avantlog/mysubdomain.avantlogic.net`
 
 
 ## Create a new account
@@ -49,3 +89,6 @@ Follow these steps to create a new Reclaim Hosting account.
 -	Open the New Account Information email from reclaim and copy the cPanel information into the passwords spreadsheet.
 -	Verify that you can login to cPanel directly as this organization (as opposed to from the administrator account)
 
+
+
+[cPanel]: #cpanel

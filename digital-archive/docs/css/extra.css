@@ -10,7 +10,7 @@ h1 {
 	font-size: 32px;
 }
 h2 {
-    color: #333;
+    color: #000;
     font-size: 24px;
     margin-top: 28px;
 }
@@ -139,6 +139,7 @@ ol ul {
 /* Make level-2 TOC entires more subtle. */
 .wm-toc-li a.wm-article-link.wm-page-toc-text {
     color: #555;
+    font-size: 14px;
 }
 
 /* Make level-2 expanders bold blue. */
@@ -164,6 +165,11 @@ ol ul {
 .wm-toc-pane {
     min-width: 260px;
     max-width: 260px;
+}
+
+/* Reduce the top and bottom margins for an image. */
+.wm-page-content img {
+    margin: 8px auto 12px auto;
 }
 
 /* Replace Windmill's list icon with the hamburger icon. */

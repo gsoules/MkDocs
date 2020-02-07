@@ -1,4 +1,4 @@
-# Installing a new Digital Archive site
+# Install a new Digital Archive site
 
 This page explains how to install and configure a new Digital Archive installation
 on a [reclaimhosting.com](super-web-host.md) server. You can also read [Omeka's installation instructions](https://omeka.org/classic/docs/Installation/Installation/); however, this
@@ -71,7 +71,7 @@ Follow the steps below to create a new empty database and user for the Digital A
 
 ### Create a database
 
--	In [cpanel] go to the `DATABASES` section and click on `MySQL Database Wizard`
+-	Go to [cpanel] and choose `MySQL Database Wizard`
 -	In wizard Step 1:
     -   Decide on the database name suffix
     -   If the installation folder will be in `public_html`:
@@ -122,7 +122,7 @@ until the import completes.
 
 ### Export a MySQL database to a `.sql` file
 
--	From [cpanel], run `phpMyAdmin`
+-	Go to [cpanel] and choose `phpMyAdmin`
 -	On the far left, click on the <name-of DB-to-export> database
 -	In the top menu, click on `Export`
 -	For **Export method** choose `Quick`
@@ -147,23 +147,15 @@ following the instructions above to [create a MySQL database](#create-a-mysql-da
 
 Follow these steps to upload the Omeka Classic files to the web server.
 
--	Download the latest Omeka Classic release from <http://omeka.org/classic/download> as a zip file.
+-	Download the latest Omeka Classic release from <http://omeka.org/classic/download>  
     As of 2/6/2020, the latest release was `omeka-2.7.1.zip`
--	From [cpanel] go to the `FILES` section and click on `File Manager`
+-	Go to [cpanel] and choose `File Manager`
 -   Navigate to the *parent* of the *installation folder*;
     -   If the parent is `public_html` go to `public_html`
     -   If the parent is a subdomain, go to the subdomain folder  
         for example: `mysubdomain.avantlogic.net`
--   Click `Upload` in the top menu        
--	Select or drag-in the zip file to begin uploading it
--   Wait for the upload to be 100% *and* for the progress bar to **turn green**  
-    which can take a while for the ~16MB file
--   Click the `Go back` link at the bottom of the page to return to the parent folder
--   Verify that the zip file is there and if not, click `Reload` in the menu above the file list until the zip file appears
--	To extract the zip file, right click on the file name and choose `Extract`
--	Rename the resulting folder from the zip file name to `digitalarchive`  
--   You have now created the *installation folder* containing the Omeka files
--	Delete the zip file
+-   [Upload and extract the zip file](super-web-host.md#upload-and-extract-a-zip-file) into a new folder
+-   Rename the new folder from the zip file's name to `digitalarchive`
 
 
 [cPanel]: super-web-host.md#cpanel
