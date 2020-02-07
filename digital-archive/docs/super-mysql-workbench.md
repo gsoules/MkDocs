@@ -1,14 +1,14 @@
 # MySQL Workbench
 
 This page explains how to use [MySQL Workbench](https://www.mysql.com/products/workbench/)
-to work with a Digital Archive database.
+to manage a Digital Archive database.
 
 MySQL Workbench is a tool that lets database administrators and developers visually manage a
 MySQL or MariaDB database. As an alternative, you can use [phpMyAdmin](https://www.phpmyadmin.net/),
 but MySQL Workbench is more powerful and easier to use in many situations.
 
 !!! warning ""
-    AvantLogic is running MySQL Workbench Community edition
+    AvantLogic uses MySQL Workbench Community edition
     [8.0.18](https://dev.mysql.com/downloads/workbench/). Version 8.0.19 would not load.
 
 ---

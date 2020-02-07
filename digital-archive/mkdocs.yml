@@ -17,7 +17,7 @@ nav:
     - Administrator:
         - Zoomable images: admin-zoomable-images.md
     - Superuser:
-        - Reclaim Hosting: super-web-host.md
+        - Web host administration: super-web-host.md
         - File Locations*: super-file-locations.md
         - MkDocs: super-mkdocs.md
         - MySQL Workbench: super-mysql-workbench.md
