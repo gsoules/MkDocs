@@ -67,4 +67,3 @@ allow MySQL Workbench to remotely access a database.
 
 !!! warning ""
     If you can't connect, verify that you have correctly allowed remote access as explained above       
-

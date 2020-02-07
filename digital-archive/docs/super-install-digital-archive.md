@@ -60,7 +60,7 @@ A new Reclaim Hosting account does not come with a database.
 Follow the steps below to create a new empty database and user for the Digital Archive.
 
 !!! note "Important"
-    cPanel will automatically prefix any database or user name that you choose with the
+    [cpanel] will automatically prefix any database or user name that you choose with the
     first seven letters of the domain name, followed by `_`. For example, if you specify
     the name `foo` and the domain name is `avantlogic` the actual name will be `avantlog_foo`.
     Keep this in mind because the name you choose will really be a suffix.
@@ -71,7 +71,7 @@ Follow the steps below to create a new empty database and user for the Digital A
 
 ### Create a database
 
--	In cPanel go to the `DATABASES` section and click on `MySQL Database Wizard`
+-	In [cpanel] go to the `DATABASES` section and click on `MySQL Database Wizard`
 -	In wizard Step 1:
     -   Decide on the database name suffix
     -   If the installation folder will be in `public_html`:
@@ -120,27 +120,50 @@ of [phpMyAdmin](https://www.phpmyadmin.net/).
 With a large database, phpMyAdmin is likely to timeout whereas MySQL Workbench will run
 until the import completes.
 
-1.  Export a MySQL database to a `.sql` file
-    -	From cPanel, run `phpMyAdmin`
-    -	On the far left, click on the <name-of DB-to-export> database
-    -	In the top menu, click on `Export`
-    -	For **Export method** choose `Quick`
-    -	For **Format** choose `SQL`
-    -	Click `Go`
-    -	When the `Save` dialog appears, choose a location to save on local computer  
+### Export a MySQL database to a `.sql` file
 
-1.  If you have not done so already, create a database and add it to MySQL Workbench
-    following the instructions above to [create a MySQL database](#create-a-mysql-database).
+-	From [cpanel], run `phpMyAdmin`
+-	On the far left, click on the <name-of DB-to-export> database
+-	In the top menu, click on `Export`
+-	For **Export method** choose `Quick`
+-	For **Format** choose `SQL`
+-	Click `Go`
+-	When the `Save` dialog appears, choose a location to save on local computer  
 
-1.  Import a MySQL database from a `.sql` file
-    -	Run MySQL Workbench
-    -	Double Click on the new database (make sure its name becomes bold)
-    -	Choose `File` > `Open SQL Script`
-    -	Select the `.sql` file exported in the subsection above
-    -	Click `Open`
-    -	Click the lightning bolt button to execute the script
+### Create an empty database
+If you have not done so already, create a database and add it to MySQL Workbench
+following the instructions above to [create a MySQL database](#create-a-mysql-database).
 
-## Install Omeka Classic
+### Import a MySQL database from a `.sql` file
+
+-	Run MySQL Workbench
+-	Double click on the name of the new database (make sure the name becomes bold)
+-	Choose `File` > `Open SQL Script`
+-	Select the `.sql` file exported in the subsection above
+-	Click `Open`
+-	Click the lightning bolt button to execute the script
+
+## Install Omeka Classic files
+
+Follow these steps to upload the Omeka Classic files to the web server.
+
+-	Download the latest Omeka Classic release from <http://omeka.org/classic/download> as a zip file.
+    As of 2/6/2020, the latest release was `omeka-2.7.1.zip`
+-	From [cpanel] go to the `FILES` section and click on `File Manager`
+-   Navigate to the *parent* of the *installation folder*;
+    -   If the parent is `public_html` go to `public_html`
+    -   If the parent is a subdomain, go to the subdomain folder  
+        for example: `mysubdomain.avantlogic.net`
+-   Click `Upload` in the top menu        
+-	Select or drag-in the zip file to begin uploading it
+-   Wait for the upload to be 100% *and* for the progress bar to **turn green**  
+    which can take a while for the ~16MB file
+-   Click the `Go back` link at the bottom of the page to return to the parent folder
+-   Verify that the zip file is there and if not, click `Reload` in the menu above the file list until the zip file appears
+-	To extract the zip file, right click on the file name and choose `Extract`
+-	Rename the resulting folder from the zip file name to `digitalarchive`  
+-   You have now created the *installation folder* containing the Omeka files
+-	Delete the zip file
 
 
-
+[cPanel]: super-web-host.md#cpanel
