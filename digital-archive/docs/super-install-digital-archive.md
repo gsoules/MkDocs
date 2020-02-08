@@ -213,46 +213,41 @@ Errors will now be written to `digitalarchive/application/logs/errors.log`.
 
 ## Configure Omeka
 
-You are now ready to run Omeka and configure site settings.
-
-### Launch Omeka
+You are now ready to launch Omeka and configure site settings.
 
 -	Open a browser and visit the site URL, for example:
 ```
     avantlogic.net/digitalarchive
     mysubdomain.avantlogic.net/digitalarchive
 ```
--	The Omeka `Configure Your Site` page should display
+-	The Omeka `Configure Your Site` page should appear
 
-### Set up administrator account
+![Site settings](img/super-install-digital-archive-1.jpg)
 
-Create an account for the administrator (Omeka superuser) who will have rights to make any
-and all changes to the site.
+You can now configure the Omeka site. See the Omeka
+[general settings](https://omeka.org/classic/docs/Admin/Settings/General_Settings/)
+documentation and the
+[appearance settings](https://omeka.org/classic/docs/Admin/Appearance/Appearance_Settings/)
+documentation for an explanation of the configuration settings.
 
--	**Username**: *admin username*  
-    Example: `admin`
--	**Password**: *admin password*
--	**Email**: *admin email*  
-    Example: `admin@avantlogic.com`
-
-### Enter site settings
-
--	**Administrator Email**: *same as admin email*
--	**Site Title**: *name of organization*  
-    Example: `Southwest Harbor Public Library`
--	**Site Description**: leave blank
--	**Site Copyright Information**: leave blank  
-    Example: `Southwest Harbor Public Library`
--	**Site Author Information**: `AvantLogic Corporation` 
--	**Tag Delimiter**: `,` (a comma)
--	**Fullsize Image Size**: `600`
--	**Thumbnail Size**: `300`
--	**Square Thumbnail Size**: `100`
--	**Items Per Page (admin)**: `50`
--	**Items Per Page (public)**: `50`
--	**Show Empty Elements**: Unchecked
--	**ImageMagick Directory Path**: `/usr/bin`
-
+-   Enter configuration settings:
+    -	**Username**: *a valid user name*  
+    -	**Password**: *admin password*
+    -	**Re-type the Password**: *admin password*
+    -	**Email**: *a valid email address*  
+    -	**Administrator Email**: *same as admin email*
+    -	**Site Title**: *the organization name*  
+    -	**Site Description**: *leave blank*
+    -	**Site Copyright Information**: *the organization name*    
+    -	**Site Author Information**: *your name or company*  
+    -	**Tag Delimiter**: `,` (a comma)
+    -	**Fullsize Image Size**: `600`
+    -	**Thumbnail Size**: `300`
+    -	**Square Thumbnail Size**: `100`
+    -	**Items Per Page (admin)**: `50`
+    -	**Items Per Page (public)**: `50`
+    -	**Show Empty Elements**: *Unchecked*
+    -	**ImageMagick Directory Path**: `/usr/bin`
 -	Click the `Install` button
 -   You should see the `Success!` page
 
