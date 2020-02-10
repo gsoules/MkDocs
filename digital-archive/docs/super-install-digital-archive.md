@@ -180,7 +180,7 @@ To learn more, see the Omeka documentation for the [database configuration file]
 
 !!! warning "Important"
     The `db.ini` file tells Omeka how to access the database. Any errors, typos, or incorrect information
-    in this file will prevent Omeka from running.
+    in this file will prevent Omeka from running and result in the display of a fatal error.
 
 ## Enable errors and logging
 
@@ -224,13 +224,15 @@ You are now ready to launch Omeka and configure site settings.
 
 ![Site settings](img/super-install-digital-archive-1.jpg)
 
+### Enter configuration settings
+
 You can now configure the Omeka site. See the Omeka
 [general settings](https://omeka.org/classic/docs/Admin/Settings/General_Settings/)
 documentation and the
 [appearance settings](https://omeka.org/classic/docs/Admin/Appearance/Appearance_Settings/)
 documentation for an explanation of the configuration settings.
 
--   Enter configuration settings:
+-   Set:
     -	**Username**: *a valid user name*  
     -	**Password**: *admin password*
     -	**Re-type the Password**: *admin password*
@@ -251,20 +253,50 @@ documentation for an explanation of the configuration settings.
 -	Click the `Install` button
 -   You should see the `Success!` page
 
-### Configure settings
+![Site settings](img/super-install-digital-archive-2.jpg)
 
--	Click Admin Dashboard.
--	Login as the super user.
--	Click Settings on the top menu bar.
--	At the bottom of the page click Test to verify that the ImageMagick Directory is correct.
-    -	Note: to see if/where ImageMagick is installed, open a Terminal window (from cPanel Advanced section) and type which convert.
--	On the Appearance > Settings page:
-    -	Uncheck Show Empty Elements
-    -	Uncheck Show Element Set Headings
-    -	Save Changes
--	On the Settings-> Search page:
-    -	Uncheck all record types except Item
-    -	Save Changes
+### Login to Omeka
+
+Follows these steps to login to Omeka.
+
+-	On the `Success!` page, click the `Admin Dashboard` button
+-	Login with the user name and password from the previous steps
+-   Check the `Remember Me` checkbox
+-   Click the `Login` button
+-   The `Dashboard` page should display.
+
+### Additional settings
+
+Follows these steps to finishing configuring Omeka.
+
+-	On the `Dashboard page`, click `Appearance` on the top menu bar
+    -   Click `Settings` on the `Appearance` page menu
+    -	At the bottom of the page, uncheck `Show Element Set Headings`
+    -	Click the `Save Changes` button
+-	On the `Settings` on the top menu bar
+-   Click `Search` on the `Settings` page menu
+    -	Uncheck all `Search Record Types` except `Item`
+    -	Click the `Save Changes` button
+-   Click `General` on the `Settings` page menu
+    -	Click the `Test` at the bottom of the page  
+        You should see `The ImageMagick directory path works`
+    -   If the message says that the path does *not* work:
+        -   Go to [cpanel] and choose `Terminal`
+        -   In the terminal window, type `which convert` and press `Enter`
+        -   Use the response to determine the correct path and try again 
+            or contact your host's technical support and ask them to tell you the path 
+
+## Verify PDF support
+
+These steps verify that a program called `pdftotext` is installed on your server.
+It is used by the `PdfText` plugin which in turn is used by the `AvantElastic` plugin to 
+make PDF files searchable. If you won't be using `AvantElastic`, you can skip this step.
+
+-   Go to [cpanel] and choose `Terminal`
+-   In the terminal window, type `pdftotext -v` and press `Enter`
+-   The `pdftotext` program should display its version
+-   If instead you see `command not found`, ask your host to install `pdftotext`
+
 
 
 
