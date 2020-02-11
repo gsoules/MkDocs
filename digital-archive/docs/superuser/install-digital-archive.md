@@ -167,12 +167,12 @@ and the [Titles Only option](../../plugins/avantsearch/avantsearch/#titles-only-
 Follow these steps to change the storage engine:
 
 -	Go to [cpanel] and choose `phpMYAdmin`
--	Click on the Omeka database name to see its tables
--	Click on `omeka_search_texts` in the table lists at far left
+-	In the left panel, click on the Omeka database name to see its tables
+-	Click on the `omeka_search_texts` table in the left panel
 -	Click on the `Operations` tab
 -	In the `Table Options` section, change **Storage Engine** from `MyISAM` to `InnoDB`
 -	Click the `Go` button in the lower right of the section
--	Click on the `search_texts table`
+-	Click on the `omkea_search_texts` table
 -	Click the `Structure` tab
 -	On the row for `title`, click `Fulltext` among the actions at the far right.
     If the browser window is too narrow to see all the options, click on `More`
@@ -475,6 +475,53 @@ Follow these steps to install and configure the plugin.
         - **Legal**: `I agree with terms of use.`
 - Click the `Save Changes` button
 
+---
+
+## Create the site Item Type
+
+Omeka installs with a number of different *Item Types* and *Elements*. In Omeka, think
+of an element as being synonymous with a field, and an Item Type as a set of fields. To keep things simple,
+and to make data entry easier and faster, the Digital Archive uses only one Item type having all the elements
+an organization needs. To learn more, see the Omeka documentation for
+[Item Types](https://omeka.org/classic/docs/Content/Item_Types/).
+
+Follow the steps below to create a single Item Type and to remove unused Item Types and Elements.
+
+###	Create a new Item Type:
+-   Login to Omeka 
+-	Click `Items Types` in Omeka's left admin menu
+-	Click the green `Add an Item Type` button
+-	For **Name** use the *site name* in all caps, for example `NEHL` for Northeast Harbor Library
+-	Leave the description blank
+-	Click the `Add Item Type` button
+-	Click the `Edit` button on the newly added Item type e.g. `NEHL`
+-	Add non-Dublin Core elements one at a time:
+    -	Choose the `New` radio button at the bottom of the page
+    -   Click the `Add Element button`
+    -	Type the **Element Name** and leave the description blank
+    -	Click the `Add Element` button again to add the next element
+    -	Repeat until done
+-	When done adding elements, click the `Save Changes` button
+
+###	Delete unused item types and elements:
+-   Open the database in [MySQL Workbench](mysql-workbench.md#open-a-database)
+-	Right click on the `omeka_item_types` table and choose `Select Rows`
+-	Select all the rows
+-	Right click on the selection and choose `Delete Rows`
+-	Click the `Apply` button in the lower right
+-	Click the `Apply` button on the `Apply SQL Script to Database` dialog
+-   When the deletion completes, click the `Finish` button
+
+###	Delete unused elements
+-	Right click on the `omeka_elements` table and choose `Select Rows`
+-	Select all the non Dublin Core element row. These all have an 
+    `element_set_id` value of `3` and are `Text`, `Interviewer`, `Interviewee` etc.
+-	Right click on the selection and choose `Delete Rows`
+-	Click the `Apply` button in the lower right
+-	Click the `Apply` button on the `Apply SQL Script to Database` dialog
+-   When the deletion completes, click the `Finish` button
+
+You can now quit MySQL Workbench.
 
 
 [cPanel]: web-host.md#cpanel

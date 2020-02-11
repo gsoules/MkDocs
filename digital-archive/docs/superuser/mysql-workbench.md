@@ -13,13 +13,22 @@ but MySQL Workbench is more powerful and easier to use in many situations.
 
 ---
 
-## Add a database connection
+## Open a database
 
-Before you can work with a database using MySQL Workbench, you need to add a
-connection to the database to your MySQL Workbench installation. Follow these steps
-to add a database connection.
+-   Run MySQL Workbench
+-   On the home page, click the box with the name of the Digital Archive installation
+-   Ignore a `Connection Warning` if it displays
+-   The database should appear at left under the `Schemas` tab of the navigator
+-   Click the triangle icons to expand/contract the database, its tables, and table columns
 
-### Allow remote access to the database
+![Schema](mysql-workbench-1.jpg)
+
+!!! warning ""
+    If you can't connect, or you get a `Cannot Connect to Database Server` error, you may need
+    to allow remote access to the database as explained in the following section. This can
+    happen if your IP address changed since your last successful connection.
+
+## Allow remote access to a database
 
 For security reasons, a web host will not allow remote connections to a database
 unless you explicitly grant access from the remote source. Follow these steps to
@@ -34,8 +43,15 @@ allow MySQL Workbench to remotely access a database.
     -	Click the `Add Host` button
 -   If your IP address ever changes, you'll need to perform these steps again
 
+## Add a database connection
+
+Before you can work with a database using MySQL Workbench, you need to add a
+connection to the database to your MySQL Workbench installation. Follow these steps
+to add a database connection.
+
 ### Add a new connection
 
+-   Allow remote access to the database as explained in the previous section.
 -   Run MySQL Workbench
 -	Choose `Database` > `Manage Connections` from the top menu
 -	Click the `New` button at the bottom of the `Manage Server Connections` dialog
@@ -56,14 +72,4 @@ allow MySQL Workbench to remotely access a database.
 -   Click the `OK` button on the `Successfully made the MySQL connection` dialog
 -	Click the `Close` button at lower right
 -	**Quit MySQL Workbench** to work around a bug where new connections don't open
-
-### Open the new connection
-
--   Run MySQL Workbench
--   The name of the new connection should appear in a box on the Home page
--   Click on the box to open the connection
--   Ignore a `Connection Warning` if it displays
--   The database should appear under that `Schemas` tab of the navigator
-
-!!! warning ""
-    If you can't connect, verify that you have correctly allowed remote access as explained above       
+-   [Open the database](#open-a-database) to verify that you can connect to it
