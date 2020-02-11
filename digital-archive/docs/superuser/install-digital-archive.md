@@ -158,6 +158,31 @@ following the instructions above to [create a MySQL database](#create-a-mysql-da
 
 ---
 
+## Change database storage engine
+
+These steps change the storage engine for the `search_texts` table from `MyISAM` to `InnoDB`. They also add a `FULLTEXT` index to the `title` column of the `search_texts` table. To learn the reason for making these changes, see the AvantSearch
+plugin topics on [improving search results](../../plugins/avantsearch/avantsearch/#improving-search-results)
+and the [Titles Only option](../../plugins/avantsearch/avantsearch/#titles-only-option).
+
+Follow these steps to change the storage engine:
+
+-	Go to [cpanel] and choose `phpMYAdmin`
+-	Click on the Omeka database name to see its tables
+-	Click on `omeka_search_texts` in the table lists at far left
+-	Click on the `Operations` tab
+-	In the `Table Options` section, change **Storage Engine** from `MyISAM` to `InnoDB`
+-	Click the `Go` button in the lower right of the section
+-	Click on the `search_texts table`
+-	Click the `Structure` tab
+-	On the row for `title`, click `Fulltext` among the actions at the far right.
+    If the browser window is too narrow to see all the options, click on `More`
+    and choose `Fulltext` from the dropdown menu
+-	On the `Confirm` dialog click the `OK` button to alter the table
+-	`Title` now appears in the `Indexes` section showing with Type as `FULLTEXT`
+-	Close the phpMyAdmin browser tab
+
+---
+
 ## Install Omeka Classic files
 
 Follow these steps to upload the Omeka Classic files to the web server.
@@ -281,6 +306,11 @@ documentation for an explanation of the configuration settings.
 
 ![Site settings](install-digital-archive-2.jpg)
 
+!!! note "Super"
+    The username and password you specify above are for an Omeka user with `Super` access.
+    See the [Omeka Users](https://omeka.org/classic/docs/Admin/Users/) documentation to learn about user
+    levels and access.
+
 ### Login to Omeka
 
 Follows these steps to login to Omeka.
@@ -336,13 +366,18 @@ visits your Digital Archive site, they are directed to the correct default page.
 How you configure site security depends on where you installed Omeka. Choose
 which instructions to follow for your installation.
 
+!!! danger "Warning"
+    The instructions require that you edit the site's `.htaccess` file. Even the slightest
+    error in this file can result in an **internal server error** which will prevent the site
+    from loading. Be very careful.
+
 ### Instructions 1
 
 If you installed Omeka in a `digitalarchive` folder, follow these instructions.  
 Otherwise, use [instructions 2](#instructions-2). 
 
 -	Go to [cpanel] and choose `File Manager`
--	Navigate to, the folder that contains the `digitalarchive` folder
+-	Navigate *into* the folder that *contains* the `digitalarchive` folder, usually `public_html` or a subdomain folder
 -   If the folder does not contain a `.htaccess` file, create a new empty `.htaccess` file
 -   Edit `.htaccess`
 -   Add the code shown below at the top of the file
@@ -360,15 +395,24 @@ Otherwise, use [instructions 2](#instructions-2).
     # Redirect the root and only the root to the default folder
     RedirectMatch ^/$ /digitalarchive
 ```
-If the redirect does not appear to be working, flush the browser cache.
 
-Note that you can change the `RedirectMatch` line to redirect to another location.
-For example, if the Omeka installation has an *About* page, you could redirect there like this:
+!!! warning ""
+    If the redirect does not appear to be working, flush the browser cache.
+
+!!! note
+    The code above redirects to `digitalarchive` which is the root of the Omeka installation.
+    Omeka will in turn redirect to the site's default home page. You can change the default
+    home page on the `Navigation` tab of the Omeka admin `Appearance` page as described in the
+    [Omeka documentation](https://omeka.org/classic/docs/Admin/Appearance/Navigation/).
+    Alternatively, you can change the `.htaccess` redirect as explained below.
+
+You can change the `RedirectMatch` line to redirect to another location.
+For example, if the Omeka installation has an `About` page, you could redirect there like this:
 
 ```
     RedirectMatch ^/$ /digitalarchive/about
 ```
-You can even redirect to a page of search results like this to display an index of site contents:
+You can even redirect to a page of search results, for example, to display a site content index:
 
 ``` plaintext
     RedirectMatch ^/$ /digitalarchive/find?view=2&index=53
@@ -382,7 +426,7 @@ If you installed Omeka in the `public_html` or a subdomain folder, follow these 
 Otherwise use [instructions 1](#instructions-1).
 
 -	Go to [cpanel] and choose `File Manager`
--	Navigate to the Omeka installation's top-level folder
+-	Navigate *into* the Omeka installation's top-level folder
 -   Edit the Omeka `.htaccess`
 -   Add the code shown below to the top of the file, right after the `RewriteEngine on` line
 -   Save your changes and close the file
@@ -393,5 +437,44 @@ Otherwise use [instructions 1](#instructions-1).
     RewriteCond %{HTTPS} off
     RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 ```
+---
+
+## Install ArchiveRepertory plugin
+
+This Omeka plugin controls where files that you attach to an Omeka item are stored.
+
+!!! warning "Important"
+    Install this plugin now *before adding any items to Omeka* because the plugin overrides Omeka's
+    default file storage mechanism and it won't work correctly if some files have already been stored.
+
+    Use release **2.15.5** because AvantLogic has not tested the newer releases.
+
+    Southwest Harbor Public Library uses its own custom version of this plugin based on release 2.14.
+    The modified version uses a flat file structure instead of the better hierarchical structure.
+    Eventually SWHPL should convert to use the newer structure.
+
+Follow these steps to install and configure the plugin.
+
+-   Add the plugin to the Omeka installation ([learn how](web-host.md#add-an-omeka-plugin))
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `Archive Repertory`
+-	Set:
+    -   Collections option:
+        - **How do you want to name ...**: `Don’t add folder`
+    -   Items options:
+        - **How do you want to name ...**: `Identifier`
+        - **Prefix for Item**: leave blank
+        - **Convert folder names**: `Full conversion to Ascii`
+    -   Files option:
+        - **Convert filenames**: `Full conversion to Ascii`
+        - **Keep only base...**: Unchecked
+    - Special derivative folders options:
+        - **Other derivative folders**: leave blank
+        - **Process**: `Omeka internal`
+        - **Max downloads**: `30000000`
+        - **Legal**: `I agree with terms of use.`
+- Click the `Save Changes` button
+
+
 
 [cPanel]: web-host.md#cpanel

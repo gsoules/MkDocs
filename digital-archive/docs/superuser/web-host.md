@@ -30,6 +30,19 @@ To use cPanel on Reclaim Hosting:
 -   Click on the feature you want to use
 -   The user interface for the feature will appear
 
+## Add an Omeka plugin
+
+Follow these steps to install an Omeka plugin for a Digital Archive site.
+
+-   Get the plugin's zip file. The Digital Archive plugins are at <https://github.com/gsoules>.
+-   Follow the instructions below to **upload and extract a zip file** into the Omeka `plugins` folder.
+    For most installations, the folder is `public_html/digitalarchive/plugins`.
+-   If necessary, rename the newly created to plugin folder to be the plugin's name    
+-   Login to Omeka with a user name that has `Super` access
+-   Click `Plugins` on the top menu
+-   The newly uploaded plugin should appear in the list with a green `Install` button
+-   See the plugin's documentation for configuration information
+
 ## Upload and extract a zip file
 
 Follow these steps to upload a zip file to the web server and extract (unzip) its contents.
@@ -42,7 +55,8 @@ Follow these steps to upload a zip file to the web server and extract (unzip) it
 ### Upload the zip file
 
 -   Go to [cpanel] and choose `File Manager`
--   Navigate to the folder where a new folder should be created for the zip file contents
+-   Navigate *into* the folder where a new folder should be created for the zip file contents.  
+    For example, if uploading an Omeka plugin, navigate into the `plugins` folder.
 -   Click `Upload` in the top menu        
 -	Select or drag-in the zip file to begin uploading it
 -   Wait for the upload to complete. When complete, the progress bar will:
@@ -58,6 +72,7 @@ Follow these steps to upload a zip file to the web server and extract (unzip) it
 -   Click the `Extract File(s)` button
 -   On the `Extraction Results` dialog, click the `Close` button
 -   A new folder will appear having the same name as the zip file
+-   If you don't see the folder, click the `Reload` button
 
 ### Delete the zip file
 -   Right click on the file name and choose `Delete`
