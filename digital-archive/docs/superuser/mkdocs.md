@@ -23,14 +23,14 @@ The website's files and folders are maintained in the AvantLogic `MkDocs reposit
     Wherever this page refers to the `MkDocs repository` it means the location of the
      MKDocs working files and folders. That location is 
     an `AvantLogic Digital Archive Dropbox` folder named `\MkDocs\digital-archive`.
-    Additionally, these files are stored on [GitHub](dev-github.md) at <https://github.com/gsoules/MkDocs>
+    Additionally, these files are stored on [GitHub](../developer/github.md) at <https://github.com/gsoules/MkDocs>
     which is currently a private repository accessible only to its collaborators.
 
 The navigation structure for the website is configured in the `mydocs.yml` file.
 
 The website uses the [Windmill](https://github.com/gristlabs/mkdocs-windmill) theme for MkDocs.
 
-Some documentation pages contains sensitive information that should not be accessible to the general public. [Learn how to password protect a page](../protected/admin-mkdocs-protected).
+Some documentation pages contains sensitive information that should not be accessible to the general public. [Learn how to password protect a page](../../protected/mkdocs-protected).
 
 Whenever you edit, add, move, or delete any of the MkDocs files, you must build and
 deploy the MkDocs website so that other people can see your changes.
@@ -47,7 +47,7 @@ To build the MkDocs website:
 ```
 mkdocs build
 ```
-![mkdocs build](img/admin-mkdocs-2.jpg)
+![mkdocs build](mkdocs-2.jpg)
 
 The build updates the files in the `site` folder in the `MkDocs repository` with any changes made since the last build.
 You can now deploy these files to the server.
@@ -55,7 +55,7 @@ You can now deploy these files to the server.
 Also see the MkDocs documentation for [building the website](https://www.mkdocs.org/#building-the-website).
 
 ## Deploy the MkDocs website
-Use [Beyond Compare](super-beyond-compare.md) to sync the `site` folder in the `MkDocs repository` with the
+Use [Beyond Compare](beyond-compare.md) to sync the `site` folder in the `MkDocs repository` with the
 corresponding folder on the server `https://digitalarchive.avantlogic.net/docs`.
 
 !!! Warning
@@ -76,7 +76,7 @@ MkDocs comes with a built-in dev-server that lets you preview your documentation
 mkdocs serve
 ```
 
-![mkdocs serve](img/admin-mkdocs-1.jpg)
+![mkdocs serve](mkdocs-1.jpg)
 
 With the server running, you can now open <http://127.0.0.1:8000> in your browser to see the default home page being displayed.
 When you edit a Markdown file and then save it, your changes automatically appear in the browser.

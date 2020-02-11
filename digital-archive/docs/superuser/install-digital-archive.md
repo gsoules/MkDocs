@@ -1,7 +1,7 @@
 # Install a new Digital Archive site
 
 This page explains how to install and configure a new Digital Archive installation
-on a [reclaimhosting.com](super-web-host.md) server. You can also read [Omeka's installation instructions](https://omeka.org/classic/docs/Installation/Installation/); however, this
+on a [reclaimhosting.com](web-host.md) server. You can also read [Omeka's installation instructions](https://omeka.org/classic/docs/Installation/Installation/); however, this
 page covers installation of Omeka Classic and much more.
 
 ---
@@ -24,7 +24,7 @@ The web host must be an Apache web server that satisfies the
 [system requirements](https://omeka.org/classic/docs/Installation/System_Requirements/)
 for [Omeka Classic](https://omeka.org/classic/). AvantLogic uses
 [Reclaim Hosting](https://reclaimhosting.com/) as its host.
-Learn now to [Create a new Reclaim account](super-web-host.md#create-a-new-account).
+Learn now to [Create a new Reclaim account](web-host.md#create-a-new-account).
 
 **Site name**
 
@@ -37,7 +37,7 @@ Use the name you choose in subsequent steps that refer to the *site name*.
 
 All Digital Archive files will be installed within a single folder named `digitalarchive`.
 
-!!! danger "Important"
+!!! warning "Important"
     **Do not** create the `digitalarchive` folder at this time.  
     It will get created later during the *Install Omeka Classic files* step.
 
@@ -54,16 +54,27 @@ public_html/digitalarchive
 mysubdomain.avantlogic.net/digitalarchive
 ```
 
+!!! note
+    AvantLogic uses the `digitalarchive` folder as a way of isolating the Digital Archive files
+    from other applications on the server. For example, some installations use a `digitalarchive`
+    folder and a `wp` folder side-by-side where the `wp` folder contains a WordPress application
+    for content related to the Digital Archive collection. If would be very messy, and
+    make application updates difficult, if the Digital Archive and WordPress files were
+    together in the the same `public_html` or subdomain folder. However, use of the `digitalarchive`
+    folder is not required and you can install directly in `public_html` or a subdomain folder.
+
 **Subdomain installation**
 
-If you want to install the Digital Archive in a subdomain, [create the subdomain](super-web-host.md#create-a-subdomain) now.
+If you want to install the Digital Archive in a subdomain, [create the subdomain](web-host.md#create-a-subdomain) now.
+
+---
 
 ## Create a MySQL database
 
 A new Reclaim Hosting account does not come with a database.  
 Follow the steps below to create a new empty database and user for the Digital Archive.
 
-!!! note "Important"
+!!! warning "Important"
     [cpanel] will automatically prefix any database or user name that you choose with the
     first seven letters of the domain name, followed by `_`. For example, if you specify
     the name `foo` and the domain name is `avantlogic` the actual name will be `avantlog_foo`.
@@ -111,13 +122,15 @@ Follow the steps below to create a new empty database and user for the Digital A
 
 ### Add a MySQL Workbench connection
 
--   [Add the database to MySQL Workbench](super-mysql-workbench.md#add-a-database-connection)
+-   [Add the database to MySQL Workbench](mysql-workbench.md#add-a-database-connection)
+
+---
 
 ## Copy a MySQL database
 
 This section explains how to use an existing database for a new installation.
 
-!!! warning ""
+!!! note ""
     **Skip this step** if you need to move a database from one installation to another.
 
 ### Export a MySQL database to a `.sql` file
@@ -143,6 +156,8 @@ following the instructions above to [create a MySQL database](#create-a-mysql-da
 -	Click `Open`
 -	Click the lightning bolt button to execute the script
 
+---
+
 ## Install Omeka Classic files
 
 Follow these steps to upload the Omeka Classic files to the web server.
@@ -154,8 +169,10 @@ Follow these steps to upload the Omeka Classic files to the web server.
     -   If the folder is `public_html` go to `public_html`
     -   If the folder is a subdomain, go to the subdomain folder  
         for example: `mysubdomain.avantlogic.net`
--   [Upload and extract the zip file](super-web-host.md#upload-and-extract-a-zip-file) into a new folder
+-   [Upload and extract the zip file](web-host.md#upload-and-extract-a-zip-file) into a new folder
 -   Rename the new folder from the zip file's name to `digitalarchive`
+
+---
 
 ## Edit the database configuration
 
@@ -182,6 +199,8 @@ To learn more, see the Omeka documentation for the [database configuration file]
     The `db.ini` file tells Omeka how to access the database. Any errors, typos, or incorrect information
     in this file will prevent Omeka from running and result in the display of a fatal error.
 
+---
+
 ## Enable errors and logging
 
 ### Error reporting
@@ -198,6 +217,11 @@ this for a production site, but it's better to become aware of a problem if it o
 -	Uncomment `SetEnv APPLICATION_ENV development`
 -	Save your changes and close the file
 
+!!! warning "Important"
+    The `.htaccess` file in the `digitalarchive` folder is different than `.htaccess` in the
+    installation's root folder. You'll edit the root folder's copy later in the steps to
+    [configure site security](#configure-site-security).
+
 ### Error logging
 
 Follow these steps to enable Omeka error logging so that a history of errors will be recorded.
@@ -211,6 +235,8 @@ To learn more, see the Omeka documentation for [retrieving error messages](https
 
 Errors will now be written to `digitalarchive/application/logs/errors.log`.
 
+---
+
 ## Configure Omeka
 
 You are now ready to launch Omeka and configure site settings.
@@ -222,7 +248,7 @@ You are now ready to launch Omeka and configure site settings.
 ```
 -	The Omeka `Configure Your Site` page should appear
 
-![Site settings](img/super-install-digital-archive-1.jpg)
+![Site settings](install-digital-archive-1.jpg)
 
 ### Enter configuration settings
 
@@ -253,7 +279,7 @@ documentation for an explanation of the configuration settings.
 -	Click the `Install` button
 -   You should see the `Success!` page
 
-![Site settings](img/super-install-digital-archive-2.jpg)
+![Site settings](install-digital-archive-2.jpg)
 
 ### Login to Omeka
 
@@ -286,6 +312,8 @@ Follows these steps to finishing configuring Omeka.
         -   Use the response to determine the correct path and try again 
             or contact your host's technical support and ask them to tell you the path 
 
+---
+
 ## Verify PDF support
 
 These steps verify that a program called `pdftotext` is installed on your server.
@@ -297,7 +325,73 @@ make PDF files searchable. If you won't be using `AvantElastic`, you can skip th
 -   The `pdftotext` program should display its version
 -   If instead you see `command not found`, ask your host to install `pdftotext`
 
+---
 
+## Configure site security
 
+By default, an Omeka installation uses HTTP for every page except the login page which uses HTTPS.
+Best practices for security require HTTPS for all pages. You also need to ensure that when someone
+visits your Digital Archive site, they are directed to the correct default page.
 
-[cPanel]: super-web-host.md#cpanel
+How you configure site security depends on where you installed Omeka. Choose
+which instructions to follow for your installation.
+
+### Instructions 1
+
+If you installed Omeka in a `digitalarchive` folder, follow these instructions.  
+Otherwise, use [instructions 2](#instructions-2). 
+
+-	Go to [cpanel] and choose `File Manager`
+-	Navigate to, the folder that contains the `digitalarchive` folder
+-   If the folder does not contain a `.htaccess` file, create a new empty `.htaccess` file
+-   Edit `.htaccess`
+-   Add the code shown below at the top of the file
+-   Save your changes and close the file
+-   Test that all pages are HTTPS and that the redirect works correctly
+
+```
+    # Turn on rewrites.
+    RewriteEngine on
+
+    # Force all URLs to HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
+    # Redirect the root and only the root to the default folder
+    RedirectMatch ^/$ /digitalarchive
+```
+If the redirect does not appear to be working, flush the browser cache.
+
+Note that you can change the `RedirectMatch` line to redirect to another location.
+For example, if the Omeka installation has an *About* page, you could redirect there like this:
+
+```
+    RedirectMatch ^/$ /digitalarchive/about
+```
+You can even redirect to a page of search results like this to display an index of site contents:
+
+``` plaintext
+    RedirectMatch ^/$ /digitalarchive/find?view=2&index=53
+```    
+
+See [this post](https://stackoverflow.com/questions/990392/htaccess-rewrite-to-redirect-root-url-to-subdirectory)
+to learn why using RedirectMatch works than RewriteRule for this purpose.
+
+### Instructions 2
+If you installed Omeka in the `public_html` or a subdomain folder, follow these instructions.  
+Otherwise use [instructions 1](#instructions-1).
+
+-	Go to [cpanel] and choose `File Manager`
+-	Navigate to the Omeka installation's top-level folder
+-   Edit the Omeka `.htaccess`
+-   Add the code shown below to the top of the file, right after the `RewriteEngine on` line
+-   Save your changes and close the file
+-   Test that all pages are HTTPS
+
+```
+    # Force all URLs to HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+```
+
+[cPanel]: web-host.md#cpanel

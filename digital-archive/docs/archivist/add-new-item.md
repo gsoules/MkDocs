@@ -43,7 +43,7 @@ not require all of them, or it may require others not listed here.
 If you forget to provide a value for a required field, a red error message will appear
 at the top of the page telling you that it's missing.
 
-See [Field descriptions guide](arch-field-descriptions.md) to learn about the fields listed above.
+See [Field descriptions guide](field-descriptions.md) to learn about the fields listed above.
 
 ---
 
@@ -60,9 +60,9 @@ if you know the information:
 !!! note ""
     If the item needs more information, an image, or relationships, but you don’t
     have time to work on those things right now, record in the
-    [Instructions field ](arch-workflow-fields.md) what still needs to be done.
+    [Instructions field ](workflow-fields.md) what still needs to be done.
 
-See [Field descriptions guide](arch-field-descriptions.md) to learn about all fields.
+See [Field descriptions guide](field-descriptions.md) to learn about all fields.
 
 ---
 
@@ -89,7 +89,7 @@ To add the new item to the Omeka database:
   to a newly added item)
 * If red errors appear at the top of the page, correct them and try again
 
-  The item is now in the Omeka database. You can [edit the item](arch-edit-item.md) to make changes.
+  The item is now in the Omeka database. You can [edit the item](edit-item.md) to make changes.
 
 ---
 

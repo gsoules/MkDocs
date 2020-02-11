@@ -18,7 +18,7 @@
 The folder now contains new Git files as shown below for the newly created MkDocs *local repository*.  
 All of the files except for the `digital-archive` folder were added by Git.
 
-![GitHub files](img/dev-github-1.jpg)
+![GitHub files](github-1.jpg)
 
 ## Publish repository to GitHub
 
@@ -32,7 +32,7 @@ To upload the local repository to GitHub:
 
 As you make changes to files in your text editor and save them locally, you also see the changes in GitHub Desktop.
 
-![GitHub files](img/dev-github-2.jpg)
+![GitHub files](github-2.jpg)
 
 - The green icon indicates added files. 
 - The red icon indicates removed files. 

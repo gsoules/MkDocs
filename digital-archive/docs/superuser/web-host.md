@@ -12,15 +12,16 @@ on a [Reclaim Hosting](https://reclaimhosting.com/) web server.
     FTP, and such. If these things are foreign to you, **do not** attempt to serve as the superuser.
 
 ## cPanel
-[cPanel](https://cpanel.net/) is a control panel that lets you manage many aspects of your
+cPanel is a control panel that lets you manage many aspects of your
 web host environment. The cPanel home page is divided into sections like DATABASES, FILES etc.
 as shown in the screenshot below. Each section contains a set of related features you can choose from.
+To learn more about cPanel visit <https://cpanel.net/>
 
 !!! note "Tip"
     Use the search box at the top to quickly find a feature. For example, as you type `ftp`,
     the sections and features will immediately narrow down to just those related to FTP.
 
-![cPanel](img/super-web-host-1.jpg)
+![cPanel](web-host-1.jpg)
 
 To use cPanel on Reclaim Hosting:
 
@@ -46,7 +47,7 @@ Follow these steps to upload a zip file to the web server and extract (unzip) it
 -	Select or drag-in the zip file to begin uploading it
 -   Wait for the upload to complete. When complete, the progress bar will:
     -   Show 100% *and* change color from blue to green  
-        ![cPanel](img/super-web-host-2.jpg)
+        ![cPanel](web-host-2.jpg)
 -   Click the `Go Back toGo to [cpanel] and choose ` link at the bottom of the page to return to the parent folder
 -   Verify that the zip file is there. If not, click `Reload` in the menu above the file list
 

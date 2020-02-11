@@ -10,7 +10,7 @@ Traditional databases show one item at a time, and the better ones include links
 
 In contrast, when you view an item in the Archive, all its related items instantly appear on the same page. The page even shows a graphical visualization depicting the relationships among items. You never have to chase links or leave the item of interest. Click on the visualization at right to see for yourself.
 
-![Relationships](img/user-relationships.jpg)
+![Relationships](relationships.jpg)
 
 ## Stories Hidden in the Data
 

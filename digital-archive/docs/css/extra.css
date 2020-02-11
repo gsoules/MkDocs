@@ -96,7 +96,7 @@ ol ul {
 
 /* Show the Digital Archive logo in the Table of Contents (TOC) background. */
 .wm-toc-pane {
-    background-image: url("../img/logo.png");
+    background-image: url("../logo.png");
     background-position: center 400px;
     background-repeat: no-repeat;
     padding-left: 0;

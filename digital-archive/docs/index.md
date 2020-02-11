@@ -60,9 +60,9 @@ A Digital Archive developer must be familiar with the following technologies:
 - PHP
 - SQL
 - XML
-- [Omeka](dev-omeka.md)
+- Omeka
 - Zend Framework
-- [GitHub](dev-github.md)
+- [GitHub](developer/github.md)
 - Linux
 - Elasticsearch
 - AWS S3
