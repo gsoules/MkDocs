@@ -525,46 +525,157 @@ suitable because the Identifier and Type fields appears near the end. Follow the
 [arrange the element order](../../administrator/omeka/#arrange-element-order) into the
 recommended sequence for the Digital Archive.
 
+---
+
+## Set up FTP access
+
+This section describes how to set up FTP access for a superuser and how to create a limited
+FTP account for a Digital Archive administrator.
+
+!!! warning ""
+    If the Digital Archive is installed in a subdomain, read about [subdomain considerations](subdomain.md) for FTP access.
+
+### Set up superuser FTP access
+
+Follow these steps to access the Digital Archive web server via FTP.
+
+!!! note "Note"
+    The settings below are for the site's primary FTP account which can use the SSH protocol.
+    The [settings for a limited FTP account](../../administrator/zoomable-images#filezilla-ftp-settings)
+    are restricted to using the FTP protocol. To learn more see [this post](https://community.reclaimhosting.com/t/can-i-ssh-using-an-ftp-account/967).
+
+-	Run FileZilla
+-	Choose `File` > `Site Manager` from the top menu bar
+-	On the `Site Manger` dialog click the `New site` button
+-	Fill in the site name in the `My Sites` tree
+-	On the `General Tab` set:
+    -	**Protocol**: `SFTP – SSH File Transfer Protocol`
+    -	**Host**: Example: `ftp.mydomain.net`
+    -	**Port**: leave blank
+    -	**Logon Type**: `Normal`
+    -	**User**: *cPanel username*
+    -	**Password**: *cPanel password*
+-	Click the `Connect` button
+-	On the `Unknown host key` dialog:
+    -   Check the `Always trust this host` checkbox
+    -   Click the `OK` button
+
+![Administrator FTP access](install-digital-archive-4.jpg)
+
+
+### Create limited FTP account
+
+Follow these steps to create a limited access FTP account that will allow an administrator to upload
+zoomable image tiles to the `zoom` folder, but will prevent them from seeing any other
+installation folders.
+
+-	Go to [cpanel] and choose `FTP Accounts`
+-	Type `zoom` for the **Log in** name and generate a password
+-	Set the **Directory**  to `public_html/digitalarchive/files/zoom`
+-	Leave the Quota as `Unlimited`
+-	Click the `Create FTP Account` button
+-	The FTP username will look like this example: `zoom@mydomain.net`
+-   Test the account using the documentation for
+    [zoomable images upload methods](../../administrator/zoomable-images/#upload-methods).
+
+![Administrator FTP account](install-digital-archive-3.jpg)
+
+---
+
 ## Preliminary testing
 Before proceeding with the installation, verify that everything is working up to this point.
 
 ### Add a test item
--	Click `Dashboard` in Omeka's left admin menu
--   Under `Recent Items` click the `Add a new item` link
--   Enter `Test` in the **Title** field
--   Scroll down the page until you locate the **Identifier** field
+-	Click `Items` in Omeka's left admin menu
+-   Click the `Add an item` link
 -	Enter `12345` in the **Identifier** field
+-   Enter `Test 1` in the **Title** field
 -   Click the `Add Item` button
 
 ### Upload a test image
--   On the `Browse Items` page, click the `Edit` link under the `Test` item
+-   On the `Browse Items` page, click the `Edit` link under the `Test 1` item
 -	Click on the `Files` tab at the top of the page
 -   Click the `Browse...` button
 -   Browse for an image
--	Click Add Item
--	FTP to the site and verify that the /digitalarchive/files folders contain a subfolder named
-    as the new item’s Identifier and that those folders contain the uploaded image.
--	Delete the item and verify that the /files folders get deleted.
+-	Click the `Save Changes` button
+-   You should now be on the `Item` page for new item.
+-   Use FTP or cPanel to navigate to the `/digitalarchive/files` folder
+-   Verify that the subfolders (`fullsize`, `original` etc) contain a subfolder named `12345`
+-   Verify that the`12345` folder contains the uploaded image
 
-### Verify that background process works
-Determine if background processing is configured properly by performing an operation that runs in the background.  The steps below are for Index Records, but you can also run the Bulk Editor (make sure that the Background Job box at the bottom of the page is checked).
+### Delete the test item
+-   On the `Item` page, click the `Delete` button
+-   Click `Delete` on the `Are you sure` dialog
+-	Verify that the `12345` folders got deleted from the `/digitalarchive/files` folders
 
--	In the admin interface, go to Settings > Search
--	Click Index Records
--	You should see “Indexing records. This may take a while. You may continue administering your site.”
--	If you get an error “The configured PHP path (<path>) does not point to a PHP-CLI binary”:
-    -	Look at this article
-    -	Edit digitalarchive/application/config/config.ini
-    -	Set background.php.path to the correct value for the server. This might be a trial and error
-        process, or contact the host to ask for the right path e.g.:
-        -	"/usr/local/bin/php" (this one seems to be working everywhere)
-    -	"/usr/bin/php-cli"
--   Save changes and close the file
--	Verify that Index Records works with no error.
+!!! note ""
+    If using Filezilla, you may need to disconnect and reconnect to verify that the files got deleted
+    because the Refresh option does not always seem to work. Or do the verification using the cPanel
+    File Manager.
 
+### Verify that background processing works
+Some Omeka operations are performed in the background. Examples are a request to reindex records
+and using the Bulk Edit plugin to perform bulk edits in the background.
 
+Follow these steps to determine if the default configuration for background processing is working properly.
 
+-	Click `Settings` in the top menu bar
+-   Click `Search` in the `Settings` page menu bar
+-	Click the `Index Records` button (even though there are no records to index)
+-   You should see a green message `Indexing records. This may take a while...`
+-	If instead you get an error that the configured PHP path is invalid:
+    -	Look at this [article](https://community.reclaimhosting.com/t/setting-the-php-cli-path-in-omeka-classic/231) to determine the correct background path
+    -	Edit `digitalarchive/application/config/config.ini`
+    -	Set `background.php.path` to the correct path for the server
+    -   Save changes and close the `config.ini` file
+    -	Verify that the Index Records operations works with no error
 
+!!! note ""
+    Finding the right path might be a trial and error process. Leaving `background.php.path = ""` seems to work correctly.
+    However, in some installations it's set to `/usr/local/bin/php` and in others to `/usr/bin/php-cli`.
+    If you are not successful, contact the host to ask for the right path.
+
+## Add the site to Beyond Compare
+[Beyond Compare](https://www.scootersoftware.com/) is a tool for comparing and synchronizing local
+files and folders with their remote counterparts on the Digital Archive server. It does this using
+its builtin FTP support.
+
+To add a Digital Archive site to Beyond Compare, you need to specify the location of the local site
+and the remote site and then save two comparison sessions, one for the `themes` folder and one for the
+`plugins` folder.
+
+-	Run Beyond Compare
+-	Click on the `Folder Compare` option on the home page
+-	Set the local site
+    -	Click the folder icon in the upper right of the left pane
+    -   Click `Local File System` in the left panel
+    -	Navigate to `C:\xampp\htdocs\omeka-2.6` in the right panel
+    -   Click the `OK` button
+-	Set the FTP site
+    -	Click the folder icon in the upper right of the right pane
+    -	Click on `Quick Connect` > `FTP Profile` in the left panel
+    -	Enter the FTP credentials for the remote server
+    -	Click the `Connect & Browse` button to verify that you can access the site
+    -	Click the OK button
+-   Save the theme comparison session    
+    -	In each pane:
+        -   Navigate to the `themes` folder
+        -	Right click on the folder and choose `Set as Base Folder`
+    -	On the main menu, click `Session` > `Save Session As`
+    -	In the `Save current settings as` field, type e.g. `SWHPL Theme`
+    -   In the `Create in` tree click `Digital Archive`
+    -	Click the `OK` button
+-   Save the plugins comparison session    
+    -	In each pane:
+        -   Navigate to the `plugins` folder
+        -	Right click on the folder and choose `Set as Base Folder`
+    -	On the main menu, click `Session` > `Save Session As`
+    -	In the `Save current settings as` field, type e.g. `SWHPL Plugins`
+    -   In the `Create in` tree click `Digital Archive`
+    -	Click the `OK` button
+
+To rename or delete existing sessions, click on the `Home` button in the ribbon
+and then access the session of interest in the Sessions tree at left.
 
 ## Add additional elements
 See the Administrator documentation on how to [add a new element](../../administrator/omeka/#add-a-new-element).    

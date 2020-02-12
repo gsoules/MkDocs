@@ -1,7 +1,7 @@
 # Protected information
 
 ---
-[Return to the public MkDocs page](../../super-mkdocs)
+[Return to the public MkDocs page](../../superuser/mkdocs)
 
 ## MkDocs password protection
 
@@ -57,4 +57,4 @@ user/password combination to `.htpasswd`.
 !!! note ""
     Learn more about [password protection with htaccess](https://www.htaccesstools.com/articles/password-protection/).
 
-[Return to the public MkDocs page](../../super-mkdocs)
+[Return to the public MkDocs page](../../superuser/mkdocs)

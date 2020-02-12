@@ -85,33 +85,63 @@ tiles from the image’s high resolution file and then uploading a folder contai
 
 ## Upload methods
 
-**Method 1:**
+There are two ways to upload image tiles to the web server: FTP and cPanel.
 
-Use FTP to simply upload the entire folder, subfolders, and files. Note that a very large image will
-have hundreds of tiles in multiple folders and can take a minute or more to upload. It also chews up bandwidth
-and will slow your internet connection. Though this method is slow, it’s simple and easy if you are just creating a few zoomable images.
+**FTP method**
 
-- Run FileZilla or other FTP program and connect to the server.
-- Navigate  to `public_html/digitalarchive/files`
-- Drag the tiles folder to the remote zoom folder. Be sure to drag onto the zoom folder itself, and not onto one of the tiles folders.
+A Digital Archive site administrator can follow these steps to upload a tile folder using an FTP
+program called [FileZilla](https://filezilla-project.org/). Connection settings for Filezilla are at the end of this page.
 
-**Method 2:**
+-   Run FileZilla
+-	Choose `File` > `Site Manager` from the top menu bar
+-	On the `Site Manger` dialog, click the name of your connection for the `zoom` folder
+-   Click the `Connect` button
+-   In the right panel (remote site):
+    -   You should see a list of the tile folders that have been previously uploaded
+    -   Click on the `/` at the top of the list (see red arrow in screenshot below)
+-   In the left panel (local site):
+    -   Right click on the folder you want to upload and choose `upload`
+-   Verify that the uploaded folder now appears in the right panel
 
-Zip everything into a single file and upload the zip file to the zoom folder on the server.
-This method  involves more steps, but is much  faster because uploading one large file takes a lot less
+![Upload zoom folder](zoomable-images-2.jpg)
+
+
+!!! warning
+    In the instructions above, be very careful to click on the `/` at the top of the right panel as pointed
+    to by the red arrow in the screen shot above.
+    If instead you click on an existing folder, the folder you are uploading will go into that existing folder.
+
+**cPanel method**
+
+A Digital Archive superuser can use cPanel to upload a zip file containing the zoom tiles.
+This method involves more steps, but is faster because uploading one large file takes less
 time than FTPing several folders that each contain dozens of files.
 
-- Zip the zoom tiles folder into a single zip file
-- Log into the cPanel for Reclaim Hosting
-- Choose the File Manager
-- Navigate to `public_html/digitalarchive/files/zoom` 
-- Click the `Upload` button in the top menu. A new tab opens with an upload area.
-- Drag the zip file from your computer to the upload area
-- When the upload reaches 100%, close the tab.
-- Click the `Reload` button above the file listing so that you can see the zip file.
-- Right-click the zip file, choose `Extract`, and click `Extract Files` on the dialog box
-- When the unzip finishes, close the `Extraction Results` window
-- Delete the zip file by right-clicking on it and choosing `Delete` or pressing the `Delete` key
-- On the Trash dialog, check the `Skip` box and click the `Confirm` button
+- Compress the zoom tiles folder into a single zip file
+- [Upload and extract the zip file](../../superuser/web-host#upload-and-extract-a-zip-file) into the 
+`digitalarchive/files/zoom` folder
+
+## Filezilla FTP settings
+
+Follow the steps below to create a FileZilla connection that will allow you to upload an
+image tile folder to the Digital Archive `zoom` folder. For the *zoom username* and *zoom password*,
+use the credentials provided to you by the Digital Archive superuser.
+
+-	Run FileZilla
+-	Choose `File` > `Site Manager` from the top menu bar
+-	On the `Site Manger` dialog click the `New site` buttons
+-	Fill in the site name in the `My Sites` tree
+-	On the `General Tab` set:
+    -	**Protocol**: `FTP - File Transfer Protocol`
+    -	**Host**: Example: `ftp.mydomain.net`
+    -	**Port**: leave blank
+    -   **Encryption**: `Use explicit FTP over TLS if available`
+    -	**Logon Type**: `Normal`
+    -	**User**: *zoom username* e.g. `zoom@mydomain.net`
+    -	**Password**: *zoom password*
+-	Click the `Connect` button
+
+![Administrator FTP access](zoomable-images-1.jpg)
+
 
 

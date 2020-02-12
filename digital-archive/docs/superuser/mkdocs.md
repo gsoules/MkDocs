@@ -30,7 +30,7 @@ The navigation structure for the website is configured in the `mydocs.yml` file.
 
 The website uses the [Windmill](https://github.com/gristlabs/mkdocs-windmill) theme for MkDocs.
 
-Some documentation pages contains sensitive information that should not be accessible to the general public. [Learn how to password protect a page](../../protected/mkdocs-protected).
+Some documentation pages contain information that is not accessible to the general public. [Learn how to password protect a page](../../protected/mkdocs-protected).
 
 Whenever you edit, add, move, or delete any of the MkDocs files, you must build and
 deploy the MkDocs website so that other people can see your changes.

@@ -23,7 +23,6 @@ nav:
         - File Locations*: superuser/file-locations.md
         - MkDocs: superuser/mkdocs.md
         - MySQL Workbench: superuser/mysql-workbench.md
-        - Beyond Compare*: superuser/beyond-compare.md
         - Install a Digital Archive site: superuser/install-digital-archive.md
     - Developer:
         - GitHub: developer/github.md
