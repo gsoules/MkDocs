@@ -199,7 +199,7 @@ Follow these steps to upload the Omeka Classic files to the web server.
 
 ---
 
-## Edit the database configuration
+## Edit database configuration
 
 Follow these steps to configure Omeka to use the database you created.
 The database *username*, *password*, and *dbname* come from the [create a MySQL database](#create-a-mysql-database) step.
@@ -228,7 +228,7 @@ To learn more, see the Omeka documentation for the [database configuration file]
 
 ## Enable errors and logging
 
-### Error reporting
+### Enable error reporting
 
 This step allows PHP errors to appear in the browser. Normally you would not want
 this for a production site, but it's better to become aware of a problem if it occurs.
@@ -247,7 +247,7 @@ this for a production site, but it's better to become aware of a problem if it o
     installation's root folder. You'll edit the root folder's copy later in the steps to
     [configure site security](#configure-site-security).
 
-### Error logging
+### Enable error logging
 
 Follow these steps to enable Omeka error logging so that a history of errors will be recorded.
 To learn more, see the Omeka documentation for [retrieving error messages](https://omeka.org/classic/docs/Troubleshooting/Retrieving_Error_Messages/#activate-error-logging).
@@ -306,10 +306,9 @@ documentation for an explanation of the configuration settings.
 
 ![Site settings](install-digital-archive-2.jpg)
 
-!!! note "Super"
-    The username and password you specify above are for an Omeka user with `Super` access.
-    See the [Omeka Users](https://omeka.org/classic/docs/Admin/Users/) documentation to learn about user
-    levels and access.
+!!! note "Super administrator"
+    The username and password you specify above are for an Omeka *super administrator*.  
+    See [Omeka terminology](../../administrator/omeka/#terminology) to learn what it means to be a super administrator.
 
 ### Login to Omeka
 
@@ -321,19 +320,19 @@ Follows these steps to login to Omeka.
 -   Click the `Login` button
 -   The `Dashboard` page should display.
 
-### Additional settings
+### Configure additional settings
 
 Follows these steps to finishing configuring Omeka.
 
--	On the `Dashboard page`, click `Appearance` on the top menu bar
-    -   Click `Settings` on the `Appearance` page menu
+-	On the `Dashboard page`, click `Appearance` in the top menu bar
+    -   Click `Settings` in the `Appearance` page menu bar
     -	At the bottom of the page, uncheck `Show Element Set Headings`
     -	Click the `Save Changes` button
--	On the `Settings` on the top menu bar
--   Click `Search` on the `Settings` page menu
+-	Click `Settings` in the top menu bar
+-   Click `Search` in the `Settings` page menu bar
     -	Uncheck all `Search Record Types` except `Item`
     -	Click the `Save Changes` button
--   Click `General` on the `Settings` page menu
+-   Click `General` in the `Settings` page menu bar
     -	Click the `Test` at the bottom of the page  
         You should see `The ImageMagick directory path works`
     -   If the message says that the path does *not* work:
@@ -479,31 +478,15 @@ Follow these steps to install and configure the plugin.
 
 ## Create the site Item Type
 
-Omeka installs with a number of different *Item Types* and *Elements*. In Omeka, think
-of an element as being synonymous with a field, and an Item Type as a set of fields. To keep things simple,
-and to make data entry easier and faster, the Digital Archive uses only one Item type having all the elements
-an organization needs. To learn more, see the Omeka documentation for
-[Item Types](https://omeka.org/classic/docs/Content/Item_Types/).
+Omeka installs with a number of different *Item Types* and *Elements*; however, the Digital Archive
+uses only one Item Type which contains all of the Dublin Core elements plus only those additional elements
+that the organization needs. Having just one Item Type makes data entry easier and faster. To
+learn more, see the Omeka documentation for [Item Types](https://omeka.org/classic/docs/Content/Item_Types/).
 
-Follow the steps below to create a single Item Type and to remove unused Item Types and Elements.
+Follow the steps below to remove unused Item Types and Elements and
+create a single Item Type having the elements needed by the organization.
 
-###	Create a new Item Type:
--   Login to Omeka 
--	Click `Items Types` in Omeka's left admin menu
--	Click the green `Add an Item Type` button
--	For **Name** use the *site name* in all caps, for example `NEHL` for Northeast Harbor Library
--	Leave the description blank
--	Click the `Add Item Type` button
--	Click the `Edit` button on the newly added Item type e.g. `NEHL`
--	Add non-Dublin Core elements one at a time:
-    -	Choose the `New` radio button at the bottom of the page
-    -   Click the `Add Element button`
-    -	Type the **Element Name** and leave the description blank
-    -	Click the `Add Element` button again to add the next element
-    -	Repeat until done
--	When done adding elements, click the `Save Changes` button
-
-###	Delete unused item types and elements:
+###	Delete unused item types
 -   Open the database in [MySQL Workbench](mysql-workbench.md#open-a-database)
 -	Right click on the `omeka_item_types` table and choose `Select Rows`
 -	Select all the rows
@@ -514,14 +497,78 @@ Follow the steps below to create a single Item Type and to remove unused Item Ty
 
 ###	Delete unused elements
 -	Right click on the `omeka_elements` table and choose `Select Rows`
--	Select all the non Dublin Core element row. These all have an 
-    `element_set_id` value of `3` and are `Text`, `Interviewer`, `Interviewee` etc.
+-	Select all the non Dublin Core element rows. Those rows have an  
+    `element_set_id` value of `3` and are named `Text`, `Interviewer`, `Interviewee` etc.
 -	Right click on the selection and choose `Delete Rows`
 -	Click the `Apply` button in the lower right
 -	Click the `Apply` button on the `Apply SQL Script to Database` dialog
 -   When the deletion completes, click the `Finish` button
 
 You can now quit MySQL Workbench.
+
+###	Create a new Item Type
+-   Login to Omeka 
+-	Click `Items Types` in Omeka's left admin menu
+-	Click either of the green `Add an Item Type` buttons
+-	For **Name** use the *site name* in all caps, for example `NEHL` for Northeast Harbor Library
+-	Leave the description blank
+-	Click the `Add Item Type` button
+
+The new Item Type contains all of the Dublin Core elements. If you know what other elements
+the organization needs, you can add them now, or you can
+[add additional elements](#add-additional-elements) as the last step of the installation.
+The Administrator documentation explains how to [add a new element](../../administrator/omeka/#add-a-new-element).    
+
+### Arrange the element order
+The default order in which the Dublin Core elements appear when editing an item is not
+suitable because the Identifier and Type fields appears near the end. Follow the instructions to
+[arrange the element order](../../administrator/omeka/#arrange-element-order) into the
+recommended sequence for the Digital Archive.
+
+## Preliminary testing
+Before proceeding with the installation, verify that everything is working up to this point.
+
+### Add a test item
+-	Click `Dashboard` in Omeka's left admin menu
+-   Under `Recent Items` click the `Add a new item` link
+-   Enter `Test` in the **Title** field
+-   Scroll down the page until you locate the **Identifier** field
+-	Enter `12345` in the **Identifier** field
+-   Click the `Add Item` button
+
+### Upload a test image
+-   On the `Browse Items` page, click the `Edit` link under the `Test` item
+-	Click on the `Files` tab at the top of the page
+-   Click the `Browse...` button
+-   Browse for an image
+-	Click Add Item
+-	FTP to the site and verify that the /digitalarchive/files folders contain a subfolder named
+    as the new item’s Identifier and that those folders contain the uploaded image.
+-	Delete the item and verify that the /files folders get deleted.
+
+### Verify that background process works
+Determine if background processing is configured properly by performing an operation that runs in the background.  The steps below are for Index Records, but you can also run the Bulk Editor (make sure that the Background Job box at the bottom of the page is checked).
+
+-	In the admin interface, go to Settings > Search
+-	Click Index Records
+-	You should see “Indexing records. This may take a while. You may continue administering your site.”
+-	If you get an error “The configured PHP path (<path>) does not point to a PHP-CLI binary”:
+    -	Look at this article
+    -	Edit digitalarchive/application/config/config.ini
+    -	Set background.php.path to the correct value for the server. This might be a trial and error
+        process, or contact the host to ask for the right path e.g.:
+        -	"/usr/local/bin/php" (this one seems to be working everywhere)
+    -	"/usr/bin/php-cli"
+-   Save changes and close the file
+-	Verify that Index Records works with no error.
+
+
+
+
+
+## Add additional elements
+See the Administrator documentation on how to [add a new element](../../administrator/omeka/#add-a-new-element).    
+Also, arrange the order of all elements.
 
 
 [cPanel]: web-host.md#cpanel

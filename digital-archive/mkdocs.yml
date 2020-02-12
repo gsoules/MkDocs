@@ -14,6 +14,7 @@ nav:
             - Field descriptions*: archivist/field-descriptions.md
             - Workflow fields: archivist/workflow-fields.md
     - Administrator:
+        - Omeka: administrator/omeka.md
         - Zoomable images: administrator/zoomable-images.md
         - Plugins:
             AvantSearch: plugins/avantsearch/avantsearch.md

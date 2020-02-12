@@ -32,14 +32,14 @@ To use cPanel on Reclaim Hosting:
 
 ## Add an Omeka plugin
 
-Follow these steps to install an Omeka plugin for a Digital Archive site.
+Follow these steps to add an Omeka plugin to a Digital Archive site.
 
 -   Get the plugin's zip file. The Digital Archive plugins are at <https://github.com/gsoules>.
 -   Follow the instructions below to **upload and extract a zip file** into the Omeka `plugins` folder.
     For most installations, the folder is `public_html/digitalarchive/plugins`.
 -   If necessary, rename the newly created to plugin folder to be the plugin's name    
 -   Login to Omeka with a user name that has `Super` access
--   Click `Plugins` on the top menu
+-   Click `Plugins` in the top menu bar
 -   The newly uploaded plugin should appear in the list with a green `Install` button
 -   See the plugin's documentation for configuration information
 
