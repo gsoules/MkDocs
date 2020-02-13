@@ -574,11 +574,65 @@ Follow these steps to determine if the default configuration for background proc
 
 ---
 
-## Install Avant plugins
-The plugins can be download from <https://github.com/gsoules>.
+## Get plugins and theme
 
-!!! warning "Important"
-    Do not copy the plugins from the local server because their folders contain the local GIT repositories.
+The following plugins and theme are required for most Digital Archive installations.
+Those marked with an asterisk are needed only if using Elasticsearch and Amazon S3.
+
+```
+ArchiveRepertory
+AvantCommon
+AvantAdmin
+AvantCustom
+AvantElements
+AvantElasticsearch*
+AvantRelationships
+AvantS3*
+AvantSearch
+AvantTheme
+AvantZoom
+Bulk Metadata Editor
+PDF Text*
+```
+Follow the steps below to locate and download the plugins and theme
+
+**Avant plugin or theme:**
+
+!!! warning ""
+    Don't copy Avant folders from the development server because they contain GIT repositories.
+
+-   Go to <https://github.com/gsoules?tab=repositories>
+-   Click on a plugin or theme name to go to its GitHub repository page
+-   Click the green `Clone or download` dropdown
+-   Choose `Download ZIP`
+-   Save the file to a folder on your computer
+
+![GitHub download](install-digital-archive-5.jpg)
+
+**Other Omeka plugin**
+
+-   Go to <https://omeka.org/classic/plugins/>
+-   Locate the plugin and click its `Download` button
+-   Save the file to a folder on your computer
+
+![GitHub download](install-digital-archive-6.jpg)
+---
+
+## Add plugins to Digital Archive
+
+-   Follow the instructions to [upload and extract a zip file](web-host.md#upload-and-extract-a-zip-file)
+    into the `public_html/digitalarchive/plugins` folder
+-   If necessary, rename the newly created plugin folder to the plugin's correct name    
+-   Login to Omeka with a user name that has `Super` access
+-   Click `Plugins` in the top menu bar
+-   The newly uploaded plugin should appear in the list with a green `Install` button
+-   See the plugin's documentation for configuration information
+
+---
+
+## Install plugins
+
+For each plugin, follow the steps to [add an Omeka plugin](web-host.md#add-an-omeka-plugin).
 
 Install the following plugins and perform only minimal configuration. Additional configuration will occur later.
 

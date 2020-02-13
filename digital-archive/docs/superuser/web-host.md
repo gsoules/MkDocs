@@ -11,6 +11,8 @@ on a [Reclaim Hosting](https://reclaimhosting.com/) web server.
     files, and be familiar with system administration duties such as database management, permissions,
     FTP, and such. If these things are foreign to you, **do not** attempt to serve as the superuser.
 
+---
+
 ## cPanel
 cPanel is a control panel that lets you manage many aspects of your
 web host environment. The cPanel home page is divided into sections like DATABASES, FILES etc.
@@ -30,18 +32,7 @@ To use cPanel on Reclaim Hosting:
 -   Click on the feature you want to use
 -   The user interface for the feature will appear
 
-## Add an Omeka plugin
-
-Follow these steps to add an Omeka plugin to a Digital Archive site.
-
--   Get the plugin's zip file. The Digital Archive plugins are at <https://github.com/gsoules>.
--   Follow the instructions below to **upload and extract a zip file** into the Omeka `plugins` folder.
-    For most installations, the folder is `public_html/digitalarchive/plugins`.
--   If necessary, rename the newly created to plugin folder to be the plugin's name    
--   Login to Omeka with a user name that has `Super` access
--   Click `Plugins` in the top menu bar
--   The newly uploaded plugin should appear in the list with a green `Install` button
--   See the plugin's documentation for configuration information
+---
 
 ## Upload and extract a zip file
 
@@ -79,6 +70,8 @@ Follow these steps to upload a zip file to the web server and extract (unzip) it
 -   On the `Trash` dialog, check the box that says `Skip the trash`
 -   Click the `Confirm` button
 
+---
+
 ## Create a subdomain
 Follow these steps to create a subdomain in an existing account.
 
@@ -90,6 +83,7 @@ Follow these steps to create a subdomain in an existing account.
 -   Verify that a new folder for the domain exists,  
     for example: `/home/avantlog/mysubdomain.avantlogic.net`
 
+---
 
 ## Create a new account
 Follow these steps to create a new Reclaim Hosting account.

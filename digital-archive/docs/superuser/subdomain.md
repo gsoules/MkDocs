@@ -25,6 +25,8 @@ This case applies when using subdomains for hosting multiple instances of the Di
 on the same web server for development and testing purposes. The following sections point out some
 things you should be aware of.
 
+Learn [how to create a subdomain](web-host.md#create-a-subdomain).
+
 **Database name and user**
 
 When you install the Digital Archive in more than one subdomain on the
