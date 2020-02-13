@@ -5,6 +5,8 @@ This page explains all of the tasks that AvantLogic performs to install and conf
 !!! note ""
     Installation tasks appear in the navigation panel at left. Perform them one at a time in the order listed.
 
+    **[Print this checklist](installation-checklist.pdf)**
+
 ---
 
 ## Prerequisites
@@ -613,10 +615,14 @@ Install the following plugins and perform only minimal configuration. Additional
 
 ---
 
-## Remove unused plugins and themes
+## Remove unused plugins
 -	Remove unused plugins:
     -	Coins
     -	Exhibit Builder
+
+---
+
+## Remove unused themes
 -	Remove all themes except AvantTheme
 
 ---
@@ -783,13 +789,7 @@ and then access the session of interest in the Sessions tree at left.
 
 ---
 
-## Remove stuff used for import but no longer needed
--	CSV Import+ plugin
--	/file/import folder
-
----
-
-## Max Upload Filesize Limit
+## Set file size upload limit
 This is controlled by the PHP settings. In cPanel PHP Selector options set both post_max_size and upload_max_size to the desired limit.
 
 ---
