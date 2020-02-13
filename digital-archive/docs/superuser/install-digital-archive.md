@@ -1,23 +1,13 @@
 # Install a new Digital Archive site
 
-This page explains how to install and configure a new Digital Archive installation
-on a [reclaimhosting.com](web-host.md) server. You can also read [Omeka's installation instructions](https://omeka.org/classic/docs/Installation/Installation/); however, this
-page covers installation of Omeka Classic and much more.
+This page explains all of the tasks that AvantLogic performs to install and configure a new Digital Archive installation. For each task, it lists the steps necessary to perform the task.
+
+!!! note ""
+    Installation tasks appear in the navigation panel at left. Perform them one at a time in the order listed.
 
 ---
 
-Many steps are required to install the Digital Archive. They are listed on this page in the order
-in which you must perform them.
-
-> The navigation panel at left shows all the steps
-
 ## Prerequisites
-The first step is to:
-
--   Verify that the web host meets the necessary requirements
--   Choose a site name
--   Decide where to install the Digital Archive files on the server
-
 **Hosting requirements**
 
 The web host must be an Apache web server that satisfies the 
@@ -28,87 +18,54 @@ Learn now to [Create a new Reclaim account](web-host.md#create-a-new-account).
 
 **Site name**
 
-Some of the installation steps require that you specify a site name. Choose a concise and
+Some of the installation steps require that you specify a *site name*. Choose a concise and
 meaningful name that you and others will recognize when performing system administration. An acronym
 is usually a good choice. For example, the site name for the Southwest Harbor Public Library is `swhpl`.
-Use the name you choose in subsequent steps that refer to the *site name*.
 
 **Installation folder**
 
-All Digital Archive files will be installed within a single folder named `digitalarchive`.
+The Digital Archive files will be installed in `public_html/digitalarchive`. AvantLogic uses
+the `digitalarchive` folder to isolate the Digital Archive files
+from other applications on the web server. For example, some installations use a `digitalarchive`
+folder and a `wp` folder side-by-side where the `wp` folder contains a WordPress application
+for content related to the Digital Archive collection. If would be very messy, and
+make application updates difficult, if the Digital Archive and WordPress files were
+together in the the same `public_html`.
 
-!!! warning "Important"
+!!! warning ""
     **Do not** create the `digitalarchive` folder at this time.  
     It will get created later during the *Install Omeka Classic files* step.
-
-The `digitalarchive` folder can be a subfolder of:
-
-- The Apache server's `public_html` folder, *or*
-- A subdomain's folder
-
-Examples:
-
-```
-public_html/digitalarchive
-
-mysubdomain.avantlogic.net/digitalarchive
-```
-
-!!! note
-    AvantLogic uses the `digitalarchive` folder as a way of isolating the Digital Archive files
-    from other applications on the server. For example, some installations use a `digitalarchive`
-    folder and a `wp` folder side-by-side where the `wp` folder contains a WordPress application
-    for content related to the Digital Archive collection. If would be very messy, and
-    make application updates difficult, if the Digital Archive and WordPress files were
-    together in the the same `public_html` or subdomain folder. However, use of the `digitalarchive`
-    folder is not required and you can install directly in `public_html` or a subdomain folder.
-
-**Subdomain installation**
-
-If you want to install the Digital Archive in a subdomain, [create the subdomain](web-host.md#create-a-subdomain) now.
 
 ---
 
 ## Create a MySQL database
 
-A new Reclaim Hosting account does not come with a database.  
-Follow the steps below to create a new empty database and user for the Digital Archive.
+A new Reclaim Hosting account does not come with a database. Follow the steps below to
+use [cPanel] to create a new empty database and a database user for the Digital Archive.
 
 !!! warning "Important"
-    [cpanel] will automatically prefix any database or user name that you choose with the
+    cPanel will automatically prefix any database or user name that you choose with the
     first seven letters of the domain name, followed by `_`. For example, if you specify
     the name `foo` and the domain name is `avantlogic` the actual name will be `avantlog_foo`.
     Keep this in mind because the name you choose will really be a suffix.
 
-    Note that if you install the Digital Archive in more than one subdomain on the
-    same host, the corresponding database and user names will all share the same
-    prefix. As such, the steps below recommend different choices for subdomains.
-
 ### Create a database
 
--	Go to [cpanel] and choose `MySQL Database Wizard`
+-	Go to [cPanel] and choose `MySQL Database Wizard`
 -	In wizard Step 1:
     -   Decide on the database name suffix
-    -   If the `digitalrchive` folder will be in `public_html`:
         -   A good choice is `omeka`
         -   Example: `avantlog_omeka`
-    -   If the `digitalrchive` will be in a subdomain:
-        -   A good choice is the *site name*
-        -   Example: `avantlog_swhpl`
-    -   Enter the database name in the `New Database` field
--	Click `Next Step`
+    -   Enter the database name in the **New Database** field
+-	Click the `Next Step` button
 
 ### Create a user
 
 -	In wizard Step 2:
     -   Decide on the user name suffix
-    -   If the `digitalrchive` will be in `public_html`:
         -   A good choice is `archivist`
         -   Example: `avantlog_archivist`
-    -   If the `digitalrchive` will be in a subdomain:
-        -   A good choice is the *site name*
-        -   Example: `avantlog_swhpl`
-    -   Enter the user name in the `Username` field
+    -   Enter the user name in the **Username** field
 -   Click the `Password Generator` button
 -   In the popup dialog:
     -   If you don't like the password, click the `Generate Password` button to get another
@@ -116,9 +73,10 @@ Follow the steps below to create a new empty database and user for the Digital A
     -   Click the checkbox confirming that you copied the password to a safe place
     -   Click the `Use Password` button
     -   The two password fields get filled in with the generated password automatically
--	Click `Create User`
--	In wizard Step 3, Check the `ALL PRIVILEGES` checkbox at the top
--	Click the `Next Step` button
+-	Click the `Create User` button
+-	In wizard Step 3:
+    -   Check the `ALL PRIVILEGES` checkbox at the top
+    -	Click the `Next Step` button
 
 ### Add a MySQL Workbench connection
 
@@ -131,29 +89,28 @@ Follow the steps below to create a new empty database and user for the Digital A
 This section explains how to use an existing database for a new installation.
 
 !!! note ""
-    **Skip this step** if you need to move a database from one installation to another.
+    **Only perform this step** if you need to move a database from one installation to another.
 
 ### Export a MySQL database to a `.sql` file
 
--	Go to [cpanel] and choose `phpMyAdmin`
--	On the far left, click on the <name-of DB-to-export> database
+-	Go to [cPanel] and choose `phpMyAdmin`
+-	On the far left, click on the name of the database to export
 -	In the top menu, click on `Export`
 -	For **Export method** choose `Quick`
 -	For **Format** choose `SQL`
 -	Click `Go`
--	When the `Save` dialog appears, choose a location to save on local computer  
+-	On the `Save` dialog, choose where to save the file on your computer  
 
 ### Create an empty database
-If you have not done so already, create a database and add it to MySQL Workbench
-following the instructions above to [create a MySQL database](#create-a-mysql-database).
+If you have not done so already, follow the instructions above to [create a MySQL database](#create-a-mysql-database).
 
 ### Import a MySQL database from a `.sql` file
 
 -	Run MySQL Workbench
 -	Double click on the name of the new database (make sure the name becomes bold)
--	Choose `File` > `Open SQL Script`
--	Select the `.sql` file exported in the subsection above
--	Click `Open`
+-	Choose `File` > `Open SQL Script` from the top menu
+-	Select the `.sql` file exported in the Export section above
+-	Click the `Open` button
 -	Click the lightning bolt button to execute the script
 
 ---
@@ -166,7 +123,7 @@ and the [Titles Only option](../../plugins/avantsearch/avantsearch/#titles-only-
 
 Follow these steps to change the storage engine:
 
--	Go to [cpanel] and choose `phpMYAdmin`
+-	Go to [cPanel] and choose `phpMYAdmin`
 -	In the left panel, click on the Omeka database name to see its tables
 -	Click on the `omeka_search_texts` table in the left panel
 -	Click on the `Operations` tab
@@ -185,16 +142,15 @@ Follow these steps to change the storage engine:
 
 ## Install Omeka Classic files
 
-Follow these steps to upload the Omeka Classic files to the web server.
+Follow these steps to upload the Omeka Classic files to the web server. You can also read
+[Omeka's installation instructions](https://omeka.org/classic/docs/Installation/Installation/).
 
 -	Download the latest Omeka Classic release from <http://omeka.org/classic/download>  
     As of 2/6/2020, the latest release was `omeka-2.7.1.zip`
--	Go to [cpanel] and choose `File Manager`
--   Navigate to the folder that will contain the `digitalrchive` folder;
-    -   If the folder is `public_html` go to `public_html`
-    -   If the folder is a subdomain, go to the subdomain folder  
-        for example: `mysubdomain.avantlogic.net`
--   [Upload and extract the zip file](web-host.md#upload-and-extract-a-zip-file) into a new folder
+-	Go to [cPanel] and choose `File Manager`
+-   Navigate to the `public_html` folder
+-   [Upload and extract the zip file](web-host.md#upload-and-extract-a-zip-file)
+-   A new folder having the same name as the zip file will appear
 -   Rename the new folder from the zip file's name to `digitalarchive`
 
 ---
@@ -202,10 +158,10 @@ Follow these steps to upload the Omeka Classic files to the web server.
 ## Edit database configuration
 
 Follow these steps to configure Omeka to use the database you created.
-The database *username*, *password*, and *dbname* come from the [create a MySQL database](#create-a-mysql-database) step.
+The *username*, *password*, and *dbname* values come from the [create a MySQL database](#create-a-mysql-database) task.
 
 
--	Go to [cpanel] and choose `File Manager`
+-	Go to [cPanel] and choose `File Manager`
 -	Navigate *into* the `digitalarchive` folder
 -   Edit `db.ini`
 -	Replace occurrences of `"XXXXXXX"` as follows:
@@ -233,10 +189,10 @@ To learn more, see the Omeka documentation for the [database configuration file]
 This step allows PHP errors to appear in the browser. Normally you would not want
 this for a production site, but it's better to become aware of a problem if it occurs.
 
--	Go to [cpanel] and choose `File Manager`
+-	Go to [cPanel] and choose `File Manager`
 -   Allow hidden files to be displayed:
     -   Click the `Settings` button in the upper right of the File Manager
-    -   Check th box for `Show Hidden Files`)
+    -   Check th box for `Show Hidden Files`
 -	Navigate *into* the `digitalarchive` folder
 -   Edit `.htaccess`
 -	Uncomment `SetEnv APPLICATION_ENV development`
@@ -252,10 +208,10 @@ this for a production site, but it's better to become aware of a problem if it o
 Follow these steps to enable Omeka error logging so that a history of errors will be recorded.
 To learn more, see the Omeka documentation for [retrieving error messages](https://omeka.org/classic/docs/Troubleshooting/Retrieving_Error_Messages/#activate-error-logging).
 
--	Go to [cpanel] and choose `File Manager`
+-	Go to [cPanel] and choose `File Manager`
 -	Navigate *into* the `digitalarchive/application/config/` folder
 -   Edit `config.ini`
--	In the `Logging` section, change **log.errors** from `false` to `true`
+-	In the `Logging` section, change `log.errors` from `false` to `true`
 -	Save your changes and close the file
 
 Errors will now be written to `digitalarchive/application/logs/errors.log`.
@@ -266,12 +222,10 @@ Errors will now be written to `digitalarchive/application/logs/errors.log`.
 
 You are now ready to launch Omeka and configure site settings.
 
--	Open a browser and visit the site URL, for example:
-```
-    avantlogic.net/digitalarchive
-    mysubdomain.avantlogic.net/digitalarchive
-```
--	The Omeka `Configure Your Site` page should appear
+-	Open a browser using the URL for the `digitalarchive` folder, for example:
+    `avantlogic.net/digitalarchive`.
+
+The Omeka `Configure Your Site` page should appear.
 
 ![Site settings](install-digital-archive-1.jpg)
 
@@ -283,14 +237,18 @@ documentation and the
 [appearance settings](https://omeka.org/classic/docs/Admin/Appearance/Appearance_Settings/)
 documentation for an explanation of the configuration settings.
 
+!!! note "Super administrator"
+    The username and password you will specify below are for an Omeka *super administrator*.  
+    See [Omeka terminology](../../administrator/omeka/#terminology) to learn what it means to be a super administrator.
+
 -   Set:
-    -	**Username**: *a valid user name*  
-    -	**Password**: *admin password*
-    -	**Re-type the Password**: *admin password*
+    -	**Username**: *a super administrator user name*  
+    -	**Password**: *super administrator password*
+    -	**Re-type the Password**: *super administrator password*
     -	**Email**: *a valid email address*  
-    -	**Administrator Email**: *same as admin email*
+    -	**Administrator Email**: *same as Email*
     -	**Site Title**: *the organization name*  
-    -	**Site Description**: *leave blank*
+    -	**Site Description**: leave blank
     -	**Site Copyright Information**: *the organization name*    
     -	**Site Author Information**: *your name or company*  
     -	**Tag Delimiter**: `,` (a comma)
@@ -302,20 +260,16 @@ documentation for an explanation of the configuration settings.
     -	**Show Empty Elements**: *Unchecked*
     -	**ImageMagick Directory Path**: `/usr/bin`
 -	Click the `Install` button
--   You should see the `Success!` page
+-   You should see the `Success!` page.
 
 ![Site settings](install-digital-archive-2.jpg)
-
-!!! note "Super administrator"
-    The username and password you specify above are for an Omeka *super administrator*.  
-    See [Omeka terminology](../../administrator/omeka/#terminology) to learn what it means to be a super administrator.
 
 ### Login to Omeka
 
 Follows these steps to login to Omeka.
 
 -	On the `Success!` page, click the `Admin Dashboard` button
--	Login with the user name and password from the previous steps
+-	Login with the super administrator user name and password
 -   Check the `Remember Me` checkbox
 -   Click the `Login` button
 -   The `Dashboard` page should display.
@@ -324,32 +278,40 @@ Follows these steps to login to Omeka.
 
 Follows these steps to finishing configuring Omeka.
 
+** Appearance settings**
+
 -	On the `Dashboard page`, click `Appearance` in the top menu bar
-    -   Click `Settings` in the `Appearance` page menu bar
-    -	At the bottom of the page, uncheck `Show Element Set Headings`
-    -	Click the `Save Changes` button
+-   Click `Settings` in the `Appearance` page menu bar
+-	At the bottom of the page, uncheck `Show Element Set Headings`
+-	Click the `Save Changes` button
+
+** Search settings**
+
 -	Click `Settings` in the top menu bar
 -   Click `Search` in the `Settings` page menu bar
-    -	Uncheck all `Search Record Types` except `Item`
-    -	Click the `Save Changes` button
+-	Uncheck all `Search Record Types` except `Item`
+-	Click the `Save Changes` button
+
+** General settings**
+
 -   Click `General` in the `Settings` page menu bar
-    -	Click the `Test` at the bottom of the page  
-        You should see `The ImageMagick directory path works`
-    -   If the message says that the path does *not* work:
-        -   Go to [cpanel] and choose `Terminal`
-        -   In the terminal window, type `which convert` and press `Enter`
-        -   Use the response to determine the correct path and try again 
-            or contact your host's technical support and ask them to tell you the path 
+-	Click the `Test` at the bottom of the page  
+    You should see `The ImageMagick directory path works`
+-   If the message says that the path does *not* work:
+    -   Go to [cPanel] and choose `Terminal`
+    -   In the terminal window, type `which convert` and press `Enter`
+    -   Use the response to determine the correct path and try again 
+        or contact your host's technical support and ask them to tell you the path 
 
 ---
 
 ## Verify PDF support
 
-These steps verify that a program called `pdftotext` is installed on your server.
+These steps verify that a program called `pdftotext` is installed on the web server.
 It is used by the `PdfText` plugin which in turn is used by the `AvantElastic` plugin to 
 make PDF files searchable. If you won't be using `AvantElastic`, you can skip this step.
 
--   Go to [cpanel] and choose `Terminal`
+-   Go to [cPanel] and choose `Terminal`
 -   In the terminal window, type `pdftotext -v` and press `Enter`
 -   The `pdftotext` program should display its version
 -   If instead you see `command not found`, ask your host to install `pdftotext`
@@ -359,25 +321,16 @@ make PDF files searchable. If you won't be using `AvantElastic`, you can skip th
 ## Configure site security
 
 By default, an Omeka installation uses HTTP for every page except the login page which uses HTTPS.
-Best practices for security require HTTPS for all pages. You also need to ensure that when someone
-visits your Digital Archive site, they are directed to the correct default page.
-
-How you configure site security depends on where you installed Omeka. Choose
-which instructions to follow for your installation.
+Perform the steps below to follow the best practice of using HTTPS for all pages.
 
 !!! danger "Warning"
-    The instructions require that you edit the site's `.htaccess` file. Even the slightest
+    This task requires that you edit the site's `.htaccess` file. Even the slightest
     error in this file can result in an **internal server error** which will prevent the site
     from loading. Be very careful.
 
-### Instructions 1
-
-If you installed Omeka in a `digitalarchive` folder, follow these instructions.  
-Otherwise, use [instructions 2](#instructions-2). 
-
--	Go to [cpanel] and choose `File Manager`
--	Navigate *into* the folder that *contains* the `digitalarchive` folder, usually `public_html` or a subdomain folder
--   If the folder does not contain a `.htaccess` file, create a new empty `.htaccess` file
+-	Go to [cPanel] and choose `File Manager`
+-	Navigate *into* the `public_html` folder
+-   If the folder does not contain a `.htaccess` file, create a new empty .htaccess file
 -   Edit `.htaccess`
 -   Add the code shown below at the top of the file
 -   Save your changes and close the file
@@ -399,13 +352,16 @@ Otherwise, use [instructions 2](#instructions-2).
     If the redirect does not appear to be working, flush the browser cache.
 
 !!! note
-    The code above redirects to `digitalarchive` which is the root of the Omeka installation.
-    Omeka will in turn redirect to the site's default home page. You can change the default
-    home page on the `Navigation` tab of the Omeka admin `Appearance` page as described in the
-    [Omeka documentation](https://omeka.org/classic/docs/Admin/Appearance/Navigation/).
-    Alternatively, you can change the `.htaccess` redirect as explained below.
+    The code above redirects root requests. For instance, if someone attempts to go to `avantlogic.net`
+    which is the web server root, they will be redirected to `avantlogic.net/digitalarchive` which
+    is the root of the Omeka installation. Omeka will in turn redirect to the default home page.
+    You can change the default home page on the `Navigation` tab of the Omeka admin `Appearance`
+    page as described in the [Omeka documentation](https://omeka.org/classic/docs/Admin/Appearance/Navigation/).
+    For example, you could set the default home page to be an *About* page that you created with
+    the Simple Pages plugin. Alternatively, you can change `.htaccess` to redirect to a specific
+    URL as explained below.
 
-You can change the `RedirectMatch` line to redirect to another location.
+You can change the `RedirectMatch` line to redirect to a specific URL.
 For example, if the Omeka installation has an `About` page, you could redirect there like this:
 
 ```
@@ -419,24 +375,6 @@ You can even redirect to a page of search results, for example, to display a sit
 
 See [this post](https://stackoverflow.com/questions/990392/htaccess-rewrite-to-redirect-root-url-to-subdirectory)
 to learn why using RedirectMatch works than RewriteRule for this purpose.
-
-### Instructions 2
-If you installed Omeka in the `public_html` or a subdomain folder, follow these instructions.  
-Otherwise use [instructions 1](#instructions-1).
-
--	Go to [cpanel] and choose `File Manager`
--	Navigate *into* the Omeka installation's top-level folder
--   Edit the Omeka `.htaccess`
--   Add the code shown below to the top of the file, right after the `RewriteEngine on` line
--   Save your changes and close the file
--   Test that all pages are HTTPS
-
-```
-    # Force all URLs to HTTPS
-    RewriteCond %{HTTPS} off
-    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
-```
----
 
 ## Install ArchiveRepertory plugin
 
@@ -516,7 +454,7 @@ You can now quit MySQL Workbench.
 
 The new Item Type contains all of the Dublin Core elements. If you know what other elements
 the organization needs, you can add them now, or you can
-[add additional elements](#add-additional-elements) as the last step of the installation.
+[add additional elements](#add-additional-elements) as the last task of the installation.
 The Administrator documentation explains how to [add a new element](../../administrator/omeka/#add-a-new-element).    
 
 ### Arrange the element order
@@ -531,9 +469,6 @@ recommended sequence for the Digital Archive.
 
 This section describes how to set up FTP access for a superuser and how to create a limited
 FTP account for a Digital Archive administrator.
-
-!!! warning ""
-    If the Digital Archive is installed in a subdomain, read about [subdomain considerations](subdomain.md) for FTP access.
 
 ### Set up superuser FTP access
 
@@ -569,7 +504,7 @@ Follow these steps to create a limited access FTP account that will allow an adm
 zoomable image tiles to the `zoom` folder, but will prevent them from seeing any other
 installation folders.
 
--	Go to [cpanel] and choose `FTP Accounts`
+-	Go to [cPanel] and choose `FTP Accounts`
 -	Type `zoom` for the **Log in** name and generate a password
 -	Set the **Directory**  to `public_html/digitalarchive/files/zoom`
 -	Leave the Quota as `Unlimited`

@@ -24,8 +24,8 @@ nav:
         - MkDocs: superuser/mkdocs.md
         - MySQL Workbench: superuser/mysql-workbench.md
         - Install a Digital Archive site: superuser/install-digital-archive.md
+        - Subdomain installation: superuser/subdomain.md
         - Import CSV data: superuser/import-csv.md
-        - Subdomains*: superuser/subdomain.md
     - Developer:
         - GitHub: developer/github.md
     - Welcome: index.md
