@@ -635,7 +635,65 @@ Follow these steps to determine if the default configuration for background proc
     However, in some installations it's set to `/usr/local/bin/php` and in others to `/usr/bin/php-cli`.
     If you are not successful, contact the host to ask for the right path.
 
-## Add the site to Beyond Compare
+---
+
+## Install Avant plugins
+The plugins can be download from <https://github.com/gsoules>.
+
+!!! warning "Important"
+    Do not copy the plugins from the local server because their folders contain the local GIT repositories.
+
+Install the following plugins and perform only minimal configuration. Additional configuration will occur later.
+
+-   AvantCommon
+    -	Specify the Identifier and Alias if applicable
+    -	Enable the Lightbox feature
+-   AvantAdmin
+    -	Specify the Item Type name for the organization
+-   AvantCustom
+    -	There are no configuration options
+-   AvantElements
+    -	Don’t configure anything during this step
+-   AvantRelationships
+    -	Set the Visualization Preview option to `At designated location`
+-   AvantSearch
+    -	Don’t configure anything during this step
+-   AvantZoom
+    -	There are no configuration option
+
+---
+
+## Install AvantTheme
+
+-	Get the theme from GitHub and copy to the `digitalarchive/themes` folder
+-	Extract and rename
+-	Remove the CSS files for other organization’s theme customization e.g. swhpl.css
+-	Go to Appearance > Themes and choose to use the theme
+-	Create a logo file image approximately 500px X 110px
+-	Configure:
+    -	Set the CSS file name
+    -	Upload the Logo File
+    -	Enter the footer text
+-	Adjust the custom CSS as necessary.
+
+---
+
+## Remove unused plugins and themes
+-	Remove unused plugins:
+    -	Coins
+    -	Exhibit Builder
+-	Remove all themes except AvantTheme
+
+---
+
+## Install Simple Pages plugin
+-	Install the plugin (it comes with the Omeka installation)
+-	To allow all HTML, e.g. <img> tags, go to Settings > Security and uncheck the Enable HTML Filtering box. Otherwise, filtered elements get removed when you save the Simple page.
+-	Note: When adding Simple pages, be sure to check the box for Publish this page so it will show up in the Omeka navigation section.
+
+---
+
+## Add site to Beyond Compare
 [Beyond Compare](https://www.scootersoftware.com/) is a tool for comparing and synchronizing local
 files and folders with their remote counterparts on the Digital Archive server. It does this using
 its builtin FTP support.
@@ -676,6 +734,130 @@ and the remote site and then save two comparison sessions, one for the `themes` 
 
 To rename or delete existing sessions, click on the `Home` button in the ribbon
 and then access the session of interest in the Sessions tree at left.
+
+---
+
+## Set Navigation
+-	Go to Appearance > Navigation
+-	Uncheck Browse Items and Browse Collections
+-	Add a Home tab
+    -	Label: Home
+    -	URL: the organization’s home page
+    -	Click Add Link
+    -	Check the box for the Home item
+    -	Reorder with Home first, About second
+    -	Click Save Changes 
+-	Add any other menu items.
+
+---
+
+## Configure SimpleVocab
+-	Install the SimpleVocab plugin version 2.1 or higher
+-	Add vocabularies for Type, Subject and any others.
+
+---
+
+## Configure Avant plugins
+
+### AvantCommon
+-	Private Elements
+-	Installation specific
+-	Unused Elements (these are all Dublin Core)
+-	Source (maybe)
+-	Contributor
+-	Relation
+-	Format
+-	Language
+-	Coverage
+
+### AvantElements
+-	Set field types
+-	Display Order
+    -	Identifier
+    -	Title
+    -	Type
+    -	Subject
+    -	Description
+    -	Creator
+    -	Publisher
+    -	Date
+    -	Other installation specific
+    -	Rights
+-	Implicit Link
+    -	Type
+    -	Subject
+    -	Other installation specific
+-	Hide Descriptions
+    -	Checked
+-	Validation
+    -	Title: required, simple-text
+    -	Type: required
+    -	Subject: required
+    -	Creator: simple-text
+    -	Publisher: simple-text
+    -	Date: date
+    -	Rights: required
+-	Allow Add Input
+    -	Title
+    -	Creator
+    -	Subject
+-	Text Field
+    -	Installation specific
+-	SimpleVocab Fields
+    -	Type
+    -	Subject
+    -	Installation specific
+-	Title Sync
+    -	Creator
+    -	Publisher
+
+###	AvantSearch
+-	Titles Only
+-	Checked
+
+### AvantRelationships
+-	Implicit Relationships
+-	Creator: Created
+-	Publisher: Published (if applicable)
+
+### AvantZoom
+-	Create a zoom folder in the files folder.
+-	Create an images folder in the zoom folder.
+-	Copy the zoomify control icons into the images folder (these are icons used by Openseadragon)
+-	Could this be done by the AvantImages plugin during installation? Would it have rights?
+
+---
+
+## Setup Elasticsearch
+-	Create an elasticsearch folder in the files folder.
+-	Create IAM credentials
+    -	Login aws.amazoncom
+    -	In the top menu, under SWHPL Digital Archive, choose My Security Credentials
+    -	Click Users in the left menu
+    -	Click the Add User button
+    -	Use the organization name for the user name e.g. gcihs
+    -	For the Access type check the Programmatic Access box
+    -	Click the Next: Permissions button
+    -	In the Add User to Group section, click the contributor group
+    -	Click the Next: Tags button
+    -	Click the Next: Review button
+    -	Click the Create User button
+    -	Copy the Access Key ID and Secret Access Key to the configurations Excel sheet
+    Important: This is the only opportunity to obtain the secret key
+    -	Click the Close button
+
+---
+
+## Remove stuff used for import but no longer needed
+-	CSV Import+ plugin
+-	/file/import folder
+
+---
+
+## Max Upload Filesize Limit
+This is controlled by the PHP settings. In cPanel PHP Selector options set both post_max_size and upload_max_size to the desired limit.
+
+---
 
 ## Add additional elements
 See the Administrator documentation on how to [add a new element](../../administrator/omeka/#add-a-new-element).    

@@ -55,8 +55,10 @@ You can now deploy these files to the server.
 Also see the MkDocs documentation for [building the website](https://www.mkdocs.org/#building-the-website).
 
 ## Deploy the MkDocs website
-Use [Beyond Compare](beyond-compare.md) to sync the `site` folder in the `MkDocs repository` with the
+Use Beyond Compare to sync the `site` folder in the `MkDocs repository` with the
 corresponding folder on the server `https://digitalarchive.avantlogic.net/docs`.
+To learn how, see the [Beyond Compare section](install-digital-archive.md#add-site-to-beyond-compare)
+in the instructions for installing a Digital Archive site.
 
 !!! Warning
     Be very careful that the `docs/protected/.htaccess` file does not get removed during synchronization because it is
