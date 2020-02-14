@@ -57,7 +57,7 @@ Also see the MkDocs documentation for [building the website](https://www.mkdocs.
 ## Deploy the MkDocs website
 Use Beyond Compare to sync the `site` folder in the `MkDocs repository` with the
 corresponding folder on the server `https://digitalarchive.avantlogic.net/docs`.
-To learn how, see the [Beyond Compare section](install-digital-archive.md#add-site-to-beyond-compare)
+To learn how, see the [Beyond Compare section](install-digital-archive.md#configure-beyond-compare)
 in the instructions for installing a Digital Archive site.
 
 !!! Warning

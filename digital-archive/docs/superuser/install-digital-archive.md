@@ -8,8 +8,9 @@ This page explains all of the tasks that AvantLogic performs to install and conf
     **[Print this checklist](installation-checklist.pdf)**
 
 ---
-
 ## Prerequisites
+---
+
 **Hosting requirements**
 
 The web host must be an Apache web server that satisfies the 
@@ -39,8 +40,8 @@ together in the the same `public_html`.
     It will get created later during the *Install Omeka Classic files* step.
 
 ---
-
-## Create a MySQL database
+## Create MySQL database
+---
 
 A new Reclaim Hosting account does not come with a database. Follow the steps below to
 use [cPanel] to create a new empty database and a database user for the Digital Archive.
@@ -80,20 +81,20 @@ use [cPanel] to create a new empty database and a database user for the Digital 
     -   Check the `ALL PRIVILEGES` checkbox at the top
     -	Click the `Next Step` button
 
-### Add a MySQL Workbench connection
+### Configure MySQL Workbench
 
 -   [Add the database to MySQL Workbench](mysql-workbench.md#add-a-database-connection)
 
 ---
 
-## Copy a MySQL database
+### Copy a MySQL database
 
 This section explains how to use an existing database for a new installation.
 
-!!! note ""
-    **Only perform this step** if you need to move a database from one installation to another.
+!!! warning ""
+    **Only perform this task** if you need to move a database from one installation to another.
 
-### Export a MySQL database to a `.sql` file
+**Export a MySQL database to a `.sql` file**
 
 -	Go to [cPanel] and choose `phpMyAdmin`
 -	On the far left, click on the name of the database to export
@@ -102,11 +103,10 @@ This section explains how to use an existing database for a new installation.
 -	For **Format** choose `SQL`
 -	Click `Go`
 -	On the `Save` dialog, choose where to save the file on your computer  
+-   If not done already, follow the instructions
+    above to [create a MySQL database](#create-mysql-database)
 
-### Create an empty database
-If you have not done so already, follow the instructions above to [create a MySQL database](#create-a-mysql-database).
-
-### Import a MySQL database from a `.sql` file
+**Import a MySQL database from a `.sql` file**
 
 -	Run MySQL Workbench
 -	Double click on the name of the new database (make sure the name becomes bold)
@@ -117,7 +117,7 @@ If you have not done so already, follow the instructions above to [create a MySQ
 
 ---
 
-## Change database storage engine
+### Change database storage engine
 
 These steps change the storage engine for the `search_texts` table from `MyISAM` to `InnoDB`. They also add a `FULLTEXT` index to the `title` column of the `search_texts` table. To learn the reason for making these changes, see the AvantSearch
 plugin topics on [improving search results](../../plugins/avantsearch/avantsearch/#improving-search-results)
@@ -141,8 +141,10 @@ Follow these steps to change the storage engine:
 -	Close the phpMyAdmin browser tab
 
 ---
+## Install Omeka
+---
 
-## Install Omeka Classic files
+### Copy installation files to server
 
 Follow these steps to upload the Omeka Classic files to the web server. You can also read
 [Omeka's installation instructions](https://omeka.org/classic/docs/Installation/Installation/).
@@ -157,10 +159,10 @@ Follow these steps to upload the Omeka Classic files to the web server. You can 
 
 ---
 
-## Edit database configuration
+### Edit database configuration
 
 Follow these steps to configure Omeka to use the database you created.
-The *username*, *password*, and *dbname* values come from the [create a MySQL database](#create-a-mysql-database) task.
+The *username*, *password*, and *dbname* values come from the [create MySQL database](#create-mysql-database) task.
 
 
 -	Go to [cPanel] and choose `File Manager`
@@ -184,8 +186,6 @@ To learn more, see the Omeka documentation for the [database configuration file]
 
 ---
 
-## Enable errors and logging
-
 ### Enable error reporting
 
 This step allows PHP errors to appear in the browser. Normally you would not want
@@ -205,6 +205,8 @@ this for a production site, but it's better to become aware of a problem if it o
     installation's root folder. You'll edit the root folder's copy later in the steps to
     [configure site security](#configure-site-security).
 
+---
+
 ### Enable error logging
 
 Follow these steps to enable Omeka error logging so that a history of errors will be recorded.
@@ -219,8 +221,8 @@ To learn more, see the Omeka documentation for [retrieving error messages](https
 Errors will now be written to `digitalarchive/application/logs/errors.log`.
 
 ---
-
 ## Configure Omeka
+---
 
 You are now ready to launch Omeka and configure site settings.
 
@@ -266,15 +268,13 @@ documentation for an explanation of the configuration settings.
 
 ![Site settings](install-digital-archive-2.jpg)
 
-### Login to Omeka
-
-Follows these steps to login to Omeka.
-
--	On the `Success!` page, click the `Admin Dashboard` button
+-	Click the `Admin Dashboard` button
 -	Login with the super administrator user name and password
 -   Check the `Remember Me` checkbox
 -   Click the `Login` button
 -   The `Dashboard` page should display.
+
+---
 
 ### Configure additional settings
 
@@ -306,21 +306,10 @@ Follows these steps to finishing configuring Omeka.
         or contact your host's technical support and ask them to tell you the path 
 
 ---
-
-## Verify PDF support
-
-These steps verify that a program called `pdftotext` is installed on the web server.
-It is used by the `PdfText` plugin which in turn is used by the `AvantElastic` plugin to 
-make PDF files searchable. If you won't be using `AvantElastic`, you can skip this step.
-
--   Go to [cPanel] and choose `Terminal`
--   In the terminal window, type `pdftotext -v` and press `Enter`
--   The `pdftotext` program should display its version
--   If instead you see `command not found`, ask your host to install `pdftotext`
-
+## Configure site security
 ---
 
-## Configure site security
+### Edit .htaccess
 
 By default, an Omeka installation uses HTTP for every page except the login page which uses HTTPS.
 Perform the steps below to follow the best practice of using HTTPS for all pages.
@@ -378,9 +367,82 @@ You can even redirect to a page of search results, for example, to display a sit
 See [this post](https://stackoverflow.com/questions/990392/htaccess-rewrite-to-redirect-root-url-to-subdirectory)
 to learn why using RedirectMatch works than RewriteRule for this purpose.
 
-## Install ArchiveRepertory plugin
+---
 
-This Omeka plugin controls where files that you attach to an Omeka item are stored.
+### Set file size upload limit
+This is controlled by the PHP settings. In cPanel PHP Selector options set both post_max_size and upload_max_size to the desired limit.
+
+---
+## Acquire Digital Archive assets
+---
+
+### Get Digital Archive zip files
+
+The following zip files are required for most Digital Archive installations.
+Those marked with an asterisk are needed only if using Elasticsearch and/or Amazon S3.
+
+Use the instructions below to locate and download the zip files into a folder on your computer.
+
+Asset type  | Asset name         | Zip file name
+------------|--------------------|--------------
+Omeka plugin|ArchiveRepertory    |ArchiveRepertory 2.15.5.zip
+Avant plugin|AvantAdmin          |AvantAdmin-master.zip
+Avant plugin|AvantCommon         |AvantCommon-master.zip
+Avant plugin|AvantCustom         |AvantCustom-master.zip
+Avant plugin|AvantElasticsearch *|AvantElasticsearch-master.zip
+Avant plugin|AvantElements       |AvantElements-master.zip
+Avant plugin|AvantRelationships  |AvantRelationships-master.zip
+Avant plugin|AvantS3 *           |AvantS3-master.zip
+Avant plugin|AvantSearch         |AvantSearch-master.zip
+Avant theme |AvantTheme          |AvantTheme-master.zip
+Avant plugin|AvantZoom           |AvantZoom-master.zip
+Omeka plugin|BulkMetadataEditor  |BulkMetadataEditor.zip
+Omeka plugin|Geolocation         |Geolocation-3.0.1.zip
+Omeka plugin|PdfText *            |PdfText-1.3.zip
+
+**Avant plugin or theme**
+
+!!! warning ""
+    Don't use plugins from the development server in place of zip files, because the development
+    folders contain GIT repositories which should not be uploaded to the web server.
+
+-   Go to <https://github.com/gsoules?tab=repositories>
+-   Click on a plugin or theme name to go to its GitHub repository page
+-   Click the green `Clone or download` dropdown as shown below
+-   Choose `Download ZIP`
+-   Save the file to a folder on your computer
+
+![GitHub download](install-digital-archive-5.jpg)
+
+!!! danger "Warning"
+    The instructions above will download the latest revision of the files. If you are not sure if
+    those files are for a stable version, download the latest release instead.
+
+**Other Omeka plugin**
+
+-   Go to <https://omeka.org/classic/plugins/>
+-   Locate the plugin and click its `Download` button as shown below
+-   Save the file to a folder on your computer
+
+![GitHub download](install-digital-archive-6.jpg)
+
+### Upload and extract plugins and theme
+
+For each zip file:
+
+-   Follow the instructions to [upload and extract a zip file](web-host.md#upload-and-extract-a-zip-file)
+-   Put the theme into `public_html/digitalarchive/themes`
+-   Put plugins into `public_html/digitalarchive/plugins`
+-   If the zip file name is not the same as the asset name,
+    rename the extracted folder to the asset name.
+    For example, rename `AvantCommon-master` to `AvantCommon`
+---
+## Configure file storage
+---
+
+### Install ArchiveRepertory plugin
+
+ArchiveRepertory controls where files that you attach to an Omeka item are stored.
 
 !!! warning "Important"
     Install this plugin now *before adding any items to Omeka* because the plugin overrides Omeka's
@@ -416,7 +478,8 @@ Follow these steps to install and configure the plugin.
 
 ---
 
-## Create the site Item Type
+## Define Digital Archive item
+---
 
 Omeka installs with a number of different *Item Types* and *Elements*; however, the Digital Archive
 uses only one Item Type which contains all of the Dublin Core elements plus only those additional elements
@@ -426,6 +489,8 @@ learn more, see the Omeka documentation for [Item Types](https://omeka.org/class
 Follow the steps below to remove unused Item Types and Elements and
 create a single Item Type having the elements needed by the organization.
 
+---
+
 ###	Delete unused item types
 -   Open the database in [MySQL Workbench](mysql-workbench.md#open-a-database)
 -	Right click on the `omeka_item_types` table and choose `Select Rows`
@@ -434,6 +499,8 @@ create a single Item Type having the elements needed by the organization.
 -	Click the `Apply` button in the lower right
 -	Click the `Apply` button on the `Apply SQL Script to Database` dialog
 -   When the deletion completes, click the `Finish` button
+
+---
 
 ###	Delete unused elements
 -	Right click on the `omeka_elements` table and choose `Select Rows`
@@ -445,6 +512,8 @@ create a single Item Type having the elements needed by the organization.
 -   When the deletion completes, click the `Finish` button
 
 You can now quit MySQL Workbench.
+
+---
 
 ###	Create a new Item Type
 -   Login to Omeka 
@@ -459,15 +528,23 @@ the organization needs, you can add them now, or you can
 [add additional elements](#add-additional-elements) as the last task of the installation.
 The Administrator documentation explains how to [add a new element](../../administrator/omeka/#add-a-new-element).    
 
-### Arrange the element order
+---
+### Add additional elements
+
+See the Administrator documentation on how to [add a new element](../../administrator/omeka/#add-a-new-element).    
+Also, arrange the order of all elements.
+
+---
+
+### Arrange element order
 The default order in which the Dublin Core elements appear when editing an item is not
 suitable because the Identifier and Type fields appears near the end. Follow the instructions to
 [arrange the element order](../../administrator/omeka/#arrange-element-order) into the
 recommended sequence for the Digital Archive.
 
 ---
-
 ## Set up FTP access
+---
 
 This section describes how to set up FTP access for a superuser and how to create a limited
 FTP account for a Digital Archive administrator.
@@ -499,6 +576,7 @@ Follow these steps to access the Digital Archive web server via FTP.
 
 ![Administrator FTP access](install-digital-archive-4.jpg)
 
+---
 
 ### Create limited FTP account
 
@@ -520,6 +598,9 @@ installation folders.
 ---
 
 ## Preliminary testing
+
+---
+
 Before proceeding with the installation, verify that everything is working up to this point.
 
 ### Add a test item
@@ -573,64 +654,8 @@ Follow these steps to determine if the default configuration for background proc
     If you are not successful, contact the host to ask for the right path.
 
 ---
-
-## Get plugins and theme
-
-The following plugins and theme are required for most Digital Archive installations.
-Those marked with an asterisk are needed only if using Elasticsearch and Amazon S3.
-
-```
-ArchiveRepertory
-AvantCommon
-AvantAdmin
-AvantCustom
-AvantElements
-AvantElasticsearch*
-AvantRelationships
-AvantS3*
-AvantSearch
-AvantTheme
-AvantZoom
-Bulk Metadata Editor
-PDF Text*
-```
-Follow the steps below to locate and download the plugins and theme
-
-**Avant plugin or theme:**
-
-!!! warning ""
-    Don't copy Avant folders from the development server because they contain GIT repositories.
-
--   Go to <https://github.com/gsoules?tab=repositories>
--   Click on a plugin or theme name to go to its GitHub repository page
--   Click the green `Clone or download` dropdown
--   Choose `Download ZIP`
--   Save the file to a folder on your computer
-
-![GitHub download](install-digital-archive-5.jpg)
-
-**Other Omeka plugin**
-
--   Go to <https://omeka.org/classic/plugins/>
--   Locate the plugin and click its `Download` button
--   Save the file to a folder on your computer
-
-![GitHub download](install-digital-archive-6.jpg)
+## Install Digital Archive plugins
 ---
-
-## Add plugins to Digital Archive
-
--   Follow the instructions to [upload and extract a zip file](web-host.md#upload-and-extract-a-zip-file)
-    into the `public_html/digitalarchive/plugins` folder
--   If necessary, rename the newly created plugin folder to the plugin's correct name    
--   Login to Omeka with a user name that has `Super` access
--   Click `Plugins` in the top menu bar
--   The newly uploaded plugin should appear in the list with a green `Install` button
--   See the plugin's documentation for configuration information
-
----
-
-## Install plugins
 
 For each plugin, follow the steps to [add an Omeka plugin](web-host.md#add-an-omeka-plugin).
 
@@ -654,11 +679,46 @@ Install the following plugins and perform only minimal configuration. Additional
 
 ---
 
+### Verify PDF support
+
+These steps verify that a program called `pdftotext` is installed on the web server.
+It is used by the `PdfText` plugin which in turn is used by the `AvantElastic` plugin to 
+make PDF files searchable. If you won't be using `AvantElastic`, you can skip this step.
+
+-   Go to [cPanel] and choose `Terminal`
+-   In the terminal window, type `pdftotext -v` and press `Enter`
+-   The `pdftotext` program should display its version
+-   If instead you see `command not found`, ask your host to install `pdftotext`
+
+---
+
+### Install Simple Pages plugin
+-	Install the plugin (it comes with the Omeka installation)
+-	To allow all HTML, e.g. <img> tags, go to Settings > Security and uncheck the Enable HTML Filtering box. Otherwise, filtered elements get removed when you save the Simple page.
+-	Note: When adding Simple pages, be sure to check the box for Publish this page so it will show up in the Omeka navigation section.
+
+---
+
+### Remove unused plugins
+-	Remove unused plugins:
+    -	Coins
+    -	Exhibit Builder
+
+---
 ## Install AvantTheme
+---
+
+This task was deferred until now because AvantTheme depends on
+some of the Avant plugins
+
+### Add theme to installation
 
 -	Get the theme from GitHub and copy to the `digitalarchive/themes` folder
 -	Extract and rename
 -	Remove the CSS files for other organization’s theme customization e.g. swhpl.css
+
+
+### Configure AvantTheme
 -	Go to Appearance > Themes and choose to use the theme
 -	Create a logo file image approximately 500px X 110px
 -	Configure:
@@ -669,70 +729,12 @@ Install the following plugins and perform only minimal configuration. Additional
 
 ---
 
-## Remove unused plugins
--	Remove unused plugins:
-    -	Coins
-    -	Exhibit Builder
-
----
-
-## Remove unused themes
+### Remove unused themes
 -	Remove all themes except AvantTheme
 
 ---
 
-## Install Simple Pages plugin
--	Install the plugin (it comes with the Omeka installation)
--	To allow all HTML, e.g. <img> tags, go to Settings > Security and uncheck the Enable HTML Filtering box. Otherwise, filtered elements get removed when you save the Simple page.
--	Note: When adding Simple pages, be sure to check the box for Publish this page so it will show up in the Omeka navigation section.
-
----
-
-## Add site to Beyond Compare
-[Beyond Compare](https://www.scootersoftware.com/) is a tool for comparing and synchronizing local
-files and folders with their remote counterparts on the Digital Archive server. It does this using
-its builtin FTP support.
-
-To add a Digital Archive site to Beyond Compare, you need to specify the location of the local site
-and the remote site and then save two comparison sessions, one for the `themes` folder and one for the
-`plugins` folder.
-
--	Run Beyond Compare
--	Click on the `Folder Compare` option on the home page
--	Set the local site
-    -	Click the folder icon in the upper right of the left pane
-    -   Click `Local File System` in the left panel
-    -	Navigate to `C:\xampp\htdocs\omeka-2.6` in the right panel
-    -   Click the `OK` button
--	Set the FTP site
-    -	Click the folder icon in the upper right of the right pane
-    -	Click on `Quick Connect` > `FTP Profile` in the left panel
-    -	Enter the FTP credentials for the remote server
-    -	Click the `Connect & Browse` button to verify that you can access the site
-    -	Click the OK button
--   Save the theme comparison session    
-    -	In each pane:
-        -   Navigate to the `themes` folder
-        -	Right click on the folder and choose `Set as Base Folder`
-    -	On the main menu, click `Session` > `Save Session As`
-    -	In the `Save current settings as` field, type e.g. `SWHPL Theme`
-    -   In the `Create in` tree click `Digital Archive`
-    -	Click the `OK` button
--   Save the plugins comparison session    
-    -	In each pane:
-        -   Navigate to the `plugins` folder
-        -	Right click on the folder and choose `Set as Base Folder`
-    -	On the main menu, click `Session` > `Save Session As`
-    -	In the `Save current settings as` field, type e.g. `SWHPL Plugins`
-    -   In the `Create in` tree click `Digital Archive`
-    -	Click the `OK` button
-
-To rename or delete existing sessions, click on the `Home` button in the ribbon
-and then access the session of interest in the Sessions tree at left.
-
----
-
-## Set Navigation
+### Set navigation
 -	Go to Appearance > Navigation
 -	Uncheck Browse Items and Browse Collections
 -	Add a Home tab
@@ -746,13 +748,60 @@ and then access the session of interest in the Sessions tree at left.
 
 ---
 
-## Configure SimpleVocab
+## Configure Beyond Compare
+[Beyond Compare](https://www.scootersoftware.com/) is a tool for comparing and synchronizing local
+files and folders with their remote counterparts on the Digital Archive server. It does this using
+its builtin FTP support.
+
+To add a Digital Archive site to Beyond Compare, you need to specify the location of the local site
+and the remote site and then save two comparison sessions, one for the `themes` folder and one for the
+`plugins` folder.
+
+### Create theme comparison session
+-	Run Beyond Compare
+-	Click on the `Folder Compare` option on the home page
+-	Set the local site
+    -	Click the folder icon in the upper right of the left pane
+    -   Click `Local File System` in the left panel
+    -	Navigate to `C:\xampp\htdocs\omeka-2.6` in the right panel
+    -   Click the `OK` button
+-	Set the FTP site
+    -	Click the folder icon in the upper right of the right pane
+    -	Click on `Quick Connect` > `FTP Profile` in the left panel
+    -	Enter the FTP credentials for the remote server
+    -	Click the `Connect & Browse` button to verify that you can access the site
+    -	Click the OK button
+-	In each pane:
+    -   Navigate to the `themes` folder
+    -	Right click on the folder and choose `Set as Base Folder`
+-	On the main menu, click `Session` > `Save Session As`
+-	In the `Save current settings as` field, type e.g. `SWHPL Theme`
+-   In the `Create in` tree click `Digital Archive`
+-	Click the `OK` button
+
+### Create plugin comparison session    
+-	In each pane:
+    -   Navigate to the `plugins` folder
+    -	Right click on the folder and choose `Set as Base Folder`
+-	On the main menu, click `Session` > `Save Session As`
+-	In the `Save current settings as` field, type e.g. `SWHPL Plugins`
+-   In the `Create in` tree click `Digital Archive`
+-	Click the `OK` button
+
+To rename or delete existing sessions, click on the `Home` button in the ribbon
+and then access the session of interest in the Sessions tree at left.
+
+---
+## Configure plugins
+---
+
+### Configure SimpleVocab
 -	Install the SimpleVocab plugin version 2.1 or higher
 -	Add vocabularies for Type, Subject and any others.
 
 ---
 
-## Configure Avant plugins
+### Configure Avant plugins
 
 ### AvantCommon
 -	Private Elements
@@ -823,7 +872,7 @@ and then access the session of interest in the Sessions tree at left.
 
 ---
 
-## Setup Elasticsearch
+### Configure Elasticsearch
 -	Create an elasticsearch folder in the files folder.
 -	Create IAM credentials
     -	Login aws.amazoncom
@@ -843,14 +892,7 @@ and then access the session of interest in the Sessions tree at left.
 
 ---
 
-## Set file size upload limit
-This is controlled by the PHP settings. In cPanel PHP Selector options set both post_max_size and upload_max_size to the desired limit.
-
----
-
-## Add additional elements
-See the Administrator documentation on how to [add a new element](../../administrator/omeka/#add-a-new-element).    
-Also, arrange the order of all elements.
+### Setup S3
 
 
 [cPanel]: web-host.md#cpanel
