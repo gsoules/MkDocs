@@ -94,7 +94,7 @@ This section explains how to use an existing database for a new installation.
 !!! warning ""
     **Only perform this task** if you need to move a database from one installation to another.
 
-**Export a MySQL database to a `.sql` file**
+#### Export a MySQL database to a `.sql` file
 
 -	Go to [cPanel] and choose `phpMyAdmin`
 -	On the far left, click on the name of the database to export
@@ -106,7 +106,7 @@ This section explains how to use an existing database for a new installation.
 -   If not done already, follow the instructions
     above to [create a MySQL database](#create-mysql-database)
 
-**Import a MySQL database from a `.sql` file**
+#### Import a MySQL database from a `.sql` file
 
 -	Run MySQL Workbench
 -	Double click on the name of the new database (make sure the name becomes bold)
@@ -369,42 +369,62 @@ to learn why using RedirectMatch works than RewriteRule for this purpose.
 
 ---
 
-### Set file size upload limit
-This is controlled by the PHP settings. In cPanel PHP Selector options set both post_max_size and upload_max_size to the desired limit.
+### Configure PHP settings
+
+-	Go to [cPanel] and choose `MultiPHP INI Editor`
+-   Select the `Basic Mode` tab
+-   Choose the site from the dropdown menu
+-   Set:
+    -   **max_execution_time**: 120
+    -   **memory_limit**: 512M
+    -   **post_max_size**: 128M
+    -   **upload_max_filesize**: 128M
+-   Click the `Apply` button
 
 ---
-## Acquire Digital Archive assets
+## Add plugins and theme
 ---
+
+The Digital Archive is an Omeka installation combined with a set of plugin and a theme
+which all together provide the Digital Archive functionality. At this point in the
+installation process, Omeka is installed and now the plugins and theme for the Digital
+Archive need to be added to the installation so that later you can install and configure
+each plugin. To *add* them means to upload them to the web server into the proper
+installation folders.
 
 ### Get Digital Archive zip files
 
 The following zip files are required for most Digital Archive installations.
 Those marked with an asterisk are needed only if using Elasticsearch and/or Amazon S3.
 
-Use the instructions below to locate and download the zip files into a folder on your computer.
+Type         | Name               | Zip file name
+-------------|--------------------|--------------
+Omeka plugin |ArchiveRepertory    |ArchiveRepertory 2.15.5.zip
+Avant plugin |AvantAdmin          |AvantAdmin-master.zip
+Avant plugin |AvantCommon         |AvantCommon-master.zip
+Avant plugin |AvantCustom         |AvantCustom-master.zip
+Avant plugin |AvantElasticsearch *|AvantElasticsearch-master.zip
+Avant plugin |AvantElements       |AvantElements-master.zip
+Avant plugin |AvantRelationships  |AvantRelationships-master.zip
+Avant plugin |AvantS3 *           |AvantS3-master.zip
+Avant plugin |AvantSearch         |AvantSearch-master.zip
+Avant theme  |AvantTheme          |AvantTheme-master.zip
+Avant plugin |AvantZoom           |AvantZoom-master.zip
+Omeka plugin |BulkMetadataEditor  |BulkMetadataEditor.zip
+Omeka plugin |Geolocation         |Geolocation-3.0.1.zip
+Omeka plugin |PdfText *           |PdfText-1.3.zip
+Omeka plugin |SimpleVocab         |SimpleVocab-2.2.2.zip
 
-Asset type  | Asset name         | Zip file name
-------------|--------------------|--------------
-Omeka plugin|ArchiveRepertory    |ArchiveRepertory 2.15.5.zip
-Avant plugin|AvantAdmin          |AvantAdmin-master.zip
-Avant plugin|AvantCommon         |AvantCommon-master.zip
-Avant plugin|AvantCustom         |AvantCustom-master.zip
-Avant plugin|AvantElasticsearch *|AvantElasticsearch-master.zip
-Avant plugin|AvantElements       |AvantElements-master.zip
-Avant plugin|AvantRelationships  |AvantRelationships-master.zip
-Avant plugin|AvantS3 *           |AvantS3-master.zip
-Avant plugin|AvantSearch         |AvantSearch-master.zip
-Avant theme |AvantTheme          |AvantTheme-master.zip
-Avant plugin|AvantZoom           |AvantZoom-master.zip
-Omeka plugin|BulkMetadataEditor  |BulkMetadataEditor.zip
-Omeka plugin|Geolocation         |Geolocation-3.0.1.zip
-Omeka plugin|PdfText *            |PdfText-1.3.zip
-
-**Avant plugin or theme**
+#### Get Avant plugin or theme zip file
 
 !!! warning ""
-    Don't use plugins from the development server in place of zip files, because the development
+    **Imprtant:** Don't use plugins from the development server in place of zip files, because the development
     folders contain GIT repositories which should not be uploaded to the web server.
+
+    **Warning:** The instructions below download the latest revision of the plugins and theme.
+    If you are not sure if those files are for a stable version, download the latest release instead.
+
+Follow these steps to locate and download the Avant plugins and theme zip files
 
 -   Go to <https://github.com/gsoules?tab=repositories>
 -   Click on a plugin or theme name to go to its GitHub repository page
@@ -414,11 +434,9 @@ Omeka plugin|PdfText *            |PdfText-1.3.zip
 
 ![GitHub download](install-digital-archive-5.jpg)
 
-!!! danger "Warning"
-    The instructions above will download the latest revision of the files. If you are not sure if
-    those files are for a stable version, download the latest release instead.
+#### Get Other Omeka plugin zip file
 
-**Other Omeka plugin**
+Follow these steps to locate and download other Omeka plugin zip files
 
 -   Go to <https://omeka.org/classic/plugins/>
 -   Locate the plugin and click its `Download` button as shown below
@@ -426,16 +444,78 @@ Omeka plugin|PdfText *            |PdfText-1.3.zip
 
 ![GitHub download](install-digital-archive-6.jpg)
 
-### Upload and extract plugins and theme
+!!! note 
+    The sections that follow assume that you are familiar with the process to
+    [upload and extract a zip file](web-host.md#upload-and-extract-a-zip-file).
 
-For each zip file:
+### Upload and extract the theme
 
--   Follow the instructions to [upload and extract a zip file](web-host.md#upload-and-extract-a-zip-file)
--   Put the theme into `public_html/digitalarchive/themes`
--   Put plugins into `public_html/digitalarchive/plugins`
--   If the zip file name is not the same as the asset name,
-    rename the extracted folder to the asset name.
-    For example, rename `AvantCommon-master` to `AvantCommon`
+-   Upload `AvantTheme-master.zip` into `public_html/digitalarchive/themes`
+-   Extract `AvantTheme-master.zip`
+-   Click the cPanel `Reload` menu item to see the resulting folder
+-   Delete `AvantTheme-master.zip`
+-   Rename the `AvantTheme-master` folder to `AvantTheme`
+
+### Upload the plugin zip files
+
+-   Go to the folder where you downloaded the zip files
+-   Select all the files, except for the theme
+-   Right click the selection and choose `Send to ` > `Compressed (zip) folder`
+
+![GitHub download](install-digital-archive-7.jpg)
+
+-   Rename the newly created zip file to `plugins.zip`
+-   Upload `plugins.zip` into `public_html/digitalarchive/plugins`
+-   Extract `plugins.zip` to get the individual plugin zip files
+-   Delete `plugins.zip`
+
+### Extract individual plugin zip files
+
+For each of the plugin zip files:
+
+-   Extract the zip file
+-   Click the cPanel `Reload` menu item to see the resulting folder
+-   Delete the zip file
+-   Rename the folder from the zip file name to the plugin name from the table above
+
+
+### Remove unused plugins
+Delete these two folders for plugins that the Digital Archive does not use:
+
+``` plaintext
+public_html/digitalarchive/plugins/Coins
+public_html/digitalarchive/plugins/ExhibitBuilder
+```    
+The `plugins` folder on the web server should now look like this:
+![GitHub download](install-digital-archive-8.jpg)
+
+---
+## Install AvantTheme
+---
+AvantTheme, and many of the AvantPlugins, depend on the AvantCommon plugin being installed.
+Before you can install the theme, install AvantCommon by following these steps:
+
+-   Login to Omeka as a super administrator
+-	Click `Plugins` in the top menu bar
+-   Many of the plugins added in the previous task will be shaded in pink
+-   Click the `Install` button for AvantCommon
+-   On the `Configure Plugin: AvantCommon` page:
+    -   Don't enter any values for now
+    -   Click the `Save Changes` button
+-   The pink shading should be gone from all of the plugins except for AvantS3
+-	Click `Appearance` in the top menu bar
+-   On the `Themes` page, click the `Use this theme` button for AvantTheme
+-   AvantTheme is now the current theme
+-   Click the `Configure Theme` button
+-   For **Logo File** browse to `Digital Archive AvantLogic\Installations\Template`
+-   Choose `logo.jpg`
+-   Click the `Save Changes` button
+
+### Remove unused themes
+
+-   Use [cPanel] to navigate *into* `public_html/digitalarchive/themes`
+-	Delete all the theme folders except AvantTheme
+
 ---
 ## Configure file storage
 ---
@@ -697,58 +777,12 @@ make PDF files searchable. If you won't be using `AvantElastic`, you can skip th
 -	To allow all HTML, e.g. <img> tags, go to Settings > Security and uncheck the Enable HTML Filtering box. Otherwise, filtered elements get removed when you save the Simple page.
 -	Note: When adding Simple pages, be sure to check the box for Publish this page so it will show up in the Omeka navigation section.
 
----
-
-### Remove unused plugins
--	Remove unused plugins:
-    -	Coins
-    -	Exhibit Builder
+Add an About page
 
 ---
-## Install AvantTheme
----
-
-This task was deferred until now because AvantTheme depends on
-some of the Avant plugins
-
-### Add theme to installation
-
--	Get the theme from GitHub and copy to the `digitalarchive/themes` folder
--	Extract and rename
--	Remove the CSS files for other organization’s theme customization e.g. swhpl.css
-
-
-### Configure AvantTheme
--	Go to Appearance > Themes and choose to use the theme
--	Create a logo file image approximately 500px X 110px
--	Configure:
-    -	Set the CSS file name
-    -	Upload the Logo File
-    -	Enter the footer text
--	Adjust the custom CSS as necessary.
-
----
-
-### Remove unused themes
--	Remove all themes except AvantTheme
-
----
-
-### Set navigation
--	Go to Appearance > Navigation
--	Uncheck Browse Items and Browse Collections
--	Add a Home tab
-    -	Label: Home
-    -	URL: the organization’s home page
-    -	Click Add Link
-    -	Check the box for the Home item
-    -	Reorder with Home first, About second
-    -	Click Save Changes 
--	Add any other menu items.
-
----
-
 ## Configure Beyond Compare
+---
+
 [Beyond Compare](https://www.scootersoftware.com/) is a tool for comparing and synchronizing local
 files and folders with their remote counterparts on the Digital Archive server. It does this using
 its builtin FTP support.
@@ -787,6 +821,28 @@ and the remote site and then save two comparison sessions, one for the `themes` 
 -	In the `Save current settings as` field, type e.g. `SWHPL Plugins`
 -   In the `Create in` tree click `Digital Archive`
 -	Click the `OK` button
+-   In the top menu bar click `Session` > `Session Settings...`
+-   On the `Session Settings` dialog click the `Name Filters` tab
+-   Past the list below in the `Exclude folders:` panel
+-   Click the `OK` button
+
+``` plaintext
+    .git
+    .\ArchiveRepertory
+    .\AvantDpla
+    .\AvantElasticsearch\vendor
+    .\BulkMetadataEditor
+    .\CsvExport
+    .\CsvImportPlus
+    .\Dropbox
+    .\ExhibitBuilder
+    .\Gcihs
+    .\Geolocation
+    .\OaiPmhRepository
+    .\PdfText
+    .\SimplePages
+    .\SimpleVocab
+```
 
 To rename or delete existing sessions, click on the `Home` button in the ribbon
 and then access the session of interest in the Sessions tree at left.
@@ -794,6 +850,22 @@ and then access the session of interest in the Sessions tree at left.
 ---
 ## Configure plugins
 ---
+
+ArchiveRepertory  
+AvantAdmin        
+AvantCommon       
+AvantCustom       
+AvantElasticsearch
+AvantElements     
+AvantRelationships
+AvantS3    
+AvantSearch       
+AvantTheme        
+AvantZoom         
+BulkMetadataEditor
+Geolocation       
+PdfText 
+SimpleVocab       
 
 ### Configure SimpleVocab
 -	Install the SimpleVocab plugin version 2.1 or higher
@@ -894,5 +966,39 @@ and then access the session of interest in the Sessions tree at left.
 
 ### Setup S3
 
+---
+Style the site
+---
+
+---
+
+### Set navigation
+
+-	Click `Appearance` in the top menu bar
+-   Click `Navigation` on the `Appearance` page menu bar
+-	Uncheck `Browse Items`
+-   Uncheck `Browse Collections`
+-	In the `Add a Link to the Navigation` section
+    -	**Label**: About
+    -	*URL*: the organization’s home page
+    -	Click the `Add Link`
+    -	Check the box for `About`
+    -	Click the `Save Changes` button 
+-	Add any other menu items    
+
+### Logo and styling
+
+-	Create a logo JPEG image approximately 500px X 110px
+-   Login to Omeka as a super administrator
+-	Click `Appearance` in the top menu bar
+-   Click the `Configure Theme` button for AvantTheme
+-   For **Logo File** browse to the folder containing the logo file
+-   Choose the logo file
+-	Configure:
+    -	Set the CSS file name
+    -	Enter the footer text
+-	Adjust the custom CSS as necessary.
+-   Click the `Save Changes` button
+-	Remove the CSS files for other organization’s theme customization e.g. swhpl.css
 
 [cPanel]: web-host.md#cpanel

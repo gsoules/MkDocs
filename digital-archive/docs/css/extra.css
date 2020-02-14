@@ -20,6 +20,12 @@ h3 {
     font-size: 18px;
 }
 
+h4 {
+    color: rgb(122, 122, 122);
+    font-size: 16px;
+    font-weight: bold;
+}
+
 /* Override Windmill's styling for the block quotes and code. */
 blockquote {
 	color: #777;
