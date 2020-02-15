@@ -17,7 +17,15 @@ nav:
         - Omeka: administrator/omeka.md
         - Zoomable images: administrator/zoomable-images.md
         - Plugins:
+            AvantAdmin: plugins/avantadmin/avantadmin.md
+            AvantCommon: plugins/avantcommon/avantcommon.md
+            AvantCustom: plugins/avantcustom/avantcustom.md
+            AvantElasticsearch: plugins/avantelasticsearch/avantelasticsearch.md
+            AvantElements: plugins/avantelements/avantelements.md
+            AvantRelationships: plugins/avantrelationships/avantrelationships.md
+            AvantS3: plugins/avants3/avants3.md
             AvantSearch: plugins/avantsearch/avantsearch.md
+            AvantZoom: plugins/avantzoom/avantzoom.md
     - Superuser:
         - Web host administration: superuser/web-host.md
         - File Locations*: superuser/file-locations.md

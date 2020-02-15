@@ -306,10 +306,10 @@ Follows these steps to finishing configuring Omeka.
         or contact your host's technical support and ask them to tell you the path 
 
 ---
-## Configure site security
+## Configure web server settings
 ---
 
-### Edit .htaccess
+### Configure site security
 
 By default, an Omeka installation uses HTTP for every page except the login page which uses HTTPS.
 Perform the steps below to follow the best practice of using HTTPS for all pages.
@@ -382,6 +382,43 @@ to learn why using RedirectMatch works than RewriteRule for this purpose.
 -   Click the `Apply` button
 
 ---
+
+### Verify PDF support
+
+These steps verify that a program called `pdftotext` is installed on the web server.
+It is used by the  `AvantElasticsearch` plugin to 
+make PDF files searchable. If you won't be using `AvantElasticsearch`, you can skip this task.
+
+-   Go to [cPanel] and choose `Terminal`
+-   In the terminal window, type `pdftotext -v` and press `Enter`
+-   The `pdftotext` program should display its version
+-   If instead you see `command not found`, ask your host to install `pdftotext`
+
+---
+
+### Verify that background processing works
+Some Omeka operations are performed in the background. Examples are a request to reindex records
+and using the Bulk Edit plugin to perform bulk edits in the background.
+
+Follow these steps to determine if the default configuration for background processing is working properly.
+
+-	Click `Settings` in the top menu bar
+-   Click `Search` in the `Settings` page menu bar
+-	Click the `Index Records` button (even though there are no records to index)
+-   You should see a green message `Indexing records. This may take a while...`
+-	If instead you get an error that the configured PHP path is invalid:
+    -	Look at this [article](https://community.reclaimhosting.com/t/setting-the-php-cli-path-in-omeka-classic/231) to determine the correct background path
+    -	Edit `digitalarchive/application/config/config.ini`
+    -	Set `background.php.path` to the correct path for the server
+    -   Save changes and close the `config.ini` file
+    -	Verify that the Index Records operations works with no error
+
+!!! note ""
+    Finding the right path might be a trial and error process. Leaving `background.php.path = ""` seems to work correctly.
+    However, in some installations it's set to `/usr/local/bin/php` and in others to `/usr/bin/php-cli`.
+    If you are not successful, contact the host to ask for the right path.
+
+---
 ## Add plugins and theme
 ---
 
@@ -412,7 +449,6 @@ Avant theme  |AvantTheme          |AvantTheme-master.zip
 Avant plugin |AvantZoom           |AvantZoom-master.zip
 Omeka plugin |BulkMetadataEditor  |BulkMetadataEditor.zip
 Omeka plugin |Geolocation         |Geolocation-3.0.1.zip
-Omeka plugin |PdfText *           |PdfText-1.3.zip
 Omeka plugin |SimpleVocab         |SimpleVocab-2.2.2.zip
 
 #### Get Avant plugin or theme zip file
@@ -517,48 +553,7 @@ Before you can install the theme, install AvantCommon by following these steps:
 -	Delete all the theme folders except AvantTheme
 
 ---
-## Configure file storage
----
-
-### Install ArchiveRepertory plugin
-
-ArchiveRepertory controls where files that you attach to an Omeka item are stored.
-
-!!! warning "Important"
-    Install this plugin now *before adding any items to Omeka* because the plugin overrides Omeka's
-    default file storage mechanism and it won't work correctly if some files have already been stored.
-
-    Use release **2.15.5** because AvantLogic has not tested the newer releases.
-
-    Southwest Harbor Public Library uses its own custom version of this plugin based on release 2.14.
-    The modified version uses a flat file structure instead of the better hierarchical structure.
-    Eventually SWHPL should convert to use the newer structure.
-
-Follow these steps to install and configure the plugin.
-
--   Add the plugin to the Omeka installation ([learn how](web-host.md#add-an-omeka-plugin))
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `Archive Repertory`
--	Set:
-    -   Collections option:
-        - **How do you want to name ...**: `Don’t add folder`
-    -   Items options:
-        - **How do you want to name ...**: `Identifier`
-        - **Prefix for Item**: leave blank
-        - **Convert folder names**: `Full conversion to Ascii`
-    -   Files option:
-        - **Convert filenames**: `Full conversion to Ascii`
-        - **Keep only base...**: Unchecked
-    - Special derivative folders options:
-        - **Other derivative folders**: leave blank
-        - **Process**: `Omeka internal`
-        - **Max downloads**: `30000000`
-        - **Legal**: `I agree with terms of use.`
-- Click the `Save Changes` button
-
----
-
-## Define Digital Archive item
+## Define Item elements
 ---
 
 Omeka installs with a number of different *Item Types* and *Elements*; however, the Digital Archive
@@ -676,110 +671,6 @@ installation folders.
 ![Administrator FTP account](install-digital-archive-3.jpg)
 
 ---
-
-## Preliminary testing
-
----
-
-Before proceeding with the installation, verify that everything is working up to this point.
-
-### Add a test item
--	Click `Items` in Omeka's left admin menu
--   Click the `Add an item` link
--	Enter `12345` in the **Identifier** field
--   Enter `Test 1` in the **Title** field
--   Click the `Add Item` button
-
-### Upload a test image
--   On the `Browse Items` page, click the `Edit` link under the `Test 1` item
--	Click on the `Files` tab at the top of the page
--   Click the `Browse...` button
--   Browse for an image
--	Click the `Save Changes` button
--   You should now be on the `Item` page for new item.
--   Use FTP or cPanel to navigate to the `/digitalarchive/files` folder
--   Verify that the subfolders (`fullsize`, `original` etc) contain a subfolder named `12345`
--   Verify that the`12345` folder contains the uploaded image
-
-### Delete the test item
--   On the `Item` page, click the `Delete` button
--   Click `Delete` on the `Are you sure` dialog
--	Verify that the `12345` folders got deleted from the `/digitalarchive/files` folders
-
-!!! note ""
-    If using Filezilla, you may need to disconnect and reconnect to verify that the files got deleted
-    because the Refresh option does not always seem to work. Or do the verification using the cPanel
-    File Manager.
-
-### Verify that background processing works
-Some Omeka operations are performed in the background. Examples are a request to reindex records
-and using the Bulk Edit plugin to perform bulk edits in the background.
-
-Follow these steps to determine if the default configuration for background processing is working properly.
-
--	Click `Settings` in the top menu bar
--   Click `Search` in the `Settings` page menu bar
--	Click the `Index Records` button (even though there are no records to index)
--   You should see a green message `Indexing records. This may take a while...`
--	If instead you get an error that the configured PHP path is invalid:
-    -	Look at this [article](https://community.reclaimhosting.com/t/setting-the-php-cli-path-in-omeka-classic/231) to determine the correct background path
-    -	Edit `digitalarchive/application/config/config.ini`
-    -	Set `background.php.path` to the correct path for the server
-    -   Save changes and close the `config.ini` file
-    -	Verify that the Index Records operations works with no error
-
-!!! note ""
-    Finding the right path might be a trial and error process. Leaving `background.php.path = ""` seems to work correctly.
-    However, in some installations it's set to `/usr/local/bin/php` and in others to `/usr/bin/php-cli`.
-    If you are not successful, contact the host to ask for the right path.
-
----
-## Install Digital Archive plugins
----
-
-For each plugin, follow the steps to [add an Omeka plugin](web-host.md#add-an-omeka-plugin).
-
-Install the following plugins and perform only minimal configuration. Additional configuration will occur later.
-
--   AvantCommon
-    -	Specify the Identifier and Alias if applicable
-    -	Enable the Lightbox feature
--   AvantAdmin
-    -	Specify the Item Type name for the organization
--   AvantCustom
-    -	There are no configuration options
--   AvantElements
-    -	Don’t configure anything during this step
--   AvantRelationships
-    -	Set the Visualization Preview option to `At designated location`
--   AvantSearch
-    -	Don’t configure anything during this step
--   AvantZoom
-    -	There are no configuration option
-
----
-
-### Verify PDF support
-
-These steps verify that a program called `pdftotext` is installed on the web server.
-It is used by the `PdfText` plugin which in turn is used by the `AvantElastic` plugin to 
-make PDF files searchable. If you won't be using `AvantElastic`, you can skip this step.
-
--   Go to [cPanel] and choose `Terminal`
--   In the terminal window, type `pdftotext -v` and press `Enter`
--   The `pdftotext` program should display its version
--   If instead you see `command not found`, ask your host to install `pdftotext`
-
----
-
-### Install Simple Pages plugin
--	Install the plugin (it comes with the Omeka installation)
--	To allow all HTML, e.g. <img> tags, go to Settings > Security and uncheck the Enable HTML Filtering box. Otherwise, filtered elements get removed when you save the Simple page.
--	Note: When adding Simple pages, be sure to check the box for Publish this page so it will show up in the Omeka navigation section.
-
-Add an About page
-
----
 ## Configure Beyond Compare
 ---
 
@@ -839,7 +730,6 @@ and the remote site and then save two comparison sessions, one for the `themes` 
     .\Gcihs
     .\Geolocation
     .\OaiPmhRepository
-    .\PdfText
     .\SimplePages
     .\SimpleVocab
 ```
@@ -851,31 +741,80 @@ and then access the session of interest in the Sessions tree at left.
 ## Configure plugins
 ---
 
-ArchiveRepertory  
-AvantAdmin        
-AvantCommon       
-AvantCustom       
-AvantElasticsearch
-AvantElements     
-AvantRelationships
-AvantS3    
-AvantSearch       
-AvantTheme        
-AvantZoom         
-BulkMetadataEditor
-Geolocation       
-PdfText 
-SimpleVocab       
+### ArchiveRepertory
 
-### Configure SimpleVocab
--	Install the SimpleVocab plugin version 2.1 or higher
--	Add vocabularies for Type, Subject and any others.
+This plugin controls where files are stored when you attach a file, such as an image or document,
+to an Omeka item.
+
+!!! warning "Important"
+    Install this plugin now *before adding any items to Omeka* because the plugin overrides Omeka's
+    default file storage mechanism and it won't work correctly if some files have already been stored.
+
+    Use release **2.15.5** because AvantLogic has not tested the newer releases.
+
+    Southwest Harbor Public Library uses its own custom version of this plugin based on release 2.14.
+    The modified version uses a flat file structure instead of the better hierarchical structure.
+    Eventually SWHPL should convert to use the newer structure.
+
+Follow these steps to install and configure the ArchiveRepertory plugin.
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `Archive Repertory`
+-	Set:
+    -   Collections option:
+        - **How do you want to name ...**: `Don’t add folder`
+    -   Items options:
+        - **How do you want to name ...**: `Identifier`
+        - **Prefix for Item**: leave blank
+        - **Convert folder names**: `Full conversion to Ascii`
+    -   Files option:
+        - **Convert filenames**: `Full conversion to Ascii`
+        - **Keep only base...**: Unchecked
+    - Special derivative folders options:
+        - **Other derivative folders**: leave blank
+        - **Process**: `Omeka internal`
+        - **Max downloads**: `30000000`
+        - **Legal**: `I agree with terms of use.`
+- Click the `Save Changes` button
+
+Verify that the plugin is working as expected.
+
+#### Add a test item
+-	Click `Items` in Omeka's left admin menu
+-   Click the `Add an item` link
+-	Enter `12345` in the **Identifier** field
+-   Enter `Test 1` in the **Title** field
+-   Click the `Add Item` button
+
+#### Upload a test image
+-   On the `Browse Items` page, click the `Edit` link under the `Test 1` item
+-	Click on the `Files` tab at the top of the page
+-   Click the `Browse...` button
+-   Browse for an image
+-	Click the `Save Changes` button
+-   You should now be on the `Item` page for new item.
+-   Use FTP or cPanel to navigate to the `/digitalarchive/files` folder
+-   Verify that the subfolders (`fullsize`, `original` etc) contain a subfolder named `12345`
+-   Verify that the`12345` folder contains the uploaded image
+
+#### Delete the test item
+-   On the `Item` page, click the `Delete` button
+-   Click `Delete` on the `Are you sure` dialog
+-	Verify that the `12345` folders got deleted from the `/digitalarchive/files` folders
+
+!!! note ""
+    If using Filezilla, you may need to disconnect and reconnect to verify that the files got deleted
+    because the Refresh option does not always seem to work. Or do the verification using the cPanel
+    File Manager.
 
 ---
 
-### Configure Avant plugins
+### AvantCommon 
 
-### AvantCommon
+Follow these steps to configure [AvantCommon]:
+
+-	Specify the Identifier and Alias if applicable
+-	Enable the Lightbox feature
 -	Private Elements
 -	Installation specific
 -	Unused Elements (these are all Dublin Core)
@@ -886,7 +825,45 @@ SimpleVocab
 -	Language
 -	Coverage
 
-### AvantElements
+---
+
+### AvantAdmin        
+
+Follow these steps to configure [AvantAdmin]:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `AvantAdmin`
+
+
+Specify the Item Type name for the organization
+
+---
+
+### AvantCustom       
+-	There are no configuration options
+
+---
+
+### AvantElasticsearch
+-	Create an elasticsearch folder in the files folder.
+-	Create IAM credentials
+    -	Login aws.amazoncom
+    -	In the top menu, under SWHPL Digital Archive, choose My Security Credentials
+    -	Click Users in the left menu
+    -	Click the Add User button
+    -	Use the organization name for the user name e.g. gcihs
+    -	For the Access type check the Programmatic Access box
+    -	Click the Next: Permissions button
+    -	In the Add User to Group section, click the contributor group
+    -	Click the Next: Tags button
+    -	Click the Next: Review button
+    -	Click the Create User button
+    -	Copy the Access Key ID and Secret Access Key to the configurations Excel sheet
+    Important: This is the only opportunity to obtain the secret key
+    -	Click the Close button
+---
+
+### AvantElements 
 -	Set field types
 -	Display Order
     -	Identifier
@@ -927,16 +904,27 @@ SimpleVocab
     -	Creator
     -	Publisher
 
-###	AvantSearch
--	Titles Only
--	Checked
+---
 
 ### AvantRelationships
+-	Set the Visualization Preview option to `At designated location`
 -	Implicit Relationships
 -	Creator: Created
 -	Publisher: Published (if applicable)
 
-### AvantZoom
+---
+
+### AvantS3    
+
+---
+
+### AvantSearch       
+-	Titles Only
+-	Checked
+
+---
+
+### AvantZoom         
 -	Create a zoom folder in the files folder.
 -	Create an images folder in the zoom folder.
 -	Copy the zoomify control icons into the images folder (these are icons used by Openseadragon)
@@ -944,32 +932,29 @@ SimpleVocab
 
 ---
 
-### Configure Elasticsearch
--	Create an elasticsearch folder in the files folder.
--	Create IAM credentials
-    -	Login aws.amazoncom
-    -	In the top menu, under SWHPL Digital Archive, choose My Security Credentials
-    -	Click Users in the left menu
-    -	Click the Add User button
-    -	Use the organization name for the user name e.g. gcihs
-    -	For the Access type check the Programmatic Access box
-    -	Click the Next: Permissions button
-    -	In the Add User to Group section, click the contributor group
-    -	Click the Next: Tags button
-    -	Click the Next: Review button
-    -	Click the Create User button
-    -	Copy the Access Key ID and Secret Access Key to the configurations Excel sheet
-    Important: This is the only opportunity to obtain the secret key
-    -	Click the Close button
+### BulkMetadataEditor
 
 ---
 
-### Setup S3
+### Geolocation
 
 ---
-Style the site
+
+### Simple Pages
+-	Install the plugin (it comes with the Omeka installation)
+-	To allow all HTML, e.g. <img> tags, go to Settings > Security and uncheck the Enable HTML Filtering box. Otherwise, filtered elements get removed when you save the Simple page.
+-	Note: When adding Simple pages, be sure to check the box for Publish this page so it will show up in the Omeka navigation section.
+
+Add an About page
+
 ---
 
+### Simple Vocab       
+-	Install the SimpleVocab plugin version 2.1 or higher
+-	Add vocabularies for Type, Subject and any others.
+
+---
+## Style the site
 ---
 
 ### Set navigation
@@ -1001,4 +986,14 @@ Style the site
 -   Click the `Save Changes` button
 -	Remove the CSS files for other organization’s theme customization e.g. swhpl.css
 
-[cPanel]: web-host.md#cpanel
+
+[AvantAdmin]:         ../../plugins/avantadmin/avantadmin
+[AvantCommon]:        ../../plugins/avantcommon/avantcommon
+[AvantCustom]:        ../../plugins/avantcustom/avantcustom
+[AvantDPLA]:          ../../plugins/avantdpla/avantdpla
+[AvantElements]:      ../../plugins/avantelements/avantelements
+[AvantElasticsearch]: ../../plugins/avantelasticsearch/avantelasticsearch
+[AvantRelationships]: ../../plugins/avantrelationships/avantrelationships
+[AvantSearch]:        ../../plugins/avantsearch/avantsearch
+[AvantS3]:            ../../plugins/avants3/avants3
+[cPanel]:             web-host.md#cpanel

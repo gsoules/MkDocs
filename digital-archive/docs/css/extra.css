@@ -17,7 +17,7 @@ h2 {
 
 h3 {
     color: #000;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 h4 {
@@ -84,10 +84,10 @@ nav > ul ul {
     margin-bottom: 0px;
 }
 ul ul {
-    margin-bottom: 8px;
+    margin-bottom: 2px;
 }
 ol ul {
-    margin-bottom: 8px;
+    margin-bottom: 2px;
 }
 
 /* Don't show a version number below the header title. */
