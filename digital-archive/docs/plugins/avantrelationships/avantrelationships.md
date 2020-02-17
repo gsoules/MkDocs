@@ -13,28 +13,9 @@ in with the rest of the collection and easily discovers related items.
 
 ---
 
-### Features
+## Configuration options
 
-Once installed, AvantRelationships extends the Omeka admin and public user interfaces to provide
-the ability to add and display relationships. Specifically, the plugin:
-
--   Adds a `Relationships` menu item in Omeka's admin left menu
--   Adds a `Relationships` button on the admin Item page
--   Adds a `Cover Image` tab on the admin item `Edit` page
--   Displays *Relationship Groups* below an item's metadata on public and admin Item pages
--   Displays a *Visualization Preview* on the public and admin Item pages
--   Adds `Relationships` filter to the bottom of the Omeka `Advanced Search` page
-
-### Default Rules and Types
-
-To help get you started using AvantRelationships, the installer creates a small set of relationship types and rules.
-After installation you can see and edit these by clicking `Relationships` in Omeka's left admin menu. You'll need to
-[edit/add/remove rules](http://swhplibrary.net/archive/relationship-rules/) to meet your own needs.
-You also want to [edit/add/remove relationship types](http://swhplibrary.net/archive/relationship-types/) in ways that
-make sense for your collection.
-
-## Usage
-AvantRelationships has the following configuration options.
+The AvantRelationships plugin has these configuration options:
 
 Visualization Preview
 :   Specify where the Relationships Visulization Preview should appear. You can have the visualization appear
@@ -64,6 +45,18 @@ Delete Tables
     just experimenting with the plugin, leave the box unchecked. If you decide not to use
     the plugin, check the box, Save Changes, and then uninstall the plugin.
 
+### Features
+
+Once installed, AvantRelationships extends the Omeka admin and public user interfaces to provide
+the ability to add and display relationships. Specifically, the plugin:
+
+-   Adds a `Relationships` menu item in Omeka's admin left menu
+-   Adds a `Relationships` button on the admin Item page
+-   Adds a `Cover Image` tab on the admin item `Edit` page
+-   Displays *Relationship Groups* below an item's metadata on public and admin Item pages
+-   Displays a *Visualization Preview* on the public and admin Item pages
+-   Adds `Relationships` filter to the bottom of the Omeka `Advanced Search` page
+
 To learn about features provided by AvantRelationships, see the following topics on the
 [Digital Archive](http://swhplibrary.net/archive/relationships/) website:
 
@@ -75,6 +68,14 @@ To learn about features provided by AvantRelationships, see the following topics
 * [Cover Images]
 * [Relationship Types]
 * [Relationship Rules]
+
+### Default Rules and Types
+
+To help get you started using AvantRelationships, the installer creates a small set of relationship types and rules.
+After installation you can see and edit these by clicking `Relationships` in Omeka's left admin menu. You'll need to
+[edit/add/remove rules](http://swhplibrary.net/archive/relationship-rules/) to meet your own needs.
+You also want to [edit/add/remove relationship types](http://swhplibrary.net/archive/relationship-types/) in ways that
+make sense for your collection.
 
 ### Implicit Relationships
 An implicit relationship is one where the value of an element for one item exactly matches the value of the **Title**

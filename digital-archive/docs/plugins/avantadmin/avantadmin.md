@@ -28,14 +28,14 @@ AvantAdmin provides the following benefits:
 -   Provides a down-for-maintenance feature
 
 ## Configuration options
-AvantAdmin has the following configuration options.
+AvantAdmin has these configuration options:
+
+Item Type
+:   Specifies the name of the **Item Type** that will be used for every item in the installation.
 
 Maintenance
 :   When this option is checked, a `Down for maintenance` page will be displayed to public users to prevent
     them from accessing the site. Logged in users will not be affected.
-
-Item Type
-:   Specifies the name of the **Item Type** that will be used for every item in the installation.
 
 ## Dependencies
 The AvantAdmin plugin requires that the [AvantCommon] plugin be installed and activated.

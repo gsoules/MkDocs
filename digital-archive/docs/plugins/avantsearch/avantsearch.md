@@ -2,158 +2,31 @@
 
 Provides extended searching and search results capabilities for an Omeka Classic installation.
 
----
-
-When this plugin is activated, it dynamically overrides the native Omeka search box (located in the page
-header) with the version used by AvantSearch. When you deactivate the plugin, the Omeka search box returns.
-
-## Differences from Omeka
-
-AvantSearch completely overrides Omeka's public search features. It provides its own
-[Advanced Search](#tadvanced-search-page) page
-and presents search results in a wide variety of ways. It does not affect Omeka's admin search.
-The table below highlights the differences between AvantSearch and Omeka's native search.
-
-Feature | AvantSearch | Omeka Search
---------|------------ | ------------
-[Quick search](#quick-search) |  **Yes** - Feature | No
-[Simple search for All Words](#simple-search) |  **Yes** - Feature | No
-[Search in Titles only](#titles-only-option) | **Yes** - Advanced Search page option | No
-[Search only items with images or files](#advanced-search-page) | **Yes** - Advanced Search page option | No
-[Date range search](#advanced-search-page) | **Yes** - Advanced Search page option | No
-[User can specify number of results](#advanced-search-page) | **Yes** - Advanced Search page option | No
-[Tabular results](#table-view) | **Yes** - Feature | No
-[Custom Results Layouts](#table-view-custom-layouts) | **Yes** - Congfiguration option | No
-[Image View](#image-view) | **Yes** - Feature | No
-[Index View](#index-view) | **Yes** - Congfiguration option| No
-[Relationships View](#relationships-view-option) | **Yes** - Congfiguration option | No
-[Integer sorting](#integer-sorting-option) | **Yes** - Congfiguration option | No
-[Address sorting](#address-sorting-option) | **Yes** - Congfiguration option | No
-[Lightbox](#lightbox) | **Yes** - Feature | No
-Search by File, Collection, Featured | No | Yes
-
-### Quick Search
-Quick Search is a feature of Simple Search that allows you to immediately go to the page for an item by typing the
-item's Identifier value in the simple search box. This is much faster than getting back search results for every item
-that contains that value and then having to locate and click on the item of interest.
-
-### Simple Search
-The AvantSearch version of simple search improves on the native Omeka simple search by only returning results that
-contain *all* of the matching keywords instead of any of the keywords. Items that contain some, but not all of the
-keywords will not appear in the results. Searching for all keywords tends to provide much more relevant results.
-If you need to search for any of the keywords, you can enter the keywords
-on the Advanced Search page and choose the Boolean condition.
-
-## Search Results Views
-One of the most powerful features of AvantSearch is its ability to display search results in many different ways
-which you can customize to meet your needs. In addition to the Index View presentation described later,
-the Table View lets you specify any number of different layouts to display results in rows and sortable columns.
-The screen shots that follow show the same AvantSearch results in three different Table View layouts.
-
-### Table View
-
-#### Table View Detail Layout
-The Detail Layout provides a compact presentation of key information about an item including a thumbnail image.
-You specify which elements appear in the two columns to the right of the thumbnail. The item's description
-automatically appears in the third column. The screen shot below is truncated after the first three results.
-
-![Summary Layout Example](avantsearch-1.jpg)
+!!! note
+    When this plugin is activated, it dynamically overrides the native Omeka search box with the
+    search box used by AvantSearch. When you deactivate the plugin, the Omeka search box returns.
 
 ---
 
-#### Table View Custom Layouts
-This is an example of a custom layout showing the item's Type and Subject elements. The red triangle next to 'Type'
-in the header indicates that the results are sorted ascending by Type. The screen shot below is truncated after the first 10 results.
+## Configuration options
 
-![Custom Layout Example](avantsearch-2.jpg)
+The AvantSearch plugin has these configuration options:
 
----
+-   [Address Sorting](#address-sorting-option)
+-   [Columns](#columns-option)
+-   [Detail Layout](#detail-layout-option)
+-   [Elasticsearch](#elasticsearch-option)
+-   [Integer Sorting](#integer-sorting-option)
+-   [Layouts](#layouts-option)
+-   [Titles Only](#titles-only-option)
 
-This is another example of a custom layout, but this one shows the item's Creator and Publisher elements.
-Note the asterisk on item 2636. When you are logged in as an administrator, the astersisk indicates that the item
-is not public. When not logged in, the item does not appear in the results. You can also define layouts that can
-only be chosen when logged in. These layout can be used to show data that is normally hidden from public users.
-The screen shot below is truncated after the first 10 results.
-
-![Custom Layout Example](avantsearch-3.jpg)
-
-### Image View
-Image View displays search results as a grid of thumbnails. It's a more compact way to view results when the image is
-most important for identifying items of interest. The screen shot below is truncated after the first 10 results.
-
-![Image View Example](avantsearch-4.jpg)
-
-### Index View
-Index View displays information like the index in a book. It consolidates values into unique groups having the same
-value. The screen shot below is truncated midway through the B's.
-
-When the index field contains hierarchical data, Index View shows only the leaf (lowest level) values in the
-hierarchhy. For non-hierarchical data, Index View shows the entire value. The data is considered to be
-hierarchical only if the index field element is specified using the Hierarchies option, 
-otherwise Index View displays it as flat data.
-
-![Index View Example](avantsearch-5.jpg)
-
-## Lightbox
-Both the Table View Detail Layout and the Image View display thumbnails for an item's image if it has one. If the item
-has no image, a placeholder image is displayed. When you click on a thumbnail, the AvantSearch plugin displays a large
-version of the image. You can have the image display in a popup by using the
-[Lightbox feature](../avantcommon/avantcommon.md#lightbox-feature) of the
-[AvantCommon] plugin.
-
-![Lightbox Example](avantsearch-8.jpg)
-
-## Private Elements
-You can specify that certain elements are private to administrators and not visible to or searchable by public users.
-You specify which elements are private using the [Private Elements](../avantcommon/avantcommon.md##private-elements-option) feature of the
-[AvantCommon] plugin.
-
-## Usage
-Once installed, AvantSearch entirely overrides Omeka's native user interface for public search (Omeka's native admin
-search is still available from admin pages). There are several configuration options available on the plugin's
-configuration page.
-
-## Advanced Search Page
-AvantSearch provides its own Advanced Search page. You access this page by either clicking on the Advanced Search
-link that appears below the simple search box in the header of every page, or by clicking the Modify Search button
-that appears on search result pages.
-
-The screen shot below shows the search conditions that were
-specified to generate the Table View Custom Layout - Type / Subject screen shot shown earlier.
-
-![Advanced Search Page](avantsearch-7.jpg)
-
-## Date Range Feature
-When AvantCommon is configured to provide Start and End years, year start and end text boxes will appear as
-filters at the bottom of the Advanced Search page. A user can provide values for both the start and end years to
-limit search results to items in that range inclusive. For example if you specify 1900 for the start year and
-1940 for end year, search will find items with start year greater than or equal to 1900 and less than or equal to 1940.
-If you only provide a value for the start year, the search will find items where the start year is that date
-or more recent. If you only provide a value for the end year, the filter will find items where the end year is that
-date or older.
-
-## Configuration Options
-
-The AvantSearch plugin has the following configuration options:
-
-- [Address Sorting](#address-sorting-option)
-- [Columns](#columns-option)
-- [Detail Layout](#detail-layout-option)
-- [Elasticsearch](#elasticsearch-option)
-- [Integer Sorting](#integer-sorting-option)
-- [Layouts](#layouts-option)
-- [Titles Only](#titles-only-option)
-
-The sections that follow describe each of the options on the AvantSearch plugin configuration page.
-
-Many options require that you specify a formatted list of information using commas or other characters as separators.
-For these options, spaces before and after the separators are ignored.
+The following sections describe each option in detail.
 
 Syntax for some options is shown using [BNF notation](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form).
 
 ---
 
-### Address Sorting Option
+### Address Sorting option
 
 This option is only supported by [MariaDB](https://mariadb.org/) and MySQL 8.0.
 If your server is not running one of these databases, the AvantSearch configuration page will say the option
@@ -177,7 +50,7 @@ With address sorting:
 
 ---
 
-### Columns Option
+### Columns option
 
 Use the Columns option specify:
 -   The order of columns from left to right in search results Table View
@@ -226,7 +99,7 @@ Status: 90
 
 ---
 
-### Detail Layout Option
+### Detail Layout option
 
 L1 is a special layout referred to as the Detail Layout because it presents a lot of information about an item,
 including a thumbnail, in a single column. Use the Detail Layout option to specify the elements which appear in the
@@ -252,13 +125,13 @@ If you prefer to have only one detail column plus the Description column, specif
 
 ---
 
-### Elasticsearch Option
+### Elasticsearch option
 
 Check the **Elasticsearch** checkbox if using [AvantElasticsearch].
 
 ---
 
-### Integer Sorting Option
+### Integer Sorting option
 
 The Integer Sorting option lets you specify a list of elements for columns that should be sorted as integers instead
 of as text. This option ensures that the data in these column is sorted numerically instead of alphabetically.
@@ -280,7 +153,7 @@ sort is performed only on the integer portion of the value.
 
 ---
 
-### Layouts Option
+### Layouts option
 
 The Layouts option lets you specify different ways to present search results in Table Vew. The layouts you define
 here will appear in the Layout Selector and on the Advanced Search page.
@@ -322,7 +195,7 @@ values on every layout. Repeating these columns is a convention, but is not requ
 
 ---
 
-### Titles Only Option
+### Titles Only option
 When this option is checked, radio buttons will appear under the keywords text box on the Advanced Search page to let the user choose
 to search in all fields or in titles only. This feature is very helpful for narrowing search results down
 to only the most relevant items because titles often contain the most important keywords.
@@ -340,18 +213,24 @@ section if it's not visible)
 
 ## Improving Search Results
 
-The AvantSearch plugin will work without any modifications to your database. However, please read this section to
+!!! note ""
+    The information in this section is only important when using AvantSearch *without* [AvantElasticsearch].
+    AvantElasticsearch uses an entirely different and more effective searching mechanism that is
+    independent of the underlying MySQL or MariaDB database.
+
+The AvantSearch plugin will work without any modifications to your database. However, read this section to
 learn how you can improve search results by changing just one setting.
 
-Like Omeka's native search, AvantSearch performs keyword searches using the Omeka `search_texts` table. The Omeka installer creates this table
-using the MyISAM storage engine. You will get much better results from keyword searches by changing the table to use the InnoDB
-storage engine because MyISAM negatively affects keyword searches in two ways:
+Like Omeka's native search, AvantSearch performs keyword searches using the Omeka `search_texts` table.
+The Omeka installer creates this table using the MyISAM storage engine. You will get much better results
+from keyword searches by changing the table to use the InnoDB storage engine because MyISAM negatively
+affects keyword searches in two ways:
  
 -   MyISAM uses a very long list of [stopwords](https://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html).
 -   MyISAM's default settings ignores keywords of three characters or less (ft_min_word_len).
  
-With MyISAM a search for "road+ map+" will ignore 'map' and thus return all items containing 'road' instead of only
-those items containing 'road' AND 'map'. Additionally, the MyISAM stopword list contains so many words that people
+With MyISAM a search for `road+ map+` will ignore `map` and thus return all items containing `road` instead of only
+those items containing `road` AND `map`. Additionally, the MyISAM stopword list contains so many words that people
 commonly search for that users are often surprised when items don't appear in search results.
  
 In contrast, InnoDB has a very short list of stopwords and only ignores keywords that are two characters or less
@@ -359,13 +238,7 @@ In contrast, InnoDB has a very short list of stopwords and only ignores keywords
 can only be set at the MySQL server level and a server restart is required to change them. If you are
 using a shared server, you probably don't have the option to change this value.
 
-Follow these steps to change your search_texts table from MyISAM to InnoDB:
- 
--   In phpAdmin, click on your database to see its tables
--   Click on the search_texts table (probably called omeka_search_texts or something similar)
--   Click on the Operations tab
--   In the Table options section, change Storage Engine from MyISAM to InnoDB
--   Click Go
+Learn how to [change from MyISAM to InnoDB](../../../superuser/install-digital-archive/#change-database-storage-engine).
 
 ## Dependencies
 The AvantSearch plugin requires that the [AvantCommon] plugin be installed and activated.

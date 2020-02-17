@@ -4,6 +4,7 @@ copyright: 'Copyright &copy; 2020 AvantLogic Corporation'
 nav:
     - User:
         - About relationships*: user/relationships.md
+        - Searching*: user/search.md
     - Archivist:
         - Items:
             - Add a new item: archivist/add-new-item.md
