@@ -845,7 +845,7 @@ Coverage
 ```
 
 -	Check the **Enable Lightbox** checkbox
--   Leave **Request Image URL** blank for now
+-   Leave **Request Image URL** blank
 -   Click the `Save Changes` button
 
 ---
@@ -857,6 +857,25 @@ Follow these steps to install [AvantCustom]:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantCustom`
+
+---
+
+### Simple Vocab       
+
+You'll install the Simple Vocab plugin next because it is needed by the AvantElements plugin.
+
+Follow these steps to install and configure Simple Vocab:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `Simple Vocab`
+-   Leave **Apply to Files** unchecked
+-   Click the `Save Changes` button
+-   Click `Simple Vocab` in Omeka's left admin menu
+-   Add vocabularies for the **Rights**, **Subject**, and **Type** elements  
+    For each element:
+    -   Choose the element name from the **Element** dropdown
+    -   Copy/paste the values from another installation into **Vocabulary Terms**
+-   Click the `Save Changes` button
 
 ---
 
@@ -887,7 +906,7 @@ Type
 Subject
 ```    
 
--   Leave **External Link** blank for now
+-   Leave **External Link** blank
 -	Check the **Hide Descriptions** checkbox
 -   Enter the **Validation** specifiers shown below plus any others
 
@@ -909,14 +928,12 @@ Creator
 Subject
 ```
 
--   Leave **Allow HTML** blank for now
+-   Leave **Allow HTML** blank
 -   Enter the **Text Field** specifiers shown below plus any others
 ``` plaintext
 Identifier: 70
 Date: 160
-Circa: 140
 Creator
-Address
 ```
 
 -   Enter the **SimpleVocab** specifiers shown below plus any others
@@ -926,9 +943,9 @@ Subject: 320
 Rights
 ```
 
--   Leave **Checkbox field** blank for now
--   Leave **Read-only Field** blank for now
--   Leave **Default Value** blank for now
+-   Leave **Checkbox field** blank
+-   Leave **Read-only Field** blank
+-   Leave **Default Value** blank
 -   Enter the **Suggest** elements shown below plus any others
 ``` plaintext
 Creator
@@ -954,20 +971,27 @@ Date, filter: Swhpl, filterDate
 
 ---
 
-### AvantRelationships
+## Configure AvantRelationships
 
 Follow these steps to install and configure [AvantRelationships]:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantRelationships`
--	Set the Visualization Preview option to `At designated location`
--	Implicit Relationships
--	Creator: Created
--	Publisher: Published (if applicable)
+-	Set **Visualization Preview** to `At designated location`
+-   Set **Max Direct Items** to `6`
+-   Set **Max Indirect Items** to `8`
+-   Enter the **Implicit Relationship** specifier shown below plus any others
+
+``` plaintext
+Creator: Created
+Publisher: Published
+```
+-   Leave **Custom Relationships** blank
+-   Leave **Delete Tables** blank
 
 ---
 
-### AvantSearch       
+## Configure AvantSearch       
 
 Follow these steps to install and configure [AvantSearch]:
 
@@ -1010,7 +1034,6 @@ Follow these steps to install and configure [AvantS3]:
 ``` plaintext
 Identifier, filter: DigitalArchive, filterIdentifierS3
 ```
-
 
 ---
 
@@ -1073,17 +1096,6 @@ Follow these steps to install and configure Simple Pages:
 -	Note: When adding Simple pages, be sure to check the box for Publish this page so it will show up in the Omeka navigation section.
 
 Add an About page
-
----
-
-### Simple Vocab       
-
-Follow these steps to install and configure Simple Vocab:
-
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `Simple Vocab`
--	Install the SimpleVocab plugin version 2.1 or higher
--	Add vocabularies for Type, Subject and any others.
 
 ---
 ## Style the site
