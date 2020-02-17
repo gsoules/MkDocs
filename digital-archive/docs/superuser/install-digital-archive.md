@@ -621,8 +621,7 @@ recommended sequence for the Digital Archive.
 ## FTP access
 ---
 
-This section describes how to set up FTP access for a superuser and how to create a limited
-FTP account for a Digital Archive administrator.
+This section describes how to set up FTP access for a superuser.
 
 ### Set up superuser FTP access
 
@@ -650,25 +649,6 @@ Follow these steps to access the Digital Archive web server via FTP.
     -   Click the `OK` button
 
 ![Administrator FTP access](install-digital-archive-4.jpg)
-
----
-
-### Create limited FTP account
-
-Follow these steps to create a limited access FTP account that will allow an administrator to upload
-zoomable image tiles to the `zoom` folder, but will prevent them from seeing any other
-installation folders.
-
--	Go to [cPanel] and choose `FTP Accounts`
--	Type `zoom` for the **Log in** name and generate a password
--	Set the **Directory**  to `public_html/digitalarchive/files/zoom`
--	Leave the Quota as `Unlimited`
--	Click the `Create FTP Account` button
--	The FTP username will look like this example: `zoom@mydomain.net`
--   Test the account using the documentation for
-    [zoomable images upload methods](../../administrator/zoomable-images/#upload-methods).
-
-![Administrator FTP account](install-digital-archive-3.jpg)
 
 ---
 ## Beyond Compare configuration
@@ -1001,6 +981,7 @@ Publisher: Published
 ```
 -   Leave **Custom Relationships** blank
 -   Leave **Delete Tables** unchecked
+-   Click the `Save Changes` button
 
 ---
 ##  AvantSearch
@@ -1010,8 +991,41 @@ Follow these steps to install and configure [AvantSearch]:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantSearch`
--	Titles Only
--	Checked
+-	Check the **Titles Only** checkbox
+
+-   Enter the **Columns** specifiers shown below plus any others
+``` plaintext
+Identifier, Item: 65, right
+Title
+Type
+Subject
+Creator
+Publisher
+```
+
+-   Enter the **Layout** specifiers shown below plus any others
+``` plaintext
+L1, Details
+L2, Type / Subject: Identifier, Title, Type, Subject
+L3, Creator / Publisher: Identifier, Title, Creator, Publisher, Date
+```
+
+-   Enter the **Detail Layout** elements shown below plus any others
+``` plaintext
+Identifier
+Type
+Subject
+Creator
+Publisher
+Date
+<tags>
+<score>
+```
+
+-   Enter `Identifier` for **Integer Sorting**
+-   Leave **Address Sorting** unchecked
+-   Leave **Elasticsearch** unchecked
+-   Click the `Save Changes` button
 
 ---
 ## AvantZoom
@@ -1020,14 +1034,40 @@ Follow these steps to install and configure [AvantSearch]:
 !!! note ""
     Skip this task if the installation will not be using the AvantZoom plugin.
 
-Follow these steps to install and configure [AvantZoom]:
+AvantZoom has no configuration options.
+Follow these steps to install [AvantZoom]:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantZoom`
--	Create a zoom folder in the files folder.
--	Create an images folder in the zoom folder.
--	Copy the zoomify control icons into the images folder (these are icons used by Openseadragon)
--	Could this be done by the AvantImages plugin during installation? Would it have rights?
+
+To learn about using AvantZoom, see the documentation for [zoomable images](../../administrator/zoomable-images).
+
+### Create a Zoom folder
+Follow these steps to create the folder used to store the tiles for zoomable images.
+
+-	Go to [cPanel] and choose `File Manager`
+-   Create these two folders:
+    -   `public_html/digitalarchive/files/zoom`
+    -   `public_html/digitalarchive/files/zoom/images`
+-   Copy the the OpenSeadragon icons from `public_html/digitalarchive/plugins/AvantZoom/images` to
+    `public_html/digitalarchive/files/zoom/images`    
+
+### Create limited FTP account
+
+Follow these steps to create a limited access FTP account that will allow an administrator to upload
+zoomable image tiles to the `zoom` folder, but will prevent them from seeing any other
+installation folders.
+
+-	Go to [cPanel] and choose `FTP Accounts`
+-	Type `zoom` for the **Log in** name and generate a password
+-	Set the **Directory**  to `public_html/digitalarchive/files/zoom`
+-	Leave the Quota as `Unlimited`
+-	Click the `Create FTP Account` button
+-	The FTP username will look like this example: `zoom@mydomain.net`
+-   Test the account using the documentation for
+    [zoom tiles upload methods](../../administrator/zoomable-images/#upload-methods).
+
+![Administrator FTP account](install-digital-archive-3.jpg)
 
 ---
 ## AvantS3
@@ -1075,6 +1115,8 @@ Follow these steps to install and configure [AvantElasticsearch]:
     -	Copy the Access Key ID and Secret Access Key to the configurations Excel sheet
     Important: This is the only opportunity to obtain the secret key
     -	Click the Close button
+
+On the AvantSearch configuration page, check the **Elasticsearch** checkbox
 
 ---
 ## BulkMetadataEditor
@@ -1154,4 +1196,5 @@ Add an About page
 [AvantRelationships]: ../../plugins/avantrelationships/avantrelationships
 [AvantSearch]:        ../../plugins/avantsearch/avantsearch
 [AvantS3]:            ../../plugins/avants3/avants3
+[AvantZoom]:          ../../plugins/avantzoom/avantzoom
 [cPanel]:             web-host.md#cpanel

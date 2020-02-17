@@ -83,7 +83,7 @@ tiles from the image’s high resolution file and then uploading a folder contai
 1.	Note that the tag simply makes it easier for people to find the image.
     The image will be zoomable whether you tag it or not.
 
-## Upload methods
+## Zoom tiles upload methods
 
 There are two ways to upload image tiles to the web server: FTP and cPanel.
 
