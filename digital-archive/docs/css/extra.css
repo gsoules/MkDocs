@@ -26,7 +26,7 @@ h4 {
     font-weight: bold;
 }
 
-/* Override Windmill's styling for the block quotes and code. */
+/* Override Windmill's styling for the block quotes, strong, code, and preformatted. */
 blockquote {
 	color: #777;
 	line-height: 1.6;
@@ -34,6 +34,14 @@ blockquote {
 
 code {
     background-color: #f0f0f0;
+}
+
+strong {
+    color: #666;
+}
+
+pre {
+    margin: 0 0 10px 24px;
 }
 
 /* Override Windmill's styling for admonitions. */

@@ -9,6 +9,10 @@ in ways that are not possible by modifying a theme.
 !!! warning ""
     This plugin is intended for use by developers who are familiar with Omeka plugins and understand how filters and hooks are used to add or modify Omeka features.**
 
+## Usage
+
+AvantCustom has no configuration options.
+
 ## Dependencies
 The AvantCustom plugin requires that the [AvantCommon] plugin be installed and activated.
 
@@ -47,9 +51,9 @@ this program; if not, write to the Free Software Foundation, Inc.,
 Copyright
 ---------
 
-* Created by [gsoules](https://github.com/gsoules)
-* Copyright George Soules, 2016-2020
-* See [LICENSE](https://github.com/gsoules/AvantCustom/blob/master/LICENSE) for more information
+-   Created by [gsoules](https://github.com/gsoules)
+-   Copyright George Soules, 2016-2020
+-   See [LICENSE](https://github.com/gsoules/AvantCustom/blob/master/LICENSE) for more information
 
 
 [AvantAdmin]:         ../avantadmin/avantadmin.md

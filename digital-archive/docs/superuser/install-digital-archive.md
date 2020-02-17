@@ -328,15 +328,15 @@ Perform the steps below to follow the best practice of using HTTPS for all pages
 -   Test that all pages are HTTPS and that the redirect works correctly
 
 ```
-    # Turn on rewrites.
-    RewriteEngine on
+# Turn on rewrites.
+RewriteEngine on
 
-    # Force all URLs to HTTPS
-    RewriteCond %{HTTPS} off
-    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+# Force all URLs to HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 
-    # Redirect the root and only the root to the default folder
-    RedirectMatch ^/$ /digitalarchive
+# Redirect the root and only the root to the default folder
+RedirectMatch ^/$ /digitalarchive
 ```
 
 !!! warning ""
@@ -356,12 +356,12 @@ You can change the `RedirectMatch` line to redirect to a specific URL.
 For example, if the Omeka installation has an `About` page, you could redirect there like this:
 
 ```
-    RedirectMatch ^/$ /digitalarchive/about
+RedirectMatch ^/$ /digitalarchive/about
 ```
 You can even redirect to a page of search results, for example, to display a site content index:
 
 ``` plaintext
-    RedirectMatch ^/$ /digitalarchive/find?view=2&index=53
+RedirectMatch ^/$ /digitalarchive/find?view=2&index=53
 ```    
 
 See [this post](https://stackoverflow.com/questions/990392/htaccess-rewrite-to-redirect-root-url-to-subdirectory)
@@ -718,20 +718,20 @@ and the remote site and then save two comparison sessions, one for the `themes` 
 -   Click the `OK` button
 
 ``` plaintext
-    .git
-    .\ArchiveRepertory
-    .\AvantDpla
-    .\AvantElasticsearch\vendor
-    .\BulkMetadataEditor
-    .\CsvExport
-    .\CsvImportPlus
-    .\Dropbox
-    .\ExhibitBuilder
-    .\Gcihs
-    .\Geolocation
-    .\OaiPmhRepository
-    .\SimplePages
-    .\SimpleVocab
+.git
+.\ArchiveRepertory
+.\AvantDpla
+.\AvantElasticsearch\vendor
+.\BulkMetadataEditor
+.\CsvExport
+.\CsvImportPlus
+.\Dropbox
+.\ExhibitBuilder
+.\Gcihs
+.\Geolocation
+.\OaiPmhRepository
+.\SimplePages
+.\SimpleVocab
 ```
 
 To rename or delete existing sessions, click on the `Home` button in the ribbon
@@ -740,11 +740,13 @@ and then access the session of interest in the Sessions tree at left.
 ---
 ## Configure plugins
 ---
+You are now ready to install the plugins that turn an Omeka installation into the Digital Archive.
 
-### ArchiveRepertory
 
-This plugin controls where files are stored when you attach a file, such as an image or document,
-to an Omeka item.
+### Archive Repertory
+
+The Archive Repertory plugin controls where files are stored when you attach files, such as images or documents,
+to Omeka items.
 
 !!! warning "Important"
     Install this plugin now *before adding any items to Omeka* because the plugin overrides Omeka's
@@ -756,7 +758,7 @@ to an Omeka item.
     The modified version uses a flat file structure instead of the better hierarchical structure.
     Eventually SWHPL should convert to use the newer structure.
 
-Follow these steps to install and configure the ArchiveRepertory plugin.
+Follow these steps to install and configure the Archive Repertory plugin.
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `Archive Repertory`
@@ -809,43 +811,219 @@ Verify that the plugin is working as expected.
 
 ---
 
-### AvantCommon 
-
-Follow these steps to configure [AvantCommon]:
-
--	Specify the Identifier and Alias if applicable
--	Enable the Lightbox feature
--	Private Elements
--	Installation specific
--	Unused Elements (these are all Dublin Core)
--	Source (maybe)
--	Contributor
--	Relation
--	Format
--	Language
--	Coverage
-
----
-
 ### AvantAdmin        
 
-Follow these steps to configure [AvantAdmin]:
+Follow these steps to install and configure [AvantAdmin]:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantAdmin`
+-   Enter the **Item Type** name for the organization (usually all caps e.g. `SWHPL`)
+-   Click the `Save Changes` button
 
+---
 
-Specify the Item Type name for the organization
+### AvantCommon 
+
+The AvantCommon plugin was installed as part of the task to [install AvantTheme](#install-avanttheme).
+
+Follow these steps to configure [AvantCommon]:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Configure` button for `AvantAdmin`
+-	Enter the **Identifier** as `Identifier`
+-   Enter an **Alias** if applicable
+-	Enter any **Private Elements**
+-	Enter the **Unused Elements** shown below plus any others
+
+```
+Source
+Contributor
+Relation
+Format
+Language
+Coverage
+```
+
+-	Check the **Enable Lightbox** checkbox
+-   Leave **Request Image URL** blank for now
+-   Click the `Save Changes` button
 
 ---
 
 ### AvantCustom       
--	There are no configuration options
+
+AvantCustom has no configuration options.
+Follow these steps to install [AvantCustom]:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `AvantCustom`
+
+---
+
+### AvantElements 
+
+Follow these steps to install and configure [AvantElements]:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `AvantElements`
+-   Enter the **Display Order** elements shown below plus any others
+
+``` plaintext
+Identifier
+Title
+Type
+Subject
+Description
+Creator
+Publisher
+Date
+Rights
+```    
+
+-   Enter the **Implicit Link** elements shown below plus any others
+
+``` plaintext
+Type
+Subject
+```    
+
+-   Leave **External Link** blank for now
+-	Check the **Hide Descriptions** checkbox
+-   Enter the **Validation** specifiers shown below plus any others
+
+``` plaintext
+Title: required, simple-text
+Type: required
+Subject: required
+Creator: simple-text
+Publisher: simple-text
+Date: date
+Rights: required
+```    
+
+-   Enter the **Allow Add Input** elements shown below plus any others
+
+``` plaintext
+Title
+Creator
+Subject
+```
+
+-   Leave **Allow HTML** blank for now
+-   Enter the **Text Field** specifiers shown below plus any others
+``` plaintext
+Identifier: 70
+Date: 160
+Circa: 140
+Creator
+Address
+```
+
+-   Enter the **SimpleVocab** specifiers shown below plus any others
+``` plaintext
+Type: 320
+Subject: 320
+Rights
+```
+
+-   Leave **Checkbox field** blank for now
+-   Leave **Read-only Field** blank for now
+-   Leave **Default Value** blank for now
+-   Enter the **Suggest** elements shown below plus any others
+``` plaintext
+Creator
+Publisher
+```
+
+-   Enter the **Title Sync** specifiers shown below plus any others
+``` plaintext
+Creator
+Publisher
+```
+
+-   Enter the **Custom Callback** specifiers shown below plus any others
+``` plaintext
+Identifier, default: DigitalArchive, getDefaultIdentifier
+Identifier, validate: DigitalArchive, validateIdentifier
+Rights, filter: DigitalArchive, filterRights
+Date, filter: Swhpl, filterDate
+```
+
+-   Verify that you have set all of the options correctly
+-   Click the `Save Changes` button
+
+---
+
+### AvantRelationships
+
+Follow these steps to install and configure [AvantRelationships]:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `AvantRelationships`
+-	Set the Visualization Preview option to `At designated location`
+-	Implicit Relationships
+-	Creator: Created
+-	Publisher: Published (if applicable)
+
+---
+
+### AvantSearch       
+
+Follow these steps to install and configure [AvantSearch]:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `AvantSearch`
+-	Titles Only
+-	Checked
+
+---
+
+### AvantZoom         
+
+!!! note ""
+    Skip this task if the installation will not be using the AvantZoom plugin.
+
+Follow these steps to install and configure [AvantZoom]:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `AvantZoom`
+-	Create a zoom folder in the files folder.
+-	Create an images folder in the zoom folder.
+-	Copy the zoomify control icons into the images folder (these are icons used by Openseadragon)
+-	Could this be done by the AvantImages plugin during installation? Would it have rights?
+
+---
+
+### AvantS3    
+
+!!! note ""
+    Skip this task if the installation will not be using the AvantS3 plugin.
+
+Follow these steps to install and configure [AvantS3]:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `AvantS3`
+
+
+- Configure the AvantElements plugin:
+    -   Add the **Custom Callback** specifier shown below
+``` plaintext
+Identifier, filter: DigitalArchive, filterIdentifierS3
+```
+
 
 ---
 
 ### AvantElasticsearch
--	Create an elasticsearch folder in the files folder.
+
+!!! note ""
+    Skip this task if the installation will not be using the AvantElasticsearch plugin.
+
+Follow these steps to install and configure [AvantElasticsearch]:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `AvantElasticsearch`
+-	Create an `elasticsearch` folder in the files folder.
 -	Create IAM credentials
     -	Login aws.amazoncom
     -	In the top menu, under SWHPL Digital Archive, choose My Security Credentials
@@ -863,84 +1041,33 @@ Specify the Item Type name for the organization
     -	Click the Close button
 ---
 
-### AvantElements 
--	Set field types
--	Display Order
-    -	Identifier
-    -	Title
-    -	Type
-    -	Subject
-    -	Description
-    -	Creator
-    -	Publisher
-    -	Date
-    -	Other installation specific
-    -	Rights
--	Implicit Link
-    -	Type
-    -	Subject
-    -	Other installation specific
--	Hide Descriptions
-    -	Checked
--	Validation
-    -	Title: required, simple-text
-    -	Type: required
-    -	Subject: required
-    -	Creator: simple-text
-    -	Publisher: simple-text
-    -	Date: date
-    -	Rights: required
--	Allow Add Input
-    -	Title
-    -	Creator
-    -	Subject
--	Text Field
-    -	Installation specific
--	SimpleVocab Fields
-    -	Type
-    -	Subject
-    -	Installation specific
--	Title Sync
-    -	Creator
-    -	Publisher
-
----
-
-### AvantRelationships
--	Set the Visualization Preview option to `At designated location`
--	Implicit Relationships
--	Creator: Created
--	Publisher: Published (if applicable)
-
----
-
-### AvantS3    
-
----
-
-### AvantSearch       
--	Titles Only
--	Checked
-
----
-
-### AvantZoom         
--	Create a zoom folder in the files folder.
--	Create an images folder in the zoom folder.
--	Copy the zoomify control icons into the images folder (these are icons used by Openseadragon)
--	Could this be done by the AvantImages plugin during installation? Would it have rights?
-
----
-
 ### BulkMetadataEditor
+
+Follow these steps to install and configure Bulk Metadata Editor:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `Bulk Metadata Editor`
 
 ---
 
 ### Geolocation
 
+!!! note ""
+    Skip this task if the installation will not be using the Geolocation plugin.
+
+Follow these steps to install and configure Geolocation:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `Geolocation`
+
 ---
 
 ### Simple Pages
+
+Follow these steps to install and configure Simple Pages:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `Simple Pages`
 -	Install the plugin (it comes with the Omeka installation)
 -	To allow all HTML, e.g. <img> tags, go to Settings > Security and uncheck the Enable HTML Filtering box. Otherwise, filtered elements get removed when you save the Simple page.
 -	Note: When adding Simple pages, be sure to check the box for Publish this page so it will show up in the Omeka navigation section.
@@ -950,6 +1077,11 @@ Add an About page
 ---
 
 ### Simple Vocab       
+
+Follow these steps to install and configure Simple Vocab:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `Simple Vocab`
 -	Install the SimpleVocab plugin version 2.1 or higher
 -	Add vocabularies for Type, Subject and any others.
 
