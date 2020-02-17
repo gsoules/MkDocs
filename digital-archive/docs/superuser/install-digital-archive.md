@@ -1070,23 +1070,50 @@ installation folders.
 ![Administrator FTP account](install-digital-archive-3.jpg)
 
 ---
-## AvantS3
----  
-
-!!! note ""
-    Skip this task if the installation will not be using the AvantS3 plugin.
-
-Follow these steps to install and configure [AvantS3]:
+## Bulk Metadata Editor
+---
+Bulk Metadata Editor has no configuration options.
+Follow these steps to install Bulk Metadata Editor:
 
 -	Go to the Omeka `Plugins` page
--	Click the `Install` button for `AvantS3`
+-	Click the `Install` button for `Bulk Metadata Editor`
 
+---
+## Geolocation
+---
 
-- Configure the AvantElements plugin:
-    -   Add the **Custom Callback** specifier shown below
-``` plaintext
-Identifier, filter: DigitalArchive, filterIdentifierS3
-```
+!!! note ""
+    Skip this task if the installation will not be using the Geolocation plugin.
+
+!!! warning ""
+    The only Digital Archive installation that has the Geolocation plugin installed is
+    Southwest Harbor Public Library and it uses a version modified by AvantLogic; however,
+    the Library has deactivated the plugin because too much advertising shows up in the maps.
+
+Follow these steps to install and configure Geolocation:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `Geolocation`
+-   Configure the plugin as appropriate for the installation
+-   Click the `Save Changes` button
+
+---
+## Simple Pages
+---
+
+Simple Pages has no configuration options.
+Follow these steps to install Simple Pages:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `Simple Pages`
+
+!!! note "Notes"
+    To allow all HTML, e.g. `<img>` tags, go to `Settings` > `Security` and uncheck the
+    **Enable HTML Filtering** checkbox. Otherwise, filtered elements get removed when you
+    save the Simple page.
+
+    When adding Simple pages, be sure to check the box for `Publish this page?` so it will show
+    up in the Omeka navigation section.
 
 ---
 ## AvantElasticsearch
@@ -1113,45 +1140,29 @@ Follow these steps to install and configure [AvantElasticsearch]:
     -	Click the Next: Review button
     -	Click the Create User button
     -	Copy the Access Key ID and Secret Access Key to the configurations Excel sheet
-    Important: This is the only opportunity to obtain the secret key
+        Important: This is the only opportunity to obtain the secret key
     -	Click the Close button
 
 On the AvantSearch configuration page, check the **Elasticsearch** checkbox
 
 ---
-## BulkMetadataEditor
----
-
-Follow these steps to install and configure Bulk Metadata Editor:
-
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `Bulk Metadata Editor`
-
----
-## Geolocation
----
+## AvantS3
+---  
 
 !!! note ""
-    Skip this task if the installation will not be using the Geolocation plugin.
+    Skip this task if the installation will not be using the AvantS3 plugin.
 
-Follow these steps to install and configure Geolocation:
-
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `Geolocation`
-
----
-### Simple Pages
----
-
-Follow these steps to install and configure Simple Pages:
+Follow these steps to install and configure [AvantS3]:
 
 -	Go to the Omeka `Plugins` page
--	Click the `Install` button for `Simple Pages`
--	Install the plugin (it comes with the Omeka installation)
--	To allow all HTML, e.g. <img> tags, go to Settings > Security and uncheck the Enable HTML Filtering box. Otherwise, filtered elements get removed when you save the Simple page.
--	Note: When adding Simple pages, be sure to check the box for Publish this page so it will show up in the Omeka navigation section.
+-	Click the `Install` button for `AvantS3`
 
-Add an About page
+
+- Configure the AvantElements plugin:
+    -   Add the **Custom Callback** specifier shown below
+``` plaintext
+Identifier, filter: DigitalArchive, filterIdentifierS3
+```
 
 ---
 ## Site styling
