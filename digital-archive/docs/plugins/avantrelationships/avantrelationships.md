@@ -5,7 +5,7 @@ When you view an item, the plugin displays thumbnails and titles of related item
 visualization depicting the relationships among items. The user instantly sees how the item fits
 in with the rest of the collection and easily discovers related items.
 
-!!! warning "Prerequisites"
+!!! warning "Important"
     AvantRelationships requires that each item have a unique identifier. It uses the identifiers to establish the relationship
     between two items. It assumes that you are using the Dublin Core **Identifier** element
     for this purpose. If you are using another element, you must specify it on the AvantCommon configuration page. It also
@@ -17,67 +17,72 @@ in with the rest of the collection and easily discovers related items.
 
 The AvantRelationships plugin has these configuration options:
 
-Visualization Preview
-:   Specify where the Relationships Visulization Preview should appear. You can have the visualization appear
-    immediately after metadata elements,or you designate a location, e.g. in the sidebar, by calling the
-    `show_relationships_visualization` hook in your theme's `items/show.php` page. To not show the visualization,
-    choose the `Don't show visualization option`.
+-   [Custom Relationships](#custom-relationships-option)
+-   [Delete Tables](#delete-tables-option)
+-   [Implicit Relationships](#implicit-relationships-option)
+-   [Max Direct Items](#max-direct-items-option)
+-   [Max Indirect Items](#max-indirect-items-option)
+-   [Visualization Preview](#visualization-preview-option)
 
-Max Direct Items
-:   Number of directly related items listed before displaying a `Show more` message.
+---
 
-MaxIndirectItems
-:   Number of indirectly related items listed before displaying a `Show more` message.
+### Custom Relationships option
+This option lets you specify the names of custom callback functions that you write to dynamically create relationships
+for the items being viewed (the primary item). The function must create an array of one or more Item objects that are
+somehow related to the primary itemd. These items will appear in their own relationship group at the end of at Item page after all other relationship groups. A relationship to the group will also appear in the visualization.
 
-Implicit Relationships
-:   Elements that have an implicit relationship to other items based on the **Title** of those
-    items. See the description of this option below.
+Custom relationships are one-way from the item being viewed to other items. If you click one of the related
+items, its Item page will not display a relationship back to the original item.
+ 
+Each row of the Custom Relationships option specifies one group. The synxtax is:
 
-Custom Relationships
-:   Callback functions that dynamically create custom relationships. See the description
-    of this option below.
+``` plaintext
+<class-name> "," <function-name>
+```
 
-Delete Tables
-:   WARNING: Checking this option will cause all relationship database tables and data to be
-    permanently deleted if you uninstall this plugin. Do not check this box unless you are
-    certain that in the future you will not be using relationship data that you created
-    (relationships, types, rules, and cover images) while using this plugin . If you are
-    just experimenting with the plugin, leave the box unchecked. If you decide not to use
-    the plugin, check the box, Save Changes, and then uninstall the plugin.
+Where:
 
-### Features
+* `<class-name>` is the name of a PHP class in a custom plugin
+* `<function-name>` is the name of a public static function in <class-name> 
 
-Once installed, AvantRelationships extends the Omeka admin and public user interfaces to provide
-the ability to add and display relationships. Specifically, the plugin:
+##### Example use:
+```
+SomeCustomClass, createCustomRelationshps
+```
 
--   Adds a `Relationships` menu item in Omeka's admin left menu
--   Adds a `Relationships` button on the admin Item page
--   Adds a `Cover Image` tab on the admin item `Edit` page
--   Displays *Relationship Groups* below an item's metadata on public and admin Item pages
--   Displays a *Visualization Preview* on the public and admin Item pages
--   Adds `Relationships` filter to the bottom of the Omeka `Advanced Search` page
+##### Example custom callback PFP function:
 
-To learn about features provided by AvantRelationships, see the following topics on the
-[Digital Archive](http://swhplibrary.net/archive/relationships/) website:
+``` php
+class SomeCustomClass
+{
+    public static function createCustomRelationshps(Item $primaryItem, RelatedItemsTree $tree)
+    {
+        $items = array();
+        
+        // Put code here to add items to the array that are related to $primaryItem.
 
-* [Archive Relational Model]
-* [Relationships Overview]
-* [Viewing Relationships]
-* [Adding Relationships]
-* [Implicit Relationships]
-* [Cover Images]
-* [Relationship Types]
-* [Relationship Rules]
+        return $tree->createCustomRelationshipsGroup($items, 'Name of Relationship Group');
+    }
+}
+```
 
-### Default Rules and Types
+---
 
-To help get you started using AvantRelationships, the installer creates a small set of relationship types and rules.
-After installation you can see and edit these by clicking `Relationships` in Omeka's left admin menu. You'll need to
-[edit/add/remove rules](http://swhplibrary.net/archive/relationship-rules/) to meet your own needs.
-You also want to [edit/add/remove relationship types](http://swhplibrary.net/archive/relationship-types/) in ways that
-make sense for your collection.
+### Delete Tables option
+**WARNING**: Checking this option will cause all relationship database tables and data to be
+permanently deleted if you uninstall this plugin. Do not check this box unless you are
+certain that in the future you will not be using relationship data that you created
+(relationships, types, rules, and cover images) while using this plugin . If you are
+just experimenting with the plugin, leave the box unchecked. If you decide not to use
+the plugin, check the box, Save Changes, and then uninstall the plugin.
 
-### Implicit Relationships
+---
+
+### Implicit Relationships option
+Elements that have an implicit relationship to other items based on the **Title** of those
+items. See the description of this option below.
+
+#### Implicit Relationships
 An implicit relationship is one where the value of an element for one item exactly matches the value of the **Title**
 element for another item. For example, if the **Creator** element for a photograph item specifies the name of a
 photographer and that photographer's name is used for the **Title** on another item, then there is an implicit
@@ -112,65 +117,25 @@ Creator: Created
 Publisher: Published
 ```
 
-### Custom Relationships
-This option lets you specify the names of custom callback functions that you write to dynamically create relationships
-for the items being viewed (the primary item). The function must create an array of one or more Item objects that are
-somehow related to the primary itemd. These items will appear in their own relationship group at the end of the item's
-Show page after all other relationship groups. A relationship to the group will also appear in the visualization.
+---
 
-Note that custom relationships are one-way from the item being viewed to other items. If you click one of the related
-items, it's Show page will not display a relationship back to the original item.
- 
-Each row of the Custom Relationships option specifies one group. The synxtax is:
+### Max Direct Items option
+Use this option to specify the number of directly related items that will be listed before displaying a `Show more` message.
 
-``` plaintext
-<class-name> "," <function-name>
-```
+---
 
-Where:
+### Max Indirect Items option
+Use this option to specify the number of indirectly related items that will be listed before displaying a `Show more` message.
 
-* `<class-name>` is the name of a PHP class in a custom plugin
-* `<function-name>` is the name of a public static function in <class-name> 
+---
 
-##### Example use of option:
-```
-SomeCustomClass, createCustomRelationshps
-```
+### Visualization Preview option
+Specify where the Relationships Visulization Preview should appear. You can have the visualization appear
+immediately after metadata elements,or you designate a location, e.g. in the sidebar, by calling the
+`show_relationships_visualization` hook in your theme's `items/show.php` page. To not show the visualization,
+choose the `Don't show visualization option`.
 
-##### Example custom callback function:
-
-``` php
-class SomeCustomClass
-{
-    public static function createCustomRelationshps(Item $primaryItem, RelatedItemsTree $tree)
-    {
-        $items = array();
-        
-        // Put code here to add items to the array that are related to $primaryItem.
-
-        return $tree->createCustomRelationshipsGroup($items, 'Name of Relationship Group');
-    }
-}
-```
-
-#### Title Sync Option
-
-The [AvantElements] plugin has a [Title Sync](../avantelements/avantelements.md#title-sync-option) option that makes it easy to keep
-implicitly related items in sync with each other. If you change the title text in one item, Title Sync will
-automatically update the corresponding text in implicitly related items.
-
-Notes:
-
--   The AvantRelationships plugin only detects an implicit relationships when there is an exact match between the element text in one
-    item and the corresponding Dublin Core Title text in another. If the text varies even by a space, the relationship won't be detected.
--   When displaying a creator item, if there are a lot of creation items, the page will display a short list of creation items
-    followed by a button that the user can click to see all of the items. The number of items in the short list is controlled
-    by the **Max indirect items** option on the AvantRelationships configuration page. If AvantSearch is also installed and activated,
-    clicking the button will display all of the related creations as search results in an
-    [Image View](http://swhplibrary.net/searching/search-results-image-view/). If AvantSearch is not active,
-    clicking the button will display all of the creation items inline on the creator item page.
-
-### Placement of the Visualization Graph Preview
+#### Placement of the Visualization Graph Preview
 The preview is a small image of the visualization graph. When you click on the preview's *Enlarge* link, a full size visualization 
 appears in a popup. By default, the AvantRelationships plugin displays the preview immediately after an item's metadata elements
 and before item relationship groups. You can have the  preview appear somewhere else such as in the sidebar. To display the graph
@@ -186,7 +151,7 @@ at a designated location:
 </div><!-- end secondary -->
 ```
 
-If you don't want to show the preview, choose the *Don't show visualization* configuration option.
+If you don't want to show the preview, choose the `Don't show visualization` configuration option.
 
 ## Dependencies
 The AvantRelationships plugin requires the [AvantCommon] plugin be installed and activated.
@@ -251,16 +216,3 @@ Copyright
 [AvantRelationships]: ../avantrelationships/avantrelationships.md
 [AvantSearch]:        ../avantsearch/avantsearch.md
 [AvantS3]:            ../avants3/avants3.md
-
-[Digital Archive]: http://swhplibrary.net/archive
-[Digital Archive site]: http://swhplibrary.net/digitalarchive/items/show/9165
-[Basic Omeka site]: http://swhplibrary.net/demo/relationships/items/show/9165
-[relationships types]: http://swhplibrary.net/digitalarchive/relationships/browse
-[Relationships Overview]: http://swhplibrary.net/archive/relationships/
-[Viewing Relationships]: http://swhplibrary.net/archive/viewing-relationships/
-[Adding Relationships]: http://swhplibrary.net/archive/adding-relationships/
-[Implicit Relationships]: http://swhplibrary.net/archive/implicit-relationships/
-[Cover Images]: http://swhplibrary.net/archive/cover-images/
-[Relationship Types]: http://swhplibrary.net/archive/relationship-types/
-[Relationship Rules]: http://swhplibrary.net/archive/relationship-rules/
-[Archive Relational Model]: http://swhplibrary.net/archive/digital-relational-model/

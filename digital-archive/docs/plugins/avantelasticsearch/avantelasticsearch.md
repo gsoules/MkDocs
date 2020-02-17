@@ -1,9 +1,20 @@
 # AvantElasticsearch
 
-Provides the [AvantSeach](https://github.com/gsoules/AvantSearch) plugin with access to an Elasticsearch service hosted on Amazon AWS.
-     
+Provides support for [Elasticsearch](https://aws.amazon.com/elasticsearch-service/)  hosted on Amazon AWS.
+
+---
+
+## Configuration options
+
+AvantElasticsearch has these configuration options:
+
+
+The following sections describe each option in detail.
+
+---
+
 ## Dependencies
-The AvantElasticsearch plugin requires that the [AvantCommon](https://github.com/gsoules/AvantCommon) plugin be installed and activated.
+The AvantElasticsearch plugin requires that the [AvantCommon] plugin be installed and activated.
 
 This plugin was developed specifically for [Digital Archive](http://thedigitalarchive.net/) installations. It has special
 knowledge of the following Omeka elements and how they are used in these installations.
@@ -23,12 +34,11 @@ The Omeka files folder must contain a directory named 'elasticsearch'.
 
 To install the AvantElasticsearch plugin, follow these steps:
 
-1. First install and activate the [AvantCommon](https://github.com/gsoules/AvantCommon) plugin.
-1. Unzip the AvantElasticsearch-master file into your Omeka installation's plugin directory.
-1. Rename the folder to AvantElasticsearch.
-1. Activate the plugin from the Admin → Settings → Plugins page.
-1. Configure the plugin to provide access to and [Signature v4](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)
-credentials for your [Amazon Elasticsearch Service](https://aws.amazon.com/elasticsearch-service/).
+1. First install and activate the [AvantCommon] plugin
+1. Download the latest release from <https://github.com/gsoules/AvantElasticsearch>
+1. Unzip `AvantElasticsearch-master.zip` into your Omeka `plugins` folder
+1. Rename the folder to `AvantElasticsearch`
+1. Activate the plugin from the Omeka `Plugins` page
 
 ## Warning
 
@@ -54,17 +64,24 @@ this program; if not, write to the Free Software Foundation, Inc.,
 
 ## Copyright
 
-* Created by [gsoules](https://github.com/gsoules) based on code from Harvard University.
-* Copyright George Soules, 2019.
-* See [LICENSE](https://github.com/gsoules/AvantSearch/blob/master/LICENSE) for more information.
-
+-   Created by [gsoules](https://github.com/gsoules)
+-   Copyright George Soules, 2019-2020
+-   See [LICENSE](https://github.com/gsoules/AvantElasticsearch/blob/master/LICENSE) for more information.
 
 ## Credits
 The author wishes to thank the Harvard Academic Technology Group at Harvard University, developers of the
 [Elasticsearch](https://github.com/Harvard-ATG/omeka-plugin-Elasticsearch) v1.1.1 plugin for Omeka Classic.
-It provided helpful insight in how integrate Elasticsearch with Omeka.
+It provided helpful insight in how to integrate Elasticsearch with Omeka.
 
 
-
+[AvantAdmin]:         ../avantadmin/avantadmin.md
+[AvantCommon]:        ../avantcommon/avantcommon.md
+[AvantCustom]:        ../avantcustom/avantcustom.md
+[AvantDPLA]:          ../avantdpla/avantdpla.md
+[AvantElements]:      ../avantelements/avantelements.md
+[AvantElasticsearch]: ../avantelasticsearch/avantelasticsearch.md
+[AvantRelationships]: ../avantrelationships/avantrelationships.md
+[AvantSearch]:        ../avantsearch/avantsearch.md
+[AvantS3]:            ../avants3/avants3.md
 
 

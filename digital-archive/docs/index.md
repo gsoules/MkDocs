@@ -10,6 +10,8 @@ The documentation is divided into categories for these kinds of people:
 - Superusers
 - Developers
 
+A sixth category is documentation about Digital Archive plugins that is of broad interest.
+
 !!! note "Tip" 
     Use the **navigation** pane at left to locate the documentation that's right for you.  
     Or type in the **search box** at upper right to find topics of interest.
@@ -67,3 +69,12 @@ A Digital Archive developer must be familiar with the following technologies:
 - Elasticsearch
 - AWS S3
 
+## Digital Archive plugins
+
+The Digital Archive plugin documentation is in a separate category because it should be of interest to
+everyone except for end users.
+
+-   **Archivists** should be familiar with the features of various plugins
+-   **Administrators** need to know how to configure plugins
+-   **Superusers** must be able to install and update plugins
+-   **Developers** maintain and enhance plugins

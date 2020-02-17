@@ -651,7 +651,7 @@ Follow these steps to access the Digital Archive web server via FTP.
 ![Administrator FTP access](install-digital-archive-4.jpg)
 
 ---
-## Beyond Compare configuration
+## Beyond Compare
 ---
 
 [Beyond Compare](https://www.scootersoftware.com/) is a tool for comparing and synchronizing local
@@ -1121,6 +1121,10 @@ Follow these steps to install Simple Pages:
 
 !!! note ""
     Skip this task if the installation will not be using the AvantElasticsearch plugin.
+
+1. Configure the plugin to provide access to and [Signature v4](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)
+credentials for your [Amazon Elasticsearch Service](https://aws.amazon.com/elasticsearch-service/).
+
 
 Follow these steps to install and configure [AvantElasticsearch]:
 

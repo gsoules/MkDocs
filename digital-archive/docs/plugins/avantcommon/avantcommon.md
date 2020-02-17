@@ -27,6 +27,8 @@ AvantCommon has these configuration options:
 
 The following sections describe each option in detail.
 
+See also the documentation for [installing AvantCommon](../../../superuser/install-digital-archive/#avantcommon).
+
 ---
 
 ### Enable Lightbox option
@@ -181,7 +183,7 @@ Copyright
 
 -   Created by [gsoules](https://github.com/gsoules)
 -   Copyright George Soules, 2016-2020.
--   See [LICENSE](https://github.com/gsoules/AvantRelationships/blob/master/LICENSE) for more information.
+-   See [LICENSE](https://github.com/gsoules/AvantCommon/blob/master/LICENSE) for more information.
 
 
 [AvantAdmin]:         ../avantadmin/avantadmin.md

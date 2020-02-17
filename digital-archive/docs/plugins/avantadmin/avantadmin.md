@@ -37,6 +37,8 @@ Maintenance
 :   When this option is checked, a `Down for maintenance` page will be displayed to public users to prevent
     them from accessing the site. Logged in users will not be affected.
 
+See also the documentation for [installing AvantAdmin](../../../superuser/install-digital-archive/#avantadmin).
+
 ## Dependencies
 The AvantAdmin plugin requires that the [AvantCommon] plugin be installed and activated.
 
