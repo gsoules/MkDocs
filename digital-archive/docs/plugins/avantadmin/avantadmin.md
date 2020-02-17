@@ -27,7 +27,7 @@ AvantAdmin provides the following benefits:
 -   Shows last 100 modified and recently added items on the Dashboard page
 -   Provides a down-for-maintenance feature
 
-## Usage
+## Configuration options
 AvantAdmin has the following configuration options.
 
 Maintenance

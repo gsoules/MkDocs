@@ -13,7 +13,7 @@ AvantCommon provides common logic to support the plugins listed below.
 * [AvantSearch]
 * [AvantS3]
 
-## Usage
+## Configuration options
 
 AvantCommon has the following configuration options.
 

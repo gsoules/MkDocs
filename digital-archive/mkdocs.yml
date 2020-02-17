@@ -22,9 +22,9 @@ nav:
             AvantCustom: plugins/avantcustom/avantcustom.md
             AvantElasticsearch: plugins/avantelasticsearch/avantelasticsearch.md
             AvantElements: plugins/avantelements/avantelements.md
-            AvantRelationships: plugins/avantrelationships/avantrelationships.md
+            AvantRelationships*: plugins/avantrelationships/avantrelationships.md
             AvantS3: plugins/avants3/avants3.md
-            AvantSearch: plugins/avantsearch/avantsearch.md
+            AvantSearch*: plugins/avantsearch/avantsearch.md
             AvantZoom: plugins/avantzoom/avantzoom.md
     - Superuser:
         - Web host administration: superuser/web-host.md

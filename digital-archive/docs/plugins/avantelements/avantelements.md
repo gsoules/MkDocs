@@ -14,16 +14,16 @@ Duplicate This Item button
     time when entering a series of items that contain nearly the same metadata. Only an item's metadata,
     not its file attachments or relationships, are duplicated.
 
-## Usage
+---
 
-The sections that follow describe each of the options on the AvantElements plugin configuration page.
-Many options require that you specify a formatted list of information using commas or other characters
-as separators. For these options, spaces before and after the separators are ignored.
+## Configuration options
+
+AvantCommon has the following configuration options.
 
 Syntax for some options is shown using [BNF notation](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form).
 
 ---
-#### Allow Add Input Option
+### Allow Add Input Option
 This option overrides Omeka's default behavior of displaying an "Add Input" button for every element on the admin Edit
 page. AvantElements reverses this behavior so that the button appears only on the elements specified with this option.
 
@@ -32,7 +32,7 @@ page. AvantElements reverses this behavior so that the button appears only on th
 Specify each element name on a separate row.
 
 ---
-#### Allow HTML Option
+### Allow HTML Option
 This option overrides Omeka's default behavior of displaying a "Use HTML" checkbox for every element on the admin Edit
 page. AvantElements reverses this behavior so that the checkbox appears only on the elements specified with this option.
 
@@ -41,7 +41,7 @@ page. AvantElements reverses this behavior so that the checkbox appears only on 
 Specify each element name on a separate row.
 
 ---
-#### Checkbox Field Option
+### Checkbox Field Option
 This option lets you treat an element as a boolean (true or false) value that appears as a checkbox on the admin Edit
 page. When you save the item, an unchecked element is saved with an empty value, and a checked element is saved
 with a value of 1.
@@ -74,7 +74,7 @@ Approved: Yes
 ```
 
 ---
-#### Custom Callback Option
+### Custom Callback Option
 This is an advanced feature intended for you only by PHP programmers who have at least basic familiarity with how
 Omeka plugins work. The Custom Callback option lets you specify actions to be performed by custom written PHP functions
 that you provide.
@@ -122,7 +122,7 @@ Type value.
 -   `<item>, save` is called after the item is saved and cannot be used to report an error. Use this callback to
 execute logic such as updating a table in the database.
 ---
-#### Default Value Option
+### Default Value Option
 Use the Default Value option to provide text that should be automatically filled in for an element when you add a new item.
 
 If the element displays as a dropdown list with contents that come from the SimpleVocab plugin, be sure that the
@@ -150,7 +150,7 @@ Status: Pending Approval
 ```
 
 ---
-#### Display Order Option
+### Display Order Option
 This option lets you specify the order, top to bottom, in which elements appear on public Item pages. Normally Omeka
 displays Dublin Core elements first followed by Item Type Metadata elements. This option lets you intermingle both kinds
 of elements in any sequence you like.
@@ -164,7 +164,7 @@ tab is dictated by the order on the Edit Item Type page.
 Specify each element name on a separate row.
 
 ---
-#### External Link Option
+### External Link Option
 Use this option to specify which elements will have their value display as a hyperlink where the hyperlink's `href`
 attribute is the element's value. For instance, you may have an element named Web Resource that is used to store the
 URL to a web page that associated with the item. If the item were for a book, the Web Resource might link to an online copy of
@@ -223,13 +223,13 @@ The examples above will generate a hyperlink like the one shown below:
 ```
 
 ---
-#### Hide Descriptions Option
+### Hide Descriptions Option
 When checked, this option hides the descriptive information that Omeka normally displays on the admin Edit page to
 explain what Dublin Core means and what each element is used for. Use this option to make the Edit page more compact
 and to hide information that is often not useful to anyone, but a first time user.
 
 ---
-#### Implicit Link Option
+### Implicit Link Option
 Use this option to specify which elements will have their value display as a hyperlink to other elements that have
 the exact same value. For example, if you list the `Type` element using this option, the text for the `Type` field on
 public and admin Item pages will display a hyperlink that when clicked, will display search results listing every other
@@ -276,7 +276,7 @@ public static function filterPlace($item, $elementId, $text)
 ```
 
 ---
-#### Read-only Field Option
+### Read-only Field Option
 Elements listed using this option appear on the admin Edit page as read-only text. Use this option for element values
 that are set by a plugin or other mechanism, but cannot be edited by an administrator.
 
@@ -285,7 +285,7 @@ that are set by a plugin or other mechanism, but cannot be edited by an administ
 Specify each element name on a separate row.
 
 ---
-#### SimpleVocab Field Option
+### SimpleVocab Field Option
 The purpose of this option is to let you specify the width of dropdown lists that are displayed and populated by the
 [SimpleVocab plugin](https://omeka.org/classic/docs/Plugins/SimpleVocab/). It lets you specify the width of the
 dropdown in pixels. For example, you can use a narrow width for an element having a vocabulary consisting of
@@ -316,7 +316,7 @@ Notes
     as a dropdown list. So if you change an element from Text to SimpleVocab, be sure to remove it from the Text Field option.
 
 ---
-#### Suggest Option
+### Suggest Option
 The Suggest option lets you designate elements that should automatically suggest a list of values to choose from as
 you are typing into the field. The behavior is similar to how the Add Tags field works on the Tags tab.
 
@@ -334,7 +334,7 @@ display as a text box, not a dropdown list, and the suggestions will come from t
 Specify each element name on a separate row.
 
 ---
-#### Text Field Option
+### Text Field Option
 The Text Field option lets you specify which elements should display on the admin Edit page as a one-line text box
 instead of a multi-line textarea which is what Omeka displays normally.
 
@@ -352,7 +352,7 @@ Where:
 text box occupies the maximum available width.
 
 ---
-#### Title Sync Option
+### Title Sync Option
 The Title Sync option lets you specify the name of an element that contains text that must match the value of the Title
 element in another item. For example, suppose the Creator element in ten different photograph items contains the name
 of the photographer "John Smith" who took all ten pictures. Also suppose another item's Title element contains "John
@@ -374,7 +374,7 @@ that burden.
 Specify each element name on a separate row.
 
 ---
-#### Validation Option
+### Validation Option
 The Validation option lets you specify one or more validation rules for an element. When you click the Save Changes
 button on the admin Edit page, AvantElements applies the rules. If the element value does not satisfy the rule, the
 page reloads, still in edit mode, with an error message displayed at the top of the page. 

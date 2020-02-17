@@ -9,7 +9,7 @@ in ways that are not possible by modifying a theme.
 !!! warning ""
     This plugin is intended for use by developers who are familiar with Omeka plugins and understand how filters and hooks are used to add or modify Omeka features.**
 
-## Usage
+## Configuration options
 
 AvantCustom has no configuration options.
 
