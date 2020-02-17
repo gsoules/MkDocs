@@ -40,7 +40,7 @@ together in the the same `public_html`.
     It will get created later during the *Install Omeka Classic files* step.
 
 ---
-## Create MySQL database
+## MySQL database
 ---
 
 A new Reclaim Hosting account does not come with a database. Follow the steps below to
@@ -141,7 +141,7 @@ Follow these steps to change the storage engine:
 -	Close the phpMyAdmin browser tab
 
 ---
-## Install Omeka
+## Omeka installation
 ---
 
 ### Copy installation files to server
@@ -221,7 +221,7 @@ To learn more, see the Omeka documentation for [retrieving error messages](https
 Errors will now be written to `digitalarchive/application/logs/errors.log`.
 
 ---
-## Configure Omeka
+## Omeka configuration
 ---
 
 You are now ready to launch Omeka and configure site settings.
@@ -306,7 +306,7 @@ Follows these steps to finishing configuring Omeka.
         or contact your host's technical support and ask them to tell you the path 
 
 ---
-## Configure web server settings
+## Web server settings
 ---
 
 ### Configure site security
@@ -419,7 +419,7 @@ Follow these steps to determine if the default configuration for background proc
     If you are not successful, contact the host to ask for the right path.
 
 ---
-## Add plugins and theme
+## Plugins and theme
 ---
 
 The Digital Archive is an Omeka installation combined with a set of plugin and a theme
@@ -526,7 +526,7 @@ The `plugins` folder on the web server should now look like this:
 ![GitHub download](install-digital-archive-8.jpg)
 
 ---
-## Install AvantTheme
+## AvantTheme configuration
 ---
 AvantTheme, and many of the AvantPlugins, depend on the AvantCommon plugin being installed.
 Before you can install the theme, install AvantCommon by following these steps:
@@ -553,7 +553,7 @@ Before you can install the theme, install AvantCommon by following these steps:
 -	Delete all the theme folders except AvantTheme
 
 ---
-## Define Item elements
+## Item elements definition
 ---
 
 Omeka installs with a number of different *Item Types* and *Elements*; however, the Digital Archive
@@ -618,7 +618,7 @@ suitable because the Identifier and Type fields appears near the end. Follow the
 recommended sequence for the Digital Archive.
 
 ---
-## Set up FTP access
+## FTP access
 ---
 
 This section describes how to set up FTP access for a superuser and how to create a limited
@@ -671,7 +671,7 @@ installation folders.
 ![Administrator FTP account](install-digital-archive-3.jpg)
 
 ---
-## Configure Beyond Compare
+## Beyond Compare configuration
 ---
 
 [Beyond Compare](https://www.scootersoftware.com/) is a tool for comparing and synchronizing local
@@ -738,12 +738,25 @@ To rename or delete existing sessions, click on the `Home` button in the ribbon
 and then access the session of interest in the Sessions tree at left.
 
 ---
-## Configure plugins
+## Plugin installation
 ---
 You are now ready to install the plugins that turn an Omeka installation into the Digital Archive.
 
+At this point in the installation, the plugin files have been uploaded to the web server and will
+appear on the Omeka `Plugins` page; however, most of the plugins have not yet been installed
+as is evidenced by the green `Install` button.
 
-### Archive Repertory
+![Install button](install-digital-archive-9.jpg)
+
+Once a plugin is installed, it shows buttons that let you configure, deactivate, or uninstall it.
+
+![Install button](install-digital-archive-10.jpg)
+
+Install and configure the plugins in the order in which they appear in the sections that follow.
+
+---
+## Archive Repertory
+---
 
 The Archive Repertory plugin controls where files are stored when you attach files, such as images or documents,
 to Omeka items.
@@ -810,8 +823,8 @@ Verify that the plugin is working as expected.
     File Manager.
 
 ---
-
-### AvantAdmin        
+## AvantAdmin
+---   
 
 Follow these steps to install and configure [AvantAdmin]:
 
@@ -821,8 +834,8 @@ Follow these steps to install and configure [AvantAdmin]:
 -   Click the `Save Changes` button
 
 ---
-
-### AvantCommon 
+## AvantCommon
+--- 
 
 The AvantCommon plugin was installed as part of the task to [install AvantTheme](#install-avanttheme).
 
@@ -849,8 +862,8 @@ Coverage
 -   Click the `Save Changes` button
 
 ---
-
-### AvantCustom       
+## AvantCustom 
+---      
 
 AvantCustom has no configuration options.
 Follow these steps to install [AvantCustom]:
@@ -859,8 +872,8 @@ Follow these steps to install [AvantCustom]:
 -	Click the `Install` button for `AvantCustom`
 
 ---
-
-### Simple Vocab       
+## Simple Vocab
+---      
 
 You'll install the Simple Vocab plugin next because it is needed by the AvantElements plugin.
 
@@ -878,8 +891,8 @@ Follow these steps to install and configure Simple Vocab:
 -   Click the `Save Changes` button
 
 ---
-
-### AvantElements 
+## AvantElements
+--- 
 
 Follow these steps to install and configure [AvantElements]:
 
@@ -970,8 +983,8 @@ Date, filter: Swhpl, filterDate
 -   Click the `Save Changes` button
 
 ---
-
-## Configure AvantRelationships
+## AvantRelationships
+---
 
 Follow these steps to install and configure [AvantRelationships]:
 
@@ -987,11 +1000,11 @@ Creator: Created
 Publisher: Published
 ```
 -   Leave **Custom Relationships** blank
--   Leave **Delete Tables** blank
+-   Leave **Delete Tables** unchecked
 
 ---
-
-## Configure AvantSearch       
+##  AvantSearch
+---       
 
 Follow these steps to install and configure [AvantSearch]:
 
@@ -1001,8 +1014,8 @@ Follow these steps to install and configure [AvantSearch]:
 -	Checked
 
 ---
-
-### AvantZoom         
+## AvantZoom
+---         
 
 !!! note ""
     Skip this task if the installation will not be using the AvantZoom plugin.
@@ -1017,8 +1030,8 @@ Follow these steps to install and configure [AvantZoom]:
 -	Could this be done by the AvantImages plugin during installation? Would it have rights?
 
 ---
-
-### AvantS3    
+## AvantS3
+---  
 
 !!! note ""
     Skip this task if the installation will not be using the AvantS3 plugin.
@@ -1036,8 +1049,8 @@ Identifier, filter: DigitalArchive, filterIdentifierS3
 ```
 
 ---
-
-### AvantElasticsearch
+## AvantElasticsearch
+---
 
 !!! note ""
     Skip this task if the installation will not be using the AvantElasticsearch plugin.
@@ -1062,9 +1075,10 @@ Follow these steps to install and configure [AvantElasticsearch]:
     -	Copy the Access Key ID and Secret Access Key to the configurations Excel sheet
     Important: This is the only opportunity to obtain the secret key
     -	Click the Close button
----
 
-### BulkMetadataEditor
+---
+## BulkMetadataEditor
+---
 
 Follow these steps to install and configure Bulk Metadata Editor:
 
@@ -1072,8 +1086,8 @@ Follow these steps to install and configure Bulk Metadata Editor:
 -	Click the `Install` button for `Bulk Metadata Editor`
 
 ---
-
-### Geolocation
+## Geolocation
+---
 
 !!! note ""
     Skip this task if the installation will not be using the Geolocation plugin.
@@ -1084,8 +1098,8 @@ Follow these steps to install and configure Geolocation:
 -	Click the `Install` button for `Geolocation`
 
 ---
-
 ### Simple Pages
+---
 
 Follow these steps to install and configure Simple Pages:
 
@@ -1098,7 +1112,7 @@ Follow these steps to install and configure Simple Pages:
 Add an About page
 
 ---
-## Style the site
+## Site styling
 ---
 
 ### Set navigation
