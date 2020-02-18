@@ -41,7 +41,7 @@ strong {
 }
 
 pre {
-    margin: 0 0 10px 24px;
+    margin-left: 24px;
 }
 
 /* Override Windmill's styling for admonitions. */
@@ -166,8 +166,8 @@ ol ul {
 .wm-page-toc-text {
     padding-bottom: 6px;
   }
-  
-/* Don't center the content */
+
+  /* Don't center the content */
 .container-fluid {
     margin-right: 12px;
     margin-left: 12px;
@@ -181,9 +181,9 @@ ol ul {
     max-width: 260px;
 }
 
-/* Reduce the top and bottom margins for an image. */
+/* Reduce the top and bottom margins for an image and indent from the left. */
 .wm-page-content img {
-    margin: 8px auto 12px auto;
+    margin: 8px auto 12px 24px;
 }
 
 /* Replace Windmill's list icon with the hamburger icon. */

@@ -24,6 +24,10 @@ The AvantRelationships plugin has these configuration options:
 -   [Max Indirect Items](#max-indirect-items-option)
 -   [Visualization Preview](#visualization-preview-option)
 
+The following sections describe each option in detail.
+
+See also the documentation for [installing AvantRelationships](../../../superuser/install-digital-archive/#avantrelationships).
+
 ---
 
 ### Custom Relationships option

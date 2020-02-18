@@ -22,7 +22,7 @@ The AvantSearch plugin has these configuration options:
 
 The following sections describe each option in detail.
 
-Syntax for some options is shown using [BNF notation](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form).
+See also the documentation for [installing AvantSearch](../../../superuser/install-digital-archive/#avantsearch).
 
 ---
 

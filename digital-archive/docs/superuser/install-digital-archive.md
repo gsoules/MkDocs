@@ -751,7 +751,7 @@ to Omeka items.
     The modified version uses a flat file structure instead of the better hierarchical structure.
     Eventually SWHPL should convert to use the newer structure.
 
-Follow these steps to install and configure the Archive Repertory plugin.
+Follow these steps to install and configure the Archive Repertory plugin:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `Archive Repertory`
@@ -803,10 +803,76 @@ Verify that the plugin is working as expected.
     File Manager.
 
 ---
+## Simple Vocab
+---      
+
+You'll install the Simple Vocab plugin next because it is needed by the AvantElements plugin.
+
+Follow these steps to install and configure the Simple Vocab plugin:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `Simple Vocab`
+-   Leave **Apply to Files** unchecked
+-   Click the `Save Changes` button
+-   Click `Simple Vocab` in Omeka's left admin menu
+-   Add vocabularies for the **Rights**, **Subject**, and **Type** elements  
+    For each element:
+    -   Choose the element name from the **Element** dropdown
+    -   Copy/paste the values from another installation into **Vocabulary Terms**
+-   Click the `Save Changes` button
+
+---
+## Simple Pages
+---
+
+Simple Pages has no configuration options.
+
+Follow these steps to install the Simple Pages plugin:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `Simple Pages`
+
+!!! note "Notes"
+    To allow all HTML, e.g. `<img>` tags, go to `Settings` > `Security` and uncheck the
+    **Enable HTML Filtering** checkbox. Otherwise, filtered elements get removed when you
+    save the Simple page.
+
+    When adding Simple pages, be sure to check the box for `Publish this page?` so it will show
+    up in the Omeka navigation section.
+
+---
+## Bulk Metadata Editor
+---
+Bulk Metadata Editor has no configuration options.
+Follow these steps to install Bulk Metadata Editor:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `Bulk Metadata Editor`
+
+---
+## Geolocation
+---
+
+!!! note ""
+    Skip this task if the installation will not be using the Geolocation plugin.
+
+!!! warning ""
+    The only Digital Archive installation that has the Geolocation plugin installed is
+    Southwest Harbor Public Library and it uses a version modified by AvantLogic; however,
+    the Library has deactivated the plugin because too much advertising shows up in the maps.
+
+Follow these steps to install the Geolocation plugin:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `Geolocation`
+-   Configure the plugin as appropriate for the installation
+-   Click the `Save Changes` button
+
+---
 ## AvantAdmin
 ---   
 
-Follow these steps to install and configure [AvantAdmin]:
+Follow these steps to install and configure the [AvantAdmin] plugin:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantAdmin`
@@ -819,7 +885,7 @@ Follow these steps to install and configure [AvantAdmin]:
 
 The AvantCommon plugin was installed as part of the task to [install AvantTheme](#install-avanttheme).
 
-Follow these steps to configure [AvantCommon]:
+Follow these steps to configure the [AvantCommon] plugin:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Configure` button for `AvantAdmin`
@@ -852,29 +918,10 @@ Follow these steps to install [AvantCustom]:
 -	Click the `Install` button for `AvantCustom`
 
 ---
-## Simple Vocab
----      
-
-You'll install the Simple Vocab plugin next because it is needed by the AvantElements plugin.
-
-Follow these steps to install and configure Simple Vocab:
-
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `Simple Vocab`
--   Leave **Apply to Files** unchecked
--   Click the `Save Changes` button
--   Click `Simple Vocab` in Omeka's left admin menu
--   Add vocabularies for the **Rights**, **Subject**, and **Type** elements  
-    For each element:
-    -   Choose the element name from the **Element** dropdown
-    -   Copy/paste the values from another installation into **Vocabulary Terms**
--   Click the `Save Changes` button
-
----
 ## AvantElements
 --- 
 
-Follow these steps to install and configure [AvantElements]:
+Follow these steps to install and configure the [AvantElements] plugin:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantElements`
@@ -966,7 +1013,7 @@ Date, filter: Swhpl, filterDate
 ## AvantRelationships
 ---
 
-Follow these steps to install and configure [AvantRelationships]:
+Follow these steps to install  the [AvantRelationships] plugin:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantRelationships`
@@ -987,7 +1034,7 @@ Publisher: Published
 ##  AvantSearch
 ---       
 
-Follow these steps to install and configure [AvantSearch]:
+Follow these steps to install and configure the [AvantSearch] plugin:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantSearch`
@@ -1070,84 +1117,43 @@ installation folders.
 ![Administrator FTP account](install-digital-archive-3.jpg)
 
 ---
-## Bulk Metadata Editor
----
-Bulk Metadata Editor has no configuration options.
-Follow these steps to install Bulk Metadata Editor:
-
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `Bulk Metadata Editor`
-
----
-## Geolocation
----
-
-!!! note ""
-    Skip this task if the installation will not be using the Geolocation plugin.
-
-!!! warning ""
-    The only Digital Archive installation that has the Geolocation plugin installed is
-    Southwest Harbor Public Library and it uses a version modified by AvantLogic; however,
-    the Library has deactivated the plugin because too much advertising shows up in the maps.
-
-Follow these steps to install and configure Geolocation:
-
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `Geolocation`
--   Configure the plugin as appropriate for the installation
--   Click the `Save Changes` button
-
----
-## Simple Pages
----
-
-Simple Pages has no configuration options.
-Follow these steps to install Simple Pages:
-
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `Simple Pages`
-
-!!! note "Notes"
-    To allow all HTML, e.g. `<img>` tags, go to `Settings` > `Security` and uncheck the
-    **Enable HTML Filtering** checkbox. Otherwise, filtered elements get removed when you
-    save the Simple page.
-
-    When adding Simple pages, be sure to check the box for `Publish this page?` so it will show
-    up in the Omeka navigation section.
-
----
 ## AvantElasticsearch
 ---
 
 !!! note ""
     Skip this task if the installation will not be using the AvantElasticsearch plugin.
 
-1. Configure the plugin to provide access to and [Signature v4](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)
-credentials for your [Amazon Elasticsearch Service](https://aws.amazon.com/elasticsearch-service/).
+Follow these steps to install and configure the [AvantElasticsearch] plugin:
 
-
-Follow these steps to install and configure [AvantElasticsearch]:
-
+-   Go to [cPanel] and choose `File Manager`
+-   Create this folder: `public_html/digitalarchive/files/elasticsearch`
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantElasticsearch`
--	Create an `elasticsearch` folder in the files folder.
--	Create IAM credentials
-    -	Login aws.amazoncom
-    -	In the top menu, under SWHPL Digital Archive, choose My Security Credentials
-    -	Click Users in the left menu
-    -	Click the Add User button
-    -	Use the organization name for the user name e.g. gcihs
-    -	For the Access type check the Programmatic Access box
-    -	Click the Next: Permissions button
-    -	In the Add User to Group section, click the contributor group
-    -	Click the Next: Tags button
-    -	Click the Next: Review button
-    -	Click the Create User button
-    -	Copy the Access Key ID and Secret Access Key to the configurations Excel sheet
-        Important: This is the only opportunity to obtain the secret key
-    -	Click the Close button
 
-On the AvantSearch configuration page, check the **Elasticsearch** checkbox
+###	Create [IAM](https://aws.amazon.com/iam/) ([Signature v4](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)) credentials for [Amazon Elasticsearch Service](https://aws.amazon.com/elasticsearch-service/)
+
+-	Go to <https://aws.amazon.com/>
+-   Click the `Sign In to the Console` button at upper right
+
+![AWS sign in](install-digital-archive-11.jpg)
+
+-	In the top menu, under SWHPL Digital Archive, choose My Security Credentials
+-	Click Users in the left menu
+-	Click the Add User button
+-	Use the organization name for the user name e.g. gcihs
+-	For the Access type check the Programmatic Access box
+-	Click the Next: Permissions button
+-	In the Add User to Group section, click the contributor group
+-	Click the Next: Tags button
+-	Click the Next: Review button
+-	Click the Create User button
+-	Copy the Access Key ID and Secret Access Key to the configurations Excel sheet
+    Important: This is the only opportunity to obtain the secret key
+-	Click the Close button
+
+### Enable Elastticsearch
+-   Go to the configuration options page for the AvantSearch plugin
+-   Check the **Elasticsearch** checkbox
 
 ---
 ## AvantS3
@@ -1160,10 +1166,8 @@ Follow these steps to install and configure [AvantS3]:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantS3`
-
-
-- Configure the AvantElements plugin:
-    -   Add the **Custom Callback** specifier shown below
+-   Go to the configuration options page for the AvantElements plugin
+-   Add the code below to the end of the **Custom Callback** specifiers
 ``` plaintext
 Identifier, filter: DigitalArchive, filterIdentifierS3
 ```

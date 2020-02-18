@@ -10,6 +10,9 @@ See the documentation for [zoomable images](../../administrator/zoomable-images.
 
 AvantZoom has no configuration options.
 
+See also the documentation for [installing AvantZoom](../../../superuser/install-digital-archive/#avantzoom).
+
+
 ## Dependencies
 AvantZoom depends on the following open source library which is included in the `views/shared/javascripts` folder.
 Click the link below to see its copyright and license.

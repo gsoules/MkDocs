@@ -8,8 +8,25 @@ Provides [Amazon S3](https://aws.amazon.com/free/storage) storage for archival f
 
 AvantS3 has these configuration options:
 
+Console
+:   S3 management console URL
 
-The following sections describe each option in detail.
+Bucket
+:   S3 bucket name for the Digital Archive
+
+Path
+:   Path to database folders
+
+Region
+:   AWS server region
+
+Key
+:   AWS Access Key Id
+
+Secret
+:   AWS Secret Access Key
+
+See also the documentation for [installing AvantS3](../../../superuser/install-digital-archive/#avants3).
 
 ---
 

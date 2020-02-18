@@ -8,8 +8,31 @@ Provides support for [Elasticsearch](https://aws.amazon.com/elasticsearch-servic
 
 AvantElasticsearch has these configuration options:
 
+Contributor Id
+:   Identification for this organization (3 to 6 lower case letters a-z)
 
-The following sections describe each option in detail.
+Contributor
+:   Organization name as it should be shown for the contributor of its data
+
+Host
+:   Example: search-something-xxxxxxxxxxxx.us-east-2.es.amazonaws.com
+
+Region
+:   AWS server region
+
+Key
+:   AWS Access Key Id
+
+Secret
+:   AWS Secret Access Key
+
+Local Index
+:   xxx
+
+Shared Index
+:   yyy
+
+See also the documentation for [installing AvantElasticsearch](../../../superuser/install-digital-archive/#avantelasticsearch).
 
 ---
 
