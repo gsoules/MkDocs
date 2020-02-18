@@ -469,12 +469,12 @@ this program; if not, write to the Free Software Foundation, Inc.,
 -   See [LICENSE](https://github.com/gsoules/AvantElements/blob/master/LICENSE) for more information.
 
 
-[AvantAdmin]:         ../avantadmin/avantadmin.md
-[AvantCommon]:        ../avantcommon/avantcommon.md
-[AvantCustom]:        ../avantcustom/avantcustom.md
-[AvantDPLA]:          ../avantdpla/avantdpla.md
-[AvantElements]:      ../avantelements/avantelements.md
-[AvantElasticsearch]: ../avantelasticsearch/avantelasticsearch.md
-[AvantRelationships]: ../avantrelationships/avantrelationships.md
-[AvantSearch]:        ../avantsearch/avantsearch.md
-[AvantS3]:            ../avants3/avants3.md
+[AvantAdmin]:         avantadmin.md
+[AvantCommon]:        avantcommon.md
+[AvantCustom]:        avantcustom.md
+[AvantDPLA]:          avantdpla.md
+[AvantElements]:      avantelements.md
+[AvantRelationships]: avantrelationships.md
+[AvantSearch]:        avantsearch.md
+[AvantS3]:            avants3.md
+[AvantZoom]:          avantzoom.md

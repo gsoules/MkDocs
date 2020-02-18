@@ -97,14 +97,13 @@ The author wishes to thank the Harvard Academic Technology Group at Harvard Univ
 It provided helpful insight in how to integrate Elasticsearch with Omeka.
 
 
-[AvantAdmin]:         ../avantadmin/avantadmin.md
-[AvantCommon]:        ../avantcommon/avantcommon.md
-[AvantCustom]:        ../avantcustom/avantcustom.md
-[AvantDPLA]:          ../avantdpla/avantdpla.md
-[AvantElements]:      ../avantelements/avantelements.md
-[AvantElasticsearch]: ../avantelasticsearch/avantelasticsearch.md
-[AvantRelationships]: ../avantrelationships/avantrelationships.md
-[AvantSearch]:        ../avantsearch/avantsearch.md
-[AvantS3]:            ../avants3/avants3.md
-
+[AvantAdmin]:         avantadmin.md
+[AvantCommon]:        avantcommon.md
+[AvantCustom]:        avantcustom.md
+[AvantDPLA]:          avantdpla.md
+[AvantElements]:      avantelements.md
+[AvantRelationships]: avantrelationships.md
+[AvantSearch]:        avantsearch.md
+[AvantS3]:            avants3.md
+[AvantZoom]:          avantzoom.md
 

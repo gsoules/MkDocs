@@ -1137,19 +1137,19 @@ Follow these steps to install and configure the [AvantElasticsearch] plugin:
 
 ![AWS sign in](install-digital-archive-11.jpg)
 
--	In the top menu, under SWHPL Digital Archive, choose My Security Credentials
--	Click Users in the left menu
--	Click the Add User button
--	Use the organization name for the user name e.g. gcihs
--	For the Access type check the Programmatic Access box
--	Click the Next: Permissions button
--	In the Add User to Group section, click the contributor group
--	Click the Next: Tags button
--	Click the Next: Review button
--	Click the Create User button
--	Copy the Access Key ID and Secret Access Key to the configurations Excel sheet
-    Important: This is the only opportunity to obtain the secret key
--	Click the Close button
+-	In the top menu dropdown for the logged in user, choose `My Security Credentials`
+-	Click `Users` in the left menu
+-	Click the `Add User` button
+-	Use the organization name for the user name e.g. `swhpl``
+-	For  **Access type** check the `Programmatic Access` box
+-	Click the `Next: Permissions` button
+-	In the **Add User to Group** section, click the contributor group
+-	Click the `Next: Tags` button
+-	Click the `Next: Review` button
+-	Click the `Create User` button
+-	Copy the **Access Key ID** and **Secret Access Key** to the configurations Excel sheet  
+    *This is the only opportunity to obtain the secret key*
+-	Click the `Close` button
 
 ### Enable Elastticsearch
 -   Go to the configuration options page for the AvantSearch plugin
@@ -1206,14 +1206,14 @@ Identifier, filter: DigitalArchive, filterIdentifierS3
 -	Remove the CSS files for other organization’s theme customization e.g. swhpl.css
 
 
-[AvantAdmin]:         ../../plugins/avantadmin/avantadmin
-[AvantCommon]:        ../../plugins/avantcommon/avantcommon
-[AvantCustom]:        ../../plugins/avantcustom/avantcustom
-[AvantDPLA]:          ../../plugins/avantdpla/avantdpla
-[AvantElements]:      ../../plugins/avantelements/avantelements
-[AvantElasticsearch]: ../../plugins/avantelasticsearch/avantelasticsearch
-[AvantRelationships]: ../../plugins/avantrelationships/avantrelationships
-[AvantSearch]:        ../../plugins/avantsearch/avantsearch
-[AvantS3]:            ../../plugins/avants3/avants3
-[AvantZoom]:          ../../plugins/avantzoom/avantzoom
+[AvantAdmin]:         ../../plugins/avantadmin
+[AvantCommon]:        ../../plugins/avantcommon
+[AvantCustom]:        ../../plugins/avantcustom
+[AvantDPLA]:          ../../plugins/avantdpla
+[AvantElements]:      ../../plugins/avantelements
+[AvantElasticsearch]: ../../plugins/avantelasticsearch
+[AvantRelationships]: ../../plugins/avantrelationships
+[AvantSearch]:        ../../plugins/avantsearch
+[AvantS3]:            ../../plugins/avants3
+[AvantZoom]:          ../../plugins/avantzoom
 [cPanel]:             web-host.md#cpanel

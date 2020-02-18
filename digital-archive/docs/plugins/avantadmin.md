@@ -82,12 +82,12 @@ Copyright
 -   See [LICENSE](https://github.com/gsoules/AvantAdmin/blob/master/LICENSE) for more information.
 
 
-[AvantAdmin]:         ../avantadmin/avantadmin.md
-[AvantCommon]:        ../avantcommon/avantcommon.md
-[AvantCustom]:        ../avantcustom/avantcustom.md
-[AvantDPLA]:          ../avantdpla/avantdpla.md
-[AvantElements]:      ../avantelements/avantelements.md
-[AvantElasticsearch]: ../avantelasticsearch/avantelasticsearch.md
-[AvantRelationships]: ../avantrelationships/avantrelationships.md
-[AvantSearch]:        ../avantsearch/avantsearch.md
-[AvantS3]:            ../avants3/avants3.md
+[AvantAdmin]:         avantadmin.md
+[AvantCommon]:        avantcommon.md
+[AvantCustom]:        avantcustom.md
+[AvantDPLA]:          avantdpla.md
+[AvantElements]:      avantelements.md
+[AvantRelationships]: avantrelationships.md
+[AvantSearch]:        avantsearch.md
+[AvantS3]:            avants3.md
+[AvantZoom]:          avantzoom.md

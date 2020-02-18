@@ -184,6 +184,7 @@ ol ul {
 /* Reduce the top and bottom margins for an image and indent from the left. */
 .wm-page-content img {
     margin: 8px auto 12px 24px;
+    max-width: calc(100% - 24px);
 }
 
 /* Replace Windmill's list icon with the hamburger icon. */

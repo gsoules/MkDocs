@@ -29,15 +29,15 @@ nav:
     - Developer:
         - GitHub: developer/github.md
     - Digital Archive plugins:
-        AvantAdmin: plugins/avantadmin/avantadmin.md
-        AvantCommon: plugins/avantcommon/avantcommon.md
-        AvantCustom: plugins/avantcustom/avantcustom.md
-        AvantElasticsearch: plugins/avantelasticsearch/avantelasticsearch.md
-        AvantElements: plugins/avantelements/avantelements.md
-        AvantRelationships*: plugins/avantrelationships/avantrelationships.md
-        AvantS3: plugins/avants3/avants3.md
-        AvantSearch*: plugins/avantsearch/avantsearch.md
-        AvantZoom: plugins/avantzoom/avantzoom.md
+        AvantAdmin: plugins/avantadmin.md
+        AvantCommon: plugins/avantcommon.md
+        AvantCustom: plugins/avantcustom.md
+        AvantElasticsearch: plugins/avantelasticsearch.md
+        AvantElements: plugins/avantelements.md
+        AvantRelationships*: plugins/avantrelationships.md
+        AvantS3: plugins/avants3.md
+        AvantSearch*: plugins/avantsearch.md
+        AvantZoom: plugins/avantzoom.md
     - Welcome: index.md
     - Author's notes: author-notes.md
     

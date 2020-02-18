@@ -36,7 +36,7 @@ make sense for your collection.
 
 #### Title Sync Option
 
-The [AvantElements] plugin has a [Title Sync](../avantelements/avantelements.md#title-sync-option) option that makes it easy to keep
+The [AvantElements] plugin has a [Title Sync](../plugins/avantelements.md#title-sync-option) option that makes it easy to keep
 implicitly related items in sync with each other. If you change the title text in one item, Title Sync will
 automatically update the corresponding text in implicitly related items.
 
