@@ -1,5 +1,7 @@
 # Import CSV data
 
+---
+
 ## Install CSVImportPlus and create Import folder
 -	Be sure you have installed and configured ArchiveRepertory 
 -	Be sure you have added elements for every column to be imported
