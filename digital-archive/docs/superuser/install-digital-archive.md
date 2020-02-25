@@ -419,7 +419,7 @@ Follow these steps to determine if the default configuration for background proc
     If you are not successful, contact the host to ask for the right path.
 
 ---
-## Plugins and theme
+## Plugins and theme upload
 ---
 
 The Digital Archive is an Omeka installation combined with a set of plugin and a theme
@@ -436,10 +436,11 @@ Those marked with an asterisk are needed only if using Elasticsearch and/or Amaz
 
 Type         | Name               | Zip file name
 -------------|--------------------|--------------
-Omeka plugin |ArchiveRepertory    |ArchiveRepertory 2.15.5.zip
+Omeka plugin |[ArchiveRepertory](https://github.com/Daniel-KM/Omeka-plugin-ArchiveRepertory)    |ArchiveRepertory 2.15.5.zip
 Avant plugin |AvantAdmin          |AvantAdmin-master.zip
 Avant plugin |AvantCommon         |AvantCommon-master.zip
 Avant plugin |AvantCustom         |AvantCustom-master.zip
+Avant plugin |AvantDPLA           |AvantDPLA-master.zip
 Avant plugin |AvantElasticsearch *|AvantElasticsearch-master.zip
 Avant plugin |AvantElements       |AvantElements-master.zip
 Avant plugin |AvantRelationships  |AvantRelationships-master.zip
@@ -448,7 +449,9 @@ Avant plugin |AvantSearch         |AvantSearch-master.zip
 Avant theme  |AvantTheme          |AvantTheme-master.zip
 Avant plugin |AvantZoom           |AvantZoom-master.zip
 Omeka plugin |BulkMetadataEditor  |BulkMetadataEditor.zip
+Omeka plugin |CSVImportPlus       |CsvImportPlus - v2.3.3 by gsoules.zip
 Omeka plugin |Geolocation         |Geolocation-3.0.1.zip
+Omeka plugin |OaiPmhRepository    |OaiPmhRepository-master.zip
 Omeka plugin |SimpleVocab         |SimpleVocab-2.2.2.zip
 
 #### Get Avant plugin or theme zip file
@@ -470,7 +473,14 @@ Follow these steps to locate and download the Avant plugins and theme zip files
 
 ![GitHub download](install-digital-archive-5.jpg)
 
-#### Get Other Omeka plugin zip file
+#### Get Other Omeka plugin zip files
+
+-   ArchiveRepertory: <https://github.com/Daniel-KM/Omeka-plugin-ArchiveRepertory>
+-   BulkMetadataEditor v2.4: <https://github.com/UCSCLibrary/BulkMetadataEditor>
+-   CSVImportPlus: <https://github.com/Daniel-KM/Omeka-plugin-CsvImportPlus>
+-   Geolocation: <https://github.com/gsoules/Geolocation>
+-   OaiPmhRepository: <https://github.com/gsoules/OaiPmhRepository>
+-   SimpleVocab v2.2.2: <https://github.com/omeka/plugin-SimpleVocab>
 
 Follow these steps to locate and download other Omeka plugin zip files
 

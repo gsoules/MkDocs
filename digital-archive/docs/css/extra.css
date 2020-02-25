@@ -145,6 +145,13 @@ ol ul {
     display: none;
 }
 
+/* Highlight the TOC entry for the first entry of the second level entries. */
+.wm-toc-pane ul.wm-toctree li.wm-toc-li-nested ul.wm-toctree :first-child a.wm-article-link.wm-toc-text
+{
+    color: #5e0da0;
+    xfont-weight: bold;
+}
+
 /* Make level-2 TOC entires a little larger. */
 .wm-toc-li-nested.wm-page-toc {
     font-size: 15px;

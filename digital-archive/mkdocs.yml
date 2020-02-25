@@ -19,13 +19,14 @@ nav:
         - Omeka: administrator/omeka.md
         - Zoomable images: administrator/zoomable-images.md
     - Superuser:
+        - Contents: superuser/contents.md
         - Web host administration: superuser/web-host.md
-        - File Locations*: superuser/file-locations.md
-        - MkDocs: superuser/mkdocs.md
+        - Import CSV data: superuser/import-csv.md
         - MySQL Workbench: superuser/mysql-workbench.md
         - Install a Digital Archive site: superuser/install-digital-archive.md
         - Subdomain installation: superuser/subdomain.md
-        - Import CSV data: superuser/import-csv.md
+        - MkDocs: superuser/mkdocs.md
+        - File Locations*: superuser/file-locations.md
     - Developer:
         - GitHub: developer/github.md
     - Digital Archive plugins:
