@@ -128,7 +128,8 @@ ol ul {
 .wm-toctree a:hover,
 .wm-toctree a:focus,
 .wm-toc-lev1 {
-    color: #0478d6;
+    xcolor: #474747;
+    xcolor: red;
 }
 
 .wm-toc-text {
@@ -146,10 +147,9 @@ ol ul {
 }
 
 /* Highlight the TOC entry for the first entry of the second level entries. */
-.wm-toc-pane ul.wm-toctree li.wm-toc-li-nested ul.wm-toctree :first-child a.wm-article-link.wm-toc-text
+.wm-toc-pane ul.wm-toctree li.wm-toc-li-nested ul.wm-toctree :first-child.wm-toc-lev2 a.wm-article-link.wm-toc-text
 {
-    color: #5e0da0;
-    xfont-weight: bold;
+    color: #000000;
 }
 
 /* Make level-2 TOC entires a little larger. */
@@ -159,7 +159,8 @@ ol ul {
 
 /* Make level-2 TOC entires more subtle. */
 .wm-toc-li a.wm-article-link.wm-page-toc-text {
-    color: #555;
+    color: rgb(80, 80, 80);
+    color: #0262b1;
     font-size: 14px;
 }
 

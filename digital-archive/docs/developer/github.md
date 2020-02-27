@@ -6,17 +6,18 @@
 
 - Run GitHub Desktop
 - Choose `File > New Repository` from the top menu bar
-- Type the name of the repository using the same name as the folder containing the files.
-  For example, if you are adding a new plugin located in `/plugins/AvantFoo`, type `AvantFoo` as the repository name.
-- For Local path, choose the folder *containing* the folder that you want to make the repository from. For example,
-  navigate to the `/plugins` folder, not to the `AvantFoo` folder.
-- Check the Initialize README box
-- Leave Git ignore as None
-- Choose GNU GPLv3 for the license
-- Click `Create Repository`
+- For **Name** use the same name as the folder containing the files.
+  For example, if you are adding a new plugin located in `/plugins/AvantImport`, type `AvantImport` as the repository name.
+- Provide a **Description** or leave it blank (you can add one later in GitHub online)  
+- For **Local path**, choose the folder *containing* the folder that you want to make the repository from. For example,
+  navigate to `/plugins`, **not** to the `AvantImport` folder.
+- Check the **Initialize this respository with a README** checkbox
+- Leave **Git ignore** as `None`
+- Choose GNU GPLv3 for **License**
+- Click the `Create Repository` button
 
-The folder now contains new Git files as shown below for the newly created MkDocs *local repository*.  
-All of the files except for the `digital-archive` folder were added by Git.
+The folder now contains new Git files as shown below for the newly created AvantImport  
+*local repository*. The files and folders highlighted in yellow added by Git.
 
 ![GitHub files](github-1.jpg)
 

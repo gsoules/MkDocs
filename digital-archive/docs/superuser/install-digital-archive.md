@@ -62,6 +62,10 @@ use [cPanel] to create a new empty database and a database user for the Digital 
     -   Enter the database name in the **New Database** field
 -	Click the `Next Step` button
 
+!!! note
+    If you want to populate the new database with data from an existing Digital Archive database,
+    follow the instructions to [copy a MySQL database](copy-mysql-db.md).
+
 ### Create a user
 
 -	In wizard Step 2:
@@ -84,36 +88,6 @@ use [cPanel] to create a new empty database and a database user for the Digital 
 ### Configure MySQL Workbench
 
 -   [Add the database to MySQL Workbench](mysql-workbench.md#add-a-database-connection)
-
----
-
-### Copy a MySQL database
-
-This section explains how to use an existing database for a new installation.
-
-!!! warning ""
-    **Only perform this task** if you need to move a database from one installation to another.
-
-#### Export a MySQL database to a `.sql` file
-
--	Go to [cPanel] and choose `phpMyAdmin`
--	On the far left, click on the name of the database to export
--	In the top menu, click on `Export`
--	For **Export method** choose `Quick`
--	For **Format** choose `SQL`
--	Click `Go`
--	On the `Save` dialog, choose where to save the file on your computer  
--   If not done already, follow the instructions
-    above to [create a MySQL database](#create-mysql-database)
-
-#### Import a MySQL database from a `.sql` file
-
--	Run MySQL Workbench
--	Double click on the name of the new database (make sure the name becomes bold)
--	Choose `File` > `Open SQL Script` from the top menu
--	Select the `.sql` file exported in the Export section above
--	Click the `Open` button
--	Click the lightning bolt button to execute the script
 
 ---
 
@@ -419,78 +393,68 @@ Follow these steps to determine if the default configuration for background proc
     If you are not successful, contact the host to ask for the right path.
 
 ---
-## Plugins and theme upload
+## Plugin acquisition
 ---
 
-The Digital Archive is an Omeka installation combined with a set of plugin and a theme
-which all together provide the Digital Archive functionality. At this point in the
-installation process, Omeka is installed and now the plugins and theme for the Digital
-Archive need to be added to the installation so that later you can install and configure
-each plugin. To *add* them means to upload them to the web server into the proper
-installation folders.
+It is now time to acquire the zip files containing the plugins, and the theme, required
+by the Digital Archive. This section explains where to locate the files and how to add
+them to the installation so that later you can install and configure the them and each plugin.
+To *add* them means to upload them to the web server and extract them into the proper installation folders.
 
 ### Get Digital Archive zip files
 
 The following zip files are required for most Digital Archive installations.
-Those marked with an asterisk are needed only if using Elasticsearch and/or Amazon S3.
+All the files are located on GitHub. The link on the zip file name takes
+you to the GitHub repository for that file.
 
-Type         | Name               | Zip file name
--------------|--------------------|--------------
-Omeka plugin |[ArchiveRepertory](https://github.com/Daniel-KM/Omeka-plugin-ArchiveRepertory)    |ArchiveRepertory 2.15.5.zip
-Avant plugin |AvantAdmin          |AvantAdmin-master.zip
-Avant plugin |AvantCommon         |AvantCommon-master.zip
-Avant plugin |AvantCustom         |AvantCustom-master.zip
-Avant plugin |AvantDPLA           |AvantDPLA-master.zip
-Avant plugin |AvantElasticsearch *|AvantElasticsearch-master.zip
-Avant plugin |AvantElements       |AvantElements-master.zip
-Avant plugin |AvantRelationships  |AvantRelationships-master.zip
-Avant plugin |AvantS3 *           |AvantS3-master.zip
-Avant plugin |AvantSearch         |AvantSearch-master.zip
-Avant theme  |AvantTheme          |AvantTheme-master.zip
-Avant plugin |AvantZoom           |AvantZoom-master.zip
-Omeka plugin |BulkMetadataEditor  |BulkMetadataEditor.zip
-Omeka plugin |CSVImportPlus       |CsvImportPlus - v2.3.3 by gsoules.zip
-Omeka plugin |Geolocation         |Geolocation-3.0.1.zip
-Omeka plugin |OaiPmhRepository    |OaiPmhRepository-master.zip
-Omeka plugin |SimpleVocab         |SimpleVocab-2.2.2.zip
+Type         | Name              | Zip file name
+-------------|-------------------|--------------
+Omeka plugin |ArchiveRepertory   |[ArchiveRepertory 2.15.7.zip](https://github.com/Daniel-KM/Omeka-plugin-ArchiveRepertory/releases/tag/2.15.7)
+Avant plugin |AvantAdmin         |[AvantAdmin-master.zip](https://github.com/gsoules/AvantAdmin)
+Avant plugin |AvantCommon        |[AvantCommon-master.zip](https://github.com/gsoules/AvantCommon)
+Avant plugin |AvantCustom        |[AvantCustom-master.zip](https://github.com/gsoules/AvantCustom)
+Avant plugin |AvantDPLA          |[AvantDPLA-master.zip](https://github.com/gsoules/AvantDpla)
+Avant plugin |AvantElasticsearch |[AvantElasticsearch-master.zip](https://github.com/gsoules/AvantElasticsearch)
+Avant plugin |AvantElements      |[AvantElements-master.zip](https://github.com/gsoules/AvantElements)
+Avant plugin |AvantRelationships |[AvantRelationships-master.zip](https://github.com/gsoules/AvantRelationships)
+Avant plugin |AvantS3            |[AvantS3-master.zip](https://github.com/gsoules/AvantS3)
+Avant plugin |AvantSearch        |[AvantSearch-master.zip](https://github.com/gsoules/AvantSearch)
+Avant theme  |AvantTheme         |[AvantTheme-master.zip](https://github.com/gsoules/AvantTheme)
+Avant plugin |AvantZoom          |[AvantZoom-master.zip](https://github.com/gsoules/AvantZoom)
+Omeka plugin |BulkMetadataEditor |[BulkMetadataEditor.zip](https://github.com/UCSCLibrary/BulkMetadataEditor/releases/tag/2.4)
+Omeka plugin |CSVImportPlus*     |[CsvImportPlus.zip](https://github.com/gsoules/CsvImportPlus)
+Omeka plugin |Geolocation*       |[Geolocation.zip](https://github.com/gsoules/Geolocation)
+Omeka plugin |OaiPmhRepository   |[OaiPmhRepository-master.zip](https://github.com/gsoules/OaiPmhRepository)
+Omeka plugin |SimpleVocab        |[SimpleVocab-2.2.2.zip](https://github.com/omeka/plugin-SimpleVocab/releases/tag/v2.2.2)
+
+\* Indicates that the Omeka plugin has been modified by AvantLogic for the Digital Archive
+
+---
 
 #### Get Avant plugin or theme zip file
 
-!!! warning ""
-    **Imprtant:** Don't use plugins from the development server in place of zip files, because the development
-    folders contain GIT repositories which should not be uploaded to the web server.
+Follow these steps to locate and download each zip file one at a time:
 
-    **Warning:** The instructions below download the latest revision of the plugins and theme.
-    If you are not sure if those files are for a stable version, download the latest release instead.
+-   Click on a link in the table above to go to the GitHub repository for the file
 
-Follow these steps to locate and download the Avant plugins and theme zip files
+-   If the link takes you to the main repository page:
+    -   Be sure that the latest revision is what you want.  
+        If in doubt, download the latest release instead.
+    -   Click the green `Clone or download` dropdown as shown below
+    -   Choose `Download ZIP`
+    -   Save the file to a folder on your computer
 
--   Go to <https://github.com/gsoules?tab=repositories>
--   Click on a plugin or theme name to go to its GitHub repository page
--   Click the green `Clone or download` dropdown as shown below
--   Choose `Download ZIP`
--   Save the file to a folder on your computer
+    ![GitHub download](install-digital-archive-5.jpg)
 
-![GitHub download](install-digital-archive-5.jpg)
+-   If the link takes you to a release page:
+    -   Click the link for the `.zip` asset (pointed to by the arrow below)
+    -   Save the file to a folder on your computer
 
-#### Get Other Omeka plugin zip files
+    ![GitHub download](install-digital-archive-6.jpg)
 
--   ArchiveRepertory: <https://github.com/Daniel-KM/Omeka-plugin-ArchiveRepertory>
--   BulkMetadataEditor v2.4: <https://github.com/UCSCLibrary/BulkMetadataEditor>
--   CSVImportPlus: <https://github.com/Daniel-KM/Omeka-plugin-CsvImportPlus>
--   Geolocation: <https://github.com/gsoules/Geolocation>
--   OaiPmhRepository: <https://github.com/gsoules/OaiPmhRepository>
--   SimpleVocab v2.2.2: <https://github.com/omeka/plugin-SimpleVocab>
+---    
 
-Follow these steps to locate and download other Omeka plugin zip files
-
--   Go to <https://omeka.org/classic/plugins/>
--   Locate the plugin and click its `Download` button as shown below
--   Save the file to a folder on your computer
-
-![GitHub download](install-digital-archive-6.jpg)
-
-!!! note 
+!!! note ""
     The sections that follow assume that you are familiar with the process to
     [upload and extract a zip file](web-host.md#upload-and-extract-a-zip-file).
 
@@ -524,6 +488,7 @@ For each of the plugin zip files:
 -   Delete the zip file
 -   Rename the folder from the zip file name to the plugin name from the table above
 
+---
 
 ### Remove unused plugins
 Delete these two folders for plugins that the Digital Archive does not use:
@@ -813,22 +778,57 @@ Verify that the plugin is working as expected.
     File Manager.
 
 ---
-## Simple Vocab
----      
-
-You'll install the Simple Vocab plugin next because it is needed by the AvantElements plugin.
-
-Follow these steps to install and configure the Simple Vocab plugin:
+## Bulk Metadata Editor
+---
+Follow these steps to install Bulk Metadata Editor:
 
 -	Go to the Omeka `Plugins` page
--	Click the `Install` button for `Simple Vocab`
--   Leave **Apply to Files** unchecked
+-	Click the `Install` button for `Bulk Metadata Editor`
+-   The plugin has no configuration options
+
+---
+## CSV Import+
+---
+Follow these steps to install CSV Import+:
+
+-   Go to [cPanel] and choose `File Manager`
+-   Create this folder: `public_html/digitalarchive/files/import`
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `CSV Import+`
+-   Accept the default configuration
 -   Click the `Save Changes` button
--   Click `Simple Vocab` in Omeka's left admin menu
--   Add vocabularies for the **Rights**, **Subject**, and **Type** elements  
-    For each element:
-    -   Choose the element name from the **Element** dropdown
-    -   Copy/paste the values from another installation into **Vocabulary Terms**
+
+---
+## Geolocation
+---
+
+!!! note ""
+    Skip this task if the installation will not be using the Geolocation plugin.
+
+!!! warning ""
+    The only Digital Archive installation that has the Geolocation plugin installed is
+    Southwest Harbor Public Library and it uses a version modified by AvantLogic; however,
+    the Library has deactivated the plugin because too much advertising shows up in the maps.
+
+Follow these steps to install the Geolocation plugin:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `Geolocation`
+-   Configure the plugin as appropriate for the installation
+-   Click the `Save Changes` button
+
+---
+## OAI-PMH Repository
+---
+
+!!! note ""
+    Skip this task if the installation will not ingested by the Digital Public Library of America.
+
+Follow these steps to install the OAI-PMH Repository plugin:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `OAI-PMH Repository`
+-   Configure the plugin as appropriate for the installation
 -   Click the `Save Changes` button
 
 ---
@@ -851,31 +851,22 @@ Follow these steps to install the Simple Pages plugin:
     up in the Omeka navigation section.
 
 ---
-## Bulk Metadata Editor
----
-Bulk Metadata Editor has no configuration options.
-Follow these steps to install Bulk Metadata Editor:
+## Simple Vocab
+---      
+
+You'll install the Simple Vocab plugin next because it is needed by the AvantElements plugin.
+
+Follow these steps to install and configure the Simple Vocab plugin:
 
 -	Go to the Omeka `Plugins` page
--	Click the `Install` button for `Bulk Metadata Editor`
-
----
-## Geolocation
----
-
-!!! note ""
-    Skip this task if the installation will not be using the Geolocation plugin.
-
-!!! warning ""
-    The only Digital Archive installation that has the Geolocation plugin installed is
-    Southwest Harbor Public Library and it uses a version modified by AvantLogic; however,
-    the Library has deactivated the plugin because too much advertising shows up in the maps.
-
-Follow these steps to install the Geolocation plugin:
-
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `Geolocation`
--   Configure the plugin as appropriate for the installation
+-	Click the `Install` button for `Simple Vocab`
+-   Leave **Apply to Files** unchecked
+-   Click the `Save Changes` button
+-   Click `Simple Vocab` in Omeka's left admin menu
+-   Add vocabularies for the **Rights**, **Subject**, and **Type** elements  
+    For each element:
+    -   Choose the element name from the **Element** dropdown
+    -   Copy/paste the values from another installation into **Vocabulary Terms**
 -   Click the `Save Changes` button
 
 ---
@@ -926,6 +917,20 @@ Follow these steps to install [AvantCustom]:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantCustom`
+-   The plugin has no configuration options
+
+---
+## AvantDPLA
+---
+
+!!! note ""
+    Skip this task if the installation will not ingested by the Digital Public Library of America.
+
+Follow these steps to install the AvantDPLA plugin:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `AvantDPLA`
+-   The plugin has no configuration options
 
 ---
 ## AvantElements

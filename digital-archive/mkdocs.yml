@@ -6,6 +6,7 @@ nav:
         - About relationships*: user/relationships.md
         - Searching*: user/search.md
     - Archivist:
+        - Contents: archivist/contents.md
         - Items:
             - Add a new item: archivist/add-new-item.md
             - Edit an existing item*: archivist/edit-item.md
@@ -19,12 +20,13 @@ nav:
         - Omeka: administrator/omeka.md
         - Zoomable images: administrator/zoomable-images.md
     - Superuser:
-        - Contents: superuser/contents.md
+        - Table of contents: superuser/contents.md
         - Web host administration: superuser/web-host.md
         - Import CSV data: superuser/import-csv.md
         - MySQL Workbench: superuser/mysql-workbench.md
         - Install a Digital Archive site: superuser/install-digital-archive.md
         - Subdomain installation: superuser/subdomain.md
+        - Copy a MySQL database: superuser/copy-mysql-db.md
         - MkDocs: superuser/mkdocs.md
         - File Locations*: superuser/file-locations.md
     - Developer:

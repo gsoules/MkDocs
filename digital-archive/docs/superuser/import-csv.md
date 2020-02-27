@@ -16,11 +16,15 @@
 
 ## Import Data from Excel
 -	Upload all of the to-be-imported image and PDF files into the import folder
--	Data preparation
+
+### Data preparation
+
 -	Save the Excel file as CSV, but first, avoid  #### in cells by changing the format of all columns to General.
 -	Watch out for Excel converting date text to actual dates with the wrong format.
--	Make sure there is a column Item Type that is populated with the installation’s item type e.g. GCIHS. If this column is missing, then choose the default Item Type from the Default Values section of the import screen.
--	Importing:
+-	Make sure there is a column Item Type that is populated with the installation’s item type
+    e.g. GCIHS. If this column is missing, then choose the default Item Type from the Default Values section of the import screen.
+
+### Importing
 -	Name the column headers using Element syntax e.g.
     -	Dublin Core:Title
     -	Item Type Metadata:Notes
@@ -56,23 +60,23 @@
         -	Public should be set to Public
         -	Files should be set to Files
     -	Click the Import CSV file button
-    -	Verify that the import worked correctly
+-	Verify that the import worked correctly
     -	If you get the error “The configured PHP path (/usr/bin/php) does not point to a PHP-CLI binary” edit application\config.ini and set background.php.path = "/usr/bin/php-cli"
     -	If the import Completed, but records were skipped, click on the import date/log to see what happened.
 -	Import all of the data
     -	Note that certain characters e.g. … (a single character representing an ellipsis) or an accented character like é can cause a mySQL error. When you find one, do a global replace in the CSV file to correct it everywhere.
--	Method  1:
-    -	Break the CSV file into chunks of 100 or 200 rows and import the individual files one at a time.
-    -	After each import, if any records were skipped, look at the import log to identify and resolve the problem.
--	Method 2:
-    -	Attempt to import the entire CSV file.
-    -	As errors are encountered:
-        o	Fix the offending row in the CSV using Notepad++ or TextPad
-        o	Delete all of the good rows above it except for the header row
-        o	Save the CSV with a new file name
-        o	Try again and repeat until all rows imported.
-    -	This method can be the only option if there is a column with dates that Excel insists on converting when you save the CSV file. By working with a text editor like Notepad++ you avoid the conversion problem.
-    -	Done
+    -	Method  1:
+        -	Break the CSV file into chunks of 100 or 200 rows and import the individual files one at a time.
+        -	After each import, if any records were skipped, look at the import log to identify and resolve the problem.
+    -	Method 2:
+        -	Attempt to import the entire CSV file.
+        -	As errors are encountered:
+            o	Fix the offending row in the CSV using Notepad++ or TextPad
+            o	Delete all of the good rows above it except for the header row
+            o	Save the CSV with a new file name
+            o	Try again and repeat until all rows imported.
+        -	This method can be the only option if there is a column with dates that Excel insists on converting when you save the CSV file. By working with a text editor like Notepad++ you avoid the conversion problem.
+-	Done
 
 ---
 
