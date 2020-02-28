@@ -20,7 +20,7 @@ To install the AvantDPLA plugin, follow these steps:
 
 ## Warning
 
-Use at your own risk.
+Use this software at your own risk.
 
 ##  License
 

@@ -42,11 +42,12 @@
         -	Tag delimiter: comma
         -	File delimiter: comma
     -	Default values:
-            -	Item type:   No default item type (if the import file has an Item Type column, otherwise, choose the item type from the dropdown list)
-            -	Collection: No default collection
-            -	Make records public: Unchecked
-            -	Feature records: Unchecked
-            -	Elements are html: Unchecked
+        -	Item type:   No default item type (if the import file has an Item Type column,
+            otherwise, choose the item type from the dropdown list)
+        -	Collection: No default collection
+        -	Make records public: Unchecked
+        -	Feature records: Unchecked
+        -	Elements are html: Unchecked
     -	Process
         -	Identifier field: Identifier
         -	Action:  No default action

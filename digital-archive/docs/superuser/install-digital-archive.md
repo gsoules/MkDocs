@@ -416,13 +416,13 @@ Avant plugin |AvantCustom        |[AvantCustom-master.zip](https://github.com/gs
 Avant plugin |AvantDPLA          |[AvantDPLA-master.zip](https://github.com/gsoules/AvantDpla)
 Avant plugin |AvantElasticsearch |[AvantElasticsearch-master.zip](https://github.com/gsoules/AvantElasticsearch)
 Avant plugin |AvantElements      |[AvantElements-master.zip](https://github.com/gsoules/AvantElements)
+Avant plugin |AvantImport        |[AvantImport-master.zip](https://github.com/gsoules/AvantImport)
 Avant plugin |AvantRelationships |[AvantRelationships-master.zip](https://github.com/gsoules/AvantRelationships)
 Avant plugin |AvantS3            |[AvantS3-master.zip](https://github.com/gsoules/AvantS3)
 Avant plugin |AvantSearch        |[AvantSearch-master.zip](https://github.com/gsoules/AvantSearch)
 Avant theme  |AvantTheme         |[AvantTheme-master.zip](https://github.com/gsoules/AvantTheme)
 Avant plugin |AvantZoom          |[AvantZoom-master.zip](https://github.com/gsoules/AvantZoom)
 Omeka plugin |BulkMetadataEditor |[BulkMetadataEditor.zip](https://github.com/UCSCLibrary/BulkMetadataEditor/releases/tag/2.4)
-Omeka plugin |CSVImportPlus*     |[CsvImportPlus.zip](https://github.com/gsoules/CsvImportPlus)
 Omeka plugin |Geolocation*       |[Geolocation.zip](https://github.com/gsoules/Geolocation)
 Omeka plugin |OaiPmhRepository   |[OaiPmhRepository-master.zip](https://github.com/gsoules/OaiPmhRepository)
 Omeka plugin |SimpleVocab        |[SimpleVocab-2.2.2.zip](https://github.com/omeka/plugin-SimpleVocab/releases/tag/v2.2.2)
@@ -719,8 +719,6 @@ to Omeka items.
 !!! warning "Important"
     Install this plugin now *before adding any items to Omeka* because the plugin overrides Omeka's
     default file storage mechanism and it won't work correctly if some files have already been stored.
-
-    Use release **2.15.5** because AvantLogic has not tested the newer releases.
 
     Southwest Harbor Public Library uses its own custom version of this plugin based on release 2.14.
     The modified version uses a flat file structure instead of the better hierarchical structure.
@@ -1022,6 +1020,17 @@ Date, filter: Swhpl, filterDate
 ```
 
 -   Verify that you have set all of the options correctly
+-   Click the `Save Changes` button
+
+---
+## AvantImport
+---
+
+Follow these steps to install the AvantImport plugin:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `AvantImport`
+-   Accept the default options
 -   Click the `Save Changes` button
 
 ---

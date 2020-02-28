@@ -35,8 +35,10 @@ nav:
         AvantAdmin: plugins/avantadmin.md
         AvantCommon: plugins/avantcommon.md
         AvantCustom: plugins/avantcustom.md
+        AvantDPLA: plugins/avantdpla.md
         AvantElasticsearch: plugins/avantelasticsearch.md
         AvantElements: plugins/avantelements.md
+        AvantImport: plugins/avantimport.md
         AvantRelationships*: plugins/avantrelationships.md
         AvantS3: plugins/avants3.md
         AvantSearch*: plugins/avantsearch.md
