@@ -6,18 +6,20 @@ body, input {
 
 /* Override Windmill's styling for headers. */
 h1 {
-    color: #777;
+    color: #000;
 	font-size: 32px;
 }
 h2 {
     color: #000;
     font-size: 24px;
+    font-weight: bold;
     margin-top: 22px;
 }
 
 h3 {
     color: #000;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 h4 {
@@ -34,6 +36,7 @@ blockquote {
 
 code {
     background-color: #f0f0f0;
+    padding: 0 2px;
 }
 
 strong {
@@ -106,10 +109,12 @@ ol ul {
 /* Change Windmill's green header color to our own. */
 .navbar {
     background-color: #2196f3;
+    background-color: #333;
 }
 
 /* Show the Digital Archive logo in the Table of Contents (TOC) background. */
 .wm-toc-pane {
+    background-color: #eee;
     background-image: url("../logo.png");
     background-position: center 400px;
     background-repeat: no-repeat;
@@ -128,12 +133,12 @@ ol ul {
 .wm-toctree a:hover,
 .wm-toctree a:focus,
 .wm-toc-lev1 {
-    xcolor: #474747;
-    xcolor: red;
+    color: #000;
 }
 
 .wm-toc-text {
     color: #0262b1;
+    color: #000;
 }
 
 /* Make level-1 TOC entires bold. */
@@ -161,14 +166,15 @@ ol ul {
 .wm-toc-li a.wm-article-link.wm-page-toc-text {
     color: rgb(80, 80, 80);
     color: #0262b1;
-    font-size: 14px;
+    color: #000;
+    xfont-size: 14px;
 }
 
 /* Make level-2 expanders bold blue. */
-.wm-toc-li.wm-toc-lev2.wm-toc-opener span.wm-toc-text {
+/* .wm-toc-li.wm-toc-lev2.wm-toc-opener span.wm-toc-text {
     font-weight: bold;
     color:#5e8eb6;
-}
+} */
 
 /* Make level-2 TOC entry vertical spacing a little taller. */
 .wm-page-toc-text {

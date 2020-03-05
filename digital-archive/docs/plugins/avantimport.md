@@ -2,6 +2,41 @@
 
 The AvantImport plugin supports import of metadata and files from a CSV file.
 
+AvantImport is a derivation of [CSV Import+](https://github.com/Daniel-KM/Omeka-plugin-CsvImportPlus).
+It was created for use with the Digital Archive. Compared to CSV Import++, AvantImport has a much simpler
+user interface because it presents far fewer options, only those useful for import into the Digital Archive.
+It also has more robust detection and handling of invalid input, and only allows import of CSV files that
+are in UTF-8 format. It requires UTF-8 to ensure that CSV text with non-ASCII characters (such as letters
+with accent marks) can be imported without triggering a MySQL error.
+
+---
+
+## Configuration options
+
+AvantPlugin has just one configuration option.
+
+Mappings
+:   Use this option to specify which CSV columns correspond to which Omeka elements.
+    Specify one column/element mapping on each line as shown in the example below.
+
+``` plaintext
+RecNo: Identifier
+STDNAME: Standard Name
+IDENTIFIER: Person
+MS NAME: Manuscript Name
+ALIAS: Alias
+GENDER: Gender
+DATE: Event Date
+PLACE: Place
+MENTION CATEGORY: Event Category
+EVENT: Event
+DOC TYPE: Event Type
+ETHNICITY: Ethnicity
+KINSMAN: Kinsman
+```
+
+To learn how to use AvantImport, see how to [import CSV data](../administrator/import-csv.md).
+
 ## Dependencies
 The AvantImport plugin requires that the [AvantCommon](https://github.com/gsoules/AvantCommon)
 plugin be installed and activated.
@@ -14,7 +49,7 @@ To install the AvantImport plugin, follow these steps:
 1. Unzip the AvantImport-master file into your Omeka installation's plugin directory.
 1. Rename the folder to AvantImport.
 1. Activate the plugin from the Admin → Settings → Plugins page.
-
+1. In the Omeka `files` folder, create an `import` folder 
 
 ## Warning
 

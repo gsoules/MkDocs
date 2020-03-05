@@ -679,7 +679,6 @@ and the remote site and then save two comparison sessions, one for the `themes` 
 .\AvantElasticsearch\vendor
 .\BulkMetadataEditor
 .\CsvExport
-.\CsvImportPlus
 .\Dropbox
 .\ExhibitBuilder
 .\Gcihs
@@ -783,18 +782,6 @@ Follow these steps to install Bulk Metadata Editor:
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `Bulk Metadata Editor`
 -   The plugin has no configuration options
-
----
-## CSV Import+
----
-Follow these steps to install CSV Import+:
-
--   Go to [cPanel] and choose `File Manager`
--   Create this folder: `public_html/digitalarchive/files/import`
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `CSV Import+`
--   Accept the default configuration
--   Click the `Save Changes` button
 
 ---
 ## Geolocation
@@ -1028,10 +1015,15 @@ Date, filter: Swhpl, filterDate
 
 Follow these steps to install the AvantImport plugin:
 
+-   Go to [cPanel] and choose `File Manager`
+-   Create this folder: `public_html/digitalarchive/files/import`
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantImport`
--   Accept the default options
+-   Leave **Mappings** blank
+-   Leave `Super` as the only checked box for **Roles that can import**
 -   Click the `Save Changes` button
+
+To learn how to use AvantImport, see how to [import CSV data](../administrator/import-csv.md).
 
 ---
 ## AvantRelationships

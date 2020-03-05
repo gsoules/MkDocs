@@ -4,6 +4,9 @@ The AvantDPLA plugin emits XML for ingestion into DPLA via the Maine State Libra
 
 This version is not yet configurable. It is hard-coded for the Southwest Harbor Public Library's metadata.
 
+## Customizations
+
+
 ## Dependencies
 The AvantDPLA plugin requires that the [AvantCommon](https://github.com/gsoules/AvantCommon) and
 [OaiPmhRepository](https://github.com/zerocrates/OaiPmhRepository) plugins be installed and activated.

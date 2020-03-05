@@ -17,12 +17,13 @@ nav:
             - Workflow fields: archivist/workflow-fields.md
         - Working with relationships*: archivist/working-with-relationships.md            
     - Administrator:
+        - Table of contents: administrator/contents.md
         - Omeka: administrator/omeka.md
+        - Import CSV data: administrator/import-csv.md
         - Zoomable images: administrator/zoomable-images.md
     - Superuser:
         - Table of contents: superuser/contents.md
         - Web host administration: superuser/web-host.md
-        - Import CSV data: superuser/import-csv.md
         - MySQL Workbench: superuser/mysql-workbench.md
         - Install a Digital Archive site: superuser/install-digital-archive.md
         - Subdomain installation: superuser/subdomain.md
