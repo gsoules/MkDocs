@@ -2,7 +2,7 @@
 
 The AvantZoom plugin provides image zooming capability using [OpenSeadragon](https://openseadragon.github.io/).
 
-See the documentation for [zoomable images](../../administrator/zoomable-images.md) to learn how to make an image zoomable.
+See the documentation for [zoomable images](../administrator/zoomable-images.md) to learn how to make an image zoomable.
 
 ---
 

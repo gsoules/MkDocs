@@ -215,14 +215,14 @@ documentation and the
 [appearance settings](https://omeka.org/classic/docs/Admin/Appearance/Appearance_Settings/)
 documentation for an explanation of the configuration settings.
 
-!!! note "Super administrator"
-    The username and password you will specify below are for an Omeka *super administrator*.  
-    See [Omeka terminology](../../administrator/omeka/#terminology) to learn what it means to be a super administrator.
+!!! note "Super user"
+    The username and password you will specify below are for an Omeka *super user*.  
+    See [Omeka terminology](../../administrator/omeka/#terminology) to learn what it means to be a super user.
 
 -   Set:
-    -	**Username**: *a super administrator user name*  
-    -	**Password**: *super administrator password*
-    -	**Re-type the Password**: *super administrator password*
+    -	**Username**: *a super user name*  
+    -	**Password**: *super user password*
+    -	**Re-type the Password**: *super user password*
     -	**Email**: *a valid email address*  
     -	**Administrator Email**: *same as Email*
     -	**Site Title**: *the organization name*  
@@ -243,7 +243,7 @@ documentation for an explanation of the configuration settings.
 ![Site settings](install-digital-archive-2.jpg)
 
 -	Click the `Admin Dashboard` button
--	Login with the super administrator user name and password
+-	Login with the super user user name and password
 -   Check the `Remember Me` checkbox
 -   Click the `Login` button
 -   The `Dashboard` page should display.
@@ -506,7 +506,7 @@ The `plugins` folder on the web server should now look like this:
 AvantTheme, and many of the AvantPlugins, depend on the AvantCommon plugin being installed.
 Before you can install the theme, install AvantCommon by following these steps:
 
--   Login to Omeka as a super administrator
+-   Login to Omeka as a super user
 -	Click `Plugins` in the top menu bar
 -   Many of the plugins added in the previous task will be shaded in pink
 -   Click the `Install` button for AvantCommon
@@ -1209,7 +1209,7 @@ Identifier, filter: DigitalArchive, filterIdentifierS3
 ### Logo and styling
 
 -	Create a logo JPEG image approximately 500px X 110px
--   Login to Omeka as a super administrator
+-   Login to Omeka as a super user
 -	Click `Appearance` in the top menu bar
 -   Click the `Configure Theme` button for AvantTheme
 -   For **Logo File** browse to the folder containing the logo file

@@ -18,7 +18,7 @@ Element
     an item, you enter data into metadata fields, one for each element.
     Examples of elements are `Title`, `Description`, `Creator`, and `Date`.
 
-Super administrator
-:   An Omeka `super administrator` is someone having an Omeka login that allows them to do anything and everything in Omeka.
-    Super administrator are the only users with access to the top navigation tabs for Plugins, Appearance, Users, and Settings.
+Super user
+:   An Omeka `super user` is someone having an Omeka login that allows them to do anything and everything in Omeka.
+    Super users are the only users with access to the top navigation tabs for Plugins, Appearance, Users, and Settings.
     See the [Omeka Users](https://omeka.org/classic/docs/Admin/Users/) documentation to learn about user levels and access.

@@ -5,20 +5,20 @@ nav:
     - Welcome: index.md
     - User:
         - Searching:
-            - Searching*: user/search.md
+            - Searching: user/search.md
         - Relationships:
-            - About relationships*: user/relationships.md
+            - About relationships: user/relationships.md
     - Archivist:
         - Items:
             - Add a new item: archivist/add-new-item.md
-            - Edit an existing item*: archivist/edit-item.md
-            - Add a reference item*: archivist/add-reference-item.md
-            - Delete an item*: archivist/delete-item.md
+            - Edit an existing item: archivist/edit-item.md
+            - Add a reference item: archivist/add-reference-item.md
+            - Delete an item: archivist/delete-item.md
         - Fields (elements):
-            - Field descriptions*: archivist/field-descriptions.md
+            - Field descriptions: archivist/field-descriptions.md
             - Workflow fields: archivist/workflow-fields.md
         - Relationships:            
-            - Working with relationships*: archivist/working-with-relationships.md            
+            - Working with relationships: archivist/working-with-relationships.md            
     - Administrator:
         - Omeka:
             - Terminology: administrator/omeka-terminology.md
@@ -29,11 +29,11 @@ nav:
         - System administration:
             - Web server: developer/web-host.md
             - MkDocs: developer/mkdocs.md
-            - File locations*: developer/file-locations.md
-        - Database:
+            - File locations: developer/file-locations.md
+        - Database administration:
             - MySQL Workbench: developer/mysql-workbench.md
             - Copy a MySQL database: developer/copy-mysql-db.md
-        - Omeka:            
+        - Digital Archive installation:            
             - Install a Digital Archive site: developer/install-digital-archive.md
             - Subdomain installation: developer/subdomain.md
         - Programming:            
@@ -46,9 +46,9 @@ nav:
         AvantElasticsearch: plugins/avantelasticsearch.md
         AvantElements: plugins/avantelements.md
         AvantImport: plugins/avantimport.md
-        AvantRelationships*: plugins/avantrelationships.md
+        AvantRelationships: plugins/avantrelationships.md
         AvantS3: plugins/avants3.md
-        AvantSearch*: plugins/avantsearch.md
+        AvantSearch: plugins/avantsearch.md
         AvantZoom: plugins/avantzoom.md
     
 theme:

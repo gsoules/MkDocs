@@ -12,7 +12,7 @@ a new element to store metadata that your were not previously recording.
 
 Follow these steps to add a new element to your Digital Archive installation.
 
--   Login to Omeka as a super administrator
+-   Login to Omeka as a super user
 -	Click `Items Types` in Omeka's left admin menu
 -   Click the `Edit` link below organization's Item Type name
 -	On the `Edit Item` page, follow these steps to add an element:
@@ -35,7 +35,7 @@ When editing, the Dublin Core elements appear first, followed by the
 other elements. You arrange the order within each of these two groups as explained below.
 
 ### Dublin Core elements
--   Login to Omeka as a super administrator
+-   Login to Omeka as a super user
 -   Click `Settings` in the top menu bar
 -   Click `Elements Sets` in the `Settings` page menu bar
 -   Click the `Edit` link under `Dublin Core`
@@ -62,7 +62,7 @@ Coverage
 ```    
 
 ### Other elements
--   Login to Omeka as a super administrator
+-   Login to Omeka as a super user
 -	Click `Item Types` in the left menu
 -   Click the `Edit` link below organization's Item Type name
 -	Drag the elements into the desired order

@@ -23,13 +23,13 @@ Each category is explained below. Some people will fall into more than one categ
 For example, an administrator is usually also an archivist and a user.
 
 ### User documentation
-[User documentation](user/contents.md) is for people who use the Digital Archive for research or just for fun.
+User documentation is for people who use the Digital Archive for research or just for fun.
 
 A user (also commonly referred to as an end-user) can see all public items in a Digital Archive collection,
 but has no access to non-public items, or private data associated with all items.
 
 ### Archivist documentation
-[Archivist documentation](archivist/contents.md) is for archivists and volunteers who maintain the collection content
+Archivist documentation is for archivists and volunteers who maintain the collection content
 for a Digital Archive site. They add new items, edit existing items, upload images, and establish relationships among items.
 
 An archivist has a user name and password that allow them to login to a Digital Archive site. Once logged in, they
@@ -39,13 +39,13 @@ Typically, an archivist's login will not allow them to make changes to the Digit
 the archivist is also an **Administrator**.
 
 ### Administrator documentation
-[Administrator documentation](administrator/contents.md) is for the person who performs administrative functions for their organization's Digital Archive site. They edit vocabularies, configure plugin options, add new user accounts, define relationship types and rules, and perform other similar tasks.
+Administrator documentation is for the person who performs administrative functions for their organization's Digital Archive site. They edit vocabularies, configure plugin options, add new user accounts, define relationship types and rules, and perform other similar tasks.
 
 An administrator has a user name and password that allow them to login to a Digital Archive site. Once logged in, they
 have all the privileges of an **Archivist**, but can also perform administrative functions.
 
 ### Developer documentation
-[Developer documentation](developer/contents.md) is for technical people responsible for maintaining multiple Digital Archive sites. They are responsible for database management, programming, software upgrades, web server management, maintaining this documentation, and a variety of other tasks requiring technical expertise.
+Developer documentation is for technical people responsible for maintaining multiple Digital Archive sites. They are responsible for database management, programming, software upgrades, web server management, maintaining this documentation, and a variety of other tasks requiring technical expertise.
 
 A Digital Archive developer must be familiar with the following technologies:
 
@@ -65,7 +65,7 @@ A Digital Archive developer must be familiar with the following technologies:
 
 ### Digital Archive plugins
 
-[Digital Archive plugin documentation](plugins/contents.md) is in a separate category because it should be of interest to
+Digital Archive plugin documentation is in a separate category because it should be of interest to
 everyone except for end users.
 
 -   **Archivists** should be familiar with the features of various plugins

@@ -93,7 +93,7 @@ otherwise Index View displays it as flat data.
 Both the Table View Detail Layout and the Image View display thumbnails for an item's image if it has one. If the item
 has no image, a placeholder image is displayed. When you click on a thumbnail, the AvantSearch plugin displays a large
 version of the image. You can have the image display in a popup by using the
-[Lightbox feature](../avantcommon/avantcommon.md#lightbox-feature) of the
+[Lightbox feature](../plugins/avantcommon.md#lightbox-feature) of the
 [AvantCommon] plugin.
 
 ![Lightbox Example](search-8.jpg)

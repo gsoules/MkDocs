@@ -1,15 +1,15 @@
-# Web host administration
+# Web server administration
 
 This page explains how to perform Digital Archive related web host administration tasks
 on a [Reclaim Hosting](https://reclaimhosting.com/) web server.
 
 ---
 
-!!! warning "Are you a superuser?"
-    This superuser documentation assumes that you already know, or will learn, how to perform basic
+!!! warning "Caution"
+    This documentation on this page assumes that you already know, or will learn, how to perform basic
     system adminstration tasks. For example, you must be able to navigate the file system, edit and delete
     files, and be familiar with system administration duties such as database management, permissions,
-    FTP, and such. If these things are foreign to you, **do not** attempt to serve as the superuser.
+    FTP, and such. If these things are foreign to you, **do not** attempt to perform these tasks.
 
 ---
 

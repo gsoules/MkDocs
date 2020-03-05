@@ -5,11 +5,12 @@ You can also import files to be attached to an imported item.
 
 ---
 
-## AvantImport plugin
-To import CSV data, the [AvantImport](../plugins/avantimport.md) plugin must be installed.
+## Prerequisites
 
-!!! note ""
-    You must be logged into Omeka as a super administrator to use AvantImport. If logged in with a lesser
+To import CSV data:
+
+-   The [AvantImport](../plugins/avantimport.md) plugin must be installed
+-   You must be logged into Omeka as a super user. If logged in with a lesser
     role, **AvantImport** will not appear in Omeka's left admin menu.
 
 ## Preparation
