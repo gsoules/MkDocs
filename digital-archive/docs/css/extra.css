@@ -109,7 +109,7 @@ ol ul {
 /* Change Windmill's green header color to our own. */
 .navbar {
     background-color: #2196f3;
-    background-color: #333;
+    background-color: #555;
 }
 
 /* Show the Digital Archive logo in the Table of Contents (TOC) background. */
@@ -150,32 +150,36 @@ ol ul {
     display: none;
 }
 
-/* Highlight the TOC entry for the first entry of the second level entries. */
+/* Highlight the TOC entry for the first entry of the second level entries.
 .wm-toc-pane ul.wm-toctree li.wm-toc-li-nested ul.wm-toctree :first-child.wm-toc-lev2 a.wm-article-link.wm-toc-text
 {
     color: #0262b1;
-}
+} */
 
 /* Make level-2 TOC entires a little larger. */
 .wm-toc-li-nested.wm-page-toc {
     font-size: 15px;
 }
 
-/* Make level-2 TOC entires more subtle. */
-.wm-toc-li a.wm-article-link.wm-page-toc-text {
-    color: #000;
-}
-
-/* Make level-2 expanders bold blue. */
-/* .wm-toc-li.wm-toc-lev2.wm-toc-opener span.wm-toc-text {
-    font-weight: bold;
-    color:#5e8eb6;
-} */
-
 /* Make level-2 TOC entry vertical spacing a little taller. */
 .wm-page-toc-text {
     padding-bottom: 6px;
   }
+
+/* Indent each level further to the right than its parent level */
+.wm-toc-li.wm-toc-lev2 {
+      padding-left:12px;
+  }
+
+.wm-toc-li.wm-toc-lev3 {
+      padding-left:24px;
+  }
+
+.wm-toc-li a.wm-article-link.wm-page-toc-text {
+    padding-left:36px;
+    color: #777;
+    font-weight: bold;
+}
 
   /* Don't center the content */
 .container-fluid {
@@ -187,8 +191,12 @@ ol ul {
    260px is the magic number to prevent the main content (container-fluid) from getting
    hidden behind the TOC panel as the browser width changes (a bug in the Windmill theme). */
 .wm-toc-pane {
-    min-width: 260px;
-    max-width: 260px;
+    min-width: 330px;
+    max-width: 330px;
+}
+
+.wm-content-pane {
+    padding-left: 330px;
 }
 
 /* Reduce the top and bottom margins for an image and indent from the left. */
@@ -212,5 +220,9 @@ ol ul {
 {
     #wm-toc-button {
         display: inline-block;
+    }
+
+    .wm-content-pane {
+        padding-left: 0;
     }
 }    

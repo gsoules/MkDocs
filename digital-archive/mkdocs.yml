@@ -4,34 +4,40 @@ copyright: 'Copyright &copy; 2020 AvantLogic Corporation'
 nav:
     - Welcome: index.md
     - User:
-        - About relationships*: user/relationships.md
-        - Searching*: user/search.md
+        - Searching:
+            - Searching*: user/search.md
+        - Relationships:
+            - About relationships*: user/relationships.md
     - Archivist:
-        - Contents: archivist/contents.md
         - Items:
             - Add a new item: archivist/add-new-item.md
             - Edit an existing item*: archivist/edit-item.md
             - Add a reference item*: archivist/add-reference-item.md
             - Delete an item*: archivist/delete-item.md
-        - Fields:
+        - Fields (elements):
             - Field descriptions*: archivist/field-descriptions.md
             - Workflow fields: archivist/workflow-fields.md
-        - Working with relationships*: archivist/working-with-relationships.md            
+        - Relationships:            
+            - Working with relationships*: archivist/working-with-relationships.md            
     - Administrator:
-        - Table of contents: administrator/contents.md
-        - Omeka: administrator/omeka.md
+        - Omeka:
+            - Terminology: administrator/omeka-terminology.md
+            - Elements: administrator/omeka-elements.md
         - Import CSV data: administrator/import-csv.md
         - Zoomable images: administrator/zoomable-images.md
     - Developer:
-        - Table of contents: developer/contents.md
-        - Web host administration: developer/web-host.md
-        - MySQL Workbench: developer/mysql-workbench.md
-        - Install a Digital Archive site: developer/install-digital-archive.md
-        - Subdomain installation: developer/subdomain.md
-        - Copy a MySQL database: developer/copy-mysql-db.md
-        - MkDocs: developer/mkdocs.md
-        - File Locations*: developer/file-locations.md
-        - GitHub: developer/github.md
+        - System administration:
+            - Web server: developer/web-host.md
+            - MkDocs: developer/mkdocs.md
+            - File locations*: developer/file-locations.md
+        - Database:
+            - MySQL Workbench: developer/mysql-workbench.md
+            - Copy a MySQL database: developer/copy-mysql-db.md
+        - Omeka:            
+            - Install a Digital Archive site: developer/install-digital-archive.md
+            - Subdomain installation: developer/subdomain.md
+        - Programming:            
+            - GitHub: developer/github.md
     - Digital Archive plugins:
         AvantAdmin: plugins/avantadmin.md
         AvantCommon: plugins/avantcommon.md
