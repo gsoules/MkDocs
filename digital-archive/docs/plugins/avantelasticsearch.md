@@ -32,7 +32,7 @@ Local Index
 Shared Index
 :   yyy
 
-See also the documentation for [installing AvantElasticsearch](../../../superuser/install-digital-archive/#avantelasticsearch).
+See also the documentation for [installing AvantElasticsearch](../../../developer/install-digital-archive/#avantelasticsearch).
 
 ---
 

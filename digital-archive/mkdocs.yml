@@ -2,6 +2,7 @@ site_name: Digital Archive Docs
 copyright: 'Copyright &copy; 2020 AvantLogic Corporation'
 
 nav:
+    - Welcome: index.md
     - User:
         - About relationships*: user/relationships.md
         - Searching*: user/search.md
@@ -21,16 +22,15 @@ nav:
         - Omeka: administrator/omeka.md
         - Import CSV data: administrator/import-csv.md
         - Zoomable images: administrator/zoomable-images.md
-    - Superuser:
-        - Table of contents: superuser/contents.md
-        - Web host administration: superuser/web-host.md
-        - MySQL Workbench: superuser/mysql-workbench.md
-        - Install a Digital Archive site: superuser/install-digital-archive.md
-        - Subdomain installation: superuser/subdomain.md
-        - Copy a MySQL database: superuser/copy-mysql-db.md
-        - MkDocs: superuser/mkdocs.md
-        - File Locations*: superuser/file-locations.md
     - Developer:
+        - Table of contents: developer/contents.md
+        - Web host administration: developer/web-host.md
+        - MySQL Workbench: developer/mysql-workbench.md
+        - Install a Digital Archive site: developer/install-digital-archive.md
+        - Subdomain installation: developer/subdomain.md
+        - Copy a MySQL database: developer/copy-mysql-db.md
+        - MkDocs: developer/mkdocs.md
+        - File Locations*: developer/file-locations.md
         - GitHub: developer/github.md
     - Digital Archive plugins:
         AvantAdmin: plugins/avantadmin.md
@@ -44,8 +44,6 @@ nav:
         AvantS3: plugins/avants3.md
         AvantSearch*: plugins/avantsearch.md
         AvantZoom: plugins/avantzoom.md
-    - Welcome: index.md
-    - Author's notes: author-notes.md
     
 theme:
   name: windmill

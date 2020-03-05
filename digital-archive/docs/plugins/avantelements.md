@@ -33,7 +33,7 @@ The AvantCommon plugin has these configuration options:
 
 The following sections describe each option in detail.
 
-See also the documentation for [installing AvantElements](../../../superuser/install-digital-archive/#avantelements).
+See also the documentation for [installing AvantElements](../../../developer/install-digital-archive/#avantelements).
 
 ---
 ### Allow Add Input option

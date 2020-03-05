@@ -94,19 +94,19 @@ program called [FileZilla](https://filezilla-project.org/). Connection settings 
 
 **cPanel method**
 
-A Digital Archive superuser can use cPanel to upload a zip file containing the zoom tiles.
+A Digital Archive developer can use cPanel to upload a zip file containing the zoom tiles.
 This method involves more steps, but is faster because uploading one large file takes less
 time than FTPing several folders that each contain dozens of files.
 
 - Compress the zoom tiles folder into a single zip file
-- [Upload and extract the zip file](../../superuser/web-host#upload-and-extract-a-zip-file) into the 
+- [Upload and extract the zip file](../../developer/web-host#upload-and-extract-a-zip-file) into the 
 `digitalarchive/files/zoom` folder
 
 ## Filezilla FTP settings
 
 Follow the steps below to create a FileZilla connection that will allow you to upload an
 image tile folder to the Digital Archive `zoom` folder. For the *zoom username* and *zoom password*,
-use the credentials provided to you by the Digital Archive superuser.
+use the credentials provided to you by the Digital Archive developer.
 
 -	Run FileZilla
 -	Choose `File` > `Site Manager` from the top menu bar

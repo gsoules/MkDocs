@@ -10,7 +10,7 @@ See the documentation for [zoomable images](../../administrator/zoomable-images.
 
 AvantZoom has no configuration options.
 
-See also the documentation for [installing AvantZoom](../../../superuser/install-digital-archive/#avantzoom).
+See also the documentation for [installing AvantZoom](../../../developer/install-digital-archive/#avantzoom).
 
 
 ## Dependencies

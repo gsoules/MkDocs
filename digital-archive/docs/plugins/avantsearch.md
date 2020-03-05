@@ -22,7 +22,7 @@ The AvantSearch plugin has these configuration options:
 
 The following sections describe each option in detail.
 
-See also the documentation for [installing AvantSearch](../../../superuser/install-digital-archive/#avantsearch).
+See also the documentation for [installing AvantSearch](../../../developer/install-digital-archive/#avantsearch).
 
 ---
 
@@ -238,7 +238,7 @@ In contrast, InnoDB has a very short list of stopwords and only ignores keywords
 can only be set at the MySQL server level and a server restart is required to change them. If you are
 using a shared server, you probably don't have the option to change this value.
 
-Learn how to [change from MyISAM to InnoDB](../../../superuser/install-digital-archive/#change-database-storage-engine).
+Learn how to [change from MyISAM to InnoDB](../../../developer/install-digital-archive/#change-database-storage-engine).
 
 ## Dependencies
 The AvantSearch plugin requires that the [AvantCommon] plugin be installed and activated.

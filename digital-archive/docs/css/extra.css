@@ -137,12 +137,11 @@ ol ul {
 }
 
 .wm-toc-text {
-    color: #0262b1;
     color: #000;
 }
 
 /* Make level-1 TOC entires bold. */
-.wm-toc-lev1.wm-toc-opener > .wm-toc-text {
+.wm-toc-lev1 > .wm-toc-text {
     font-weight: bold;
 }
 
@@ -154,7 +153,7 @@ ol ul {
 /* Highlight the TOC entry for the first entry of the second level entries. */
 .wm-toc-pane ul.wm-toctree li.wm-toc-li-nested ul.wm-toctree :first-child.wm-toc-lev2 a.wm-article-link.wm-toc-text
 {
-    color: #000000;
+    color: #0262b1;
 }
 
 /* Make level-2 TOC entires a little larger. */
@@ -164,10 +163,7 @@ ol ul {
 
 /* Make level-2 TOC entires more subtle. */
 .wm-toc-li a.wm-article-link.wm-page-toc-text {
-    color: rgb(80, 80, 80);
-    color: #0262b1;
     color: #000;
-    xfont-size: 14px;
 }
 
 /* Make level-2 expanders bold blue. */

@@ -43,7 +43,7 @@ Follow these steps to add a new element to your Digital Archive installation.
 Omeka does not provide a way to rename an element. If you mistype the name when creating a new element, you can simply
 delete it and create a new one with the correct name; however, if the element already exists and there are items containing metadata for the element, the only option is to go into the MySQL database and edit the `omeka_elements` table. Find
 the element in the table and then change its name in the `name` column. When you go back into Omeka, the element will appear
-with its new name. This can be done using [MySQL Workbench](../superuser/mysql-workbench.md).
+with its new name. This can be done using [MySQL Workbench](../developer/mysql-workbench.md).
 
 ## Arrange element order
 You can control the order in which elements appear when you are editing an item.

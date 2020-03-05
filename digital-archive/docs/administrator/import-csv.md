@@ -82,7 +82,7 @@ On the Step 2 page:
 -	Verify that the mappings are correct
 -   Click the `Import` button at the bottom of the page
 -   The `Status` page should appear saying that the import has started
--   To refresh the page, click the `Status` tab
+-   To reload the page, click the `Status` tab
 
 ![UTF-8 format](import-csv-6.jpg)
 

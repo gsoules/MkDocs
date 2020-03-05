@@ -27,7 +27,7 @@ AvantCommon has these configuration options:
 
 The following sections describe each option in detail.
 
-See also the documentation for [installing AvantCommon](../../../superuser/install-digital-archive/#avantcommon).
+See also the documentation for [installing AvantCommon](../../../developer/install-digital-archive/#avantcommon).
 
 ---
 
