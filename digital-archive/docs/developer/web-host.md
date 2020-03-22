@@ -13,24 +13,126 @@ on a [Reclaim Hosting](https://reclaimhosting.com/) web server.
 
 ---
 
-## cPanel
-cPanel is a control panel that lets you manage many aspects of your
-web host environment. The cPanel home page is divided into sections like DATABASES, FILES etc.
-as shown in the screenshot below. Each section contains a set of related features you can choose from.
-To learn more about cPanel visit <https://cpanel.net/>
+## WHM
+
+WMH stands for Web Host Manager. All of the Digital Archive sites are hosted on a dedicated Linux server which you manage using [WHM](https://cpanel.net/products/). The login page is: <https://avantlogic.reclaimhosting.com:2087 >.
+
+To learn more about WHM, visit <https://docs.cpanel.net/whm/>
 
 !!! note "Tip"
     Use the search box at the top to quickly find a feature. For example, as you type `ftp`,
-    the sections and features will immediately narrow down to just those related to FTP.
+    the features will immediately narrow down to just those related to FTP. This same technique
+    works in [cPanel].
+
+---
+
+## cPanel
+cPanel is a control panel that lets you manage many aspects of the
+web host environment for a single WHM account. To access the cPanel for an account:
+
+-   Go to [WHM] and choose `List Accounts`
+-   Click the cPanel icon in the row for the account
+-   The cPanel home page will appear
+
+![cPanel](web-host-3.jpg)
+
+The cPanel home page is divided into sections like DATABASES, FILES etc.
+as shown in the screenshot below. Each section contains a set of related features you can choose from.
+To learn more about cPanel, visit <https://cpanel.net/>
 
 ![cPanel](web-host-1.jpg)
 
-To use cPanel on Reclaim Hosting:
+---
 
--	Login to your Reclaim Hosting account
--   Click on `cPanel` in the top menu, and choose your domain from the dropdown list
--   Click on the feature you want to use
--   The user interface for the feature will appear
+## Restore a backup
+Explain how to use Jetback
+
+---
+
+## Create a new cPanel account
+Follow the steps below to create a new cPanel account. Also see the
+[WHM documentation](https://docs.cpanel.net/whm/account-functions/create-a-new-account/86/)
+                    https://docs.cpanel.net/whm/account-functions/create-a-new-account/86/
+
+### Create the account
+
+-   Go to [WHM] and choose `List Accounts`
+-   Click the `Create a New Account` button
+-   Enter:
+    -   **Domain** = *domain name e.g. historytrust.net*
+    -   **Username** = *filled in automatically, but you can change it*
+    -   **Password** & **Re-type Password** *automatically filled in when you:*
+        -   Click the `Password Generator` button
+        -   Copy the password to a safe place
+        -   Check the `I have copied this password` checkbox
+        -   Click the `Use Password` button
+    -   **Email** = `gsoules@avantlogic.com`
+    -   **Choose a Package** = `Archive`
+    -   **Select Options Manually** = *leave unchecked*
+    -   **Settings** panel = *accept defaults*
+    -   **Mail Routing Settings** panel = *accept defaults*
+    -   **Reseller Settings** panel  = *accept defaults (unchecked)*
+    -   **DNS Settings** panel = If using a domain registered:
+        -   With reclaim, accept defaults
+        -   Another registrar like Godaddy, check the `Use the nameservers` checkbox
+-   Click the `Create` button
+-   Review the `Account Creation Status` information
+    
+### Set the name servers
+
+!!! warning ""
+    Skip this step if the site will be hosted on reclaimhosting.com
+
+If the domain is registered with another registrar (not with reclaim) e.g. Godaddy or bluehost:
+
+-   Login into the registrar account for the domain
+-   Set the name servers to:
+    -   `ns1.reclaimhosting.com`
+    -   `ns2.reclaimhosting.com`
+
+### Install an SSL certificate
+Note that you cannot install the certificate for a non-reclaim domain until the name servers have been
+pointed to reclaim.
+
+-   Go to [WHM] and choose `List Accounts`
+-   Click the cPanel icon in the cPanel column of the row for the newly created account
+-   In [cPanel] choose `Lets Encrypt SSL`
+-   In the `Issue a new certificate` section, click te `+Issue` link
+-   On the next page, click the `Issue` button
+-   Wait for the certifcate to be issued -- it can take a while
+-   If you get an error, try again
+-   Close the page that says the certificate is now installed
+
+### Add an index.html page
+By default, a new account has only an empty `cgi-bin` folder in its `public_html` folder.
+Add an index.html page so that something nice appears when someone goes to the site. Below is an
+example. Be sure to replace `XYZ` with the organization's name.
+
+```
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<h2 style="text-align: center;margin-top:40px;"><span style="font-family:arial,helvetica,sans-serif;">Future home of XYZ&#39;s Digital Archive site</span></h2>
+</body>
+</html>
+```
+
+### Edit .htaccess to force https
+
+!!! note ""
+    To perform this task, you'll need to change the cPanel File Manager settings to `Show Hidden Files`
+    in order to be able to see the `.htacces` file.
+
+By default, the site will not use https until you add the lines shown below to the top of the `public_html/.htaccess` file.
+
+```
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+```
+Go to the site to verify that the URL is automatially changed to use https.
 
 ---
 
@@ -85,8 +187,24 @@ Follow these steps to create a subdomain in an existing account.
 
 ---
 
-## Create a new account
-Follow these steps to create a new Reclaim Hosting account.
+## Purchase a domain
+
+-	Login to the AvantLogic Reclaim Hosting account
+-   In the Client Area, click `Domains > Register a New Domain` in the top menu
+-   Enter the domain name and choose the suffix e.g. `.net`
+-   Click the `Check Availability` button
+-   In the `Congratulations` section that appears, click the `Continue` button
+-   Accept the `Unprotected WHOIS` and click the `Continue` button
+-   Check the `I have read and agree...` check box
+-   Click the `Complete Order` button
+-   Close the `Order Confirmation` page
+
+---
+
+## Create a new Reclaim account
+Follow these steps to create a new Reclaim Hosting account. You would do this, for example, if you wanted
+to provide a client with their own Reclaim account for hosting their website. You might also create a
+separte account for a Digital Archive instatllation that will not be hosted on the dedicated WHM server.
 
 -   If you already have an account with Reclaim Hosting and want to add another:
     -	Login to your account
@@ -108,4 +226,5 @@ Follow these steps to create a new Reclaim Hosting account.
 
 
 
+[WHM]: #whm
 [cPanel]: #cpanel

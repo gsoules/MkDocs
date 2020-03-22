@@ -23,8 +23,11 @@ nav:
         - Omeka:
             - Terminology: administrator/omeka-terminology.md
             - Elements: administrator/omeka-elements.md
-        - Import CSV data: administrator/import-csv.md
-        - Zoomable images: administrator/zoomable-images.md
+        - Import or Export data:
+            - Import CSV data: administrator/import-csv.md
+            - Export PastPerfect data: administrator/pastperfect-export.md
+        - Zoomable images:
+            - Zoomable images: administrator/zoomable-images.md
     - Developer:
         - System administration:
             - Web server: developer/web-host.md
@@ -38,6 +41,7 @@ nav:
             - Subdomain installation: developer/subdomain.md
         - Programming:            
             - GitHub: developer/github.md
+            - Python: developer/python.md
     - Digital Archive plugins:
         AvantAdmin: plugins/avantadmin.md
         AvantCommon: plugins/avantcommon.md

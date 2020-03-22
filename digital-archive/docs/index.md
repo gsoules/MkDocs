@@ -2,14 +2,11 @@
 
 This website contains documentation about the Digital Archive.
 
-!!! note "Tip" 
-    Use the **navigation** pane at left to locate the documentation that's right for you.  
-    Or type in the **search box** at upper right to find topics of interest.
+![discover](index-1.png)
 
 ---
 
-## Documentation categories
-
+## Who this documentation is for
 The documentation is divided into categories for these kinds of people:
 
 - Users
@@ -22,6 +19,10 @@ A fifth category is documentation about Digital Archive plugins that is of broad
 Each category is explained below. Some people will fall into more than one category.  
 For example, an administrator is usually also an archivist and a user.
 
+!!! note "Tip" 
+    Use the **navigation** pane at left to locate the documentation that's right for you.  
+    Or type in the **search box** at upper right to find topics of interest.
+
 ### User documentation
 User documentation is for people who use the Digital Archive for research or just for fun.
 
@@ -30,7 +31,8 @@ but has no access to non-public items, or private data associated with all items
 
 ### Archivist documentation
 Archivist documentation is for archivists and volunteers who maintain the collection content
-for a Digital Archive site. They add new items, edit existing items, upload images, and establish relationships among items.
+for a Digital Archive site. They add new items, edit existing items, upload images, and establish
+relationships among items.
 
 An archivist has a user name and password that allow them to login to a Digital Archive site. Once logged in, they
 can see all public items in the collection as well as non-public items and private data associated with all items.
@@ -39,13 +41,17 @@ Typically, an archivist's login will not allow them to make changes to the Digit
 the archivist is also an **Administrator**.
 
 ### Administrator documentation
-Administrator documentation is for the person who performs administrative functions for their organization's Digital Archive site. They edit vocabularies, configure plugin options, add new user accounts, define relationship types and rules, and perform other similar tasks.
+Administrator documentation is for the person who performs administrative functions for their organization's
+Digital Archive site. They edit vocabularies, configure plugin options, add new user accounts, define relationship
+types and rules, and perform other similar tasks.
 
 An administrator has a user name and password that allow them to login to a Digital Archive site. Once logged in, they
 have all the privileges of an **Archivist**, but can also perform administrative functions.
 
 ### Developer documentation
-Developer documentation is for technical people responsible for maintaining multiple Digital Archive sites. They are responsible for database management, programming, software upgrades, web server management, maintaining this documentation, and a variety of other tasks requiring technical expertise.
+Developer documentation is for technical people responsible for maintaining multiple Digital Archive sites.
+They are responsible for database management, programming, software upgrades, web server management,
+maintaining this documentation, and a variety of other tasks requiring technical expertise.
 
 A Digital Archive developer must be familiar with the following technologies:
 

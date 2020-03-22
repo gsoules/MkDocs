@@ -192,7 +192,15 @@ To learn more, see the Omeka documentation for [retrieving error messages](https
 -	In the `Logging` section, change `log.errors` from `false` to `true`
 -	Save your changes and close the file
 
-Errors will now be written to `digitalarchive/application/logs/errors.log`.
+Errors are written to:
+-   `application/application/logs/errors.log`
+    -   Must exist – will get Omeka error if not present and writable. If the file gets too
+        big for cPanel  to allow editing, you can delete the file and create a new one with the same name.
+-   `digitalarchive/admin/error_log`
+    -   Okay to delete – it gets recreated automatically
+-   `digitalarchive/error_log`
+    -   Okay to delete – it gets recreated automatically
+
 
 ---
 ## Omeka configuration
@@ -718,10 +726,6 @@ to Omeka items.
 !!! warning "Important"
     Install this plugin now *before adding any items to Omeka* because the plugin overrides Omeka's
     default file storage mechanism and it won't work correctly if some files have already been stored.
-
-    Southwest Harbor Public Library uses its own custom version of this plugin based on release 2.14.
-    The modified version uses a flat file structure instead of the better hierarchical structure.
-    Eventually SWHPL should convert to use the newer structure.
 
 Follow these steps to install and configure the Archive Repertory plugin:
 

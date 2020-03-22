@@ -68,7 +68,7 @@ Follow these steps to rollback a commit without losing any changes. Use this tec
 you inadvertently commit a set of files as a group, but meant to commit them individually with separate comments for each.
 
 - In Windows Explorer, go the folder for the repository requiring the rollback.
-- Right click and choose “Git Bash Here”
+- Right click and choose `Git Bash Here`
 - Type `git log –-oneline` to see previous commits.
 - If the list is too long to fit, type ‘q’ to quit listing.
 - Locate the commit that you want to revert to (near the top of the listing).
@@ -97,4 +97,12 @@ Follow these steps in the situation where you typed the wrong commit message and
 If you had already pushed the commit, you’ll need to push it again in which case you’ll see a ‘Merge branch’ commit in the history which presumably is syncing the old message on the server with the newly changed message.
 
 See [this post](https://gist.github.com/nepsilon/156387acf9e1e72d48fa35c4fabef0b4) to learn about how to deal with older commits.
+
+
+## Untrack files already in a repository
+
+See [this article](http://www.codeblocq.com/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/)
+and [this one](https://alvinalexander.com/git/git-rm-file-git-repository-dont-track-accidentally-added)
+on how to untrack files that have already
+been added to a repositiory.
 

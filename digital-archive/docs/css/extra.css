@@ -13,19 +13,21 @@ h2 {
     color: #000;
     font-size: 24px;
     font-weight: bold;
-    margin-top: 22px;
+    margin-top: 32px;
 }
 
 h3 {
     color: #000;
     font-size: 18px;
     font-weight: bold;
+    margin-top: 24px;
 }
 
 h4 {
-    color: rgb(122, 122, 122);
+    color: #555;
     font-size: 16px;
     font-weight: bold;
+    margin-top: 20px;
 }
 
 /* Override Windmill's styling for the block quotes, strong, code, and preformatted. */
@@ -51,6 +53,7 @@ pre {
 .admonition {
     font-size: 15px;
     padding: 8px 12px 2px 12px;
+    border-left-width: 8px;
 }
 
 .admonition.note,
@@ -58,6 +61,21 @@ pre {
 .admonition.danger {
     color: #333;
     font-size: 14px;
+}
+
+.admonition.note {
+    background-color: #d9edf7;
+    border-left-color: #34b1f0;
+}
+
+.admonition.warning {
+    background-color: #fcf8e3;
+    border-left-color: #f7de64;
+}
+
+.admonition.danger {
+    background-color: #f2dede;
+    border-left-color: #eb8181;
 }
 
 .admonition-title {
@@ -203,6 +221,7 @@ ol ul {
 .wm-page-content img {
     margin: 8px auto 12px 24px;
     max-width: calc(100% - 24px);
+    border-width: 0;
 }
 
 /* Replace Windmill's list icon with the hamburger icon. */
