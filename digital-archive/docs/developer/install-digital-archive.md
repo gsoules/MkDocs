@@ -165,6 +165,9 @@ To learn more, see the Omeka documentation for the [database configuration file]
 This step allows PHP errors to appear in the browser. Normally you would not want
 this for a production site, but it's better to become aware of a problem if it occurs.
 
+In these steps you'll also add code to force URLs to https. The code gets added here and in the root-level `.htaccess` file
+and in the steps to [configure site security](#configure-site-security).
+
 -	Go to [cPanel] and choose `File Manager`
 -   Allow hidden files to be displayed:
     -   Click the `Settings` button in the upper right of the File Manager
@@ -172,12 +175,16 @@ this for a production site, but it's better to become aware of a problem if it o
 -	Navigate *into* the `digitalarchive` folder
 -   Edit `.htaccess`
 -	Uncomment `SetEnv APPLICATION_ENV development`
+-   Add the code below to force URLs to HTTPs
 -	Save your changes and close the file
 
-!!! warning "Important"
-    The `.htaccess` file in the `digitalarchive` folder is different than `.htaccess` in the
-    installation's root folder. You'll edit the root folder's copy later in the steps to
-    [configure site security](#configure-site-security).
+Put the code below immediately after the line `RewriteEngine on`
+
+```
+# Force all URLs to HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+```
 
 ---
 
@@ -193,14 +200,20 @@ To learn more, see the Omeka documentation for [retrieving error messages](https
 -	Save your changes and close the file
 
 Errors are written to:
--   `application/application/logs/errors.log`
-    -   Must exist – will get Omeka error if not present and writable. If the file gets too
+
+-   `application/logs/errors.log`
+    -   Must exist – will get Omeka error if not present and writable.  
+        If the file gets too
         big for cPanel  to allow editing, you can delete the file and create a new one with the same name.
 -   `digitalarchive/admin/error_log`
     -   Okay to delete – it gets recreated automatically
 -   `digitalarchive/error_log`
     -   Okay to delete – it gets recreated automatically
 
+
+If errors are not getting dislayed in the browser, make sure that display_errors=On and error_reporting=32767 (or E_ALL).
+These two settings can be applied in php.ini, but since there can be multiple php.ini files, it's not always clear
+which applies.
 
 ---
 ## Omeka configuration

@@ -33,7 +33,7 @@ See also the documentation for [installing AvantRelationships](../../../develope
 ### Custom Relationships option
 This option lets you specify the names of custom callback functions that you write to dynamically create relationships
 for the items being viewed (the primary item). The function must create an array of one or more Item objects that are
-somehow related to the primary itemd. These items will appear in their own relationship group at the end of at Item page after all other relationship groups. A relationship to the group will also appear in the visualization.
+somehow related to the primary item. These items will appear in their own relationship group at the end of at Item page after all other relationship groups. A relationship to the group will also appear in the visualization.
 
 Custom relationships are one-way from the item being viewed to other items. If you click one of the related
 items, its Item page will not display a relationship back to the original item.

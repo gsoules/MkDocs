@@ -224,6 +224,12 @@ separte account for a Digital Archive instatllation that will not be hosted on t
 -	Open the New Account Information email from reclaim and copy the cPanel information into the passwords spreadsheet.
 -	Verify that you can login to cPanel directly as this organization (as opposed to from the administrator account)
 
+--
+
+## Tips & Tricks
+-   Use <https://skipdns.link> to access a site that's not accesible before switching DNS or namesevers.
+-   Use yum instead of pip to install on centos.
+-   Use <whatsmydns.net> to see what DNS a site is using from various locations
 
 
 [WHM]: #whm
