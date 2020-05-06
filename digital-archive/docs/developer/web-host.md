@@ -229,8 +229,17 @@ separte account for a Digital Archive instatllation that will not be hosted on t
 ## Tips & Tricks
 -   Use <https://skipdns.link> to access a site that's not accesible before switching DNS or namesevers.
 -   Use yum instead of pip to install on centos.
--   Use <whatsmydns.net> to see what DNS a site is using from various locations
+-   Use <https://www.whatsmydns.net/> to see what DNS a site is using from various locations
 
+
+## Jet Backup
+
+To restore a file:
+-   Go to Home
+-   Click Account
+-   View Account Backups
+-   Choose file backups
+-   Browse to the folder containing the file (may need to scroll window of folders)
 
 [WHM]: #whm
 [cPanel]: #cpanel
