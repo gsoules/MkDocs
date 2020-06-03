@@ -2,10 +2,10 @@
 
 This page explains all of the tasks that AvantLogic performs to install and configure a new Digital Archive installation. For each task, it lists the steps necessary to perform the task.
 
-!!! note ""
+!!! note "Step by step"
     Installation tasks appear in the navigation panel at left. Perform them one at a time in the order listed.
 
-    **[Print this checklist](installation-checklist.pdf)**
+    **[Print an installation checklist](installation-checklist.pdf)**
 
 ---
 ## Prerequisites
@@ -41,7 +41,6 @@ together in the the same `public_html`.
 
 ---
 ## MySQL database
----
 
 A new Reclaim Hosting account does not come with a database. Follow the steps below to
 use [cPanel] to create a new empty database and a database user for the Digital Archive.
@@ -87,11 +86,14 @@ use [cPanel] to create a new empty database and a database user for the Digital 
 
 ### Configure MySQL Workbench
 
--   [Add the database to MySQL Workbench](mysql-workbench.md#add-a-database-connection)
+-   [Add a database connection to MySQL Workbench](mysql-workbench.md#add-a-database-connection)
 
 ---
 
 ### Change database storage engine
+
+!!! note
+    Skip this section if the installation will be using AvantElasticsearch.
 
 These steps change the storage engine for the `search_texts` table from `MyISAM` to `InnoDB`. They also add a `FULLTEXT` index to the `title` column of the `search_texts` table. To learn the reason for making these changes, see the AvantSearch
 plugin topics on [improving search results](../../plugins/avantsearch/avantsearch/#improving-search-results)
@@ -116,7 +118,6 @@ Follow these steps to change the storage engine:
 
 ---
 ## Omeka installation
----
 
 ### Copy installation files to server
 
@@ -126,7 +127,7 @@ Follow these steps to upload the Omeka Classic files to the web server. You can 
 -	Download the latest Omeka Classic release from <http://omeka.org/classic/download>  
     As of 2/6/2020, the latest release was `omeka-2.7.1.zip`
 -	Go to [cPanel] and choose `File Manager`
--   Navigate to the `public_html` folder
+-   Navigate into the `public_html` folder
 -   [Upload and extract the zip file](web-host.md#upload-and-extract-a-zip-file)
 -   A new folder having the same name as the zip file will appear
 -   Rename the new folder from the zip file's name to `digitalarchive`
@@ -188,7 +189,7 @@ RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 
 ---
 
-### Enable error logging
+### Enable error logging and background process
 
 Follow these steps to enable Omeka error logging so that a history of errors will be recorded.
 To learn more, see the Omeka documentation for [retrieving error messages](https://omeka.org/classic/docs/Troubleshooting/Retrieving_Error_Messages/#activate-error-logging).
@@ -196,7 +197,8 @@ To learn more, see the Omeka documentation for [retrieving error messages](https
 -	Go to [cPanel] and choose `File Manager`
 -	Navigate *into* the `digitalarchive/application/config/` folder
 -   Edit `config.ini`
--	In the `Logging` section, change `log.errors` from `false` to `true`
+-	Change `log.errors` from `false` to `true`
+-   Change `background.php.path` from blank to `/usr/local/bin/php`
 -	Save your changes and close the file
 
 Errors are written to:
@@ -211,13 +213,12 @@ Errors are written to:
     -   Okay to delete – it gets recreated automatically
 
 
-If errors are not getting dislayed in the browser, make sure that display_errors=On and error_reporting=32767 (or E_ALL).
+If errors are not appearing in the browser, make sure that display_errors=On and error_reporting=32767 (or E_ALL).
 These two settings can be applied in php.ini, but since there can be multiple php.ini files, it's not always clear
 which applies.
 
 ---
 ## Omeka configuration
----
 
 You are now ready to launch Omeka and configure site settings.
 
@@ -238,7 +239,7 @@ documentation for an explanation of the configuration settings.
 
 !!! note "Super user"
     The username and password you will specify below are for an Omeka *super user*.  
-    See [Omeka terminology](../../administrator/omeka/#terminology) to learn what it means to be a super user.
+    See [Omeka terminology](../../administrator/omeka-elements/#terminology) to learn what it means to be a super user.
 
 -   Set:
     -	**Username**: *a super user name*  
@@ -302,7 +303,6 @@ Follows these steps to finishing configuring Omeka.
 
 ---
 ## Web server settings
----
 
 ### Configure site security
 
@@ -401,7 +401,7 @@ Follow these steps to determine if the default configuration for background proc
 -   Click `Search` in the `Settings` page menu bar
 -	Click the `Index Records` button (even though there are no records to index)
 -   You should see a green message `Indexing records. This may take a while...`
--	If instead you get an error that the configured PHP path is invalid:
+-	If instead you get an error that the configured PHP path is  or does not point to a PHP-CLI binary:
     -	Look at this [article](https://community.reclaimhosting.com/t/setting-the-php-cli-path-in-omeka-classic/231) to determine the correct background path
     -	Edit `digitalarchive/application/config/config.ini`
     -	Set `background.php.path` to the correct path for the server
@@ -409,13 +409,11 @@ Follow these steps to determine if the default configuration for background proc
     -	Verify that the Index Records operations works with no error
 
 !!! note ""
-    Finding the right path might be a trial and error process. Leaving `background.php.path = ""` seems to work correctly.
-    However, in some installations it's set to `/usr/local/bin/php` and in others to `/usr/bin/php-cli`.
+    Finding the right path might be a trial and error process. Leaving `background.php.path = ""` works correctly on some servers. On others it needs to be set to `/usr/local/bin/php` or `/usr/bin/php-cli`.
     If you are not successful, contact the host to ask for the right path.
 
 ---
 ## Plugin acquisition
----
 
 It is now time to acquire the zip files containing the plugins, and the theme, required
 by the Digital Archive. This section explains where to locate the files and how to add
@@ -428,7 +426,7 @@ The following zip files are required for most Digital Archive installations.
 All the files are located on GitHub. The link on the zip file name takes
 you to the GitHub repository for that file.
 
-Type         | Name              | Zip file name
+Type         | Plugin Name              | Zip file name
 -------------|-------------------|--------------
 Omeka plugin |ArchiveRepertory   |[ArchiveRepertory 2.15.7.zip](https://github.com/Daniel-KM/Omeka-plugin-ArchiveRepertory/releases/tag/2.15.7)
 Avant plugin |AvantAdmin         |[AvantAdmin-master.zip](https://github.com/gsoules/AvantAdmin)
@@ -507,7 +505,9 @@ For each of the plugin zip files:
 -   Extract the zip file
 -   Click the cPanel `Reload` menu item to see the resulting folder
 -   Delete the zip file
--   Rename the folder from the zip file name to the plugin name from the table above
+-   Rename the folder from the zip file name to the Plugin Name from the table above
+
+*There does not seem to be a way to extract all of them at once.*
 
 ---
 
@@ -523,7 +523,7 @@ The `plugins` folder on the web server should now look like this:
 
 ---
 ## AvantTheme configuration
----
+
 AvantTheme, and many of the AvantPlugins, depend on the AvantCommon plugin being installed.
 Before you can install the theme, install AvantCommon by following these steps:
 
@@ -550,7 +550,6 @@ Before you can install the theme, install AvantCommon by following these steps:
 
 ---
 ## Item elements definition
----
 
 Omeka installs with a number of different *Item Types* and *Elements*; however, the Digital Archive
 uses only one Item Type which contains all of the Dublin Core elements plus only those additional elements
@@ -597,12 +596,12 @@ You can now quit MySQL Workbench.
 The new Item Type contains all of the Dublin Core elements. If you know what other elements
 the organization needs, you can add them now, or you can
 [add additional elements](#add-additional-elements) as the last task of the installation.
-The Administrator documentation explains how to [add a new element](../../administrator/omeka/#add-a-new-element).    
+The Administrator documentation explains how to [add a new element](../../administrator/omeka-elements/#add-a-new-element).    
 
 ---
 ### Add additional elements
 
-See the Administrator documentation on how to [add a new element](../../administrator/omeka/#add-a-new-element).    
+See the Administrator documentation on how to [add a new element](../../administrator/omeka-elements/#add-a-new-element).    
 Also, arrange the order of all elements.
 
 ---
@@ -610,12 +609,11 @@ Also, arrange the order of all elements.
 ### Arrange element order
 The default order in which the Dublin Core elements appear when editing an item is not
 suitable because the Identifier and Type fields appears near the end. Follow the instructions to
-[arrange the element order](../../administrator/omeka/#arrange-element-order) into the
+[arrange the element order](../../administrator/omeka-elements/#arrange-element-order) into the
 recommended sequence for the Digital Archive.
 
 ---
 ## FTP access
----
 
 This section describes how to set up FTP access for a superuser.
 
@@ -648,7 +646,6 @@ Follow these steps to access the Digital Archive web server via FTP.
 
 ---
 ## Beyond Compare
----
 
 [Beyond Compare](https://www.scootersoftware.com/) is a tool for comparing and synchronizing local
 files and folders with their remote counterparts on the Digital Archive server. It does this using
@@ -714,7 +711,7 @@ and then access the session of interest in the Sessions tree at left.
 
 ---
 ## Plugin installation
----
+
 You are now ready to install the plugins that turn an Omeka installation into the Digital Archive.
 
 At this point in the installation, the plugin files have been uploaded to the web server and will
@@ -731,7 +728,6 @@ Install and configure the plugins in the order in which they appear in the secti
 
 ---
 ## Archive Repertory
----
 
 The Archive Repertory plugin controls where files are stored when you attach files, such as images or documents,
 to Omeka items.
@@ -786,6 +782,9 @@ Verify that the plugin is working as expected.
 -   Click `Delete` on the `Are you sure` dialog
 -	Verify that the `12345` folders got deleted from the `/digitalarchive/files` folders
 
+!!! warning ""
+    You won't be able to view the public page for an item until [AvantAdmin] has been installed.
+
 !!! note ""
     If using Filezilla, you may need to disconnect and reconnect to verify that the files got deleted
     because the Refresh option does not always seem to work. Or do the verification using the cPanel
@@ -793,7 +792,7 @@ Verify that the plugin is working as expected.
 
 ---
 ## Bulk Metadata Editor
----
+
 Follow these steps to install Bulk Metadata Editor:
 
 -	Go to the Omeka `Plugins` page
@@ -802,7 +801,6 @@ Follow these steps to install Bulk Metadata Editor:
 
 ---
 ## Geolocation
----
 
 !!! note ""
     Skip this task if the installation will not be using the Geolocation plugin.
@@ -821,7 +819,6 @@ Follow these steps to install the Geolocation plugin:
 
 ---
 ## OAI-PMH Repository
----
 
 !!! note ""
     Skip this task if the installation will not ingested by the Digital Public Library of America.
@@ -835,7 +832,6 @@ Follow these steps to install the OAI-PMH Repository plugin:
 
 ---
 ## Simple Pages
----
 
 Simple Pages has no configuration options.
 
@@ -854,7 +850,6 @@ Follow these steps to install the Simple Pages plugin:
 
 ---
 ## Simple Vocab
----      
 
 You'll install the Simple Vocab plugin next because it is needed by the AvantElements plugin.
 
@@ -873,18 +868,17 @@ Follow these steps to install and configure the Simple Vocab plugin:
 
 ---
 ## AvantAdmin
----   
 
 Follow these steps to install and configure the [AvantAdmin] plugin:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantAdmin`
+-   Leave the `Maintenance` checkbox unchecked
 -   Enter the **Item Type** name for the organization (usually all caps e.g. `SWHPL`)
 -   Click the `Save Changes` button
 
 ---
 ## AvantCommon
---- 
 
 The AvantCommon plugin was installed as part of the task to [install AvantTheme](#install-avanttheme).
 
@@ -912,7 +906,6 @@ Coverage
 
 ---
 ## AvantCustom 
----      
 
 AvantCustom has no configuration options.
 Follow these steps to install [AvantCustom]:
@@ -923,7 +916,6 @@ Follow these steps to install [AvantCustom]:
 
 ---
 ## AvantDPLA
----
 
 !!! note ""
     Skip this task if the installation will not ingested by the Digital Public Library of America.
@@ -936,7 +928,6 @@ Follow these steps to install the AvantDPLA plugin:
 
 ---
 ## AvantElements
---- 
 
 Follow these steps to install and configure the [AvantElements] plugin:
 
@@ -1028,7 +1019,6 @@ Date, filter: Swhpl, filterDate
 
 ---
 ## AvantImport
----
 
 Follow these steps to install the AvantImport plugin:
 
@@ -1037,14 +1027,12 @@ Follow these steps to install the AvantImport plugin:
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantImport`
 -   Leave **Mappings** blank
--   Leave `Super` as the only checked box for **Roles that can import**
 -   Click the `Save Changes` button
 
 To learn how to use AvantImport, see how to [import CSV data](../administrator/import-csv.md).
 
 ---
 ## AvantRelationships
----
 
 Follow these steps to install  the [AvantRelationships] plugin:
 
@@ -1065,7 +1053,6 @@ Publisher: Published
 
 ---
 ##  AvantSearch
----       
 
 Follow these steps to install and configure the [AvantSearch] plugin:
 
@@ -1109,10 +1096,6 @@ Date
 
 ---
 ## AvantZoom
----         
-
-!!! note ""
-    Skip this task if the installation will not be using the AvantZoom plugin.
 
 AvantZoom has no configuration options.
 Follow these steps to install [AvantZoom]:
@@ -1151,29 +1134,22 @@ installation folders.
 
 ---
 ## AvantElasticsearch
----
 
-!!! note ""
-    Skip this task if the installation will not be using the AvantElasticsearch plugin.
+### Create AWS credentials
 
-Follow these steps to install and configure the [AvantElasticsearch] plugin:
-
--   Go to [cPanel] and choose `File Manager`
--   Create this folder: `public_html/digitalarchive/files/elasticsearch`
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `AvantElasticsearch`
-
-###	Create [IAM](https://aws.amazon.com/iam/) ([Signature v4](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html)) credentials for [Amazon Elasticsearch Service](https://aws.amazon.com/elasticsearch-service/)
+Before installating AvantElasticsearch, create the AWS credentials that you'll need to provide on the
+AvantElasticsearch configuration page.
 
 -	Go to <https://aws.amazon.com/>
 -   Click the `Sign In to the Console` button at upper right
-
-![AWS sign in](install-digital-archive-11.jpg)
-
+-   Sign-in as the root user using the root user email and password (look for the link that says
+`Sign-in using root user email`)
+-   You should now be on the `AWS Management Console` page
 -	In the top menu dropdown for the logged in user, choose `My Security Credentials`
+-   You should now be on the `Your Security Credentials` page
 -	Click `Users` in the left menu
--	Click the `Add User` button
--	Use the organization name for the user name e.g. `swhpl``
+-	Click the `Add User` button at the top
+-	Type the organization abbreviation for the `User name` e.g. `swhpl`
 -	For  **Access type** check the `Programmatic Access` box
 -	Click the `Next: Permissions` button
 -	In the **Add User to Group** section, click the contributor group
@@ -1184,16 +1160,37 @@ Follow these steps to install and configure the [AvantElasticsearch] plugin:
     *This is the only opportunity to obtain the secret key*
 -	Click the `Close` button
 
-### Enable Elastticsearch
--   Go to the configuration options page for the AvantSearch plugin
+## Install the AvantElasticsearch plugin
+
+Follow these steps to install and configure the [AvantElasticsearch] plugin:
+
+-   Go to [cPanel] and choose `File Manager`
+-   Create this folder: `public_html/digitalarchive/files/elasticsearch`
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `AvantElasticsearch`
+
+### Enable Elastticsearch in AvantSearch
+-   Go to the configuration options page for the [AvantSearch] plugin
 -   Check the **Elasticsearch** checkbox
+
+---
+## AvantVocabulary
+
+Follow these steps to install and configure [AvantVocabulary]:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `AvantVocabulary`
+-   On the `Configure Plugin` page, leave `Delete Tables` unchecked
+-   Click the `Save Changes` button
+-   Click `Vocabulary Editor` in the left admin menu
+-   Click the `Rebuild Common Terms table` and click `OK` on the confirmation dialog
+-   Wait for the build to report that it has completed (it writes about 15,000 records)
+-   Click the `Rebuild Local Terms table` and click `OK` on the warning dialog
+-   Wait for the build to report that it has completed (this will be very fast on a new installation)
 
 ---
 ## AvantS3
 ---  
-
-!!! note ""
-    Skip this task if the installation will not be using the AvantS3 plugin.
 
 Follow these steps to install and configure [AvantS3]:
 
@@ -1207,7 +1204,6 @@ Identifier, filter: DigitalArchive, filterIdentifierS3
 
 ---
 ## Site styling
----
 
 ### Set navigation
 
@@ -1249,4 +1245,5 @@ Identifier, filter: DigitalArchive, filterIdentifierS3
 [AvantSearch]:        ../../plugins/avantsearch
 [AvantS3]:            ../../plugins/avants3
 [AvantZoom]:          ../../plugins/avantzoom
+[AvantVocabulary]:    ../../plugins/avantvocabulary
 [cPanel]:             web-host.md#cpanel

@@ -155,7 +155,7 @@ Follow these steps to upload a zip file to the web server and extract (unzip) it
 -   Wait for the upload to complete. When complete, the progress bar will:
     -   Show 100% *and* change color from blue to green  
         ![cPanel](web-host-2.jpg)
--   Click the `Go Back toGo to [cpanel] and choose ` link at the bottom of the page to return to the parent folder
+-   Click the `Go Back to` link at the bottom of the page to return to the parent folder
 -   Verify that the zip file is there. If not, click `Reload` in the menu above the file list
 
 

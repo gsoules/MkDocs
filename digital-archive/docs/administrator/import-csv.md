@@ -12,18 +12,26 @@ To import CSV data:
 -   The [AvantImport](../plugins/avantimport.md) plugin must be installed
 -   You must be logged into Omeka as a super user. If logged in with a lesser
     role, **AvantImport** will not appear in Omeka's left admin menu.
+-   You must configure AvantImport for each CSV file you want to import as explained below.
 
 ## Preparation
 
 Read this section carefully before attempting to import a CSV file.
 
-### Test CSV file
+### Configuration
 
-Before attempting to import all of your data, create a test CSV file that contains only two or three
-rows of CSV data. Use this file to perform all the steps on this page. Only import a file containing
-all of your data after achieving success with the test file. 
+You must configure AvantImport to tell it which columns you want to import from the CSV file and what the corresponding Omeka element names should get created for each column.
 
-### Importing files
+Follow these steps to configure the import:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Configure` button for `AvantImport`
+-   In the `Mappings` field, provide a list of column/element pair separated by a colon as shown in the screenshot below. 
+-   Click the `Save Changes` button.
+
+![importing files](import-csv-3.jpg)
+
+### Importing image files
 
 If you will be importing files to be attached to imported items, upload all of the files into the
 `digitalarchive/files/import` folder. In the CSV column used to specify the files, you'll specify just
@@ -31,11 +39,11 @@ the file name (with no path) and AvantImport will look for the files in the `imp
 
 To indicate that a CSV column contains a file name, or a comma-separated list of file names, use the
 pseudo-element name `<files>` in the **Mappings** field on the AvantImport configuration page. In the
-screenshot below, the CSV `IMAGES` column will contain file names.
+screenshot above, the CSV `IMAGES` column will contain file names.
 
-![importing files](import-csv-3.jpg)
 
 ### Excel issues
+
 CSV data often originates in Excel. Verify that the resulting CSV file does not suffer from these issues.
 
 -   Make sure that no cells contain `#######` due to a formatting problem in Excel. If you see this in the
@@ -46,7 +54,8 @@ CSV data often originates in Excel. Verify that the resulting CSV file does not 
     recourse may be to work with the data in a text editor like Notepad++ which is more well-behaved.
     
 
-## UTF-8 encoding
+### UTF-8 encoding
+
 AvantImport will only import a CSV file that has [UTF-8](https://en.wikipedia.org/wiki/UTF-8) encoding.
 This is to ensure that text containing non-ASCII characters, like the the `é` in `Hébert` will import
 without triggering an error when saved by Omeka to the MySQL database.
@@ -61,7 +70,13 @@ Excel will insert the BOM when you choose the option shown above.
 
 ![UTF-8 format](import-csv-2.jpg)
 
+If creating a CSV file using Python, use the `utf-8-sig` encoding.
+
 ## Import steps
+
+!!! note "Suggestion"
+    Before attempting to import all of your data, create a test CSV file that contains only two or three rows of CSV data. Use this file to perform all the steps on this page. Only import a file containing all of your data after achieving success with the test file. 
+
 To import from a CSV file, click **AvantImport** in Omeka's left admin menu. The first pages of a two-step
 series will appear.
 

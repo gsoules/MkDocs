@@ -8,6 +8,10 @@ nav:
             - Searching: user/search.md
         - Relationships:
             - About relationships: user/relationships.md
+        - Vocabularies:
+            - About vocabularies: user/vocabularies.md
+            - Vocabulary Editor: user/vocabulary-editor.md
+            
     - Archivist:
         - Items:
             - Add a new item: archivist/add-new-item.md
@@ -42,6 +46,7 @@ nav:
         - Programming:            
             - GitHub: developer/github.md
             - Python: developer/python.md
+            - Common Facet Translator: developer/common-facet-translator.md
     - Digital Archive plugins:
         AvantAdmin: plugins/avantadmin.md
         AvantCommon: plugins/avantcommon.md
@@ -53,6 +58,7 @@ nav:
         AvantRelationships: plugins/avantrelationships.md
         AvantS3: plugins/avants3.md
         AvantSearch: plugins/avantsearch.md
+        AvantVocabulary: plugins/avantvocabulary.md
         AvantZoom: plugins/avantzoom.md
     
 theme:
