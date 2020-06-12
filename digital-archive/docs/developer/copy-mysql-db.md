@@ -30,6 +30,8 @@ Digital Archive installation.
 -	Choose `File` > `Open SQL Script` from the top menu
 -	Select the `.sql` file exported in the Export section above
 -	Click the `Open` button to close the dialog
+-   Make any necessary edits to the SQL
+-   Be sure no text is selected or else the next step will try to execute the selection.
 -	Click the lightning bolt button to execute the script
 
 ## Edit db.ini

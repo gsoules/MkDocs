@@ -92,9 +92,6 @@ use [cPanel] to create a new empty database and a database user for the Digital 
 
 ### Change database storage engine
 
-!!! note
-    Skip this section if the installation will be using AvantElasticsearch.
-
 These steps change the storage engine for the `search_texts` table from `MyISAM` to `InnoDB`. They also add a `FULLTEXT` index to the `title` column of the `search_texts` table. To learn the reason for making these changes, see the AvantSearch
 plugin topics on [improving search results](../../plugins/avantsearch/avantsearch/#improving-search-results)
 and the [Titles Only option](../../plugins/avantsearch/avantsearch/#titles-only-option).
@@ -131,6 +128,7 @@ Follow these steps to upload the Omeka Classic files to the web server. You can 
 -   [Upload and extract the zip file](web-host.md#upload-and-extract-a-zip-file)
 -   A new folder having the same name as the zip file will appear
 -   Rename the new folder from the zip file's name to `digitalarchive`
+-   Copy `favicon.png` to the `public_html` folder
 
 ---
 
@@ -331,7 +329,7 @@ RewriteCond %{HTTPS} off
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 
 # Redirect the root and only the root to the default folder
-RedirectMatch ^/$ /digitalarchive
+RedirectMatch ^/$ /digitalarchive/find
 ```
 
 !!! warning ""
@@ -339,11 +337,8 @@ RedirectMatch ^/$ /digitalarchive
 
 !!! note
     The code above redirects root requests. For instance, if someone attempts to go to `avantlogic.net`
-    which is the web server root, they will be redirected to `avantlogic.net/digitalarchive` which
-    is the root of the Omeka installation. Omeka will in turn redirect to the default home page.
-    You can change the default home page on the `Navigation` tab of the Omeka admin `Appearance`
-    page as described in the [Omeka documentation](https://omeka.org/classic/docs/Admin/Appearance/Navigation/).
-    For example, you could set the default home page to be an *About* page that you created with
+    which is the web server root, they will be redirected to `avantlogic.net/digitalarchive/find` which
+    displays search results for the most recently modified items. If you left off `/find`, Omeka would redirect to the default home page. You can change the default home page on the `Navigation` tab of the Omeka admin `Appearance` page as described in the [Omeka documentation](https://omeka.org/classic/docs/Admin/Appearance/Navigation/). For example, you could set the default home page to be an *About* page that you created with
     the Simple Pages plugin. Alternatively, you can change `.htaccess` to redirect to a specific
     URL as explained below.
 
@@ -1156,7 +1151,7 @@ AvantElasticsearch configuration page.
 -	Click the `Next: Tags` button
 -	Click the `Next: Review` button
 -	Click the `Create User` button
--	Copy the **Access Key ID** and **Secret Access Key** to the configurations Excel sheet  
+-	Copy the **Access Key ID** and **Secret Access Key** to the Accounts Excel sheet  
     *This is the only opportunity to obtain the secret key*
 -	Click the `Close` button
 
@@ -1168,6 +1163,15 @@ Follow these steps to install and configure the [AvantElasticsearch] plugin:
 -   Create this folder: `public_html/digitalarchive/files/elasticsearch`
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantElasticsearch`
+
+### Edit config.ini
+
+-   Set `shared_index_name` to the name of the shared index.
+
+!!! danger "Shared Index"
+    If you need to be able to create a new shared index, add: `new_shared_index_allowed = true` to the config.ini file. This will cause a new radio button to appear on the Elasticsearch page to allow import into a new
+    shared index. This is a dangerous operation because it will destroy all the data in the shared index and
+    therefore should only be performed when creating a shared index that does not already exist.
 
 ### Enable Elastticsearch in AvantSearch
 -   Go to the configuration options page for the [AvantSearch] plugin
@@ -1233,7 +1237,6 @@ Identifier, filter: DigitalArchive, filterIdentifierS3
 -	Adjust the custom CSS as necessary.
 -   Click the `Save Changes` button
 -	Remove the CSS files for other organization’s theme customization e.g. swhpl.css
-
 
 [AvantAdmin]:         ../../plugins/avantadmin
 [AvantCommon]:        ../../plugins/avantcommon

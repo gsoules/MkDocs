@@ -8,10 +8,6 @@ nav:
             - Searching: user/search.md
         - Relationships:
             - About relationships: user/relationships.md
-        - Vocabularies:
-            - About vocabularies: user/vocabularies.md
-            - Vocabulary Editor: user/vocabulary-editor.md
-            
     - Archivist:
         - Items:
             - Add a new item: archivist/add-new-item.md
@@ -23,6 +19,9 @@ nav:
             - Workflow fields: archivist/workflow-fields.md
         - Relationships:            
             - Working with relationships: archivist/working-with-relationships.md            
+        - Vocabularies:
+            - About vocabularies: archivist/vocabularies.md
+            - Vocabulary Editor: archivist/vocabulary-editor.md
     - Administrator:
         - Omeka:
             - Terminology: administrator/omeka-terminology.md
@@ -43,6 +42,7 @@ nav:
         - Digital Archive installation:            
             - Install a Digital Archive site: developer/install-digital-archive.md
             - Subdomain installation: developer/subdomain.md
+            - Bulk installation: developer/bulk-installation.md
         - Programming:            
             - GitHub: developer/github.md
             - Python: developer/python.md
