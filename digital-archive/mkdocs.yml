@@ -23,6 +23,7 @@ nav:
             - About vocabularies: archivist/vocabularies.md
             - Vocabulary Editor: archivist/vocabulary-editor.md
     - Administrator:
+        - FAQ: administrator/faq.md
         - Omeka:
             - Terminology: administrator/omeka-terminology.md
             - Elements: administrator/omeka-elements.md
