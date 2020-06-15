@@ -9,8 +9,6 @@
 
 AccessDB
 :   Records a to-do list of work needed for an item. See [workflow fields](workflow-fields.md)  
-- one
-- thwo
 
 Instructions
 :   Records a to-do list of work needed for an item. See [workflow fields](workflow-fields.md) 

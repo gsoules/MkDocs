@@ -4,50 +4,37 @@ copyright: 'Copyright &copy; 2020 AvantLogic Corporation'
 nav:
     - Welcome: index.md
     - User:
-        - Searching:
-            - Searching: user/search.md
-        - Relationships:
-            - About relationships: user/relationships.md
+        Searching: user/search.md
+        Relationships: user/relationships.md
     - Archivist:
-        - Items:
-            - Add a new item: archivist/add-new-item.md
-            - Edit an existing item: archivist/edit-item.md
-            - Add a reference item: archivist/add-reference-item.md
-            - Delete an item: archivist/delete-item.md
-        - Fields (elements):
-            - Field descriptions: archivist/field-descriptions.md
-            - Workflow fields: archivist/workflow-fields.md
-        - Relationships:            
-            - Working with relationships: archivist/working-with-relationships.md            
-        - Vocabularies:
-            - About vocabularies: archivist/vocabularies.md
-            - Vocabulary Editor: archivist/vocabulary-editor.md
+        Add a new item: archivist/add-new-item.md
+        Edit an existing item: archivist/edit-item.md
+        Add a reference item: archivist/add-reference-item.md
+        Delete an item: archivist/delete-item.md
+        Field descriptions: archivist/field-descriptions.md
+        Workflow fields: archivist/workflow-fields.md
+        Working with relationships: archivist/working-with-relationships.md            
+        About vocabularies: archivist/vocabularies.md
+        Vocabulary Editor: archivist/vocabulary-editor.md
     - Administrator:
         - FAQ: administrator/faq.md
-        - Omeka:
-            - Terminology: administrator/omeka-terminology.md
-            - Elements: administrator/omeka-elements.md
-        - Import or Export data:
-            - Import CSV data: administrator/import-csv.md
-            - Export PastPerfect data: administrator/pastperfect-export.md
-        - Zoomable images:
-            - Zoomable images: administrator/zoomable-images.md
+        - Omeka Terminology: administrator/omeka-terminology.md
+        - Omeka Elements: administrator/omeka-elements.md
+        - Import CSV data: administrator/import-csv.md
+        - Export PastPerfect data: administrator/pastperfect-export.md
+        - Zoomable images: administrator/zoomable-images.md
     - Developer:
-        - System administration:
-            - Web server: developer/web-host.md
-            - MkDocs: developer/mkdocs.md
-            - File locations: developer/file-locations.md
-        - Database administration:
-            - MySQL Workbench: developer/mysql-workbench.md
-            - Copy a MySQL database: developer/copy-mysql-db.md
-        - Digital Archive installation:            
-            - Install a Digital Archive site: developer/install-digital-archive.md
-            - Subdomain installation: developer/subdomain.md
-            - Bulk installation: developer/bulk-installation.md
-        - Programming:            
-            - GitHub: developer/github.md
-            - Python: developer/python.md
-            - Common Facet Translator: developer/common-facet-translator.md
+        Web server: developer/web-host.md
+        MkDocs: developer/mkdocs.md
+        File locations: developer/file-locations.md
+        MySQL Workbench: developer/mysql-workbench.md
+        Copy a MySQL database: developer/copy-mysql-db.md
+        Install a Digital Archive site: developer/install-digital-archive.md
+        Subdomain installation: developer/subdomain.md
+        Bulk installation: developer/bulk-installation.md
+        GitHub: developer/github.md
+        Python: developer/python.md
+        Common Facet Translator: developer/common-facet-translator.md
     - Digital Archive plugins:
         AvantAdmin: plugins/avantadmin.md
         AvantCommon: plugins/avantcommon.md
@@ -63,13 +50,9 @@ nav:
         AvantZoom: plugins/avantzoom.md
     
 theme:
-  name: windmill
-    
-# Customizations for the Windmill theme.
-extra:
-  history_buttons: false
-  article_nav_top: false
-  article_nav_bottom: true
+    name: readthedocs
+    prev_next_buttons_location: top
+    include_homepage_in_sidebar: false
   
 extra_css:
     - css/extra.css  

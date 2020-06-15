@@ -1,7 +1,5 @@
 # Relationships
 
----
-
 The Digital Archive is an online database of historic and contemporary images, maps, articles, documents, publications, and other items. But this isn’t your grandfather’s database. It’s something altogether new and different.
 
 ## The Archive is Different

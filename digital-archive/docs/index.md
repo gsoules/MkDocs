@@ -2,8 +2,6 @@
 
 This website contains documentation about the Digital Archive.
 
-![discover](index-1.png)
-
 ---
 
 ## Who this documentation is for

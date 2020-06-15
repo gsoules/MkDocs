@@ -25,3 +25,8 @@ https://mysite.net/digitalarchive/avant/dashboard
 https://mysite.net/digitalarchive/find
 ```
 
+## How to add a new user
+
+Read the [users section](https://omeka.org/classic/docs/Admin/Users/) in the Omeka Classic user manual.
+
+

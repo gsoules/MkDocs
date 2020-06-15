@@ -134,6 +134,8 @@ RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 ```
 Go to the site to verify that the URL is automatially changed to use https.
 
+There is also a [cPanel option](https://blog.cpanel.com/force-https-redirection/) for forcing HTTPS, but Digital Archive installations use the method described above.
+
 ---
 
 ## Upload and extract a zip file
