@@ -2,6 +2,10 @@
 
 This website contains documentation about the Digital Archive.
 
+!!! warning "Notice"
+    This documentation is under development. It is incomplete and may contain incorect information.
+    Do not rely on what you see here until this notice has been removed.
+
 ---
 
 ## Who this documentation is for
@@ -19,7 +23,7 @@ For example, an administrator is usually also an archivist and a user.
 
 !!! note "Tip" 
     Use the **navigation** pane at left to locate the documentation that's right for you.  
-    Or type in the **search box** at upper right to find topics of interest.
+    Or type in the **search box** to find topics of interest.
 
 ### User documentation
 User documentation is for people who use the Digital Archive for research or just for fun.
@@ -78,7 +82,7 @@ everyone except for end users.
 
 ---
 
-This documentation was written by George Soules with contributions by Elliot Santavicca.
+This documentation was written by George Soules.
 
 Please report errors and omissions to <gsoules@avantlogic.com>.
 

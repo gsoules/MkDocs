@@ -956,7 +956,6 @@ Subject
 ``` plaintext
 Title: required, simple-text
 Type: required
-Subject: required
 Creator: simple-text
 Publisher: simple-text
 Date: date
@@ -1007,6 +1006,7 @@ Identifier, default: DigitalArchive, getDefaultIdentifier
 Identifier, validate: DigitalArchive, validateIdentifier
 Rights, filter: DigitalArchive, filterRights
 Date, filter: Swhpl, filterDate
+<item>, validate: DigitalArchive, validateItem
 ```
 
 -   Verify that you have set all of the options correctly
@@ -1169,9 +1169,14 @@ Follow these steps to install and configure the [AvantElasticsearch] plugin:
 -   Set `shared_index_name` to the name of the shared index.
 
 !!! danger "Shared Index"
-    If you need to be able to create a new shared index, add: `new_shared_index_allowed = true` to the config.ini file. This will cause a new radio button to appear on the Elasticsearch page to allow import into a new
-    shared index. This is a dangerous operation because it will destroy all the data in the shared index and
-    therefore should only be performed when creating a shared index that does not already exist.
+    If you need to be able to create a new local or shared index, add:
+     `new_local_index_allowed = true` and/or `new_shared_index_allowed = true`
+      to the `es.ini` file which is located in `/digitalarchve` (in the same root
+      folder as `db.ini`). This will cause new radio buttons to appear on the
+      Elasticsearch page to allow import into a new index. This is an especially
+      dangerous operation for a shared index because it will destroy all the data
+      for all sites in the shared index and therefore should only be performed
+      when creating a shared index that does not already exist.
 
 ### Enable Elastticsearch in AvantSearch
 -   Go to the configuration options page for the [AvantSearch] plugin

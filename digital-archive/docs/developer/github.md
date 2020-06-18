@@ -72,9 +72,18 @@ you inadvertently commit a set of files as a group, but meant to commit them ind
 - Type `git log –-oneline` to see previous commits.
 - If the list is too long to fit, type ‘q’ to quit listing.
 - Locate the commit that you want to revert to (near the top of the listing).
+  In the screenshot below, the most recent commit was `b7b3014`. To undo it,
+  you need to reset to `8ae22a6`.
 - Type `git reset ###` where `###` is the ID of that commit `e.g. d1f4960`.
+- Press `Enter`
 - Type `exit` to close the window.
 - Commit each of the files again, and when all of them are committed, push the changes to the server. If you don’t commit all of them before pushing, you’ll get an error when you do the push because the files on the server will be out of sync with the local repository.
+
+Before the reset to `8ae22a6`
+![git log --oneline](github-3.jpg)
+
+After the reset
+![git log --oneline](github-4.jpg)
 
 The steps above will move the Git HEAD pointer back to the older commit without modifying any of the files in the working directory. Thus, after performing these steps, all changed files will appear in the Git Desktop Changes tab so that you can commit them again.
 

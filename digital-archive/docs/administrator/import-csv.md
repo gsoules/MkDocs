@@ -98,6 +98,11 @@ Follow these steps to avoid contention with the [AvantElasticsearch] plugin.
 To import from a CSV file, click `AvantImport` in Omeka's left admin menu. The first pages of a two-step
 series will appear.
 
+### Import step 0
+
+-   Deactivate the AvantElasticsearch plugin
+-   Choose `Import CSV File` from the left admin menu
+
 ### Import step 1
 On the Step 1 page:
 
@@ -123,10 +128,17 @@ On the Step 2 page:
 !!! note "Suggestion"
     Before attempting to import all of your data, create a test CSV file that contains only two or three rows of CSV data. Use this file to perform all the steps on this page. Only import a file containing all of your data after achieving success with the test file. 
 
-### Status page
+### Import step 3
 
 Verify that the import worked correctly
     -	If the import Completed, but records were skipped, click on the import date/log to see what happened.
+
+-   The row # in the message is the row number in the spreadsheet e.g. row #2
+is the first item because row #1 is the header row
+-   Make a copy of the import file with all the rows removed except the offending row. Do this by first highlighting the bad rows, then deleting all the other rows except for the highlighted one.
+-   Fix the row data and/or the file name
+-   Reimport the copy of the import file
+
 -	Import all of the data
     -	Method  1:
         -	Break the CSV file into chunks of 100 or 200 rows and import the individual files one at a time.
@@ -140,6 +152,27 @@ Verify that the import worked correctly
             o	Try again and repeat until all rows imported.
 
 ![UTF-8 format](import-csv-5.jpg)
+
+![Status page showing statistics](import-csv-7.jpg)
+
+![Log page showing error](import-csv-8.jpg)
+
+---
+
+### Import step 5
+
+-   Activate the AvantElasticsearch plugin
+-   Update the vocabulary - Build Local Terms table. Must do this before reindexing so that the vocabulary
+    terms get into the local table and are there to be indexed. If you index first, you'll see UNTRACKED on
+    any new terms that came from the import that were not already in the vocabulary.
+-   Update both the local and shared indexes
+-   Cleanup the import folder
+
+## Reindex
+
+---
+
+## Update vocbabulary
 
 ---
 
