@@ -37,15 +37,10 @@ code {
     margin-bottom: 2px;
 }
 
-/* Override link color. */
-/* a,
-a:visited {
-    color: #2980B9;
-}
 
-a:hover {
-    color: #46b5ff;
-} */
+pre, img, table {
+    margin-left: 24px;
+}
 
 
 /* Override styling for admonitions. */
