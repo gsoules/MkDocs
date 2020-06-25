@@ -37,11 +37,19 @@ code {
     margin-bottom: 2px;
 }
 
-
+/* Indent code, images, tables, and lists. */
 pre, img, table {
     margin-left: 24px;
 }
+ul {
+    margin-left: 16px;
+}
 
+/* Reduce the space above a list that immediately follows a paragraph */
+p + ul,
+p + pre {
+	margin-top: -16px;
+}
 
 /* Override styling for admonitions. */
 

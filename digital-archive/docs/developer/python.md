@@ -55,7 +55,7 @@ value_counts = df['ETHNICITY'].value_counts()
 
 ### yum
 
-`yum install <package name>`
+`yum install <package name>` or `sudo yum install <package name>`
 
 See <https://access.redhat.com/articles/yum-cheat-sheet>
 

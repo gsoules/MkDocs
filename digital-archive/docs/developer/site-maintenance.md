@@ -4,6 +4,10 @@
 
 ## Omeka updates
 
+The Omeka core files are updated by the Omeka team a few times each year.
+
+*Instructions to be added here for applying Omeka updates*
+
 ## Plugin and Theme updates
 
 To update the `plugins` and `themes` folders on all Digital Archive sites:
@@ -23,6 +27,24 @@ To update the `plugins` and `themes` folders on all Digital Archive sites:
 The output is written to `log.txt`
 
 ## Common vocabulary updates
+
+To update the common vocabulary:
+
+-   Make changes to one or more of the following files:
+    -   `input-translations.csv`
+    -   `input-additional-terms.csv`
+    -   `input-nomenclature-sortEn_2020-05-18.csv` (replace with latest version from Nomenclature)
+-   Run `build_common_facets.py`
+-   Test the changes locally and build again until satisifed
+-   When done making changes:
+    -   Delete local file `digital-archive-vocabulary.csv`
+    -   Rename local file  `output-digital-archive-vocabulary.csv` to `digital-archive-vocabulary.csv`
+    -   Upload `digital-archive-vocabulary.csv` to `digitalarchive.us/public_html/vocabulary`
+-   Verify that `digital-archive-diff.csv` file was successfully FTPed to `digitalarchive.us/public_html/vocabulary`
+-   Go to `digitalarchive.us/python/vocabulary`
+-   Verify that `digitalarchive.us/python/vocabulary/data/digital-archive-sites.csv` has the correct site information
+-   Run `python3 refresh_common_vocabulary.py`
+
 
 ## Running scripts
 
