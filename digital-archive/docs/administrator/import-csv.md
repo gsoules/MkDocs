@@ -138,7 +138,8 @@ To import the skipped rows:
 
 -   Determine the cause of the problem. Often it's a mispelling of a file name, or even a difference in letter
     casing. For example, if the CSV file refers to a file named `1234.jpg`, but the actual file name is
-    `1234.JPG`, the file won't be found.
+    `1234.JPG`, the file won't be found. The presence of a `#` in a file name seems to cause the
+    import logic to truncate the name before the `#` which then causes a file name mismatch.
 -   Make a copy of the import file with all the rows removed except the offending row(s). A good way to do this is to
     use a color to highlight the bad rows, then delete all the rows except for the highlighted ones. If you
     simply start deleting the good rows, the row numbers in the error report will no longer match the rows in the
