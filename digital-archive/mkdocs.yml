@@ -3,7 +3,7 @@ copyright: 'Copyright &copy; 2020 AvantLogic Corporation'
 
 nav:
     - Welcome: index.md
-    - Glossary: glossary.md
+    - Glossary: general/glossary.md
     - User:
         Searching: user/search.md
         Relationships: user/relationships.md
@@ -18,12 +18,11 @@ nav:
         About vocabularies: archivist/vocabularies.md
         Vocabulary Editor: archivist/vocabulary-editor.md
     - Administrator:
-        - FAQ: administrator/faq.md
-        - Omeka Terminology: administrator/omeka-terminology.md
-        - Omeka Elements: administrator/omeka-elements.md
-        - Import CSV data: administrator/import-csv.md
-        - Export PastPerfect data: administrator/pastperfect-export.md
-        - Zoomable images: administrator/zoomable-images.md
+        FAQ: administrator/faq.md
+        Omeka Elements: administrator/omeka-elements.md
+        Import CSV data: administrator/import-csv.md
+        Export PastPerfect data: administrator/pastperfect-export.md
+        Zoomable images: administrator/zoomable-images.md
     - Developer:
         Web server: developer/web-host.md
         MkDocs: developer/mkdocs.md
