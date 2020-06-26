@@ -31,8 +31,6 @@ nav:
         MySQL Workbench: developer/mysql-workbench.md
         Copy a MySQL database: developer/copy-mysql-db.md
         Install a Digital Archive site: developer/install-digital-archive.md
-        Subdomain installation: developer/subdomain.md
-        Bulk installation: developer/bulk-installation.md
         GitHub: developer/github.md
         Python: developer/python.md
         Common Facet Translator: developer/common-facet-translator.md
