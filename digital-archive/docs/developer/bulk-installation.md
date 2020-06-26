@@ -2,24 +2,18 @@
 # Bulk site installation
 
 ---
-## Bulk site installation
 
--   Create a database
+-   Create a database on the server.
+-   Copy and extract digitalarchive.zip into public_html
+ -   Edit `db.ini` to point to the new database
 -   In MySQL Workbench, import generic SQL
-    - Edit:
-        - org name
-        - org copyright
-        - item type
-        - AWS credentials
--   Copy digitalarchive.zip into public_html
--   Edit:
-    -   `db.ini` to point to the new database
--   Add site name and URL to AvantTheme configuration
--   Assign new PW to users
--   Add/remove item elements
--   Set private elements
--   Site styling and navigation
--   Build vocabulary tables
+    -   File > Open SQL Script
+    -   Edit:
+        -   org name
+        -   org copyright
+        -   item type
+        -   AWS credentials
+-   Assign new PW to super user
 -   Set import configuration
 -   Import data
 -   Rebuild the local vocabulary. If you don't do this before indexing (next step) the terms in the imported
@@ -28,10 +22,6 @@
     -   Export all items
     -   Import into new local index
     -   Import into existing shared index
-
-!!! warning
-    Plugins like AvantRelationships and AvantVocabularies and others won't have their install handlers
-    called. Will need to uninstall/install to execute that code.
 
 [AvantAdmin]:         ../../plugins/avantadmin
 [AvantCommon]:        ../../plugins/avantcommon

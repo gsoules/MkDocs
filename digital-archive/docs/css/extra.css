@@ -3,6 +3,12 @@
     content: "";
 }
 
+/* Reduce the spacing below the header. */
+h5 {
+	margin-block-end: 0.5em; 
+}
+
+
 /* Make the sidebar title bigger. */
 a.icon.icon-home {
     font-size: 24px;
@@ -25,7 +31,7 @@ li.current > ul > :first-child {
 code {
     color: #333;
     background-color: #f0f0f0;
-    padding: 0 2px;
+    padding: 2px 2px;
 }
 
 /* Override description lists to be more subtle. */
@@ -41,11 +47,12 @@ code {
 pre, img, table {
     margin-left: 24px;
 }
-ul {
+
+p+ ul {
     margin-left: 16px;
 }
 
-/* Reduce the space above a list that immediately follows a paragraph */
+/* Reduce the space above a list or code that immediately follows a paragraph */
 p + ul,
 p + pre {
 	margin-top: -16px;

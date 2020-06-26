@@ -3,6 +3,7 @@ copyright: 'Copyright &copy; 2020 AvantLogic Corporation'
 
 nav:
     - Welcome: index.md
+    - Glossary: glossary.md
     - User:
         Searching: user/search.md
         Relationships: user/relationships.md
