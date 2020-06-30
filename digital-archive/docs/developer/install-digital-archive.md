@@ -329,7 +329,7 @@ RewriteCond %{HTTPS} off
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 
 # Redirect the root and only the root to the default folder
-RedirectMatch ^/$ /digitalarchive/find
+RedirectMatch ^/$ /digitalarchive
 ```
 
 !!! warning ""

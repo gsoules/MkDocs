@@ -37,14 +37,19 @@ To update the common vocabulary:
 -   Run `build_common_facets.py`
 -   Test the changes locally and build again until satisifed
 -   When done making changes:
-    -   Delete local file `digital-archive-vocabulary.csv`
-    -   Rename local file  `output-digital-archive-vocabulary.csv` to `digital-archive-vocabulary.csv`
+    -   Delete local file `input-previous-digital-archive-vocabulary.csv`
+    -   Rename local file  `digital-archive-vocabulary.csv` to `input-previous-digital-archive-vocabulary.csv`
     -   Upload `digital-archive-vocabulary.csv` to `digitalarchive.us/public_html/vocabulary`
 -   Verify that `digital-archive-diff.csv` file was successfully FTPed to `digitalarchive.us/public_html/vocabulary`
--   Go to `digitalarchive.us/python/vocabulary`
--   Verify that `digitalarchive.us/python/vocabulary/data/digital-archive-sites.csv` has the correct site information
+-   Go to the `vocabularly` folder on `digitalarchive.us`
+-   Verify that `/vocabulry/data/digital-archive-sites.csv` has the correct site information
 -   Run `python3 refresh_common_vocabulary.py`
 
+It is also possible for a developer to simulate a remote update locally via the query string:
+
+```
+    http://localhost/omeka/avant/remote?action=refresh-common&password=ABC123
+```
 
 ## Running scripts
 

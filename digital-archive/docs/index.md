@@ -88,7 +88,7 @@ everyone except for end users.
 
 Follow these steps to login to the Digital Archive:
 
--   Go to the site and click the `Login` link located in the site's footer as shown below
+-   Go to the site and click the `Login` link located at the lower right on every page
 
 ![login link](index-1.jpg)
 
