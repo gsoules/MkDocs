@@ -33,8 +33,9 @@ Follow these steps to configure the import:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Configure` button for `AvantImport`
--   In the `Mappings` field, provide a list of source/target column pairs, separated by a colon, as shown in the screenshot below. 
--   Click the `Save Changes` button.
+-   In the `Mappings` field, provide a list of source/target column pairs, separated by a colon, as shown in the screenshot below
+-   If the source and targe names are the same, you can just specify the source name
+-   Click the `Save Changes` button
 
 ![importing files](import-csv-3.jpg)
 

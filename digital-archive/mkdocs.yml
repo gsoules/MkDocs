@@ -34,6 +34,7 @@ nav:
         Python: developer/python.md
         Common Facet Translator: developer/common-facet-translator.md
         Site maintenance: developer/site-maintenance.md
+        Technologies: developer/technologies.md
     - Digital Archive plugins:
         AvantAdmin: plugins/avantadmin.md
         AvantCommon: plugins/avantcommon.md

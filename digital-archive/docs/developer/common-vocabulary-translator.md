@@ -1,20 +1,32 @@
-# Common Facet Translator
+# Common Vocabulary Translator
 
-Python utility to create Common Facet data from Nomenclature terms.
+Python utility to create Common Vocabulary data from Nomenclature terms.
 
 ## Usage
 
 ```
->>> build_common_facets.py
+>>> build_common_vocabulary.py
 ```
 
 ## Input Files
 
 ```
-nomenclature-sortEn2020-01-30.csv
-nomenclature-translations.csv
-nomenclature-additions.csv
+input-nomenclature-sortEn_2020-05-18.csv
+input-translations.csv
+input-additional-terms.csv
+input-previous-digital-archive-vocabulary.csv (if you delete this file, digital-archive-vocabulary.csv replaces it)
+
 ```
+
+## Outputs Files
+
+The two output files are automatically uploaded to digitalarchive.us/vocablary
+
+```
+digital-archive-vocabulary.csv
+digital-archive-diff.csv
+```
+
 To get the latest version of Nomenclature 4.0a
 
 1.  [download it as an Excel file](https://www.nomenclature.info/api/download/dataset/nom/nomenclature-sortEn.xlsx)
@@ -39,9 +51,9 @@ common-facets-natural.csv
 common-facets-to-pp.csv
 ```
 
-## The Common Facet Translator (CFT)
+## The Common Vocabulary Translator (CVT)
 
-The Common Facet Translator (CFT) translates the nearly 15,000 [Nomenclature 4.0](https://www.nomenclature.info/apropos-about.app?lang=en) terms into a simpler Common Facet terms used in the Digital Archive. The hierarchy for a single Nomenclature can be up to six levels deep, though not every term uses all six levels. The levels are:
+The Common Vocabulary Translator (CVT) translates the nearly 15,000 [Nomenclature 4.0](https://www.nomenclature.info/apropos-about.app?lang=en) terms into a simpler Common Vocabulary terms used in the Digital Archive. The hierarchy for a single Nomenclature can be up to six levels deep, though not every term uses all six levels. The levels are:
 
 1.  Category
 1.  Class
@@ -73,7 +85,11 @@ Category 08: Communication Objects
                 Negative
 ```                    
 
-The Common Facet Translator (CFT) translates Nomenclature terms into a simpler Common Facet terms strings based on a set of translation rules that will be explained later. The rules tell the CFT how to translate the hierarchy shown above into the strings shown below.
+```
+ANOTHER GOOD EXAMPLE would be Annual Report
+```
+
+The Common Vocabulary Translator (CVT) translates Nomenclature terms into a simpler Common Vocabulary terms strings based on a set of translation rules that will be explained later. The rules tell the CVT how to translate the hierarchy shown above into the strings shown below.
 
 ```
 Object, Built Environment, Building Stone, Dimension Stone, Dressed Stone
@@ -90,17 +106,17 @@ The deepest element in any hierarchy is called the *leaf term*. In Nomenclature,
 
 To ensure that each leaf term is unique, Nomenclature add words to leaf terms to distinguish them from other leaf terms. For example, in addition to the leaf term `Negative`, there are leaf terms for `Glass Plate Negative`, `Roll Film Negative`, and `Sheet Film Negative`.
 
-The CFT preserves Nomenclature leaf terms -- it never translates them -- to ensure that they are the same as and can be
+The CVT preserves Nomenclature leaf terms -- it never translates them -- to ensure that they are the same as and can be
 matched with the same terms used in other applications such as PastPerfect.
 
-Nomenclature 4.0 supports leaf terms in both *inverted* and *natural order*. Examples of inverted order are `Negative, Glass Plate`, `Negative, Roll File`, and `Negative, Sheet Film`. The CFT uses the natural order terms when generating Common Facet terms for the Digital Archive.
+Nomenclature 4.0 supports leaf terms in both *inverted* and *natural order*. Examples of inverted order are `Negative, Glass Plate`, `Negative, Roll File`, and `Negative, Sheet Film`. The CVT uses the natural order terms when generating Common Vocabulary terms for the Digital Archive.
 
 #### Tail
-To convert Nomenclature terms to Common Facet terms, the CFT puts special emphasis on the *tail* of the hierarchy. The tail consists of the Primary, Secondary, and Tertiarty elements if all three exist. If the term has no Tertiary element, the tail consists of the Primary and Secondary elements. If the term has no Secondary element, the tail is just the Primary element. Some higher level terms have no Primary element, but still have a leaf term which is the Sub Class or Class element. In those cases, the tail is the leaf term.
+To convert Nomenclature terms to Common Vocabulary terms, the CVT puts special emphasis on the *tail* of the hierarchy. The tail consists of the Primary, Secondary, and Tertiarty elements if all three exist. If the term has no Tertiary element, the tail consists of the Primary and Secondary elements. If the term has no Secondary element, the tail is just the Primary element. Some higher level terms have no Primary element, but still have a leaf term which is the Sub Class or Class element. In those cases, the tail is the leaf term.
 
-### Translation from Nomenclature to Common Facets
+### Translation from Nomenclature to Common Vocabulary
 
-The CFT replaces the higher levels (Category, Class, and Sub Class) of the Nomenclature hierarchy with the top-level terms that the Common Facet vocabulary uses for the Digital Archive. The top-level Common Facet terms for the Digital Archive `Type` field are:
+The CVT replaces the higher levels (Category, Class, and Sub Class) of the Nomenclature hierarchy with the top-level terms that the Common Vocabulary vocabulary uses for the Digital Archive. The top-level Common Vocabulary terms for the Digital Archive `Type` field are:
 
 -   Document
 -   Image
@@ -108,7 +124,7 @@ The CFT replaces the higher levels (Category, Class, and Sub Class) of the Nomen
 -   Object
 -   Publication
 
-As shown earlier, the CFT translates:
+As shown earlier, the CVT translates:
 ```
 Category 08: Communication Objects
     Documentary Objects
@@ -121,7 +137,7 @@ to
 Image, Photograph, Negative
 ```     
 
-It does this by following rules that tell the CFT to replace `Category 08: Communication Objects, Documentary Objects, Graphic Documents` with `Image` and then append the tail which is `Photograph, Negative`. The next section explains rules.
+It does this by following rules that tell the CVT to replace `Category 08: Communication Objects, Documentary Objects, Graphic Documents` with `Image` and then append the tail which is `Photograph, Negative`. The next section explains rules.
 
 ## Translation Rules
 
@@ -129,17 +145,17 @@ The translation rules are contained in a *translation table* file which is a spr
 
 Each row in the translation tables defines one translation rule.
 
-Every rule column is optional except for `Category` and `Translation`.  If the `Category` or `Translation` columns are blank, the CFT ignores the entire row. This allows you to place
+Every rule column is optional except for `Category` and `Translation`.  If the `Category` or `Translation` columns are blank, the CVT ignores the entire row. This allows you to place
 blank rows between groups of rules.
 
-The CFT ignores Nomenclature rows having a `level` column value of 1 or 2 because they do no correspond to a leaf term.
+The CVT ignores Nomenclature rows having a `level` column value of 1 or 2 because they do no correspond to a leaf term.
 A level 1 row only has a category value. A level 2 row has a category and a class.
 
-the CFT processes the Nomenclature terms one at a time to translate them into corresponding Common Facet terms. For each Nomenclature term, the CFT looks for a matching translation rule by starting with the first rule in the translation file, and going to the next rule, until it finds a match.
+the CVT processes the Nomenclature terms one at a time to translate them into corresponding Common Vocabulary terms. For each Nomenclature term, the CVT looks for a matching translation rule by starting with the first rule in the translation file, and going to the next rule, until it finds a match.
 
-To find a matching rule, the CFT interprets each rule by comparing the rule's A - F column values, from left to right, against the corresponding values from the Nomenclature row being processed. If *every* non-blank rule column value matches the corresponding Nomenclature row value, the CFT applies the rule, otherwise it skips to the next rule. the CFT only applies one rule to a row.
+To find a matching rule, the CVT interprets each rule by comparing the rule's A - F column values, from left to right, against the corresponding values from the Nomenclature row being processed. If *every* non-blank rule column value matches the corresponding Nomenclature row value, the CVT applies the rule, otherwise it skips to the next rule. the CVT only applies one rule to a row.
 
-**Important:** More restrictive rules must occur in the translation file *above* less restrictive rules, otherwise, the CFT will apply a less restrictive rule before it encounters the more restrictive rule. For example, a rule that applies to *any* Nomenclature row having a certain class, must appear *after* a more restrictive rule that applies only to rows of that class that have a specific sub-class or primary value.
+**Important:** More restrictive rules must occur in the translation file *above* less restrictive rules, otherwise, the CVT will apply a less restrictive rule before it encounters the more restrictive rule. For example, a rule that applies to *any* Nomenclature row having a certain class, must appear *after* a more restrictive rule that applies only to rows of that class that have a specific sub-class or primary value.
 
 ### Translation rule columns
 The table below explains each of the translation rule columns.
@@ -152,9 +168,9 @@ C | Sub_Class  | Match a value from the Nomenclature `Natural_Order_EN_Sub_Class
 D | Primary    | Match a value from the Nomenclature `Natural_Order_EN_Primary_Term` column
 E | Secondary  | Match a value from the Nomenclature `Natural_Order_EN_Secondary_Term` column
 F | Identifier | Match a value from the Nomenclature `Identifier` column. Use this column when the rule should only apply to a single Nomenclature term.
-G | Translation| A pattern specifying the Common Facet term. The pattern contains one or more of the substitution elements explained in the next section. 
-H | Replace    | A pair of values in double quotes, separated by a comma, specifying before and after values. the CFT applies the replacement to the translated text after peforming the translation.
-J |Notes       | Comments (ignored by the CFT)
+G | Translation| A pattern specifying the Common Vocabulary term. The pattern contains one or more of the substitution elements explained in the next section. 
+H | Replace    | A pair of values in double quotes, separated by a comma, specifying before and after values. the CVT applies the replacement to the translated text after peforming the translation.
+J |Notes       | Comments (ignored by the CVT)
 
 ### Substitution Elements
 
@@ -162,10 +178,10 @@ The `Translation` column of a translation rule must contain one or more of the f
 
 Substitution  | Meaning
 --- | ---
-`{class}`     | The value of the `Natural_Order_EN_Class` column of the Nomenclature row. Used when the Nomenclature class should be included as-is in the resulting Common Facet term.
-`{sub_class}` | The value of the `Natural_Order_EN_Sub_Class` column of the Nomenclature row. Used when the Nomenclature sub class should be included as-is in the resulting Common Facet term.
+`{class}`     | The value of the `Natural_Order_EN_Class` column of the Nomenclature row. Used when the Nomenclature class should be included as-is in the resulting Common Vocabulary term.
+`{sub_class}` | The value of the `Natural_Order_EN_Sub_Class` column of the Nomenclature row. Used when the Nomenclature sub class should be included as-is in the resulting Common Vocabulary term.
 `{tail}`      | The tail portion (see explanation above) of the Nomenclature term. Used for most rules.
-`{leaf}`      | The leaf term (see explanation above) of the Nomenclature term. Used instead of `{tail}` only when the tail value contains more levels of information than are necessary for the resulting Common Facet term.
+`{leaf}`      | The leaf term (see explanation above) of the Nomenclature term. Used instead of `{tail}` only when the tail value contains more levels of information than are necessary for the resulting Common Vocabulary term.
 
 The `{tail}` and `{leaf}` elements are mutually exclusive and so only one or the other should be used. These two terms
 are only ever used at the end of the translation text.
@@ -179,14 +195,14 @@ Object|Armaments|{leaf}
 
 ## Translation Process
 
-The CFT processes one Nomenclature row at a time. When the CFT finds a matching rule for the row, it applies the rule to the row as follows:
+The CVT processes one Nomenclature row at a time. When the CVT finds a matching rule for the row, it applies the rule to the row as follows:
 
 1.  It performs the substitutions listed above.
 
-2.  If the rule's `Replace` column is non-blank, the CFT makes the replacement to the translated text. For example, it changes  
+2.  If the rule's `Replace` column is non-blank, the CVT makes the replacement to the translated text. For example, it changes  
 `Structures, Commercial, Lodging Facility, Hotel` to `Structures, Commercial, Lodging, Hotel`.
 
-The resulting string becomes the Common Facet term.
+The resulting string becomes the Common Vocabulary term.
 
 `Object|Built Environment|*` becomes ...
 
