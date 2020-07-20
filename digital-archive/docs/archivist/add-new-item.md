@@ -35,10 +35,13 @@ Use *one* of these methods to get to the `Add an Item` page:
 The fields below are required for most Digital Archive sites. Your site might
 not require all of them, or it may require others not listed here.
 
-* `Title`
-* `Type`
-* `Subject`
-* `Rights`
+- `Title`
+- `Type`
+- `Subject`
+- `Rights`
+
+*Explain about picking from dropdowns, being able to seearch some of them. If what you
+are looking for is not in the list, add it using the Vocabulary Editor.*
 
 If you forget to provide a value for a required field, a red error message will appear
 at the top of the page telling you that it's missing.

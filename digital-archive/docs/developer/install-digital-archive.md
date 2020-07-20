@@ -201,14 +201,14 @@ To learn more, see the Omeka documentation for [retrieving error messages](https
 
 Errors are written to:
 
--   `application/logs/errors.log`
+-   `digitalarchive/error_log`
+    -   Okay to delete – it gets recreated automatically. Shows PHP errors.
+-   `digitalarchive/admin/error_log`
+    -   Okay to delete – it gets recreated automatically
+-   `digitalarchive/application/logs/errors.log`
     -   Must exist – will get Omeka error if not present and writable.  
         If the file gets too
         big for cPanel  to allow editing, you can delete the file and create a new one with the same name.
--   `digitalarchive/admin/error_log`
-    -   Okay to delete – it gets recreated automatically
--   `digitalarchive/error_log`
-    -   Okay to delete – it gets recreated automatically
 
 
 If errors are not appearing in the browser, make sure that display_errors=On and error_reporting=32767 (or E_ALL).
@@ -445,7 +445,7 @@ Omeka plugin |SimpleVocab        |[SimpleVocab-2.2.2.zip](https://github.com/ome
 
 ---
 
-#### Get Avant plugin or theme zip file
+### Get Avant plugin or theme zip file
 
 Follow these steps to locate and download each zip file one at a time:
 

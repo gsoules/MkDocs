@@ -4,10 +4,22 @@ copyright: 'Copyright &copy; 2020 AvantLogic Corporation'
 nav:
     - Welcome: index.md
     - Glossary: general/glossary.md
-    - User:
+    - Concepts: 
+        Starting Your Journey: concepts/Introduction.md
+        Items & Metadata: concepts/items-metadata.md
+        Types: concepts/types.md
+        Subjects: concepts/subjects.md
+        Relationships: concepts/relationships.md
+        Vocabularies: concepts/vocabulary.md
+        Facets: concepts/facets.md
+    - For Users:
+        Welcome: user/getting-started-user.md
         Searching: user/search.md
         Relationships: user/relationships.md
-    - Archivist:
+    - For Archivists:
+        Getting Started: archivist/getting-started-arch.md
+        Logging in: archivist/logging-in.md
+        Relationships: archivist/relationships.md
         Add a new item: archivist/add-new-item.md
         Edit an existing item: archivist/edit-item.md
         Add a reference item: archivist/add-reference-item.md
@@ -51,7 +63,7 @@ nav:
     
 theme:
     name: readthedocs
-    prev_next_buttons_location: top
+    prev_next_buttons_location: bottom
     include_homepage_in_sidebar: false
   
 extra_css:

@@ -3,7 +3,32 @@
 !!! note
     This section is only a draft, but hopefully it provides some useful information.
 
-    
+-   The `Object` term is the only one used as either Type or Subject. That's because collections generally have either an
+    actual object such as a hat, or they have a photographs of or documents about an object, for example a photograph of
+    a hat worn by a famouse person, or an article about that hat, but the hat itself is not in the collection (or if it is,
+    it's separate item). Note that a photograph that serves as a stand-in for an object, should have that object as its Type --
+    the Type should not be Photograph. 
+-   A few collections contain very large objects such as a boat or a building. Because this is so rare for most collections,
+    a full Type hierarchy is not provided for these objects. To accommodate these objects, the Type hierarchy contains:
+    -   `Object, Structure`
+    -   `Object, Transportation`
+    As a boat would have Type `Object, Transportation` and a church bulding would have Type `Object, Structure`. For these items,
+    the Subject field can be used to qualify the Type. For example the Subject for the boat could be `Vessels, Boat, Peapod`
+    and the Subject for the church could be `Structures, Ceremonial, Church`.
+-   If a collection contains many large objects, such as cars, the organization can add Type terms for various kinds of
+    automobiles and map them to `Object, Transportation`. For example `Automobile, Electric` and `Automobile, Gasoline`
+    could both be mapped to `Object, Transportation`
+-   Except for large objects like cars and buildings, in most cases, when an object's Type is specified using the `Object`
+    hierarchy, there is no need, and in fact would be bad practice, to also provide a Subject. For example, Type 
+    `Object, Clothing, Hat, Bonnet` is self-explanatory, but `Object, Art, Sculpture, Carving` is not. For a carving, the
+    Subject could be use to indicate what the carving is of, for example `Nature, Animals, Birds`.
+
+The idea is that any 3D object, whether a physical object in the collection, or a 2D object depicting or about the object,
+can easily be cataloged using either the Type and/or Subject `Object` hierarchy.
+
+Terms with an underline come from Nomenclature 4.0. You can click the term to learn more about it.
+
+---
 
 The Common Vocabulary Translator (CVT) translates the nearly 15,000 [Nomenclature 4.0](https://www.nomenclature.info/apropos-about.app?lang=en) terms into a simpler Common Vocabulary terms used in the Digital Archive. The hierarchy for a single Nomenclature can be up to six levels deep, though not every term uses all six levels. The levels are:
 

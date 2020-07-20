@@ -53,6 +53,15 @@ It is also possible for a developer to simulate a remote update locally via the 
 
 ## Running scripts
 
+### CRON jobs
+
+To add a job:
+```
+crontab -e
+```
+
+See <crontab.guru>
+
 ### Root privlidges
 A user with root privileges can run bash scripte that modify files on every Digital Archive installation on the server.
 
@@ -79,4 +88,25 @@ If a script requires root privileges, use `sudo` to run it. For example:
 
 ```
 sudo ./foo
+```
+
+### Sync site
+
+To sync `themes/` and `plugins/`
+
+```
+$ sudo ./sync-digitalarchive <site-name> 
+$ sudo ./sync-digitalarchive ALL 
+$ sudo ./sync-digitalarchive <site-name> installation
+```
+
+Adding the `installation` argument will also sync:
+```
+es.ini
+bootstrap.php
+index.php
+error_log
+admin/
+application/
+install/
 ```

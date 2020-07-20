@@ -233,6 +233,19 @@ separte account for a Digital Archive instatllation that will not be hosted on t
 -   Use yum instead of pip to install on centos.
 -   Use <https://www.whatsmydns.net/> to see what DNS a site is using from various locations
 
+## Compress a large folder on the server
+
+Use the zip command to avoid issues using the cPanel Compres feature. Also, the zip
+command reports what it's doing. As an example, to compress the `files` folder of a Digital Archive
+installation:
+
+-   Open a terminal window
+-   cd to the `digitalarchive` folder
+-   Type the command below
+
+```
+zip -r files.zip files
+```
 
 ## Jet Backup
 

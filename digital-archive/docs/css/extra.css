@@ -15,20 +15,22 @@ a.icon.icon-home {
     margin-bottom: 8px;
 }
 
-/* Color the major sections */
-ul.current li.toctree-l1 span.caption-text {
+/* Color the major sections of the left menu. */
+div.wy-menu.wy-menu-vertical p.caption {
     color: #3998d8;
     font-size: 120%;
-    padding-left: 24px;
+    margin-bottom: 12px;
+	padding: 0 0 0 24px;
+	text-transform: unset;
 }
 
 /* Hide the TOC entry for a page's title since it the same or similar to the page's nav text. */
 li.current > ul > :first-child {
-    display: none;
+    /* display: none; */
 }
 
 /* Override code to be more subtle. */
-code {
+.rst-content code {
     color: #333;
     background-color: #f0f0f0;
     padding: 2px 2px;
@@ -36,8 +38,8 @@ code {
 
 /* Override description lists to be more subtle. */
 .rst-content dl:not(.docutils) dt {
-    color: #666;
-    font-size: 105%;
+    color: #333;
+    font-size: 110%;
     border-top: none;
     background: none;
     margin-bottom: 2px;
@@ -58,8 +60,23 @@ p + pre {
 	margin-top: -16px;
 }
 
-/* Override styling for admonitions. */
 
+/* Fix styling for tables that was lost in MkDocs version 1.1.2. */
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+td, th {
+    font-size: 90%;
+    margin: 0;
+    overflow: visible;
+    padding: 8px 16px;
+}
+
+th {
+	font-size: 95%;
+}
+
+/* Override styling for admonitions. */
 .rst-content .admonition-title {
     font-weight: bold;
     font-size: 18px;
