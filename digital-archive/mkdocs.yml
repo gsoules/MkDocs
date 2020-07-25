@@ -12,7 +12,6 @@ nav:
         Sharing Search Results: user/sharing.md
         Saving Search Results as a PDF: user/printing.md
         Using the Digital Notebook: user/digital-notebook.md
-        Welcome: user/getting-started-user.md
         Searching: user/search.md
         Relationships: user/relationships.md
     - For Archivists:
@@ -43,7 +42,7 @@ nav:
         Install a Digital Archive site: developer/install-digital-archive.md
         GitHub: developer/github.md
         Python: developer/python.md
-        Common Facet Translator: developer/common-facet-translator.md
+        Common Vocabulary Translator: developer/common-vocabulary-translator.md
         Site maintenance: developer/site-maintenance.md
         PHP development: developer/php-development.md
         Technologies: developer/technologies.md

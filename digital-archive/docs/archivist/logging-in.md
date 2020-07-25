@@ -8,14 +8,14 @@ Follow these steps to login to the Digital Archive:
 
 -   Go to the site and click the `Login` link located at the lower right on every page
 
-![login link](index-1.jpg)
+![login link](logging-in-1.jpg)
 
 -   On the `Log In` page, enter your user name and password. If you logged is as an *Archivist* or
     *Administrator*, a dark gray menu bar will appear at the top of the page. To access features
     that are only available to *Archivist* or *Administrator* logins, click your login name which
     appears at the far right in the menu bar.
 
-![login link](index-2.jpg)
+![login link](logging-in-2.jpg)
 
 -   If you are logged is as a *Guest* you will not see the dark gray menu bar; however you will be able to views items
     that are not visible to users who are not logged in. You will also be able to see the private fields

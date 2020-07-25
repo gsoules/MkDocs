@@ -54,7 +54,7 @@ How Searching Works
 
 Facets
 :   In addition to keyword searching, you can find items by drilling down into a collection
-    based on its **_Subject_**, __*Type*__, **_Place_**, and **_Date_** **facets**.
+    based on its **_Subject_**, **_Type_**, **_Place_**, and **_Date_** **facets**.
     Facets appears in the **_Refine Your Search_** panel. 
     
     Facets let you find items of interest with just a few mouse clicks. For example, if you are looking for images
@@ -62,9 +62,7 @@ Facets
     facets to narrow down search results to `Photographs` of `Vessels`. You can then further narrow down the
     results to something more specific such as `Sailboat`.
     
-    You can use facets in combination with keyword searching to, for example, find items where the type is `Photograph`,
-    the subject is `Vessels`, and the item contains the keyword `military`.  
-    [Learn How to Search using Facets](../../user/how-to-search/#facets).
+    [Learn How to Search using Facets](../../user/how-to-search/#search-using-facets).
 
 Relationships
 :   Relationships show how items are related to each other. For example, a collection might have three photographs
@@ -81,4 +79,8 @@ Search Results
     **table**, a **grid**, or an **index** (like at the back of a book). You can [share results](../../user/sharing)
      with friends and colleages and [print results to a PDF file](../../user/printing). You can easily find items that you
     recently viewed without having to search for them again, and you can save and organize items in a [digital
-    notebook](../../user/digital-notebook). These topics are covered in the *For Users* documentation. 
+    notebook](../../user/digital-notebook). These topics are covered in the *For Users* documentation.
+
+!!! Note "Note"
+    Not all of the features above are enabled in all Digital Archive installations. Which features are available
+    depends on which Digital Archive plugins are installed.

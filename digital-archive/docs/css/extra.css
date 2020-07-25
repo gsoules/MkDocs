@@ -47,11 +47,11 @@ li.current > ul > :first-child {
 
 /* Indent code, images, tables, and lists. */
 pre, img, table {
-    margin-left: 24px;
+    margin-left: 18px;
 }
 
 p+ ul {
-    margin-left: 16px;
+    margin-left: 12px;
 }
 
 /* Reduce the space above a list or code that immediately follows a paragraph */
@@ -89,6 +89,10 @@ strong em {
     color: #fff;
 }
 
+div.admonition {
+    margin-left: 18px;
+}
+
 div.admonition p {
     font-size: 16px;
 }
@@ -99,6 +103,7 @@ div.admonition p {
 
 .admonition.note .admonition-title::before {
     content: "\f00c";
+    content: "";
 }
 
 .admonition.warning {

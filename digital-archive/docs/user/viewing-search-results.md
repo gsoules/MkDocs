@@ -12,8 +12,6 @@ Within each view, you can choose how to sort the results to further organize the
 
 **To manipulate the different view options and layouts**, use the selector bar at the top of the search results page.
 
-![Selector Bar](search-20.jpg)
-
 ---
 
 ### Table View

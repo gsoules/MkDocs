@@ -7,9 +7,9 @@
 
 You can search the Digital Archive in three ways:
 
-- Typing keywords into the search box at the upper right of every page
-- Clicking facets in the **_Refine Your Search_** panel
-- Using the **_Advanced Search_** page
+- Type keywords into the search box at the upper right of every page
+- Click facets in the **_Refine Your Search_** panel
+- Use the **_Advanced Search_** page
 
 [Learn about ways to search.](../how-to-search/#how-to-search)
 
