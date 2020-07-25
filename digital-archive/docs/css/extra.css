@@ -76,6 +76,12 @@ th {
 	font-size: 95%;
 }
 
+strong em {
+    font-variant: small-caps;
+    font-style: normal;
+    font-weight: normal;
+}
+
 /* Override styling for admonitions. */
 .rst-content .admonition-title {
     font-weight: bold;
