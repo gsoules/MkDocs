@@ -101,8 +101,9 @@ to only items from that town that meet the criterion above.
 
 ### Special Characters Used for Searching
 
-The right-side of the **_Advanced Search_** page lists the special characters you can use when searching.
+The right-side of the **_Advanced Search_** page lists special characters you can use when searching.
 You can also use this syntax in the search box that appears at the upper right of every page.
+
 
 ![advanced search](how-to-search-8.jpg)
 
@@ -111,6 +112,7 @@ by default, keyword search results are items containing *all* of the keywords yo
 search for `islesford frenchboro` returns the six items that have `islesford` *AND* `frenchboro` in their
 metadata.
 
+![advanced search](how-to-search-9.jpg)
 ![advanced search](how-to-search-10.jpg)
 
 When you separate the words by the special `|` character to signify *OR*, the search returns the 433
