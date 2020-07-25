@@ -44,14 +44,6 @@ Attachments
     the item's *Description* or other metadata field.  
     [Learn about attaching files to an item](../../archivist/add-new-item).
 
-How Searching Works
-:   When you type keywords in the search box, the Digital Archive examines all of the items in the collection
-    looking for those keywords in *every metadata field* and in every searchable PDF. It does not matter which
-    metadata field contains the words you are looking for; if the words exist somewhere in an item's metadata,
-    that item will show up as a search result. However, when the keywords appear in the item's **_Title_** or
-    **_Description_** metadata fields, the item will likely appear higher up in the search results because those
-    two fields are the most relevant for search purposes. [Learn How to Search](../../user/how-to-search).
-
 Facets
 :   In addition to keyword searching, you can find items by drilling down into a collection
     based on its **_Subject_**, **_Type_**, **_Place_**, and **_Date_** **facets**.
