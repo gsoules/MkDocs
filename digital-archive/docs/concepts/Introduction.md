@@ -1,22 +1,61 @@
-# Getting Started - Digital Archive Concepts
+# Digital Archive Concepts
 
 **Get the most out of the Digital Archive** by learning about these important concepts:
 
--   Items & Metadata
--   Types
--   Subjects
--   Relationships
+Items & Metadata
+:   An **item** represents one *thing* in a collection. **Metadata** is information *about* an item such as what it is
+    or who created it. Different kinds of Metadata are stored in separate fields such as *Title*, *Type*, *Subject*,
+    and *Description*. [Learn about Items & Metadata](../items-metadata).
 
-An **item** represents one *thing* in a collection. **Metadata** is information that describes an item such as its title, type, subject,
-description, or creator. [Learn about Items & Metadata](../items-metadata).
+    A small collection might have only a few hundred items whereas a large collection could have tens of thousands of items.
 
-An item's **type** tells you what kind of thing the item is. For example, an item's type might be *photograph*, *document*, or *teacup*.
-An item can have only one type. [Learn about Types](../types).
+Type, Subject, and Keywords
+:   An item's **type** tells you what kind of thing the item is. For example, an item's type might be `photograph`,
+    `document`, or `teacup`. An item's **subject** clarifies its type. For example, an item of type `photograph`
+    could have the subjects `person` and `boat`. A subject is not required for an item when its type is self-explanatory
+    such as *teacup*.
+    
+    **Keywords** are significant words in an item's *Title*, *Description* and all other metadata fields.
+    There is no separate metadata field for keywords. They are simply the words used to describe an item.
+    [Learn about Type, Subject, and Keywords](../subjects).
 
-An item's **subject** clarifies its type. For example, an item of type *photograph* could have the subjects *person* and *boat*. A subject
-is not required for items where the type is self-explanatory such *teacup*. A type can have zero or more subjects.
-[Learn about Subjects](../subjects).
+    Each item can have only one type. Typically an item will have one or two subjects and many keywords.
+    An archivist's choice of an item's type, subject, and keywords affect how easy it will be for a user to find the
+    item when they search the collection.
 
-**Relationships** tell you how items are related to each other. [Learn about Relationsships](../relationships).
+Attachments
+:   An item can have digital images (photographs or scans) and PDF files attached to it. Keywords in the text of
+    a searchable PDF file implicitly become part of the item's keyword metadata just as if they appeared in
+    the item's *Description* or other metadata field.  
+    [Learn about attaching files to an item](../../archivist/add-new-item).
 
+How Searching Works
+:   When you type keywords in the search box, the Digital Archive looks for those keywords in *every metadata field* and in
+    searchable PDF attachments. It does not matter which metadata field contains the words you are looking for; if the
+    words exist somewhere in an item's metadata, that item will show up as a search result. However, when the keywords
+    appear in the item's *Title* or *Description*, the item will likely appear higher up in the search results because those
+    two metadata fields are the most relevant for search purposes. [Learn How to Search](../../user/how-to-search).
 
+Facets
+:   In addition to keyword searching, you can find items by drilling down into a collection
+    based on its *Subject*, *Type*, *Place*, and *Date*. Facets appears in the **_Refine Your Search_**
+    panel. 
+    
+    Facets let you find items of interest with just a few mouse clicks. For example, if you are looking for images
+    of boats, but don't know what kind of boats are in the collection, you can use the *Image* and *Subject*
+    facets to narrow down search results to `Photographs` of `Vessels`. You can then further narrow down the
+    results to something more specific such as `Sailboat`.
+    
+    You can use facets in combination with keyword searching to, for example, find items where the type is `Photograph`,
+    the subject is `Vessels`, and the item contains the keyword `military`.  
+    [Learn How to Search using Facets](../../user/how-to-search/#facets).
+
+Relationships
+:   Relationships show how items are related to each other. For example, a collection might have three photographs
+    of a person plus a document about that person's life. These items are related because the photographs depict
+    the person and the document is about the person in the photographs.
+    [Learn about Relationsships](../relationships).
+
+    The Digital Archive displays related items together so that when you see one item you also see its related items.
+    For example, if a search turns up one of the photos of the person, you'll also see the other two photos and the
+    document. For this to work, an archivist must establish relationships among the items in the collection.

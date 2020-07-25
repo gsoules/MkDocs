@@ -2,6 +2,11 @@
 
 ---
 
+*This Site* versus *All Sites* Searching
+:   You can search the collection of a single organization or you can search all the collections of a group of
+    organizations that have opted to share their collections with each other.
+
+
 **To search using keywords**, click into the search box in the upper right corner of any Digital Archive page. Enter your keyword(s), and click the magnifying glass symbol or press 'Enter' on your keyboard.
 
 ![Quick Search Box](search-9.jpg)

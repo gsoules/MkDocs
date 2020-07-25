@@ -5,12 +5,10 @@ nav:
     - Welcome: index.md
     - Glossary: general/glossary.md
     - Concepts: 
-        Getting Started: concepts/Introduction.md
+        Read Me First: concepts/Introduction.md
         Items & Metadata: concepts/items-metadata.md
-        Types: concepts/types.md
-        Subjects: concepts/subjects.md
+        Type, Subject, and Keywords: concepts/types.md
         Relationships: concepts/relationships.md
-        Vocabularies: concepts/vocabulary.md
         Facets: concepts/facets.md
     - For Users:
         Getting Started: user/getting-started-stripped.md
