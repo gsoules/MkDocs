@@ -1,11 +1,13 @@
-# Digital Archive Concepts
+# Read Me First
 
-**Get the most out of the Digital Archive** by learning about these important concepts:
+**Get the most out of the Digital Archive** by learning about these important concepts.
+
+---
 
 Items & Metadata
 :   An **item** represents one *thing* in a collection. **Metadata** is information *about* an item such as what it is
-    or who created it. Different kinds of Metadata are stored in separate fields such as *Title*, *Type*, *Subject*,
-    and *Description*. [Learn about Items & Metadata](../items-metadata).
+    or who created it. Different kinds of metadata are stored in separate *fields* such as **_Title_**, **_Type_**, **_Subject_**,
+    and **_Description_**. [Learn about Items & Metadata](../items-metadata).
 
     A small collection might have only a few hundred items whereas a large collection could have tens of thousands of items.
 
@@ -15,8 +17,8 @@ Type, Subject, and Keywords
     could have the subjects `person` and `boat`. A subject is not required for an item when its type is self-explanatory
     such as *teacup*.
     
-    **Keywords** are significant words in an item's *Title*, *Description* and all other metadata fields.
-    There is no separate metadata field for keywords. They are simply the words used to describe an item.
+    **Keywords** are significant words in an item's **_Title_**, **_Description_** and all other metadata fields.
+    There is no separate metadata field for keywords. They are simply the words an archivist choose to describe an item.
     [Learn about Type, Subject, and Keywords](../subjects).
 
     Each item can have only one type. Typically an item will have one or two subjects and many keywords.
@@ -30,19 +32,20 @@ Attachments
     [Learn about attaching files to an item](../../archivist/add-new-item).
 
 How Searching Works
-:   When you type keywords in the search box, the Digital Archive looks for those keywords in *every metadata field* and in
-    searchable PDF attachments. It does not matter which metadata field contains the words you are looking for; if the
-    words exist somewhere in an item's metadata, that item will show up as a search result. However, when the keywords
-    appear in the item's *Title* or *Description*, the item will likely appear higher up in the search results because those
-    two metadata fields are the most relevant for search purposes. [Learn How to Search](../../user/how-to-search).
+:   When you type keywords in the search box, the Digital Archive examines all of the items in the collection
+    looking for those keywords in *every metadata field* and in every searchable PDF. It does not matter which
+    metadata field contains the words you are looking for; if the words exist somewhere in an item's metadata,
+    that item will show up as a search result. However, when the keywords appear in the item's **_Title_** or
+    **_Description_** metadata fields, the item will likely appear higher up in the search results because those
+    two fields are the most relevant for search purposes. [Learn How to Search](../../user/how-to-search).
 
 Facets
 :   In addition to keyword searching, you can find items by drilling down into a collection
-    based on its *Subject*, *Type*, *Place*, and *Date*. Facets appears in the **_Refine Your Search_**
-    panel. 
+    based on its **_Subject_**, __*Type*__, **_Place_**, and **_Date_** **facets**.
+    Facets appears in the **_Refine Your Search_** panel. 
     
     Facets let you find items of interest with just a few mouse clicks. For example, if you are looking for images
-    of boats, but don't know what kind of boats are in the collection, you can use the *Image* and *Subject*
+    of boats, but don't know what kind of boats are in the collection, you can use the **_Type_** and **_Subject_**
     facets to narrow down search results to `Photographs` of `Vessels`. You can then further narrow down the
     results to something more specific such as `Sailboat`.
     
@@ -54,8 +57,17 @@ Relationships
 :   Relationships show how items are related to each other. For example, a collection might have three photographs
     of a person plus a document about that person's life. These items are related because the photographs depict
     the person and the document is about the person in the photographs.
-    [Learn about Relationsships](../relationships).
+    [Learn about Relationships](../relationships).
 
     The Digital Archive displays related items together so that when you see one item you also see its related items.
     For example, if a search turns up one of the photos of the person, you'll also see the other two photos and the
     document. For this to work, an archivist must establish relationships among the items in the collection.
+
+Search Results
+:   A search can return many items. You can [view search results](../../user/viewing-search-results) as a
+    **table**, a **grid**, or an **index** (like at the back of a book). You can [share results](../../user/sharing)
+     with friends and colleages and [print results to a PDF file](../../user/printing). You can easily find items that you
+    recently viewed without having to search for them again, and you can save and organize items in a [digital
+    notebook](../../user/digital-notebook). These topics are covered in the *For Users* documentation. 
+
+---
