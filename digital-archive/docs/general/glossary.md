@@ -36,22 +36,20 @@ Element (Omeka)
 metadata fields, one for each element. Examples of elements are `Title`, `Description`, `Creator`, and `Date`.
 
 Facets
-:   Facets are *terms* used to aid in discovery.
-
-![definition of facets](glossary-1.jpg)
-
-Facets panel
-:   The area on the far left of the Digital Archive search results page that displays *facets*.
+:   Facets are the **_Subject_**, __*Type*__, **_Place_**, and **_Date_**
+    terms that appear in the **_Refine Your Search_** panel.
+    [See Digital Archive Concepts](../concepts).
 
 Index (Elasticsearch)
 :   An index is like a table in a database. 
 
-Item (Omeka)
-:   An item contains information about an object in a *collection* including its *metadata*, attached images and documents,
-and a record of when the item was created and by whom. The metadata for an item is stored in elements.
+Item
+:   An item represents one *thing* in a Digital Archive collection.
+    [See Digital Archive Concepts](../concepts).
 
 Keyword
-:   Any word in item metadata and text attachments.
+:   A keyword is a significant word in an item's metadata. 
+    [See Digital Archive Concepts](../concepts).
 
 Left admin menu
 :   The menu on the left side of every page when logged into the Digital Archive as either
@@ -65,10 +63,8 @@ Mapping
 :   Associating a *vocabulary* *term* with a *facet* term
 
 Metadata
-:   Metadata is data that provides information about other data. For example, the metadata for a book is not the
-contents of the book itself, but information *about* the book such as its title, author, and publisher. The
-metadata for a photograph is not the image itself, but information *about* the image such as where and when
-it was taken and by whom. 
+:   Metadata is information about an item.
+    [See Digital Archive Concepts](../concepts).
 
 Nomenclature 4.0
 :   Nomenclature is a structured and controlled list of object terms organized in a classification system to provide

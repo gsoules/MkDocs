@@ -1,88 +1,84 @@
-# Welcome to Digital Archive Docs
-
-This website contains documentation about the Digital Archive.
-
-!!! warning "Notice"
-    This documentation is under development. It is incomplete and may contain incorect information.
+!!! danger ""
+    This documentation is under development. It is incomplete and may contain incorrect information.
     Do not rely on what you see here until this notice has been removed.
 
----
+Welcome to Digital Archive Docs. [Learn who this documentation is for](../general/documentation-categories).
 
-## Who this documentation is for
-The documentation is divided into categories for these kinds of people:
-
-- Users
-- Archivists
-- Administrators
-- Developers
-
-A fifth category is documentation about Digital Archive plugins that is of broad interest.
-
-Each category is explained below. Some people will fall into more than one category.  
-For example, an administrator is usually also an archivist and a user.
-
-!!! note "Tip" 
-    Use the **navigation** pane at left to locate the documentation that's right for you.  
-    Or type in the **search box** to find topics of interest.
-
-### User documentation
-User documentation is for people who use the Digital Archive for research or just for fun.
-
-A user (also commonly referred to as an end-user) can see all public items in a Digital Archive collection,
-but has no access to non-public items, or private data associated with all items.
-
-### Archivist documentation
-Archivist documentation is for archivists and volunteers who maintain the collection content
-for a Digital Archive site. They add new items, edit existing items, upload images, and establish
-relationships among items.
-
-An archivist has a user name and password that allow them to login to a Digital Archive site. Once logged in, they
-can see all public items in the collection as well as non-public items and private data associated with all items.
-
-Typically, an archivist's login will not allow them to make changes to the Digital Archive installation unless
-the archivist is also an **Administrator**.
-
-### Administrator documentation
-Administrator documentation is for the person who performs administrative functions for their organization's
-Digital Archive site. They edit vocabularies, configure plugin options, add new user accounts, define relationship
-types and rules, and perform other similar tasks.
-
-An administrator has a user name and password that allow them to login to a Digital Archive site. Once logged in, they
-have all the privileges of an **Archivist**, but can also perform administrative functions.
-
-### Developer documentation
-Developer documentation is for technical people responsible for maintaining multiple Digital Archive sites.
-They are responsible for database management, programming, software upgrades, web server management,
-maintaining this documentation, and a variety of other tasks requiring technical expertise.
-
-A Digital Archive developer must be familiar with the following technologies:
-
-- HTML 
-- CSS
-- JavaScript
-- PHP
-- Python
-- SQL
-- XML
-- Omeka
-- Zend Framework
-- [GitHub](developer/github.md)
-- Linux
-- Elasticsearch
-- AWS S3
-
-### Digital Archive plugins
-
-Digital Archive plugin documentation is in a separate category because it should be of interest to
-everyone except for end users.
-
--   **Archivists** should be familiar with the features of various plugins
--   **Administrators** need to know how to configure plugins
--   **Developers** install, maintain and enhance plugins
+**Get the most from the Digital Archive** by learning about the important concepts below.
 
 ---
 
-This documentation was written by AvantLogic Corporation.
+# Digital Archive Concepts
 
-Please report errors and omissions to <gsoules@avantlogic.com>.
+Items & Metadata
+:   An **item** represents one *thing* in a Digital Archive collection. **Metadata** is information *about*
+    an item such as what it is or who created it. Different kinds of information are are stored in separate
+    metadata *fields* such as **_Title_**, **_Type_**, **_Subject_**, and **_Description_**.
 
+    If you have used other kinds of databases, you might be more familiar with the terms *records* and *columns*
+    rather than items and fields. They are the same thing.
+
+    A small collection might have only a few hundred items whereas a large collection could have tens
+    of thousands of items. How easy or difficult it will be for people to find items in a collection
+    is affected by the quantity and quality of each item's metadata. Lots of good metadata that is specific to
+    each item makes for good search results. Conversely, scant metadata, or metadata that is too broad for the
+    item, negatively affects search results.
+
+Type, Subject, and Keywords
+:   An item's **type** tells you what kind of *thing* the item is. For example, an item's type might be `photograph`,
+    `document`, or `teacup`. An item's **subject** clarifies its type. For example, an item of type `photograph`
+    could have the subjects `person` and `boat` to indicate it's a photograph of. A subject is not required
+    for an item when its type is self-explanatory such as *teacup*.
+    
+    **Keywords** are significant words in an item's **_Title_**, **_Description_** and all other metadata fields.
+    There is no separate metadata field for keywords. They are simply the words an archivist choose to describe an item.
+    [Learn about Type, Subject, and Keywords](../subjects).
+
+    Each item can have only one type. Typically an item will have one or two subjects and many keywords.
+    An archivist's choice of an item's type, subject, and keywords affect how easy it will be for a user to find the
+    item when they search the collection.
+
+Attachments
+:   An item can have digital images (photographs or scans) and PDF files attached to it. Keywords in the text of
+    a searchable PDF file implicitly become part of the item's keyword metadata just as if they appeared in
+    the item's *Description* or other metadata field.  
+    [Learn about attaching files to an item](../../archivist/add-new-item).
+
+How Searching Works
+:   When you type keywords in the search box, the Digital Archive examines all of the items in the collection
+    looking for those keywords in *every metadata field* and in every searchable PDF. It does not matter which
+    metadata field contains the words you are looking for; if the words exist somewhere in an item's metadata,
+    that item will show up as a search result. However, when the keywords appear in the item's **_Title_** or
+    **_Description_** metadata fields, the item will likely appear higher up in the search results because those
+    two fields are the most relevant for search purposes. [Learn How to Search](../../user/how-to-search).
+
+Facets
+:   In addition to keyword searching, you can find items by drilling down into a collection
+    based on its **_Subject_**, __*Type*__, **_Place_**, and **_Date_** **facets**.
+    Facets appears in the **_Refine Your Search_** panel. 
+    
+    Facets let you find items of interest with just a few mouse clicks. For example, if you are looking for images
+    of boats, but don't know what kind of boats are in the collection, you can use the **_Type_** and **_Subject_**
+    facets to narrow down search results to `Photographs` of `Vessels`. You can then further narrow down the
+    results to something more specific such as `Sailboat`.
+    
+    You can use facets in combination with keyword searching to, for example, find items where the type is `Photograph`,
+    the subject is `Vessels`, and the item contains the keyword `military`.  
+    [Learn How to Search using Facets](../../user/how-to-search/#facets).
+
+Relationships
+:   Relationships show how items are related to each other. For example, a collection might have three photographs
+    of a person plus a document about that person's life. These items are related because the photographs depict
+    the person and the document is about the person in the photographs.
+    [Learn about Relationships](../relationships).
+
+    The Digital Archive displays related items together so that when you see one item you also see its related items.
+    For example, if a search turns up one of the photos of the person, you'll also see the other two photos and the
+    document. For this to work, an archivist must establish relationships among the items in the collection.
+
+Search Results
+:   A search can return many items. You can [view search results](../../user/viewing-search-results) as a
+    **table**, a **grid**, or an **index** (like at the back of a book). You can [share results](../../user/sharing)
+     with friends and colleages and [print results to a PDF file](../../user/printing). You can easily find items that you
+    recently viewed without having to search for them again, and you can save and organize items in a [digital
+    notebook](../../user/digital-notebook). These topics are covered in the *For Users* documentation. 

@@ -1,21 +1,28 @@
-# Read Me First
+# Digital Archive Concepts
 
 **Get the most out of the Digital Archive** by learning about these important concepts.
 
 ---
 
 Items & Metadata
-:   An **item** represents one *thing* in a collection. **Metadata** is information *about* an item such as what it is
-    or who created it. Different kinds of metadata are stored in separate *fields* such as **_Title_**, **_Type_**, **_Subject_**,
-    and **_Description_**. [Learn about Items & Metadata](../items-metadata).
+:   An **item** represents one *thing* in a Digital Archive collection. **Metadata** is information *about*
+    an item such as what it is or who created it. Different kinds of information are are stored in separate
+    metadata *fields* such as **_Title_**, **_Type_**, **_Subject_**, and **_Description_**.
 
-    A small collection might have only a few hundred items whereas a large collection could have tens of thousands of items.
+    If you have used other kinds of databases, you might be more familiar with the terms *records* and *columns*
+    rather than items and fields. They are the same thing.
+
+    A small collection might have only a few hundred items whereas a large collection could have tens
+    of thousands of items. How easy or difficult it will be for people to find items in a collection
+    is affected by the quantity and quality of each item's metadata. Lots of good metadata that is specific to
+    each item makes for good search results. Conversely, scant metadata, or metadata that is too broad for the,
+    item, negatively affects search results.
 
 Type, Subject, and Keywords
-:   An item's **type** tells you what kind of thing the item is. For example, an item's type might be `photograph`,
+:   An item's **type** tells you what kind of *thing* the item is. For example, an item's type might be `photograph`,
     `document`, or `teacup`. An item's **subject** clarifies its type. For example, an item of type `photograph`
-    could have the subjects `person` and `boat`. A subject is not required for an item when its type is self-explanatory
-    such as *teacup*.
+    could have the subjects `person` and `boat` to indicate it's a photograph of. A subject is not required
+    for an item when its type is self-explanatory such as *teacup*.
     
     **Keywords** are significant words in an item's **_Title_**, **_Description_** and all other metadata fields.
     There is no separate metadata field for keywords. They are simply the words an archivist choose to describe an item.

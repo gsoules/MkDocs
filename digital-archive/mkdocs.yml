@@ -2,16 +2,10 @@ site_name: Digital Archive Docs
 copyright: 'Copyright &copy; 2020 AvantLogic Corporation'
 
 nav:
-    - Welcome: index.md
+    - Concepts: index.md
     - Glossary: general/glossary.md
-    - Concepts: 
-        Read Me First: concepts/Introduction.md
-        Items & Metadata: concepts/items-metadata.md
-        Type, Subject, and Keywords: concepts/types.md
-        Relationships: concepts/relationships.md
-        Facets: concepts/facets.md
     - For Users:
-        Getting Started: user/getting-started-stripped.md
+        Getting Started: user/getting-started-for-users.md
         How to Search: user/how-to-search.md
         Viewing Search Results: user/viewing-search-results.md
         Flagging Items for Later: user/recently-viewed.md
@@ -66,11 +60,12 @@ nav:
         AvantSearch: plugins/avantsearch.md
         AvantVocabulary: plugins/avantvocabulary.md
         AvantZoom: plugins/avantzoom.md
-    
+    - Who this Documentation is for: general/documentation-categories.md
+
 theme:
     name: readthedocs
     prev_next_buttons_location: bottom
-    include_homepage_in_sidebar: false
+    include_homepage_in_sidebar: true
   
 extra_css:
     - css/extra.css  
