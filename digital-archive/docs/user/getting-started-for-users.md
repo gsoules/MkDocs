@@ -59,7 +59,7 @@ another person.
 
 ## Using the Digital Notebook
 
-You can save and organizes items that you find in a digital notebook. You can have more than
-one notebook and you can create multiple folders in each notebook.
+You can save and organizes items that you find in a digital notebook. You can 
+create multiple folders in the notebook.
 
 [Learn how to use the Digital Notebook.](../digital-notebook/#digital-notebook)

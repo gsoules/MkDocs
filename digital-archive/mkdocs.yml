@@ -7,18 +7,20 @@ nav:
     - For Users:
         Getting Started: user/getting-started-for-users.md
         How to Search: user/how-to-search.md
+        What Gets Searched: user/what-gets-searched.md
         Viewing Search Results: user/viewing-search-results.md
-        Flagging Items for Later: user/recently-viewed.md
+        $ Viewing Items: user/viewing-items.md
+        $ Flagging Items for Later: user/recently-viewed.md
         Sharing Search Results: user/sharing.md
-        Saving Search Results as a PDF: user/printing.md
+        Creating a PDF Report: user/pdf-report.md
         Using the Digital Notebook: user/digital-notebook.md
-        Searching: user/search.md
         Relationships: user/relationships.md
     - For Archivists:
         Getting Started: archivist/getting-started-arch.md
         Logging in: archivist/logging-in.md
         Relationships: archivist/relationships.md
         Add a new item: archivist/add-new-item.md
+        $ Best Practices: archivist/best-practices.md
         Edit an existing item: archivist/edit-item.md
         Add a reference item: archivist/add-reference-item.md
         Delete an item: archivist/delete-item.md
@@ -33,6 +35,7 @@ nav:
         Import CSV data: administrator/import-csv.md
         Export PastPerfect data: administrator/pastperfect-export.md
         Zoomable images: administrator/zoomable-images.md
+        $ Differences from Omeka: administrator/differences-from-omeka.md
     - Developer:
         Web server: developer/web-host.md
         MkDocs: developer/mkdocs.md

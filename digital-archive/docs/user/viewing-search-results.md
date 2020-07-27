@@ -87,9 +87,3 @@ images are in the collection and their quantities.
  You can click on an entry, such as the one for `Tintype`, to see its eight items as shown below.
 
 ![Viewing search results in a index view](viewing-search-results-9.jpg)
-
----
-
-### Good to Know
-
-**To preview an image** without leaving the search results, click on its thumbnail from the search results or on an item's individual page. Use the arrows to the left/right of the image to preview other item images in the search results. 

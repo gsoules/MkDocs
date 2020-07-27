@@ -54,7 +54,7 @@ Facets
     facets to narrow down search results to `Photographs` of `Vessels`. You can then further narrow down the
     results to something more specific such as `Sailboat`.
     
-    [Learn How to Search using Facets](../../user/how-to-search/#search-using-facets).
+    [Learn to Search using Facets](../../user/how-to-search/#search-using-facets).
 
 Relationships
 :   Relationships show how items are related to each other. For example, a collection might have three photographs
@@ -66,8 +66,10 @@ Relationships
     For example, if a search turns up one of the photos of the person, you'll also see the other two photos and the
     document. For this to work, an archivist must establish relationships among the items in the collection.
 
-Search Results
-:   A search can return many items. You can [view search results](../../user/viewing-search-results) as a
+Search and Search Results
+:   [Learn about what gets searched](../../user/what-gets-searched/#what-gets-searched).
+
+    A search can return many items. You can [view search results](../../user/viewing-search-results) as a
     **table**, a **grid**, or an **index** (like at the back of a book). You can [share results](../../user/sharing)
      with friends and colleages and [print results to a PDF file](../../user/printing). You can easily find items that you
     recently viewed without having to search for them again, and you can save and organize items in a [digital

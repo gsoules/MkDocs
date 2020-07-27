@@ -6,6 +6,8 @@ You can search the Digital Archive in three ways:
 - Click **facets** in the **_Refine Your Search_** panel
 - Use the **_Advanced Search_** page
 
+[Learn about what gets searched](../what-gets-searched).
+
 ## Search Using Keywords
 
 To search using keywords, type words in the search box that is located in the upper right of
@@ -22,32 +24,6 @@ section below to learn how.
     If you know an item's **_Identifier_** number, you can type the number into the search box to go
     directly to the page for that item. This only works when searching the site you are on. When
     searching all sites, you'll get search results for items having that number in their metadata.
-
-
-
-## What Gets Searched
-
-When you type keywords in the search box, the Digital Archive examines all of the items in the collection
-looking for those keywords in *every metadata field* and in every searchable PDF. It does not matter which
-metadata field contains the words you are looking for; if the words exist somewhere in an item's metadata,
-that item will show up as a search result. However, when the keywords appear in the item's **_Title_** or
-**_Description_** metadata fields, the item will likely appear higher up in the search results because those
-two fields are the most relevant for search purposes.
-
-Be aware that sometimes the search results will contain items that have metadata that contains words that
-are very similar to, but not exactly the same as the words you type. While this can sometimes produce
-unwanted results, it's very helpful if you mistype a word or when you don't know the correct spelling.
-
-!!! Note "Shared Searching"
-    Some Digital Archive sites are set up to share their collections with other organizations.
-    If you are searching in a Digital Archive that is sharing, you have the option to search all sites,
-    or to only search the site you are you are on. 
-
-    **To search all sites**, use the **_Searching_** selector to choose `All sites`.
-
-    ![Searching selector options](how-to-search-1.jpg)
-
-    **To search just the site you're on**,  use the **_Searching_** selector to choose `This site`.
 
 ## Search Using Facets
 
