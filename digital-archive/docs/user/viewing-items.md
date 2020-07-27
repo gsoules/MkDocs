@@ -10,12 +10,12 @@ You can view search result items in these ways:
 
 The appearance of an item's thumbnail tells you something about the item:
 
--   A double border (items 13178 and 13023) indicates that it's
+-   A blue double border (items 13178 and 13023) indicates that it's
     a [Reference item](/user/relationships/#reference-items).
 -   A dotted border (item #13325) indicates that the item has two or more attachments.
 -   A placeholder thumbnail indicates that the item has no attachments. The placeholder
     for item 13023 indicates that it's Reference item for a structure.
--   A blue flag (items 3304 and 13325) indicates that the item has either been marked to view
+-   A blue flag (items 13325 and 14997) indicates that the item has either been marked to view
     later or that it is already on the recently viewed items list. A gray flag indicates that
     the item is not on the recently viewed items list. [Learn about flagging items](/user/recently-viewed).
 
