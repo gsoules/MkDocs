@@ -2,13 +2,14 @@
     This documentation is under development. It is incomplete and may contain incorrect information.
     Do not rely on what you see here until this notice has been removed.
 
-Welcome to Digital Archive Docs. [Learn who this documentation is for](../general/documentation-categories).
+# Read Me First
 
-**Get the most from the Digital Archive** by learning about the important concepts below.
+The documentation on this Digital Archive Docs website will make much more sense if you take a few minutes to
+learn about the key concepts below. [Learn who this documentation is for](../general/documentation-categories).
 
 ---
 
-# Digital Archive Concepts
+### Digital Archive Concepts
 
 Items & Metadata
 :   An **item** represents one *thing* in a Digital Archive collection. **Metadata** is information *about*
@@ -39,11 +40,11 @@ Type, Subject, and Keywords
     item when they search the collection.
 
 Reference Items
-:   A Reference item is one that has it type set to `Reference`. These are special items that serve as stand-ins
+:   A Reference Item is one that has it type set to `Reference`. These are special items that serve as stand-ins
     for things in the real world that are typically not part of a collection, but that tie other items in the collection
     together via relationships. The most common use of reference items is to provide biographical information about a person,
     and to provide historical information about a structure, vessel, business, organization, or event.
-    [Learn about Reference items](/user/relationships/#reference-items).    
+    [Learn about Reference Items](/user/understanding-relationships/#reference-items).    
 
 Attachments
 :   An item can have digital images (photographs or scans) and PDF files attached to it. Keywords in the text of
@@ -84,5 +85,5 @@ Search and Search Results
     notebook](../../user/digital-notebook). These topics are covered in the *For Users* documentation.
 
 !!! Note "Note"
-    Not all of the features above are enabled in all Digital Archive installations. Which features are available
+    Not all of the features mentioned above are enabled in all Digital Archive installations. Which features are available
     depends on which Digital Archive plugins are installed.

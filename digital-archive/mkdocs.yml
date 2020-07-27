@@ -10,15 +10,14 @@ nav:
         What Gets Searched: user/what-gets-searched.md
         Viewing Search Results: user/viewing-search-results.md
         Viewing Items: user/viewing-items.md
+        Understanding Relationships: user/understanding-relationships.md
         Flagging Items to View Later: user/recently-viewed.md
         Sharing Search Results: user/sharing.md
         Creating a PDF Report: user/pdf-report.md
         Using the Digital Notebook: user/digital-notebook.md
-        $ Relationships: user/relationships.md
     - For Archivists:
         Getting Started: archivist/getting-started-arch.md
         Logging in: archivist/logging-in.md
-        Relationships: archivist/relationships.md
         Add a new item: archivist/add-new-item.md
         $ Best Practices: archivist/best-practices.md
         Edit an existing item: archivist/edit-item.md
@@ -26,7 +25,8 @@ nav:
         Delete an item: archivist/delete-item.md
         Field descriptions: archivist/field-descriptions.md
         Workflow fields: archivist/workflow-fields.md
-        Working with relationships: archivist/working-with-relationships.md            
+        Working with relationships: archivist/working-with-relationships.md
+        The Archive Relational Model: archivist/archive-relational-model.md            
         About vocabularies: archivist/vocabularies.md
         Vocabulary Editor: archivist/vocabulary-editor.md
     - Administrator:

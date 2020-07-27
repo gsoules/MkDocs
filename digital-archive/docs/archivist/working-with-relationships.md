@@ -1,66 +1,49 @@
-# Working with relationships
+# Working with Relationships
 
----
+This section is a follow-up to and deeper dive into the section on
+[Understanding Relationships](/user/understanding-relationships).
+Be sure to read that information before reading this section.
 
-## Features
+## Relationship Types
 
-Once installed, AvantRelationships extends the Omeka admin and public user interfaces to provide
-the ability to add and display relationships. Specifically, the plugin:
+The type of a relationship must make sense with the two items it relates. For example, only people
+can be married to each other. A house can be *designed by* a person or a business, but not by a
+place or another house. A place can be the *location of* a house, but a house cannot be located
+in an event or in a person. What kind of items are compatible with a specific relationship type
+is determined by Relationship Rules.
 
--   Adds a `Relationships` menu item in Omeka's admin left menu
--   Adds a `Relationships` button on the admin Item page
--   Adds a `Cover Image` tab on the admin item `Edit` page
--   Displays *Relationship Groups* below an item's metadata on public and admin Item pages
--   Displays a *Visualization Preview* on the public and admin Item pages
--   Adds `Relationships` filter to the bottom of the Omeka `Advanced Search` page
+To get a better sense of relationship types, take a look at the Relationship Types & Rules table.
+It lists every type of relationship currently in use among items in the Archive. It also spells
+out the rules that apply to the two items involved in the relationship.
 
-To learn about features provided by AvantRelationships, see the following topics on the
-[Digital Archive](http://swhplibrary.net/archive/relationships/) website:
+## Relationship Direction
 
-* [Archive Relational Model]
-* [Relationships Overview]
-* [Viewing Relationships]
-* [Adding Relationships]
-* [Implicit Relationships]
-* [Cover Images]
-* [Relationship Types]
-* [Relationship Rules]
+A relationship can be either uni-directional or bi-directional. A bi-directional relationship reads the same in both directions. For example, John is married to Mary and Mary is married to John. Married to is a label that describes the relationship in either direction.
 
-### Default Rules and Types
+A uni-directional relationship reads one way in the forward direction and another way in the reverse direction. For example, John designed a house and the house was designed by John. These phrases sound right because the order of the items matches the direction of the relationship. If the item order or direction is wrong, you end up with the non-nonsensical relationships of a house that designed John, and John being designed by a house. Fortunately, the rules for a relationship’s type ensure correct item order and direction when an archivist adds or edits a relationship.
 
-To help get you started using AvantRelationships, the installer creates a small set of relationship types and rules.
-After installation you can see and edit these by clicking `Relationships` in Omeka's left admin menu. You'll need to
-[edit/add/remove rules](http://swhplibrary.net/archive/relationship-rules/) to meet your own needs.
-You also want to [edit/add/remove relationship types](http://swhplibrary.net/archive/relationship-types/) in ways that
-make sense for your collection.
+A uni-directional relationship has two different labels. In the relationship between John and his house, designed is one label and designed by is the other. Each label is the inverse of the other, but they describe the same relationship. If you look  again at the Relationship Types & Rules table, you’ll see that the row for designed has the same Id 17 as the row for designed by. You’ll also see that there is only one row for married to which has Id 8. This is because the married to label is used in both directions. Note that the table lists relationships in alphabetical order by label, which is why the Id numbers do not appear sequentially.
 
-#### Title Sync Option
+## Genealogical Relationships
 
-The [AvantElements] plugin has a [Title Sync](../plugins/avantelements.md#title-sync-option) option that makes it easy to keep
-implicitly related items in sync with each other. If you change the title text in one item, Title Sync will
-automatically update the corresponding text in implicitly related items.
+An archivist only ever specify a child of or parent of relationship between two people (there is no, grandparent, grandchild, or sibling relationship type) and the software does the rest. This feature sometimes reveals long ancestry chains that would never be apparent when looking at a single item. Two examples in the Archive are item 3687 for Ralph Warren Stanley that shows great great great grandparents, and item 13572 for John Carroll that shows great great grandchildren.
 
-Notes:
+## Relationship Order
 
--   The AvantRelationships plugin only detects an implicit relationships when there is an exact match between the element text in one
-    item and the corresponding Dublin Core Title text in another. If the text varies even by a space, the relationship won't be detected.
--   When displaying a creator item, if there are a lot of creation items, the page will display a short list of creation items
-    followed by a button that the user can click to see all of the items. The number of items in the short list is controlled
-    by the **Max indirect items** option on the AvantRelationships configuration page. If AvantSearch is also installed and activated,
-    clicking the button will display all of the related creations as search results in an
-    [Image View](http://swhplibrary.net/searching/search-results-image-view/). If AvantSearch is not active,
-    clicking the button will display all of the creation items inline on the creator item page.
+All relationships are important, but the curator decides which ones a user will see first when viewing an item. In the Digital Archive, images of an item such as a person, house, or boat, are considered most important and always appear immediately after the item’s metadata. Genealogical relationships come next followed by Reference items that mention the item, and then places where the item is located, and so on. By always presenting related items in the same order, users quickly become comfortable with the interface and know what to expect as they go from item to item.
+Viewing Relationships
+
+The fact that every relationship in the archive has a type, direction, and order, makes it possible for the Digital Archive software to present related items most effectively when users are viewing relationships for an item. The software:
+
+    Groups related items by relationship type.
+    Groups indirectly related items with their directly related item.
+    Displays the relationship label for each group relative to the item being viewed, that is, in a direction from that item to its related items.
+    Derives ancestor and descendant chains starting from a People item’s parents and children.
+    Lists groups in order of importance.
 
 
-[Digital Archive]: http://swhplibrary.net/archive
-[Digital Archive site]: http://swhplibrary.net/digitalarchive/items/show/9165
-[Basic Omeka site]: http://swhplibrary.net/demo/relationships/items/show/9165
-[relationships types]: http://swhplibrary.net/digitalarchive/relationships/browse
-[Relationships Overview]: http://swhplibrary.net/archive/relationships/
-[Viewing Relationships]: http://swhplibrary.net/archive/viewing-relationships/
-[Adding Relationships]: http://swhplibrary.net/archive/adding-relationships/
-[Implicit Relationships]: http://swhplibrary.net/archive/implicit-relationships/
-[Cover Images]: http://swhplibrary.net/archive/cover-images/
-[Relationship Types]: http://swhplibrary.net/archive/relationship-types/
-[Relationship Rules]: http://swhplibrary.net/archive/relationship-rules/
-[Archive Relational Model]: http://swhplibrary.net/archive/digital-relational-model/
+Administrators can search for items with specific relationships using the Relationship options at the bottom of the Advanced Search page in the admin interface as shown in the screenshot below.
+
+![Searching for relationships](working-with-relationships-1.jpg)
+
+

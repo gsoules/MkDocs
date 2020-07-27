@@ -45,7 +45,7 @@ Searching All Sites
     user is logged-in to the Digital Archive. If an archivist needs to search their organization's
     non-public items and private fields, they must switch to searching `This site` and be logged-in.
 
-## What a keyword dearch ginds
+## What a keyword search finds
 
 When you type keywords in the search box, the Digital Archive examines:
 
