@@ -2,6 +2,8 @@
 
 The Digital Archive is an online database of historic and contemporary images, maps, articles, documents, publications, and other items. But this isn’t your grandfather’s database. It’s something altogether new and different.
 
+## Reference items
+
 ## The Archive is Different
 
 Traditional databases show one item at a time, and the better ones include links to related items. You start by viewing one item and then chase links one by one to view related items. Soon, however, you are far from the original item of interest.

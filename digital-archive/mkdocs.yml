@@ -9,12 +9,12 @@ nav:
         How to Search: user/how-to-search.md
         What Gets Searched: user/what-gets-searched.md
         Viewing Search Results: user/viewing-search-results.md
-        $ Viewing Items: user/viewing-items.md
+        Viewing Items: user/viewing-items.md
         $ Flagging Items for Later: user/recently-viewed.md
         Sharing Search Results: user/sharing.md
         Creating a PDF Report: user/pdf-report.md
         Using the Digital Notebook: user/digital-notebook.md
-        Relationships: user/relationships.md
+        $ Relationships: user/relationships.md
     - For Archivists:
         Getting Started: archivist/getting-started-arch.md
         Logging in: archivist/logging-in.md

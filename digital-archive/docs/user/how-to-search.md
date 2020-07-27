@@ -8,7 +8,7 @@ You can search the Digital Archive in three ways:
 
 [Learn about what gets searched](../what-gets-searched).
 
-## Search Using Keywords
+## Search using keywords
 
 To search using keywords, type words in the search box that is located in the upper right of
 every Digital Archive page. Click the magnifying glass icon or press `Enter` on your keyboard.
@@ -25,7 +25,7 @@ section below to learn how.
     directly to the page for that item. This only works when searching the site you are on. When
     searching all sites, you'll get search results for items having that number in their metadata.
 
-## Search Using Facets
+## Search using facets
 
 Facets allow you to narrow down search results that you are viewing, or to narrow down all of the
 items in the collection to just the items you are interested in.
@@ -75,7 +75,7 @@ to only items from that town that meet the criterion above.
 
 ![advanced search](how-to-search-5.jpg)
 
-### Special Characters Used for Searching
+### Special characters used for searching
 
 The right-side of the **_Advanced Search_** page lists special characters you can use when searching.
 You can also use this syntax in the search box that appears at the upper right of every page.

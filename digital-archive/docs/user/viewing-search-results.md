@@ -11,6 +11,8 @@ the search results page. You can use the other selector bar options to sort and 
 
 ![Selector bar](viewing-search-results-1.jpg)
 
+[Learn about viewing items.](../viewing-items)
+
 ## Table View
 
 Table View with the Details layout is the default view for search results. It shows each item on 
@@ -25,7 +27,7 @@ If an item in the search results has a PDF file attached to it, the PDF file's n
 PDF text are highlighted in blue. In the example above, that last item has a PDF file named
 `ANP Pathmakers.pdf`.
 
-#### Compact Table View Layouts
+#### Compact Table View layouts
 
 You can see the same results in a more compact layout by choosing a different option from the **_Layout_** selector.
 The example below shows the same results in the `Type / Subject` layout. Digital Archive administrators can create custom layouts. 
@@ -52,7 +54,7 @@ as the examples in the Table View section above.
 You can  sort items in Grid View by choosing a metadata field name using the **_Sort by_** selector.
 To change the sort from ascending to descending and vice versa, use the selector and choose the field again.
 
-#### Hiding Items that have no Image
+#### Hiding items that have no image
 
 In the example above, notice the second item in the first row. It has a placeholder icon for
 a map, but no map image. This is an example of an item that has no image or PDF file attached to it. You

@@ -29,7 +29,7 @@ Visible Items and Fields
     public items. Put another way, all items and fields are visible to a logged-in user, but
     only public fields of public items are visible to a user who is not logged-in.
 
-Shared Searching
+Searching All Sites
 
 :   Some Digital Archive sites are set up to share their collections with other organizations.
     If you are searching in a Digital Archive that is sharing, you have the option to search all sites,
@@ -41,11 +41,11 @@ Shared Searching
 
     ![Searching selector options](what-gets-searched-1.jpg)
 
-    A shared search only searches the public fields of public items. This is true whether or not the
+    A an all-sites search only searches the public fields of public items. This is true whether or not the
     user is logged-in to the Digital Archive. If an archivist needs to search their organization's
     non-public items and private fields, they must switch to searching `This site` and be logged-in.
 
-## What a Keyword Search Finds
+## What a keyword dearch ginds
 
 When you type keywords in the search box, the Digital Archive examines:
 
@@ -78,7 +78,7 @@ is related to.
 If you are logged-in to the Digital Archive,
 you'll see each item's score in Table view when the Display layout is selected.
 
-## Fuzzy Searching
+## Fuzzy searching
 
 Sometimes the search results will contain items that have metadata that contains words that
 are very similar to, but not exactly the same as, the words you type. This is called fuzzy searching.

@@ -3,7 +3,7 @@
 **Get the most from the Digital Archive** by learning about the features highlighted on this page.
 
 
-## How to Search
+## How to search
 
 You can search the Digital Archive in three ways:
 
@@ -13,7 +13,9 @@ You can search the Digital Archive in three ways:
 
 [Learn about ways to search.](../how-to-search/#how-to-search)
 
-## Viewing Search Results
+[Learn about what gets searched.](../what-gets-searched/#what-gets-searched)
+
+## Viewing search results
 
 You can view your search results in a variety of ways. Use the **_View_** selector on the search results
 page to choose to see results displayed in one of these three views:
@@ -31,7 +33,7 @@ that have images.
 [Learn about viewing search results.](../viewing-search-results/#viewing-search-results)
 
 
-## Flagging Items to View Later
+## Flagging items to view later
 
 You can mark items that you want to view later so that you can find them again without starting a new search.
 You can see flagged items in the **_Recent Items_** list along with recently viewed items.
@@ -41,7 +43,7 @@ display the list as search results so that you can share them with someone else.
 
 [Learn about flagging items.](../recently-viewed/#recently-viewed)
 
-## Sharing Search Results
+## Sharing search results
 
 You can share your search results with a friend or colleage by sending them a link
 containing the URL from the browser's address bar. When the recipient clicks the link,
@@ -50,7 +52,7 @@ and **_Items_** options that you used.
 
 [Learn how to share search results.](../sharing/#sharing)
 
-## Saving Search Results as a PDF
+## Saving search results as a PDF
 
 You can save search results as a PDF document which you can then print, save, or to send to
 another person.

@@ -38,10 +38,18 @@ Type, Subject, and Keywords
     An archivist's choice of an item's type, subject, and keywords affect how easy it will be for a user to find the
     item when they search the collection.
 
+Reference Items
+:   A Reference item is one that has it type set to `Reference`. These are special items that serve as stand-ins
+    for things in the real world that are typically not part of a collection, but that tie other items in the collection
+    together via relationships. The most common use of reference items is to provide biographical information about a person,
+    and to provide historical information about a structure, vessel, business, organization, or event.
+    [Learn about Reference items](/user/relationships/#reference-items).    
+
 Attachments
 :   An item can have digital images (photographs or scans) and PDF files attached to it. Keywords in the text of
     a searchable PDF file implicitly become part of the item's keyword metadata just as if they appeared in
-    the item's *Description* or other metadata field.  
+    the item's *Description* or other metadata field. PDF attachments are commonly used to provide the biographical
+    or historical information for a Reference item.
     [Learn about attaching files to an item](../../archivist/add-new-item).
 
 Facets

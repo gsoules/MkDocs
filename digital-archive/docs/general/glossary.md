@@ -91,6 +91,10 @@ online using the Digital Archive.
 Plugin
 :   A plugin is a software component that adds or modifies features of existing computer programs.
 
+Reference item
+:   Items with type `Reference` that serve as stand-ins for things in the real world and tie other items in the collection
+    together via relationships. [Learn about Reference items](/user/relationships/#reference-items).
+
 Shared search
 :   Comingled results from multiple collections.
 
