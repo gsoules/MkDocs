@@ -5,38 +5,43 @@ nav:
     - Concepts: index.md
     - Glossary: general/glossary.md
     - For Users:
-        Getting Started: user/getting-started-for-users.md
+        Getting Started: user/getting-started-user.md
         How to Search: user/how-to-search.md
-        What Gets Searched: user/what-gets-searched.md
         Viewing Search Results: user/viewing-search-results.md
         Viewing Items: user/viewing-items.md
-        Understanding Relationships: user/understanding-relationships.md
+        Viewing Relationships: user/viewing-relationships.md
         Flagging Items to View Later: user/recently-viewed.md
         Sharing Search Results: user/sharing.md
         Creating a PDF Report: user/pdf-report.md
         Using the Digital Notebook: user/digital-notebook.md
     - For Archivists:
-        Getting Started: archivist/getting-started-arch.md
+        Getting Started: archivist/getting-started-archivist.md
         Logging in: archivist/logging-in.md
-        Add a new item: archivist/add-new-item.md
+        What Gets Searched: archivist/what-gets-searched.md
+        $ Add a new item: archivist/add-new-item.md
+        $ Edit an existing item: archivist/edit-item.md
+        $ Add a reference item: archivist/add-reference-item.md
+        $ Delete an item: archivist/delete-item.md
+        $ Attach a file to an item: archivist/attach-file.md
+        $ Working with Relationships: archivist/working-with-relationships.md
+        $ About vocabularies: archivist/vocabularies.md
+        $ Vocabulary Editor: archivist/vocabulary-editor.md
         $ Best Practices: archivist/best-practices.md
-        Edit an existing item: archivist/edit-item.md
-        Add a reference item: archivist/add-reference-item.md
-        Delete an item: archivist/delete-item.md
         Field descriptions: archivist/field-descriptions.md
         Workflow fields: archivist/workflow-fields.md
-        Working with relationships: archivist/working-with-relationships.md
-        The Archive Relational Model: archivist/archive-relational-model.md            
-        About vocabularies: archivist/vocabularies.md
-        Vocabulary Editor: archivist/vocabulary-editor.md
-    - Administrator:
+    - Relationships:
+        Understanding relationships: relationships/understanding-relationships.md
+        Working with relationships: relationships/working-with-relationships.md
+        The Archive Relational Model: relationships/archive-relational-model.md
+        Add a Relationship: relationships/add-relationship.md
+    - For Administrators:
         FAQ: administrator/faq.md
         Omeka Elements: administrator/omeka-elements.md
         Import CSV data: administrator/import-csv.md
         Export PastPerfect data: administrator/pastperfect-export.md
         Zoomable images: administrator/zoomable-images.md
         $ Differences from Omeka: administrator/differences-from-omeka.md
-    - Developer:
+    - For Developers:
         Web server: developer/web-host.md
         MkDocs: developer/mkdocs.md
         File locations: developer/file-locations.md

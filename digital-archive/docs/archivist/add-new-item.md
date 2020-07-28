@@ -1,64 +1,109 @@
 # Add a new Omeka Item
 
-Follow the steps below to create a new item in the Omeka database
-
----
 
 !!! note ""
     You must be logged into your Omeka account to perform these steps.
 
-||Action|
-:---:|---
-**[Step 1](#step-1)**|**Go to** the `Add an Item` page|
-**[Step 2](#step-2)**|**Enter required field** values|
-**[Step 3](#step-3)**|**Enter optional field** values|
-**[Step 4](#step-4)**|**Decide who** is allowed to see the item|
-**[Step 5](#step-5)**|**Save** the item|
-**[Step 6](#step-6)**|**Attach files** to the item (optional)|
-**[Step 7](#step-7)**|**Add relationships** to the item (optional)|
-**[Step 8](#step-8)**|**Review** the newly added item|
+**Begin by** clicking the **_add item_** button in the upper right corner. 
 
-## Step 1
-> **Go to** the `Add an Item` page
 
-Use *one* of these methods to get to the `Add an Item` page:
+![Add Item Button](add-item-1.jpg)
 
-* Click the `Add Item` link in the top menu of a Public page, or
-* Click the green `Add a new item` link on the Avant Dashboard page, or
-* Click the blue `Add New Item` button on the Admin item page
+Notice that a unique Identifier number has already been generated for you. It appears at the top of the page, and can only be changed when you first create a new item. 
 
 ---
 
-## Step 2
-> **Enter required field** values
+## For *every* new item you add:
 
-The fields below are required for most Digital Archive sites. Your site might
-not require all of them, or it may require others not listed here.
+You must fill in the following fields for every new item.
 
-- `Title`
-- `Type`
-- `Subject`
-- `Rights`
+**Give the item a TITLE** by typing in the **_Title_** textbox
 
-*Explain about picking from dropdowns, being able to seearch some of them. If what you
-are looking for is not in the list, add it using the Vocabulary Editor.*
+**Select the item's TYPE** from the **_Type_** dropdown menu
 
-If you forget to provide a value for a required field, a red error message will appear
-at the top of the page telling you that it's missing.
+**Select the item's SUBJECT** from the **_Subject_** dropdown menu (not required if the item's Type is Object)
+
+**Select the RIGHTS** to the item from the **_Rights_** dropdown menu
+
+---
+
+## For items with additional information:
+
+Many items have more related information than is contained in the required fields. You can enter information into the fields for **_description_**, **_date_**, **_creator_**, **_publisher_**, and **_source_** as it is available. 
+
+---
+
+## Publishing and saving a new item
+
+If you are finished adding information to the new item and you are ready for it to appear in a user's search results, check the box marked **_public_** in the upper right. If the item needs more work later, or you don't want it to appear to outside users, leave the box unchecked. 
+
+![Saving an Item](add-item-2.jpg)
+
+Once you have added all of the required and relevant information about the item, click the green **_add item_** button.
+
+If you leave any of the required fields blank and try to add the item to the database, red error text appears at the top of the page to tell you what is missing. Complete the missing fields and try again.
+
+---
+
+## Optional next steps
+
+[Attach a file to the item](../attach-file)
+
+[Add relationships to the item](../working-with-relationships)
+
+[Edit](../edit-item) or [Delete](../delete-item) the item
+
+---
+
+## What if...
+
+**...the subject/type/rights option I need isn't listed?**
+
+You can use the Vocabulary Editor to add additional terms for the subject, type and rights fields as needed for your collection.
+
+[Learn how to edit vocabulary](../vocabulary-editor).
+
+**...there are multiple titles or subjects for the item?**
+
+When an item has more than one title (uncommon), subject, or creator, you need to add them in additional fields. Add an additional field by clicking the green **_Add Input_** button next to the field you want to add. 
+
+![Add Input](add-item-4.jpg)
+
+
+**...I need to add or change something for the item?**
+
+You can edit any of an item's fields after saving it, except for its Identifier.
+
+[Learn how to edit an item](../edit-item)
+
+**...I want to see what the item looks like to a user?**
+
+Once you have saved a new item, click the **_View Public Page_** button in the menu on the right. You will see the item and its related information in a new tab. 
+
+![View Public Page](add-item-3.jpg)
+
+---
+
+## Tips & Tricks
+
+**Searching within lengthy dropdown menus**
+
+Databases with a large number of items may have many options for Type, Subject, and Rights. Instead of scrolling through a lengthy dropdown menu, you can type into a search field at the top of the dropdown menu to narrow your options. 
+
+![Search a Dropdown](add-item-6.jpg)
+
+**Duplicating an existing item**
+
+Once you have created and saved an item to the database, you can make a copy of it using the **_Duplicate This Item_** button in the menu on the right. You will see a new **_Add Item_** page appear, containing all of the same information as the original, but with its own Identifier number. The **_Title_** field now includes the word ---DUPLICATE---.
+
+
 
 See [Field descriptions guide](field-descriptions.md) to learn about the fields listed above.
 
----
 
-## Step 3
-> **Enter optional field** values
 
-Most fields are optional, but always provide values for these
-if you know the information:
 
-* `Description`
-* `Date`
-* `Creator`
+
 
 !!! note ""
     If the item needs more information, an image, or relationships, but you don’t
@@ -69,45 +114,13 @@ See [Field descriptions guide](field-descriptions.md) to learn about all fields.
 
 ---
 
-## Step 4
-> **Decide who** is allowed to see the item
-
-To control whether the item is public or not:
-
-* Check the `Public` box so everyone can see the item, *or*
-* Leave the `Public` box unchecked if only archivists can see the item
-
-The `Public` checkbox is located at the upper right of the `Add an Item` page.
 
 If the item is not public, use the `Status` and/or `Restrictions` fields to indicate why.
 
----
-
-## Step 5
-> **Save** the item
-
-To add the new item to the Omeka database:
-
-* Click the `Add Item button` (or the `Save Changes` button if you are making corrections)
-  to a newly added item)
-* If red errors appear at the top of the page, correct them and try again
 
   The item is now in the Omeka database. You can [edit the item](edit-item.md) to make changes.
 
 ---
-
-## Step 6 (optional)
-> **Attach files** to the item
-
-See [How to attach photos or documents to an item]()
-
----
-
-## Step 7 (optional)
-> **Add relationships** to the item
-
-See [How to add a relationship between two items]()
-
 ---
 
 ## Step 8

@@ -29,3 +29,10 @@ Gott - Everett Livingston Gott (?-1954)
 
 H.	Creator
 The Creator is the “entity primarily responsible for making the content of the resource”. For Article, Document this is the person who wrote the document (e.g. Riebel - Charlotte (Riebel) Morrill). For a photograph, the creator is the person who took the photograph. It is not necessary to specify a creator for Article, Text items with short general descriptions. The Creator field is optional, but when specified, must match exactly the Title of the item for that creator.
+
+-	Work with the public interface all of the time except when not possible
+-	Define vocabuaries for the site
+-	Mangage archival copies of files
+-	Only upload web-sized images
+-	Define an archival file management scheme
+-	Scanning (include scanning resolution tree and other files)

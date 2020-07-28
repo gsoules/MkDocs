@@ -47,6 +47,9 @@ Item
 :   An item represents one *thing* in a Digital Archive collection.
     [See Digital Archive Concepts](../concepts).
 
+Item page
+:   A Digital Archive page that contains all of the information about a single item.
+
 Keyword
 :   A keyword is a significant word in an item's metadata. 
     [See Digital Archive Concepts](../concepts).

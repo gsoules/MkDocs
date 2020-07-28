@@ -54,12 +54,16 @@ p+ ul {
     margin-left: 12px;
 }
 
-/* Reduce the space above a list or code that immediately follows a paragraph */
+/* Reduce the space above a list or code that immediately follows a paragraph. */
 p + ul,
 p + pre {
 	margin-top: -16px;
 }
 
+/* Fix problem where lists inside definition lists have too little space above them.  */
+div.section dl dd ul {
+    padding-top: 8px;
+}
 
 /* Fix styling for tables that was lost in MkDocs version 1.1.2. */
 

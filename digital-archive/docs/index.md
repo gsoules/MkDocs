@@ -9,7 +9,7 @@ learn about the key concepts below. [Learn who this documentation is for](../gen
 
 ---
 
-### Digital Archive Concepts
+### Digital Archive concepts
 
 Items & Metadata
 :   An **item** represents one *thing* in a Digital Archive collection. **Metadata** is information *about*
@@ -84,6 +84,8 @@ Search and Search Results
     recently viewed without having to search for them again, and you can save and organize items in a [digital
     notebook](../../user/digital-notebook). These topics are covered in the *For Users* documentation.
 
-!!! Note "Note"
-    Not all of the features mentioned above are enabled in all Digital Archive installations. Which features are available
-    depends on which Digital Archive plugins are installed.
+---
+
+!!! Note ""
+    Not all of the features above are enabled in all Digital Archive installations.
+    Which features are available depends on which Digital Archive plugins are installed.   

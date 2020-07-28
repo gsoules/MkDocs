@@ -7,10 +7,13 @@ This documentation is divided into categories for these kinds of people:
 - Administrators
 - Developers
 
-A fifth category is documentation about Digital Archive plugins that is of broad interest.
+Two other categories of broad interest are:
+
+-   Relationships
+-   Digital Archive plugins
 
 Each category is explained below. Some people will fall into more than one category.  
-For example, an administrator is usually also an archivist and a user.
+For example, an administrator is usually also an archivist, and an archvist is also a user.
 
 ## Users
 User documentation is for people who use the Digital Archive for research or just for fun.
@@ -28,6 +31,10 @@ can see all public items in the collection as well as non-public items and priva
 
 Typically, an archivist's login will not allow them to make changes to the Digital Archive installation unless
 the archivist is also an **Administrator**.
+
+## Relationships
+The documentation on relationships follows the sections for User and Archivists because it applies
+to both. It covers all aspects of relationships including how to define relationship types and rules.
 
 ## Administrators
 Administrator documentation is for the person who performs administrative functions for their organization's
