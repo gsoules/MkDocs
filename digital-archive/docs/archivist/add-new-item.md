@@ -17,19 +17,20 @@ Notice that a unique Identifier number has already been generated for you. It ap
 
 You must fill in the following fields for every new item.
 
-**Give the item a TITLE** by typing in the **_Title_** textbox
+**1. Give the item a TITLE** by typing in the **_Title_** textbox
 
-**Select the item's TYPE** from the **_Type_** dropdown menu
+**2. Select the item's TYPE** from the **_Type_** dropdown menu
 
-**Select the item's SUBJECT** from the **_Subject_** dropdown menu (not required if the item's Type is Object)
+**3. Select the item's SUBJECT** from the **_Subject_** dropdown menu (not required if the item's Type is Object)
 
-**Select the RIGHTS** to the item from the **_Rights_** dropdown menu
+**4. Select the RIGHTS** to the item from the **_Rights_** dropdown menu
 
 ---
 
 ## For items with additional information:
 
 Many items have more related information than is contained in the required fields. You can enter information into the fields for **_description_**, **_date_**, **_creator_**, **_publisher_**, and **_source_** as it is available. 
+
 
 ---
 
@@ -94,9 +95,9 @@ Databases with a large number of items may have many options for Type, Subject, 
 
 **Duplicating an existing item**
 
-Once you have created and saved an item to the database, you can make a copy of it using the **_Duplicate This Item_** button in the menu on the right. You will see a new **_Add Item_** page appear, containing all of the same information as the original, but with its own Identifier number. The **_Title_** field now includes the word ---DUPLICATE---.
+Once you have created and saved an item to the database, you can make a copy of it using the **_Duplicate This Item_** button in the menu on the right. You will see a new **_Add Item_** page appear, containing all of the same information as the original, but with its own Identifier number. The **_Title_** field now includes the word ---DUPLICATE--- as a reminder. 
 
-
+---
 
 See [Field descriptions guide](field-descriptions.md) to learn about the fields listed above.
 

@@ -35,11 +35,21 @@ the four items together such than when you find one of the items, you find them 
 itself contains very little information. In a case where you have a lot of information, you could
 attach the information to the Reference Item as a PDF file. Learn about [Learn about attachments](/).
 
-![Three photographs of the same woment](understanding-relationships-3.jpg)
+![Three photographs of the same women](understanding-relationships-3.jpg)
 
 [Learn more about Reference Items](/archivist/archive-relational-model/#reference-items).
 
 ## Relationship Types
+
+The type of a relationship must make sense with the two items it relates. For example, only people
+can be married to each other. A house can be *designed by* a person or a business, but not by a
+place or another house. A place can be the *location of* a house, but a house cannot be located
+in an event or in a person. What kind of items are compatible with a specific relationship type
+is determined by Relationship Rules.
+
+To get a better sense of relationship types, take a look at the Relationship Types & Rules table.
+It lists every type of relationship currently in use among items in the Archive. It also spells
+out the rules that apply to the two items involved in the relationship.
 
 An item in a Digital Archive collection can have a relationship with one or more other items.
 A relationship's type indicate how two items are related. For instance, a relationship can exist
@@ -57,6 +67,36 @@ which you can see as their thumbnails in the graph. Item 14894 has no attachment
 why its thumbnail ishas a placeholder image.
 
 ![Visualization showing direct relationships](understanding-relationships-2.jpg)
+
+## Relationship Direction
+
+A relationship can be either uni-directional or bi-directional. A bi-directional relationship reads the same in both directions. For example, John is married to Mary and Mary is married to John. Married to is a label that describes the relationship in either direction.
+
+A uni-directional relationship reads one way in the forward direction and another way in the reverse direction. For example, John designed a house and the house was designed by John. These phrases sound right because the order of the items matches the direction of the relationship. If the item order or direction is wrong, you end up with the non-nonsensical relationships of a house that designed John, and John being designed by a house. Fortunately, the rules for a relationship’s type ensure correct item order and direction when an archivist adds or edits a relationship.
+
+A uni-directional relationship has two different labels. In the relationship between John and his house, designed is one label and designed by is the other. Each label is the inverse of the other, but they describe the same relationship. If you look  again at the Relationship Types & Rules table, you’ll see that the row for designed has the same Id 17 as the row for designed by. You’ll also see that there is only one row for married to which has Id 8. This is because the married to label is used in both directions. Note that the table lists relationships in alphabetical order by label, which is why the Id numbers do not appear sequentially.
+
+## Genealogical Relationships
+
+An archivist only ever specify a child of or parent of relationship between two people (there is no, grandparent, grandchild, or sibling relationship type) and the software does the rest. This feature sometimes reveals long ancestry chains that would never be apparent when looking at a single item. Two examples in the Archive are item 3687 for Ralph Warren Stanley that shows great great great grandparents, and item 13572 for John Carroll that shows great great grandchildren.
+
+## Relationship Order
+
+All relationships are important, but the curator decides which ones a user will see first when viewing an item. In the Digital Archive, images of an item such as a person, house, or boat, are considered most important and always appear immediately after the item’s metadata. Genealogical relationships come next followed by Reference items that mention the item, and then places where the item is located, and so on. By always presenting related items in the same order, users quickly become comfortable with the interface and know what to expect as they go from item to item.
+Viewing Relationships
+
+The fact that every relationship in the archive has a type, direction, and order, makes it possible for the Digital Archive software to present related items most effectively when users are viewing relationships for an item. The software:
+
+    Groups related items by relationship type.
+    Groups indirectly related items with their directly related item.
+    Displays the relationship label for each group relative to the item being viewed, that is, in a direction from that item to its related items.
+    Derives ancestor and descendant chains starting from a People item’s parents and children.
+    Lists groups in order of importance.
+
+
+Administrators can search for items with specific relationships using the Relationship options at the bottom of the Advanced Search page in the admin interface as shown in the screenshot below.
+
+![Searching for relationships](working-with-relationships-1.jpg)
 
 ## Indirect Relationships
 
@@ -85,28 +125,3 @@ and descendant chains. This ancestry feature works for Reference Items
 having a subject of `People`. It automatically follows *child of* relationships to
 locate parents, grandparents, and so on until the chain ends. It follows the inverse relationship
 parent of to locate children, grandchildren, and so on. The mechanism also automatically identifies siblings.
-
-## Viewing Relationships
-
-When you view an item in the Digital Archive, you also see thumbnails and titles of related items along with a graphical visualization depicting the relationships among items. You instantly see how the item you are viewing fits in with the rest of the collection. You can view a related item by clicking on its thumbnail image or title. Clicking on a thumbnail shows you a large version of that item’s image and lets you quickly browse every other image on the page. The screenshot below shows the page for an item and its relationships.
-
-![Viewing relationships](understanding-relationships-4.jpg)
-
-### Visualization
-
-The image below shows the visualization you see when you click the `Enlarge` link on the visualization
-preview shown in the screenshot above (just below the **_Relationships_** section at left). The item
-you are viewing, known as the primary item, appears with a green border around it. In this example, the
-primary item is 13178.
-
-![Relationships visualization](understanding-relationships-5.jpg)
-
-To keep the graph from becoming too cluttered, groups of two or more items having the same relationship to the primary item are consolidated into expandable purple dots. When you click on the dot, the graph changes to show those items. The screenshot below shows what you see when you click on the purple dot showing `4` in the center.
- 
-![Relationships visualization expanded](understanding-relationships-6.jpg)
-
-In the expanded graph, clicking on the purple dot in the center, or on the primary item
-at upper left, takes you back to the previous graph. In any visualization graph, you can
-click on a thumbnail to go to the item's page.
-
----

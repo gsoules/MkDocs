@@ -31,7 +31,6 @@ nav:
         Workflow fields: archivist/workflow-fields.md
     - Relationships:
         Understanding relationships: relationships/understanding-relationships.md
-        Working with relationships: relationships/working-with-relationships.md
         The Archive Relational Model: relationships/archive-relational-model.md
         Add a Relationship: relationships/add-relationship.md
     - For Administrators:
