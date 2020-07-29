@@ -2,9 +2,9 @@
 
 **To get started with the Digital Archive:**
 
--   Learn the terminology below &mdash; it appears throughout this documentation
--   Read about [who this documentation is for](../general/documentation-categories)
--   Jump to the [Getting Started for Users](/user/getting-started-user) section
+-   First learn the terminology below &mdash; it appears throughout this documentation
+-   Then read about [who this documentation is for](../general/documentation-categories)
+-   Finally, jump to the [Getting Started for Users](/user/getting-started-user) section
 
 ---
 

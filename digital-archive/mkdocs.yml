@@ -18,19 +18,24 @@ nav:
     - For Archivists:
         Getting Started for Archivists: archivist/getting-started-archivist.md
         Logging in: archivist/logging-in.md
-        $ Viewing Items as an Archivist: archivist/viewing-items-archivist.md
-        What Gets Searched: archivist/what-gets-searched.md
-        $ Add or edit an item: archivist/add-new-item.md
-        $ Edit an existing item: archivist/edit-item.md
-        $ Add a reference item: archivist/add-reference-item.md
-        $ Delete an item: archivist/delete-item.md
-        $ Attach a file to an item: archivist/attach-file.md
-        $ Working with Relationships: archivist/working-with-relationships.md
-        $ Vocabulary Editor: archivist/vocabulary-editor.md
-        $ Best Practices: archivist/best-practices.md
-        Field descriptions: archivist/field-descriptions.md
-        Workflow fields: archivist/workflow-fields.md
-    - For Administrators:
+        Special Features for Archivists: archivist/viewing-items-archivist.md
+        Understanding What Gets Searched: archivist/what-gets-searched.md
+        $ Add, Edit, or Delete an Item: archivist/add-edit-item.md
+        $ Attach an Image or PDF to an Item: archivist/attach-file.md
+        $ Add Relationships to an Item: archivist/working-with-relationships.md
+        $ Add or Edit a Vocabulary Term: archivist/vocabulary-editor.md
+        $ Recommended Best Practices: archivist/best-practices.md
+    - Relationships:
+        Understanding relationships: relationships/understanding-relationships.md
+        The Archive Relational Model: relationships/archive-relational-model.md
+        Implict Relationships: relationships/implicit-relationships.md
+        Cover Images for Reference Items: relationships/cover-images.md
+        Relationship Types: relationships/relationship-types.md
+        Relationship Rules: relationships/relationship-rules.md
+        Add a Relationship: relationships/add-relationship.md
+    - Vocabularies:
+        $ About vocabularies: archivist/vocabularies.md
+    - Site Administration:
         Getting Started for Administrators: administrator/getting-started-administrator.md
         FAQ: administrator/faq.md
         Omeka Elements: administrator/omeka-elements.md
@@ -38,25 +43,6 @@ nav:
         Export PastPerfect data: administrator/pastperfect-export.md
         Zoomable images: administrator/zoomable-images.md
         $ Differences from Omeka: administrator/differences-from-omeka.md
-    - For Developers:
-        Web server: developer/web-host.md
-        MkDocs: developer/mkdocs.md
-        File locations: developer/file-locations.md
-        MySQL Workbench: developer/mysql-workbench.md
-        Copy a MySQL database: developer/copy-mysql-db.md
-        Install a Digital Archive site: developer/install-digital-archive.md
-        GitHub: developer/github.md
-        Python: developer/python.md
-        Common Vocabulary Translator: developer/common-vocabulary-translator.md
-        Site maintenance: developer/site-maintenance.md
-        PHP development: developer/php-development.md
-        Technologies: developer/technologies.md
-    - Relationships:
-        Understanding relationships: relationships/understanding-relationships.md
-        The Archive Relational Model: relationships/archive-relational-model.md
-        Add a Relationship: relationships/add-relationship.md
-    - Vocabularies:
-        $ About vocabularies: archivist/vocabularies.md
     - Digital Archive plugins:
         AvantAdmin: plugins/avantadmin.md
         AvantCommon: plugins/avantcommon.md
@@ -70,6 +56,19 @@ nav:
         AvantSearch: plugins/avantsearch.md
         AvantVocabulary: plugins/avantvocabulary.md
         AvantZoom: plugins/avantzoom.md
+    - Technology:
+        Web server: developer/web-host.md
+        MkDocs: developer/mkdocs.md
+        File locations: developer/file-locations.md
+        MySQL Workbench: developer/mysql-workbench.md
+        Copy a MySQL database: developer/copy-mysql-db.md
+        Install a Digital Archive site: developer/install-digital-archive.md
+        GitHub: developer/github.md
+        Python: developer/python.md
+        Common Vocabulary Translator: developer/common-vocabulary-translator.md
+        Site maintenance: developer/site-maintenance.md
+        PHP development: developer/php-development.md
+        Technologies: developer/technologies.md
 
 theme:
     name: readthedocs

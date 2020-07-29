@@ -15,7 +15,7 @@ Information for how to [edit an existing item](#edit-an-item) follows these inst
 
 :   You will see a page similar to the screenshot below.
 
-![Add Item Button](add-item-11.jpg)
+![Add Item Button](add-edit-item-11.jpg)
 
 
 2 &ndash; Fill in the required fields
@@ -29,6 +29,7 @@ Information for how to [edit an existing item](#edit-an-item) follows these inst
 
     Notes:
 
+    - Which fields are required is determined by the Digital Archive site administrator.
     - The **_Identifier_** is filled in automatically for you - do not change it.
     - Use the **_Add Input_** buttons to add additional fields as needed.
     - You can add additional options to fields with dropdown menus with the 
@@ -48,7 +49,7 @@ Information for how to [edit an existing item](#edit-an-item) follows these inst
     If you leave any required fields blank and click **_Add Item_**,
     red error messages appear at the top of the page. Complete the missing fields and try again.
 
-    ![Error Message](add-item-5.jpg)
+    ![Error Message](add-edit-item-5.jpg)
 
 
 6 &ndash; Review the new item
@@ -87,7 +88,25 @@ Include
 
 Once you have saved a new item, click the **_View Public Page_** button in the menu on the right. You will see the item and its related information in a new tab. 
 
-![View Public Page](add-item-3.jpg)
+![View Public Page](add-edit-item-3.jpg)
+
+## Delete an Item
+
+ Go to the item’s page 
+    - Search for the item by title 
+    - Search for the item by item number 
+    - Click on the item in Recent Items  
+
+- Click the Edit Item button if you are on the public view 
+    - This will be under the metadata in blue, then click save  
+Skip this step if you are on the admin dashboard 
+
+- Delete S3 Files 
+    - See How to add and delete items in S3 
+
+- Delete the item from Omeka 
+    - Click Delete This Item 
+    - Click Delete 
 
 ---
 
@@ -97,7 +116,7 @@ Once you have saved a new item, click the **_View Public Page_** button in the m
 
 Databases with a large number of items may have many options for Type, Subject, and Rights. Instead of scrolling through a lengthy dropdown menu, you can type into a search field at the top of the dropdown menu to narrow your options. 
 
-![Search a Dropdown](add-item-6.jpg)
+![Search a Dropdown](add-edit-item-6.jpg)
 
 **Duplicating an existing item**
 

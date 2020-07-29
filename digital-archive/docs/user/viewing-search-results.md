@@ -44,7 +44,7 @@ use the selector and choose the field again.
 
 ---
 
-### Grid View
+## Grid View
 
 **Grid View** displays search results as a grid of thumbnails. The example below shows the same results
 as the examples in the Table View section above.
@@ -64,7 +64,7 @@ the search results. This works in both Grid View and Table View.
 
 ---
 
-### Index View
+## Index View
 
 Index View displays search results as an alphabetized index of unique values for a single metadata field that you choose
 using the **_Index by_** selector.

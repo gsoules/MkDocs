@@ -38,7 +38,8 @@ Administrators
     An administrator has a user name and password that allow them to login to a Digital Archive site. Once logged in, they
     have all the privileges of an **Archivist**, but can also perform administrative functions.
 
-    See [Getting Started for Administrators](/administrator/getting-started-archivist)
+    Documentation for administrator is the **Site Administration** section.  
+    See [Getting Started for Administrators](/administrator/getting-started-administrator)
 
     An administrator cannot modify Digital Archive functionality unless they are also a **Developer**.
 
@@ -47,11 +48,14 @@ Developers
     They are responsible for database management, programming, software upgrades, web server management,
     maintaining this documentation, and a variety of other tasks requiring technical expertise.
 
+    Documentation for developers is the **Technology** section.
+
 ---
 
 !!! Note ""
-    This documentation describes all Digital Archive features, but some features might not be enabled
-    on your installation. Which features are available depends on which Digital Archive plugins are installed. 
+    The documentation on this website describes all Digital Archive features, but some features might not be enabled
+    on your installation. Which features are available depends on which Digital Archive plugins your site
+    administrator has installed. 
 
 ---    
 
