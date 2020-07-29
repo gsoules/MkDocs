@@ -36,3 +36,8 @@ The Creator is the “entity primarily responsible for making the content of the
 -	Only upload web-sized images
 -	Define an archival file management scheme
 -	Scanning (include scanning resolution tree and other files)
+
+
+A Reference Item should have no image attached to it because its metadata should either
+be all text, or some text plus a PDF file attachment. The Digital Archive does not
+enforce this, but it is a best practive. See Cover Images

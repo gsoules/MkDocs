@@ -1,17 +1,32 @@
 # Cover Images for Reference Items
 
-The Cover Image feature allows you to use the image for one item as the representative image for a Reference item, but without attaching the image to the Reference item. A Reference item has no image attached to it because its content is text. When a Reference item does have an attachment, the attached file is usually a PDF document. The cover image appears in the upper left corner of the Reference item’s page as shown in the screen shot below.
+The Cover Image feature allows you to use the image for one item as the representative
+image for a Reference Item, but without attaching the image to the Reference Item.
+A Reference Item *should not have an image attached to it*, but it can have a PDF
+attachment if there is too much information about the item to be contained in the
+item's **_Description_** field. The Digital Archive does not enforce this guideline,
+but it is a best practice.
 
-Cover Images address the fact that a Reference item generally provides lifelong information about something, like biographical information for a person, or the history of a house, whereas a photograph literally captures a moment in time. Over its lifetime, a person or building may have been photographed many times. Each photograph belongs to its own Image item having metadata describing what’s known about the image, such as when it was taken, where, and by whom.
+The cover image appears in the upper left corner of the Reference Item’s page as though
+it were attached with a paperclip. This feature gives some "life" to the Reference Item's
+page so that you see the person, not just the PDF file.
 
-Despite the need to separate references from images, it’s desirable to associate an image with a Reference item so that when you view the Reference item, a picture of what it represents is prominently displayed. This is where Cover Images come in. In the screenshot below, the portrait in the upper left is the Cover Image for Reference item 13579, but the image itself is attached to item 11562.
+![Example of a cover image](cover-images-1.jpg)
 
-For Archivists
+## Setting a cover image
 
-The Archive Relational Model allows the lifelong information in a Reference item to coexist with the fleeting instance of a photograph by allowing each Image item to have a depicts relationships to a Reference item, and conversely, allowing each Reference item to be depicted by one or more Image items. The screenshot above shows Reference item 13579 for a women named Annie Downs Clark for whom the Archive contains several images, but only a small amount of biographical information. The portrait of Annie as a young girl that appears in the upper left, comes from Image item 11562 and serves as the Cover Image for item 13579. The metadata for 11562, tells us that the portrait was taken by John C. Ralph around 1899 which would make Annie about 11 years old the day she posed for this picture.
+To set the cover image for an item:
 
-Setting a Cover Image
+-   Edit the item
+-   Choose the **_Cover Image_** tab
+-   In the **_Item_** field, enter the **_Identifer_** number of the item containing the image
+-   Click the **_Save Changes_** button
 
-You set the Cover Image for an item by editing the item and choosing the Cover Image tab which appears when the AvantRelationships plugin is installed. To specify or change the item’s Cover Image, enter the Identifier number of the item containing the desired image, and then click the Save Changes button.
+In the screenshots below, the left side shows the **_Cover Image_** tab for item
+13579 which appears the example above. The number 11562 has been entered into the
+tab's **_Item_** field. The right side is the item page for item 11562. This illustrates
+how the image from item 11562 is being used as the cover for item 13579.
+
+![Example of a cover image](cover-images-2.jpg)
 
     
