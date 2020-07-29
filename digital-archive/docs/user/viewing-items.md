@@ -76,7 +76,7 @@ first go the item's page.
 ![Example of an item page](viewing-items-5.jpg)
 
 
-## Viewing all of an item's attachments
+## Viewing all of an item's images
 
 The lightbox window only displays an item's first image. To see all of an item's image
 and PDF attachments, go to the item's page by clicking its thumbnail title or by clicking the the `View Item`

@@ -26,7 +26,7 @@ div.wy-menu.wy-menu-vertical p.caption {
 
 /* Set the spacing between entries in the TOC. */
 div.wy-menu.wy-menu-vertical a {
-    line-height: 13px;
+    line-height: 16px;
 }
 
 /* Override code to be more subtle. */
@@ -101,6 +101,7 @@ div.admonition {
     margin-left: 18px;
 }
 
+/* Don't indent an admonition that appears immediately after an <hr>. */
 hr + div.admonition {
     margin-left: 0px;
 }

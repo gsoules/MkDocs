@@ -6,32 +6,32 @@
 
 Follow these steps to login to the Digital Archive:
 
-Click the login link
+1 &ndash; Click the login link
 :   Go to the site and click the `Login` link located at the lower right on every page
 
     ![login link](logging-in-1.jpg)
 
-Enter your user name and password
+2 &ndash; Enter your user name and password
 :   On the `Login` page, enter your user name and password. If you logged is as an *Archivist* or
     *Administrator*, a dark gray menu bar will appear at the top of the page.
 
-    ![login link](logging-in-2.jpg)    
 
+3 &ndash; Access admin features 
 
-Access admin features 
+:   ![login link](logging-in-2.jpg)    
 
-:   Click your name in the dark menu bar to get to the _**Avant Dashboard**_ page.
+    Click your name in the dark menu bar to get to the **_Avant Dashboard_** page.
     From the dashboard you can get to all *backend* features, that is, features that
     only logged in users have access to.
 
 ## Avant Dashboard
 
-_**Avant Dashboard**_ page shows you the items you have recently modified and added.
-Its top and left **_admin menus_** provide access to a number of features that archivists and
+The **_Avant Dashboard_** page shows you the items you have recently modified and added.
+Its top and left admin menus provide access to a number of features that archivists and
 administrators use. When logged in as an archivist you see fewer features
 (first screenshot below) than when logged in as an administrator (second screenshot below).
 
-![login link](logging-in-4.jpg)
+![login link](logging-in-5.jpg)
 
 !!! Note "Tip"
     To get back to the public Digital Archive interface, but still stay logged in,

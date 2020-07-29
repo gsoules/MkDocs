@@ -18,8 +18,9 @@ nav:
     - For Archivists:
         Getting Started for Archivists: archivist/getting-started-archivist.md
         Logging in: archivist/logging-in.md
+        $ Viewing Items as an Archivist: archivist/viewing-items-archivist.md
         What Gets Searched: archivist/what-gets-searched.md
-        $ Add a new item: archivist/add-new-item.md
+        $ Add or edit an item: archivist/add-new-item.md
         $ Edit an existing item: archivist/edit-item.md
         $ Add a reference item: archivist/add-reference-item.md
         $ Delete an item: archivist/delete-item.md

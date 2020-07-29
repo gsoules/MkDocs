@@ -1,6 +1,7 @@
 # Archive Relational Model
 
-The Archive Relational Model was developed in 2016 by George Soules of AvantLogic Corporation.
+The Archive Relational Model was developed in 2016 by George Soules of AvantLogic Corporation
+in partnership with Charlotte Morrill who had the original vision.
 It is a new approach for recording and presenting images and information about people, places,
 events, organizations, and objects in the real world. It provides archivists with a structured,
 but easy to use method for presenting their collections online in a way that engages users by
