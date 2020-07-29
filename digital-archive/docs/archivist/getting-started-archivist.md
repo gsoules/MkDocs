@@ -1,6 +1,10 @@
-# Getting Started as an Archivist
+# Getting Started for Archivists
 
-**New to the Digital Archive?** Here are things they every archivist can do.
+**To get started using the Digital Archive as an archivist:**
+
+-   Read the sections below that explain *what archivists can do* with the Digital Archive
+-   Login to the Digital Archive
+-   [Add a new item](/archivist/add-new-item) or [edit an existing item](/archivist/edit-item)
 
 ---
 

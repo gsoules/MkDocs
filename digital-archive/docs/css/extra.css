@@ -24,6 +24,11 @@ div.wy-menu.wy-menu-vertical p.caption {
 	text-transform: unset;
 }
 
+/* Set the spacing between entries in the TOC. */
+div.wy-menu.wy-menu-vertical a {
+    line-height: 13px;
+}
+
 /* Override code to be more subtle. */
 .rst-content code {
     color: #333;
@@ -45,7 +50,7 @@ pre, img, table {
     margin-left: 18px;
 }
 
-p+ ul {
+p + ul {
     margin-left: 12px;
 }
 
@@ -94,6 +99,10 @@ strong em {
 
 div.admonition {
     margin-left: 18px;
+}
+
+hr + div.admonition {
+    margin-left: 0px;
 }
 
 div.admonition p {

@@ -1,15 +1,12 @@
-!!! danger ""
-    This documentation is under development. It is incomplete and may contain incorrect information.
-    Do not rely on what you see here until this notice has been removed.
+# Getting Started
 
-# Read Me First
+**To get started with the Digital Archive:**
 
-The documentation on this Digital Archive Docs website will make much more sense if you take a few minutes to
-learn about the key concepts below. [Learn who this documentation is for](../general/documentation-categories).
+-   Learn the terminology below &mdash; it appears throughout this documentation
+-   Read about [who this documentation is for](../general/documentation-categories)
+-   Jump to the [Getting Started for Users](/user/getting-started-user) section
 
 ---
-
-### Digital Archive concepts
 
 Items & Metadata
 :   An **item** represents one *thing* in a Digital Archive collection. **Metadata** is information *about*
@@ -33,7 +30,6 @@ Type, Subject, and Keywords
     
     **Keywords** are significant words in an item's **_Title_**, **_Description_** and all other metadata fields.
     There is no separate metadata field for keywords. They are simply the words an archivist choose to describe an item.
-    [Learn about Type, Subject, and Keywords](../subjects).
 
     Each item can have only one type. Typically an item will have one or two subjects and many keywords.
     An archivist's choice of an item's type, subject, and keywords affect how easy it will be for a user to find the
@@ -44,6 +40,7 @@ Reference Items
     for things in the real world that are typically not part of a collection, but that tie other items in the collection
     together via relationships. The most common use of reference items is to provide biographical information about a person,
     and to provide historical information about a structure, vessel, business, organization, or event.
+
     [Learn about Reference Items](/user/understanding-relationships/#reference-items).    
 
 Attachments
@@ -51,6 +48,7 @@ Attachments
     a searchable PDF file implicitly become part of the item's keyword metadata just as if they appeared in
     the item's *Description* or other metadata field. PDF attachments are commonly used to provide the biographical
     or historical information for a Reference item.
+
     [Learn about attaching files to an item](../../archivist/add-new-item).
 
 Facets
@@ -63,29 +61,17 @@ Facets
     facets to narrow down search results to `Photographs` of `Vessels`. You can then further narrow down the
     results to something more specific such as `Sailboat`.
     
-    [Learn to Search using Facets](../../user/how-to-search/#search-using-facets).
+    [Learn to search using facets](../../user/how-to-search/#search-using-facets).
 
 Relationships
 :   Relationships show how items are related to each other. For example, a collection might have three photographs
     of a person plus a document about that person's life. These items are related because the photographs depict
     the person and the document is about the person in the photographs.
-    [Learn about Relationships](../relationships).
 
     The Digital Archive displays related items together so that when you see one item you also see its related items.
     For example, if a search turns up one of the photos of the person, you'll also see the other two photos and the
     document. For this to work, an archivist must establish relationships among the items in the collection.
 
-Search and Search Results
-:   [Learn about what gets searched](../../user/what-gets-searched/#what-gets-searched).
+    [Learn about Relationships](../relationships).
 
-    A search can return many items. You can [view search results](../../user/viewing-search-results) as a
-    **table**, a **grid**, or an **index** (like at the back of a book). You can [share results](../../user/sharing)
-     with friends and colleages and [print results to a PDF file](../../user/printing). You can easily find items that you
-    recently viewed without having to search for them again, and you can save and organize items in a [digital
-    notebook](../../user/digital-notebook). These topics are covered in the *For Users* documentation.
-
----
-
-!!! Note ""
-    Not all of the features above are enabled in all Digital Archive installations.
-    Which features are available depends on which Digital Archive plugins are installed.   
+  

@@ -1,6 +1,9 @@
-# Getting Started Using the Digital Archive
+# Getting Started for Users
 
-**New to the Digital Archive?** Here are things that every user can do.
+**To get started using the Digital Archive:**
+
+-   Read the sections below that explain *what you can do* with the Digital Archive
+-   Click the **_Learn how to_** link in any section
 
 ---
 
@@ -22,7 +25,7 @@ View search results in different ways
     -   Index view (like the index in the back of a book)
 
     ![Different views of search results](getting-started-1.jpg)    
-    [Learn about viewing search results](/user/viewing-search-results)
+    [Learn how to view search results](/user/viewing-search-results)
 
 
 Flag items to view later
@@ -30,7 +33,7 @@ Flag items to view later
     quickly find them again without doing a new search. Just click the little flag icon beside the item number.
 
     ![Flagging items to view later](getting-started-2.jpg)    
-    [Learn about flagging items](/user/recently-viewed)
+    [Learn how to flagging items](/user/recently-viewed)
 
 Share search results with other people
 :   You can share your search results with a friend or colleage by sending them a link.
