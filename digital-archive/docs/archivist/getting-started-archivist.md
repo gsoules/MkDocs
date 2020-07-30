@@ -2,11 +2,14 @@
 
 **To get started using the Digital Archive as an archivist:**
 
--   Read the sections below that explain *what archivists can do* with the Digital Archive
+-   Learn what archivists can do by reading the sections below
+-   Learn how to [navigate the Digital Archive](/archivist/navigate) to work quickly and efficiently
 -   [Login](/archivist/logging-in) to the Digital Archive
 -   [Add or edit an item](/archivist/add-edit-item)
 
 ---
+
+> What an archivist can do:
 
 Search the collection and work with search results
 :   An archivist can do everything that a public (not logged-in) user can do:
@@ -18,7 +21,7 @@ Search the collection and work with search results
     -   [Create a PDF report that you can print](/user/pdf-report)
     -   [Use the Digital Notebook to save and organize what you find](/user/digital-notebook)
 
-Login to their Digital Archive account
+Login to the Digital Archive
 :   An archivist has a user name and password that they use to login to the Digital Archive.  
     You must be logged-in to perform any of the tasks described on the rest of this page.
 

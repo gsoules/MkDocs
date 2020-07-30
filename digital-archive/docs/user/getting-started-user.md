@@ -2,10 +2,12 @@
 
 **To get started using the Digital Archive:**
 
--   Read the sections below that explain *what you can do* with the Digital Archive
+-   Learn what you can do with the Digital Archive by reading the sections below
 -   Click the **_Learn how to_** link in any section
 
 ---
+
+> What a user can do:
 
 Search one collection or many
 :   You can search any or all collections in three different ways:

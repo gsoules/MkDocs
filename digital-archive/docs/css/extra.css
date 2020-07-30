@@ -8,7 +8,6 @@ h5 {
 	margin-block-end: 0.5em; 
 }
 
-
 /* Make the sidebar title bigger. */
 a.icon.icon-home {
     font-size: 24px;
@@ -43,6 +42,7 @@ div.wy-menu.wy-menu-vertical a {
     border-top: none;
     background: none;
     margin-bottom: 2px;
+    padding: 6px 0 6px 8px;
 }
 
 /* Indent code, images, tables, and lists. */
@@ -82,6 +82,17 @@ td, th {
 
 th {
 	font-size: 95%;
+}
+
+/* Change blockquote to be a heading that does not have an H1, H2 etc. and thus does not appear in the TOC. */
+.rst-content blockquote {
+    margin-left: 0;
+    margin-bottom: 16px;
+}
+
+.rst-content blockquote p {
+    font-size: 140%;
+    margin-bottom: 16px;
 }
 
 strong em {

@@ -2,12 +2,12 @@
 
 ---
     
-> [MkDocs](https://www.mkdocs.org/) is a static website generator for building project
-> documentation written in [Markdown](https://www.markdownguide.org/). Markdown is a very
-> simple markup language used to create formatted documentation (like you see on this page)
-> in a plain text file without having to use a program like Microsoft Word.
-> The combination of MkDocs and Markdown makes it possible for multiple authors to produce
-> consistent looking documentation, keep it up to date, and make it accessible online.
+[MkDocs](https://www.mkdocs.org/) is a static website generator for building project
+documentation written in [Markdown](https://www.markdownguide.org/). Markdown is a very
+simple markup language used to create formatted documentation (like you see on this page)
+in a plain text file without having to use a program like Microsoft Word.
+The combination of MkDocs and Markdown makes it possible for multiple authors to produce
+consistent looking documentation, keep it up to date, and make it accessible online.
 
 Virtually all documentation about the Digital Archive is created and maintained using MkDocs.
 Some Digital Archive sites present information about their collection using either a sister 

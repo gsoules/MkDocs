@@ -1,16 +1,31 @@
 # Relationship Types
 
-The nature of a relationship is determined by its type. The married to relationship is one type and the designed relationship is another type. The validity of a relationship between any two items is determined by Relationship Rules. This page describes how archivists define relationship types and set their rules.
+Relationship types make the association of any two items meaningful by indicating the
+nature of their relationship to each other. Below are the relationship types for a collection that
+has a lot of information about people, organizations, houses, and boats. The choice of
+relationship types for a different collection could be different.
 
-To get a better sense of relationship types, take a look at the Relationship Types & Rules table. It lists every type of relationship currently in use among items in the Archive. It also spells out the rules that apply to the two items involved in the relationship.
-For Archivists
+![Examples of relationship types](relationship-types-1.jpg)
 
-Chances are that you will never have to add or edit relationship types, because once the types have been established, they rarely change. However, as you add new items to your Omeka database, you may occasionally encounter a situation where no existing type matches the circumstances and so a relationship type needs to be added or modified.
-Editing a Relationship Type
+ This page describes how a Digital Archive site
+administrator defines relationship types.
 
-To add, edit, or remove a relationship type, first go to the Relationships page shown below by clicking on the Relationships button at the bottom of the left menu in the admin interface.
+!!! Note "Advanced Topic"
+    Adding relationship types is something that an organization does once initially
+    and then refines and extends over time. It is not an everyday activity. The instructions
+    that follow are intended for an administrator having a solid understanding of
+    [The Archive Relational Model](/relationships/archive-relational-model) and good
+    computer skills. This information is not intended for archivist who only add and enter items.
 
-Next, click the green Edit Relationship Types button to go to the Edit Relationships Types page shown below.
+## Editing a relationship type
+
+To get started:
+
+-   Clicking the **_Relationships_** button in the left admin menu
+-   On the **_Relationships_** page, click the **_Edit Relationship Types_** button
+-   You will see a page similar to the one shown below.
+
+![Examples of relationship types](relationship-types-2.jpg)
 
 At the bottom of the page (not shown) is a green Add Relationship Type button that you can click to add a new type.
 

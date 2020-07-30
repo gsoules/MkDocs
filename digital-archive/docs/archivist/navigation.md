@@ -1,11 +1,12 @@
-# Viewing Items as an Archivist
+# How to Navigate the Digital Archive
 
 A user logged in as an archivist or administrator can view an item in two ways:
 
 -   Public item view
 -   Admin item view
 
-# Public item view
+
+## Public item view
 
 The [Viewing Items](/user/viewing-items) section in the documentation for Users shows
 examples of what a non-logged-in user see when they visit the page for an item. A
@@ -16,6 +17,10 @@ logged-in user can see additional information.
 -   private items
 -   Edit, View, Relationship links
 
-# Admin item view
+## Admin item view
 
 Note for guest
+
+## Access to admin features
+
+## 

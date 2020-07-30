@@ -8,6 +8,8 @@
 
 ---
 
+> Digital Archive terms and concepts
+
 Items & Metadata
 :   An **item** represents one *thing* in a Digital Archive collection. **Metadata** is information *about*
     an item such as what it is or who created it. Different kinds of information are are stored in separate
@@ -35,15 +37,7 @@ Type, Subject, and Keywords
     An archivist's choice of an item's type, subject, and keywords affect how easy it will be for a user to find the
     item when they search the collection.
 
-Reference Items
-:   A Reference Item is one that has it type set to `Reference`. These are special items that serve as stand-ins
-    for things in the real world that are typically not part of a collection, but that tie other items in the collection
-    together via relationships. The most common use of reference items is to provide biographical information about a person,
-    and to provide historical information about a structure, vessel, business, organization, or event.
-
-    [Learn about Reference Items](/user/understanding-relationships/#reference-items).    
-
-Attachments
+Image and PDF Attachments
 :   An item can have digital images (photographs or scans) and PDF files attached to it. Keywords in the text of
     a searchable PDF file implicitly become part of the item's keyword metadata just as if they appeared in
     the item's *Description* or other metadata field. PDF attachments are commonly used to provide the biographical
@@ -62,6 +56,14 @@ Facets
     results to something more specific such as `Sailboat`.
     
     [Learn to search using facets](../../user/how-to-search/#search-using-facets).
+
+Reference Items
+:   A Reference Item is one that has it type set to `Reference`. These are special items that serve as stand-ins
+    for things in the real world that are typically not part of a collection, but that tie other items in the collection
+    together via relationships. The most common use of reference items is to provide biographical information about a person,
+    and to provide historical information about a structure, vessel, business, organization, or event.
+
+    [Learn about Reference Items](/user/understanding-relationships/#reference-items).    
 
 Relationships
 :   Relationships show how items are related to each other. For example, a collection might have three photographs
