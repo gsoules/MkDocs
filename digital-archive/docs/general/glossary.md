@@ -107,6 +107,9 @@ Super user (Omeka)
 Term
 :   A word or short phrase in a *vocabulary* or *facet*.
 
+Visualization
+:   A graphical depiction of an item's relationships with other items. See [View Related Items](/user/viewing-relationships).
+
 Vocabulary
 :   Terms that classify and index *collection* items.
 

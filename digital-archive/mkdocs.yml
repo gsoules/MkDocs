@@ -9,29 +9,29 @@ nav:
         Getting Started for Users: user/getting-started-user.md
         How to Search: user/how-to-search.md
         View Search Results: user/viewing-search-results.md
-        View Items: user/viewing-items.md
-        View Relationships: user/viewing-relationships.md
+        $ View an Item: user/viewing-items.md
+        View Related Items: user/viewing-relationships.md
         Flag Items to View Later: user/recently-viewed.md
         Share Search Results: user/sharing.md
         Create PDF Reports: user/pdf-report.md
         Use the Digital Notebook: user/digital-notebook.md
     - For Archivists:
         Getting Started for Archivists: archivist/getting-started-archivist.md
-        $ How to Navigate the Digital Archive: archivist/navigation.md
         Log in as an archivist: archivist/logging-in.md
+        $ Navigating the Digital Archive: archivist/navigation.md
         $ Add, Edit, or Delete an Item: archivist/add-edit-item.md
         $ Attach an Image or PDF to an Item: archivist/attach-file.md
-        $ Add a Relationship to an Item: archivist/add-relationships.md
+        $ Add a Relationship to an Item: archivist/add-relationship.md
         $ Add or Edit a Vocabulary Term: archivist/vocabulary-editor.md
         Understanding What Gets Searched: archivist/what-gets-searched.md
         $ Best Practices: archivist/best-practices.md
     - Relationships:
-        Understanding relationships: relationships/understanding-relationships.md
-        The Archive Relational Model: relationships/archive-relational-model.md
-        Implict Relationships: relationships/implicit-relationships.md
-        Cover Images for Reference Items: relationships/cover-images.md
-        Relationship Types: relationships/relationship-types.md
-        Relationship Rules: relationships/relationship-rules.md
+        $ Getting Started with Relationships: relationships/getting-started-relationships.md
+        Archive Relational Model: relationships/archive-relational-model.md
+        $ Reference Items: relationships/reference-items.md
+        Kinds of Relationships: relationships/kinds-of-relationships.md
+        $ Relationship Types: relationships/relationship-types.md
+        $ Relationship Rules: relationships/relationship-rules.md
     - Vocabularies:
         $ About vocabularies: archivist/vocabularies.md
     - Site Administration:
@@ -67,7 +67,7 @@ nav:
         Common Vocabulary Translator: developer/common-vocabulary-translator.md
         Site maintenance: developer/site-maintenance.md
         PHP development: developer/php-development.md
-        Technologies: developer/technologies.md
+        $ Technologies: developer/technologies.md
 
 theme:
     name: readthedocs

@@ -11,12 +11,19 @@
 > Digital Archive terms and concepts
 
 Items & Metadata
-:   An **item** represents one *thing* in a Digital Archive collection. **Metadata** is information *about*
-    an item such as what it is or who created it. Different kinds of information are are stored in separate
+:   An **item** represents one *thing* in a Digital Archive collection and all its associated metadata.
+    Examples of items are photographs, documents, maps, publications, physical objects.
+
+    **Metadata** is
+    information *about* information. For example, the information *in* a photograph is the image
+    itself which is a picture of something. The metadata for a photograph is the information *about*
+    the image such as the subjects in the picture or the name of the photographer.
+    
+    Different kinds of metadata are stored in separate
     metadata *fields* such as **_Title_**, **_Type_**, **_Subject_**, and **_Description_**.
 
     If you have used other kinds of databases, you might be more familiar with the terms *records* and *columns*
-    rather than items and fields. They are the same thing.
+    rather than *items* and *fields*. They are the same thing.
 
     A small collection might have only a few hundred items whereas a large collection could have tens
     of thousands of items. How easy or difficult it will be for people to find items in a collection

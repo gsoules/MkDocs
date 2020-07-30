@@ -114,7 +114,7 @@ div.admonition {
 
 /* Don't indent an admonition that appears immediately after an <hr>. */
 hr + div.admonition {
-    margin-left: 0px;
+    margin-left: 0;
 }
 
 div.admonition p {

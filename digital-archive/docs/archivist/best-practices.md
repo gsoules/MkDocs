@@ -37,7 +37,17 @@ The Creator is the “entity primarily responsible for making the content of the
 -	Define an archival file management scheme
 -	Scanning (include scanning resolution tree and other files)
 
+---
 
 A Reference Item should have no image attached to it because its metadata should either
 be all text, or some text plus a PDF file attachment. The Digital Archive does not
 enforce this, but it is a best practive. See Cover Images
+
+---
+
+Metadata appears in fields with names like Title, Description, and Location. Not every item has every metadata field, only the ones that are relevant and for which we have information. Every item has these metadata fields:
+
+    Identifier – Four or five digit number that is unique to that item.
+    Title – Brief description of the item. Some items have more than one title. This is common for boats where the name changed over time.
+    Type – The kind of real-world object the item represents. Learn about Item Types.
+    Subject – What the item is about. Some items have more than one subject. Learn about Subjects.

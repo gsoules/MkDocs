@@ -1,6 +1,6 @@
-# Viewing Items
+# View an Item
 
-You can view search result items in these ways:
+You can view one item from search results in these ways:
 
 - Click on the thumbnail title to view the item on its on page
 - Click on the thumbnail itself to see a larger version of the image
