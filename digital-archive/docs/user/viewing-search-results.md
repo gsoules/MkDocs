@@ -1,4 +1,4 @@
-# View Search Results
+# Viewing Search Results
 
 You can view search results in three ways:
 

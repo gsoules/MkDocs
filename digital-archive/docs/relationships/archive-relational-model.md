@@ -66,11 +66,9 @@ piece of paper having an image of a person at one moment in time.
 
 ## Reference Items
 
-In the Digital Archive, the term **Reference Item** refers to an item that serves as the stand-in for
-a person, boat, house, business or other real world entity that is not actually contained in your collection.
-This is in contrast to other items like photographs, maps, documents, and teacups that are part of your
-collection. The concept of a reference is central to the Archive Relational Model and is the key to
-establishing relationships among  the other items in your collection.
+In the Digital Archive, a **Reference Item** is used to relate other items to each other.
+The concept of a reference is central to the Archive Relational Model and is the key to
+establishing relationships among  the items in your collection.
 To complete your understanding of the Archive Relational Model,
 [learn about Reference Items](/relationships/reference-items/).
 

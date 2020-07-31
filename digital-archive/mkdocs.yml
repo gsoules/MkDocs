@@ -8,9 +8,9 @@ nav:
     - For Users:
         Getting Started for Users: user/getting-started-user.md
         How to Search: user/how-to-search.md
-        View Search Results: user/viewing-search-results.md
-        $ View an Item: user/viewing-items.md
-        View Related Items: user/viewing-relationships.md
+        Viewing Search Results: user/viewing-search-results.md
+        Viewing Items: user/viewing-items.md
+        Viewing Related Items: user/viewing-related-items.md
         Flag Items to View Later: user/recently-viewed.md
         Share Search Results: user/sharing.md
         Create PDF Reports: user/pdf-report.md
@@ -26,9 +26,9 @@ nav:
         Understanding What Gets Searched: archivist/what-gets-searched.md
         $ Best Practices: archivist/best-practices.md
     - Relationships:
-        $ Getting Started with Relationships: relationships/getting-started-relationships.md
+        Getting Started with Relationships: relationships/getting-started-relationships.md
         Archive Relational Model: relationships/archive-relational-model.md
-        $ Reference Items: relationships/reference-items.md
+        Reference Items: relationships/reference-items.md
         Kinds of Relationships: relationships/kinds-of-relationships.md
         $ Relationship Types: relationships/relationship-types.md
         $ Relationship Rules: relationships/relationship-rules.md

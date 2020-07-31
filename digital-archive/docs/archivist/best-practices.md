@@ -39,10 +39,17 @@ The Creator is the “entity primarily responsible for making the content of the
 
 ---
 
+## Reference Items
 A Reference Item should have no image attached to it because its metadata should either
 be all text, or some text plus a PDF file attachment. The Digital Archive does not
 enforce this, but it is a best practive. See Cover Images
-
+    A Reference Item *should not have an image attached to it*, but it can have a PDF
+    attachment.  
+    The Digital Archive does not enforce this guideline, but it is a best practice
+    because attaching an image to a Reference Item is inconsistent with the 
+    [Archive Relational Model](/relationships/archive-relational-model/) which uses the
+    *depicts* relationship to associate a Reference Item with all of its images.
+	Just because you have only one image now doesn't mean you won't get more later.
 ---
 
 Metadata appears in fields with names like Title, Description, and Location. Not every item has every metadata field, only the ones that are relevant and for which we have information. Every item has these metadata fields:
