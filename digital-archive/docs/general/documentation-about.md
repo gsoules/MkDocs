@@ -13,7 +13,7 @@ Users
     A user can see all public items in a Digital Archive collection,
     but has no access to non-public items or private fields.
 
-    A user cannot edit or add items unless they login as an **Archivist** or **Administrator**.
+    A user cannot edit or add items unless they log in as an **Archivist** or **Administrator**.
 
     See [Getting Started for Users](/user/getting-started-user)
 
@@ -22,11 +22,11 @@ Archivists
     for a Digital Archive site. They can add new items, edit existing items, attach images and PDF
     files to items, edit vocabularies, and establish relationships among items.
 
-    An archivist has a user name and password that allow them to login to a Digital Archive site. Once logged in, they
+    An archivist has a user name and password that allows them to log in to a Digital Archive site. Once logged in, they
     can see all public items in the collection as well as non-public items and private fields.
 
-    An archivist cannot make changes to the Digital Archive installation unless
-    they login as an **Administrator**.
+    An archivist cannot make changes to a Digital Archive installation unless
+    they log in as an **Administrator**.
 
     See [Getting Started for Archivists](/archivist/getting-started-archivist)
 
@@ -38,7 +38,7 @@ Administrators
     An administrator has a user name and password that allow them to login to a Digital Archive site. Once logged in, they
     have all the privileges of an **Archivist**, but can also perform administrative functions.
 
-    Documentation for administrator is the **Site Administration** section.  
+    Documentation for administrators is in the **Site Administration** section.  
     See [Getting Started for Administrators](/administrator/getting-started-administrator)
 
     An administrator cannot modify Digital Archive functionality unless they are also a **Developer**.

@@ -3,7 +3,7 @@
 **To get started using the Digital Archive as an archivist:**
 
 -   Learn what archivists can do by reading the sections below
--   Learn how to [navigate the Digital Archive](/archivist/navigate) to work quickly and efficiently
+-   Learn about [special features for archivists](/archivist/special-features-archivist)
 -   [Login](/archivist/logging-in) to the Digital Archive
 -   [Add or edit an item](/archivist/add-edit-item)
 

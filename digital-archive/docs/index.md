@@ -3,8 +3,7 @@
 **To get started with the Digital Archive:**
 
 -   First learn the terminology below &mdash; it appears throughout this documentation
--   Then read about [who this documentation is for](../general/documentation-categories)
--   Finally, jump to the [Getting Started for Users](/user/getting-started-user) section
+-   Then, jump to the [Getting Started for Users](/user/getting-started-user) section
 
 ---
 
@@ -25,7 +24,7 @@ Items & Metadata
     If you have used other kinds of databases, you might be more familiar with the terms *records* and *columns*
     rather than *items* and *fields*. They are the same thing.
 
-    A small collection might have only a few hundred items whereas a large collection could have tens
+    A small collection might have only a few hundred items, whereas a large collection could have tens
     of thousands of items. How easy or difficult it will be for people to find items in a collection
     is affected by the quantity and quality of each item's metadata. Lots of good metadata that is specific to
     each item makes for good search results. Conversely, scant metadata, or metadata that is too broad for the
@@ -33,24 +32,24 @@ Items & Metadata
 
 Type, Subject, and Keywords
 :   An item's **type** tells you what kind of *thing* the item is. For example, an item's type might be `photograph`,
-    `document`, or `teacup`. An item's **subject** clarifies its type. For example, an item of type `photograph`
-    could have the subjects `person` and `boat` to indicate it's a photograph of. A subject is not required
+    `document`, or `object` (a teacup, for example). An item's **subject** clarifies its type. For example, an item of type `photograph`
+    could have the subjects `person` and `boat` to indicate what it is a photograph of.  A subject is not required
     for an item when its type is self-explanatory such as *teacup*.
     
     **Keywords** are significant words in an item's **_Title_**, **_Description_** and all other metadata fields.
-    There is no separate metadata field for keywords. They are simply the words an archivist choose to describe an item.
+    There is no separate metadata field for keywords. They are simply the words an archivist chooses to describe an item.
 
     Each item can have only one type. Typically an item will have one or two subjects and many keywords.
-    An archivist's choice of an item's type, subject, and keywords affect how easy it will be for a user to find the
+    An archivist's choice of an item's type, subject, and keywords affects how easy it will be for a user to find the
     item when they search the collection.
 
 Image and PDF Attachments
 :   An item can have digital images (photographs or scans) and PDF files attached to it. Keywords in the text of
     a searchable PDF file implicitly become part of the item's keyword metadata just as if they appeared in
-    the item's *Description* or other metadata field. PDF attachments are commonly used to provide the biographical
+    the item's **_Description_** or other metadata field. PDF attachments are commonly used to provide the biographical
     or historical information for a Reference item.
 
-    [Learn about attaching files to an item](../../archivist/add-new-item).
+    [Learn about attaching files to an item](/archivist/attach-file).
 
 Facets
 :   In addition to keyword searching, you can find items by drilling down into a collection
@@ -65,22 +64,22 @@ Facets
     [Learn to search using facets](../../user/how-to-search/#search-using-facets).
 
 Reference Items
-:   A Reference Item is one that has it type set to `Reference`. These are special items that serve as stand-ins
+:   A **Reference Item** is an item that has its type set to `Reference`. These are special items that serve as stand-ins
     for things in the real world that are typically not part of a collection, but that tie other items in the collection
     together via relationships. The most common use of reference items is to provide biographical information about a person,
     and to provide historical information about a structure, vessel, business, organization, or event.
 
-    [Learn about Reference Items](/user/understanding-relationships/#reference-items).    
+    [Learn about Reference Items](/relationships/reference-items).
 
 Relationships
-:   Relationships show how items are related to each other. For example, a collection might have three photographs
-    of a person plus a document about that person's life. These items are related because the photographs depict
+:   **Relationships** show how items are related to each other. For example, a collection might have three photographs
+    of a person, plus a document about that person's life. These items are related because the photographs depict
     the person and the document is about the person in the photographs.
 
-    The Digital Archive displays related items together so that when you see one item you also see its related items.
+    The Digital Archive displays related items together so that when you see one item, you also see its related items.
     For example, if a search turns up one of the photos of the person, you'll also see the other two photos and the
     document. For this to work, an archivist must establish relationships among the items in the collection.
 
-    [Learn about Relationships](../relationships).
+    [Learn about Relationships](/relationships/getting-started-relationships/).
 
   
