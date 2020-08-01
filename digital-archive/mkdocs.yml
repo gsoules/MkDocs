@@ -3,8 +3,7 @@ copyright: 'Copyright &copy; 2020 AvantLogic Corporation'
 
 nav:
     - Getting Started: index.md
-    - About this Documentation: general/documentation-about.md
-    - Glossary: general/glossary.md
+    - Glossary: glossary.md
     - For Users:
         Getting Started for Users: user/getting-started-user.md
         How to Search: user/how-to-search.md

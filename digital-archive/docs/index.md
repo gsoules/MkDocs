@@ -1,13 +1,29 @@
 # Getting Started
 
-**To get started with the Digital Archive:**
+The Digital Archive provides a new model for sharing local knowledge that is rooted in
+time and place. It addresses a shortcoming of popular content management solutions which
+isolate database items by not providing archivists with a way to define and establish real-world
+relationships that tie collection items together to form stories.
 
--   First learn the terminology below &mdash; it appears throughout this documentation
--   Then, jump to the [Getting Started for Users](/user/getting-started-user) section
+[Relationships](/relationships/getting-started-relationships/) are key in the Digital Archive
+[model](/relationships/archive-relational-model/) which is based on two fundamental principles.
+The first is that every item in a collection should somehow relate to other items, otherwise it might
+not belong in the collection. The second is that users should be able to easily
+“connect the dots” by following relationships from one item to another to discover
+stories that are of interest to them.
+
+**To get started using the Digital Archive:**
+
+-   Get familiar with the terms and concepts below
+-   See [Getting Started for Users](/user/getting-started-user)
+-   See [Getting Started for Archivists](/archivist/getting-started-archivist)
 
 ---
 
 > Digital Archive terms and concepts
+
+**The terminology below appears throughout the documentation.**
+Take a few minutes to read this information so that the rest of the documentation will be easier to understand.
 
 Items & Metadata
 :   An **item** represents one *thing* in a Digital Archive collection and all its associated metadata.
@@ -34,7 +50,8 @@ Type, Subject, and Keywords
 :   An item's **type** tells you what kind of *thing* the item is. For example, an item's type might be `photograph`,
     `document`, or `object` (a teacup, for example). An item's **subject** clarifies its type. For example, an item of type `photograph`
     could have the subjects `person` and `boat` to indicate what it is a photograph of.  A subject is not required
-    for an item when its type is self-explanatory such as *teacup*.
+    for an item when its type is self-explanatory such as *teacup*. Type and subject terms are defined in
+    [vocabularies](/archivist/vocabularies/).
     
     **Keywords** are significant words in an item's **_Title_**, **_Description_** and all other metadata fields.
     There is no separate metadata field for keywords. They are simply the words an archivist chooses to describe an item.
