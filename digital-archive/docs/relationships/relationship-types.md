@@ -7,7 +7,9 @@ relationship types for a different collection could be different.
 
 ![Examples of relationship types](relationship-types-1.jpg)
 
-This page explains relationship types and how you define them.
+**This page explains relationship types and how you define them.**
+
+---
 
 !!! Note "Advanced Topic"
     Defining relationship types is something an organization does once initially
@@ -16,8 +18,6 @@ This page explains relationship types and how you define them.
     [The Archive Relational Model](/relationships/archive-relational-model) and is
     comfortable with technical explanations. **This information is not intended for 
     users or for archivists**.
-
----
 
 ## Relationship semantics
 
@@ -79,7 +79,7 @@ the right of the admin search box. On the panel that drops down, click the
 
 ## Relationship editor
 
-To add or edit a relationship:
+To add or edit a relationship type:
 
 -   Click the **_Relationships_** button in the left admin menu
 -   On the **_Relationships_** page, click the **_Edit Relationship Types_** button
