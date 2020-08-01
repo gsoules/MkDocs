@@ -101,9 +101,10 @@ that will appear at the bottom of the page.
 
 ### Add, edit, or remove a relationship type
 
-To add a new relationship type, click the **_Add Relationship Type_** button located at the bottom of the the page
-(not shown in the screenshot above). To edit an existing relationship type, click the arrow icon to the far right of the
-type. This opens a panel that lets you make changes. If the relationship type is not in use, a **_Remove_** button
+To add a new relationship type, click the **_Add Relationship Type_** button located at the bottom of the
+**_Edit Relationship Types_** page (the button is not shown in the screenshot above). To edit an existing relationship
+type, click the arrow icon to the far right of the type. This opens a panel that lets you make changes.
+If the relationship type is not in use, a **_Remove_** button
 will appear in the panel. You can only remove a relationship type that is not in use.
 
 ## Editing a relationship type

@@ -9,13 +9,13 @@ vessel which is captained by a person.
 
 Though archivists are careful to properly enter data into the collection, it’s easy to make mistakes
 and so the Digital Archive software catches and prevents them whenever possible. When an archivist
-[adds a relationship(/archivist/add-relationship/)] between two items, the software checks the rules
-for that particular [relationship type](/relationships/relationship-types/) and only allows it if
-both items satisfy the relationship type’s rules and direction. If the validation
+[adds a relationship](/archivist/add-relationship/) between two items, the software checks the rules
+for that particular [relationship type](/relationships/relationship-types/) and only allows the
+relationship to be added if both items satisfy the relationship type’s rules. If the validation
 fails, the software tells the archivist what is wrong and what correction is necessary.
 
 Rules help ensure data integrity by preventing unintended relationships from creeping into the collection
-by mistake or due to improper understanding of how two relate to each other. While use of rules is
+by mistake or due to improper understanding of how two items relate to each other. While use of rules is
 not required, they make the archivist’s life easier and provide end users with more reliable information.
 
 **This page explains relationship rules and how you define them.**
@@ -39,7 +39,7 @@ To add or edit a relationship rule:
 -   You will see a page similar to the one shown below
 
 Rules appear in alphabetical order to make them easier to find in the list.
-That’s why the rule Id number are not in numerical order.
+That’s why the rule Id numbers are not in numerical order.
 
 ![Examples of relationship types](relationship-rules-1.jpg)
 
@@ -51,40 +51,38 @@ That’s why the rule Id number are not in numerical order.
 ### Add, edit, or remove a relationship rule
 
 To add a new relationship rule, click the **_Add Relationship Rule_** button located at the bottom of
-the the page (not shown in the screenshot above). To edit an existing relationship rule, click the arrow
-icon to the far right of the rulee. This opens a panel that lets you make changes. If the relationship
-rule is not in use, a **_Remove_** button will appear in the panel. You can only remove a relationship
-rule that is not in use.
+the page **_Edit Relationship Rules_** page (the button is not shown in the screenshot above). To edit an existing
+relationship rule, click the arrow icon to the far right of the rule. This opens a panel that lets you
+make changes. If the relationship rule is not in use, a **_Remove_** button will appear in the panel.
+You can only remove a relationship rule that is not in use.
 
 The screenshot below shows what you see when you edit a rule.
 
 ![Examples of relationship types](relationship-rules-2.jpg)
 
-### Description
+### Rule description
 
 The description is a concise statement that summarizes the rule so that you’ll know what the rule is
-for when using it to specify a relationship type. The description also appears in error messages when
-rule validation fails. When adding or editing a rule’s description, make sure the words you choose
-are consistent with the descriptions for existing rules.
-
-### Rule
-
-In the example above, the rule means that the item to which the rule applies must have a **_Type_** field value
-that starts with `Reference` and a **_Subject_** field value that starts with either `Businesses` or `Organizations`
- or `People`.
-
-Specifying a rule is a bit tricky because you must do so precisely using the proper metadata fields names
-like **_Type_** and **_Subject_** as well as the correct syntax for Regular Expressions as explained in the
-[MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/regexp.html); however, 
-if you look at existing rules, you’ll notice that they all follow the same pattern and so you should be
-able to edit an existing rule, or create a new rule, by simply following the pattern carefully.
+for when choosing to use it as part of the definition of a [relationship type](/relationships/relationship-types/).
+The description also appears in error messages when rule validation fails. When adding or editing a rule’s
+description, make sure the words you choose are consistent with the descriptions for existing rules.
 
 ### Rule syntax and semantics
 
-This section explains relationship rules in detail. The screenshot above is repeated here for convenience
+Specifying a rule can be a bit tricky because you must do so precisely using the proper metadata fields names
+like **_Type_** and **_Subject_** as well and correct syntax for Regular Expressions as explained in the
+[MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/regexp.html); however, 
+if you look at existing rules, you’ll notice that they all follow the same pattern and so you should be
+able to or create a new rule, by carefully following the pattern carefully used in existing rules.
+
+This section explains relationship rules in detail. The screenshot from above is repeated below for convenience
 while reading this section.
 
 ![Examples of relationship types](relationship-rules-2.jpg)
+
+In the example above, the rule is saying that the item to which the rule applies must have a **_Type_** field value
+that starts with `Reference` and a **_Subject_** field value that starts with either `Businesses` or `Organizations`
+ or `People`.
 
 The pattern for a rule has the following syntax and semantics:
 
@@ -105,12 +103,12 @@ The pattern for a rule has the following syntax and semantics:
 -   The [AvantRelationships](/plugins/avantrelationships) plugin will translate this example
     into a SQL WHERE clause like this:
         `(_advanced_0.text REGEXP '^Reference' AND _advanced_1.text REGEXP '^People')`
--   In the WHERE clause above,  `_advanced_0.text` is the value of the item’s **_Type_** field value and
+-   In the WHERE clause,  `_advanced_0.text` is the value of the item’s **_Type_** field value and
     `_advanced_1.text` is the value of the item’s **_Subject_** field value.
 -   The SQL for a rule gets executed when you add a relationship to an item, or update an existing
-    relationship, to ensure that the relationship is valid for that item and the related item. All
-    of an item’s relationships get validated, and thus rule SQL gets executed whenever an item gets
-    saved. This is done to protect against the situation where a relationship becomes invalid by
-    virtue of editing one of the item’s fields, e.g. its **_Type_** or **_Subject_**, in a way
+    relationship. This is done to ensure that the relationship is valid between that item and the related item.
+    The Digital Archive software validates all of an item’s relationships whenever you save the item.
+    This protects against the situation where a relationship becomes invalid because you 
+    edited one of the item’s fields, e.g. its **_Type_** or **_Subject_**, in a way
     that no longer satisfies a relationship’s rules. That's why you'll sometimes get an error when
-    you save an item that previously had no errors when saved.
+    you save an item that previously had no errors when saved. 
