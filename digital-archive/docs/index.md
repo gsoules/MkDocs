@@ -49,7 +49,7 @@ Image and PDF Attachments
     the item's **_Description_** or other metadata field. PDF attachments are commonly used to provide the biographical
     or historical information for a Reference item.
 
-    [Learn about attaching files to an item](/archivist/attach-file).
+    [Learn about attaching files to an item](/archivist/attach-file)
 
 Facets
 :   In addition to keyword searching, you can find items by drilling down into a collection
@@ -61,7 +61,7 @@ Facets
     facets to narrow down search results to `Photographs` of `Vessels`. You can then further narrow down the
     results to something more specific such as `Sailboat`.
     
-    [Learn to search using facets](../../user/how-to-search/#search-using-facets).
+    [Learn to search using facets](../../user/how-to-search/#search-using-facets)
 
 Reference Items
 :   A **Reference Item** is an item that has its type set to `Reference`. These are special items that serve as stand-ins
@@ -69,7 +69,7 @@ Reference Items
     together via relationships. The most common use of reference items is to provide biographical information about a person,
     and to provide historical information about a structure, vessel, business, organization, or event.
 
-    [Learn about Reference Items](/relationships/reference-items).
+    [Learn about Reference Items](/relationships/reference-items)
 
 Relationships
 :   **Relationships** show how items are related to each other. For example, a collection might have three photographs
@@ -80,6 +80,18 @@ Relationships
     For example, if a search turns up one of the photos of the person, you'll also see the other two photos and the
     document. For this to work, an archivist must establish relationships among the items in the collection.
 
-    [Learn about Relationships](/relationships/getting-started-relationships/).
+    [Learn about Relationships](/relationships/getting-started-relationships/)
+
+---
+
+!!! Note ""
+    The documentation on this website describes all Digital Archive features, but some features might not be enabled
+    on your installation. Which features are available depends on which Digital Archive plugins your site
+    administrator has installed. 
+
+---    
+
+This documentation was written by AvantLogic Corporation.  
+Please send suggestions for improvement to <gsoules@avantlogic.com>.
 
   

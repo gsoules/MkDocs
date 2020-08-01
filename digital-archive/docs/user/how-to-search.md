@@ -6,16 +6,16 @@ You can search the Digital Archive in three ways:
 - Click **facets** in the **_Refine Your Search_** panel
 - Use the **_Advanced Search_** page
 
-[Learn about what gets searched](../what-gets-searched).
+[Learn about what gets searched](/archivist/what-gets-searched)
 
 ## Search using keywords
 
-To search using keywords, type words in the search box that is located in the upper right of
-every Digital Archive page. Click the magnifying glass icon or press `Enter` on your keyboard.
+To search using keywords, type words in the search box that is displayed in the upper right of
+every Digital Archive page. Click the magnifying glass icon or press `Enter` on your keyboard to start the search.
 
 ![Quick Search Box](how-to-search-3.jpg)
 
-The search results will be items that contain *all* of the keywords that you entered.
+The search results will show items that contain *all* of the keywords that you entered.
 You can search for items containing *any* of the keywords by using special characters.
 See the [Special Characters Used for Searching](#special-characters-used-for-searching)
 section below to learn how.
@@ -46,46 +46,46 @@ items having specific metadata. The example below shows use of the **_Type_**, *
 
 ![facet search](how-to-search-2.jpg)
 
-As you click on facets in the **_Refine Your Search_** panel, the contents of the panel shrinks down to only
-show facets that apply to the current search results. You can remove facets by clicking the `X` next to their name
+As you click on facets in the **_Refine Your Search_** panel, the contents of the panel shrink down to only
+show facets that apply to the current search results. You can remove a facet by clicking the `X` next to its name
 in the panel or in the corresponding blue boxes that appear above the search results.
 
 ## Advanced Search
 
-Wen you need to narrow search results to something more specific than is possible using either keywords
-or facets, click on the `Advanced Search` link that appears under the search box to go
+When you need to narrow search results to something more specific than is possible using either keywords
+or facets, click on the `Advanced Search` link under the search box to go
 to the **_Advanced Search_** page. That page lets you specify search criteria for individual 
 metadata fields. You can also use it to specify an inclusive range of years.
 
 ![advanced search](how-to-search-4.jpg)
 
 Typically, you use advanced search to either limit results to items containing metadata for a specific
-field, or you use it to exclude items that do contain certain metadata.
+field, or you use it to exclude items that do not contain certain metadata.
 
 The example below shows a search for items that have `structure` in their **_Subject_** field, but *not*
-`commercial`. In other words, non-commerical strutures. The items must also be either documents or
+`commercial`. In other words, non-commercial structures. In this example, the items must also be either documents or
 publications, that is, no images or objects. Futhermore, the **_Title_** field must *not* contain
-the phrase `annual report`. Finally, the **_Date_** field year must be before 1900.
+the phrase `annual report`. Finally, items must have a year value before 1900 in the **_Date_** field.
 
 ![advanced search](how-to-search-6.jpg)
 
-The search screenshot below shows the results of the Advanced Search shown above. Notice that no facets are selected, but
+The screenshot below shows the results of the Advanced Search shown above. Notice that no facets are selected, but
 you could still use them. For example, you could choose the `Southwest Harbor` facet to narrow the results
-to only items from that town that meet the criterion above.
+to display only items from that town that meet the criteria above.
 
 ![advanced search](how-to-search-5.jpg)
 
 ### Special characters used for searching
 
 The right-side of the **_Advanced Search_** page lists special characters you can use when searching.
-You can also use this syntax in the search box that appears at the upper right of every page.
+You can also use this syntax in the search box that displays in the upper right of every page.
 
 
 ![advanced search](how-to-search-8.jpg)
 
-The special characters are especially useful when you want to circument the fact that
-by default, keyword search results are items containing *all* of the keywords you specify. For example, a
-search for `islesford frenchboro` returns the six items that have `islesford` *AND* `frenchboro` in their
+The special characters are especially useful when you want to circumvent the fact that
+by default, keyword search results display items containing *all* of the keywords you specify. For example, a
+search for `islesford frenchboro` returns the six items that have *both* `islesford` *AND* `frenchboro` in their
 metadata.
 
 ![advanced search](how-to-search-9.jpg)

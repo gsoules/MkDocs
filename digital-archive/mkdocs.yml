@@ -18,7 +18,7 @@ nav:
     - For Archivists:
         Getting Started for Archivists: archivist/getting-started-archivist.md
         Log in as an archivist: archivist/logging-in.md
-        $ Special Features for Archivists: archivist/special-features-archivist.md
+        Special Features for Archivists: archivist/special-features-archivist.md
         $ Add, Edit, or Delete an Item: archivist/add-edit-item.md
         $ Attach an Image or PDF to an Item: archivist/attach-file.md
         $ Add a Relationship to an Item: archivist/add-relationship.md
@@ -35,13 +35,12 @@ nav:
     - Vocabularies:
         $ About vocabularies: archivist/vocabularies.md
     - Site Administration:
-        Getting Started for Administrators: administrator/getting-started-administrator.md
-        FAQ: administrator/faq.md
+        $ Getting Started for Administrators: administrator/getting-started-administrator.md
+        $ FAQ: administrator/faq.md
         Omeka Elements: administrator/omeka-elements.md
         Import CSV data: administrator/import-csv.md
         Export PastPerfect data: administrator/pastperfect-export.md
         Zoomable images: administrator/zoomable-images.md
-        $ Differences from Omeka: administrator/differences-from-omeka.md
     - Digital Archive plugins:
         AvantAdmin: plugins/avantadmin.md
         AvantCommon: plugins/avantcommon.md

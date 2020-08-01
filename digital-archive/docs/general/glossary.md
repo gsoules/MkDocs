@@ -3,7 +3,6 @@
 This page explains the terminology used in this documentation and within the
 Digital Archive.
 
--   Within an entry, words in *italics* are defined in this glossary
 -   Words in parentheses following an entry name indicate the context in which the entry is used
 
 !!! note ""
@@ -121,7 +120,7 @@ Term
 :   A term is a word or short phrase in a *vocabulary* or *facet*.
 
 Visualization
-:   A visualization is a graphical depiction of an *item*'s relationships with other items. See [View Related Items](/user/viewing-related-items/)
+:   A visualization is a graphical depiction of an *item*'s relationships with other items. See [Viewing Related Items](/user/viewing-related-items/)
 
 Vocabulary
 :   A vocabulary is made up of *terms* that classify and index *collection* *items*.

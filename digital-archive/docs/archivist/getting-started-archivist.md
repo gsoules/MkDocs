@@ -1,5 +1,13 @@
 # Getting Started for Archivists
 
+**Archivists** are staff members and volunteers who maintain a
+Digital Archive collection. They have a user name and password that lets
+them to log in and see all public items in the collection as well as non-public items
+and private fields. They can add new items, edit existing items, attach images
+and PDF files to items, edit vocabularies, and establish relationships among items.
+An archivist cannot make changes to a Digital Archive installation unless they log
+in as an [Administrator](/administrator/getting-started-administrator/).
+
 **To get started using the Digital Archive as an archivist:**
 
 -   Learn what archivists can do by reading the sections below
@@ -9,7 +17,7 @@
 
 ---
 
-> What an archivist can do:
+> What an archivist can do with the Digital Archive:
 
 Search the collection and work with search results
 :   An archivist can do everything that a public (not logged-in) user can do:
