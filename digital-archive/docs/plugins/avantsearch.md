@@ -88,7 +88,7 @@ Use the Columns option specify:
 ##### Syntax:
 
 The syntax for each row of the Columns option is
-``` plaintex
+``` plaintext
     <element-name> [ "," <alias>] [ ":" <width> [ "," <alignment>] ] ]
 ```
 Where:

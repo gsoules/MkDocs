@@ -18,10 +18,10 @@ nav:
         Getting Started for Archivists: archivist/getting-started-archivist.md
         Log in as an archivist: archivist/logging-in.md
         Special Features for Archivists: archivist/special-features-archivist.md
-        $ Add, Edit, or Delete an Item: archivist/add-edit-item.md
+        $ Add or Edit an Item: archivist/add-edit-item.md
         $ Attach an Image or PDF to an Item: archivist/attach-file.md
         $ Add a Relationship to an Item: archivist/add-relationship.md
-        $ Add or Edit a Vocabulary Term: archivist/vocabulary-editor.md
+        $ Using the Vocabulary Editor: archivist/vocabulary-editor.md
         Understanding What Gets Searched: archivist/what-gets-searched.md
         $ Best Practices: archivist/best-practices.md
     - Relationships:
@@ -33,6 +33,7 @@ nav:
         Relationship Rules: relationships/relationship-rules.md
     - Vocabularies:
         $ About vocabularies: archivist/vocabularies.md
+        $ Common Vocabulary Translator: foo.md
     - Site Administration:
         $ Getting Started for Administrators: administrator/getting-started-administrator.md
         $ FAQ: administrator/faq.md

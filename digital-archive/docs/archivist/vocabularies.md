@@ -30,6 +30,12 @@ Terms with an underline come from Nomenclature 4.0. You can click the term to le
 
 ---
 
+## Common Vocabulary
+
+## Nomenclature 4.0
+
+## Leaf term
+
 The Common Vocabulary Translator (CVT) translates the nearly 15,000 [Nomenclature 4.0](https://www.nomenclature.info/apropos-about.app?lang=en) terms into a simpler Common Vocabulary terms used in the Digital Archive. The hierarchy for a single Nomenclature can be up to six levels deep, though not every term uses all six levels. The levels are:
 
 1.  Category

@@ -81,12 +81,3 @@ To complete your understanding of the Archive Relational Model,
     so complicated.  
     If you are anxious to just get started adding some relationships to your Digital Archive collection, see
     the [Relationships Quick Start ](/archivist/add-relationship/#relationships-quick-start) section.
-
----
-
-George Soules and Charlotte Morrill developed the Archive Relational Model in 2016 for the
-Southwest Harbor Public Library in Maine as a way to showcase the Library’s large collection
-of historic photographs, documents, maps, and research materials.
-Using [Omeka](https://omeka.org/classic/) as a foundation, AvantLogic Corporation developed the
-Digital Archive software to implement the model. As of August 2020, sixteen cultural heritage
-organizations in Maine were using the Digital Archive.
