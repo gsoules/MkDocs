@@ -15,6 +15,12 @@ in as an [Administrator](/administrator/getting-started-administrator/).
 -   [Login](/archivist/logging-in) to the Digital Archive
 -   [Add or edit an item](/archivist/add-edit-item)
 
+** After you are comfortable adding and editing items:**
+
+-   [Learn about relationships](/relationships/getting-started-relationships/)
+-   [Learn about vocabularies](/vocabularies/getting-started-vocabularies/)
+-   [Learn about best practices](/archivist/best-practices/)
+
 ---
 
 > What an archivist can do with the Digital Archive:

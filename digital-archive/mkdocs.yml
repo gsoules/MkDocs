@@ -21,8 +21,9 @@ nav:
         $ Add or Edit an Item: archivist/add-edit-item.md
         $ Attach an Image or PDF to an Item: archivist/attach-file.md
         $ Add a Relationship to an Item: archivist/add-relationship.md
-        Using the Vocabulary Editor: archivist/vocabulary-editor.md
-        Understanding What Gets Searched: archivist/what-gets-searched.md
+        What Gets Searched: archivist/what-gets-searched.md
+        $ Common Vocabulary: archivist/common-vocabulary.md
+        Vocabulary Editor: archivist/vocabulary-editor.md
         $ Best Practices: archivist/best-practices.md
     - Relationships:
         Getting Started with Relationships: relationships/getting-started-relationships.md
@@ -31,9 +32,6 @@ nav:
         Kinds of Relationships: relationships/kinds-of-relationships.md
         Relationship Types: relationships/relationship-types.md
         Relationship Rules: relationships/relationship-rules.md
-    - Vocabularies:
-        $ About vocabularies: archivist/vocabularies.md
-        $ Common Vocabulary Translator: foo.md
     - Site Administration:
         $ Getting Started for Administrators: administrator/getting-started-administrator.md
         $ FAQ: administrator/faq.md
@@ -41,6 +39,19 @@ nav:
         Import CSV data: administrator/import-csv.md
         Export PastPerfect data: administrator/pastperfect-export.md
         Zoomable images: administrator/zoomable-images.md
+    - Technology:
+        Common Vocabulary Translator: developer/common-vocabulary-translator.md
+        Web server: developer/web-host.md
+        MkDocs: developer/mkdocs.md
+        File locations: developer/file-locations.md
+        MySQL Workbench: developer/mysql-workbench.md
+        Copy a MySQL database: developer/copy-mysql-db.md
+        Install a Digital Archive site: developer/install-digital-archive.md
+        GitHub: developer/github.md
+        Python: developer/python.md
+        Site maintenance: developer/site-maintenance.md
+        PHP development: developer/php-development.md
+        $ Technologies: developer/technologies.md
     - Digital Archive plugins:
         AvantAdmin: plugins/avantadmin.md
         AvantCommon: plugins/avantcommon.md
@@ -54,20 +65,7 @@ nav:
         AvantSearch: plugins/avantsearch.md
         AvantVocabulary: plugins/avantvocabulary.md
         AvantZoom: plugins/avantzoom.md
-    - Technology:
-        Web server: developer/web-host.md
-        MkDocs: developer/mkdocs.md
-        File locations: developer/file-locations.md
-        MySQL Workbench: developer/mysql-workbench.md
-        Copy a MySQL database: developer/copy-mysql-db.md
-        Install a Digital Archive site: developer/install-digital-archive.md
-        GitHub: developer/github.md
-        Python: developer/python.md
-        Common Vocabulary Translator: developer/common-vocabulary-translator.md
-        Site maintenance: developer/site-maintenance.md
-        PHP development: developer/php-development.md
-        $ Technologies: developer/technologies.md
-
+        
 theme:
     name: readthedocs
     prev_next_buttons_location: bottom

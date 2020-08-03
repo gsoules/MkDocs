@@ -18,7 +18,7 @@ a.icon.icon-home {
 div.wy-menu.wy-menu-vertical p.caption {
     color: #3998d8;
     font-size: 120%;
-    margin-bottom: 12px;
+    margin-bottom: 0px;
 	padding: 0 0 0 24px;
 	text-transform: unset;
 }
@@ -45,19 +45,23 @@ div.wy-menu.wy-menu-vertical a {
     padding: 6px 0 6px 8px;
 }
 
+.rst-content pre code {
+    padding: 4px 12px 4px 12px;
+}
+
 /* Indent code, images, tables, and lists. */
 pre, img, table {
     margin-left: 18px;
 }
 
 p + ul {
+	margin-top: 0;
     margin-left: 12px;
 }
 
 /* Reduce the space above a list or code that immediately follows a paragraph. */
-p + ul,
 p + pre {
-	margin-top: -16px;
+	margin-top: 4px;
 }
 
 /* Fix problem where lists inside definition lists have too little space above them.  */

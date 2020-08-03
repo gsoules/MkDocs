@@ -1,33 +1,31 @@
-# Using the Vocabulary Editor
+# Vocabulary Editor
 
-The Vocabulary Editor lets you add or edit the vocabulary terms for these fields:
+The Vocabulary Editor lets you work with the [Common Vocabulary](/archivist/common-vocabulary/)
+to define the set of common and site-specific vocabulary terms that archivists will use
+when working with items in your collection. The Vocabulary Editor lets you define terms for these metadata fields:
 
 -   **_Type_**
 -   **_Subject_**
 -   **_Place_**
 
-Use the [**_Simple Vocab_**](https://omeka.org/classic/docs/Plugins/SimpleVocab/) plugin
-to edit terms for other fields.
+To define terms for other fields, use the
+[**_Simple Vocab_**](https://omeka.org/classic/docs/Plugins/SimpleVocab/) plugin.
+
+> Launch the Vocabulary Editor
 
 To get to the Vocabulary Editor, click **_Vocabulary Editor _** in the left admin menu.
+You'll then see a page similar to the one shown below that lists the terms that are
+currently defined for your site.
 
 ![Vocabulary editor screenshot](vocabulary-editor-13.jpg)
 
----
-
-> This page explain how to use the Vocabulary Editor to:
-
--   [Apply a suggested term](#apply-a-suggested-term)
--   [See which items use a term](#see-which-items-use-a-term)
--   [Choose a common term](#choose-a-common-term)
--   [Add a new vocabulary term](#add-a-new-vocabulary-term)
--   [Edit an existing vocabulary term](#edit-a-vocabulary-term)
--   [Remove a vocabulary term](#remove-a-vocabulary-term)
--   [Apply a suggested term](#apply-a-suggested-term)
--   [See all vocabulary terms](#see-all-vocabulary-terms)
--   [See Nomenclature definitions](#see-nomenclature-definitions)
-
----
+!!! note "For New Digital Archive Installations"
+    A new Digital Archive installation may have very few terms defined. Unlike some other
+    collection management software you may have used that pre installs thousands
+    of terms you will never use, the Digital Archive requires that you decide which terms
+    archivists will be able to choose from when working with items in your collection.
+    As you discover the need for additional terms, you can add them quickly and easily
+    using the Vocabulary Editor. 
 
 > Meaning of fonts and colors in the Vocabulary Editor
 
@@ -50,9 +48,19 @@ This table explains the numbered effects shown above.
 ---
 
 !!! note ""
-    The sections that follow assume you are familiar with Digital Archive vocabularies
-    and that you know the meaning of *common term*, *site term*, *mapped term*, and *unmapped term*.
-    [Learn about vocabularies](/archivist/vocabularies).
+    Before continuing, be sure you are familiar with the [Common Vocabulary](/archivist/common-vocabulary/).
+
+> The sections that follow explain how to:
+
+-   [Apply a suggested term](#apply-a-suggested-term)
+-   [See which items use a term](#see-which-items-use-a-term)
+-   [Choose a common term](#choose-a-common-term)
+-   [Add a new vocabulary term](#add-a-new-vocabulary-term)
+-   [Edit an existing vocabulary term](#edit-a-vocabulary-term)
+-   [Remove a vocabulary term](#remove-a-vocabulary-term)
+-   [Apply a suggested term](#apply-a-suggested-term)
+-   [See all vocabulary terms](#see-all-vocabulary-terms)
+-   [See Nomenclature definitions](#see-nomenclature-definitions)
 
 ## Apply a suggested term
 
@@ -62,10 +70,10 @@ Sometimes you'll see a blue button like the one below next to a red unmapped sit
 
 The blue button is a special feature that provides you with a suggestion. When you add or edit
 an unmapped site term, the Vocabulary Editor looks for a common term that has the same
-[leaf term](/archivist/vocabularies/#leaf-term) as the unmapped site term. When there's a match,
+leaf as the unmapped site term. When there's a match,
 the blue button appears as a suggestion for you to use the matching common term.
 
-In this example, the matching leaf term is `Cyanotype`. If you like the suggestion, you can click the button,
+In this example, the matching leaf is `Cyanotype`. If you like the suggestion, you can click the button,
 and then click **_Update_** on the confirmation dialog (shown below), to change the term to use the suggestion
 and to update any items that use the term. 
 
@@ -185,7 +193,7 @@ Searching the page
     browsers, you can get a search box by pressing **_Ctrl-F_** on Windows, or **_Command-F_** on Mac.
 
 Nomenclature definitions
-:   Terms that have a blue hyperlink at the end are from [Nomenclature 4.0](/archivist/vocabularies/#nomenclature-40).
+:   Terms that have a blue hyperlink at the end are from [Nomenclature 4.0](/archivist/common-vocabulary/#nomenclature-40).
     Click the link to [see that term on the Nomenclature website](#see-nomenclature-definitions).
     See the next section below for more information.
 
@@ -201,7 +209,7 @@ Public Page
 
 ## See Nomenclature definitions
 
-In the Vocabulary Editor, terms that come from [Nomenclature 4.0](/archivist/vocabularies/#nomenclature-40) appear in blue,
+In the Vocabulary Editor, terms that come from [Nomenclature 4.0](/archivist/common-vocabulary/#nomenclature-40) appear in blue,
 underlined type as shown in the screenshot below.
 
 ![Nomenclature term](vocabulary-editor-10.jpg)

@@ -1,5 +1,141 @@
 # Common Vocabulary Translator
 
+The Common Vocabulary Translator (CVT) is a software program that translates the nearly 15,000
+[Nomenclature 4.0](/archivist/common-vocabulary/#nomenclature-40) terms into the simpler Common Vocabulary
+terms used in the Digital Archive. It also adds additional terms to the Common Vocabulary that do not
+exist in Nomenclature. This page explains how the CVT works.
+
+---
+
+!!! note "Advanced Topic"
+    This topic is for a person responsible for maintaining the Common Vocabular for multiple
+    Digital Archive sites. Use of the Common Vocabulary Translator is not an everyday activity
+    and few people have access to the software. **This information is not
+    intended for users, archivists, or administrators** though it may be of interest to anyone
+    who wants to know how the Common Vocabulary gets created. It does however assume
+    familiarity with vocabulary terminology such as *hierarchy* and *leaf*.
+
+## Nomenclature hierarchy
+
+The Nomenclature term hierarchy can be up to six levels deep, though not every term uses all
+six levels. The levels are shown below, but note that Nomenclature uses the word *term* to mean
+both the entire term and each of the last three levels of the complete term. This can be confusing
+which is why this documentation only uses *term* to mean the entire set of words for a complete term.
+It refers to the last three levels of a complete Nomenclature term as the Primary, Secondary, and
+Tertiary *parts*.
+
+``` text
+1  Category
+2  Class
+3  Sub Class
+4  Primary term
+5  Secondary term
+6  Tertiary term
+```    
+
+Here are three examples of Nomenclature terms:
+
+``` text
+Category 01: Built Environment Objects
+    Building Components
+        Construction Materials
+            Building Stone
+                Dimension Stone
+                    Dressed Stone
+
+Category 07: Distribution & Transportation Objects
+    Land Transportation T&E
+        Animal-Powered Vehicles
+            Carriage
+                Buckboard
+
+Category 08: Communication Objects
+    Documentary Objects
+        Graphic Documents
+            Photograph
+                Negative
+```                    
+
+## Common Vocabulary hierarchy
+
+The CVT translates Nomenclature terms into simpler Common Vocabulary terms based on a set
+of translation rules that will be explained later. The rules tell the CVT how to translate
+the terms shown in the previous section into the terms shown below.
+
+``` text
+Object, Building Stone, Dimension Stone, Dressed Stone
+
+Transportation, Carriage, Buckboard
+
+Image, Photograph, Negative
+```
+
+As you can see, Common Vocabulary terms are typically much simpler and easier to read than
+Nomenclature terms. In fact, approximately 95% of Common Vocabulary terms have four or fewer
+levels in their hierarchy. Only about 5% have five levels and none have six.
+
+## Leaf words
+
+In both examples above, the leaf words are the same: `Dressed Stone`, `Buckboard`, and `Negative`.
+
+The CVT preserves Nomenclature leaf words to ensure that they are the same as, and can be
+matched with, the same leaf words used in other collection software that uses Nomenclature.
+
+Nomenclature 4.0 supports leaf words in both *inverted* and *natural order*.
+Examples of each follow.
+
+Inverted Order | Natural Order
+:--- | :--- 
+Negative, Glass Plate | Glass Plate Negative
+Negative, Roll File | Roll Film Negative
+Negative, Sheet Film | Sheet Film Negative
+
+The Common Vocabulary uses natural order because it's easier to read. 
+
+!!! note "Important"
+    Commas are not allowed in Common Vocabulary leaf words because
+    comma is reserved as a hierarchy level indicator. This is particularly
+    important in place names where comma is  a commonly used separator.
+    So for example, in the Common Vocabulary use `Bangor ME` as the leaf,
+    not `Bangor, ME`.
+
+
+## Tail
+**Tail** is a CVT term used in the translation rules. The tail consists of Nomenclature's
+Primary, Secondary, and Tertiary parts if all three exist. If the term has no Tertiary part,
+the tail consists of the Primary and Secondary parts. If the term has no Secondary part,
+the tail is just the Primary part. Some higher level terms have no Primary part, but still
+ have a leaf which is the Sub Class or Class element. In those cases, the tail is the leaf.
+
+### Translation from Nomenclature to Common Vocabulary
+
+>   Explain how NC gets split into Type and Subject
+
+-   The `Object` term is the only one used as either Type or Subject. That's because collections generally have either an
+    actual object such as a hat, or they have a photographs of or documents about an object, for example a photograph of
+    a hat worn by a famouse person, or an article about that hat, but the hat itself is not in the collection (or if it is,
+    it's separate item). Note that a photograph that serves as a stand-in for an object, should have that object as its Type --
+    the Type should not be Photograph. 
+-   A few collections contain very large objects such as a boat or a building. Because this is so rare for most collections,
+    a full Type hierarchy is not provided for these objects. To accommodate these objects, the Type hierarchy contains:
+    -   `Object, Structure`
+    -   `Object, Transportation`
+    As a boat would have Type `Object, Transportation` and a church bulding would have Type `Object, Structure`. For these items,
+    the Subject field can be used to qualify the Type. For example the Subject for the boat could be `Vessels, Boat, Peapod`
+    and the Subject for the church could be `Structures, Ceremonial, Church`.
+-   If a collection contains many large objects, such as cars, the organization can add Type terms for various kinds of
+    automobiles and map them to `Object, Transportation`. For example `Automobile, Electric` and `Automobile, Gasoline`
+    could both be mapped to `Object, Transportation`
+-   Except for large objects like cars and buildings, in most cases, when an object's Type is specified using the `Object`
+    hierarchy, there is no need, and in fact would be bad practice, to also provide a Subject. For example, Type 
+    `Object, Clothing, Hat, Bonnet` is self-explanatory, but `Object, Art, Sculpture, Carving` is not. For a carving, the
+    Subject could be use to indicate what the carving is of, for example `Nature, Animals, Birds`.
+
+The idea is that any 3D object, whether a physical object in the collection, or a 2D object depicting or about the object,
+can easily be cataloged using either the Type and/or Subject `Object` hierarchy.
+
+# Common Vocabulary Translator
+
 Python utility to create Common Vocabulary data from Nomenclature terms.
 
 ## Usage
@@ -50,69 +186,6 @@ Examles of the 30 differences from the January 30, 2020 version to the May 18, 2
 common-facets-natural.csv
 common-facets-to-pp.csv
 ```
-
-## The Common Vocabulary Translator (CVT)
-
-The Common Vocabulary Translator (CVT) translates the nearly 15,000 [Nomenclature 4.0](https://www.nomenclature.info/apropos-about.app?lang=en) terms into a simpler Common Vocabulary terms used in the Digital Archive. The hierarchy for a single Nomenclature can be up to six levels deep, though not every term uses all six levels. The levels are:
-
-1.  Category
-1.  Class
-1.  Sub Class
-1.  Primary term
-1.  Secondary term
-1.  Tertiary term
-
-Here are three examples of Nomenclature terms:
-
-```
-Category 01: Built Environment Objects
-    Building Components
-        Construction Materials
-            Building Stone
-                Dimension Stone
-                    Dressed Stone
-
-Category 07: Distribution & Transportation Objects
-    Land Transportation T&E
-        Animal-Powered Vehicles
-            Carriage
-                Buckboard
-
-Category 08: Communication Objects
-    Documentary Objects
-        Graphic Documents
-            Photograph
-                Negative
-```                    
-
-```
-ANOTHER GOOD EXAMPLE would be Annual Report
-```
-
-The Common Vocabulary Translator (CVT) translates Nomenclature terms into a simpler Common Vocabulary terms strings based on a set of translation rules that will be explained later. The rules tell the CVT how to translate the hierarchy shown above into the strings shown below.
-
-```
-Object, Built Environment, Building Stone, Dimension Stone, Dressed Stone
-
-Transportation, Carriage, Buckboard
-
-Image, Photograph, Negative
-```
-
-### Hierarchy Terminology
-
-#### Leaf
-The deepest element in any hierarchy is called the *leaf term*. In Nomenclature, every leaf term is unique which makes it possible to determine the full hierarchy from just the leaf term. In the examples above, the leaf terms are `Dressed Stone`, `Buckboard`, and `Negative`.
-
-To ensure that each leaf term is unique, Nomenclature add words to leaf terms to distinguish them from other leaf terms. For example, in addition to the leaf term `Negative`, there are leaf terms for `Glass Plate Negative`, `Roll Film Negative`, and `Sheet Film Negative`.
-
-The CVT preserves Nomenclature leaf terms -- it never translates them -- to ensure that they are the same as and can be
-matched with the same terms used in other applications such as PastPerfect.
-
-Nomenclature 4.0 supports leaf terms in both *inverted* and *natural order*. Examples of inverted order are `Negative, Glass Plate`, `Negative, Roll File`, and `Negative, Sheet Film`. The CVT uses the natural order terms when generating Common Vocabulary terms for the Digital Archive.
-
-#### Tail
-To convert Nomenclature terms to Common Vocabulary terms, the CVT puts special emphasis on the *tail* of the hierarchy. The tail consists of the Primary, Secondary, and Tertiarty elements if all three exist. If the term has no Tertiary element, the tail consists of the Primary and Secondary elements. If the term has no Secondary element, the tail is just the Primary element. Some higher level terms have no Primary element, but still have a leaf term which is the Sub Class or Class element. In those cases, the tail is the leaf term.
 
 ### Translation from Nomenclature to Common Vocabulary
 
@@ -209,3 +282,5 @@ The resulting string becomes the Common Vocabulary term.
 `Object|Clothing|{sub_class}|*` becomes ...
 
 `Object|Writing|{leaf}` becomes ...
+
+

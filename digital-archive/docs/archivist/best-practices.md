@@ -49,6 +49,8 @@ When mapping to a common vocabulary term, you should usually repeat the common v
 e.g. `Image, Photograph, My custom term` but not always e.g. if you want to elevate your term
 e.g. `Carving`.
 
+## Unmapped common term
+
 ## Reference Items
 A Reference Item should have no image attached to it because its metadata should either
 be all text, or some text plus a PDF file attachment. The Digital Archive does not
