@@ -58,7 +58,7 @@ This table explains the numbered effects shown above.
 -   [Add a new vocabulary term](#add-a-new-vocabulary-term)
 -   [Edit an existing vocabulary term](#edit-a-vocabulary-term)
 -   [Remove a vocabulary term](#remove-a-vocabulary-term)
--   [Apply a suggested term](#apply-a-suggested-term)
+-   [Merge terms](#merge-terms)
 -   [See all vocabulary terms](#see-all-vocabulary-terms)
 -   [See Nomenclature definitions](#see-nomenclature-definitions)
 
@@ -175,6 +175,15 @@ but then click the red **_Remove_** button in the lower right.
 **The button will only appear if the item has zero uses.** To remove a term
 that is being used by one or more items, first edit each of those items to
 use a different term. When no item is using the term, you can remove it.
+
+## Merge terms
+
+Occasionally you'll run into the situation where you have two similar terms that you would like
+to merge into one, but each term is being used by different items. Simply edit one term to match
+the other (or change both to the term you like), and the Vocabulary Editor will automatically
+merge the two terms into one and update all the items that use them to use the new term. After the
+merge you'll see that the usage count for the merged term is the sum of the usage counts for the
+original terms.
 
 ## See all vocabulary terms
 

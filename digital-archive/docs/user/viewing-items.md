@@ -5,7 +5,7 @@ shows five search results in [Grid View](/user/viewing-search-results/#grid-view
 
 ![Type of thumbnails that appear in search results](viewing-items-1.jpg)
 
-You can view an item these ways:
+You can view more about a specific item these ways:
 
 - Click its title to view the item on its own page
 - Click its thumbnail to see a larger version of the image
@@ -15,31 +15,30 @@ The appearance of an item's thumbnail tells you something about the item:
 
 -   A blue double border (items 13178 and 13023) indicates that it's
     a [Reference item](/relationships/reference-items).
--   A dotted border (item #13325) indicates that the item has two or more attachments.
+-   A dotted border (item 13325) indicates that the item has two or more attachments.
 -   A placeholder thumbnail indicates that the item has no attachments. The placeholder
     for item 13023 indicates that it is a Reference item for a structure.
--   A blue flag (items 13325 and 14997) indicates that the item has either been marked to view
+-   A blue flag next to the item number (items 13325 and 14997) indicates that the item has either been marked to view
     later or that it is already on the recently viewed items list. A gray flag indicates that
     the item is not on the recently viewed items list. [Learn about flagging items](/user/recently-viewed).
 
 ## Click the title to view the item
 
 Click an item's title to go to that item's page. The example above shows the cursor
-on the title for item #13178. When you click the title *Higgins - Howe Dwain Higgins (1894-1974)*,
-you go to the page shown below. [View this item](https://swhplibrary.net/digitalarchive/items/show/9165).
+on the title for item 13178. When you click the title *Higgins - Howe Dwain Higgins (1894-1974)*, the page shown below displays. [View this item in the Digital Archive](https://swhplibrary.net/digitalarchive/items/show/9165).
 
 ![Example of an item page](viewing-items-2.jpg)
 
-The  page above shows the following for item 13178:
+The  page for item 13178 (above) shows the following:
 
--   Metadata field: **_Identifier_**, **_Title_**, **_Type_**, **_Subject_**, **_Description_**, and **_Rights_**
+-   Metadata fields: **_Identifier_**, **_Title_**, **_Type_**, **_Subject_**, **_Description_**, and **_Rights_**
 -   PDF file attachment which you can click to open the PDF in a separate browser tab
 -   [Cover image](/relationships/reference-items/#cover-images-for-reference-items) at upper left
 -   Relationship [visualization](/user/viewing-related-items/#visualization) (below the cover image)
--   [Related items](/user/viewing-related-items/) (three are shown before the screenshot gets cut off at the bottom)
+-   [Related items](/user/viewing-related-items/) (three related images are shown before the screenshot gets cut off at the bottom)
 
 You can click the title of a related item thumbnail to go to its page, or you can click
-its thumbnail to see a larger image. [Learn about relationships](/relationships/getting-started-relationships/).
+its thumbnail to view a larger image. [Learn about relationships](/relationships/getting-started-relationships/).
 
 ## Click the thumbnail to see a larger  image
 The screenshot below shows four search results in [Grid View](/user/viewing-search-results/#grid-view).
@@ -63,11 +62,11 @@ The caption area below the image shows:
 
 -   Item title
 -   Item identifier number
--   **_View Image_** button you can click to view the item on its own page
+-   **_View Image_** button - click to view the item on its own page
 -   **_Request Image_** link (only appears when the
     [request image feature](/plugins/avantcommon/#request-image-url-option) enabled)
--   Image file name as a link you can click to see the image in its own browser tab
--   Red close X to close the lightbox window
+-   Image file name as a link - click to see the image in its own browser tab
+-   Red X to close the lightbox window
 -   Indication of how many thumbnails appear on the page (lower right corner)
 
 ##### Quick PDF view
@@ -83,7 +82,7 @@ first go the item's page.
 
 The lightbox window only displays an item's first image. To see all of an item's image
 and PDF attachments, go to the item's page by clicking its thumbnail title or by clicking the the **_View Item_**
-button in its lightbox window caption. You can tell that item 16082 below has multiple images
+button in the lightbox window caption. You can tell that item 16082 below has multiple images
 because of its dotted border. The solid gray border for item 6885 means it has just one image.
 
 ![Example of an item page](viewing-items-6.jpg)

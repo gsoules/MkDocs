@@ -2,9 +2,9 @@
 
 You can view search results in three ways:
 
-- **_Table View_**
-- **_Grid View_**
-- **_Index View_**
+- **Table View**
+- **Grid View**
+- **Index View**
 
 Use the **_View_** selector to choose how you want to view results. The selector is located in the options bar at the top of
 the search results page. You can use the other selector bar options to sort and further organize results.
@@ -73,7 +73,7 @@ National Park when it was known as Lafayette National Park.
 
 ![Viewing search results in a index view](viewing-search-results-7.jpg)
 
-The example below shows the same search results as the one above except they are indexed by the **_Type_** field.
+The example below shows the same search results as above, except the results are indexed by the **_Type_** field.
 Because all the types are images, they are all indexed under the letter `I`, but the index shows what kinds of
 images are in the collection and their quantities.
 
