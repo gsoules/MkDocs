@@ -70,12 +70,12 @@ Sometimes you'll see a blue button like the one below next to a red unmapped sit
 
 The blue button is a special feature that provides you with a suggestion. When you add or edit
 an unmapped site term, the Vocabulary Editor looks for a common term that has the same
-leaf as the unmapped site term. When there's a match,
-the blue button appears as a suggestion for you to use the matching common term.
+leaf as the unmapped site term. When there's a match, the blue button appears as a suggestion
+for you to use the matching common term.
 
-In this example, the matching leaf is `Cyanotype`. If you like the suggestion, you can click the button,
-and then click **_Update_** on the confirmation dialog (shown below), to change the term to use the suggestion
-and to update any items that use the term. 
+In this example, the matching leaf is `Cyanotype`. If you like the suggestion, you can click
+the button, and then click **_Update_** on the confirmation dialog (shown below), to change
+the term to use the suggestion and to update any items that use the term. 
 
 ![Suggestion confirmation](vocabulary-editor-12.jpg)
 

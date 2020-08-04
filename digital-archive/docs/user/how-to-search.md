@@ -20,18 +20,29 @@ You can search for items containing *any* of the keywords by using special chara
 See the [Special Characters Used for Searching](#special-characters-used-for-searching)
 section below to learn how.
 
-!!! Note "Tip"
-    If you know an item's **_Identifier_** number, you can type the number into the search box to go
+!!! Note ""
+    **TIP**: If you know an item's **_Identifier_** number, you can type the number into the search box to go
     directly to the page for that item. This only works when searching the site you are on. When
     searching all sites, you'll get search results for items having that number in their metadata.
+
+## Search one site or all sites
+
+You can search just the site you are on (for example, only search the Southwest Harbor Public Library) or
+you can search all sites that are sharing their collections with each other.
+
+-   **To search all sites**, use the **_Search_** selector to choose `All Sites`
+
+-   **To search just the site you're on**,  use the **_Search_** selector to choose `This Site`
+
+![Searching selector options](how-to-search-11.jpg)
 
 ## Search using facets
 
 Facets allow you to narrow down search results that you are viewing, or to narrow down all of the
 items in the collection to just the items you are interested in.
 
-!!! Note "Tip"
-    To see all of the items in a collection, click on the magnifying glass icon next to the search box
+!!! Note ""
+    **TIP**: To see all of the items in a collection, click on the magnifying glass icon next to the search box
     *with no keywords entered*. You can then use facets to narrow down the entire collection.
 
  Facets appear in the **_Refine Your Search_** panel. They are: **_Subject_**, __*Type*__,

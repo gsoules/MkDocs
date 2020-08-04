@@ -1,4 +1,4 @@
-# Sharing
+# Share Search Results
 
 You can share your search results with other people by emailing them a link they can click to see the results. Here’s how:
 

@@ -11,7 +11,7 @@ nav:
         Viewing Items: user/viewing-items.md
         Viewing Related Items: user/viewing-related-items.md
         Flag Items to View Later: user/recently-viewed.md
-        Share Search Results: user/sharing.md
+        Share Search Results: user/sharing-search-results.md
         Create PDF Reports: user/pdf-report.md
         Use the Digital Notebook: user/digital-notebook.md
     - For Archivists:
@@ -22,7 +22,7 @@ nav:
         $ Attach an Image or PDF to an Item: archivist/attach-file.md
         $ Add a Relationship to an Item: archivist/add-relationship.md
         What Gets Searched: archivist/what-gets-searched.md
-        $ Common Vocabulary: archivist/common-vocabulary.md
+        Common Vocabulary: archivist/common-vocabulary.md
         Vocabulary Editor: archivist/vocabulary-editor.md
         $ Best Practices: archivist/best-practices.md
     - Relationships:
@@ -40,7 +40,7 @@ nav:
         Export PastPerfect data: administrator/pastperfect-export.md
         Zoomable images: administrator/zoomable-images.md
     - Technology:
-        Common Vocabulary Translator: developer/common-vocabulary-translator.md
+        $ Common Vocabulary Translator: developer/common-vocabulary-translator.md
         Web server: developer/web-host.md
         MkDocs: developer/mkdocs.md
         File locations: developer/file-locations.md
@@ -65,7 +65,7 @@ nav:
         AvantSearch: plugins/avantsearch.md
         AvantVocabulary: plugins/avantvocabulary.md
         AvantZoom: plugins/avantzoom.md
-        
+
 theme:
     name: readthedocs
     prev_next_buttons_location: bottom

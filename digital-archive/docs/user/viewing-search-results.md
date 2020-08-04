@@ -35,7 +35,8 @@ The example below shows the same results in the `Type / Subject` layout. Digital
 ![Viewing search results in a compact layout](viewing-search-results-4.jpg)
 
 You can sort the columns in a compact layout by clicking on a column header. In the example above, the
-results are initially sorted by relevance, not by any column. You can change the sort order by clicking on a column header. For example, clicking on the **_Type_** column header sorts the results by the item type field. 
+results are initially sorted by relevance, not by any column. You can change the sort order by
+clicking on a column header. For example, clicking on the **_Type_** column header sorts the results by the item type field. 
 
 You can also sort by choosing a metadata field
 name using the **_Sort by_** selector. To change the sort from ascending to descending and vice versa,
@@ -45,25 +46,30 @@ use the selector and choose the field again.
 
 ## Grid View
 
-**Grid View** displays search results as a grid of thumbnails. The example below shows the same results
-as the example in the Table View section above.
+**Grid View** displays search results as a grid of thumbnails.
 
 ![Viewing search results in a gird view](viewing-search-results-5.jpg)
 
-You can sort items in Grid View by choosing a metadata field name using the **_Sort by_** selector.
+You can sort items in Grid View by choosing a metadata field name using the **_Sort by_** selector.  
 To change the sort from ascending to descending and vice versa, use the selector and choose the field again.
 
 #### Hiding items that have no image
 
-In the example above, notice the second item in the first row. This is an example of an item that has no image or PDF file attached to it, so a placeholder icon for the map displays instead. You can hide items with no image or PDF file attachment by choosing `With images` from the **_Items_** selector. This works in both Grid View and Table View.
+In the example above, notice the second item in the first row. This is an example of an item 
+that has no image or PDF file attached to it, so a placeholder icon for the map displays
+instead. You can hide items with no image or PDF file attachment by choosing `With Images`
+from the **_Items_** selector. This works in both Grid View and Table View.
 
 ---
 
 ## Index View
 
-**Index View** displays search results as an alphabetized index of unique values for a single metadata field. You choose the metadata field you want to index by from the **_Index by_** selector.
+**Index View** displays search results as an alphabetized index of unique values for a
+single metadata field. You choose the metadata field you want to index by from the
+**_Index by_** selector.
 
-The example below shows the same search results as the Table View and Grid View examples above, but the results are indexed by the **_Title_** metadata field.
+The example below shows the same search results as the Table View and Grid View examples
+above, but the results are indexed by the **_Title_** metadata field.
 
 ![Viewing search results in a index view](viewing-search-results-6.jpg)
 

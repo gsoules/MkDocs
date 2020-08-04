@@ -31,19 +31,10 @@ Visible Items and Fields
 
 Searching All Sites
 
-:   Some Digital Archive sites are set up to share their collections with other organizations.
-    If you are searching in a Digital Archive that is sharing, you have the option to search all sites,
-    or to only search the site you are you are on. 
-
-    **To search all sites**, use the **_Searching_** selector to choose `All sites`.
-
-    **To search just the site you're on**,  use the **_Searching_** selector to choose `This site`.
-
-    ![Searching selector options](what-gets-searched-1.jpg)
-
-    A an all-sites search only searches the public fields of public items. This is true whether or not the
-    user is logged-in to the Digital Archive. If an archivist needs to search their organization's
-    non-public items and private fields, they must switch to searching `This site` and be logged-in.
+:   The Digital Archive lets you [search one site or all sites](/user/how-to-search/#search-one-site-or-all-sites).
+    An All Sites search only searches the public fields of public items. This is true whether or you are
+    logged-in as an archivist. If an archivist needs to search their organization's
+    non-public items and private fields, they must switch to searching `This Site` and be logged-in.
 
 ## What a keyword search finds
 
