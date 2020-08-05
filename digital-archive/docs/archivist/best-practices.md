@@ -1,5 +1,52 @@
 # Best Practices
 
+The best practices on this page are the recommendations of George Soules, 
+who has served as a volunteer archivist at the Southwest Harbor Public Library
+for the past six years. Though not a professional archivist, he has a degree in Information Sciences (1980) from 
+the University of California, Santa Cruz where his focus was programming linguistics. During his 40 years
+working professionally in the software industry, he has been involved with numerous database projects
+that manage, classify, and translate the kind of information that is heavily used in the Digital Archive
+for cataloging. Mr. Soules conceived, designed, and implemented the Digital Archive software.
+The advice that follows is based on practical experience learning what works well and what does not.
+
+## Subjects
+
+In the Digital Archive, an object name alone is not always sufficient for cataloging an item.
+Every item must have a **_Type_**, and unless the type is a physical object that can be
+unambiguously described by a Common Vocabulary term, the item must also have a **_Subject_** that further
+classifies the **_Type_**. For example, an item with **_Type_** `Object, Cup, Teacup` needs no further
+classification, but an item of **_Type_** `Image, Photograph` *must* have a **_Subject_** to
+classify the *nature* of the picture. For example, the subject of a photograph could be `People` to
+indicate that it's a photo of humans.
+
+The **_Subject_** is *not* used to identify which people are in a photo. That level of specificity
+is provided by keywords in the item's **_Title_** and/or **_Description_**. Some subjects convey
+significant information about an item, such as `Vessels, Ship, Sailing Ship, Schooner`, but still
+stop short of, in this case, identifying the name of the vessel, which again, would be in the item's
+**_Title_** and/or **_Description_**.
+
+The limit on how specific subject terms should be has to do with the fact that **_Subject_** is
+meant to *classify* something, but not necessarily *identify* it. To classify is to put things
+in groups based on shared attributes. The very nature of a group is that it contains multiple
+things. Thus, for a **_Subject_** to be a person's name would be to create a group of one which
+is not classification, but identification.
+
+
+    
+    An item that is *part* of a collection does not necessarily have to be something
+    that the organization physically posses. For example, a major component of many collections
+    are photographs that archivists have borrowed, scanned, and then returned to the
+    owners. For the purpose of cataloging such an item, the **_Type_** of the items is `Image, Photograph`
+    and the **_Subject_** is the subject of the photograph such as `Vessels, Ship, Steamship`.
+    
+    You treat a *documentary* picture of an object that's in the collection as a *stand-in* for the actual object
+    and thus that item's **_Type_** is the object's type. For example, if your collection contains a teacup,
+    you would photograph it and add the photo to the Digital Archive as an item of **_Type_**
+     `Object, Cup, Teacup`, not `Image, Photograph`. If you also had a snapshot of notable person
+     drinking from that teacup, the **_Type_** for that photo would be 
+    `Image, Photograph` and its two subjects would be `People` and `Object, Cup, Teacup`.
+
+
 TITLE
 
 An item can have multiple titles, but only if you can say “Also known as” for the alternate title(s).

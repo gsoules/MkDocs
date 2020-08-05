@@ -174,7 +174,7 @@ What they see are the source and target labels.
 #### Labels
 The source and target labels are what appear to users as the text of related item groups when
 [viewing related items](/user/viewing-related-items/). The labels also appear on the arrows in
-visualization graphs. In the example above for the *wrote / written by* relationship, except for
+[visualizations](/user/viewing-related-items/#visualization). In the example above for the *wrote / written by* relationship, except for
 the letter casing, the names and labels are the same. However, for other types
 they can be different. For example, in the *resided at / occupied by* type, the target name is
 *occupied by*, but the target label is `Residents,Resident`. The screenshot below shows a group

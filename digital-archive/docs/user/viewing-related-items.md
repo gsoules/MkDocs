@@ -5,21 +5,25 @@ collection that are related to the item you are viewing. Not every item has rela
 but some have quite a few as shown in the very long screenshot below for item 7280.
 
 On the left side of the screen, in the **_Relationships_** section, a *visualization* preview 
-graphically depicts all of the this item's related items. A
-[closeup of the visualization](/user/viewing-related-items/#visualization) appears after the screenshot below.
+graphically depicts all of this item's related items. A
+[closeup of the visualization](/user/viewing-related-items/#visualization) is shown after the screenshot below.
 Thumbnails for each related item display under the item's metadata, grouped by the type of relationship.
 The groups are separated by horizontal gray bars.
 
 Every item page has this same form. The [visualization](/user/viewing-related-items/#visualization) provides a high level
-view of the item's relationships, and the thumbnails provide an image and title for every related item.
+view of the item's relationships, and a thumbnail image and title display for every related item.
 You can click the title of a related item to go to that item's page, or you can click its thumbnail to see
 a larger picture.
 
-[View this item in the Digital Archive](https://swhplibrary.net/digitalarchive/items/show/6458).
+[View this item in the Digital Archive](https://swhplibrary.net/digitalarchive/items/show/6458)
 
 ![Viewing relationships](viewing-related-items-2.jpg)
 
 ## Visualization
+
+The Digital Archive uses a technique called Data Visualization to graphically represent an
+item's relationships. A visualization shows items as thumbnails with labeled lines between them to
+represent how the items are related to each other.
 
 When you click the **_Enlarge_** link just above the visualization preview shown in the screenshot above, you see a larger version of the visualization as shown below. In a visualization,
 the item you are viewing, known as the *primary* item, appears with a green border around it.
@@ -33,17 +37,16 @@ to all of the items on the bottom row.
 
 ![Relationships visualization](viewing-related-items-1.jpg)
 
-To keep the diagram from becoming too cluttered, groups of two or more items having the same relationship
+To keep the visualization diagram from becoming too cluttered, groups of two or more items having the same relationship
 to their primary item are consolidated into expandable purple dots. The number inside the purple dot indicates the number of items in the group.
 
-When you click on a purple dot, the graph
-changes to show those items. The screenshot below shows what you see when you click on the purple dot
-that has "5" in the center.
+When you click on a purple dot, the visualization changes to display those items. The screenshot below shows 
+what you see when you click on the purple dot that has "5" in the center.
  
 ![Relationships visualization expanded](viewing-related-items-3.jpg)
 
-In the expanded graph, you can click on the purple dot in the center, or click on the primary item
-at upper right, to go back to the previous graph. In any visualization, you can
+In the expanded visualization, you can click on the purple dot in the center, or click on the primary item
+at upper right, to go back to the previous visualization. In any visualization, you can
 click on a thumbnail to go to that item's page.
 
 ---

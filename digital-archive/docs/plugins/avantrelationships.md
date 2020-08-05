@@ -139,8 +139,8 @@ immediately after metadata elements,or you designate a location, e.g. in the sid
 `show_relationships_visualization` hook in your theme's `items/show.php` page. To not show the visualization,
 choose the `Don't show visualization option`.
 
-#### Placement of the Visualization Graph Preview
-The preview is a small image of the visualization graph. When you click on the preview's *Enlarge* link, a full size visualization 
+#### Placement of the Visualization Preview
+The preview is a small image of the visualization. When you click on the preview's *Enlarge* link, a full size visualization 
 appears in a popup. By default, the AvantRelationships plugin displays the preview immediately after an item's metadata elements
 and before item relationship groups. You can have the  preview appear somewhere else such as in the sidebar. To display the graph
 at a designated location:

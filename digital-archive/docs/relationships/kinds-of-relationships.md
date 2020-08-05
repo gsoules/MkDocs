@@ -14,7 +14,8 @@ relationships are *implicit* and automatically established by the Digital Archiv
 ## Direct relationships
 
 A direct relationships is one that directly connects two items.
-The visualization graph below shows that the item in the center titled *Bear Island Light*
+The [visualization](/user/viewing-related-items/#visualization)
+below shows that the item in the center titled *Bear Island Light*
 has a direct relationships to seven images, one map, and four other items not shown
 because there is not enough room.
 [View this item](https://swhplibrary.net/digitalarchive/items/show/8532).
@@ -27,7 +28,7 @@ is a direct relationship. An archivist cannot add an indirect relationship.
 ## Indirect relationships
 
 An indirect relationship connects two items to each other via another item. 
-The visualization graph below shows that the item on the left, a photograph of Esther Moore as a
+The visualization below shows that the item on the left, a photograph of Esther Moore as a
 little girl playing in front of her home on Gotts Island, has a direct relationship to two items,
 and an indirect relationship to a photograph, a map, and three other items as indicated by the
 purple dot.

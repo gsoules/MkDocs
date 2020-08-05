@@ -1,16 +1,27 @@
 # Add or Edit an Item
 
+This pages provides step by step instructions for how to:
+
+-   [Add a new item](/archivist/add-edit-item/#add-a-new-item)
+-   [Edit an existing item](/archivist/add-edit-item/#add-a-new-item)
+-   [Delete an item](/archivist/add-edit-item/#delete-an-item)
+
+You might also be interested in how to:
+
+-   [Attach an image or PDF to an item](/archivist/attach-file/)
+-   [Add a relationship to an item](/archivist/add-relationship/)
+
+
 ## Add a new item
 
-The section immediately below explains how to add a new item to your Digital Archive collection. 
-Information for how to [edit an existing item](#edit-an-item) follows these instructions.
+Follow the steps below to add a new item to your Digital Archive.
 
 1 &ndash; Go to the **_Add an Item_** page
 
 :    There are two ways to get to the **_Add an Item_** page:
 
-      - If **_Add item_** appears in the black menu bar at the top of the page, click it
-      - Or, click **_Dashboard_** in the left admin menu, then the blue **_Add a new item_** button
+      - If **_Add item_** appears in the black menu bar at the top of the page, click it, *or*
+      - Click **_Dashboard_** in the left admin menu, then click the blue **_Add a new item_** button
 
 
 :   You will see a page similar to the screenshot below.
@@ -25,50 +36,53 @@ Information for how to [edit an existing item](#edit-an-item) follows these inst
     - **_Title_**
     - **_Type_**
     - **_Subject_**
-    - **_Rights_**
 
     Notes:
 
-    - Which fields are required is determined by the Digital Archive site administrator.
+    - Which fields are required is determined by the [administrator](/administrator/getting-started-administrator).
     - The **_Identifier_** is filled in automatically for you - do not change it.
     - Use the **_Add Input_** buttons to add additional fields as needed.
-    - You can add additional options to fields with dropdown menus with the 
-    [Vocabulary Editor](../vocabulary-editor).
 
 3 &ndash; Fill in optional fields
 
-:   Fill in any additional fields with information you have available for the item.
+:   Fill in any additional fields that you have information for.
 
 4 &ndash; Choose to make the item public or private
 :   Check the **_Public_** box  under the menu on the right to make the item public,
-    or leave it  unchecked to keep it private and viewable only by archivists and administrators. 
+    or leave it  unchecked to keep it private and viewable only by archivists and administrators.  
+    [Learn about public and non-public items](/archivist/what-gets-searched/).
 
 5 &ndash; Click the **_Add Item_** button
-:   When you click the **_Add Item_** button, your item is saved to the Digital Archive.
+:   When you click the **_Add Item_** button, your item we be saved to the Digital Archive.
 
     If you leave any required fields blank and click **_Add Item_**,
-    red error messages appear at the top of the page. Complete the missing fields and try again.
+    red error messages appear at the top of the page as shown below. Provide the missing information and try again.
 
     ![Error Message](add-edit-item-5.jpg)
 
 
 6 &ndash; Review the new item
 :   After you add the item to the Digital Archive, check that the information you have 
-entered is accurate and complete. To change or add information, see the information 
-below for how to edit an existing item.
-
-
-## Optional next steps
-
-[Attach a file to the item](../attach-file)
-
-[Add relationships to the item](../working-with-relationships)
-
-[Edit](#edit-an-item) or [Delete](../delete-item) the item
+entered is accurate and complete. To change or add information, see how to [edit an item](#edit-an-item).
 
 ---
 
 ## Edit an Item
+
+Follow the steps below to edit an item to your Digital Archive.
+
+1 &ndash; Go to the **_Edit Item_** page
+
+:    There are two ways to get to the **_Add an Item_** page:
+
+      - If **_Add item_** appears in the black menu bar at the top of the page, click it, *or*
+      - Click **_Dashboard_** in the left admin menu, then click the blue **_Add a new item_** button
+
+
+:   You will see a page similar to the screenshot below.
+
+![Add Item Button](add-edit-item-11.jpg)
+
 
 There are __ ways to access the Edit Item page:
 

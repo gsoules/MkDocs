@@ -5,23 +5,23 @@ without having to search for them again.
 
 !!! Note ""
     This flagging feature works ony when you are searching the site you are on.  
-    It does not work when you are [searching all sites](/archivist/what-gets-searched/#terminology).
+    It does not work when you are [searching all sites](/user/how-to-search/#search-one-site-or-all-sites).
 
 The example below shows search results in [Grid View](/user/viewing-search-results/#grid-view)
-for five items. Suppose you want to learn more about item 13178 by clicking the title on the first item as shown below.
+for five items. Suppose you want to learn more about item 13178 by clicking the title of the first item as shown below.
 However, before clicking the title, you could click the flag icons on items 13325 and 14997 to mark
 them for viewing later. A blue flag indicates that an item is in the recently viewed items list
 (even if you have not actually viewed its item page). You can unflag an item by clicking it again
-which turns the flag gray again.
+which resets the flag to gray and removes the item from the recently viewed items list.
 
 ![Thumbnails showing recently-viewed flags](recently-viewed-1.jpg)
 
 ### Recently viewed items page
 
 Continuing with the example above, after viewing item 13178, you could click
-the `Recent Items` link, located below the [search box](/user/how-to-search/#search-using-keywords), to go to the **_Recently Viewed Items_** page.
-That page shows the item you just viewed, plus the two items that
-you flagged earlier.
+the `Recent Items` link, located under the [search box](/user/how-to-search/#search-using-keywords), 
+to go to the **_Recently Viewed Items_** page. That page shows the item you just viewed, plus the two 
+items that you flagged earlier.
 
 ![Thumbnails showing recently-viewed flags](recently-viewed-2.jpg)
 
@@ -47,7 +47,7 @@ A common sequence for using the feature is to:
 When you click the `Show as search results` link in the example above,
 the three items appear as search results as shown below.
 You can share results with someone else by sending them the URL for the search results page. 
-[Learn about sharing search results](/user/sharing).
+[Learn about sharing search results](/user/sharing-search-results).
 
 ![Thumbnails showing recently-viewed flags](recently-viewed-3.jpg)
 
@@ -58,7 +58,7 @@ You can share results with someone else by sending them the URL for the search r
 
     The `Recent Items` link *only* appears under the search box when there are recent items in the list.
 
-    The recently viewed items list only tracks items that you have viewed of flagged when searching
+    The recently viewed items list only tracks items that you have viewed or flagged when searching
     `This site`. It does not track items when you are viewing `All sites`.
 
 ---

@@ -40,7 +40,7 @@ nav:
         Export PastPerfect data: administrator/pastperfect-export.md
         Zoomable images: administrator/zoomable-images.md
     - Technology:
-        $ Common Vocabulary Translator: developer/common-vocabulary-translator.md
+        Common Vocabulary Translator: developer/common-vocabulary-translator.md
         Web server: developer/web-host.md
         MkDocs: developer/mkdocs.md
         File locations: developer/file-locations.md

@@ -6,18 +6,18 @@
 
 - Run GitHub Desktop
 - Choose `File > New Repository` from the top menu bar
-- For **Name** use the same name as the folder containing the files.
+- For **_Name_** use the same name as the folder containing the files.
   For example, if you are adding a new plugin located in `/plugins/AvantImport`, type `AvantImport` as the repository name.
-- Provide a **Description** or leave it blank (you can add one later in GitHub online)  
-- For **Local path**, choose the folder *containing* the folder that you want to make the repository from. For example,
+- Provide a **_Description_** or leave it blank (you can add one later in GitHub online)  
+- For **_Local path_**, choose the folder *containing* the folder that you want to make the repository from. For example,
   navigate to `/plugins`, **not** to the `AvantImport` folder.
-- Check the **Initialize this respository with a README** checkbox
-- Leave **Git ignore** as `None`
-- Choose GNU GPLv3 for **License**
+- Check the **Initialize this repository with a README** checkbox
+- Leave **_Git ignore_** as `None`
+- Choose GNU GPLv3 for **_License_**
 - Click the `Create Repository` button
 
-The folder now contains new Git files as shown below for the newly created AvantImport  
-*local repository*. The files and folders highlighted in yellow added by Git.
+The folder now contains new Git files as shown in the example below for the newly created AvantImport  
+*local repository*. The files and folders highlighted in yellow were added by Git.
 
 ![GitHub files](github-1.jpg)
 
@@ -25,9 +25,9 @@ The folder now contains new Git files as shown below for the newly created Avant
 
 To upload the local repository to GitHub:
 
-- Click the `Publish repository` button at the top of GitHub Desktop
-- On the confirmation dialog, uncheck or check the `Keep this code private` checkbox as appropriate.
-- Click the `Publish repository` button
+- Click the **_Publish repository_** button at the top of GitHub Desktop
+- On the confirmation dialog, uncheck or check the `Keep this code private` checkbox
+- Click the **_Publish repository_** button
 
 ## Commit changes locally
 
@@ -40,7 +40,7 @@ As you make changes to files in your text editor and save them locally, you also
 - The yellow icon indicates modified files. 
 
 To commit the changes to the local repository (but not to GitHub in the cloud), you need to add a brief
-comment describing the changes and then click the `Commit to master` button.
+comment describing the changes and then click the **_Commit to master_** button.
 
 !!! Warning
     By default, every change is selected with a check mark as shown above. The comment and subsequent commit
@@ -55,12 +55,12 @@ To commit changes:
 
 - Uncheck all the changes and then select the file(s) that your comment will apply to
 - Type a brief comment
-- Click the `Commit to master` button
+- Click the **_Commit to master_** button
 - Repeat until all the files you want to commit have disappeared from the list of changes
 
 ## Push changes to GitHub
 
-To push your committed changes to GitHub, click the `Push origin` button at the top of GitHub Desktop.
+To push your committed changes to GitHub, click the **_Push origin_** button at the top of GitHub Desktop.
 
 ## Rollback a commit
 
@@ -99,7 +99,7 @@ Note that for some reason copy/pasting from here into the Git Bash window does n
 Follow these steps in the situation where you typed the wrong commit message and you have not done any other commits (it’s the message for the most recent commit).
 
 - In Windows Explorer, go the folder for the repository you need to change the message for.
-- Right click and choose `Git Bash Here`”`
+- Right click and choose `Git Bash Here``
 - Type `git commit --amend -m "new message`.
 - Type `exit` to close the window.
 

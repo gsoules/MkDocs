@@ -3,11 +3,12 @@
 !!! Note ""
     The PDF Report feature is not yet supported.
 
-The Reports feature will “print” search results to a PDF file having the same layout,
-and a similar appearance to, the search results that are presented
-as chosen using the **_Layout_** dropdown on a search results page.
+The Reports feature will “print” search results to a PDF file using the same layout as,
+and a similar appearance to, the results displayed on a search results page.
+To control the layout of the search results, use the **_Layout_** selector on the options bar at the 
+top of the search results page.
 
-An administrator will be able to *configure* a new report by virtue of adding a new layout
+Administrators will be able to *configure* a new report by adding a new layout
 using the AvantSearch plugin configuration page.
 
 An **_Item Report_** will print an item’s image(s) and metadata to a PDF file.

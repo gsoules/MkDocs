@@ -10,7 +10,7 @@ You can search the Digital Archive in three ways:
 
 ## Search using keywords
 
-To search using keywords, type words in the search box that is displayed in the upper right of
+To search using keywords, type words in the search box that displays in the upper right of
 every Digital Archive page. Click the magnifying glass icon or press `Enter` on your keyboard to start the search.
 
 ![Quick Search Box](how-to-search-3.jpg)
@@ -28,7 +28,9 @@ section below to learn how.
 ## Search one site or all sites
 
 You can search just the site you are on (for example, only search the Southwest Harbor Public Library) or
-you can search all sites that are sharing their collections with each other.
+you can search all sites that are sharing their collections with each other. To choose which sites to search
+use the **_Search_** selector that appears in the options bar at the top of
+the search results page.
 
 -   **To search all sites**, use the **_Search_** selector to choose `All Sites`
 
@@ -52,7 +54,7 @@ Facets let you find items of interest with just a few mouse clicks. For example,
 of cottages, you can use the **_Type_** and **_Subject_** facets to narrow search results to `Images` of `Cottages`.
 You could then further narrow down the results to only items from a specific place such as `Seal Harbor`.
 You can also use facets in combination with keyword or advanced searching to limit the results to
-items having specific metadata. The example below shows use of the **_Type_**, **_Subject_**, and
+items having specific metadata. The example below shows a search using the **_Type_**, **_Subject_**, and
 **_Place_** facets plus the keyword `rockefeller`.
 
 ![facet search](how-to-search-2.jpg)
@@ -80,7 +82,7 @@ the phrase `annual report`. Finally, items must have a year value before 1900 in
 
 ![advanced search](how-to-search-6.jpg)
 
-The screenshot below shows the results of the Advanced Search shown above. Notice that no facets are selected, but
+The screenshot below shows the results of the Advanced Search above. Notice that no facets are selected, but
 you could still use them. For example, you could choose the `Southwest Harbor` facet to narrow the results
 to display only items from that town that meet the criteria above.
 
@@ -94,7 +96,7 @@ You can also use this syntax in the search box that displays in the upper right 
 
 ![advanced search](how-to-search-8.jpg)
 
-The special characters are especially useful when you want to circumvent the fact that
+The special characters are especially useful when you want to circumvent the fact that,
 by default, keyword search results display items containing *all* of the keywords you specify. For example, a
 search for `islesford frenchboro` returns the six items that have *both* `islesford` *AND* `frenchboro` in their
 metadata.
