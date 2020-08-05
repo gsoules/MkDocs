@@ -334,12 +334,13 @@ The Suggest option lets you designate elements that should automatically suggest
 you are typing into the field. The behavior is similar to how the Add Tags field works on the Tags tab.
 
 The suggested values come can come from two different sources:
+
 - The values of the specified element in the other items in the database. For example, if you specify the Creator
 element, then as you type, the Suggest logic queries all of the other Creator elements in the database looking for
 values that contain the text you typed. This feature is especially useful for ensuring consistent data entry because
 it lets you choose from text that already exists.
 - A SimpleVocab vocabulary for the element. For this to work, you must also specify the same element name using the
-Text Field option described above. By specifing the element in both the Text Field and Suggest options, the field will
+Text Field option described above. By specifying the element in both the Text Field and Suggest options, the field will
 display as a text box, not a dropdown list, and the suggestions will come from the vocabulary.
 
 ##### Syntax:

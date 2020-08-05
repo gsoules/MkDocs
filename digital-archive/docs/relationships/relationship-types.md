@@ -59,7 +59,7 @@ two family members are related to each other:
 
 From just these two relationships, the Digital Archive software automatically determines a person's ancestors,
 descendants, and siblings. As such there is no need for relationship types like *grandparent of* or
-*grandchild of* or *sibling of*. The Digital Archive does determine cousins. You can use the general purpose
+*grandchild of* or *sibling of*. The Digital Archive does not determine cousins. You can use the general purpose
 *relative of* relationship for cousins.
 
 ## Searching for relationships
@@ -94,8 +94,8 @@ To add or edit a relationship type:
 
 ### Order
 
-The types in the screenshot above appear in the order in which you want users to see groups of
-related items when viewing an item.
+The relationship types in the screenshot above appear in the order in which you want users to see groups of
+related items when viewing an item page.
 You can drag the rows up or down to change the order and then click the **_Update Order_** button
 that will appear at the bottom of the page.
 
@@ -142,7 +142,7 @@ need not become familiar with this terminology unless they will be adding or edi
 A uni-directional relationship reads one way in the forward direction and another way in the reverse
 direction.
 
-A relationship type that is uni-direction uses separate *labels* for its source and target. The example
+A relationship type that is uni-directional uses separate *labels* for its source and target. The example
 below is for the *wrote / written by* relationship type which is just one type, but with two
 different labels *wrote* and *written by*. From an archivist's perspective, this one type will seem
 like two different types which is exactly the intention.
@@ -168,11 +168,11 @@ For example, the dropdown will contain *wrote*, *written by*, *married to* plus 
 that you have defined for the site.
 
 Your choice for these names should be based on what you think will make the most sense to
-an archivist when they are choosing from the list. End users don’t see the source and targets names.
+an archivist when they are choosing from the list. End users don’t see the source and target names.
 What they see are the source and target labels.
 
 #### Labels
-The source and target labels are what appear to users as the text of related item groups when
+The source and target labels are what appear to users as the text in the gray bars of related item groups when
 [viewing related items](/user/viewing-related-items/). The labels also appear on the arrows in
 [visualizations](/user/viewing-related-items/#visualization). In the example above for the *wrote / written by* relationship, except for
 the letter casing, the names and labels are the same. However, for other types
@@ -184,12 +184,12 @@ of four Reference Items for people who *resided at* the same house.
 
 When English grammar dictates the use of different spelling for multiple items than for a single
 item, you specify the plural spelling followed by a comma and then the singular spelling.
-In the example above, the Digital Archive software found multiple residents, but if there was only
-one, the group name would have been `Resident`.
+In the example above, the Digital Archive software found multiple residents and used the group name 
+`Residents`, but if there was only one, the group name would have been `Resident`.
 
 ## Advanced Features
 
-Most relationships types are defined by specifying only names, labels, and rules, but to utilize the
+Most relationship types are defined by specifying only names, labels, and rules, but to utilize the
 software’s capabilities for displaying indirect relationships, and genealogies, you need to specify
  *directives* for certain relationships.
 
@@ -203,7 +203,7 @@ but you can specify directives for other relationship types.
 
 ![Relationship directives](relationship-types-6.jpg)
 
-The comma-separated numbers in the **_Directives_** field are Ids relationship type Ids:
+The comma-separated numbers in the **_Directives_** field are relationship type Ids:
 
 -   1 is the Id for *depicts / depicted by*
 -   -14 is the Id for *located at / location of* 
