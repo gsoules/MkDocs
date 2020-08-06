@@ -13,11 +13,16 @@ in as an [Administrator](/administrator/getting-started-administrator/).
 -   Learn what archivists can do by reading the sections below
 -   Learn about [special features for archivists](/archivist/special-features-archivist)
 -   [Login](/archivist/logging-in) to the Digital Archive
--   [Add or edit an item](/archivist/add-edit-item)
+-   [Add a new item](/items/#add-a-new-item)
+-   [Edit an existing item](/items/#edit-an-item)
+-   [Duplicate an item](/items/#duplicate-an-item)
+-   [Delete an item](/items/#delete-an-item)
+-   [Attach an image or PDF file to an item](/archivist/attach-file/)
 
-** After you are comfortable adding and editing items:**
+** After you are comfortable working with items:**
 
 -   [Learn about relationships](/relationships/getting-started-relationships/)
+-   [Add a relationship to an item](/archivist/add-relationship/)
 -   [Learn about vocabularies](/vocabularies/getting-started-vocabularies/)
 -   [Learn about best practices](/archivist/best-practices/)
 
@@ -28,7 +33,7 @@ in as an [Administrator](/administrator/getting-started-administrator/).
 Search the collection and work with search results
 :   An archivist can do everything that a public (not logged-in) user can do:
 
-    -   [Search one collection or many](/user/how-to-search/#how-to-search)
+    -   [Search one collection or many](/user/how-to-search//items/#how-to-search)
     -   [View search results in different ways](/user/viewing-search-results)
     -   [Flag items to view later](/user/recently-viewed)
     -   [Share search results with other people](/user/sharing)

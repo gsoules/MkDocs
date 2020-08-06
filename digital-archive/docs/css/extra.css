@@ -49,6 +49,11 @@ div.wy-menu.wy-menu-vertical a {
     padding: 6px 0 6px 8px;
 }
 
+/* Tighten the spacing in nested bullet lists. */
+.rst-content .section ul p {
+    margin-bottom: 0;
+}
+
 .rst-content pre code {
     padding: 4px 12px 4px 12px;
 }

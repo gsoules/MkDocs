@@ -51,7 +51,7 @@ That’s why the rule Id numbers are not in numerical order.
 ### Add, edit, or remove a relationship rule
 
 To add a new relationship rule, click the **_Add Relationship Rule_** button located at the bottom of
-the page **_Edit Relationship Rules_** page (the button is not shown in the screenshot above). To edit an existing
+the **_Edit Relationship Rules_** page (the button is not shown in the screenshot above). To edit an existing
 relationship rule, click the arrow icon to the far right of the rule. This opens a panel that lets you
 make changes. If the relationship rule is not in use, a **_Remove_** button will appear in the panel.
 You can only remove a relationship rule that is not in use.
@@ -69,8 +69,8 @@ description, make sure the words you choose are consistent with the descriptions
 
 ### Rule syntax and semantics
 
-Specifying a rule can be a bit tricky because you must do so precisely using the proper metadata fields names
-like **_Type_** and **_Subject_** as well and correct syntax for Regular Expressions as explained in the
+Specifying a rule can be a bit tricky because you must do so precisely using the proper metadata field names
+like **_Type_** and **_Subject_** as well as the correct syntax for Regular Expressions as explained in the
 [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/regexp.html); however, 
 if you look at existing rules, you’ll notice that they all follow the same pattern and so you should be
 able to or create a new rule, by carefully following the pattern carefully used in existing rules.
