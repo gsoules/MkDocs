@@ -33,10 +33,10 @@ in as an [Administrator](/administrator/getting-started-administrator/).
 Search the collection and work with search results
 :   An archivist can do everything that a public (not logged-in) user can do:
 
-    -   [Search one collection or many](/user/how-to-search//items/#how-to-search)
+    -   [Search one collection or many](/user/how-to-search/)
     -   [View search results in different ways](/user/viewing-search-results)
     -   [Flag items to view later](/user/recently-viewed)
-    -   [Share search results with other people](/user/sharing)
+    -   [Share search results with other people](/user/sharing-search-results)
     -   [Create a PDF report that you can print](/user/pdf-report)
     -   [Use the Digital Notebook to save and organize what you find](/user/digital-notebook)
 
@@ -44,13 +44,13 @@ Login to the Digital Archive
 :   An archivist has a user name and password that they use to login to the Digital Archive.  
     You must be logged-in to perform any of the tasks described on the rest of this page.
 
-    [Learn how to login.](/archivist/logging-in)
+    [Learn how to login](/archivist/logging-in)
 
 See non-public items and private metadata fields
-:   An archivist's can search and view all of the data in their organization's
+:   An archivist can search and view all of the data in their organization's
     Digital Archive. In contrast, a public user can only search public items and fields.
 
-    An archivist that has a login for their organization's Digital Archive *cannot* see
+    An archivist that is logged in to their organization's Digital Archive *cannot* see
     non-public data in another organization's Digital Archive.
   
     [Learn about what gets searched](/archivist/what-gets-searched)
@@ -63,28 +63,28 @@ Edit items in the collection
     If you are not familiar with the terms *item* and *metadata*, see [Digital Archive concepts](/).  
     To learn about public and non-public items, read about [what gets searched](/archivist/what-gets-searched).
 
-    [Learn how to edit an item](/archivist/edit-item)
+    [Learn how to edit an item](/archivist/items/#edit-an-item)
 
-Remove items from the collection
+Delete items from the collection
 :   An archivist can delete an item from the collection.
 
-    [Learn how to remove an item](/archivist/delete-item)
+    [Learn how to delete an item](/archivist/items/#delete-an-item)
 
 Add new items to the collection
 :   An archivist can add a new item to the collection and control whether it is public or non-public.
     The can also attach images and PDF files to the new item.
 
-    [Learn how to add a new item](/archivist/add-new-item)
+    [Learn how to add a new item](/archivist/items/#add-a-new-item)
 
 Attach images and PDF files to items
 :   An archivist can attach images and/or PDF files to an item. They can also remove an attachment
-    and control the order in which attachment thumbnails apear on the item's page.
+    and control the order in which attachment thumbnails appear on the item's page.
 
     If you are not familiar with item attachments, see [Digital Archive concepts](/).
 
-    An archivist is responsible for managing the archival copies of their digital assets.
+    An archivist is responsible for managing the archival copies, meaning the full-sized versions, of their digital assets.
     The Digital Archive only stores web-sized images and does not provide features
-    for managing archival files. Every orgainzation should have a scheme in place for
+    for managing archival files. Every organization should have a scheme in place for
     managing and protecting these assets.
 
     [Learn how attach a file to an item](/archivist/attach-file)
@@ -101,7 +101,7 @@ Create relationships among items
     Relationships change a site from ordinary to extraordinary and archivists should
     make an effort to learn how to use this important feature.
 
-    [Learn about working with relationships](/archivist/working-with-relatonships)
+    [Learn about working with relationships](/archivist/add-relationship)
 
 Edit vocabularies
 :   An archivist can edit the terms used for metadata fields that use a vocabulary.

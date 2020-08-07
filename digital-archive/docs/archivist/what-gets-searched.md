@@ -2,7 +2,7 @@
 # What Gets Searched
 
 This section explains what gets searched when you type keywords in the search box.
-It does not cover [Advanced Search](../how-to-search/#advanced-search) which works
+It does not cover [Advanced Search](/user/how-to-search/#advanced-search) which works
 differently because it searches specific fields.
 
 ## Terminology
@@ -32,7 +32,7 @@ Visible Items and Fields
 Searching All Sites
 
 :   The Digital Archive lets you [search one site or all sites](/user/how-to-search/#search-one-site-or-all-sites).
-    An All Sites search only searches the public fields of public items. This is true whether or you are
+    An All Sites search only searches the public fields of public items. This is true whether or not you are
     logged-in as an archivist. If an archivist needs to search their organization's
     non-public items and private fields, they must switch to searching `This Site` and be logged-in.
 
@@ -45,7 +45,7 @@ When you type keywords in the search box, the Digital Archive examines:
 -   The text of a visible item's PDF file attachments (the PDF itself must be searchable)
 
 If the keywords exist in one or more of the item's visible metadata fields, that item will show
-up as a search result. The word's do not need to all exist together in the same field unless
+up as a search result. The words do not need to all exist together in the same field unless
 they have been enclosed in double quotes as a phrase.
 
 

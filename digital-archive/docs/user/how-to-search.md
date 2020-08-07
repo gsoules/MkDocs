@@ -38,6 +38,8 @@ the search results page.
 
 ![Searching selector options](how-to-search-11.jpg)
 
+Learn how this works by reading about [Elasticsearch indexes](/administrator/reindex/#what-elasticsearch-indexes-are-used-for).
+
 ## Search using facets
 
 Facets allow you to narrow down search results that you are viewing, or to narrow down all of the

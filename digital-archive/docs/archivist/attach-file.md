@@ -1,6 +1,6 @@
 # Attach an Image or PDF to an Item
 
-An item can have a digital image file or a PDF file attached to it. A digital image file is like a scan of a
+You can attach a digital image file or a PDF file to an item. A digital image file is like a scan of a
 photograph or document, or a photograph taken with a digital camera.
 *Attached* means that the file becomes associated with the item such that whenever you view the item's metadata,
 you also see the image or PDF. You can attach multiple image and/or PDF files to a single item.
@@ -31,7 +31,7 @@ Follow the steps below to attach a file to an item by uploading the file to your
 1 &ndash; Go to the item's  **_Edit Item_** page
 :   Learn how to [edit an item](/archivist/items/#edit-an-item).
 
-2 &ndash; Go to Files tab
+2 &ndash; Go to the Files tab
 :   On the **_Edit Item_** page, click on the **_Files_** tab.
 
     The screenshot below shows what the **_Files_** tab looks like for an item that has no file attachments.
@@ -78,7 +78,7 @@ Follow the steps below to attach a file to an item by uploading the file to your
 
     ![Eight files on public view item page](attach-file-5.jpg)
 
-    On the **_Files_** tab of the **_Edit Item_**, you can click-drag a file to move it up or
+    On the **_Files_** tab of the **_Edit Item_** page, you can click-drag a file to move it up or
     down in the list as shown below where file `14432-02.jpg` is being moved above `14432-03.jpg`
     so that the attachment order matches the file name numbering (these are newspaper pages and
     so the order is very important). When happy with the new order, click the **_Save Changes_** button.
@@ -123,17 +123,19 @@ Follow the steps below to attach a file to an item by uploading the file to your
     ![S3 login page](attach-file-12.jpg)
 
 2 &ndash; Upload files to S3
-:   You don't create an S3 folder for an item &ndash; it will just be there when you need it.
-
+:   Once logged in you will see the S3 page for the item. S3 *automatically* creates and manages a 
+    location for the uploaded files based on the item's **_identifier_** &ndash; you don't have to 
+    create a folder or do anything else before uploading files.
+    
     Drag files onto the S3 page, or click the **_Upload_** button to
     browse for files on your computer.
 
-    The screenshot below shows what the page looks like after uploading two files: a JPEG
+    The screenshot below shows what the page looks like after uploading two files for item 16159: a JPEG
     version of the file and the original high resolution TIFF file from the scanner.
 
     ![S3 with files](attach-file-8.jpg)
 
-    Once you are done uploading files, you can close the S3 tab.
+    Once you are done uploading files, you can close the S3 browser tab.
 
     
 3 &ndash; Select the S3 file(s) to attach to the item
@@ -193,7 +195,7 @@ other methods they tried for managing archival files and their corresponding Dig
 The S3 method is simple, fast, easy, and safe.
 Previously they used Dropbox to store archival assets, but the Dropbox approach required many
 manual steps and was error prone. Dropbox can also get  expensive if you need accounts for
-multiple archivists. S3 storage is relatively cheap by comparison. Once set up, S3 works very well,
+multiple archivists. S3 storage is relatively inexpensive by comparison. Once set up, S3 works very well,
 but to use it requires that all of your archival assets reside on S3, organized in folders as required
 by the  [AvantS3 plugin](/plugins/avants3). In other words, AvantS3 is not something you can just start
 using without the effort and expense required to first switch over to S3 from another technology.

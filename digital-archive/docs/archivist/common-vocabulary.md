@@ -2,7 +2,7 @@
 
 The Common Vocabulary is a set of hierarchically organized vocabulary terms. It can
 be used by all Digital Archive sites that share their collections with each other.
-Archivists for each site use the common terms when choosing values for these metadata fields:
+Archivists for each site use the common vocabulary terms when choosing values for these metadata fields:
 
 -   **_Type_**
 -   **_Subject_**
@@ -39,11 +39,11 @@ What you see for search results depends on which option you choose.
 below, the first three columns show the **_Subject_** terms from three different sites.
     
 **When you search All Sites**, the **_Refine Your Search_** panel displays terms from the Common Vocabulary.
-In the screenshot below, the fourth columns shows the results of an **All Sites** search with the
+In the screenshot below, the fourth column shows the results of an **All Sites** search with the
 `Structures` term expanded to show its hierarchy.
 
 In the screenshot, the green arrow is indicating that the
-site-specific terms from the left columns are comingled and mapped to common terms
+site-specific terms from the left columns are commingled and mapped to common terms
 in the last column. Without the Common Vocabulary, all of the site terms (including
 misspellings like "Bouys") would appear together in a very long list of inconsistently named terms.
 With the Common Vocabulary, users see a relatively short list of terms which they can drill into
@@ -51,7 +51,7 @@ as shown for `Structures`
 
 ![Why the common vocabulary is needed](common-vocabulary-8.jpg)
 
-The previous example illustrates how the Common Vocabulary feature work with sites that
+The previous example illustrates how the Common Vocabulary feature works with sites that
 use a flat, keyword vocabulary. The next example shows how it works
 with sites that use hierarchical vocabularies. The example below shows
 how one organization elevated the term `Church` from `Structures, Ceremonial, Church`
@@ -87,7 +87,7 @@ Vocabulary
 :   A **vocabulary** is a controlled list of terms that archivists use when cataloging items
     in their collection. Controlled means that archivists choose terms from lists rather then
     typing into a blank field. Choosing from a list ensures consistency and prevents
-    archivists from using terms that are not appropriate for the collection.
+    archivists from using terms that are not appropriate for the collection, or entering misspelled words.
 
 Hierarchy
 :   Individual terms belong to tiered groups of related terms that are each unique, but have something in common.
@@ -330,7 +330,7 @@ an organization would never have to wait for a new term to be added to Nomenclat
 
 To learn how the Common Vocabulary gets created from Nomenclature, and how additional terms get added,
 read about the [Common Vocabulary Translator](/developer/common-vocabulary-translator/). When the
-Common Vocabulary Translator is used to add or modify a Common Vocabular term, all Digital Archive
+Common Vocabulary Translator is used to add or modify a Common Vocabulary term, all Digital Archive
 sites can be automatically updated to receive the update and to convert site terms to common terms if
 appropriate. For example, if a number of sites have all added a mapped site term that then becomes a
 Common Vocabulary term, the site term can be automatically converted to be a common term on those sites.

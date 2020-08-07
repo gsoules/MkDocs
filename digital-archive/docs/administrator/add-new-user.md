@@ -83,6 +83,9 @@ Guest users **do not see**:
     page. Hiding the menu bar from guests prevents them from accessing an administrative features.
 -   [Quick access links](/archivist/special-features-archivist/#quick-access-links)
 
-
+A guest user account is useful for people who should be able to see all of the data in the
+collection, but not be able to make any change. Examples of guest users would be trusted researchers
+and members of your organization's board of trustees. You don't need to create a separate guest
+user account for each person. You can create just one guest account and let multiple people use it.
 
 

@@ -31,10 +31,16 @@ metadata for the element, the only option is to go into the MySQL database and e
 the `omeka_elements` table. Find the element in the table and then change its name
 in the **_name_** column. When you go back into Omeka, the element will appear
 with its new name. This can be done using [MySQL Workbench](../developer/mysql-workbench.md).
+If you don't have access to your MySQL database, ask your Digital Archive developer
+to rename the element for you.
+
+---
 
 !!! note ""
-    If you don't have access to your MySQL database, ask your Digital Archive developer
-    to rename the element for you.
+    You must [rebuild your site's Elasticsearch indexes](administrator/reindex/) after
+    renaming an element If you don't, the old element name will appear on items pages,
+    but search results will still show the new name.
+
 
 ## Arrange element order
 You can control the order in which elements appear when you are editing an item.

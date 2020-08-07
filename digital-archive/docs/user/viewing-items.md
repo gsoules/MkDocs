@@ -104,4 +104,44 @@ of the images associated with an item.
 
 ![Example of an item page](viewing-items-8.jpg)
 
+
+## Viewing zoomable images
+
+Some items have an image that you can zoom into to see more detail. The first screenshot below
+shows an item with a zoomable images that is zoomed, that is, the entire item is visible.
+The second screenshot shows the same item with the image zoomed in to near the center of the
+photo where two men are standing.
+
+### Zoomed out image
+
+![Zoomed out](viewing-items-9.jpg)
+
+### Zoomed in image
+
+In the screenshot below, the image inset in the upper right corner shows a red
+rectangle indicating which part of the entire image is visible. You can click-drag
+the red rectangle within the inset to see detail in other parts of the image.
+
+![Zoomed in](viewing-items-10.jpg)
+
+### Navigating a zoomable image
+
+-   Zoom in or out using the scroll wheel on your mouse  or  
+    click the **+** and **-** buttons in the controls at upper left
+-   Click the rightmost control to make the image display full screen
+-   Click the house icon to return the image to fully zoomed out
+-   Pan the image by click-dragging the image itself or the red rectangle in the inset
+
+![Zoom controls](viewing-items-11.jpg)
+
+### Multiple zoomable images
+
+You can make more than one image zoomable as shown in the two examples below.
+The first example has two zoomable images and the second has eight.
+This feature lets you zoom and pan all of the images together without having to view each one individually.
+
+[Learn how zoomable images get created](/administrator/zoomable-images/).
+
+![Zoom controls](viewing-items-12.jpg)
+
 ---

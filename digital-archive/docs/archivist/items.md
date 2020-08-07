@@ -1,6 +1,6 @@
 # Working with Items
 
-This pages provides step by step instructions for how to:
+This page provides step by step instructions for how to:
 
 -   [View an item](#view-an-item) using the admin interface
 -   [Add a new item](#add-a-new-item)
@@ -21,7 +21,7 @@ but sometimes you'll need to use the admin interface to access
 
 #### Get to the admin item page
 
-There are fours places from which you can get to an item's admin page.
+You can get to an item's admin page from four places.
 
 Public item page
 :   When on an item's public page, you can view (or edit) the item in the
@@ -88,7 +88,7 @@ Follow the steps below to add a new item.
 
 :   You will see a page similar to the screenshot below.
 
-![Add Item Button](items-11.jpg)
+![Add Item Page](items-11.jpg)
 
 
 2 &ndash; Fill in the required fields
@@ -154,7 +154,7 @@ Follow the steps below to edit an item.
 
     **Tip #1**: Quickly find vocabulary terms in the **_Type_**, **_Subject_**,
     and **_Place_** dropdown lists by typing into the search box that appears when you
-    click on the dropdown. In the screenshot below, typing `neg` displayed
+    click on the field's dropdown. In the screenshot below, typing `neg` displayed
     three choices containing the word `Negative`. Click on a choice to select it.
 
     ![Searchable dropdown list](items-4.jpg)
@@ -204,7 +204,7 @@ Follow the steps below to duplicate an existing item.
 
 2 &ndash; Click the **_Duplicate This Item_** button
 :   On the item's admin page, click the **_Duplicate This Item_** button.
-    After you click the button, the **_Add an Item_** page will display like if you
+    After you click the button, the **_Add an Item_** page will display as if you
     were [adding a new item](#add-a-new-item), but most of
     the fields will be filled in with the values from the item being duplicated.
 
@@ -218,7 +218,7 @@ Follow the steps below to duplicate an existing item.
 
 3 &ndash; Make changes
 :   Edit any of the fields on the page that you want to change so that the duplicated
-    item different than the original.
+    item is different than the original.
 
 4 &ndash; Click the **_Add Item_** button
 :   When you click the **_Add Item_** button, the duplicate item will be added to the Digital Archive.
@@ -251,7 +251,7 @@ Follow the steps below to delete an item.
     files and then choose **_Delete_** from the **_Actions_** menu.
 
     Return to the admin **_Item_** page and refresh your browser to cause the Digital Archive to check
-    again for S3 files. The red **_Delete This Item_** shoud appear and you can proceed to step 2.
+    again for S3 files. The red **_Delete This Item_** should appear and you can proceed to step 2.
 
 2 &ndash; Click the **_Delete This Item_** button
 :   On the item's admin page, click the **_Delete This Item_** button. When you click the button,

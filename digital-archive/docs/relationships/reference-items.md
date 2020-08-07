@@ -31,16 +31,16 @@ Reference Item has* because its primary purpose is to connect other items togeth
 information is important, but secondary.
 
 ### Relating reference items to each other
-To extend the previous example, suppose you have pictures of Mary Ann's, sisters, brother, and mother,
+To extend the previous example, suppose you have pictures of Mary Ann's sisters, brother, and mother,
 but not one of her father. You could:
 
--   Created a Reference Item for each sibling and for the each parent
+-   Create a Reference Item for each sibling and for the each parent
 -   Add a *depicts* relationship from each photo to its corresponding Reference Item
 -   Skip the step above for dad because you don't have a picture of him
 -   Add a *child of* relationship from each sibling Reference Item to each parent Reference Item
 
 The Digital Archive would then know enough to automatically produce the search results shown below
-when you view item 13575 for Mary Ann Carrol. You would see similar results when viewing any of the
+when you view item 13575 for Mary Ann Carroll. You would see similar results when viewing any of the
 related items.
 
 ![Three photographs of the same woman](reference-items-4.jpg)
@@ -80,7 +80,7 @@ Learn about:
 ## How to create a Reference Item
 Creating a Reference Item is easy:
 
--   Follow the steps to [add a new item](/archivist/add-edit-item/#add-a-new-item)
+-   Follow the steps to [add a new item](/archivist/items/#add-a-new-item)
 -   Choose `Reference` from the **_Type_** field's dropdown list
 -   Choose an appropriate Subject such as `People`
 

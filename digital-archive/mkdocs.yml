@@ -33,11 +33,13 @@ nav:
         Relationship Types: relationships/relationship-types.md
         Relationship Rules: relationships/relationship-rules.md
     - Site Administration:
-        $ Getting Started for Administrators: administrator/getting-started-administrator.md
-        $ Omeka Administration: administrator/omeka-administration.md
+        Getting Started for Administrators: administrator/getting-started-administrator.md
+        Omeka Administration: administrator/omeka-administration.md
         Add a New User: administrator/add-new-user.md
         Omeka Elements: administrator/omeka-elements.md
+        Digital Archive Administration: administrator/digital-archive-administration.md
         Zoomable images: administrator/zoomable-images.md
+        Rebuilding Elasticsearch Indexes: administrator/reindex.md
         Import CSV data: administrator/import-csv.md
     - Technology:
         Common Vocabulary Translator: developer/common-vocabulary-translator.md

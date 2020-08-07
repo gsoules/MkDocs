@@ -1,6 +1,6 @@
 # Special Features for Archivists
 
-An archivist has access to data and features that a regular user (not logged in) cannot see.
+An archivist has access to data and features that a public user (not logged in) cannot see.
 
 An archivist can see:
 
@@ -15,18 +15,19 @@ The following sections describe each of these features.
 
 ## Non-public items
 
-An archivist can see items that have an unchecked **_Public_** box. In search results, non-public
-items have an asterisk next to their **_Identifier_** as shown below. This is just a convenience
-to make you aware that an item is non-public.
+An archivist can see non-public items, i.e., items whose **_Public_** box is unchecked on the 
+[**_Add Item_**](/archivist/items/#add-a-new-item) or [**_Edit Item _**](/archivist/items/#edit-an-item) 
+page. In search results, non-public items have an asterisk next to their **_Identifier_** as 
+shown below. This is just a convenience to make you aware that an item is non-public.
 
 ![Example showing asterisk on non-public items](special-features-archivist-1.jpg)
 
 ## Private metadata fields
 
-An archivist can see an item's private fields when viewing the items's public page.
+An archivist can see an item's private fields when viewing the item's public page.
 The first screenshot below shows the metadata portion of an item page.
-The fields that appear in gray italics are private &ndash; regular users cannot see them.
-Private fields appear the same way in search results in
+The fields that appear in gray italics are private &ndash; public users cannot see them.
+Private fields also appear the same way in search results in
 [**_Table View_**](/user/viewing-search-results/#table-view) with Details layout
 as shown in the second screenshot.
 
@@ -42,17 +43,17 @@ Search results showing private fields
 
 Links to let you quickly work with an item appear on both the item pages and in search results in
 [**_Table View_**](/user/viewing-search-results/#table-view) with Details layout.
-The links are shown below and in the two screenshots above.
+These links are shown below and in the two screenshots above.
 
 ![Quick access links](special-features-archivist-5.jpg)
 
-Clicking a links takes you directly to its corresponding admin page so that you 
-can instantly view or edit the item or work with its relationships.
+Clicking a link takes you directly to the corresponding admin page so that you 
+can instantly view or edit the item, or work with its relationships.
 
 ## Private fields in Advanced Search
 
 As archivist can use the [**_Advanced Search_**](/user/how-to-search/#advanced-search) page
-to search both public and private metadata fields. Regular users only see public fields
+to search both public and private metadata fields. Public users only see public fields
 in the **_Fields_** dropdown list, but for archivists, the list is divided into two groups
 named *Public Fields* and *Private Fields* as shown in the screenshot below.
 
@@ -66,7 +67,7 @@ named *Public Fields* and *Private Fields* as shown in the screenshot below.
 
 ##### Using Advanced Search to find non-public items
 
-One of the fields in the *Admin Fields* group is named **_Public_** (not shown in the screenshot).
+One of the fields in the *Private Fields* group is named **_Public_** (not shown in the screenshot).
 You can use that field to restrict search results to either public or non-public items. To find
 only non-public items, set the search value to `false` as shown below. Set it to `true` to find only
 public items.
@@ -89,8 +90,8 @@ Archive image for item 8065.
 
 ## Admin menu bar
 
-When an archivist is logged in, a black menu bar appears at the top of each page.
-when on a public page, you can click your name in the bar to get to the
+When an archivist is logged in, a dark gray menu bar appears at the top of each page.
+When viewing a public page, you can click your name in the menu bar to get to the
 [Avant Dashboard](/archivist/logging-in/#avant-dashboard) admin page.
 
 ![admin menu bar](special-features-archivist-3.jpg)

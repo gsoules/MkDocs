@@ -12,10 +12,10 @@ of a person to an item about that person.
 1 &ndash; Clear your Recent Items list
 :   Click the **_Clear all_** link on the [**_Recently Viewed Items_**](/user/recently-viewed/#recently-viewed-items-page) page.
     
-    You'll be using the list in step 4, but to get started, we want it to be empty.
+    You'll be using the **_Recently Viewed Items_** list in step 4, but to get started, we want it to be empty.
 
-2 &ndash; Create a [Reference Item](/relationships/reference-items/) for the person
-:   [Add a new item](/archivist/add-edit-item/#add-a-new-item) with these metadata values:
+2 &ndash; Create a [Reference Item](/relationships/reference-items/#how-to-create-a-reference-item) for the person
+:   [Add a new item](/archivist/items/#add-a-new-item) with these metadata values:
 
     -   Use the person's name in the **_Title_** field
     -   Choose `Reference` for the **_Type_** field
@@ -30,13 +30,15 @@ of a person to an item about that person.
 
     As you view or flag the photos, they'll get added to your recently viewed items list.
 
-4 &ndash; Go to the **_Recently Viewed Items_** page
+4 &ndash; Go to the [**_Recently Viewed Items_**](/user/recently-viewed/#recently-viewed-items-page) page
 :   Verify that the new Reference Item and your photos are in the list.
 
     Click the **_Remove_** link on other items that may have crept in while you lookied for photos.
 
 5 &ndash; Add relationships to the Reference Item for your person
 :   -   Click the Reference Item's **_Relationships_** link on the **_Recently Viewed Items_** page
+
+      ![Relationships link](add-relationship-1.jpg)
 
     -   On the **_Relationships for Item_** page:
         -   Choose `depicted by` from the dropdown list in the **_Relationship_** column
