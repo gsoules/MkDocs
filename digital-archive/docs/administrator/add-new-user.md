@@ -11,7 +11,7 @@ Follow these steps to add a new user.
     they get an email from Omeka about their new account.
 
 ``` text
-I have created a Digital Archive account for you. You will receive  an email with a link
+I have created a Digital Archive account for you. You will receive an email with a link
 to activate the account. Click the link, and then on the User Activation screen, type a
 password in the two password fields (it's a little confusing because the Create a Password
 field looks like it's already filled in). After you click the Activate button on that
@@ -37,7 +37,7 @@ Your Organization Name Administrator
 ```
 
 3 &ndash; Follow up with the new user
-:   Make contact with the new user to verify they they received the email
+:   Make contact with the new user to verify they received the email
     from Omeka and that they were able to activate their account and login.
     When they click the link in the email, they'll see a page like the one below.
 
@@ -80,7 +80,7 @@ To learn about public and non-public items, see the section on [what gets search
 Guest users **do not see**:
 
 -   The gray menu bar that archivists and administrators see at the top of every
-    page. Hiding the menu bar from guests prevents them from accessing an administrative features.
+    page. Hiding the menu bar from guests prevents them from accessing administrative features.
 -   [Quick access links](/archivist/special-features-archivist/#quick-access-links)
 
 A guest user account is useful for people who should be able to see all of the data in the

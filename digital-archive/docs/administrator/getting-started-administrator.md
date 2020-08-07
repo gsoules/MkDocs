@@ -22,7 +22,7 @@ Work with Omeka features
 
 Work with Digital Archive features
 :   -   [Create zoomable images](/administrator/zoomable-images/)
-    -   [Configure Digital Archive plugins](/administrator/plugins/)
+    -   [Configure Digital Archive plugins](/administrator/digital-archive-administration/#configure-digital-archive-plugins)
     -   [Perform other Digital Archive administrative tasks](/administrator/digital-archive-administration/)
 
 Add and edit relationship types and rules

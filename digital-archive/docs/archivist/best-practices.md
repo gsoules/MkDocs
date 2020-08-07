@@ -1,73 +1,99 @@
 # Best Practices
 
-The best practices on this page are the recommendations of George Soules, 
-who has served as a volunteer archivist at the Southwest Harbor Public Library
-for the past six years. Though not a professional archivist, he has a degree in Information Sciences (1980) from 
-the University of California, Santa Cruz where his focus was programming linguistics. During his 40 years
-working professionally in the software industry, he has been involved with numerous database projects
-that manage, classify, and translate the kind of information that is heavily used in the Digital Archive
-for cataloging. Mr. Soules conceived, designed, and implemented the Digital Archive software.
-The advice that follows is based on practical experience learning what works well and what does not.
+##### One man's opinion
+The best practices on this page are the recommendations of George Soules.
+He has served as a volunteer archivist at the Southwest Harbor Public Library
+for six years and holds a degree in Information Sciences from the University of
+California. His advice is based on practical experience with what works well and what does not.
 
-## Subjects
+## Metadata fields
 
-In the Digital Archive, an object name alone is not always sufficient for cataloging an item.
-Every item must have a **_Type_**, and unless the type is a physical object that can be
-unambiguously described by a Common Vocabulary term, the item must also have a **_Subject_** that further
-classifies the **_Type_**. For example, an item with **_Type_** `Object, Cup, Teacup` needs no further
-classification, but an item of **_Type_** `Image, Photograph` *must* have a **_Subject_** to
-classify the *nature* of the picture. For example, the subject of a photograph could be `People` to
-indicate that it's a photo of humans.
+### Title
 
-The **_Subject_** is *not* used to identify which people are in a photo. That level of specificity
-is provided by keywords in the item's **_Title_** and/or **_Description_**. Some subjects convey
-significant information about an item, such as `Vessels, Ship, Sailing Ship, Schooner`, but still
-stop short of, in this case, identifying the name of the vessel, which again, would be in the item's
-**_Title_** and/or **_Description_**.
+The **_Title_** metadata field is more important than any other field because:
 
-The limit on how specific subject terms should be has to do with the fact that **_Subject_** is
-meant to *classify* something, but not necessarily *identify* it. To classify is to put things
-in groups based on shared attributes. The very nature of a group is that it contains multiple
-things. Thus, for a **_Subject_** to be a person's name would be to create a group of one which
-is not classification, but identification.
+-   The **_Title_** field appears everywhere in the user interface &ndash; it's what users see the most
+-   Users read the title first to decide if they should view the full item
+-   Items with searched-for keywords in their titles *appear highest in search results*
+
+Suggestions:
+
+-   Write titles that concisely describe items in 10 words or less
+-   Put non-essential information in other fields, not in the Title field
+-   Think of the **_Title_** like ad copy written to catch someone's attention
+
+### Type
+
+Use the most precise **_Type_** field vocabulary terms available. As an example, for an
+obituary, use `Document, Announcement, Obituary` instead of just `Document, Announcement`.
+If the more precise term is not in your site's vocabulary, don't be lazy &ndash; take
+a minute to add it using the [Vocabulary Editor](/archivist/vocabulary-editor/).
+
+Don't be *too* literal when choosing an item's **_Type_**. For example, since you can only put
+digital scans and photographs into a database &ndash; because you can't upload an actual teacup
+ &ndash; you use *documentary* photographs of objects as *stand-ins* for the real thing.
+ The **_Type_** of these items should be the object's type, not `Image, Photograph`.
+
+As an example, suppose your collection contains a teacup that is on display in your
+museum. You would photograph the teacup and add the photo to the Digital Archive
+as an item of **_Type_**  
+`Object, Cup, Teacup`. If you also had a snapshot
+of a person drinking from that same teacup, the **_Type_** for the snapshot item *would be*
+`Image, Photograph`, but the item would have two subjects: `People` and `Object, Cup, Teacup`.
+
+Note that many organizations have items in their collection that they don't physically
+posses. For example, if an archivist borrows, scans, and returns an albumen print,
+they would set the **_Type_** of that item to `Image, Photograph, Photographic Print, Albumen Print`
+because that's what the item represents.
+
+In summary, choose a **_Type_** that most closely indicates what the item is in the real word.
+
+### Subject
+
+Like types, Subjects should be precise, but not too precise.
+
+The **_Subject_** field is used to *classify* an item, but not uniquely
+identify it. For example, the subject of a photograph of a boat can precisely indicate
+the kind of boat, but not which boat. For example, the **_Subject_** could be
+`Vessels, Ship, Sailing Ship, Schooner` but it should *not* be  
+`Vessels, Ship, Sailing Ship, Schooner, Victory Chimes` which is a specific boat.
+
+The limit on how specific subject terms should be has to do with the fact that in cataloging,
+classification puts things into groups based on shared attributes such as boats that are all schooners.
+The very nature of a group is that it contains multiple things. For a **_Subject_** to be the name
+of a specific boat would be to create a group of one which is not classification, but identification.
+
+A guideline for determining when a subject term has gotten as specific as it should be is to consider
+what the next level would be. For schooners, would it be their names, their tonnage, the routes
+they traveled, the number of masts? If the possibilities of the next level are very broad,
+that's probably the cut off point. Another example is the subject `People` which has no lower level
+classification. That's because to go one more level would mean having to decide the most important
+way to further classify humans. Would it be by gender, ethnicity, religion, age, or height? There's no
+clear choice and so `People` is as deep as this subject goes.
+
+In the Digital Archive, archivists use keywords to provide additional specificity. For example, 
+a good tile for our schooner would be `Three-masted Windjammer Victory Chimes`. Combined with it's **_Subject_**
+`Vessels, Ship, Sailing Ship, Schooner`, this item will show up in results for a keyword search for any
+one of these keywords: `ship`, `schooner`, `three mast`, `windjammer`, `victory chimes`. Note that hits
+on the last three keywords, which are all in the **_Title_**, will come up higher in search results than hit's
+on `ship` or `schooner` which are only in the **_Subject_**. That's because the Digital Archive gives much
+more weight to the content of titles than to any other metadata field. It gives the next most weight content
+in the **_Description_** field.
+
+In summary, the **_Subject_** field is used to classify items into groups of things
+that have something in common, whereas keywords are used to uniquely identify a specific item within a group 
+
+### Date
+
+### Rights
+
 
 
     
-    An item that is *part* of a collection does not necessarily have to be something
-    that the organization physically posses. For example, a major component of many collections
-    are photographs that archivists have borrowed, scanned, and then returned to the
-    owners. For the purpose of cataloging such an item, the **_Type_** of the items is `Image, Photograph`
-    and the **_Subject_** is the subject of the photograph such as `Vessels, Ship, Steamship`.
-    
-    You treat a *documentary* picture of an object that's in the collection as a *stand-in* for the actual object
-    and thus that item's **_Type_** is the object's type. For example, if your collection contains a teacup,
-    you would photograph it and add the photo to the Digital Archive as an item of **_Type_**
-     `Object, Cup, Teacup`, not `Image, Photograph`. If you also had a snapshot of notable person
-     drinking from that teacup, the **_Type_** for that photo would be 
-    `Image, Photograph` and its two subjects would be `People` and `Object, Cup, Teacup`.
 
 
 TITLE
 
-An item can have multiple titles, but only if you can say “Also known as” for the alternate title(s).
-People are listed by last name first followed by a hyphen. If the person is living, omit the dates. 
-The convention for men is as follows:
-LastName - FirstName MiddleNameOrInitial LastName (birthdate-deathdate)
-Rich - Clifton Melbourne Rich (1882-1971)
-Rich - Merton E. Rich (1927-2010)
-Rich - Jasper E. Rich
-For women use the maiden name for the initial LastName and also include it in parentheses before their married last name:
-	Rich - Meredith Adelle (Rich) Hutchins (1939-2016)
-Nicknames for people are included in the Title field as follows:
-Bracy - Thelma Gwendolyn (Bracy) Hinckley (1913-2005) aka Gwen
-
-D.	Map Titles
-Base map titles start with the date of the map (if known) followed by a brief descriptive title taken from the actual title of the map. Additional descriptive information from the actual map title or other text on the map is included in the Description field.
-
-		1887 Map of Mount Desert Island
-		1886 Bird’s Eye View of Bar Harbor, Maine
-		1903 Part of Ward 9, City of Cambridge
-		1921 Sanborn Map of Manset Shore and Southwest Harbor
 
 F.	Date
 Unknown birth or death dates – when you know a person is not living, but we don’t know the birth or death date use a “?”:
@@ -77,7 +103,6 @@ Gott - Everett Livingston Gott (?-1954)
 H.	Creator
 The Creator is the “entity primarily responsible for making the content of the resource”. For Article, Document this is the person who wrote the document (e.g. Riebel - Charlotte (Riebel) Morrill). For a photograph, the creator is the person who took the photograph. It is not necessary to specify a creator for Article, Text items with short general descriptions. The Creator field is optional, but when specified, must match exactly the Title of the item for that creator.
 
--	Work with the public interface all of the time except when not possible
 -	Define vocabuaries for the site
 -	Mangage archival copies of files
 -	Only upload web-sized images

@@ -86,8 +86,8 @@ always [edit the term](#edit-a-vocabulary-term) to change it back to what it was
 ## See which items use a term
 
 To see which items use a specific term, click the number that appears to the left of the term.
-The screenshot below shows that 35 items use the term `Image, Art, Drawing`. You could click on
-`35` to see search results for the 35 items that have that term as their **_Type_**.
+The screenshot below shows that 35 items use the term `Image, Art, Drawing`. You can click on
+`35` to see search results for the 35 items that use that term as their **_Type_**.
 
 ![See which items use a term](vocabulary-editor-7.jpg)
 
@@ -100,9 +100,9 @@ The next two sections on adding and editing terms require that you choose a term
 from the Common Vocabulary. To choose a common term, follow these steps:
 
 1 &ndash; Open the common term chooser dialog
-:   To open the dialog, click the **_Choose Common Term_** button in the term's edit form.
+:   To open the dialog, click the **_Choose Common Term_** button in the term's edit form (see next section).
 
-2 &ndash; Start typing in the field at the top of the dialog
+2 &ndash; Start typing in the field at the top of the chooser dialog
 :   As you type, terms that match what you enter will appear as suggestions
     as shown below.
 
@@ -121,7 +121,7 @@ Follow these steps to add a new term:
 :   Select **_Type_**, **_Subject_**, or **_Place_** from the **_Vocabulary_** dropdown list at the top of the
     Vocabulary Editor page. The page will update to show the terms defined for your site for that kind.
 
-    ![Vocabulary selecter](vocabulary-editor-5.jpg)
+    ![Vocabulary selector](vocabulary-editor-5.jpg)
 
 2 &ndash; Click the **_Add_** button at the top of the page
 :   In the screenshot above, the button says **_Add Subject_** because **_Subject_**
@@ -172,7 +172,7 @@ Follow these steps to change an existing term:
 
 To remove an existing term, follow the steps above to edit an existing term,
 but then click the red **_Remove_** button in the lower right.
-**The button will only appear if the item has zero uses.** To remove a term
+**The button will only appear if the term is not used by any items.** To remove a term
 that is being used by one or more items, first edit each of those items to
 use a different term. When no item is using the term, you can remove it.
 

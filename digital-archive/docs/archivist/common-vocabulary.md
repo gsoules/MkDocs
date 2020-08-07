@@ -53,19 +53,24 @@ as shown for `Structures`
 
 The previous example illustrates how the Common Vocabulary feature works with sites that
 use a flat, keyword vocabulary. The next example shows how it works
-with sites that use hierarchical vocabularies. The example below shows
-how one organization elevated the term `Church` from `Structures, Ceremonial, Church`
-to `Structures, Church`, a perfectly reasonable thing to do, especially if churches
-are the only ceremonial structures in the collection. To elevate a term means
-to place it higher up in its hierarchy.
+with sites that use hierarchical vocabularies. 
+
+The hierarchy on the left shows the term `Church`
+in two places because one organization (with three church items) elevated the term `Church` from 
+`Structures, Ceremonial, Church` to `Structures, Church`, a perfectly reasonable thing to do, 
+especially if churches are the only ceremonial structures in their collection. To elevate a term means
+to place it higher up in its hierarchy. Other organizations retained the `Structures, Ceremonial, Church`
+hierarchy.
+
+**Without** the Common Vocabulary feature, an **All Sites** search would commingle the
+terms and display `Church (3)` above `Ceremonial` and `Church (7)` below `Ceremonial` as shown at left.
 
 ![Why the common vocabulary is needed](common-vocabulary-7.jpg)
 
-**Without** the Common Vocabulary feature, an **All Sites** search would commingle the
-terms and display `Church` in two places as shown at left. *With* the Common
-Vocabulary, `Church` appears just once, beneath `Ceremonial`. However, if you searched
-just the one site that uses the term `Structures, Church`,  the word `Church` would
-appear above and at the same level as `Ceremonial` like it does for `Church (18)` at left.
+**With** the Common Vocabulary, `Church` appears just once, beneath `Ceremonial` as shown on the right.
+ However, if you searched just the one site that uses the term `Structures, Church`, the word 
+ `Church` would only appear above and at the same level as `Ceremonial` like it does for 
+ `Church (3)` at left.
 
 For a real life example of an organization that elevates site terms to better reflect its
 collection, see the
@@ -185,11 +190,11 @@ Unmapped Site Term
 ## When to use site term mapping
 
 Most organizations will find that they can use Common Vocabulary terms most of the time.
-There are however cases when you need to create a site term and map it to a Common Vocabulary term.
+There are, however, cases when you need to create a site term and map it to a Common Vocabulary term.
 Create a mapped site term when:
 
 -   The term you want is not in the Common Vocabulary
--   You want a more specific than the closest term in the Common Vocabulary
+-   You want a more specific term than the closest term in the Common Vocabulary
 
 Here are examples for each case taken from the Southwest Harbor Public Library.
 
@@ -208,9 +213,9 @@ document, but to have it show up in all-sites searches as a kind of report.
 
 If these surveys where a
 major focus of the Library's collection, the site term could have been simply `MHPC Survey` which
-would have made it a top level term the same as `Document`, `Image`, or `Object`. An example of this
-kind of term elevation appears in the demonstration section below where a museum made `Carving` a top
-level term because carvings are the focus of its collection.
+would have made it a top level term at the same hierarchy level as `Document`, `Image`, or `Object`. 
+An example of this kind of term elevation appears in the site term demonstration section below where 
+a museum made `Carving` a top level term because carvings are the focus of its collection.
 
 ##### Case 2 &ndash; A Common Vocabulary term is not specific enough
 
@@ -254,7 +259,7 @@ Here are the differences between the first and second screenshots above:
 -   The **_Refine Your Search_** panels look completely different, though both show:
     -   `Birds` as the **_Subject_** and
     -   `Carving` as the **_Type_**
--   In the search result rows, the **_Type_** and **_Subject_** fields are different:
+-   In the search result rows, the terms in the **_Type_** and **_Subject_** fields are different:
     -   Common terms appear in the **All Sites** results
     -   Site terms appear in the **This Site** results
 
@@ -263,7 +268,7 @@ Here are the differences between the first and second screenshots above:
 The difference in search results above is due to
 how archivists at the Wendell Gilley Museum, which has a collection focused on bird carvings, used the
 [Vocabulary Editor](/archivist/vocabulary-editor/) to make `Carving` a top level **_Type_** term.
-You can see this in the screenshot below of the Vocabulary Editor where terms like
+You can see this in the screenshot of the Vocabulary Editor below where terms like
  `Carving, Decoy` and `Carving, Miniature` are all mapped to the Common Vocabulary term  
  `Object, Art, Sculpture, Carving`. This is called elevating a term because it moves `Carving`
  up in the hierarchy from the fourth level to the first level.
@@ -272,7 +277,7 @@ You can see this in the screenshot below of the Vocabulary Editor where terms li
 
 ## Origin of the Common Vocabulary
 
-The original "common vocabulary" originated at the Southwest Harbor Public Library in 2016. It was
+The "common vocabulary" originated at the Southwest Harbor Public Library in 2016. It was
 created for the Digital Archive based on a tiny subset of the [Nomenclature 4.0](#nomenclature-40)
 vocabulary. Archivists at the Library liked the descriptiveness of Nomenclature, and the fact that
 it is hierarchical, but there were two issues. The first is that full Nomenclature terms are long and
@@ -312,7 +317,7 @@ which use this nine level term for `Dogs`:
     Agents, Living Organisms, Eukaryota, Animalia, Chordata, Vertebrata, Mammalia, Canidae, Canis
 
 Nomenclature does not have a term for `Dogs` because they are not human-made objects. The Common Vocabulary
-add this term as `Nature, Animals, Dogs`.
+added this term as `Nature, Animals, Dogs`.
 
 Updates to Nomenclature used to be released every few years and museums had to pay for the new releases,
 but the terms are now updated on an ongoing basis and updates are available for free from the Nomenclature

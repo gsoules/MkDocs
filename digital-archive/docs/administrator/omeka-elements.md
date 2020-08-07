@@ -13,15 +13,15 @@ a new element to store metadata that your were not previously recording.
 Follow these steps to add a new element to your Digital Archive installation.
 
 -   Login to Omeka as an administrator
--	Click **_Items Types_** in Omeka's left admin menu
--   Click the **_Edit_** link below organization's **_Item Type_** name
+-	Click **_Item Types_** in Omeka's left admin menu
+-   Click the **_Edit_** link below the organization's **_Item Type_** name
 -	On the **_Edit Item_** page, follow these steps to add an element:
     1.	Choose the **_New_** radio button at the bottom of the page
     2.  Click the **_Add Element button_** to expose element name and description fields
     3.	Type the **_Element Name_** and leave the description blank
-    4.	Repeat at Step 2 until done
+    4.	Repeat from Step 2 until done
 -	When done adding elements, click the **_Save Changes_** button
--   See the next section to position the new element among existing elements
+-   [Position the new element](/administrator/omeka-elements/#arrange-element-order) among existing elements
 
 ## Rename an element
 Omeka does not provide a way to rename an element. If you mistype the name when
@@ -37,8 +37,8 @@ to rename the element for you.
 ---
 
 !!! note ""
-    You must [rebuild your site's Elasticsearch indexes](administrator/reindex/) after
-    renaming an element If you don't, the old element name will appear on items pages,
+    You must [rebuild your site's Elasticsearch indexes](/administrator/reindex/) after
+    renaming an element If you don't, the old element name will appear on item pages,
     but search results will still show the new name.
 
 
@@ -77,6 +77,6 @@ Coverage
 ### Other elements
 -   Login to Omeka as an administrator
 -	Click **_Item Types_** in the left menu
--   Click the **_Edit_** link below organization's Item Type name
+-   Click the **_Edit_** link below the organization's Item Type name
 -	Drag the elements into the desired order
 -   Click the **_Save Changes_** button

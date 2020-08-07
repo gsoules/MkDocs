@@ -58,7 +58,7 @@ To make these kinds of changes, go to the **_Themes_** tab on the **_Appearance_
 !!! note "Caution"
     Do not edit CSS unless you know what you are doing. The smallest mistake can drastically
     change the appearance of your site. To be safe, before making any changes, first copy
-    text CSS and save it to a file as a backup. If you get into trouble with your changes,
+    the CSS and save it to a file as a backup. If you get into trouble with your changes,
     you can restore the good CSS by copying it into the CSS field from the file.
 
 ## Add a new user
@@ -83,17 +83,17 @@ fields, you can learn how to use the [Omeka Bulk Metadata Editor](https://omeka.
     **There is no undo**, so be sure you know what you are doing.
 -   There seems to be a bug in the plugin that causes it to make no changes if you take
     too long to provide all the edit parameters before clicking the **_Apply Edits Now_** button.
-    If the changes don't take effect, be a little speedier and try again
+    If the changes don't take effect, be a little speedier and try again.
 -   For most bulk edits, it's best to *uncheck* the **_Background Job_** at the bottom of the
     **_Bulk Metadata Editor_** page. With the box unchecked, you wait for the changes to be made
     and will know when they are done.
--   [Rebuild your site's Elasticsearch indexes](administrator/reindex/) (see caution below)
+-   [Rebuild your site's Elasticsearch indexes](/administrator/reindex/) (see caution below)
 
 ---
 
 !!! note "Caution"
-    You must [rebuild your site's Elasticsearch indexes](administrator/reindex/) after
-    making bulk edits. If you don't, your bulk edit changes will appear on items pages,
+    You must [rebuild your site's Elasticsearch indexes](/administrator/reindex/) after
+    making bulk edits. If you don't, your bulk edit changes will appear on item pages,
     but search results will still show the old text.
     If you are not comfortable with reindexing, don't make bulk changes
     or consult with your Digital Archive developer.

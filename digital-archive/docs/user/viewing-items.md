@@ -108,7 +108,7 @@ of the images associated with an item.
 ## Viewing zoomable images
 
 Some items have an image that you can zoom into to see more detail. The first screenshot below
-shows an item with a zoomable images that is zoomed, that is, the entire item is visible.
+shows an item with a zoomable image that is zoomed out, that is, the entire item is visible.
 The second screenshot shows the same item with the image zoomed in to near the center of the
 photo where two men are standing.
 
@@ -128,7 +128,7 @@ the red rectangle within the inset to see detail in other parts of the image.
 
 -   Zoom in or out using the scroll wheel on your mouse  or  
     click the **+** and **-** buttons in the controls at upper left
--   Click the rightmost control to make the image display full screen
+-   Click the rightmost control to display the image full screen
 -   Click the house icon to return the image to fully zoomed out
 -   Pan the image by click-dragging the image itself or the red rectangle in the inset
 
