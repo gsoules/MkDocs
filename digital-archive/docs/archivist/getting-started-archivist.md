@@ -2,7 +2,7 @@
 
 **Archivists** are staff members and volunteers who maintain a
 Digital Archive collection. They have a user name and password that lets
-them to log in and see all public items in the collection as well as non-public items
+them log in and see all public items in the collection as well as non-public items
 and private fields. They can add new items, edit existing items, attach images
 and PDF files to items, edit vocabularies, and establish relationships among items.
 An archivist cannot make changes to a Digital Archive installation unless they log
@@ -13,17 +13,17 @@ in as an [Administrator](/administrator/getting-started-administrator/).
 -   Learn what archivists can do by reading the sections below
 -   Learn about [special features for archivists](/archivist/special-features-archivist)
 -   [Login](/archivist/logging-in) to the Digital Archive
--   [Add a new item](/items/#add-a-new-item)
--   [Edit an existing item](/items/#edit-an-item)
--   [Duplicate an item](/items/#duplicate-an-item)
--   [Delete an item](/items/#delete-an-item)
+-   [Add a new item](/archivist/items/#add-a-new-item)
+-   [Edit an existing item](/archivist/items/#edit-an-item)
+-   [Duplicate an item](/archivist/items/#duplicate-an-item)
+-   [Delete an item](/archivist/items/#delete-an-item)
 -   [Attach an image or PDF file to an item](/archivist/attach-file/)
 
 ** After you are comfortable working with items:**
 
 -   [Learn about relationships](/relationships/getting-started-relationships/)
 -   [Add a relationship to an item](/archivist/add-relationship/)
--   [Learn about vocabularies](/vocabularies/getting-started-vocabularies/)
+-   [Learn about the Common Vocabulary](/archivist/common-vocabulary/)
 -   [Learn about best practices](/archivist/best-practices/)
 
 ---

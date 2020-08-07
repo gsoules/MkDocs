@@ -20,10 +20,10 @@ tiles from the image’s high resolution file and then uploading a folder contai
 -   Run the `Zoomify Unlimited Converter.exe` program which is located in the  
     `Digital Archive SWHPL\Zoomify` Dropbox folder
 -   Set:
-    -	**Output Path**: `Same as input file`
-    -	**Output Format**: `Zoomify folders`
-    -	**JPEG Compression Quality**: `80`
-    -	**Compression Format**: `JPEG Tile Compression`
+    -	**_Output Path_**: `Same as input file`
+    -	**_Output Format_**: `Zoomify folders`
+    -	**_JPEG Compression Quality_**: `80`
+    -	**_Compression Format_**: `JPEG Tile Compression`
 -   Drag the high resolution file from the item’s Dropbox folder onto the converter (or choose `Open` from the converter’s menu)
 -   The conversion begins automatically and typically takes only a few seconds
 -   The generated tiles folder will appear in the folder containing the high resolution image
@@ -35,10 +35,10 @@ tiles from the image’s high resolution file and then uploading a folder contai
 -   Delete the temporary folder you created earlier since you no longer need those files
 -   View the item in the Digital Archive and verify that the image is zoomable.
 
-    !!! Note "Important"
-        In order for a zoomable image to display, the item must already have a JPEG image attached to it.
-        The JPEG is necessary to allow the user to toggle between the zoomable and web-size images.
-        If the item that has no JPEG image, attach one in the usual way.
+!!! Note ""
+    In order for a zoomable image to display, the item must already have a JPEG image attached to it.
+    The JPEG is necessary to allow the user to toggle between the zoomable and web-size images.
+    If the item that has no JPEG image, attach one in the usual way.
 
 ## Multiple zoomable images 
 -   If the item has more than one image, e.g. a newspaper with eight pages, follow the steps above to
@@ -57,10 +57,10 @@ tiles from the image’s high resolution file and then uploading a folder contai
 ```
 
 ## Tag the Item as zoomable
--   Edit the item and choose the `Tags` tab
--   In the `Add Tags` box type `Zoomable`  (it will start to fill in automatically as you type)
--   Click the `Add Tags` button
--   Click `Save Changes`
+-   Edit the item and choose the **_Tags_** tab
+-   In the **_Add Tags_** box type `Zoomable`  (it will start to fill in automatically as you type)
+-   Click the **_Add Tags_** button
+-   Click **_Save Changes_**
 -   Note that the tag simply makes it easier for people to find the image
     The image will be zoomable whether you tag it or not
 
@@ -75,8 +75,8 @@ program called [FileZilla](https://filezilla-project.org/). Connection settings 
 
 -   Run FileZilla
 -	Choose `File` > `Site Manager` from the top menu bar
--	On the `Site Manger` dialog, click the name of your connection for the `zoom` folder
--   Click the `Connect` button
+-	On the **_Site Manger_** dialog, click the name of your connection for the `zoom` folder
+-   Click the **_Connect_** button
 -   In the right panel (remote site):
     -   You should see a list of the tile folders that have been previously uploaded
     -   Click on the `/` at the top of the list (see red arrow in screenshot below)
@@ -87,7 +87,7 @@ program called [FileZilla](https://filezilla-project.org/). Connection settings 
 ![Upload zoom folder](zoomable-images-2.jpg)
 
 
-!!! warning
+!!! note ""
     In the instructions above, be very careful to click on the `/` at the top of the right panel as pointed
     to by the red arrow in the screen shot above.
     If instead you click on an existing folder, the folder you are uploading will go into that existing folder.
@@ -113,13 +113,13 @@ use the credentials provided to you by the Digital Archive developer.
 -	On the `Site Manger` dialog click the `New site` buttons
 -	Fill in the site name in the `My Sites` tree
 -	On the `General Tab` set:
-    -	**Protocol**: `FTP - File Transfer Protocol`
-    -	**Host**: Example: `ftp.mydomain.net`
-    -	**Port**: leave blank
-    -   **Encryption**: `Use explicit FTP over TLS if available`
-    -	**Logon Type**: `Normal`
-    -	**User**: *zoom username* e.g. `zoom@mydomain.net`
-    -	**Password**: *zoom password*
+    -	**_Protocol_**: `FTP - File Transfer Protocol`
+    -	**_Host_**: Example: `ftp.mydomain.net`
+    -	**_Port_**: leave blank
+    -   **_Encryption_**: `Use explicit FTP over TLS if available`
+    -	**_Logon Type_**: `Normal`
+    -	**_User_**: *zoom username* e.g. `zoom@mydomain.net`
+    -	**_Password_**: *zoom password*
 -	Click the `Connect` button
 
 ![Administrator FTP access](zoomable-images-1.jpg)

@@ -34,10 +34,10 @@ nav:
         Relationship Rules: relationships/relationship-rules.md
     - Site Administration:
         $ Getting Started for Administrators: administrator/getting-started-administrator.md
-        $ FAQ: administrator/faq.md
+        $ Omeka Administration: administrator/omeka-administration.md
         Add a New User: administrator/add-new-user.md
-        Zoomable images: administrator/zoomable-images.md
         Omeka Elements: administrator/omeka-elements.md
+        Zoomable images: administrator/zoomable-images.md
         Import CSV data: administrator/import-csv.md
     - Technology:
         Common Vocabulary Translator: developer/common-vocabulary-translator.md

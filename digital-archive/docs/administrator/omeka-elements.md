@@ -12,22 +12,29 @@ a new element to store metadata that your were not previously recording.
 
 Follow these steps to add a new element to your Digital Archive installation.
 
--   Login to Omeka as a super user
--	Click `Items Types` in Omeka's left admin menu
--   Click the `Edit` link below organization's Item Type name
--	On the `Edit Item` page, follow these steps to add an element:
-    1.	Choose the `New` radio button at the bottom of the page
-    2.  Click the `Add Element button` to expose element name and description fields
-    3.	Type the **Element Name** and leave the description blank
+-   Login to Omeka as an administrator
+-	Click **_Items Types_** in Omeka's left admin menu
+-   Click the **_Edit_** link below organization's **_Item Type_** name
+-	On the **_Edit Item_** page, follow these steps to add an element:
+    1.	Choose the **_New_** radio button at the bottom of the page
+    2.  Click the **_Add Element button_** to expose element name and description fields
+    3.	Type the **_Element Name_** and leave the description blank
     4.	Repeat at Step 2 until done
--	When done adding elements, click the `Save Changes` button
+-	When done adding elements, click the **_Save Changes_** button
 -   See the next section to position the new element among existing elements
 
 ## Rename an element
-Omeka does not provide a way to rename an element. If you mistype the name when creating a new element, you can simply
-delete it and create a new one with the correct name; however, if the element already exists and there are items containing metadata for the element, the only option is to go into the MySQL database and edit the `omeka_elements` table. Find
-the element in the table and then change its name in the `name` column. When you go back into Omeka, the element will appear
+Omeka does not provide a way to rename an element. If you mistype the name when
+creating a new element, you can simply delete it and create a new one with the
+correct name; however, if the element already exists and there are items containing
+metadata for the element, the only option is to go into the MySQL database and edit
+the `omeka_elements` table. Find the element in the table and then change its name
+in the **_name_** column. When you go back into Omeka, the element will appear
 with its new name. This can be done using [MySQL Workbench](../developer/mysql-workbench.md).
+
+!!! note ""
+    If you don't have access to your MySQL database, ask your Digital Archive developer
+    to rename the element for you.
 
 ## Arrange element order
 You can control the order in which elements appear when you are editing an item.
@@ -35,15 +42,15 @@ When editing, the Dublin Core elements appear first, followed by the
 other elements. You arrange the order within each of these two groups as explained below.
 
 ### Dublin Core elements
--   Login to Omeka as a super user
--   Click `Settings` in the top menu bar
--   Click `Elements Sets` in the `Settings` page menu bar
--   Click the `Edit` link under `Dublin Core`
+-   Login to Omeka as an administrator
+-   Click **_Settings_** in the top menu bar
+-   Click **_Elements Sets_** in the **_Settings_** page menu bar
+-   Click the **_Edit_** link under **_Dublin Core_**
 -	Drag the elements into the desired order
--   Click the `Save Changes` button
+-   Click the **_Save Changes_** button
 
 Below is the order AvantLogic recommends for Dublin Core elements
-``` plaintext
+``` text
 Identifier
 Title
 Type
@@ -62,8 +69,8 @@ Coverage
 ```    
 
 ### Other elements
--   Login to Omeka as a super user
--	Click `Item Types` in the left menu
--   Click the `Edit` link below organization's Item Type name
+-   Login to Omeka as an administrator
+-	Click **_Item Types_** in the left menu
+-   Click the **_Edit_** link below organization's Item Type name
 -	Drag the elements into the desired order
--   Click the `Save Changes` button
+-   Click the **_Save Changes_** button
