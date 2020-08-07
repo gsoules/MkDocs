@@ -86,6 +86,8 @@ The Creator is the “entity primarily responsible for making the content of the
 
 ---
 
+## Uploading files
+
 ## Vocabulary term
 
 Use unique leaf terms within the same vocabulary.

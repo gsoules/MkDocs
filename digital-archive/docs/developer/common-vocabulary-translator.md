@@ -15,12 +15,8 @@ This page explains:
 ---
 
 !!! note "Advanced Topic"
-    This topic is for a person responsible for maintaining the Common Vocabulary for multiple
-    Digital Archive sites. Use of the Common Vocabulary Translator is not an everyday activity
-    and few people have access to the software. **This information is not
-    intended for users, archivists, or administrators** though it may be of interest to anyone
-    who wants to know how the Common Vocabulary gets created. It does however assume
-    familiarity with [Common Vocabulary terminology](/archivist/common-vocabulary/#terminology).
+    This information is for anyone who wants to know how the Common Vocabulary gets created,
+    but it is written for someone who will be working with the CVT software and therefore is fairly technical.
 
 ## Terminology
 

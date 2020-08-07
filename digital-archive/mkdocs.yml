@@ -16,11 +16,11 @@ nav:
         Use the Digital Notebook: user/digital-notebook.md
     - For Archivists:
         Getting Started for Archivists: archivist/getting-started-archivist.md
-        Log in as an archivist: archivist/logging-in.md
+        Logging into the Digital Archive: archivist/logging-in.md
         Special Features for Archivists: archivist/special-features-archivist.md
         Working with Items: archivist/items.md
-        $ Attach an Image or PDF to an Item: archivist/attach-file.md
-        $ Add a Relationship to an Item: archivist/add-relationship.md
+        Attach an Image or PDF to an Item: archivist/attach-file.md
+        Add a Relationship to an Item: archivist/add-relationship.md
         What Gets Searched: archivist/what-gets-searched.md
         Common Vocabulary: archivist/common-vocabulary.md
         Vocabulary Editor: archivist/vocabulary-editor.md
@@ -35,10 +35,10 @@ nav:
     - Site Administration:
         $ Getting Started for Administrators: administrator/getting-started-administrator.md
         $ FAQ: administrator/faq.md
+        Add a New User: administrator/add-new-user.md
+        Zoomable images: administrator/zoomable-images.md
         Omeka Elements: administrator/omeka-elements.md
         Import CSV data: administrator/import-csv.md
-        Export PastPerfect data: administrator/pastperfect-export.md
-        Zoomable images: administrator/zoomable-images.md
     - Technology:
         Common Vocabulary Translator: developer/common-vocabulary-translator.md
         Web server: developer/web-host.md

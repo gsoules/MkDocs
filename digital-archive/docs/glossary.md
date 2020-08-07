@@ -10,12 +10,9 @@ Digital Archive.
 
 ---
 
-AvantLogic
-:   [AvantLogic Corporation](http://avantlogic.com/) is the company that developed and currently maintains the
-Digital Archive. *Omeka* plugins that begin with `Avant` were developed by AvantLogic.
-
 AWS
-:   Amazon Web Services
+:   AWS is an acronym for Amazon Web Services which is  a subsidiary of Amazon that provides
+    on-demand cloud computing platforms. [Learn about AWS](https://en.wikipedia.org/wiki/Amazon_Web_Services).
 
 Collection
 :   A collection refers to the *database* *items* for one *organization*.
@@ -104,6 +101,9 @@ Plugin
 Reference item
 :   Items with type `Reference` serve as stand-ins for things in the real world and tie other items in the *collection*
     together via relationships. [Learn about Reference items](/relationships/reference-items/)
+
+S3
+:   S3 stands for Amazon Simple Storage Service. [Learn about S3](https://aws.amazon.com/s3/).
 
 Shared search
 :   A shared search yields commingled results from multiple *collections*.

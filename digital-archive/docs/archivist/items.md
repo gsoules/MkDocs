@@ -256,7 +256,7 @@ Follow the steps below to delete an item.
 2 &ndash; Click the **_Delete This Item_** button
 :   On the item's admin page, click the **_Delete This Item_** button. When you click the button,
     a warning dialog will pop up asking if you are sure you want to delete the item. Click the
-    **_Delete_** button on the dialog box.
+    **_Delete_** button on the popup dialog.
 
 !!! warning
     When you delete an item, it will be *permanently* removed from your Digital Archive.  

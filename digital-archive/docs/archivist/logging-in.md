@@ -1,6 +1,11 @@
 # Logging into the Digital Archive
 
-*Archivists* and *Administrators* must login to the Digital Archive to add or edit items or make modifications to the installation. There is also a special class of *User* called *Guest* that must login if they want to see information that is not available to the general public.
+*Archivists* and *Administrators* must login to the Digital Archive to add or edit
+items or make modifications to the installation. There is also a special class of
+*User* called *Guest* that must login if they want to see information that is not
+available to the general public.
+
+[Learn about different kinds of users](/administrator/add-new-user/#kinds-of-users).
 
 ## How to login
 
@@ -40,19 +45,3 @@ administrators use. When logged in as an archivist you see fewer features
     While using the public interface, you'll know you are logged in because the dark
     gray menu bar will appear at the top of every page. You can get back to the
     dashboard at any time by clicking your name in the top menu bar.
-
-## Kinds of users
-
-The terminololgy for users in this documentation differs from
-[Omeka terminology for user roles](https://omeka.org/classic/docs/Admin/Users/).  
-The table below shows the differences.
-
-Digital Archive term | Omeka user role
----:|:---
-Guest|researcher
-Archivist|admin *or* contributor
-Administrator|super
-
-When logged is as a *Guest* you will not see the dark gray menu bar; however you will be able to views items
-that are not visible to users who are not logged in. You will also be able to see the private fields
-for all items.

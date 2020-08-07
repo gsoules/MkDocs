@@ -13,6 +13,9 @@ to its collection. Use of the Common Vocabulary ensures cataloging consistency a
 collections, while  allowing each organization to extend or override the common terms using
 the [Vocabulary Editor](/archivist/vocabulary-editor/).
 
+The Common Vocabulary is a translation of the [Nomenclature](#nomenclature-40) vocabulary.
+into a simpler form. Learn about the [Common Vocabulary Translator](/developer/common-vocabulary-translator/).
+
 ## How it works
 
 The Common Vocabulary is more than just a set of common terms. It's a core feature of the
