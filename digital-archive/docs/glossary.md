@@ -1,127 +1,186 @@
 # Glossary
 
-This page explains the terminology used in this documentation and within the
-Digital Archive.
-
--   Words in parentheses following an entry name indicate the context in which the entry is used
-
-!!! note ""
-    This glossary is under development and is not complete.
+This page provides brief explanations of the terminology used in this documentation
+and has links to pages where you can learn more.
+Words in **bold** appear elsewhere in this glossary.
 
 ---
 
+Administrator
+:   An [administrator](/administrator/getting-started-administrator/) is a person who maintains
+    their organization's Digital Archive **site**. The **Omeka** documentation refers to an
+    administrator as **super user**.
+
+Archivist
+:   An [archivist](/archivist/getting-started-archivist/) is a staff member or volunteer who maintain
+    a Digital Archive **collection**.
+
+Attachment
+:   An [attachment](/archivist/attach-file/#attach-an-image-or-pdf-to-an-item) is a digital
+    image file, or a PDF file, that is associated with an **item** such
+    that whenever you view the item's **metadata**, you also see the image or PDF.
+
+Archival asset
+:   As archival asset is the original digital file from which the web-sized images that are displayed
+    by the Digital Archive are derived. The TIFF file produced by a scanner is an archival asset.
+
 AWS
-:   AWS is an acronym for Amazon Web Services which is  a subsidiary of Amazon that provides
-    on-demand cloud computing platforms. [Learn about AWS](https://en.wikipedia.org/wiki/Amazon_Web_Services).
+:   AWS is an acronym for [Amazon Web Services](https://en.wikipedia.org/wiki/Amazon_Web_Services),
+    a subsidiary of Amazon that provides on-demand cloud computing platforms.
 
 Collection
-:   A collection refers to the *database* *items* for one *organization*.
+:   In this documentation, a collection refers to the set of **item**s (images, documents, maps, etc.) in
+    an organization's Digital Archive **database**.
+
+Common term
+:   A common term is **term** that comes from the **Common Vocabulary**. 
 
 Common Vocabulary
-:   *Vocabulary* terms like Subject, Type, and Place are common to all shared Digital Archive sites. [See About Vocabularies](/archivist/vocabularies/)
+:   The [Common Vocabulary](/archivist/common-vocabulary/) is a set of **vocabulary** **term**s
+    organized as a **hierarchy**.
 
 Database
-:   A database is an organized collection of data, generally stored and accessed electronically from a computer system.
-The Digital Archive uses `MySQL` as its database.
+:   A database is a structured set of data, stored and accessed electronically
+    from a computer system. The Digital Archive uses **MySQL** as its database.
+
+Developer
+:   A developer is a software professional who maintains the Digital Archive software for one or more
+    **sites**.
 
 Elasticsearch
-:   Elasticsearch is a technology hosted on *AWS* that makes fast, shared searching possible.
+:   [Elasticsearch](/administrator/reindex/#what-elasticsearch-indexes-are-used-for)
+    is a distributed search and analytics engine that makes fast searching possible.
 
 Element (Omeka)
-:   An element is a container for a single *metadata* value. When you are editing an *item*, you enter data into
-*metadata* fields, one for each element. Examples of elements are **_Title_**, **_Description_**, **_Creator_**, and **_Date_**.
+:   An Omeka element is a container for a single **metadata** value such as title, description,
+    type, or subject. In this documentation, element is synonymous with **field**.
 
 Facets
 :   Facets are the **_Subject_**, __*Type*__, **_Place_**, and **_Date_**
-    terms that appear in the **_Refine Your Search_** panel, and allow you to 
-    quickly and easily narrow your search.
-    [See Digital Archive Terms and Concepts](/)
+    sections in the **_Refine Your Search_** panel. They allow users to easily
+    narrow down **search results** by clicking on **vocabulary** **term**s in the panel.
+
+Field
+:   A field refers to one of an **item**'s **metadata** elements. Examples of fields are
+    **_Title_**, **_Description_**, **_Type_**, and **_Subject_**. Field names appear
+    in this documentation in **_Small Caps_**. In this documentation, field is synonymous with **element**.
+    
+    A field is also what you type into when editing an **item**'s **metadata**.
 
 Grid View
-:   Grid view is a way to view search results as a grid of thumbnails. [See Viewing Search Results](/user/viewing-search-results/#grid-view)
+:   [**_Grid View_**](/user/viewing-search-results/#grid-view) is a way to view **search results** as a grid of thumbnails.
+
+Hierarchy
+:   A hierarchy is a tiered grouping of related terms that are each unique, but have something in common.
+    An example of a hierarchy is the term `Nature, Animals, Birds`. Birds are grouped under animals, and
+    animals are grouped under nature.
 
 Index (Elasticsearch)
-:   An index is like a table in a database. 
+:   An **Elasticsearch** index is like a table in a database, but is structured in a way that makes
+    it possible to search huge volumes of data and get back results instantly.
 
 Index View
-:   Index View is a way to view search results in an alphabetized list. [See Viewing Search Results](/user/viewing-search-results/#index-view)
+:   [Index View](/user/viewing-search-results/#index-view) is a way to view **search results** as an alphabetized list
+    of unique values indexed by a specific  **field**.
 
 Item
-:   An item represents one 'thing' in a Digital Archive *collection*.
-    [See Digital Archive Terms and Concepts](/)
+:   An item represents one *thing* in a Digital Archive **collection** and all its associated **metadata**.
+    Examples of items are photographs, documents, maps, publications, and physical objects.
 
 Item page
-:   An item page displays all of the information about a single *item* in the Digital Archive.
+:   An **item** page is a Digital Archive webpage where you [view an item's metadata](/archivist/items/#view-an-item)
+    and any of its image or PDF file **attachment**s.
+
+Lightbox
+:   The lightbox is a popup window that appears to display a larger image when you click on an **item**'s
+    thumbnail in **search results**.
 
 Keyword
-:   A keyword is a significant word in an *item*'s *metadata*. Keywords are used for
- searching for items within the Digital Archive.
-    [See Digital Archive Terms and Concepts](/)
+:   A keyword is a significant word in an item's **_Title_**, **_Description_** or other **field** that provides
+    specific information about the **item** and helps users find items when doing a keyword search.
 
 Left admin menu
 :   The left admin menu appears on the left side of every page when logged into the Digital Archive as either
-an archivist or administrator. Some left menu items only appear when logged in as an
-administrator.
-
-Local search
-:   A local search yields results from just one *collection*.
-
-Mapping
-:   Mapping associates a *vocabulary* *term* with a *facet* term.
+    an *archivist* or **administrator**.
 
 Metadata
-:   Metadata is information about an *item*.
-    [See Digital Archive Terms and Concepts](/)
+:   Metadata is information about information. For example, the information in a photograph is the image itself
+    which is a picture of something. The metadata for a photograph is the information *about* the image such as
+    the subjects in the picture or the name of the photographer.
+
+MySQL
+:   MySQL is the relational **database** used by **Omeka** to store the **item**s in a **collection**.
 
 Nomenclature 4.0
-:   Nomenclature is a structured and controlled list of object *terms* organized in a classification system to provide
-a basis for indexing and cataloging collections of human-made objects. Nomenclature is used in the creation
-and management of object records in human history collections within museums and other organizations, and it
-focuses on objects relevant to North American history and culture. Nomenclature is the most extensively used
-museum classification and controlled vocabulary for historical and ethnological collections in North America.
-
-:   [Visit the Nomenclature website](https://www.nomenclature.info/apropos-about.app?lang=en)
+:   [Nomenclature](/archivist/common-vocabulary/#nomenclature-40) is a structured list of object
+    **term**s organized in a classification system for indexing and cataloging collections of human-made objects.
+    The latest version is 4.0.
 
 Omeka
-:   Omeka provides open-source web publishing platforms for sharing digital *collections* and creating
-    media-rich online exhibits. Omeka is a project of the Corporation for Digital Scholarship, the
-    Roy Rosenzweig Center for History and New Media, and George Mason University, with funding from multiple organizations.
-
-:   The Digital Archive uses Omeka Classic as its foundation.
-
-:   [Visit the Omeka website](https://omeka.org/)
+:   [Omeka](/developer/technologies/#omeka) is a web-publishing platform for the display of library, museum,
+    archives, and scholarly collections and exhibitions.The [Digital Archive software](/developer/technologies/)
+    use Omeka as its foundation.
 
 Organization
-:   An organization is a museum, library, historical society or other entity that makes its *collection* available
-online using the Digital Archive.
+:   In this documentation, organization refers to a museum, library, or historical society that is using the
+    Digital Archive to make its **collection** available online.
+
+Private field
+:   A [private field](/archivist/what-gets-searched/) is a **field** that only a logged in user can see.
+
+Public field
+:   A [public field](/archivist/what-gets-searched/) is a **field** that anyone can see in a **public item**.
+    Only a logged in user can see **private field**.
+
+Public item
+:   A [public item](/archivist/what-gets-searched/) is an **item** that anyone can see. Only a logged in user can see a non-public item.
 
 Plugin
-:   A plugin is a software component that adds or modifies features of existing computer programs.
+:   A plugin is a software component that adds features to an existing computer program. The Digital Archive
+    plugins add features to **Omeka**.
 
 Reference item
-:   Items with type `Reference` serve as stand-ins for things in the real world and tie other items in the *collection*
-    together via relationships. [Learn about Reference items](/relationships/reference-items/)
+:   A [Reference Item](/relationships/reference-items) is an **Omeka** **item** that relates other items in the **collection** to each other
+
+Relationship
+:   A [relationship](/relationships/getting-started-relationships/) is an association between two **items** in a **collection**
+    that indicates how the two items are related to each other.
 
 S3
-:   S3 stands for Amazon Simple Storage Service. [Learn about S3](https://aws.amazon.com/s3/).
+:   S3 stands for [Amazon Simple Storage Service](https://aws.amazon.com/s3/).
 
-Shared search
-:   A shared search yields commingled results from multiple *collections*.
+Site
+:   A site refers to the Digital Archive software installation and **database** for a single **organization**.
+
+Site term
+:   A site term is a **term** that does n*ot come from the **Common Vocabulary**. It is specific to an **organization**
+    and is found in that organization's **site vocabulary**.
+
+Site vocabulary
+:   A site vocabulary is a set of **term**s that are specific to one **organization**'s Digital Archive **site**.
+
+Search results
+:   Search results are the list of **item**s that you see when you [search](/user/how-to-search/) a Digital Archive **collection**.
 
 Super user (Omeka)
-:   An Omeka super user is someone with an Omeka login that allows them to do anything and everything in Omeka. Super users are the only users with access to the top navigation tabs for Plugins, Appearance, Users, and Settings.
+:   An Omeka super user is someone with an Omeka login that allows them to do anything and everything in Omeka.
+    In this documentation, a super user is referred to as an **administrator**.
 
 Table View
-:   Table view is the default view for search results. It shows *items* on individual rows 
-with a set of metadata customizable by the 
-user. [See Viewing Search Results](/user/viewing-search-results/#table-view)
+:   [**_Table View_**](/user/viewing-search-results/#table-view) is a way to view **search results** in tabular form.
 
 Term
-:   A term is a word or short phrase in a *vocabulary* or *facet*.
+:   A term is a combination of words in a **vocabulary** that concisely describe or classify something. For example,
+    `Image, Photograph, Photographic Print, Cyanotype`is a *single* term that describe a photograph that was printed
+     using the cyanotype printing process.
 
 Visualization
-:   A visualization is a graphical depiction of an *item*'s relationships with other items. See [Viewing Related Items](/user/viewing-related-items/)
+:   A [visualization](/user/viewing-related-items/#visualization) (short for data visualization) is a graphical depiction of an **item**'s
+    relationships with other items.
 
 Vocabulary
-:   A vocabulary is made up of *terms* that classify and index *collection* *items*.
+:   A vocabulary is a controlled list of **term**s that **archivist**s use when cataloging **item**s in their **collection**.
 
+Vocabulary Editor
+:   The [Vocabulary Editor](/archivist/vocabulary-editor/) lets you work with the **Common Vocabulary** to define the set of common and site-specific
+    **vocabulary** **terms** that **archivist**s will use when working with **item**s in your **collection**. 

@@ -183,7 +183,7 @@ are meeting the cataloging needs of many organizations.
 
 ### Top level translations
 
-The table below gives a general sense of which Nomenclature Xategories translate to which
+The table below gives a general sense of which Nomenclature Categories translate to which
 Common Vocabulary top level terms. To see how specific Classes, Subclasses, and
 individual terms translate, you can look at the the [translation rules](#translation-rules)
 that the CVT follows.

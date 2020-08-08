@@ -42,7 +42,7 @@ nav:
         Rebuilding Elasticsearch Indexes: administrator/reindex.md
         Import CSV data: administrator/import-csv.md
     - Technology:
-        $ The Digital Archive Software: developer/technologies.md
+        The Digital Archive Software: developer/technologies.md
         Common Vocabulary Translator: developer/common-vocabulary-translator.md
         Web server: developer/web-host.md
         MkDocs: developer/mkdocs.md

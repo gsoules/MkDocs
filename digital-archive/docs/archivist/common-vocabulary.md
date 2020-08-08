@@ -246,7 +246,7 @@ set of results; however, notice that the appearance of the two search results pa
 
 ### All Sites search
 
-![Shared search for bird carving](common-vocabulary-1.jpg)
+![All sites search for bird carving](common-vocabulary-1.jpg)
     
 ### This Site search
 
