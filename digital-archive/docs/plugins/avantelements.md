@@ -25,11 +25,11 @@ The AvantCommon plugin has these configuration options:
 -   [Hide Descriptions](#hide-descriptions-option)
 -   [Implicit Link](#implicit-link-option)
 -   [Read-only Field](#read-only-field-option)
--   [SimpleVocab Field](#simplevocab-field-option)
 -   [Suggest](#suggest-option)
 -   [Text Field](#text-field-option)
 -   [Title Sync](#title-sync-option)
 -   [Validation](#validation-option)
+-   [Vocabulary Field](#vocabulary-field-option)
 
 The following sections describe each option in detail.
 
@@ -298,37 +298,6 @@ that are set by a plugin or other mechanism, but cannot be edited by an administ
 Specify each element name on a separate row.
 
 ---
-### SimpleVocab Field option
-The purpose of this option is to let you specify the width of dropdown lists that are displayed and populated by the
-[SimpleVocab plugin](https://omeka.org/classic/docs/Plugins/SimpleVocab/). It lets you specify the width of the
-dropdown in pixels. For example, you can use a narrow width for an element having a vocabulary consisting of
-only one or two word values. 
-
-A SimpleVocab element that is not listed with this option will always display as 300px which is the width set by
-the SimpleVocab plugin. 
-
-This option will not be available if the SimpleVocab plugin is not installed.
-
-##### Syntax:
-
-The syntax for each row of the SimpleVocab Field option is
-
-``` plaintext
-<element-name> [ ":" <width> ]
-```
-
-Where:
-
--   `<element-name>` is the name of an Omeka element.
--   `<width>` is an optional integer  parameter indicating the width in pixels of the dropdown list. If the parameter is omitted, the 
-dropdown list occupies the maximum available width.
-
-Notes
-
--   If you specify the same element name as both a SimpleVocab Field and as a Text Field, the element will not display
-    as a dropdown list. So if you change an element from Text to SimpleVocab, be sure to remove it from the Text Field option.
-
----
 ### Suggest option
 The Suggest option lets you designate elements that should automatically suggest a list of values to choose from as
 you are typing into the field. The behavior is similar to how the Add Tags field works on the Tags tab.
@@ -425,6 +394,38 @@ Subject: required
 Creator: simple-text
 Date: date
 ```
+
+---
+
+### Vocabulary Field option
+The purpose of this option is to let you specify the width of dropdown lists that are displayed and populated by the
+[SimpleVocab plugin](https://omeka.org/classic/docs/Plugins/SimpleVocab/). It lets you specify the width of the
+dropdown in pixels. For example, you can use a narrow width for an element having a vocabulary consisting of
+only one or two word values. 
+
+A SimpleVocab element that is not listed with this option will always display as 300px which is the width set by
+the SimpleVocab plugin. 
+
+This option will not be available if the SimpleVocab plugin is not installed.
+
+##### Syntax:
+
+The syntax for each row of the SimpleVocab Field option is
+
+``` plaintext
+<element-name> [ ":" <width> ]
+```
+
+Where:
+
+-   `<element-name>` is the name of an Omeka element.
+-   `<width>` is an optional integer  parameter indicating the width in pixels of the dropdown list. If the parameter is omitted, the 
+dropdown list occupies the maximum available width.
+
+Notes
+
+-   If you specify the same element name as both a SimpleVocab Field and as a Text Field, the element will not display
+    as a dropdown list. So if you change an element from Text to SimpleVocab, be sure to remove it from the Text Field option.
 
 ---
 

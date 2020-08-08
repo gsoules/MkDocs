@@ -2,7 +2,8 @@
 
 ---
 
-The AvantVocabulary plugin provides support for the  [Nomenclature 4.0](https://www.nomenclature.info/apropos-about.app?lang=en) vocabulary within the Digital Archive. 
+The AvantVocabulary plugin provides support for the Digital Archive's
+[Common Vocabulary](/archivist/common-vocabulary/) feature.
 
 ## Configuration options
 AvantVocabulary has these configuration options:

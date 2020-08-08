@@ -2,7 +2,9 @@
 
 Provides extended searching and search results capabilities for an Omeka Classic installation.
 
-!!! note
+--- 
+
+!!! note ""
     When this plugin is activated, it dynamically overrides the native Omeka search box with the
     search box used by AvantSearch. When you deactivate the plugin, the Omeka search box returns.
 
@@ -16,22 +18,22 @@ and presents search results in a wide variety of ways. It does not affect Omeka'
 The table below highlights the differences between AvantSearch and Omeka's native search.
 
 Feature | AvantSearch | Omeka Search
---------|------------ | ------------
-[Quick search](#quick-search) |  **Yes** - Feature | No
-[Simple search for All Words](#simple-search) |  **Yes** - Feature | No
-[Search in Titles only](#titles-only-option) | **Yes** - Advanced Search page option | No
-[Search only items with images or files](#advanced-search-page) | **Yes** - Advanced Search page option | No
-[Date range search](#advanced-search-page) | **Yes** - Advanced Search page option | No
-[User can specify number of results](#advanced-search-page) | **Yes** - Advanced Search page option | No
-[Tabular results](#table-view) | **Yes** - Feature | No
-[Custom Results Layouts](#table-view-custom-layouts) | **Yes** - Congfiguration option | No
-[Image View](#image-view) | **Yes** - Feature | No
-[Index View](#index-view) | **Yes** - Congfiguration option| No
-[Relationships View](#relationships-view-option) | **Yes** - Congfiguration option | No
-[Integer sorting](#integer-sorting-option) | **Yes** - Congfiguration option | No
-[Address sorting](#address-sorting-option) | **Yes** - Congfiguration option | No
-[Lightbox](#lightbox) | **Yes** - Feature | No
-Search by File, Collection, Featured | No | Yes
+---|------------ | ------------
+Quick search                            | **Yes** - Feature | No
+Simple search for All Words             | **Yes** - Feature | No
+Search in Titles only                   | **Yes** - Advanced Search page option | No
+Search only items with images or files  | **Yes** - Advanced Search page option | No
+Date range search                       | **Yes** - Advanced Search page option | No
+User can specify number of results      | **Yes** - Advanced Search page option | No
+Tabular results                         | **Yes** - Feature | No
+Custom Results Layouts                  | **Yes** - Congfiguration option | No
+Image View                              | **Yes** - Feature | No
+Index View                              | **Yes** - Congfiguration option| No
+Grid View                               | **Yes** - Congfiguration option | No
+Integer sorting                         | **Yes** - Congfiguration option | No
+Address sorting                         | **Yes** - Congfiguration option | No
+Lightbox                                | **Yes** - Feature | No
+Search by File, Collection, Featured    | No | Yes
 
 ---
 
@@ -66,11 +68,13 @@ Normally addresses are sorted in a database, or in an Excel spreadsheet, as ordi
 letters. Furthermore, numbers are normally sorted as text, rather than as integers such that `10` appears before `9`.
 
 Without address sorting:
+
 -   10 Main Street
 -   72 Pleasant Lane
 -   9 Main Street
 
 With address sorting:
+
 -   9 Main Street
 -   10 Main Street
 -   72 Pleasant Lane
@@ -79,9 +83,10 @@ With address sorting:
 
 ### Columns option
 
-Use the Columns option specify:
+Use the Columns option to specify:
+
 -   The order of columns from left to right in search results Table View
--   An alias for an elements name e.g. 'Catalog #' for the Identifier element
+-   An alias for an element's name e.g. `Catalog #` for the Identifier element
 -   The width of a column
 -   The alignment of column text (left, center, or right)
 
@@ -114,7 +119,7 @@ columns are made visible. This is what allows instantaneous switching between la
 
 Below is an example specification for the Columns option.
 
-``` plaintext
+``` text
 Identifier, Item: 65, right
 Title
 Type
@@ -137,7 +142,7 @@ Specify each element name on a separate row.
 
 Below is an example specification of the Detail Layout option.
 
-``` plaintext
+``` text
 Identifier
 Type
 Subject
@@ -147,9 +152,6 @@ Date
 Place
 Address
 ```
-
-If you prefer to have only one detail column plus the Description column, specify only one row of elements.
-
 ---
 
 ### Elasticsearch option
@@ -227,8 +229,9 @@ When this option is checked, radio buttons will appear under the keywords text b
 to search in all fields or in titles only. This feature is very helpful for narrowing search results down
 to only the most relevant items because titles often contain the most important keywords.
 
-**NOTE:*-   If you want to use this option, but the configuration page says it's not available for your installation, you'll need to add a FULLTEXT
+**NOTE:** If you want to use this option, but the configuration page says it's not available for your installation, you'll need to add a FULLTEXT
 index to the `title` column of the `search_text` table. This is easily done using phpMyAdmin by following these steps:
+
 1. Select the 'search_texts' table
 1. Click the Structure tab
 1. On the row for the `title` column, click Fulltext among the actions at the far right
@@ -319,6 +322,7 @@ index and hierarchical list features in the [Daniel-KM / Reference](https://gith
 [AvantCustom]:        avantcustom.md
 [AvantDPLA]:          avantdpla.md
 [AvantElements]:      avantelements.md
+[AvantElasticsearch]: avantelasticsearch.md
 [AvantRelationships]: avantrelationships.md
 [AvantSearch]:        avantsearch.md
 [AvantS3]:            avants3.md

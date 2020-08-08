@@ -19,7 +19,7 @@ Mappings
 :   Use this option to specify which CSV columns correspond to which Omeka elements.
     Specify one column/element mapping on each line as shown in the example below.
 
-``` plaintext
+``` text
 RecNo: Identifier
 STDNAME: Standard Name
 IDENTIFIER: Person

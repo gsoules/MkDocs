@@ -47,5 +47,5 @@ Copyright
 ---------
 
 * Created by [gsoules](https://github.com/gsoules)
-* Copyright George Soules, 2018.
+* Copyright George Soules, 2020.
 * See [LICENSE](https://github.com/gsoules/AvantDpla/blob/master/LICENSE) for more information.

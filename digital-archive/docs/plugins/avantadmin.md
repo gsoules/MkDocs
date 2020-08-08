@@ -30,12 +30,12 @@ AvantAdmin provides the following benefits:
 ## Configuration options
 AvantAdmin has these configuration options:
 
-Item Type
-:   Specifies the name of the **Item Type** that will be used for every item in the installation.
-
 Maintenance
 :   When this option is checked, a `Down for maintenance` page will be displayed to public users to prevent
     them from accessing the site. Logged in users will not be affected.
+
+Item Type Name
+:   Specifies the name of the **Item Type** that will be used for every item in the installation.
 
 See also the documentation for [installing AvantAdmin](../../../developer/install-digital-archive/#avantadmin).
 

@@ -27,10 +27,10 @@ Secret
 :   AWS Secret Access Key
 
 Local Index
-:   xxx
+:   Enable local index
 
 Shared Index
-:   yyy
+:   Enable shared index
 
 See also the documentation for [installing AvantElasticsearch](../../../developer/install-digital-archive/#avantelasticsearch).
 
@@ -41,17 +41,18 @@ The AvantElasticsearch plugin requires that the [AvantCommon] plugin be installe
 
 This plugin was developed specifically for [Digital Archive](http://thedigitalarchive.net/) installations. It has special
 knowledge of the following Omeka elements and how they are used in these installations.
-* Type
-* Subject
-* Place
-* Address
-* Date
+
+-   **_Type_**
+-   **_Subject_**
+-   **_Place_**
+-   **_Address_**
+-   **_Date_**
 
 This AvantElaticsearch plugin works only with Elasticsearch on Amazon Web Services (AWS).
 
 The host Linux OS must have pdftotext installed.
 
-The Omeka files folder must contain a directory named 'elasticsearch'.
+The Omeka files folder must contain a directory named `elasticsearch`.
 
 ## Installation
 

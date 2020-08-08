@@ -60,7 +60,7 @@ To add a job:
 crontab -e
 ```
 
-See <crontab.guru>
+See [crontab.guru](https://crontab.guru/).
 
 ### Root privlidges
 A user with root privileges can run bash scripte that modify files on every Digital Archive installation on the server.

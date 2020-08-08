@@ -1199,7 +1199,6 @@ Follow these steps to install and configure [AvantVocabulary]:
 
 ---
 ## AvantS3
----  
 
 Follow these steps to install and configure [AvantS3]:
 

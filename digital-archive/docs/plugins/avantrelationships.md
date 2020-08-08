@@ -5,7 +5,9 @@ When you view an item, the plugin displays thumbnails and titles of related item
 visualization depicting the relationships among items. The user instantly sees how the item fits
 in with the rest of the collection and easily discovers related items.
 
-!!! warning "Important"
+---
+
+!!! note ""
     AvantRelationships requires that each item have a unique identifier. It uses the identifiers to establish the relationship
     between two items. It assumes that you are using the Dublin Core **Identifier** element
     for this purpose. If you are using another element, you must specify it on the AvantCommon configuration page. It also
@@ -54,7 +56,7 @@ Where:
 SomeCustomClass, createCustomRelationshps
 ```
 
-##### Example custom callback PFP function:
+##### Example custom callback PHP function:
 
 ``` php
 class SomeCustomClass

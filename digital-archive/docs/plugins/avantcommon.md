@@ -47,7 +47,7 @@ The Lightbox feature lets you:
     -   Clicking the left and right arrows to see the previous or next image
 -   View the item for the image by clicking on the `View Item` link in the caption area
 -   Close the lightbox these three ways:
-    -   Click on the X in the upper right corner
+    -   Click on the X in the caption area
     -   Click anywhere on the page outside the lightbox
     -   Press the Esc key
 
@@ -190,6 +190,7 @@ Copyright
 [AvantCommon]:        avantcommon.md
 [AvantCustom]:        avantcustom.md
 [AvantDPLA]:          avantdpla.md
+[AvantElasticsearch]: avantelasticsearch.md
 [AvantElements]:      avantelements.md
 [AvantRelationships]: avantrelationships.md
 [AvantSearch]:        avantsearch.md
