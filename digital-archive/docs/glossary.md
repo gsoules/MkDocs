@@ -70,6 +70,10 @@ Field
 Grid View
 :   [**_Grid View_**](/user/viewing-search-results/#grid-view) is a way to view **search results** as a grid of thumbnails.
 
+Guest user
+:   A [guest user](/administrator/add-new-user/#guest-user) is a **user** who can see all of the data in a
+    **collection** (public and private), but cannot add, edit, or remove an **item**.
+
 Hierarchy
 :   A hierarchy is a tiered grouping of related terms that are each unique, but have something in common.
     An example of a hierarchy is the term `Nature, Animals, Birds`. Birds are grouped under animals, and
@@ -173,6 +177,17 @@ Term
 :   A term is a combination of words in a **vocabulary** that concisely describe or classify something. For example,
     `Image, Photograph, Photographic Print, Cyanotype`is a *single* term that describe a photograph that was printed
      using the cyanotype printing process.
+
+Upload
+:   Upload refers to the process of copying a file from a personal computer to the Digital Archive which resides on a server.
+    You upload a file that you want to **attach** to an **item**.
+
+User
+:   A user is anyone that uses the Digital Archive. A user that is logged in like an **archivist** or **administrator** can
+    do more than a user who is not logged in.
+
+Zoomable image
+:   A zoomable image is a very high resolution image that you can zoom in on to see more detail.
 
 Visualization
 :   A [visualization](/user/viewing-related-items/#visualization) (short for data visualization) is a graphical depiction of an **item**'s

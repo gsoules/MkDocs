@@ -15,6 +15,7 @@ stories that are of interest to them.
 **To get started using the Digital Archive:**
 
 -   Get familiar with the terms and concepts below
+-   Peruse the [Glossary](/glossary) to learn the language of the Digital Archive
 -   See [Getting Started for Users](/user/getting-started-user)
 -   See [Getting Started for Archivists](/archivist/getting-started-archivist)
 
