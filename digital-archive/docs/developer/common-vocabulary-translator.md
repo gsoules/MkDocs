@@ -132,7 +132,7 @@ like people, boats, and houses.
 While Nomenclature by itself does not fill the need, it does provide the hierarchical
 organization, and most of the **leaf** words, used by the Common Vocabulary.
 
-The rationale for how Nomenclature gets translated to Common Vocabular, is provided in the following sections.
+The rationale for how Nomenclature gets translated to Common Vocabulary, is provided in the following sections.
 
 ### Common Vocabulary **_Type_** and **_Subject_**
 

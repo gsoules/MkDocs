@@ -1,10 +1,13 @@
 # Zoomable images
 
-The Digital Archive supports zoomable images using [OpenSeadragon](https://openseadragon.github.io/) as the viewer. It expects tile
-sources created by the [Zoomify](https://openseadragon.github.io/examples/tilesource-zoomify/) desktop program for Windows.
+The Digital Archive supports zoomable images using the web-based viewer 
+[OpenSeadragon](https://openseadragon.github.io/). It expects tile sources created by the 
+[Zoomify](https://openseadragon.github.io/examples/tilesource-zoomify/) desktop program.
 
-To make an image zoomable is simply a matter of creating
-tiles from the image’s high resolution file and then uploading a folder containing the tiles to the appropriate location on the server. When the Digital Archive software detects the existence of tiles for an item’s image, it automatically displays the image using the OpenSeadragon viewer.
+To make an image zoomable is simply a matter of using Zoomify to create the tiles from the image’s 
+high resolution file, and then uploading a folder containing the tiles to the appropriate location 
+on the server. When the Digital Archive software detects the existence of tiles for an item’s image, 
+it automatically displays the image using the OpenSeadragon viewer.
 
 ---
 
@@ -12,40 +15,40 @@ tiles from the image’s high resolution file and then uploading a folder contai
     You must be able to upload files to your Digital Archive webserver to perform these steps.
 
 ## Create tiles
--   Choose the high resolution file to be made zoomable.  
+-   Choose the high resolution file you want to make zoomable.  
     Use a TIF image if available instead of a JPEG image.
--   Copy the high resolution image to a temporary location such as a folder on your desktop
+-   Copy the high resolution image to a temporary location such as a folder on your desktop.
     Do not use a Dropbox folder because doing so will cause Dropbox to start syncing the generated
     tiles to the Dropbox cloud.
 -   Run the `Zoomify Unlimited Converter.exe` program which is located in the  
-    `Digital Archive SWHPL\Zoomify` Dropbox folder
+    `Digital Archive SWHPL\Zoomify` Dropbox folder.
 -   Set:
     -	**_Output Path_**: `Same as input file`
     -	**_Output Format_**: `Zoomify folders`
     -	**_JPEG Compression Quality_**: `80`
     -	**_Compression Format_**: `JPEG Tile Compression`
--   Drag the high resolution file from the item’s Dropbox folder onto the converter (or choose `Open` from the converter’s menu)
--   The conversion begins automatically and typically takes only a few seconds
--   The generated tiles folder will appear in the folder containing the high resolution image
-    The tiles folder name will be the same as the name of the image
+-   Drag the high resolution file from the item’s Dropbox folder onto the converter (or choose `Open` from the converter’s menu.)
+-   The conversion begins automatically and typically takes only a few seconds.
+-   The generated tiles folder will be created in the same folder containing the high resolution image.
+    The tiles folder will have the same name as the image.
 
 ## Upload tiles to the Server
--   Rename the newly created tiles folder to the item’s Identifier number
--   Transfer the entire output folder to the server. See [upload methods](#upload-methods) below to learn how.
--   Delete the temporary folder you created earlier since you no longer need those files
+-   Rename the newly created tiles folder to the item’s Identifier number.
+-   Transfer the entire tiles folder to the server. See [upload methods](/administrator/zoomable-images/#zoom-tiles-upload-methods) below to learn how.
+-   Delete the temporary folder you created earlier since you no longer need those files.
 -   View the item in the Digital Archive and verify that the image is zoomable.
 
 !!! Note ""
     In order for a zoomable image to display, the item must already have a JPEG image attached to it.
     The JPEG is necessary to allow the user to toggle between the zoomable and web-size images.
-    If the item that has no JPEG image, attach one in the usual way.
+    If the item has no JPEG image, [attach one](/archivist/attach-file/) in the usual way.
 
 ## Multiple zoomable images 
 -   If the item has more than one image, e.g. a newspaper with eight pages, follow the steps above to
-    create one folder of tiles for each image, but give each folder a unique
+    create separate temporary folders of tiles for each image, and then give each folder a unique
     name e.g. `1234-001, 1234-002, 1234-003` etc. where `1234` is the item’s identifier
--   Create a single folder for the item named using the item’s identifier
--   Move the tile folders into this single folder. The structure should be as shown below
+-   Create a single folder for the item named using the item’s identifier.
+-   Move the tile folders into this single folder. The structure should be as shown below.
 -   Upload the single folder with all of its subfolders to the server as described above. The Digital Archive
     software will automatically detect that the item has multiple zoomable images and display them appropriately.
 
@@ -57,12 +60,12 @@ tiles from the image’s high resolution file and then uploading a folder contai
 ```
 
 ## Tag the Item as zoomable
--   Edit the item and choose the **_Tags_** tab
--   In the **_Add Tags_** box type `Zoomable`  (it will start to fill in automatically as you type)
--   Click the **_Add Tags_** button
--   Click **_Save Changes_**
--   Note that the tag simply makes it easier for people to find the image
-    The image will be zoomable whether you tag it or not
+-   Edit the item and choose the **_Tags_** tab.
+-   In the **_Add Tags_** box type `Zoomable`  (it will start to fill in automatically as you type.)
+-   Click the **_Add Tags_** button.
+-   Click **_Save Changes_**.
+-   Note that the tag simply makes it easier for people to find the image.
+    The image will be zoomable whether you tag it or not.
 
 ## Zoom tiles upload methods
 
@@ -75,13 +78,13 @@ program called [FileZilla](https://filezilla-project.org/). Connection settings 
 
 -   Run FileZilla
 -	Choose `File` > `Site Manager` from the top menu bar
--	On the **_Site Manger_** dialog, click the name of your connection for the `zoom` folder
+-	On the **_Site Manager_** dialog, click the name of your connection for the `zoom` folder
 -   Click the **_Connect_** button
 -   In the right panel (remote site):
     -   You should see a list of the tile folders that have been previously uploaded
     -   Click on the `/` at the top of the list (see red arrow in screenshot below)
 -   In the left panel (local site):
-    -   Right click on the folder you want to upload and choose `upload`
+    -   Right click on the folder you want to upload and choose `Upload`
 -   Verify that the uploaded folder now appears in the right panel
 
 ![Upload zoom folder](zoomable-images-2.jpg)

@@ -27,14 +27,14 @@ Read this section carefully before attempting to import a CSV file.
 
 You must configure AvantImport to tell it which columns from the CSV file that you want to import (source column names)
 and what the corresponding Omeka element names are for each column (target column names). It's okay if the CSV file
-has column that you don't want to import.
+contains columns that you don't want to import.
 
 Follow these steps to configure the import:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Configure` button for `AvantImport`
 -   In the `Mappings` field, provide a list of source/target column pairs, separated by a colon, as shown in the screenshot below
--   If the source and targe names are the same, you can just specify the source name
+-   If the source and target names are the same, you can just specify the source name
 -   Click the `Save Changes` button
 
 ![importing files](import-csv-3.jpg)
@@ -78,11 +78,11 @@ If creating a CSV file using Python, use the `utf-8-sig` encoding.
 
 ### Excel issues
 
-CSV data often originates in Excel. Verify that the resulting CSV file does not suffer from these issues.
+CSV data often originates in Excel. Verify that the resulting CSV file does not suffer from these issues:
 
 -   Make sure that no cells contain `#######` due to a formatting problem in Excel. If you see this in the
     CSV data, go back to Excel and change the format of all columns to General.
--	If the CSV contains a column containing dates, verify that the date format looks correct. Excel is
+-	If the CSV file contains a column containing dates, verify that the date format looks correct. Excel is
     notorious for changing dates to a different format, and for displaying dates differently than they
     actually exist in the CSV file.
 -   If Excel insists on converting dates improperly when you save the Excel as a CSV file, your only

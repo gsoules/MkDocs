@@ -24,7 +24,7 @@ nav:
         What Gets Searched: archivist/what-gets-searched.md
         Common Vocabulary: archivist/common-vocabulary.md
         Vocabulary Editor: archivist/vocabulary-editor.md
-        $ Best Practices: archivist/best-practices.md
+        Best Practices: archivist/best-practices.md
     - Relationships:
         Getting Started with Relationships: relationships/getting-started-relationships.md
         Archive Relational Model: relationships/archive-relational-model.md
@@ -42,10 +42,10 @@ nav:
         Rebuilding Elasticsearch Indexes: administrator/reindex.md
         Import CSV data: administrator/import-csv.md
     - Technology:
+        $ The Digital Archive Software: developer/technologies.md
         Common Vocabulary Translator: developer/common-vocabulary-translator.md
         Web server: developer/web-host.md
         MkDocs: developer/mkdocs.md
-        File locations: developer/file-locations.md
         MySQL Workbench: developer/mysql-workbench.md
         Copy a MySQL database: developer/copy-mysql-db.md
         Install a Digital Archive site: developer/install-digital-archive.md
@@ -53,7 +53,6 @@ nav:
         Python: developer/python.md
         Site maintenance: developer/site-maintenance.md
         PHP development: developer/php-development.md
-        $ Technologies: developer/technologies.md
     - Digital Archive plugins:
         AvantAdmin: plugins/avantadmin.md
         AvantCommon: plugins/avantcommon.md

@@ -1,60 +1,58 @@
 # Best Practices
 
-##### One man's opinion
-The best practices on this page are the recommendations of George Soules.
-He has served as a volunteer archivist at the Southwest Harbor Public Library
-for six years and holds a degree in Information Sciences from the University of
-California. His advice is based on practical experience with what works well and what does not.
+The best practices on this page are recommendations from archivists at the Southwest Harbor
+Public Library. They are based on their practical experience using the Digital Archive 
+for four years with a collection of 12,000 items, 10,000 images, and 1,600 documents.
 
-## Metadata fields
+## Metadata
 
-### Title
+### Title field
 
-The **_Title_** metadata field is more important than any other field because:
+The **_Title_** field is **more important than any other field** because:
 
 -   The **_Title_** field appears everywhere in the user interface &ndash; it's what users see the most
 -   Users read the title first to decide if they should view the full item
--   Items with searched-for keywords in their titles *appear highest in search results*
+-   **Items appear highest in search results** when searched-for keywords are found in the title
 
-Suggestions:
+**Recommendations:**
 
--   Write titles that concisely describe items in 10 words or less
--   Put non-essential information in other fields, not in the Title field
--   Think of the **_Title_** like ad copy written to catch someone's attention
+-   Write keyword-rich titles that concisely describe items in 10 words or less
+-   Put important, but non-essential information in the **_Description_**, not the **_Title_**
+-   Choose a titling convention and use it religiously. 
 
-### Type
+### Type field
 
-Use the most precise **_Type_** field vocabulary terms available. As an example, for an
-obituary, use `Document, Announcement, Obituary` instead of just `Document, Announcement`.
-If the more precise term is not in your site's vocabulary, don't be lazy &ndash; take
-a minute to add it using the [Vocabulary Editor](/archivist/vocabulary-editor/).
+Use the most precise vocabulary term available when choosing an item's **_Type_**.
+For example, `Object, Clothing, Hat, Fedora` is more precise then just `Object, Clothing`
+or `Object, Clothing, Hat`. If the more precise term is not in your site's vocabulary,
+don't be lazy &ndash; take a minute to add it using the [Vocabulary Editor](/archivist/vocabulary-editor/).
 
-Don't be *too* literal when choosing an item's **_Type_**. For example, since you can only put
-digital scans and photographs into a database &ndash; because you can't upload an actual teacup
- &ndash; you use *documentary* photographs of objects as *stand-ins* for the real thing.
- The **_Type_** of these items should be the object's type, not `Image, Photograph`.
+Don't be too literal when choosing an item's **_Type_**. Specifically, the **_Type_** for a
+documentary photograph of an object should be the object's type, not `Image, Photograph`.
+A *documentary* photograph is a visual record of the object that lets
+someone see the object online. For example, if you take a picture of a teacup that's in
+your collection and attach the image to an item for that teacup, the type of the item should
+be  `Object, Cup, Teacup`, not `Image, Photograph`. However, if you also have an old photo
+of a woman drinking from that teacup, the **_Type_** for that photo *would be*
+ `Image, Photograph` and its two subjects would be `People` and `Object, Cup, Teacup`.
 
-As an example, suppose your collection contains a teacup that is on display in your
-museum. You would photograph the teacup and add the photo to the Digital Archive
-as an item of **_Type_**  
-`Object, Cup, Teacup`. If you also had a snapshot
-of a person drinking from that same teacup, the **_Type_** for the snapshot item *would be*
-`Image, Photograph`, but the item would have two subjects: `People` and `Object, Cup, Teacup`.
-
-Note that many organizations have items in their collection that they don't physically
+Many organizations have items in their digital collections that they don't physically
 posses. For example, if an archivist borrows, scans, and returns an albumen print,
-they would set the **_Type_** of that item to `Image, Photograph, Photographic Print, Albumen Print`
-because that's what the item represents.
+they should set the **_Type_** of that item to `Image, Photograph, Photographic Print, Albumen Print`
+because a high quality scan serves as a "digital surrogate" that reproduces the detail,
+color, and sometimes even the texture, of a physical photograph. In contrast, if all
+you have is a photocopy of an albumen print, that item's type should be 
+`Document, Reprographic Copy, Photocopy` to reflect the poor quality of the image.
 
 In summary, choose a **_Type_** that most closely indicates what the item is in the real word.
 
-### Subject
+### Subject field
 
 Like types, Subjects should be precise, but not too precise.
 
 The **_Subject_** field is used to *classify* an item, but not uniquely
 identify it. For example, the subject of a photograph of a boat can precisely indicate
-the kind of boat, but not which boat. For example, the **_Subject_** could be
+the kind of boat, but not *which* boat. For example, the **_Subject_** could be
 `Vessels, Ship, Sailing Ship, Schooner` but it should *not* be  
 `Vessels, Ship, Sailing Ship, Schooner, Victory Chimes` which is a specific boat.
 
@@ -66,81 +64,161 @@ of a specific boat would be to create a group of one which is not classification
 A guideline for determining when a subject term has gotten as specific as it should be is to consider
 what the next level would be. For schooners, would it be their names, their tonnage, the routes
 they traveled, the number of masts? If the possibilities of the next level are very broad,
-that's probably the cut off point. Another example is the subject `People` which has no lower level
+that's probably the cut off point. 
+
+Another example is the subject `People` which has no lower level
 classification. That's because to go one more level would mean having to decide the most important
 way to further classify humans. Would it be by gender, ethnicity, religion, age, or height? There's no
-clear choice and so `People` is as deep as this subject goes.
+clear choice and so `People` is not a hierarchy in most collections. If, however, your
+collection is all about people of different races, than a people hierarchy would make sense. 
+
+**Keywords**
 
 In the Digital Archive, archivists use keywords to provide additional specificity. For example, 
-a good tile for our schooner would be `Three-masted Windjammer Victory Chimes`. Combined with it's **_Subject_**
+a good keyword-rich title for our schooner would be `Three-masted Windjammer Victory Chimes`. Combined with it's **_Subject_**
 `Vessels, Ship, Sailing Ship, Schooner`, this item will show up in results for a keyword search for any
 one of these keywords: `ship`, `schooner`, `three mast`, `windjammer`, `victory chimes`. Note that hits
 on the last three keywords, which are all in the **_Title_**, will come up higher in search results than hit's
-on `ship` or `schooner` which are only in the **_Subject_**. That's because the Digital Archive gives much
-more weight to the content of titles than to any other metadata field. It gives the next most weight content
-in the **_Description_** field.
+on `ship` or `schooner` which are only in the **_Subject_**. That's because in search results the Digital Archive gives much
+more [weight](/archivist/what-gets-searched/#scoring) to the content of titles than to any other metadata field. It gives the next most weight content in the **_Description_** field.
 
 In summary, the **_Subject_** field is used to classify items into groups of things
 that have something in common, whereas keywords are used to uniquely identify a specific item within a group 
 
-### Date
+### Date and Creator fields
 
-### Rights
+For photographs of objects, use the **_Date_** field to indicate the date of the item in the photograph, not the date that
+the photograph was taken. Similarly, use the **_Creator_** field to identify the creator of the item, not
+the person who took the picture. An exception would be artistic photographs that themselves are the item.
 
+By default, the Digital Archive requires dates in one of these three forms:
+```
+YYYY-MM-DD
+YYYY-MM
+YYYY
+```
 
+If you don't know the exact date, you can use a year range and/or `c.` to indicate circa. For example:
+```
+1895 c.
+1895 - 1897
+1895 - 1897 c.
+```
+You can put other characters after the date (with a space in between) such as `?` to indicate not sure,
+or `PM` to indicate that the date of a postcard is its postmark.
 
-    
+Your site's administrator can disable date validation, but the forms shown above ensure consistency and they
+allow items to be sorted by date.
 
+## Vocabularies
 
-TITLE
+The [Common Vocabulary](/archivist/common-vocabulary/) contains 15,000 terms, but
+there will be times when you'll need to add terms to your site's vocabulary because they don't 
+exist in the Common Vocabulary.
 
+**Extending a term**
 
-F.	Date
-Unknown birth or death dates – when you know a person is not living, but we don’t know the birth or death date use a “?”:
-Gott - Everett Livingston Gott (1875-?)
-Gott - Everett Livingston Gott (?-1954)
+As a general rule, when using the [Vocabulary Editor](/archivist/vocabulary-editor/) to add a new term,
+always *extend* and *map* to an existing term. *Extend* means to use an existing term as a prefix
+for the new term. *Map* means to use the new term as the **Site Term** and the existing term as the **Common Term**.
 
-H.	Creator
-The Creator is the “entity primarily responsible for making the content of the resource”. For Article, Document this is the person who wrote the document (e.g. Riebel - Charlotte (Riebel) Morrill). For a photograph, the creator is the person who took the photograph. It is not necessary to specify a creator for Article, Text items with short general descriptions. The Creator field is optional, but when specified, must match exactly the Title of the item for that creator.
+For example, you have a photograph of a special kind of boat known as a sardine carrier which is not in
+the common vocabulary. Add the term like this:
 
--	Define vocabuaries for the site
--	Mangage archival copies of files
--	Only upload web-sized images
--	Define an archival file management scheme
--	Scanning (include scanning resolution tree and other files)
+![Extending a vocabulary term](best-practices-1.jpg)
 
----
+The site term `Vessels, Boat, Sardine Carrier` *extends* the common term `Vessels, Boat`.
+
+**Elevating a term**
+
+An exception to the above is when you want to elevate a term. *Elevate* means to move a term up
+higher within its hierarchy. For example, the focus of the Wendell Gilley Museum's collection is
+bird carvings. For them, carvings are as important as images are in a photographic collection.
+The museum elevated `Carving` to be a top level **_Type_** term by *not* using an existing common term as a prefix;
+however, they still map to the common term `Object, Art, Sculpture, Carving`.
+
+The screenshot below shows how they did this and its effect in the **_Refine Your Search_** panel
+which shows that they also elevated `Birds` and `Carvings` to be top level **_Subject_** terms.
+
+![Elevating a vocabulary term](best-practices-2.jpg)
+
+## Reference Items
+
+Adhere *strictly* to these guidelines for [Reference Items](/relationships/reference-items/):
+
+-   *Never* attach a photograph to a Reference Item
+-   Only use Reference Items to store *metadata* about a person, place, or thing
+-   Do attach one PDF if its content is solely about the Reference Item
+-   Use the *depicts / depicted by* relationship to relate photos to a reference item
+-   Use a [cover image](/relationships/reference-items/#cover-images-for-reference-items)
+    to associate a photo with a Reference Item without attaching it
+
+Attaching a photo to a Reference Item violates the [Archive Relational Model](/relationships/archive-relational-model/)
+and will make things more difficult for you in the long run. Follow the guidelines and
+you'll find that over time, as you acquire more information about, or photographs of, the
+subject of a Reference Item, it will be quick and easy to add the information and photos
+to your Digital Archive.
+
+## Relationships
+
+Use them.
+
+To only add items to your Digital Archive without relating them to each other is to hide the stories in
+your collection from people who want to learn about them.
+
+At first, the effort to add relationships may seem daunting, but once you understand how they
+work, learn how easy it is to add them, and experience seeing parts of your collection come
+alive, sometimes discovering connections that you never even know existed, you'll be hooked.
 
 ## Uploading files
 
-## Vocabulary term
+**Never upload large, multi-megabyte files** when [attaching an image or document](/archivist/attach-file/)
+to an item. 
 
-Use unique leaf terms within the same vocabulary.
+An exception is lengthy PDF files that have hundreds of pages and/or contain a lot of images.
+If you are creating a PDF file from a Word document, only use small images in the document.
 
-Don't use comma in Place names unless for hierarchy e.g. `Bangor ME` not `Bangor, ME`
+Images that you upload should generally be no more 1200px on the long edge. If you don't know
+what that means, consult with someone who does. If the image has a lot of detail, like a map,
+you might go as high as 2000px, but better still, make the image [zoomable](/administrator/zoomable-images/).
 
-When mapping to a common vocabulary term, you should usually repeat the common vocabulary term
-e.g. `Image, Photograph, My custom term` but not always e.g. if you want to elevate your term
-e.g. `Carving`.
 
-## Unmapped common term
+**Be kind to users**.  Large images take longer to display which diminishes the user experience
+especially for people without broadband internet service. Users of mobile devices who have to pay
+extra, or whose cell service gets downgraded, when they exceed their bandwidth limit, will hate you.
+Don't be that organization that carelessly uploads huge files with no consideration for people who
+have limited internet access.
 
-## Reference Items
-A Reference Item should have no image attached to it because its metadata should either
-be all text, or some text plus a PDF file attachment. The Digital Archive does not
-enforce this, but it is a best practive. See Cover Images
-    A Reference Item *should not have an image attached to it*, but it can have a PDF
-    attachment.  
-    The Digital Archive does not enforce this guideline, but it is a best practice
-    because attaching an image to a Reference Item is inconsistent with the 
-    [Archive Relational Model](/relationships/archive-relational-model/) which uses the
-    *depicts* relationship to associate a Reference Item with all of its images.
-	Just because you have only one image now doesn't mean you won't get more later.
+## Archival file management
+
+Put a process in place to manage and protect your archival assets using offsite or cloud storage.
+As implied by the section above on uploading large files, the Digital Archive only stores web-sized
+images. **You cannot use the Digital Archive as a repository for archival assets** such as the original,
+multi-megabyte TIFF files that a scanner produces.
+
+Whatever archival assess management scheme you use, **it should be quick and easy to locate and retrieve the high
+resolution files** associated with items in your Digital Archive. As more and more people start viewing
+your collection online, you will get more frequent requests for prints and high resolution digital files.
+You need access to the high resolution files because web-sized images are not suitable for
+printing except at very small sizes. If accessing your high resolution images involves a difficult
+or cumbersome process, you will cringe every time you get an image request.
+
+## Scanning
+
+Scanning presents one of the biggest challenges for archivists. Here are two documents that demystify
+the process and describe best practices for scanning.
+
+-   [Scanner PPI decision tree](Scanner-PPI-Decision-Tree-by-George-Soules.pdf)
+    (shown below, but read the document for an explanation)
+-   [Scanning 101 workshop slides](Scanning-101-Workshot-by-George-Soules.pdf)
+
+George Soules of the Southwest Harbor Public Library developed the diagram below based on
+his professional experience working with digital images, empirical evidence, and from having
+worked with many of the tens of thousands of images scanned by Library volunteers.
+
+![Scanning decision tree](best-practices-3.jpg)
 ---
 
-Metadata appears in fields with names like Title, Description, and Location. Not every item has every metadata field, only the ones that are relevant and for which we have information. Every item has these metadata fields:
 
-    Identifier – Four or five digit number that is unique to that item.
-    Title – Brief description of the item. Some items have more than one title. This is common for boats where the name changed over time.
-    Type – The kind of real-world object the item represents. Learn about Item Types.
-    Subject – What the item is about. Some items have more than one subject. Learn about Subjects.
+
+

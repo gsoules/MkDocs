@@ -23,7 +23,7 @@ results instantly.
 
 The Digital Archive is built on top of [Omeka](https://omeka.org/classic/) which uses a MySQL
 database to store the metadata for the items in your collection. In the diagram above, each
-green shapes that says "MySQL" represents a single MySQL database.
+green shape that says "MySQL" represents a single MySQL database for one collection.
 
 The diagram shows that each Digital Archive site has one MySQL database and one private index.
 There is one more index, shown at the top of the diagram, that all sites share. It contains
@@ -58,21 +58,21 @@ The synchronization mechanism described above works perfectly until you make cha
 using one of the "back door" methods listed below:
 
 -   Update metadata field values using the [Bulk Metadata Editor](/administrator/omeka-administration/#make-bulk-edits)
--   Bulk edit or deleting items using the Omeka **_Browse Items_** page
+-   Bulk edit or delete items using the Omeka **_Browse Items_** page
 -   Directly edit your MySQL database to
     [rename an Omeka element](/administrator/omeka-elements/#rename-an-element)
 -   Add or remove an Omeka element        
 -   Change an element from private to public, or vice versa, by adding it to or removing it from
     the **_Private Elements_** option on the [AvantCommon](/plugins/avantcommon) configuration page
 
-They are called "back door" methods because they bypass the Digital Archives synchronization logic.
+They are called "back door" methods because they bypass the Digital Archive synchronization logic.
 They update the MySQL database, but not the Elasticsearch indexes. This causes the MySQL database and
 the Elasticsearch indexes to get out of sync.
 
 Fortunately, you will rarely perform any of these operations to make changes, but if you do, you must rebuild
 the indexes to get them back in sync with MySQL. If you don't rebuild the indexes, you'll see your changes
 when you are [viewing an item](/user/viewing-items/), but search results will show the old values from before
-the changes got made. There's no harm done if this happens, but it can be confusing.                 
+the changes were made. There's no harm done if this happens, but it can be confusing.                 
 
 ## How to rebuild Elasticsearch indexes
 
@@ -123,7 +123,7 @@ DONE
 3 &ndash; Import into a new local index
 :   This step will create a new private (local) index containing the exported items.
 
-    Select the second radio button and then click the **_Start_** button.
+    Select the second radio button on the **_Elasticsearch Indexing_** page above and then click the **_Start_** button.
 
 4 &ndash; Remove all items from the shared index
 :   This step removes all of your site's items from the shared index.
@@ -151,7 +151,7 @@ DONE
 ```
 
 !!! note "Important"
-    Inform your site's archivists that you will be reindexing so that they will not edit items
+    Inform your site's archivists that you will be reindexing so that they do not edit items
     during that time. Or, you can temporarily disable everyone's accounts except your own.
 
     While a site is being reindexed, it will be in an incomplete state. Someone searching the site

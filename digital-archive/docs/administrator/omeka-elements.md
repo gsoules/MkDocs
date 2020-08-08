@@ -6,9 +6,14 @@ See the [Omeka Classic User Manual](https://omeka.org/classic/docs/) for complet
 ---
 
 ## Add a new element
-An Omeka installation comes with a predefined set of elements that someone chose to contain all the types
-of metadata needed for items in your collection. However, from time to time you may find that you need
-a new element to store metadata that your were not previously recording.
+An Omeka installation comes with a predefined set of elements that someone chose to contain 
+all the types of metadata needed for items in your collection. At the Omeka level, an element is
+a container for a metadata value. In the Digital Archive, elements are referred to as
+fields, such as **_Title_**, **_Type_**, or **_Subject_**. Thus, the *elements* in your
+Omeka installation correspond to the metadata *fields* associated with items in your collection.
+
+However, from time to time you may find that you need a new element to store metadata that you 
+were not previously recording.
 
 Follow these steps to add a new element to your Digital Archive installation.
 
@@ -43,7 +48,7 @@ to rename the element for you.
 
 
 ## Arrange element order
-You can control the order in which elements appear when you are editing an item.
+You can control the order in which elements (i.e., your metatdata fields) appear when you are editing an item.
 When editing, the Dublin Core elements appear first, followed by the
 other elements. You arrange the order within each of these two groups as explained below.
 

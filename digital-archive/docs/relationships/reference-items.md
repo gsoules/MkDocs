@@ -1,6 +1,6 @@
 # Reference Items
 
-## What is a Reference Item
+## What is a Reference Item?
 
 A **Reference Item** is an Omeka item that relates other items in the collection to each other.
 Think of a **Reference Item** as a representation of a person, boat, house, business or other real world

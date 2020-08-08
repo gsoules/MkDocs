@@ -46,7 +46,7 @@ button for the plugin you want to configure.
 Some changes that you make using Omeka or Digital Archive administrative features, require
 that you rebuild your site's Elasticsearch indexes. This can happen, for example, if you
 [add a new Omeka element](/administrator/omeka-elements/), or modify a plugin
-configuration settings such as changing an existing element from private to public or vice-versa.
+configuration setting such as changing an existing element from private to public or vice-versa.
 
 Learn about [rebuilding Elasticsearch indexes](/administrator/reindex/).
 
