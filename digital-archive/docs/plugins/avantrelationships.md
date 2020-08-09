@@ -21,9 +21,9 @@ The AvantRelationships plugin has these configuration options:
 
 -   [Custom Relationships](#custom-relationships-option)
 -   [Delete Tables](#delete-tables-option)
--   [Implicit Relationships](#implicit-relationships-option)
 -   [Max Direct Items](#max-direct-items-option)
 -   [Max Indirect Items](#max-indirect-items-option)
+-   [Title Relationships](#title-relationships-option)
 -   [Visualization Preview](#visualization-preview-option)
 
 The following sections describe each option in detail.
@@ -84,28 +84,38 @@ the plugin, check the box, Save Changes, and then uninstall the plugin.
 
 ---
 
-### Implicit Relationships option
-Elements that have an implicit relationship to other items based on the **Title** of those
+### Max Direct Items option
+Use this option to specify the number of directly related items that will be listed before displaying a `Show more` message.
+
+---
+
+### Max Indirect Items option
+Use this option to specify the number of indirectly related items that will be listed before displaying a `Show more` message.
+
+---
+
+### Title Relationships option
+This option lets you specify elements that have an implicit relationship to other items based on the **Title** of those
 items. See the description of this option below.
 
-#### Implicit Relationships
-An implicit relationship is one where the value of an element for one item exactly matches the value of the **Title**
+#### Title Relationships
+A title relationship is one where the value of an element for one item exactly matches the value of the **Title**
 element for another item. For example, if the **Creator** element for a photograph item specifies the name of a
 photographer and that photographer's name is used for the **Title** on another item, then there is an implicit
 *Created / Created by* relationship between the items.
  
-The AvantRelationships configuration page has an option called `Implicit Relationships` that lets you specify which
+The AvantRelationships configuration page has an option called `Title Relationships` that lets you specify which
 elements can have an implicit relationship to items that have a matching Title element value.
 
-In the example above, the plugin displays implicit relationships in three ways:
+In the example above, the plugin displays title relationships in three ways:
 
 -   When viewing one of the photograph items, its Creator text is shown as a hyperlink. Clicking this link
     takes you to the item having the photographer's name as its Title.
 -   When viewing the item titled with the photographer's name, photographs created by that photographer
     appear on that page as related items.
--   The implicit relationships from the creator to his/her creations appear in the Visualization.
+-   The title relationships from the creator to his/her creations appear in the Visualization.
 
-The syntax for each row of the Implicit Relationships option is
+The syntax for each row of the Title Relationships option is
 
 ``` plaintext
 <element-name> ":" <label>
@@ -122,16 +132,6 @@ related items. This text appears in the page's related items section and in the 
 Creator: Created
 Publisher: Published
 ```
-
----
-
-### Max Direct Items option
-Use this option to specify the number of directly related items that will be listed before displaying a `Show more` message.
-
----
-
-### Max Indirect Items option
-Use this option to specify the number of indirectly related items that will be listed before displaying a `Show more` message.
 
 ---
 

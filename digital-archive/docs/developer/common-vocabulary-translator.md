@@ -166,7 +166,7 @@ Type         | Subject
  Object      | Object
  Publication | Organizations
  Reference   | Other
-             | People
+ Set         | People
              | Places
              | Recreation
              | Structures
@@ -257,6 +257,9 @@ Other terms
 
     The term `Reference` is added to the **_Type_** vocabulary.
     [Learn about Reference Items](/relationships/reference-items).
+
+    The term `Set` is added to the **_Type_** vocabulary.
+    [Learn about Item Sets](/relationships/kinds-of-relationships/#item-sets).
 
     To see exactly what non-Nomenclature terms the CVT adds to the Common Vocabulary,
     you can look at the

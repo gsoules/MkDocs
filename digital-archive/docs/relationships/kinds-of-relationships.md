@@ -1,12 +1,13 @@
 # Kinds of Relationships
 
-The Digital Archive supports five kinds of relationship:
+The Digital Archive supports these kinds of relationship:
 
 -   Direct relationships
 -   [Indirect relationships](#indirect-relationships)
 -   [Field relationships](#field-relationships)
--   [Creator relationships](#creator-relationships)
+-   [Title relationships](#title-relationships)
 -   [Genealogical relationships](#genealogical-relationships)
+-   [Items sets](#item-sets)
 
 An archivist *explicitly* establishes direct relationships. All of the other kinds of
 relationships are *implicit* and are automatically established by the Digital Archive software.
@@ -72,10 +73,10 @@ other items for lighthouses as shown below.
 
 ![Example of implicit reference item relationships](kinds-of-relationships-3.jpg)
 
-## Creator relationships
+## Title relationships
 
 When an item’s **_Creator_** or **_Publisher_** field text exactly matches the **_Title_**
-field text of a Reference Item, the item has an automatic creator relationship to the
+field text of a Reference Item, the item has an automatic *title relationship* to the
 Reference Item. The implicit relationship is either *created by* or *published by*.
 
 In the example above, the green hyperlink for the **_Creator_** field has exactly the same value
@@ -87,10 +88,10 @@ you'll see all of the items that person created as shown in the example below.
 
 #### The importance of an exact match
 
-The Digital Archive software automatically creates the hyperlinks for implicit relationships,
-but, to maintain implicit Reference Item relationships for  **_Creator_** and **_Publisher_**,
-the archivist must ensure that the text in the **_Creator_** and **_Publisher_** fields exactly matches
-the **_Title_** text for the corresponding **_Creator_** or **_Publisher_** Reference Item.
+The Digital Archive software automatically creates the hyperlinks for title relationships,
+but, for this feature to work, the archivist must ensure that the text in the **_Creator_**
+and **_Publisher_** fields *exactly* matches the **_Title_** text for the corresponding
+**_Creator_** or **_Publisher_** Reference Item.
 Any difference at all, such as an extra space, will break the implicit relationship.
 
 The Digital Archive provides two mechanisms to help maintain an exact match:
@@ -126,3 +127,10 @@ click the **_Enlarge_** link that appears above the visualization in the **_Rela
 
 ![Second example of genealogical relationships](kinds-of-relationships-5.jpg)
 
+## Item sets
+
+An item set is a two or more items that an archivist has chosen to group together into a set.
+
+The remainder of the documentation for item sets is coming soon.
+
+---
