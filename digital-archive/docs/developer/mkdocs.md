@@ -15,7 +15,7 @@ WordPress website or the Omeka [Simple Pages plugin](https://omeka.org/classic/d
 
 ## About this MkDocs website
 
-This MkDocs website is hosted at <https://digitalarchive.avantlogic.net/docs>
+This MkDocs website is hosted at <https://digitalarchive.us>
 
 The website's files and folders are maintained in the AvantLogic `MkDocs repository`.
 
@@ -28,9 +28,7 @@ The website's files and folders are maintained in the AvantLogic `MkDocs reposit
 
 The navigation structure for the website is configured in the `mydocs.yml` file.
 
-The website uses the [Windmill](https://github.com/gristlabs/mkdocs-windmill) theme for MkDocs.
-
-Some documentation pages contain information that is not accessible to the general public. [Learn how to password protect a page](../../protected/mkdocs-protected).
+The website uses the [Read the Docs](https://github.com/readthedocs/sphinx_rtd_theme) theme for MkDocs.
 
 Whenever you edit, add, move, or delete any of the MkDocs files, you must build and
 deploy the MkDocs website so that other people can see your changes.

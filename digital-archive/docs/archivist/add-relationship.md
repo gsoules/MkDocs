@@ -4,6 +4,13 @@ This section explains *how* to add relationships to items in your collection.
 To learn what relationships are and how they work, read the section on
 [Getting Started with Relationships](/relationships/getting-started-relationships/).
 
+---
+
+!!! note ""
+    This page will be updated soon with screenshots and more examples.
+    
+---
+
 ## Relationships Quick Start
 
 This section walks you through the how-to steps of relating photographs

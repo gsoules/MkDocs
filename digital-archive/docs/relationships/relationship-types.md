@@ -82,21 +82,20 @@ the right of the admin search box. On the panel that drops down, click the
 To add or edit a relationship type:
 
 -   Click the **_Relationships_** button in the left admin menu
+-   You will see a page like the one below that shows commonly used relationships
+
+![Examples of relationship types](relationship-types-12.jpg)
+
 -   On the **_Relationships_** page, click the **_Edit Relationship Types_** button
 -   You will see a page similar to the one shown below
 
 ![Examples of relationship types](relationship-types-2.jpg)
 
-!!! note ""
-    A new installation of the [AvantRelationships plugin](/plugins/avantrelationships) only provides
-    a small number of commonly used relationship types. As such, your installation might not have
-    some of the types shown in the screenshots in this documentation.
-
-### Order
+### Order of appearance
 
 The relationship types in the screenshot above appear in the order in which you want users to see groups of
 related items when viewing an item page.
-You can drag the rows up or down to change the order and then click the **_Update Order_** button
+You can drag the rows up or down to change the order of appearance and then click the **_Update Order_** button
 that will appear at the bottom of the page.
 
 ### Add, edit, or remove a relationship type

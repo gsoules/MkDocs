@@ -95,17 +95,22 @@ Item page
 :   An **item** page is a Digital Archive webpage where you [view an item's metadata](/archivist/items/#view-an-item)
     and any of its image or PDF file **attachment**s.
 
-Lightbox
-:   The lightbox is a popup window that appears to display a larger image when you click on an **item**'s
-    thumbnail in **search results**.
+Item set
+:   An [item set](/relationships/kinds-of-relationships/#item-sets) is a two or more **item**s that an
+    **archivist** has chosen to group together into a set.
 
 Keyword
 :   A keyword is a significant word in an item's **_Title_**, **_Description_** or other **field** that provides
     specific information about the **item** and helps users find items when doing a keyword search.
 
 Left admin menu
-:   The left admin menu appears on the left side of every page when logged into the Digital Archive as either
-    an *archivist* or **administrator**.
+:   The left admin menu appears on the left side of every admin page when you are
+    [logged in](/archivist/logging-in/) to the Digital Archive as either an **archivist** or **administrator**.
+    Admin pages have a beige background.
+
+Lightbox
+:   The lightbox is a popup window that appears to display a larger image when you click on an **item**'s
+    thumbnail in **search results**.
 
 Metadata
 :   Metadata is information about information. For example, the information in a photograph is the image itself
@@ -120,6 +125,10 @@ Nomenclature 4.0
     **term**s organized in a classification system for indexing and cataloging collections of human-made objects.
     The latest version is 4.0.
 
+Non-public item
+:   A [non-public item](/archivist/special-features-archivist/#non-public-items) is an **item** that only a logged
+    in **user** can see. In contrast, any user can see a **public item**.
+
 Omeka
 :   [Omeka](/developer/technologies/#omeka) is a web-publishing platform for the display of library, museum,
     archives, and scholarly collections and exhibitions.The [Digital Archive software](/developer/technologies/)
@@ -130,14 +139,15 @@ Organization
     Digital Archive to make its **collection** available online.
 
 Private field
-:   A [private field](/archivist/what-gets-searched/) is a **field** that only a logged in user can see.
+:   A [private field](/archivist/what-gets-searched/) is a **field** that only a logged in **user** can see.
 
 Public field
 :   A [public field](/archivist/what-gets-searched/) is a **field** that anyone can see in a **public item**.
-    Only a logged in user can see **private field**.
+    Only a logged in **user** can see a **private field**.
 
 Public item
-:   A [public item](/archivist/what-gets-searched/) is an **item** that anyone can see. Only a logged in user can see a non-public item.
+:   A [public item](/archivist/what-gets-searched/) is an **item** that anyone can see.
+    Only a logged in **user** can see a **non-public** item.
 
 Plugin
 :   A plugin is a software component that adds features to an existing computer program. The Digital Archive
@@ -157,7 +167,7 @@ Site
 :   A site refers to the Digital Archive software installation and **database** for a single **organization**.
 
 Site term
-:   A site term is a **term** that does n*ot come from the **Common Vocabulary**. It is specific to an **organization**
+:   A site term is a **term** that does *not* come from the **Common Vocabulary**. It is specific to an **organization**
     and is found in that organization's **site vocabulary**.
 
 Site vocabulary
@@ -197,5 +207,5 @@ Vocabulary
 :   A vocabulary is a controlled list of **term**s that **archivist**s use when cataloging **item**s in their **collection**.
 
 Vocabulary Editor
-:   The [Vocabulary Editor](/archivist/vocabulary-editor/) lets you work with the **Common Vocabulary** to define the set of common and site-specific
-    **vocabulary** **terms** that **archivist**s will use when working with **item**s in your **collection**. 
+:   The [Vocabulary Editor](/archivist/vocabulary-editor/) lets you work with the **Common Vocabulary** to define
+    the set of **common terms** and **site**-specific **term**s that **archivist**s will use when working with **item**s in your **collection**. 

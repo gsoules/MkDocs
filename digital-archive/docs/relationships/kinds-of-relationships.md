@@ -131,6 +131,9 @@ click the **_Enlarge_** link that appears above the visualization in the **_Rela
 
 An item set is a two or more items that an archivist has chosen to group together into a set.
 
-The remainder of the documentation for item sets is coming soon.
+[Learn how to create an item set](/archivist/item-set/).
+
+!!! note ""
+    The remainder of the documentation for item sets is coming soon.
 
 ---

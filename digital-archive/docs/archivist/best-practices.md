@@ -217,6 +217,22 @@ his professional experience working with digital images, empirical evidence, and
 worked with many of the tens of thousands of images scanned by Library volunteers.
 
 ![Scanning decision tree](best-practices-3.jpg)
+
+
+## Login credentials
+
+Be security conscious. You might not think a Digital Archive account is that important,
+or that the information is very sensitive, but to allow access to the wrong people is asking for trouble.  
+A malicious person, or even a well-meaning one, can do a lot of damage.
+
+Guard your collection by following these recommendations:
+
+-   Do not use the same login for multiple people
+-   Give each archivist their own user name and password
+-   Do not share your login name and password with *anyone*
+-   Do not set your password to something that's easy to guess
+-   Do not use a password that you use for any other website
+
 ---
 
 

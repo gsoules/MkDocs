@@ -20,6 +20,7 @@ Follow these steps to login to the Digital Archive:
 :   On the `Login` page, enter your user name and password. When you log in as an *Archivist* or
     *Administrator*, a dark gray menu bar will appear at the top of the page.
 
+    See [best practices for login credentials](/archivist/best-practices/#login-credentials).
 
 3 &ndash; Access admin features 
 

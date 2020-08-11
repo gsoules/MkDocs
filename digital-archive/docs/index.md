@@ -12,7 +12,7 @@ not belong in the collection. The second is that users should be able to easily
 “connect the dots” by following relationships from one item to another to discover
 stories that are of interest to them.
 
-**To get started using the Digital Archive:**
+> To get started using the Digital Archive:
 
 -   Get familiar with the terms and concepts below
 -   Peruse the [Glossary](/glossary) to learn the language of the Digital Archive
@@ -51,8 +51,8 @@ Type, Subject, and Keywords
 :   An item's **type** tells you what kind of *thing* the item is. For example, an item's type might be `photograph`,
     `document`, or `object` (a teacup, for example). An item's **subject** clarifies its type. For example, an item of type `photograph`
     could have the subjects `person` and `boat` to indicate what it is a photograph of.  A subject is not required
-    for an item when its type is self-explanatory such as *teacup*. Type and subject terms are defined in
-    [vocabularies](/archivist/vocabularies/).
+    for an item when its type is self-explanatory such as *teacup*. Read about
+    [Common Vocabulary **_Type_** and **_Subject_**](https://digitalarchive.us/docs/developer/common-vocabulary-translator/#common-vocabulary-type-and-subject).
     
     **Keywords** are significant words in an item's **_Title_**, **_Description_** and all other metadata fields.
     There is no separate metadata field for keywords. They are simply the words an archivist chooses to describe an item.
