@@ -110,3 +110,32 @@ When you separate the words by the special `|` character to signify *OR*, the se
 items that contain either or both words. The addition of `-postcard` eliminates items that contain that keyword.
 
 ![advanced search](how-to-search-7.jpg)
+
+## Site statistics
+
+Site statistics show the contributions of all organizations that are sharing their collections
+with each other. To see them, click the **_View site statistics_** link that is located above
+the **_Search Tips_** box on the **_Advanced Search_** page.
+
+![advanced search](how-to-search-12.jpg)
+
+The rows are sorted by the total *weight* of the items in each organization's Digital Archive
+collection. An item's weight reflects the amount of information it provides.
+
+The weight of a single item is calculated as follows:
+
+-   The item itself &ndash; its metadata &ndash; is worth 1 point
+-   Each of the item's [file attachments](/archivist/attach-file/) (image, document, audio, video) is worth 1 point
+-   Each of the item's [relationships](/archivist/add-relationship/) is worth &frac12; point
+
+Relationships get a &frac12; point because every relationship is shared by two items.
+
+Here are a few examples of weight calculations:
+
+-   An item with just metadata and no attachments and no relationships has a weight of 1
+-   An item with one image attached has a weight of 2
+-   An item with 4 images, 1 PDF, and 2 relationships has a weight of 7 (1 + 4 + 1 + &frac12; + &frac12; )
+
+*The screenshot above was taken on August 12, 2020.*
+
+---

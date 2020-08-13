@@ -15,7 +15,8 @@ The following sections describe each of these features.
 
 ## Non-public items
 
-An archivist can see non-public items, i.e., items whose **_Public_** box is unchecked on the 
+An archivist can see non-public items, that is, items that have their **_Public_** 
+checkbox unchecked on the 
 [**_Add Item_**](/archivist/items/#add-a-new-item) or [**_Edit Item _**](/archivist/items/#edit-an-item) 
 page. In search results, non-public items have an asterisk next to their **_Identifier_** as 
 shown below. This is just a convenience to make you aware that an item is non-public.

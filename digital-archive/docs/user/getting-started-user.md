@@ -47,7 +47,7 @@ Share search results with other people
     When the recipient clicks the link, they'll see the results exactly the same way as you
     are viewing them.
 
-    [Learn how to share search results](/user/sharing)
+    [Learn how to share search results](/user/sharing-search-results)
 
 Create a PDF report that you can print
 :   You can save search results as a PDF document to print or email to someone.
