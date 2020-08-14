@@ -19,7 +19,7 @@ which resets the flag to gray and removes the item from the recently viewed item
 ### Recently viewed items page
 
 Continuing with the example above, after viewing item 13178, you could click
-the `Recent Items` link, located under the [search box](/user/how-to-search/#search-using-keywords), 
+the **_Recent Items_** link, located under the [search box](/user/how-to-search/#search-using-keywords), 
 to go to the **_Recently Viewed Items_** page. That page shows the item you just viewed, plus the two 
 items that you flagged earlier.
 
@@ -55,8 +55,6 @@ You can share results with someone else by sending them the URL for the search r
     The list of recently viewed items is stored in [browser cookies](https://en.wikipedia.org/wiki/HTTP_cookie).
     If you clear your browser's cookies, or switch to a different browser, or don't
     look at the **_Recently Viewed Items_** page for several days, the list will be empty.
-
-    The `Recent Items` link *only* appears under the search box when there are recent items in the list.
 
     The recently viewed items list only tracks items that you have viewed or flagged when searching
     `This site`. It does not track items when you are viewing `All sites`.

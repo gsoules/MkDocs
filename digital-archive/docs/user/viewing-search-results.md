@@ -16,16 +16,17 @@ the search results page. You can use the other selector bar options to sort and 
 ## Table View
 
 **Table View**, with the Details layout, is the default view for search results. This view displays each item in 
-a separate row, showing a thumbnail image and many of the item's metadata fields. In the
-**_Description_** field, keywords in the metadata that match the
-search keywords are highlighted in blue. In the example below, the search keywords were `waldron bates`.
+a separate row, showing a thumbnail image and many of the item's metadata fields.
+
+If the keywords you searched for occur in the item's description, or in its PDF file attachment, they appear
+highlighted in blue in the **_Description_** and **_File Attachment_** sections of the search results.
+In the example below, the search keywords `waldron` and `bates` appear in blue.
 
 ![Viewing search results in Detail layout](viewing-search-results-3.jpg)
 
-If an item in the search results has a PDF file attached to it, the PDF file name appears in the
-`File Attachment` field. You can click the file name link to immediately open the PDF. Keyword matches
-within the PDF text are highlighted in blue. In the example above, that last item has a PDF file 
-attachment named `ANP Pathmakers.pdf`.
+If the item has a PDF attached to it, the PDF's file name appears at the top of the **_File Attachment_**
+section. In the example above, the third item has a PDF file named `ANP Pathmakers.pdf`.
+You can click the file name link to open the PDF in your browser's PDF viewer.
 
 #### Compact Table View layouts
 

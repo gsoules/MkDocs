@@ -49,7 +49,8 @@ of a person to an item about that person.
 
     -   On the **_Relationships for Item_** page:
         -   Choose `depicted by` from the dropdown list in the **_Relationship_** column
-        -   Click the **_Add_** button on each of your photographs
+        -   Click the **_Add_** button on each of your photographs, waiting for
+            the add to complete each time.
 
     You've now related the photos to the Reference Item for your person.        
 

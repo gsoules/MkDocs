@@ -91,6 +91,10 @@ You can also import files to be attached to an imported item.
 
 ![UTF-8 format](import-csv-4.jpg)
 
+If you get an error that the file cannot be imported because the column counts don't match,
+check to make sure there are no duplicate column names. If that's not the problem, select
+some columns to the right of the last column, delete them, and save the file.
+
 5 &ndash; Verify the field mappings
 :   On the Step 2 page:
 
@@ -118,10 +122,14 @@ You can also import files to be attached to an imported item.
 7 &ndash; Fix import errors
 :   To import the skipped rows:
 
-    -   Determine the cause of the problem. Often it's a misspelling of a file name, or even a difference in letter
-        casing. For example, if the CSV file refers to a file named `1234.jpg`, but the actual file name is
-        `1234.JPG`, the file won't be found. The presence of a `#` in a file name seems to cause the
-        import logic to truncate the name before the `#` which then causes a file name mismatch.
+    -   Determine the cause of the problem.
+        -   Often it's a misspelling of a file name, or even a difference in letter
+            casing. For example, if the CSV file refers to a file named `1234.jpg`, but the actual file name is
+            `1234.JPG`, the file won't be found.
+        -   The presence of a `#` in a file name seems to cause the
+            import logic to truncate the name before the `#` which then causes a file name mismatch.
+        -   The presence of `/\` in column text causes the logic to skip that row and one or more
+            subsequent rows. The error reports 1 skipped row and does not say which row.         
     -   Make a copy of the import file with all the rows removed except the offending row(s). A good way to do this is to
         use a color to highlight the bad rows, then delete all the rows except for the highlighted ones. If you
         simply start deleting the good rows, the row numbers in the error report will no longer match the rows in the
@@ -138,7 +146,7 @@ You can also import files to be attached to an imported item.
     -   Choose **_Vocabulary Editor_** from the left admin menu
     -   Click the **_Rebuild Site Terms table_** button
     -   Click **_OK_** on the confirmation dialog
-    -   When the build completes, refresh the page to see the updated local terms
+    -   When the build completes, the page will reload and show the updated site terms
 
     !!! note
         You must rebuild the site terms table *before* rebuilding the Elasticsearch indexes.
