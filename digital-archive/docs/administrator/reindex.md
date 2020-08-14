@@ -64,6 +64,7 @@ using one of the "back door" methods listed below:
 -   Add or remove an Omeka element        
 -   Change an element from private to public, or vice versa, by adding it to or removing it from
     the **_Private Elements_** option on the [AvantCommon](/plugins/avantcommon) configuration page
+-   Import data using AvantImport    
 
 They are called "back door" methods because they bypass the Digital Archive synchronization logic.
 They update the MySQL database, but not the Elasticsearch indexes. This causes the MySQL database and
@@ -125,15 +126,7 @@ DONE
 
     Select the second radio button on the **_Elasticsearch Indexing_** page above and then click the **_Start_** button.
 
-4 &ndash; Remove all items from the shared index
-:   This step removes all of your site's items from the shared index.
-    This is done so that any items that got deleted from the MySQL database
-    by using a back door method, will get removed from the shared index.
-    If this step is not performed, those deleted items will persist as ghosts.
-
-    Select the third radio button and then click the **_Start_** button.
-
-5 &ndash; Import into existing shared index
+4 &ndash; Import into existing shared index
 :   This step adds the exported items to the shared index.
 
     Select the fourth radio button and then click the **_Start_** button.

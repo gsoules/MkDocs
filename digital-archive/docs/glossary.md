@@ -163,6 +163,15 @@ Relationship
 S3
 :   S3 stands for [Amazon Simple Storage Service](https://aws.amazon.com/s3/).
 
+Selector
+:   A selector is one of the dropdown lists that are grouped together in the selector bar at the top
+    of [**_search results_**](/user/viewing-search-results/) pages. The selectors are **_Search_**, **_View_**,
+    **_Layout_**, **_Index By_**, **_Sort By_**, **_Per Page_**, and **_Items_**. Not all selectors
+    appear together at the same time.
+
+Search results
+:   Search results are the list of **item**s that you see when you [search](/user/how-to-search/) a Digital Archive **collection**.
+
 Site
 :   A site refers to the Digital Archive software installation and **database** for a single **organization**.
 
@@ -172,9 +181,6 @@ Site term
 
 Site vocabulary
 :   A site vocabulary is a set of **term**s that are specific to one **organization**'s Digital Archive **site**.
-
-Search results
-:   Search results are the list of **item**s that you see when you [search](/user/how-to-search/) a Digital Archive **collection**.
 
 Super user (Omeka)
 :   An Omeka super user is someone with an Omeka login that allows them to do anything and everything in Omeka.

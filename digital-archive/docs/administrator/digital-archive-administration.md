@@ -13,6 +13,54 @@ an archivist could do on their own once taught how by the administrator.
 [Learn how to create zoomable images](/administrator/zoomable-images/).
 
 
+## Enable Google Analytics
+
+If your organization has a Google Analytics account, you can have it track visits to
+your Digital Archive site. To enable analytics, go to the **_Themes_** tab on the
+**_Appearance_** page and enter your Google Analytics Global Site Tag tracking code
+into the **_Global Site Tag_** field as shown below.
+
+![Google Analytics](omeka-administration-1.jpg)
+
+## Change the site's appearance
+
+You can make these changes to your site's appearance:
+
+-   Replace the banner image that appears at the top of every page
+-   Edit the text that appears in the footer on every page
+-   Edit the CSS that controls the overall appearance of the site
+
+To make these kinds of changes, go to the **_Themes_** tab on the **_Appearance_** page.
+
+##### CSS
+
+The CSS properties below are used to control:
+
+-   The background color that appears *around* the main content area of pages
+-   The color of the navigation links that appear in the banner such as menu items
+-   The color of other links
+-   The color of h1 and h2 headings
+
+```
+:root {
+    --background-color: #ebf3ff;
+    --nav-link-color: #3d5a98;
+    --nav-link-hover-color: #7596b9;
+    --link-color: #3d5a98;
+    --link-hover-color: #7596b9;
+    --headings-color: #1a77bd;
+}
+```
+
+---
+
+!!! note "Caution"
+    Do not edit CSS unless you know what you are doing. The smallest mistake can drastically
+    change the appearance of your site. To be safe, before making any changes, first copy
+    the CSS and save it to a file as a backup. If you get into trouble with your changes,
+    you can restore the good CSS by copying it into the CSS field from the file.
+
+
 ## Configure Digital Archive plugins
 
 The Digital Archive is built on top of [Omeka Classic](https://omeka.org/classic/) using several

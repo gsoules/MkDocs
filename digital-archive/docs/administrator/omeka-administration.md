@@ -31,35 +31,7 @@ Here are some examples of navigation links you could use for the home page. To u
 https://mysite.net/digitalarchive/find?query=&view=4&limit=100
 https://mysite.net/digitalarchive/avant/dashboard
 https://mysite.net/digitalarchive/find
-
 ```
-
-## Enable Google Analytics
-
-If your organization has a Google Analytics account, you can have it track visits to
-your Digital Archive site. To enable analytics, go to the **_Themes_** tab on the
-**_Appearance_** page and enter your Google Analytics Global Site Tag tracking code
-into the **_Global Site Tag_** field as shown below.
-
-![Google Analytics](omeka-administration-1.jpg)
-
-## Change the site's appearance
-
-You can make these changes to your site's appearance:
-
--   Replace the banner image that appears at the top of every page
--   Edit the text that appears in the footer on every page
--   Edit the CSS that controls the overall appearance of the site
-
-To make these kinds of changes, go to the **_Themes_** tab on the **_Appearance_** page.
-
----
-
-!!! note "Caution"
-    Do not edit CSS unless you know what you are doing. The smallest mistake can drastically
-    change the appearance of your site. To be safe, before making any changes, first copy
-    the CSS and save it to a file as a backup. If you get into trouble with your changes,
-    you can restore the good CSS by copying it into the CSS field from the file.
 
 ## Add a new user
 
