@@ -2,7 +2,7 @@ site_name: Digital Archive Docs
 copyright: 'Copyright &copy; 2020 AvantLogic Corporation'
 
 nav:
-    - Getting Started: index.md
+    - Find & Discover: index.md
     - Glossary: glossary.md
     - For Users:
         Getting Started for Users: user/getting-started-user.md

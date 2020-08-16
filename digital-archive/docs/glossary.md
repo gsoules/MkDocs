@@ -182,6 +182,10 @@ Site term
 Site vocabulary
 :   A site vocabulary is a set of **term**s that are specific to one **organization**'s Digital Archive **site**.
 
+Subject
+:   **_Subject_** is a **field** to used to further classify a **Type**. 
+    [Learn about **_Type_** and **_Subject_**](/developer/common-vocabulary-translator/#common-vocabulary-type-and-subject).
+
 Super user (Omeka)
 :   An Omeka super user is someone with an Omeka login that allows them to do anything and everything in Omeka.
     In this documentation, a super user is referred to as an **administrator**.
@@ -193,6 +197,10 @@ Term
 :   A term is a combination of words in a **vocabulary** that concisely describe or classify something. For example,
     `Image, Photograph, Photographic Print, Cyanotype`is a *single* term that describe a photograph that was printed
      using the cyanotype printing process.
+
+Type
+:   **_Type_** is a **field** used to indicate what an item is.
+    [Learn about **_Type_** and **_Subject_**](/developer/common-vocabulary-translator/#common-vocabulary-type-and-subject).
 
 Upload
 :   Upload refers to the process of copying a file from a personal computer to the Digital Archive which resides on a server.

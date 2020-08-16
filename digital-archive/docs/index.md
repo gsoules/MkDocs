@@ -1,16 +1,11 @@
-# Getting Started
+# Find & Discover
 
-The Digital Archive provides a new model for sharing local knowledge that is rooted in
-time and place. It addresses a shortcoming of popular content management solutions which
-isolate database items by not providing archivists with a way to define and establish real-world
-relationships that tie collection items together to form stories.
+The Digital Archive is all about making it easy for users to **find** what they are looking for
+and to **discover** things they didn't know existed. Get started as a user right now by
+[learning how to search](/user/how-to-search/).
 
-[Relationships](/relationships/getting-started-relationships/) are key in the Digital Archive
-[model](/relationships/archive-relational-model/) which is based on two fundamental principles.
-The first is that every item in a collection should somehow relate to other items, otherwise it might
-not belong in the collection. The second is that users should be able to easily
-“connect the dots” by following relationships from one item to another to discover
-stories that are of interest to them.
+For archivists, the Digital Archive provides a powerful set of tools that allow you
+to catalog items in ways that make it easy for users to find and discover what's in your collection.
 
 > To get started using the Digital Archive:
 

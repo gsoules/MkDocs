@@ -136,23 +136,35 @@ The rationale for how Nomenclature gets translated to Common Vocabulary, is prov
 
 ### Common Vocabulary **_Type_** and **_Subject_**
 
-Before continuing, it is important to explain the proper use of, **_Type_** and **_Subject_**
-(when the words **_Type_** and **_Subject_**
-appear in small caps, they refer to an item's **_Type_** and **_Subject_** metadata fields).
+Before continuing, it is important to explain the proper use of, **_Type_** and **_Subject_**.
+Note that throughout this documentation, when the words **_Type_** and **_Subject_**
+appear in small caps, they refer to an item's **_Type_** and **_Subject_** metadata fields.
 
-In the Digital Archive, an object name alone is not always sufficient for cataloging an item.
-Every item must have a **_Type_**, and unless the type is a physical object that can be
-unambiguously described by a Common Vocabulary term, the item must also have a **_Subject_** that further
-classifies the **_Type_**. For example, an item with **_Type_** `Object, Cup, Teacup` needs no further
-classification, but an item of **_Type_** `Image, Photograph` *must* have a **_Subject_** to
-classify the photo as being part of a group of similar photos. For example, the subject of a photograph
-could be `People` to indicate that it's a photo of humans.
+Every item must have a **_Type_** &ndash; there are no exceptions.
 
-A **_Subject_** is not required for an object item, but it should be provided to indicate the nature of
-the object when the **_Type_** alone is not enough. For example, the **_Type_**
-`Object, Art, Sculpture, Carving` names an item as a carving, but does not say what kind of carving.
-Setting the item's **_Subject_** to  
-`Nature, Animals, Birds` puts the object into the class of carvings of animals, specifically, birds.
+Every item must also have a **_Subject_** except in certain cases
+which are explained below. The **_Subject_** is required to further classify the **_Type_**. For
+example, an item of **_Type_** `Image, Photograph` *must* have a **_Subject_** to
+indicate the nature of the picture since `Photograph` alone is too vague. For example, the subject of a
+photograph could be `People` to indicate that it's a photo of humans.
+
+##### When a **Subject** is optional
+
+When an item's **_Type_** begins with `Object`, a **_Subject_** is not required, meaning that you can
+save the item without choosing a **_Subject_**. For example, an item with **_Type_** `Object, Cup, Teacup`
+needs no further classification and requires no **_Subject_**. However, the **_Type_**
+`Object, Art, Sculpture, Carving` is vague and so a **_Subject_** like`Nature, Animals, Birds` is recommended.
+
+##### When a **Subject** is required, but not needed
+
+The rule that a **_Subject_** is required unless the **_Type_** begins with `Object` works well in general,
+but there are some non-object types that are self-evident and don't need a **_Subject_**.
+For example **_Type_** `Document, Log, Ship's Log` doesn't need further classification, but if you omit
+the **_Subject_**, you'll get an error when you attempt to save the item. In that case, you can choose the
+special **_Subject_** `none` to override the requirement for a **_Subject_** so that you can save the item.
+Note that whenever you edit that item, you'll have to choose `none` again to save it. That's because the
+item gets saved without a **_Subject_** &ndash; the **_Subject_** is not getting set to `none`. Use this
+feature judiciously.
 
 #### Top level types and subjects
 
