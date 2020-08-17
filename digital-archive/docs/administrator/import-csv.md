@@ -111,7 +111,7 @@ some columns to the right of the last column, delete them, and save the file.
     ![Status page showing statistics](import-csv-7.jpg)
 
     Click on the import date/log to see why the records were skipped. The import log appears showing details
-    about the import process. The 4th row on the next screen shot shows that one of the file names in the CSV file was not
+    about the import process. The 4th row on the next screenshot shows that one of the file names in the CSV file was not
     readable or does not exist. The 5th rows says that the record on row #121 was skipped.
 
     ![Log page showing error](import-csv-8.jpg) 

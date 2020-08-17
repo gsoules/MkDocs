@@ -193,6 +193,12 @@ Super user (Omeka)
 Table View
 :   [**_Table View_**](/user/viewing-search-results/#table-view) is a way to view **search results** in tabular form.
 
+Tags
+:   Tags are words that describe an attribute of an **item**. The
+    [Omeka tags feature](https://omeka.org/classic/docs/Content/Tags/) is available in the Digital Archive, but is not
+    described in this documentation. The Digital Archive's support for **relationships**, **item sets**, and **hierarchical**
+    **vocabularies** make tags less important than in applications that don't have those features.
+
 Term
 :   A term is a combination of words in a **vocabulary** that concisely describe or classify something. For example,
     `Image, Photograph, Photographic Print, Cyanotype`is a *single* term that describe a photograph that was printed

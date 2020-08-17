@@ -59,7 +59,7 @@ Follow the steps below to do the same thing using the Digital Archive.
     
     The first result, item 15143, is her
     Reference Item. The second and fourth items are photos she appears in. The third item is a newspaper clipping
-    about her. The last item is a Reference Item for her husband Donald (see details in the second screen shot below).
+    about her. The last item is a Reference Item for her husband Donald (see details in the second screenshot below).
     Note that the thumbnails for Reference Items have a double blue border to distinguish them from other items.
 
 **Results of a keyword search for `mary o'brien`**
@@ -68,7 +68,7 @@ Follow the steps below to do the same thing using the Digital Archive.
 
 **The Reference Item for Mary's husband Donald**
 
-The screen shot below shows the details for Donald Worcester's Reference Item which has a PDF attached to it.
+The screenshot below shows the details for Donald Worcester's Reference Item which has a PDF attached to it.
 A PDF can contain a gold mine of keywords. It was because of the presence of the keywords
 `mary o'brien` in the PDF, that item 13249 came up in the search results above.
 
@@ -98,7 +98,7 @@ A PDF can contain a gold mine of keywords. It was because of the presence of the
 ![Relationships link](add-relationship-1.jpg)
 
 5 &ndash; Relate photos to the primary item
-:   Clicking an item's **_Relationships_** link (as shown at the bottom of the screen shot above)
+:   Clicking an item's **_Relationships_** link (as shown at the bottom of the screenshot above)
     takes you to the **_Relationships for Item_** page shown below. We'll now relate some items to Mary O'Brien
     to show how easy it is. [Learn how the **_Relationships for Item_** page](/relationships/relationships-for-item-page/) works.
 
@@ -147,7 +147,7 @@ A PDF can contain a gold mine of keywords. It was because of the presence of the
 
 ![Relationships link](add-relationship-8.jpg)
 
-:   To complete this example, the screen shot below shows the effect of clicking the **_Add_** button
+:   To complete this example, the screenshot below shows the effect of clicking the **_Add_** button
     for the wedding announcement. Mary's Reference Item is now related to four other items.
 
 ![Relationships link](add-relationship-9.jpg)

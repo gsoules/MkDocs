@@ -129,11 +129,47 @@ click the **_Enlarge_** link that appears above the visualization in the **_Rela
 
 ## Item sets
 
-An item set is a two or more items that an archivist has chosen to group together into a set.
+An item set is a two or more items that an archivist has chosen to group together so that when you view
+one item, you see the other items in the set. If that sounds a lot like relationships, it's because
+item sets are actually a special kind of relationship. [Learn how to create an item set](/archivist/item-set/).
 
-[Learn how to create an item set](/archivist/item-set/).
+Item sets are especially useful in two cases
 
-!!! note ""
-    The remainder of the documentation for item sets is coming soon.
+-   Grouping items that share a common attribute
+-   Dividing a large subject into smaller parts
+
+### Items having a common attribute
+
+A seemingly unrelated set of items can be related to each other by virtue of sharing a minor
+common attribute. For example, a photograph of a man standing in his yard, another
+of a boat in the water, and a third of a lake may have nothing in common except that the man is standing in
+two feet of snow, the boat's rigging is encrusted with ice, and the lake is frozen &ndash; all of the pictures
+were taken in winter.
+
+You could use [Omeka's tags feature](https://omeka.org/classic/docs/Content/Tags/) to tie these items together,
+but a tag is only a few words, whereas an item set is itself an item with its own metadata. An item set, for
+example, would allow you to use the item's **_Description_** field to tell the story of this particular
+set of winter photos. An item set's item also has a **_Type_** and **_Subject_** which means it can be discovered
+via the **_Refine You Search_** panel. In short, item sets are much more powerful than tags for connecting seemingly
+unrelated items.
+
+### Dividing a large subject into smaller parts
+
+Sometimes a topic is too big for one item. For example, the Southwest Harbor Public Library has hundreds of
+photographs related to the Henry R. Hinckley Company in Maine. In operation for more than ninety years, the
+company has manufactured working boats, pleasure boats, and military boats. The Library used item sets to 
+divide these photos into groups which makes it easy for a user to focus on the kinds of boats they are
+interested in. The item looks like this:
+
+![Hinckley item sets](kinds-of-relationships-6.jpg)
+
+The screenshot above shows the six items sets that are part of item 3495. The screenshot below shows what
+you see when you click on the first item set for Hinckley Military Boats.
+
+![Hinckley item sets](kinds-of-relationships-7.jpg)
+
+
+
+
 
 ---

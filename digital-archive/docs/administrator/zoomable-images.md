@@ -92,7 +92,7 @@ program called [FileZilla](https://filezilla-project.org/). Connection settings 
 
 !!! note ""
     In the instructions above, be very careful to click on the `/` at the top of the right panel as pointed
-    to by the red arrow in the screen shot above.
+    to by the red arrow in the screenshot above.
     If instead you click on an existing folder, the folder you are uploading will go into that existing folder.
 
 **cPanel method**
