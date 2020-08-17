@@ -20,7 +20,7 @@ nav:
         Special Features for Archivists: archivist/special-features-archivist.md
         Working with Items: archivist/items.md
         Attach an Image or PDF to an Item: archivist/attach-file.md
-        Add a Relationship to an Item: archivist/add-relationship.md
+        Add Relationships to an Item: archivist/add-relationship.md
         Create an Item Set: archivist/item-set.md
         What Gets Searched: archivist/what-gets-searched.md
         Common Vocabulary: archivist/common-vocabulary.md
@@ -31,6 +31,7 @@ nav:
         Archive Relational Model: relationships/archive-relational-model.md
         Reference Items: relationships/reference-items.md
         Kinds of Relationships: relationships/kinds-of-relationships.md
+        Relationships for Item page: relationships/relationships-for-item-page.md
         Relationship Types: relationships/relationship-types.md
         Relationship Rules: relationships/relationship-rules.md
     - Site Administration:

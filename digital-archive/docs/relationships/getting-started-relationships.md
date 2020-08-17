@@ -26,6 +26,6 @@ the business, and the woman.
     Relationships are the most sophisticated and powerful feature of the Digital Archive.
     As such, it takes time and effort to understand and learn how to use them. Approach this
     topic with that in mind so that you don't become overwhelmed. If you are anxious to just
-    get started adding some relationships to your Digital Archive collection, see the
-    [Relationships Quick Start ](/archivist/add-relationship/#relationships-quick-start) section.
+    get started with relationships,  
+    [learn how to add relationships to an item](/archivist/add-relationship).
 

@@ -1,62 +1,167 @@
-# Add a Relationship to an Item
+# Add Relationships to an Item
 
-This section explains *how* to add relationships to items in your collection.
-To learn what relationships are and how they work, read the section on
-[Getting Started with Relationships](/relationships/getting-started-relationships/).
+This page explains how to add relationships to an item by walking through an example.
+
+To learn what relationships are, read the section on
+[getting started with relationships](/relationships/getting-started-relationships/).
 
 ---
 
-!!! note ""
-    This page will be updated soon with screenshots and more examples.
-    
----
+!!! note "Tip"
+    To try the steps in this example using items in your own collection, open this page on your phone
+    or tablet so that you can follow along without having to switch between browser windows.
 
-## Relationships Quick Start
+## Three basic steps
 
-This section walks you through the how-to steps of relating photographs
-of a person to an item about that person.
+There are just three steps for adding relationships:
+
+-   Choose a primary item to add relationships to
+-   Gather the items in your collection that are related to the primary item
+-   Add the relationships
+
+## Choose the primary item
+
+The *primary* item simply means the item to which you are going to relate other items. This example
+uses a person as the primary item, but the process is the same for adding
+relationships to a building, boat, event, organization or anything else in your collection.
+
+Once you know who or what you want to relate other items to, you'll need to create a Reference Item
+to serve as a digital stand-in for that person or thing.
+[Learn how to create a Reference Item](/relationships/reference-items/#how-to-create-a-reference-item).
+
+In this example, our person is a woman named Mary O'Brien. The metadata for Mary's Reference Item, looks like this:
+
+![Reference item for a person](add-relationship-2.jpg)
+
+You can add much more information to a Reference Item than appears above, but what's shown is all that's 
+required and it only takes a minute to create. Don't worry if you don't really get what
+Reference Items are all about &ndash; they'll make sense by the end of this page.
+
+## Gather the related items
+
+Suppose now that instead of using the Digital Archive, you were making a scrapbook page for  
+Mary O'Brien. First you would clear off your work area, and then you would lay out everything
+you have about her: photos, a newspaper clipping, and information about her husband Donald.
+
+Follow the steps below to do the same thing using the Digital Archive.
 
 1 &ndash; Clear your Recent Items list
-:   Click the **_Clear all_** link on the [**_Recently Viewed Items_**](/user/recently-viewed/#recently-viewed-items-page) page.
+:   The recent items list is your work area. To clear it off:
+
+    -   Go to the [**_Recently Viewed Items_**](/user/recently-viewed/#recently-viewed-items-page) page
+        by clicking the **_Recent Items_** link that appears on the banner of every page under the search box
+    -   On the **_Recently Viewed Items_** page, click the **_Clear all_** link
+
+2 &ndash; Find items that are related to the primary item
+:   [Search](/user/how-to-search/) your Digital Archive for photos, articles, or other Reference Items that
+    are associated with your primary item. The screenshot shows results in [Grid View](/user/viewing-search-results/#grid-view)
+    of a [keyword search](/user/how-to-search/#search-using-keywords) for `mary o'brien`.
     
-    You'll be using the **_Recently Viewed Items_** list in step 4, but to get started, we want it to be empty.
+    The first result, item 15143, is her
+    Reference Item. The second and fourth items are photos she appears in. The third item is a newspaper clipping
+    about her. The last item is a Reference Item for her husband Donald (see details in the second screen shot below).
+    Note that the thumbnails for Reference Items have a double blue border to distinguish them from other items.
 
-2 &ndash; Create a [Reference Item](/relationships/reference-items/#how-to-create-a-reference-item) for the person
-:   [Add a new item](/archivist/items/#add-a-new-item) with these metadata values:
+**Results of a keyword search for `mary o'brien`**
 
-    -   Use the person's name in the **_Title_** field
-    -   Choose `Reference` for the **_Type_** field
-    -   Choose `People` for the **_Subject_** field
+![Reference item for Mary](add-relationship-3.jpg)
 
-    Now you have an item that you'll be able to relate the photos to.
+**The Reference Item for Mary's husband Donald**
 
-3 &ndash; Find two or three photos of the person
-:   [Search](/user/how-to-search/) your Digital Archive to find a few different photos of your person.
-    View each item or flag it for viewing later. Verify that the **_Type_** field
-    for each photo starts with `Image, Photograph`
+The screen shot below shows the details for Donald Worcester's Reference Item which has a PDF attached to it.
+A PDF can contain a gold mine of keywords. It was because of the presence of the keywords
+`mary o'brien` in the PDF, that item 13249 came up in the search results above.
 
-    As you view or flag the photos, they'll get added to your recently viewed items list.
+![Reference item for Donald](add-relationship-4.jpg)
 
-4 &ndash; Go to the [**_Recently Viewed Items_**](/user/recently-viewed/#recently-viewed-items-page) page
-:   Verify that the new Reference Item and your photos are in the list.
+3 &ndash; View or flag related items
+:   As you find items that you want to relate to your primary item, either view them or flag them.   
+    When you view or flag an item, it gets added to your recently viewed items list.
+    
+    -   View an item by clicking its title in the search results, *or*
+    -   [Flag an item](/user/recently-viewed/#flagging-items-to-view-later) by clicking the little
+        gray flag next to its item number &ndash; the flag turns blue
 
-    Click the **_Remove_** link on other items that may have crept in while you lookied for photos.
+    The screenshot above shows that the five items have been flagged.
 
-5 &ndash; Add relationships to the Reference Item for your person
-:   -   Click the Reference Item's **_Relationships_** link on the **_Recently Viewed Items_** page
+4 &ndash; Go to the **_Recently Viewed Items_** page
+:   Now that you have found and flagged the items you want to relate to Mary:
 
-      ![Relationships link](add-relationship-1.jpg)
+    -   Go to the [**_Recently Viewed Items_**](/user/recently-viewed/#recently-viewed-items-page) page to see them
+    -   Click the **_Remove_** link on any items that may have crept in while you were searching
+    -   Click the **_Relationships_** link on the primary item (Mary's Reference Item)
 
-    -   On the **_Relationships for Item_** page:
-        -   Choose `depicted by` from the dropdown list in the **_Relationship_** column
-        -   Click the **_Add_** button on each of your photographs, waiting for
-            the add to complete each time.
+    The screenshot below shows the items that got flagged in step 3 above. Notice the finger pointer on the
+    last item &ndash; Mary's Reference Item &ndash; which is hovering over the **_Relationships_** link.
+    Clicking the link takes you to the **_Relationships for Item_** page shown in step 5. 
 
-    You've now related the photos to the Reference Item for your person.        
+![Relationships link](add-relationship-1.jpg)
 
-6 &ndash; See what you accomplished
-:   -   Click the **_View Public Page_** button to see your person and their photos.
+5 &ndash; Relate photos to the primary item
+:   Clicking an item's **_Relationships_** link (as shown at the bottom of the screen shot above)
+    takes you to the **_Relationships for Item_** page shown below. We'll now relate some items to Mary O'Brien
+    to show how easy it is. [Learn how the **_Relationships for Item_** page](/relationships/relationships-for-item-page/) works.
 
-    -   Click the title of one of the photos to see its Reference Item and the other photos.      
+![Relationships link](add-relationship-5.jpg)
 
-Congratulations! You've added your first relationships.
+:   The page above tells you that Mary's reference item #15143 has no related items. It also
+    shows that for the *depicted by* relationship (in the dropdown list), two recently viewed items have an
+    **_Add_** button to indicate that they are eligible to be added as related items. They are the two photos
+    in which Mary appears &ndash; those photos depict Mary.
+    
+    Click the **_Add_** button for one of the photos. When the add completes, click the **_Add_** button
+    for the other photo. The screenshot below shows that item 15143 now has two related items.
+
+![Relationships link](add-relationship-6.jpg)
+    
+:   The two photos you just added still appear in the recently viewed items list, but their **_Add_** buttons
+    are now disabled. No other items in the list have **_Add_** buttons because none *depict* Mary. You can
+    remove the photos from the list by clicking their **_Remove_** links.
+
+6 &ndash; Relate a Reference Item to the primary item
+
+:   Now let's relate Mary to her husband:
+
+    -   In the dropdown list, change `depicted by` to `married to`
+    -   An **_Add_** button will appear next to Donald Worcester's Reference Item
+    -   Click the **_Add_** button
+
+    After relating Donald, Mary now has three relationships as shown below.
+
+![Relationships link](add-relationship-7.jpg)
+
+7 &ndash; Relate a document to the primary item
+
+:   Finally, we'll add a relationship for Mary's engagement announcement:
+
+    -   In the dropdown list, change `married to` to `mentioned in`
+    -   An **_Add_** button will appear next to the announcement
+
+    The screenshot below shows what happend when `mentioned in` was chosen for the relationship.
+    Note that the **_Add_** button for Donald's Reference Item became enabled again. That's because
+    that Reference Item is *eligible* to be related to the primary item in an *about/mentioned in*
+    relationship, even though it might not be approrpriate. You have to use your knowledge of the
+    items and how they relate to each other in deciding which ones to relate. Just because there's
+    an **_Add_** button does not mean that the relationship make sense. To understand this better,  
+    [learn how the **_Relationships for Item_** page](/relationships/relationships-for-item-page/) works.
+
+![Relationships link](add-relationship-8.jpg)
+
+:   To complete this example, the screen shot below shows the effect of clicking the **_Add_** button
+    for the wedding announcement. Mary's Reference Item is now related to four other items.
+
+![Relationships link](add-relationship-9.jpg)
+
+8 &ndash; See what you accomplished
+:   Click the **_View Public Page_** button to see Mary's related items the way a visitor to
+    your organization's Digital Archive will see them.
+
+![Relationships link](add-relationship-10.jpg)
+
+:   Hopefully you now understand why Reference Items are so important. They serve as the "glue" that binds
+    other items together. They also provide a place to add information
+    about a person or thing as it becomes available. For example, if you later learn some details about
+    Mary's life, you can add them to the item's **_Description_** field or attach them in a PDF file. If
+    you get a new photo of Mary, you can add it to your Digital Archive and relate it to this item very quickly.
+
+---

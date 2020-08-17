@@ -75,8 +75,6 @@ the Archive Relational Model, [learn about Reference Items](/relationships/refer
 
 !!! note "Mind Bender"
     It takes a while to get your mind wrapped around the concepts discussed on this page.
-    Once you get a feel for how it actually works, and after you see how your collection begins to come
-    alive after you have added some relationships, it will make a lot more sense and not seem
-    so complicated.  
-    If you are anxious to just get started adding some relationships to your Digital Archive collection, see
-    the [Relationships Quick Start ](/archivist/add-relationship/#relationships-quick-start) section.
+    Once you get a feel for how it actually works, and after you see how your collection begins to come alive after you have added some relationships, it will make a lot more sense and
+    not seem so complicated.  If you are anxious to just get started with relationships,
+    [learn how to add relationships to an item](/archivist/add-relationship).

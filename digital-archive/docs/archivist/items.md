@@ -145,7 +145,7 @@ Follow the steps below to edit an item.
 :   See the instructions above for [how to get to the admin item page](#get-to-the-admin-item-page).
     Those instructions will tell you all the ways that you can get to the **_Edit Item_** page with one click.
 
-    A screen shot for the **_Edit Item_** page is shown below.
+    A screenshot for the **_Edit Item_** page is shown below.
 
     ![Edit item page](items-1.jpg)
 
