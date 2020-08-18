@@ -8,8 +8,7 @@ when working with items in your collection. The Vocabulary Editor lets you defin
 -   **_Subject_**
 -   **_Place_**
 
-To define terms for other fields, use the
-[**_Simple Vocab_**](https://omeka.org/classic/docs/Plugins/SimpleVocab/) plugin.
+To define terms for other fields, use the [Simple Vocab plugin](#simple-vocab-plugin).
 
 > Launch the Vocabulary Editor
 
@@ -243,3 +242,34 @@ Category 08: Communication Objects
 
 This comparison is useful for someone who has experience working with Nomenclature
 and wants to understand how Digital Archive common terms map to Nomenclature terms.
+
+## Simple Vocab plugin
+
+This section briefly addresses vocabularies that a site may be using in addition to the
+**_Type_**, **_Subject_**, and **_Place_** vocabularies provided by the Common Vocabulary
+feature.
+
+The Omeka [**_Simple Vocab_**](https://omeka.org/classic/docs/Plugins/SimpleVocab/) plugin is
+a good and easy to use way to manage modest vocabularies that a site might use for site-specific
+terms such as status values or collection names. The Digital Archive uses Simple Vocab for the
+**_Rights_** field values.
+
+You can add new terms to your vocabulary at any time, but if you rename a term, your
+vocabulary will become out of sync with items that use that term. Unlike the **_Vocabulary Editor_**
+which automatically updates items when you edit a term, Simple Vocab has no such feature. To avoid
+problems, follow this approach when renaming a term.
+
+-   Rather than rename a term, add a new term having the new name
+-   Edit every item to use the new term
+-   When no more items use the old term, remove it from the vocabulary
+
+If you don't heed the advice above, and instead just rename the old term, when you go to edit an item
+that uses the old term, you won't see any value in the dropdown list. That's because the edit page
+will populate the dropdown list with the updated vocabulary terms and won't be able to match-up
+the item's old term with any term in the list and so it will just show `Select Below`.
+
+If there are too many items using a term to edit each one, you can use the Bulk Editor, but first
+[learn how to make bulk edits](/administrator/omeka-administration/#make-bulk-edits) and be sure
+to reindex your Elasticsearch indexes afterward.
+
+---

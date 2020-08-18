@@ -136,6 +136,20 @@ Here are a few examples of weight calculations:
 -   An item with one image attached has a weight of 2
 -   An item with 4 images, 1 PDF, and 2 relationships has a weight of 7 (1 + 4 + 1 + &frac12; + &frac12; )
 
-*The screenshot above was taken on August 12, 2020.*
+*The screenshot above was taken on August 18, 2020.*
+
+##### Contributor ID
+
+The ID column shows the abbreviation used for each contributing organization. You can use this value
+on the [Advanced Search page](#advanced-search) to:
+
+-   Limit searches to only specific organizations
+-   Exclude specific organizations from searches
+
+For example, the Advanced Search shown below would *exclude* the three libraries listed in the table above from the search.
+
+![advanced search](how-to-search-13.jpg)
+
+To search *only* those three libraries, change the condition to `(swhpl|nehl|jml)`.
 
 ---

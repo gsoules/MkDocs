@@ -75,9 +75,10 @@ other items for lighthouses as shown below.
 
 ## Title relationships
 
-When an item’s **_Creator_** or **_Publisher_** field text exactly matches the **_Title_**
-field text of a Reference Item, the item has an automatic *title relationship* to the
-Reference Item. The implicit relationship is either *created by* or *published by*.
+A title relationship is an implicit relationship where a field's text exactly matches the **_Title_** field text of a
+[Reference Item](/relationships/reference-items/). For this kind of relationship to work, a field
+most be configured as a title-relationship field. The fields that most commonly use this feature are
+**_Creator_** and **_Publisher_**, but it will work with any field that is properly configured.
 
 In the example above, the green hyperlink for the **_Creator_** field has exactly the same value
 as a Reference Item for a person that is titled *Ballard – Willis Humphreys Ballard (1906-1980)*.
@@ -86,23 +87,48 @@ you'll see all of the items that person created as shown in the example below.
 
 ![Example of implicit reference item relationships](kinds-of-relationships-2.jpg)
 
-#### The importance of an exact match
+Note that when you view one of the individual items shown in the `Created` section above,
+it will *not* have a corresponding `Created By` section with a thumbnail for its creator
+Reference Item (`Ballard` in this example). That's because its **_Creator_** field links back
+to the creator Reference Item as in shown in the previous screenshot.
+
+##### Field configuration
+
+To configure a field to enable title relationships, add the field's name to the:
+
+-   [**_Title Relationships_**](/plugins/avantrelationships/#title-relationships-option) 
+    option on the AvantRelationships configuration page
+-   [**_Title Sync_**](/plugins/avantelements/#title-sync-option) option on the
+    AvantElements configuration page    
+-   [**_Suggest_**](/plugins/avantelements/#suggest-option) option on the
+    AvantElements configuration page    
+
+##### The importance of an exact match
 
 The Digital Archive software automatically creates the hyperlinks for title relationships,
-but, for this feature to work, the archivist must ensure that the text in the **_Creator_**
-and **_Publisher_** fields *exactly* matches the **_Title_** text for the corresponding
-**_Creator_** or **_Publisher_** Reference Item.
+but, for this feature to work, the archivist must ensure that the text in the title-relationship
+field *exactly* matches the **_Title_** text for the corresponding Reference Item.
 Any difference at all, such as an extra space, will break the implicit relationship.
 
 The Digital Archive provides two mechanisms to help maintain an exact match:
 
--   When you edit the **_Title_** of a **_Creator_** or **_Publisher_** item, e.g. to fix a typo,
-    the software automatically finds all other items in the collection that have the original title
-    (the value before you changed it) as their **_Creator_** or **_Publisher_** and updates them
-    with your change.
--   While adding or editing an item, as you type into the **_Creator_** or **_Publisher_** field,
-    suggestions appear. The suggestions come from the **_Title_** fields of Reference Items.
-    By choosing a suggestion you ensure an exact match. 
+Auto update
+:   When you edit the **_Title_** of a Reference Item that contains text that exactly matches the  
+    title-relationship field value in other items, the software automatically updates those
+    fields with your change when you save the item. For example, if five items have `John Smith`
+    as the value of their **_Creator_** field, and you edit the corresponding Reference Item **_Title_**
+    to be `John Smyth`, the five items will be automatically updated with the new value when you save
+    the Reference Item.
+
+Suggestions
+:   While adding or editing an item, as you type into a field that has been configured
+    to provide suggestions (third bullet in the previous section), suggestions matching what you
+    type appear as you type. The suggestions come from the values of that same field in other items.
+    Although the suggestions don't come from the **_Title_** field of Reference Items, the fact that they
+    come from other title-relationship fields means they will most likely match Reference Item titles.
+    By choosing a suggestion, you ensure an exact match. 
+
+![Suggestions as you type](kinds-of-relationships-11.jpg)
 
 ## Genealogical relationships
 
@@ -129,7 +155,7 @@ click the **_Enlarge_** link that appears above the visualization in the **_Rela
 
 ## Item sets
 
-An item set is a two or more items that an archivist has chosen to group together so that when you view
+An item set is two or more items that an archivist has chosen to group together so that when you view
 one item, you see the other items in the set. If that sounds a lot like relationships, it's because
 item sets are actually a special kind of relationship. [Learn how to create an item set](/archivist/item-set/).
 
@@ -142,34 +168,47 @@ Item sets are especially useful in two cases
 
 A seemingly unrelated set of items can be related to each other by virtue of sharing a 
 common attribute. For example, a photograph of a man standing in his yard, another
-of a boat in the water, and a third of a lake may have nothing in common except that the man is standing in
-two feet of snow, the boat's rigging is encrusted with ice, and the lake is frozen &ndash; all of the pictures
-were taken in winter.
+of a boat in the water, and a third photo of a lake, may have nothing in common except that the man is standing in
+snow, the boat's rigging is encrusted with ice, and the lake is frozen &ndash; all are winter scenes.
 
 You could use [Omeka's tags feature](https://omeka.org/classic/docs/Content/Tags/) to tie these items together,
 but a tag is only a few words, whereas an item set is itself an item with its own metadata. An item set, for
-example, would allow you to use the item's **_Description_** field to tell the story of this particular
-set of winter photos. An item set's item also has a **_Type_** and **_Subject_** which means it can be discovered
-via the **_Refine You Search_** panel. In short, item sets are much more powerful than tags for connecting seemingly
+example, allows you to use the item's **_Description_** field to tell the story of this particular
+set of winter photos. An item set's item also has a **_Type_** and **_Subject_** which makes it discoverable
+in the **_Refine You Search_** panel. In short, item sets are much more powerful than tags for connecting seemingly
 unrelated items.
+
+Below is an example of an item set that contains pictures of vessels that archivists have been unable to identify.
+Other than the fact that all of the images are of boats, these items have nothing in common except that all are unknown.
+
+An item can be contained in more than one item set, so for example, a photo of an unknown person on an unknown boat
+could be in this set and also is a set for unknown people.
+
+![Unknown vessels item set](kinds-of-relationships-8.jpg)
+
+The metadata for the Unknown Vessels item set looks like this:
+
+![Unknown vessels item set](kinds-of-relationships-9.jpg)
 
 ### Dividing a large subject into smaller parts
 
 Sometimes a topic is too big for one item. For example, the Southwest Harbor Public Library has hundreds of
 photographs related to the Henry R. Hinckley Company in Maine. In operation for more than ninety years, the
 company has manufactured working boats, pleasure boats, and military boats. The Library used item sets to 
-divide these photos into groups which makes it easy for a user to focus on the kinds of boats they are
-interested in. The item looks like this:
+divide these photos into groups that make it easy for a user to focus on the kinds of boats they are
+interested in. The item for the Henry R. Hinckley Company is shown below. It's metadata is at the top and
+thumbnails for its six item sets are at the bottom.
 
 ![Hinckley item sets](kinds-of-relationships-6.jpg)
 
-The screenshot above shows the six items sets that are part of item 3495. The screenshot below shows what
-you see when you click on the first item set for Hinckley Military Boats.
+The next screenshot shows what you see when you click on the title of the first item set above,
+the one for Hinckley Military Boats.
 
 ![Hinckley item sets](kinds-of-relationships-7.jpg)
 
+The metadata for the Hinckley Military Boats item set looks like this:
 
-
+![Unknown vessels item set](kinds-of-relationships-10.jpg)
 
 
 ---

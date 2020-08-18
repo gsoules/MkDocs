@@ -95,10 +95,12 @@ the example immediately above, the Reference Items for the siblings, and for Rac
 are all using cover images. The Reference Item for John Carroll has no image because no
 photograph is available for him.
 
-In the first example above, the three photographs of Mary Ann Carroll are not Reference Items,
-and therefore they don't use cover images. In both examples, you can easily tell which items
-are Reference Items and which are not: The thumbnail for a Reference Item has a light blue
-double border.
+You can also use a cover image when you [create an item set](/archivist/item-set/#cover-images-for-item-sets).
+
+In the first screenshot at the top of this page, the three photographs of Mary Ann Carroll are
+not Reference Items, and therefore they don't use cover images. In both examples, you can easily
+tell which items are Reference Items and which are not: The thumbnail for a Reference Item has a
+blue double border.
 
 ---
 

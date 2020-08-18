@@ -20,12 +20,13 @@ are expanded upon here.
     -   View each item *or*
     -   [Flag each item](/user/recently-viewed/#flagging-items-to-view-later)
 
-4 &ndash; Go to the **_Recently Viewed Items_** page
+4 &ndash; Review the items that will go into the set
 :   -   Go to the [**_Recently Viewed Items_**](/user/recently-viewed/#recently-viewed-items-page) page
-    -   Click the **_Relationships_** link on the item set item created in step 1 above
+    -   Verify that the items you want in the set are there and remove any others
+    -   Click the **_Relationships_** link on the item set item created in step 2 above
 
 5 &ndash; Add the items to the set
-:   -   On the **_Relationships Editor_** page, choose the *set contains* relationship from the dropdown list
+:   -   On the **_Relationships Editor_** page, choose *set contains* from the dropdown list
     -   Click the **_Add_** button for each of the items in the recently viewed items list
 
 ![Item set relationships](item-set-1.jpg)
@@ -34,9 +35,19 @@ are expanded upon here.
 :   If you will use the item set to
     [divide a large subject into smaller parts](/relationships/kinds-of-relationships/#dividing-a-large-subject-into-smaller-parts),
     add a *set of* relationship from the item set to the parent item as shown in the screenshot above where item set 14853
-    is a *set of* item 14849. When viewed, the item set will look like the screenshot below.
+    is a *set of* item 14849. When viewed, item set 14853 will look like the screenshot below.
 
 ![Item set relationships](item-set-2.jpg)
+
+
+## Cover images for item sets
+
+You can use a cover image for an item set the same the same way as you can for a Reference Item.
+To learn how, see [Cover images for Reference Items](/relationships/reference-items/#cover-images-for-reference-items).
+
+The screenshot below shows the photo for item 6138 used as the cover image for item set 4001.
+
+![Item set relationships](item-set-3.jpg)
 
 ---
 
