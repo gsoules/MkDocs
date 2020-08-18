@@ -140,7 +140,7 @@ Item sets are especially useful in two cases
 
 ### Items having a common attribute
 
-A seemingly unrelated set of items can be related to each other by virtue of sharing a minor
+A seemingly unrelated set of items can be related to each other by virtue of sharing a 
 common attribute. For example, a photograph of a man standing in his yard, another
 of a boat in the water, and a third of a lake may have nothing in common except that the man is standing in
 two feet of snow, the boat's rigging is encrusted with ice, and the lake is frozen &ndash; all of the pictures

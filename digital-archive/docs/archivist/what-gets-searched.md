@@ -67,7 +67,8 @@ reference item that was returned as a search result, they'll also see all the ot
 is related to.
 
 If you are logged-in to the Digital Archive,
-you'll see each item's score in Table view when the Display layout is selected.
+you'll see each item's score in **_Table View_** when the Details layout is selected.
+If you don't want to see the score, your administrator can prevent it from appearing.
 
 ## Fuzzy searching
 

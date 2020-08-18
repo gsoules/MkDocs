@@ -25,11 +25,11 @@ The *primary* item simply means the item to which you are going to relate other 
 uses a person as the primary item, but the process is the same for adding
 relationships to a building, boat, event, organization or anything else in your collection.
 
-Once you know who or what you want to relate other items to, you'll need to create a Reference Item
-to serve as a digital stand-in for that person or thing.
-[Learn how to create a Reference Item](/relationships/reference-items/#how-to-create-a-reference-item).
+Once you know who or what you want to relate other items to, you'll need to create a  
+[Reference Item](/relationships/reference-items/)
+to serve as a digital stand-in for that person or thing. We'll do this in step 2 below.
 
-In this example, our person is a woman named Mary O'Brien. The metadata for Mary's Reference Item, looks like this:
+In this example, our person is a woman named Mary O'Brien. The metadata for Mary's Reference Item looks like this:
 
 ![Reference item for a person](add-relationship-2.jpg)
 
@@ -39,7 +39,7 @@ Reference Items are all about &ndash; they'll make sense by the end of this page
 
 ## Gather the related items
 
-Suppose now that instead of using the Digital Archive, you were making a scrapbook page for  
+Suppose for a moment that instead of using the Digital Archive, you were making a scrapbook page for
 Mary O'Brien. First you would clear off your work area, and then you would lay out everything
 you have about her: photos, a newspaper clipping, and information about her husband Donald.
 
@@ -52,12 +52,16 @@ Follow the steps below to do the same thing using the Digital Archive.
         by clicking the **_Recent Items_** link that appears on the banner of every page under the search box
     -   On the **_Recently Viewed Items_** page, click the **_Clear all_** link
 
-2 &ndash; Find items that are related to the primary item
-:   [Search](/user/how-to-search/) your Digital Archive for photos, articles, or other Reference Items that
+2 &ndash; Create a Reference Item for the primary item
+:   -   Follow the steps to [add a new item](/archivist/items/#add-a-new-item)
+    -   Set the **_Type_**, **_Subject_**, and **_Title_** as shown in the previous section
+
+3 &ndash; Find items that are related to the primary item
+:   [Search](/user/how-to-search/) your Digital Archive for photos, articles, or other items that
     are associated with your primary item. The screenshot shows results in [Grid View](/user/viewing-search-results/#grid-view)
     of a [keyword search](/user/how-to-search/#search-using-keywords) for `mary o'brien`.
     
-    The first result, item 15143, is her
+    The first result, item 15143, is Mary's
     Reference Item. The second and fourth items are photos she appears in. The third item is a newspaper clipping
     about her. The last item is a Reference Item for her husband Donald (see details in the second screenshot below).
     Note that the thumbnails for Reference Items have a double blue border to distinguish them from other items.
@@ -74,7 +78,7 @@ A PDF can contain a gold mine of keywords. It was because of the presence of the
 
 ![Reference item for Donald](add-relationship-4.jpg)
 
-3 &ndash; View or flag related items
+4 &ndash; View or flag related items
 :   As you find items that you want to relate to your primary item, either view them or flag them.   
     When you view or flag an item, it gets added to your recently viewed items list.
     
@@ -84,28 +88,36 @@ A PDF can contain a gold mine of keywords. It was because of the presence of the
 
     The screenshot above shows that the five items have been flagged.
 
-4 &ndash; Go to the **_Recently Viewed Items_** page
+5 &ndash; Go to the **_Recently Viewed Items_** page
 :   Now that you have found and flagged the items you want to relate to Mary:
 
     -   Go to the [**_Recently Viewed Items_**](/user/recently-viewed/#recently-viewed-items-page) page to see them
     -   Click the **_Remove_** link on any items that may have crept in while you were searching
     -   Click the **_Relationships_** link on the primary item (Mary's Reference Item)
 
-    The screenshot below shows the items that got flagged in step 3 above. Notice the finger pointer on the
-    last item &ndash; Mary's Reference Item &ndash; which is hovering over the **_Relationships_** link.
-    Clicking the link takes you to the **_Relationships for Item_** page shown in step 5. 
+    The screenshot below shows the items that got flagged in step 3 above. 
 
 ![Relationships link](add-relationship-1.jpg)
 
-5 &ndash; Relate photos to the primary item
-:   Clicking an item's **_Relationships_** link (as shown at the bottom of the screenshot above)
-    takes you to the **_Relationships for Item_** page shown below. We'll now relate some items to Mary O'Brien
-    to show how easy it is. [Learn how the **_Relationships for Item_** page](/relationships/relationships-for-item-page/) works.
+## Add the relationships
 
+You've now gathered all the items that are related to Mary. Now it's time to add relationships.
+
+6 &ndash; Go to the Relationships Editor
+:   You add, edit, or remove relationships using the [**_Relationships Editor_**](/relationships/relationships-editor/).
+
+    To get to the editor from the **_Recently Viewed Items_** page:
+
+    -   Click the the **_Relationships_** link for Mary's Reference item (see the pointing finger at
+        the bottom of the screenshot above).
+    -   The **_Relationships Editor_** displays as shown in the screenshot below.
+
+    The page tells you that Mary's reference item #15143 has no related items.
+ 
 ![Relationships link](add-relationship-5.jpg)
 
-:   The page above tells you that Mary's reference item #15143 has no related items. It also
-    shows that for the *depicted by* relationship (in the dropdown list), two recently viewed items have an
+7 &ndash; Relate photos to the primary item
+:   The page above shows that for the *depicted by* relationship (in the dropdown list), two recently viewed items have an
     **_Add_** button to indicate that they are eligible to be added as related items. They are the two photos
     in which Mary appears &ndash; those photos depict Mary.
     
@@ -115,10 +127,10 @@ A PDF can contain a gold mine of keywords. It was because of the presence of the
 ![Relationships link](add-relationship-6.jpg)
     
 :   The two photos you just added still appear in the recently viewed items list, but their **_Add_** buttons
-    are now disabled. No other items in the list have **_Add_** buttons because none *depict* Mary. You can
-    remove the photos from the list by clicking their **_Remove_** links.
+    are now disabled. No other items in the list have **_Add_** buttons because none *depict* Mary. If you like,
+    you can remove the photos from the list by clicking their **_Remove_** links.
 
-6 &ndash; Relate a Reference Item to the primary item
+8 &ndash; Relate a Reference Item to the primary item
 
 :   Now let's relate Mary to her husband:
 
@@ -130,7 +142,7 @@ A PDF can contain a gold mine of keywords. It was because of the presence of the
 
 ![Relationships link](add-relationship-7.jpg)
 
-7 &ndash; Relate a document to the primary item
+9 &ndash; Relate a document to the primary item
 
 :   Finally, we'll add a relationship for Mary's engagement announcement:
 
@@ -143,7 +155,7 @@ A PDF can contain a gold mine of keywords. It was because of the presence of the
     relationship, even though it might not be approrpriate. You have to use your knowledge of the
     items and how they relate to each other in deciding which ones to relate. Just because there's
     an **_Add_** button does not mean that the relationship make sense. To understand this better,  
-    [learn how the **_Relationships for Item_** page](/relationships/relationships-for-item-page/) works.
+    [learn how the **_Relationships Editor_** page](/relationships/relationships-editor/) works.
 
 ![Relationships link](add-relationship-8.jpg)
 
@@ -152,7 +164,7 @@ A PDF can contain a gold mine of keywords. It was because of the presence of the
 
 ![Relationships link](add-relationship-9.jpg)
 
-8 &ndash; See what you accomplished
+10 &ndash; See what you accomplished
 :   Click the **_View Public Page_** button to see Mary's related items the way a visitor to
     your organization's Digital Archive will see them.
 

@@ -1,15 +1,16 @@
-# Relationships for Item page
+# Relationships Editor
 
-The **_Relationships for Item_** page is where an archivist goes to add, edit, or remove related items.
-You get to it by clicking an item's [quick access **_Relationships_** link](/archivist/special-features-archivist/#quick-access-links)
+The **_Relationships Editor_** page is where an archivist goes to add, edit, or remove related items.
+You get to it by clicking an item's [quick access](/archivist/special-features-archivist/#quick-access-links)
+**_Relationships_** link
 or by clicking the **_Relationships_** button on the [admin Item page](/archivist/items/#admin-item-page-features).
 
-This page explains how the **_Relationships for Item_** page works. For examples of using the **_Relationships for Item_** page,
+This page explains how the **_Relationships Editor_** works. To learn how to use the **_Relationships Editor_**,
 see [Add Relationships to an Item](/archivist/add-relationship/).
 
-The screenshot below shows an example of what the **_Relationships for Item_** page looks like for an item with four relationships.
+The screenshot below shows an example of what the **_Relationships Editor_** looks like for an item with four relationships.
 
-![Relationships for Item page](relationships-for-item-page-1.jpg)
+![Relationships Editor page](relationships-editor-1.jpg)
 
 ## Part of the page
 
@@ -45,18 +46,18 @@ Relationship selector  &ndash; 2
     in the text field that appears to the right of the selector, and then clicking the **_Add_** button
     at far right in that row.
 
-**_Edit_** and X buttons  &ndash; 2
-:   Lets you change or delete and existing relationship.
+**_Edit_** and X buttons  &ndash; 3
+:   Lets you change or delete an existing relationship.
 
 ## How it works
 
-The **_Relationships for Item_** page is designed to work in conjunction with the
+The **_Relationships Editor_** page is designed to work in conjunction with the
 [Recently Viewed Items](/user/recently-viewed/#recently-viewed-items-page) list. That is, before going to the
-**_Relationships for Item_** page, you should have populated the recently viewed items list with only those items that
-you want to work with on the **_Relationships for Item_** page, though if a few rogue items sneak in, you can
+**_Relationships Editor_** page, you should have populated the recently viewed items list with only those items that
+you want to work with on the **_Relationships Editor_** page, though if a few rogue items sneak in, you can
 simply click their **_Remove_** link to get rid of them.
 
-When the **_Relationships for Item_** page loads, and each time you select a new relationship in the relationship
+When the **_Relationships Editor_** page loads, and each time you select a new relationship in the relationship
 selector (2), the software evaluates:
 
 -   The **_Type_** and **_Subject_** of the primary item
@@ -76,7 +77,7 @@ the woman represented by the primary item. The Reference Item's attached PDF men
 not the kind of mention intended by the *about/mentioned by* relationship. An appropriate use of the relationship is the
 one for item 16194 which is their wedding announcement.
 
-In summary, the **_Relationships for Item_** page makes it very easy to add relationships, but it the archivist's
+In summary, the **_Relationships Editor_** page makes it very easy to add relationships, but it the archivist's
 responsibility to a) go the page after having first populated the recent items list with related items, and b) be
 careful to add relationships that are not just valid, but appropriate.
 

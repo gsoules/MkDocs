@@ -77,7 +77,7 @@ the right of the admin search box. On the panel that drops down, click the
 
 ![Searching for relationships](relationship-types-10.jpg)
 
-## Relationship editor
+## Adding or editing relationship types
 
 To add or edit a relationship type:
 
