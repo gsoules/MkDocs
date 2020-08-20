@@ -2,12 +2,6 @@
 
 ---
 
-## Omeka updates
-
-The Omeka core files are updated by the Omeka team a few times each year.
-
-*Instructions to be added here for applying Omeka updates*
-
 ## Plugin and Theme updates
 
 To update the `plugins` and `themes` folders on all Digital Archive sites:
@@ -25,6 +19,27 @@ To update the `plugins` and `themes` folders on all Digital Archive sites:
 ![run sync-digitalarchive](site-maintenance-1.jpg)
 
 The output is written to `log.txt`
+
+### Sync site
+
+To sync `themes/` and `plugins/`
+
+```
+$ sudo ./sync-digitalarchive <site-name> 
+$ sudo ./sync-digitalarchive ALL 
+$ sudo ./sync-digitalarchive <site-name> installation
+```
+
+Adding the `installation` argument will also sync:
+```
+es.ini
+bootstrap.php
+index.php
+error_log
+admin/
+application/
+install/
+```
 
 ## Common vocabulary updates
 
@@ -47,22 +62,21 @@ To update the common vocabulary:
 
 It is also possible for a developer to simulate a remote update locally via the query string:
 
+``` text
+http://localhost/omeka/avant/remote?action=refresh-common&password=ABC123
 ```
-    http://localhost/omeka/avant/remote?action=refresh-common&password=ABC123
-```
+
+## Omeka updates
+
+The Omeka core files are updated by the Omeka team a few times each year.
+
+*Instructions to be added here for applying Omeka updates*
 
 ## Running scripts
 
 ### CRON jobs
 
-To add a job:
-```
-crontab -e
-```
-
-See [crontab.guru](https://crontab.guru/).
-
-### Root privlidges
+### Root privileges
 A user with root privileges can run bash scripte that modify files on every Digital Archive installation on the server.
 
 To assign a user root privileges via sudo:
@@ -90,23 +104,29 @@ If a script requires root privileges, use `sudo` to run it. For example:
 sudo ./foo
 ```
 
-### Sync site
-
-To sync `themes/` and `plugins/`
-
+To add a job:
 ```
-$ sudo ./sync-digitalarchive <site-name> 
-$ sudo ./sync-digitalarchive ALL 
-$ sudo ./sync-digitalarchive <site-name> installation
+crontab -e
 ```
 
-Adding the `installation` argument will also sync:
-```
-es.ini
-bootstrap.php
-index.php
-error_log
-admin/
-application/
-install/
-```
+See [crontab.guru](https://crontab.guru/).
+
+## Increase max execution time
+
+For long running foreground jobs like a reindex, you need to make sure that the PHP max_execution_time
+is high enough to let the job complete. The default of 30 seconds is usually too low.
+
+-   Go to cPanel
+-   In the Software section choose “Select PHP Version”
+-   Click “Switch to PHP Options” at upper right
+-   Click the value of  max_execution_time.
+-   Enter a new value, click Apply
+-   Click Save
+
+## Reset a MySQL table's Auto Increment
+
+See: <https://viralpatel.net/blogs/reseting-mysql-autoincrement-column/>
+
+    ALTER TABLE table_name AUTO_INCREMENT = n;
+
+where n will be the id for the next record created.

@@ -83,14 +83,14 @@ make more sense, become familiar with the terminology below.
 
 Term
 :   A **term** is a *combination of words* that concisely describe or classify something. For example,
-    the comma-separated list of words below form a *single* term that describe a photograph
+    the comma-separated list of words below forms a *single* term that describes a photograph
     that was printed using the cyanotype printing process that produces a cyan-blue print.
 
         Image, Photograph, Photographic Print, Cyanotype
 
 Vocabulary
 :   A **vocabulary** is a controlled list of terms that archivists use when cataloging items
-    in their collection. Controlled means that archivists choose terms from lists rather then
+    in their collection. Controlled means that archivists choose terms from lists rather than
     typing into a blank field. Choosing from a list ensures consistency and prevents
     archivists from using terms that are not appropriate for the collection, or entering misspelled words.
 
@@ -209,7 +209,9 @@ to create the **mapped site term** `Document, MHPC Survey` as shown below.
 
 Notice that `MHPC Survey` is mapped to the common term `Document, Report`, but only includes `Document`
 and not `Document, Report` in the site term. This is done to elevate an MHPC item to become a kind of
-document, but to have it show up in all-sites searches as a kind of report.
+document in the Library's site vocabulary, but to have it show up in All Sites searches as a kind of report.
+To better understand why you might elevate a term, and what effect it has, see the
+[site term mapping demonstration](#site-term-mapping-demonstration).
 
 If these surveys where a
 major focus of the Library's collection, the site term could have been simply `MHPC Survey` which
@@ -267,7 +269,7 @@ Here are the differences between the first and second screenshots above:
 
 The difference in search results above is due to
 how archivists at the Wendell Gilley Museum, which has a collection focused on bird carvings, used the
-[Vocabulary Editor](/archivist/vocabulary-editor/) to make `Carving` a top level **_Type_** term.
+[Vocabulary Editor](/archivist/vocabulary-editor/) to elevate `Carving` to be a top level **_Type_** term.
 You can see this in the screenshot of the Vocabulary Editor below where terms like
  `Carving, Decoy` and `Carving, Miniature` are all mapped to the Common Vocabulary term  
  `Object, Art, Sculpture, Carving`. This is called elevating a term because it moves `Carving`

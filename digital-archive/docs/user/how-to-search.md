@@ -23,7 +23,21 @@ section below to learn how.
 !!! Note ""
     **TIP**: If you know an item's **_Identifier_** number, you can type the number into the search box to go
     directly to the page for that item. This only works when searching the site you are on. When
-    searching all sites, you'll get search results for items having that number in their metadata.
+    searching All Sites, you'll get search results for items having that number in their metadata.
+
+As you type into the search box, suggestions will appear as shown below. The suggestions come from the titles
+of items that contain the same or similar keywords as what you type. For instance, suggestions containing
+`jordan` appear because it is similar to `jordon`. If no suggestions appear, or there are none that you like,
+it only means that no *titles* match what you typed &ndash; it does not mean there is no matching content,
+so always click the magnifying glass icon or press `Enter` to do a search. In this
+example, the actual search for `jordon` returned 547 results.
+
+![Quick Search Box](how-to-search-14.jpg)
+
+The primary purpose of the search suggestions is to help you discover things that you might not know about.
+They are also very useful when you are not sure how to spell something. In the example above, the user was
+looking for items about Jordan Pond. Even though they misspelled `Jordan` the suggestions reveal that not
+only are there items about Jordan Pond, but about people, houses, and roads with that name.
 
 ## Search one site or all sites
 

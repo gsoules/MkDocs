@@ -4,7 +4,7 @@
 
 To see the Python path
 
-```
+``` text
 >>> import sys
 >>> print(sys.path)
 ['', '/usr/lib/python2.7/site-packages/pyzor-1.0.0-py2.7.egg',
@@ -31,28 +31,6 @@ Without the option, you won't see any output until the program completes.
 python -u <filename>.py
 ```    
 
-### Pandas with Jupyter Notebook
-
-Use Shift/Enter to execute a command
-
--	Go to the folder containing CSV data files
--   Right click and choose `Git Bash Here`
--	Type `jupyter notebook`
--	Click `New` and select `Python3`
-
-```
-import pandas as pd
-df = pd.read_csv('HRI_FNE_031220.csv', dtype='unicode')
-df
-df.info()
-pd.set_option('display.max_columns', 69)
-pd.set_option('display.max_rows', 1000)
-
-# print(df['ETHNICITY'].unique())
-
-value_counts = df['ETHNICITY'].value_counts()
-```
-
 ### yum
 
 `yum install <package name>` or `sudo yum install <package name>`
@@ -61,7 +39,7 @@ See <https://access.redhat.com/articles/yum-cheat-sheet>
 
 If that doesn't work because the package is not found then
 
-```
+``` text
 [root@avantlogic ~]# pip3 install utm
 WARNING: Running pip install with root privileges is generally not a good idea. Try `pip3 install --user` instead.
 Collecting utm
@@ -71,6 +49,8 @@ Installing collected packages: utm
 Successfully installed utm-0.5.0
 ```
 
-### MySQL Connector Pyhon
+### MySQL Connector Python
 
 <https://dev.mysql.com/doc/connector-python/en/connector-python-introduction.html>
+
+---

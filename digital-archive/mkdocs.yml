@@ -52,6 +52,7 @@ nav:
         Copy a MySQL database: developer/copy-mysql-db.md
         Install a Digital Archive site: developer/install-digital-archive.md
         GitHub: developer/github.md
+        PHP: developer/php-development.md
         Python: developer/python.md
         Site maintenance: developer/site-maintenance.md
     - Digital Archive plugins:
