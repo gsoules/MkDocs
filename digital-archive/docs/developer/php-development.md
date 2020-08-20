@@ -22,7 +22,7 @@ development server.
     -   Import into existing devshr
 -   Get latest files from server (just ones added/changed since date of last DB)
 
-## See Elasticsearch query in Kibana
+## Execute Elasticsearch query in Kibana
 
 -   Open `AvantElasticsearchQueryBuilder::constructSearchQuery` in PhpStorm
 -   Set a breakpoint on the last line of code `return $params`
@@ -30,7 +30,7 @@ development server.
 -   Copy/paste the value of `$kibana` into the Kibana Dev Tools
 -   Use Kibana's Auto Indent to format it
 
-For query score analysis: `GET index-name/_search/?explain=true`
+See the [Kibana](/developer/aws/#kibana) section on the AWS page.
 
 ## See SQL queries and logging
 

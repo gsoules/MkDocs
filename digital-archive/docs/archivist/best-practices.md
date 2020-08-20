@@ -118,7 +118,7 @@ The [Common Vocabulary](/archivist/common-vocabulary/) contains 15,000 terms, bu
 there will be times when you'll need to add terms to your site's vocabulary because they don't 
 exist in the Common Vocabulary.
 
-**Extending a term**
+##### Extending a term
 
 As a general rule, when using the [Vocabulary Editor](/archivist/vocabulary-editor/) to add a new term,
 always *extend* and *map* to an existing term. *Extend* means to use an existing term as a prefix
@@ -131,7 +131,7 @@ the common vocabulary. Add the term like this:
 
 The site term `Vessels, Boat, Sardine Carrier` *extends* the common term `Vessels, Boat`.
 
-**Elevating a term**
+##### Elevating a term
 
 An exception to the above is when you want to elevate a term. *Elevate* means to move a term up
 higher within its hierarchy. For example, the focus of the Wendell Gilley Museum's collection is

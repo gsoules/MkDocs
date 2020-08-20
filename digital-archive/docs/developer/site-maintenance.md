@@ -92,7 +92,7 @@ Use the `chmod` command to make a script file executable. For example, you can m
 chmod +x foo
 ```
 
-To execuate the `foo` script type:
+To execute the `foo` script type:
 
 ```
 ./foo
@@ -130,3 +130,5 @@ See: <https://viralpatel.net/blogs/reseting-mysql-autoincrement-column/>
     ALTER TABLE table_name AUTO_INCREMENT = n;
 
 where n will be the id for the next record created.
+
+---

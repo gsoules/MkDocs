@@ -151,7 +151,13 @@ Publisher
 Date
 Place
 Address
+<score>
+<tags>
 ```
+
+The pseudo elements `<score>` and `<tags>` can be used to show [scoring](/archivist/what-gets-searched/#scoring)
+and tags (see the [Glossary](/glossary)). 
+
 ---
 
 ### Elasticsearch option

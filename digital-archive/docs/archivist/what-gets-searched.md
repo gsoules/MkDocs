@@ -51,8 +51,8 @@ they have been enclosed in double quotes as a phrase.
 
 ## Scoring
 
-The searching logic assigns a score to each item that results from a keyword search.
-The higher the score, the more relevant the result is. Higher scoring items appear in the
+The searching logic assigns a score to each item that results from a *keyword* search.
+The higher the score, the more relevant the result. Higher scoring items appear in the
 search results above lower scoring items.
 
 When the searched-for keywords appear in the item's **_Title_**, that item's score is increased because the 
@@ -66,9 +66,21 @@ the most relevant information. Also, they are often related to other items. When
 reference item that was returned as a search result, they'll also see all the other items that it
 is related to.
 
-If you are logged-in to the Digital Archive,
-you'll see each item's score in **_Table View_** when the Details layout is selected.
-If you don't want to see the score, your administrator can prevent it from appearing.
+You can see the score for each item's score when all of the following are true:
+
+-   You site administrator has [configured your site to show scores](/plugins/avantsearch/#detail-layout-option)
+-   You are logged in (users who are not logged in cannot see scores)
+-   [**_Table View_**](/user/viewing-search-results/) with the Details layout is selected
+-   You have done a keyword search
+
+**Scores only appear in results for keyword searches** because that's the only kind of search where the relevance of one
+result can be higher or lower than for another. In contrast, if you search using the **_Refine Your Search_**
+panel, or if you use **_Advanced Search_** to look for items having a value in a specific field, every result will
+have equal relevance because every result will satisfy the same search criteria.
+
+Scoring is performed by [Elasticsearch](/administrator/reindex/#what-elasticsearch-indexes-are-used-for) using the
+[Lucene scoring formula](https://lucene.apache.org/core/3_5_0/scoring.html). It works well most of the time,
+but does not guarantee that the result with the highest score will be what you are looking for.
 
 ## Fuzzy searching
 

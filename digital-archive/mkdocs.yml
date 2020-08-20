@@ -54,6 +54,7 @@ nav:
         GitHub: developer/github.md
         PHP: developer/php-development.md
         Python: developer/python.md
+        AWS: developer/aws.md
         Site maintenance: developer/site-maintenance.md
     - Digital Archive plugins:
         AvantAdmin: plugins/avantadmin.md
