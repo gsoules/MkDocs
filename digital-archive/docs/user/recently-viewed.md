@@ -1,11 +1,12 @@
 # Flagging Items to View Later
 
-You can flag items in search results that you want to view later so that you can quickly find them
-without having to search for them again.
+You can flag items in search results to add them to your recently viewed items list. This feature
+makes it quick and easy to find items again without having to do another search.
 
 !!! Note ""
-    This flagging feature works ony when you are searching the site you are on.  
-    It does not work when you are [searching all sites](/user/how-to-search/#search-one-site-or-all-sites).
+    This flagging feature works ony when you are searching the site you are on.  It does not work when
+    you are [searching all sites](/user/how-to-search/#search-one-site-or-all-sites). The recently viewed
+    items list can contain up to 16 items.
 
 The example below shows search results in [Grid View](/user/viewing-search-results/#grid-view)
 for five items. Suppose you want to learn more about item 13178 by clicking the title of the first item as shown below.
@@ -58,5 +59,7 @@ You can share results with someone else by sending them the URL for the search r
 
     The recently viewed items list only tracks items that you have viewed or flagged when searching
     `This site`. It does not track items when you are viewing `All sites`.
+
+    The maximum number of items in the list is 16.
 
 ---
