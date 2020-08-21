@@ -141,6 +141,11 @@ Organization
 Private field
 :   A [private field](/archivist/what-gets-searched/) is a **field** that only a logged in **user** can see.
 
+Pseudo field
+:   A pseudo field is one that can be used for searching, or that appears in search results, but is not actually
+    a **field**. The pseudo fields are **tags**, [score](/archivist/what-gets-searched/#scoring)
+    and [contributor](/user/how-to-search/#contributor-id).
+
 Public field
 :   A [public field](/archivist/what-gets-searched/) is a **field** that anyone can see in a **public item**.
     Only a logged in **user** can see a **private field**.

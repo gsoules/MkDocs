@@ -60,11 +60,16 @@ named *Public Fields* and *Private Fields* as shown in the screenshot below.
 
 ![Private fields in Advanced Search](special-features-archivist-8.jpg)
 
-!!! note ""
-    The private fields only appear in the dropdown list when you are searching your
-    organization's site. If you are searching `All Sites`, you will only see the public
-    fields. Notice in the screenshot above, the title says "Advanced Search of this site".
-    The private fields won't appear when the title says "Advanced search of all sites".
+The private fields only appear in the dropdown list when you are searching your
+organization's site. If you are searching All Sites, you will only see the public
+fields that all sites use (you won't see site-specific public fields). When searching
+All Sites, the list will contain the **_Contributor_** pseudo field which lets you
+filter search results by contributing organization based on their
+[Contributor ID](/user/how-to-search/#contributor-id).
+
+The screenshot below shows what a logged in user sees when searching All Sites.
+
+![Private fields in Advanced Search](special-features-archivist-10.jpg)
 
 ##### Using Advanced Search to find non-public items
 

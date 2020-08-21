@@ -70,8 +70,7 @@ description, make sure the words you choose are consistent with the descriptions
 ### Rule syntax and semantics
 
 Specifying a rule can be a bit tricky because you must do so precisely using the proper metadata field names
-like **_Type_** and **_Subject_** as well as the correct syntax for Regular Expressions as explained in the
-[MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/regexp.html); however, 
+like **_Type_** and **_Subject_** as well as the correct syntax for Regular Expressions as explained below; however, 
 if you look at existing rules, you’ll notice that they all follow the same pattern and so you should be
 able to or create a new rule, by carefully following the pattern carefully used in existing rules.
 
@@ -111,4 +110,24 @@ The pattern for a rule has the following syntax and semantics:
     This protects against the situation where a relationship becomes invalid because you 
     edited one of the item’s fields, e.g. its **_Type_** or **_Subject_**, in a way
     that no longer satisfies a relationship’s rules. That's why you'll sometimes get an error when
-    you save an item that previously had no errors when saved. 
+    you save an item that previously had no errors when saved.
+
+##### Regular Expression syntax
+For a detailed explanation and examples of Regular Expression syntax, see the Regular Expression Syntax
+section of the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/regexp.html).
+The most commonly used syntax for rules is:
+
+`^`
+:   Match the beginning of a string.  
+    Example: `^Reference` matches any string that starts with `Reference`.
+
+`$`
+:   Match the end of a string/  
+    Example: `Postcard$` matches any string that ends with `Postcard`. It would match  
+    `Object, Writing, Postcard` or `Image, Photograph, Picture Postcard`, but not  
+    `Document, Memorabilia, Album, Postcard Album`.
+
+`de|abc`
+:   Alternation; match either of the sequences `de` or `abc`.  
+    Example: `Businesses|Organizations|People`
+

@@ -166,4 +166,7 @@ For example, the Advanced Search shown below would *exclude* the three libraries
 
 To search *only* those three libraries, change the condition to `(swhpl|nehl|jml)`.
 
+The **_Contributor_** pseudo field only appears in the **_Fields_** dropdown when
+you are searching All Sites. It won't be listed when searching This Site.
+
 ---

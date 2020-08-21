@@ -69,19 +69,18 @@ from the **_Items_** selector. This works in both Grid View and Table View.
 single metadata field. You choose the metadata field you want to index by from the
 **_Index by_** selector.
 
-The example below shows the same search results as the Table View and Grid View examples
-above, but the results are indexed by the **_Title_** metadata field.
+The example below shows search results indexed by the **_Title_** metadata field.
 
 ![Viewing search results in a index view](viewing-search-results-6.jpg)
 
 The next example shows all of the items in a collection with type `Image`, indexed by the **_Place_** metadata field.
-Numbers in parentheses indicate how many items have that Place. For example, there are 30 photographs of Acadia
+Numbers in parentheses indicate how many items have that Place. For example, there are 11 photographs of Acadia
 National Park when it was known as Lafayette National Park.
 
 ![Viewing search results in a index view](viewing-search-results-7.jpg)
 
-The example below shows the same search results as above, except the results are indexed by the **_Type_** field.
-Because all the types are images, they are all indexed under the letter `I`, but the index shows what kinds of
+The example below shows results for items of type image indexed by the **_Type_** field.
+Because all the items are images, they are all indexed under the letter `I`, but the index shows what kinds of
 images are in the collection and their quantities.
 
 ![Viewing search results in a index view](viewing-search-results-8.jpg)
@@ -89,3 +88,16 @@ images are in the collection and their quantities.
  You can click on an entry, such as the one for `Tintype`, to see its eight items as shown below.
 
 ![Viewing search results in a index view](viewing-search-results-9.jpg)
+
+---
+
+!!! note "Notes on Index View"
+    **_Index View_** has a limitation of 10,000 search results. If you get a warning that you have exceeded
+    that number, refine your search to reduce the number of results.
+
+    When doing an All Sites search where the index field is **_Type_**, **_Subject_**, or **_Place_**,
+    the number of results reported can be higher than the sum of the totals of the results shown.
+    This has to do with the fact that results from an All Sites search only displays Common
+    Vocabulary terms, but the underlying search also includes mapped site vocabulary terms.
+
+---
