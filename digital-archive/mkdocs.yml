@@ -66,6 +66,7 @@ nav:
         AvantImport: plugins/avantimport.md
         AvantRelationships: plugins/avantrelationships.md
         AvantS3: plugins/avants3.md
+        AvantReport: plugins/avantreport.md
         AvantSearch: plugins/avantsearch.md
         AvantVocabulary: plugins/avantvocabulary.md
         AvantZoom: plugins/avantzoom.md

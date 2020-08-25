@@ -100,6 +100,7 @@ The Digital Archive utilizes the following software components (listed by catego
     -   [AvantImport](/plugins/avantimport/) by George Soules
     -   [AvantRelationships](/plugins/avantrelationships/) by George Soules
     -   [AvantS3](/plugins/avants3/) by George Soules
+    -   [AvantReport](/plugins/avantreport/) by George Soules
     -   [AvantSearch](/plugins/avantsearch/) by George Soules
     -   [AvantVocabulary](/plugins/avantvocabulary/) by George Soules
     -   [AvantZoom](/plugins/avantzoom/) by George Soules
@@ -117,7 +118,9 @@ The Digital Archive utilizes the following software components (listed by catego
     -   [Magnific Popup](https://github.com/dimsemenov/Magnific-Popup/) by Dmitry Semenov
     -   [OpenSeadragon](https://openseadragon.github.io/) by CodePlex Foundation and OpenSeadragon contributors
     -   [Select2](https://select2.org) by Kevin Brown
--   Python programs
+-   PHP
+    -   [FPDF Library](http://www.fpdf.org/) by Olivier Plathey
+-   Python
     -   [Common Vocabulary Translator](https://github.com/gsoules/AvantCommonVocabulary) by George Soules
 
 If you have technology related questions, please send them to gsoules@avantlogic.com.

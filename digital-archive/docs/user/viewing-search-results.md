@@ -2,9 +2,9 @@
 
 You can view search results in three ways:
 
-- **Table View**
-- **Grid View**
-- **Index View**
+- **_Table View_**
+- **_Grid View_**
+- **_Index View_**
 
 Use the **_View_** selector to choose how you want to view results. The selector is located in the options bar at the top of
 the search results page. You can use the other selector bar options to sort and further organize results.
@@ -15,7 +15,7 @@ the search results page. You can use the other selector bar options to sort and 
 
 ## Table View
 
-**Table View**, with the Details layout, is the default view for search results. This view displays each item in 
+**_Table View_**, with the Details layout, is the default view for search results. This view displays each item in 
 a separate row, showing a thumbnail image and many of the item's metadata fields.
 
 If the keywords you searched for occur in the item's description, or in its PDF file attachment, they appear
@@ -47,7 +47,7 @@ use the selector and choose the field again.
 
 ## Grid View
 
-**Grid View** displays search results as a grid of thumbnails.
+**_Grid View_** displays search results as a grid of thumbnails.
 
 ![Viewing search results in a gird view](viewing-search-results-5.jpg)
 
@@ -59,13 +59,13 @@ To change the sort from ascending to descending and vice versa, use the selector
 In the example above, notice the second item in the first row. This is an example of an item 
 that has no image or PDF file attached to it, so a placeholder icon for the map displays
 instead. You can hide items with no image or PDF file attachment by choosing `With Images`
-from the **_Items_** selector. This works in both Grid View and Table View.
+from the **_Items_** selector. This works in both **_Grid View_** and **_Table View_**.
 
 ---
 
 ## Index View
 
-**Index View** displays search results as an alphabetized index of unique values for a
+**_Index View_** displays search results as an alphabetized index of unique values for a
 single metadata field. You choose the metadata field you want to index by from the
 **_Index by_** selector.
 

@@ -433,6 +433,7 @@ Avant plugin |AvantElements      |[AvantElements-master.zip](https://github.com/
 Avant plugin |AvantImport        |[AvantImport-master.zip](https://github.com/gsoules/AvantImport)
 Avant plugin |AvantRelationships |[AvantRelationships-master.zip](https://github.com/gsoules/AvantRelationships)
 Avant plugin |AvantS3            |[AvantS3-master.zip](https://github.com/gsoules/AvantS3)
+Avant plugin |AvantReport        |[AvantReport-master.zip](https://github.com/gsoules/AvantReport)
 Avant plugin |AvantSearch        |[AvantSearch-master.zip](https://github.com/gsoules/AvantSearch)
 Avant theme  |AvantTheme         |[AvantTheme-master.zip](https://github.com/gsoules/AvantTheme)
 Avant plugin |AvantZoom          |[AvantZoom-master.zip](https://github.com/gsoules/AvantZoom)
@@ -1047,6 +1048,15 @@ Publisher: Published
 -   Click the `Save Changes` button
 
 ---
+## AvantReport
+
+AvantReport has no configuration options.
+Follow these steps to install [AvantReport]:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `AvantReport`
+
+---
 ##  AvantSearch
 
 Follow these steps to install and configure the [AvantSearch] plugin:
@@ -1368,6 +1378,7 @@ For each new site:
 [AvantElasticsearch]: ../../plugins/avantelasticsearch
 [AvantRelationships]: ../../plugins/avantrelationships
 [AvantSearch]:        ../../plugins/avantsearch
+[AvantReport]:        ../../plugins/avantreport
 [AvantS3]:            ../../plugins/avants3
 [AvantZoom]:          ../../plugins/avantzoom
 [AvantVocabulary]:    ../../plugins/avantvocabulary

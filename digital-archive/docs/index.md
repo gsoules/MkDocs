@@ -104,6 +104,8 @@ Relationships
 
 ---    
 
+> About the Digital Archive
+
 George Soules and Charlotte Morrill developed the
 [Archive Relational Model](/relationships/archive-relational-model/)
 in 2016 for the Southwest Harbor Public Library in Maine. [AvantLogic Corporation](http://avantlogic.com/)

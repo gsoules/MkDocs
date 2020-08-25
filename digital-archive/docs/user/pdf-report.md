@@ -1,16 +1,19 @@
 # Creating a PDF Report
 
-!!! Note ""
-    The PDF Report feature is not yet supported.
+You can create PDF files for search results and individual items.
 
-The Reports feature will “print” search results to a PDF file using the same layout as,
-and a similar appearance to, the results displayed on a search results page.
-To control the layout of the search results, use the **_Layout_** selector on the options bar at the 
-top of the search results page.
+Item report
+:   To create a report for a single item, click the **_Save this item as a PDF file_** link
+    that's located on the left side of an item page below the **_Citation_** section.
 
-Administrators will be able to *configure* a new report by adding a new layout
+Search results report
+:   To create a report for  **_Table View_** search results, click the 
+    **_Save these results as a PDF file_** link that's located at the end of the search results page.
+    You cannot save search results for **_Grid View_** or **_Index View_**.
+
+Administrators can *configure* a new search results report by adding a new layout
 using the AvantSearch plugin configuration page.
 
-An **_Item Report_** will print an item’s image(s) and metadata to a PDF file.
+---
 
 

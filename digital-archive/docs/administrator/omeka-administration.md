@@ -59,14 +59,14 @@ fields, you can learn how to use the [Omeka Bulk Metadata Editor](https://omeka.
 -   For most bulk edits, it's best to *uncheck* the **_Background Job_** at the bottom of the
     **_Bulk Metadata Editor_** page. With the box unchecked, you wait for the changes to be made
     and will know when they are done.
--   [Rebuild your site's Elasticsearch indexes](/administrator/reindex/) (see caution below)
+-   [Rebuild your site's Elasticsearch indexes](/administrator/reindex/). If you don't, your bulk
+    edit changes will appear on item pages, but search results will still show the old text.
+    If you are not comfortable with reindexing, don't make bulk changes, or consult with your Digital
+    Archive developer.
 
 ---
 
-!!! note "Caution"
-    You must [rebuild your site's Elasticsearch indexes](/administrator/reindex/) after
-    making bulk edits. If you don't, your bulk edit changes will appear on item pages,
-    but search results will still show the old text.
-    If you are not comfortable with reindexing, don't make bulk changes
-    or consult with your Digital Archive developer.
+!!! note "Note"
+    If you use the Bulk Editor to change the value of a **_Type_**, **_Subject_**, or **_Place_** field,
+    you should use the **_Vocabulary Editor_** to first rebuild your Site Terms table *before* reindexing.
 ---
