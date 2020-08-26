@@ -1,5 +1,10 @@
 # PHP Development
 
+## Force style.css reload
+
+-   Edit `themes\AvantTheme\common\header.php`
+-   Bump `$version` passed to `queue_css_file('style', 'all', false, 'css', $version);`
+
 ## Update local DB
 
 Follow these steps to copy a production database to use for testing on a local
