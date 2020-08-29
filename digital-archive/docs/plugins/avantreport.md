@@ -9,7 +9,8 @@ The AvantReport plugin provides a way to create PDF files for search results and
 AvantReport has no configuration options.
 
 ## Dependencies
-The AvantReport plugin requires that the [AvantCommon] plugin be installed and activated.
+The AvantReport plugin requires that the [AvantAdmin], [AvantCommon] and [AvantElements]
+plugins be installed and activated.
 
 ## Installation
 
@@ -51,4 +52,6 @@ Copyright
 -   See [LICENSE](https://github.com/gsoules/AvantReport/blob/master/LICENSE) for more information
 
 
+[AvantAdmin]: avantadmin.md
 [AvantCommon]: avantcommon.md
+[AvantElements]: avantelements.md
