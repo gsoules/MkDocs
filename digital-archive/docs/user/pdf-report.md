@@ -147,4 +147,8 @@ organizations may be using the same **_Identifier_**. In other word, the
 
 ---
 
+!!! note ""
+    To use the PDF Reports feature, the [AvantReport](/plugins/avantreport/) plugin must be installed and activated.
+
+
 
