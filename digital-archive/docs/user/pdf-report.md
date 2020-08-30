@@ -1,4 +1,4 @@
-# Creating a PDF Report
+# Create PDF Reports
 
 You can create a PDF file containing the metadata and image for a single item. You can also
 create a PDF file containing search results for many items. You can print the PDF file,
@@ -32,7 +32,7 @@ The contents of the report from top to bottom are:
 -   The item's title
 -   The item's first image
 -   The item's metadata fields
--   If you are logged in, the item's private fields will appear in gray italics
+-   If you are logged in when you create the report, private fields will appear in gray italics
 -   The footer contains the date and page number (some items require two pages)
 
 ![Item report](pdf-report-4.jpg)
@@ -40,7 +40,7 @@ The contents of the report from top to bottom are:
 ## Search results reports
 
 The next two sections describe the compact and detailed search results reports. Which kind of report
-gets created depends on which layout you are using to display search results. This will be explained below.  
+gets created depends on which layout you are using to display search results as will be explained later.  
 
 To create either kind of report:
 
@@ -74,7 +74,8 @@ you'll have to refine the search to produce fewer results.
 The compact search results report displays one item per row in tabular format. You create a compact
 search results report by choosing any of the layouts from the
 [**_Layout_** selector](/user/viewing-search-results/#compact-table-view-layouts)
-*except* for the `Details` layout. You choose the `Details` layout to create a detailed search results report.
+*except* for the `Details` layout, and then clicking the **_Save these search results as a PDF file_**
+link at the very bottom of the search results.
 
 ![Item report](pdf-report-9.jpg)
 
@@ -87,32 +88,13 @@ Because of space limitations on a piece of paper, the report only shows some of 
 
 -   Which columns appear depends on which **_Layout_** option you choose.  
     The report has the same columns as the selected layout.
--   An [administrator](/administrator/getting-started-administrator/) can define custom layouts using the AvantSearch
-    [**_Layouts_** option](/plugins/avantsearch/#layouts-option)
--   The order of columns in the report may differ from the order shown in the online search results.
-    The column order in the report comes from the AvantSearch [**_Columns_** option](/plugins/avantsearch/#columns-option).
 -   The maximum number of columns is eight. If the layout has more than eight columns,
     the remaining columns will not appear in the report. If you need a report that shows metadata for more
     than eight fields per item, create a detailed search results report.
-
-##### Contributor ID
-
-Which items appear in a compact or detailed search results report depends on whether you are searching
-[one site or all sites](/user/how-to-search/#search-one-site-or-all-sites).
-When searching All Sites, you can tell which result came from which organization by
-looking at the **_Identifier_** field for the item. The **_Identifier_** will be
-prefixed with the ID of the contributing organization.
-
-The screenshot below shows a compact search results report containing items from four different
-organizations. The yellow highlights show the contributor ID prefixes on the **_Identifier_**.
-To learn what the IDs mean, see the [site statistics](/user/how-to-search/#site-statistics) page.
-
-![Item report](pdf-report-8.jpg)
-
-The prefix will not appear in a report containing results for just one site because it is not necessary.
-However, when viewing search results from multiple sites, the prefix is important because two different
-organizations may be using the same **_Identifier_**. In other word, the
-**_Identifier_** values are not unique across organizations.
+-   The order of columns in the report may differ from the order shown in the online search results.
+    The column order in the report comes from the AvantSearch [**_Columns_** option](/plugins/avantsearch/#columns-option).
+-   An [administrator](/administrator/getting-started-administrator/) can define custom layouts using the AvantSearch
+    [**_Layouts_** option](/plugins/avantsearch/#layouts-option)
 
 ### Detailed search results report
 The detailed search report shows *all* of the field values for each item.
@@ -128,7 +110,7 @@ The detailed search results report displays each item in a section that contains
 -   The item's title
 -   The item's first image, but only if the report contain <= 1,000 results (see next section)
 -   The item's metadata fields
--   If you are logged in, the item's private fields will appear in gray italics
+-   If you are logged in when you create the report, private fields will appear in gray italics
 
 The screenshot below shows an example of a detailed search results report with images.
 
@@ -141,6 +123,27 @@ images. Eliminating the images from long reports prevents the creation of huge P
 below shows a detailed search results report for 3,036 items. It has 1,125 pages.
 
 ![Item report](pdf-report-2.jpg)
+
+### Contributor ID
+
+Which items appear in a compact or detailed search results report depends on whether you are searching
+[one site or all sites](/user/how-to-search/#search-one-site-or-all-sites).
+When searching All Sites, you can tell which result came from which organization by
+looking at the **_Identifier_** field for the item. The **_Identifier_** will be
+prefixed with the ID of the contributing organization.
+
+The screenshot below shows a compact search results report containing eight items from four different
+organizations. The text highlighted in yellow is the contributor ID prefix.  
+To learn what the IDs mean, see the [site statistics](/user/how-to-search/#site-statistics) page.
+
+![Item report](pdf-report-8.jpg)
+
+A contributor ID prefix will also appear on the **_Identifier_** fields in a detailed search results report.
+
+The prefix will not appear in a report containing results for just one site because it is not necessary.
+However, when viewing search results from multiple sites, the prefix is important because two different
+organizations may be using the same **_Identifier_**. In other word, the
+**_Identifier_** values are not unique across organizations.
 
 ---
 
