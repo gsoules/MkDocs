@@ -62,12 +62,17 @@ automatically, or you may be prompted to save the report as a file, open it in y
 browser, or view it using a PDF application. The actual behavior depends on your
 browser and how you have it configured to handle PDF files.
 
-It does not matter how many search results are displaying, the report will contain all
-of the search results. For example, if the search results page says it is displaying
-1 - 25 of 197 results, the report will contain all 197 results.
+Notes:
 
-The maximum number of results you can save in a PDF report is 10,000. If you have more that that,
-you'll have to refine the search to produce fewer results.
+ -  The report results will be sorted according to the option specified in the **_Sort By_**
+    selector.
+
+-   The report will contain all of the search results regardless of the number specified in the  
+    **_Per Page_** option. For example, if the search results page says it is displaying
+    1 - 25 of 197 results, the report will contain all 197 results.
+
+ -  The maximum number of results you can save in a PDF report is 10,000. If you have more that that,
+    you'll have to refine the search to produce fewer results.
 
 ### Compact search results report
 

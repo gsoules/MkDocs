@@ -359,6 +359,28 @@ to learn why using RedirectMatch works than RewriteRule for this purpose.
 
 ---
 
+### Disallow bots
+
+Crawling of Digital Archive sites by Google and other major search engines is generally a good thing;
+however, some other commercial bots can hit a single Digital Archive site as often as 100,000 times a day or more.
+The `robots.txt` file is used to block specific bots while allowing others to access the site. As of
+September 2020, the bots listed below were the worst offenders, though their behavior was not malicious.
+
+Edit (or create) `public_html/robots.txt` to contain the content below:
+
+```
+User-agent: *
+Disallow: /files/
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+```
+
+---
+
 ### Configure PHP settings
 
 -	Go to [cPanel] and choose `MultiPHP INI Editor`

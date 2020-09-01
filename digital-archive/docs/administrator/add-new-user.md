@@ -59,6 +59,20 @@ Your Organization Name Administrator
     -   Verify that you can log in to the account as the new user
     -   Send the login information to the new user
 
+## Two users with the same email
+
+It is sometimes desirable for the same person to have two Digital Archive accounts, one as an archivist
+and another as an administrator. This allows them to normally be logged in as an archivist and only
+log in as an administrator when necessary. However, Omeka requires that each user have a unique email
+address. Here's how to work around this limitation.
+
+-   Create a new user by following the instructions in the
+    [users section](https://omeka.org/classic/docs/Admin/Users/) of the Omeka
+    Classic user manual, but **give the user a fake email address**
+-   You'll now have a second user, but their account won't be activated    
+-   Edit the new user:
+    -   Activate the new account by checking the **_Active_** checkbox
+    -   Go to the **_Change Password_** tab and give the new user a password
 
 ## Kinds of users
 
