@@ -30,7 +30,8 @@ You can make these changes to your site's appearance:
 -   Edit the text that appears in the footer on every page
 -   Edit the CSS that controls the overall appearance of the site
 
-To make these kinds of changes, go to the **_Themes_** tab on the **_Appearance_** page.
+To make these kinds of changes, go to the **_Themes_** tab on the **_Appearance_** page
+and click the **_Configure_Theme_** button.
 
 ##### CSS
 

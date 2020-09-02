@@ -2,6 +2,14 @@
 
 ---
 
+## Create a PyCharm project
+
+
+
+### Tips
+
+### Python path
+
 To see the Python path
 
 ``` text
@@ -15,7 +23,7 @@ To see the Python path
 
 ```
 
-### Create .exe with pyinstaller
+### Build a .exe with pyinstaller
 
 -   Go to `Python\PastPerfect\pp_export\`
 -   Right click and choose `Git Bash Here`
@@ -49,7 +57,7 @@ Installing collected packages: utm
 Successfully installed utm-0.5.0
 ```
 
-### MySQL Connector Python
+### MySQL Connector Python documentation
 
 <https://dev.mysql.com/doc/connector-python/en/connector-python-introduction.html>
 

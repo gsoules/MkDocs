@@ -5,28 +5,6 @@
 -   Edit `themes\AvantTheme\common\header.php`
 -   Bump `$version` passed to `queue_css_file('style', 'all', false, 'css', $version);`
 
-## Update local DB
-
-Follow these steps to copy a production database to use for testing on a local
-development server.
-
--   Go to to phpAdmin on the server
--   Truncate the session table
--   Export SQL
--   Go to phpAdmin on localhost
--   Create a new DB with today's date in the name
--   Run MySQL Workbench
--   Double click on name of the new DB 
--   Import SQL into then new DB
--   Change db.ini to use new DB name
--   Change the Navigation landing page to the localhost URL
--   Go to AvantElasticsearch config and change site to `deva`
--   Reindex
-    -   Export all into deva
-    -   Import into new deva
-    -   Import into existing devshr
--   Get latest files from server (just ones added/changed since date of last DB)
-
 ## Execute Elasticsearch query in Kibana
 
 -   Open `AvantElasticsearchQueryBuilder::constructSearchQuery` in PhpStorm

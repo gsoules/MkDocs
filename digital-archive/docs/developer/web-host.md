@@ -206,7 +206,7 @@ Follow these steps to create a subdomain in an existing account.
 ## Create a new Reclaim account
 Follow these steps to create a new Reclaim Hosting account. You would do this, for example, if you wanted
 to provide a client with their own Reclaim account for hosting their website. You might also create a
-separte account for a Digital Archive instatllation that will not be hosted on the dedicated WHM server.
+separate account for a Digital Archive installation that will not be hosted on the dedicated WHM server.
 
 -   If you already have an account with Reclaim Hosting and want to add another:
     -	Login to your account
@@ -229,13 +229,13 @@ separte account for a Digital Archive instatllation that will not be hosted on t
 --
 
 ## Tips & Tricks
--   Use <https://skipdns.link> to access a site that's not accesible before switching DNS or namesevers.
+-   Use <https://skipdns.link> to access a site that's not accessible before switching DNS or namesevers.
 -   Use yum instead of pip to install on centos.
 -   Use <https://www.whatsmydns.net/> to see what DNS a site is using from various locations
 
 ## Compress a large folder on the server
 
-Use the zip command to avoid issues using the cPanel Compres feature. Also, the zip
+Use the zip command to avoid issues using the cPanel Compress feature. Also, the zip
 command reports what it's doing. As an example, to compress the `files` folder of a Digital Archive
 installation:
 
@@ -249,12 +249,41 @@ zip -r files.zip files
 
 ## Jet Backup
 
-To restore a file:
--   Go to Home
--   Click Account
--   View Account Backups
--   Choose file backups
--   Browse to the folder containing the file (may need to scroll window of folders)
+To get a backed-up file or a database for an account:
+
+-   Log in to WHM
+-   Choose the JetBackup feature
+-   Click on the **_Restore & Download_** icon (circle with two arrowheads)
+-   Type the username of the account into the **_Find Account_** in order to narrow
+    the list of accounts to only the one you will be working with
+-   Choose what you want to get from the **_Backup Type_** dropdown
+-   Check the checkbox for the account
+-   Click the **_Choose Other Backup_** button to select the date of the backup to use
+-   If getting a file:
+    -   Click the **_Browse Files_** button to select the file(s)
+    -   Navigate to the file(s)
+    -   Click the **_Download_** button to initiate the download
+    -   Click the OK button on the `Your download request is in progress` dialog
+    -   Click the download file link located in the **_Downloads_** section at upper right
+-   If getting a database:
+    -   Click the **_Download_** button to initiate the download
+    -   Follow the steps below to extract the contents
+    -   The contents will be a single `.sql` file that you can then execute in MySQK Workbench
+        following the steps for how to
+        [copy a server database to use on localhost](/developer/mysql-workbench/#copy-a-server-database-to-use-on-localhost)
+
+![cPanel](web-host-4.jpg)
+
+##### What to do with the download file
+
+Download files are in tar.gz format. Follow these steps to get the contents.
+
+-   Download the file to the local computer
+-   Upload the file to a temp directory on the server
+-   Extract the contents on the server
+-   Use the files on the server or download them to the local computer
+
+---
 
 [WHM]: #whm
-[cPanel]: #cpanel
+[cPanel]: #cpanel 

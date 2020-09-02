@@ -73,3 +73,60 @@ to add a database connection.
 -	Click the `Close` button at lower right
 -	**Quit MySQL Workbench** to work around a bug where new connections don't open
 -   [Open the database](#open-a-database) to verify that you can connect to it
+
+## Copy a server database to use on localhost
+
+Follow these steps to copy a production database to use for testing on a local
+development server.
+
+-   Go to to phpAdmin on the server
+-   Truncate the session table in the left panel
+    -   Click `omeka_sessions` table
+    -   Click **_Operations_** in the top menu
+    -   In the **_Delete data or table_** section (very bottom), click `Empty the table (TRUNCATE)`
+    -   Click OK on the confirm dialog
+-   Export SQL
+    -   Click the database name in the left panel
+    -   Click **_Export_** in the top menu
+    -   Keep the `Quick` export method and the `SQL` format
+    -   Click the **_Go_** button
+    -   Save the file on the local computer
+-   Go to phpAdmin on localhost
+    -   Run the XAMPP Control Panel
+    -   Click the Apache module's **_Admin_** button
+    -   Click the `phpMyAdmin` link in the top menu
+-   Create a new DB with today's date in the name
+    -   Click `New` in the left panel
+    -   Type a database name
+    -   Choose `utf8_unicode_ci` for the character set
+    -   Click the **_Create_** button
+-   Import the data    
+    -   Run MySQL Workbench fo localhost 
+    -   Double click on the name of the new database
+    -   Choose `File > Open SQL Script`
+    -   Locate the exported SQL file and click the **_Open_** button
+    -   Click the lightening bolt icon to import the SQL
+-   Edit `db.ini` to use new database
+    -   Keep the `host`, `username`, `password`, and `charset` settings for localhost
+    -   Change `dbname` and `prefix` to match the new database
+-   Run Omeka on localhost
+    -   Go to `http://localhost/omeka//admin/`
+    -   Login as a user for the imported database
+    -   Go to the **_Appearance_** page and click the **_Navigation_** tab
+    -   Change the URL for the `Landing` page to be `http://localhost/omeka/'
+    -   Click the **_Save Changes_** button
+-   Go to the AvantElasticsearch config page and change **_Contributor Id_** to `devb`
+-   Go to the **_Elasticsearch Indexing_** page:
+    -   Export all items
+    -   Import into new local `devb`
+    -   Import into new existing shared `devshr`
+-   Get latest files from the server (just ones added/changed since date of last DB)
+    -   Go to the `public_html/digitalarchive/files` folder for the site being imported
+    -   Compress the folder into a zip file
+    -   Download the zip file into `C:\xampp\htdocs\omeka`
+    -   Delete the zip file from the server
+    -   Rename `C:\xampp\htdocs\omeka\files` to e.g. `files-swhpl`
+    -   Extract or move the `files` folder from the zip file to become the new `files` folder
+        (the zip may contain a `files` folder nested in a `files` folder - do the right thing)
+    -   Delete the zip file
+-   You should now be able to use the imported site normally on localhost    
