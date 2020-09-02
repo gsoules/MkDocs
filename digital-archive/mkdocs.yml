@@ -63,6 +63,7 @@ nav:
         AvantDPLA: plugins/avantdpla.md
         AvantElasticsearch: plugins/avantelasticsearch.md
         AvantElements: plugins/avantelements.md
+        AvantHybrid: plugins/avanthybrid.md
         AvantImport: plugins/avantimport.md
         AvantRelationships: plugins/avantrelationships.md
         AvantS3: plugins/avants3.md

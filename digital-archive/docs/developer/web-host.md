@@ -268,7 +268,7 @@ To get a backed-up file or a database for an account:
 -   If getting a database:
     -   Click the **_Download_** button to initiate the download
     -   Follow the steps below to extract the contents
-    -   The contents will be a single `.sql` file that you can then execute in MySQK Workbench
+    -   The contents will be a single `.sql` file that you can then execute in MySQL Workbench
         following the steps for how to
         [copy a server database to use on localhost](/developer/mysql-workbench/#copy-a-server-database-to-use-on-localhost)
 

@@ -9,7 +9,11 @@ The AvantVocabulary plugin provides support for the Digital Archive's
 AvantVocabulary has these configuration options:
 
 Delete Tables
-:   WARNING: Checking this option will cause all vocablary database tables and data to be permanently deleted if you uninstall this plugin. Do not check this box unless you are certain that in the future you will not be using vocabulary data that you created while using this plugin . If you are just experimenting with the plugin, leave the box unchecked. If you decide not to use the plugin, check the box, Save Changes, and then uninstall the plugin.
+:   WARNING: Checking this option will cause all vocabulary database tables and data to be permanently deleted
+    if you uninstall this plugin. Do not check this box unless you are certain that in the future you will not
+    be using vocabulary data that you created while using this plugin . If you are just experimenting with the
+    plugin, leave the box unchecked. If you decide not to use the plugin, check the box, Save Changes, and then
+    uninstall the plugin.
 
 See also the documentation for [installing AvantVocabulary](../../../developer/install-digital-archive/#avantvocabulary).
 
