@@ -2,9 +2,14 @@
 
 ---
 
-The AvantHybrid plugin provides support for items that store their metadata in the Omeka database,
+The AvantHybrid plugin provides support for items that store a copy of their metadata in the Omeka database,
 but have their images hosted on another server.
 
+**WARNING**: The metadata for hybrid items comes from another database and is expected to be treated as
+read-only within the Digital Archive. However, the Digital Archive will not prevent an archivist from
+editing hybrid items. If an item is updated in the source database, and that database is then synchronized
+with the Digital Archive, any changes made to the item using the Digital Archive will be overwritten
+by the source data.
 
 ## Configuration options
 AvantHybrid has these configuration options:

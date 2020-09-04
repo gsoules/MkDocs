@@ -97,6 +97,7 @@ The Digital Archive utilizes the following software components (listed by catego
     -   [AvantDpla](http://127.0.0.1:8000/plugins/avantdpla/) by George Soules
     -   [AvantElasticsearch](/plugins/avantelasticsearch/) by George Soules
     -   [AvantElements](/plugins/avantelements/) by George Soules
+    -   [AvantHybrid](/plugins/avanthybrid/) by George Soules
     -   [AvantImport](/plugins/avantimport/) by George Soules
     -   [AvantRelationships](/plugins/avantrelationships/) by George Soules
     -   [AvantS3](/plugins/avants3/) by George Soules
