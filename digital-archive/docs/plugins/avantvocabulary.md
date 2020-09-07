@@ -15,7 +15,7 @@ Delete Tables
     plugin, leave the box unchecked. If you decide not to use the plugin, check the box, Save Changes, and then
     uninstall the plugin.
 
-See also the documentation for [installing AvantVocabulary](../../../developer/install-digital-archive/#avantvocabulary).
+See also the documentation for [installing AvantVocabulary](../../../technology/install-digital-archive/#avantvocabulary).
 
 ## Dependencies
 The AvantVocabulary plugin requires that the [AvantElasticsearch] plugin be installed and activated.

@@ -72,7 +72,7 @@ way to further classify humans. Would it be by gender, ethnicity, religion, age,
 clear choice and so `People` is not a hierarchy in most collections. If, however, your
 collection is all about people of different races, than a people hierarchy would make sense. 
 
-[Learn about when a **_Subject_** is optional](/developer/common-vocabulary-translator/#when-a-subject-is-optional).
+[Learn about when a **_Subject_** is optional](/technology/common-vocabulary-translator/#when-a-subject-is-optional).
 
 **Keywords**
 

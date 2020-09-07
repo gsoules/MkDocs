@@ -3,26 +3,80 @@
 ---
 
 The AvantHybrid plugin provides support for Digital Archive items that originate from, and are maintained
-in, another database (the **source database**), but are displayed by, and searchable from, the Digital Archive.
-They are called *hybrid* items because their metadata is copied to and stored in the Digital Archive,
-but their images are stored on, and served up by, the web server for the source database. Thus they
-are composed of data from two difference sources. 
-
-In this documentation, the term **hybrid item** refers to a Digital Archive item and the term  
-**hybrid record** refers to the corresponding record in the source database. For example, if the source
-database is PastPerfect, a record in PastPerfect will have a corresponding hybrid item in
-the Digital Archive. The images for that hybrid item will be served up by the PastPerfect Online
-image server (which happens to be Amazon S3).
+in, another database but are displayed by, and searchable from, the Digital Archive.
+They are called *hybrid* items because they are composed of data from two difference sources.
 
 ---
 
+>   Terminology
+
+Hybrid item
+:   A hybrid item is a Digital Archive item that corresponds to a **source record** that is stored in a **source database**.
+
+Source record
+:   A source record is a **source database** record which has a corresponding **hybrid item** in the Digital Archive.
+    The word "record" is a database term referring to a collection of fields about the same item in a database. While the terms *record*
+    and *item* are synonymous, this AvantHybrid documentation uses  record as a way to distinguish data stored in a
+    **source database** from an item's data stored in the Digital Archive.
+
+Source database
+:   A source database is a database that is separate from and external to the Digital Archive. It stores **source record**s.
+    The dBase database used by PastPerfect is an example of a source database.
+
+Source database software
+:   Source database software refers to a computer program that is used to add, edit, and delete records in
+    a **source database**. PastPerfect is an example of source database software.
+
+Image server
+:   An image server is a web server that stores the images associated with the records in a  
+    **source database**. Amazon S3 is an example of an image server. It is used by PastPerfect Online.
+
+---
+
+> AvantHybrid features
+
+The AvantHybrid plugin:
+
+-   Imports data that has been exported from a source database. The import feature:
+    -   Creates new hybrid items for new source records
+    -   Updates the metadata of hybrid items for which their source records have changed
+    -   Deletes hybrid items that no longer exist in the source database
+-   Displays hybrid items in the Digital Archive by displaying an item's:
+    -   Metadata which AvantHybrid imported from the source database
+    -   Images located on the source database software's image server
+
+> Example
+
+Here is an example to help tie together the features and terminology. It uses PastPerfect as the
+source database software, but the AvantHybrid plugin has no knowledge of PastPerfect or the format of its data.
+AvantHybrid will work with data exported from any source database as long as it conforms to the
+[data format](#data-format) described later.
+
+When you add a new source record and image in PastPerfect:
+
+-   The PastPerfect source database software:
+    -   Adds the record's data to PastPerfect's dBase source database
+    -   Stores the record's image on the local PastPerfect desktop computer or network
+-   When you synchronize PastPerfect with PastPerfect Online, PastPerfect uploads the image to the
+    Amazon S3 image server used by PastPerfect Online
+-   When you export data from PastPerfect's dBase source database and then use AvantHybrid to import the data into the
+    Digital Archive, AvantHybrid:
+    -   Creates a new hybrid item corresponding to the new PastPerfect source record
+    -   Copies the source record's metadata to the hybrid item's metadata fields
+    -   Records the URLs for the source record's image, but does not copy the image file
+-   When you view the hybrid item in the Digital Archive, the AvantHybrid plugin:
+    -   Displays the hybrid item's metadata
+    -   Makes a request to the Amazon S3 image server to display the hybrid item's image
+-   If later you edit the source record's metadata in PastPerfect, export the data from PastPerfect,
+    and import the data into the Digital Archive, AvantHybrid will *completely replace*, not merge,
+    the hybrid item's metadata with the data from the source record.
+---
+
 !!! note "Important"
-    Archivists should not edit the metadata fields of hybrid items in the Digital Archive.
-    Edits should only be made to the corresponding hybrid record in the source database.
-    The next time the source database is synchronized with the Digital Archive, the hybrid
-    record's metadata will completely overwrite the hybrid item's metadata. It is okay, however,
-    to add relationships to, or attach additional files to, a hybrid item. Those relationships
-    and attachments will not be affected by syncronization.
+    Do not edit the metadata fields of hybrid items using the Digital Archive. Only make changes using the
+    source database software. As explained in the last bullet above, metadata imported from a source
+    record completely replaces existing hybrid metadata. As such, if you were to edit the hybrid item
+    in the Digital Archive, a subsequent import of the data for that item would clobber your changes.
 
 ## Configuration options
 AvantHybrid has these configuration options:
@@ -52,7 +106,7 @@ Delete Tables
 
 ![AvantHybrid configuration page](avanthybrid-1.jpg)
 
-## Columns
+## Data format
 
 `<image>` and `<thumb>`
 :   The `<image>` and `<thumb>` columns must each contain a semicolon-separated list of
@@ -70,8 +124,7 @@ Delete Tables
 
 The AvantHybrid plugin synchronizes data exported from a source database with hybrid items in the
 Digital Archive. It can work with data from any source as long as the data can be exported into a CSV
-file that meets the AvantHybrid requirements. Though this documentation uses PastPerfect as an example
-of a source database, the AvantHybrid has not specific knowledge of PastPerfect or the form of its data.
+file that meets the AvantHybrid requirements. 
 
 ## Remote request
 
@@ -109,7 +162,7 @@ Password
 ## Common Vocabulary
 If the [AvantVocabulary](/plugins/avantvocabulary/) plugin is installed and activated, AvantHybrid will attempt
 to convert **_Type_** and **_Subject_** values from the source database to [Common Vocabulary](/archivist/common-vocabulary/)
-terms. If the source value matches a [Common Vocabulary leaf](/developer/common-vocabulary-translator/#leaf), the
+terms. If the source value matches a [Common Vocabulary leaf](/technology/common-vocabulary-translator/#leaf), the
 value will be changed to the corresponding Common Vocabulary term. For example, the source term `Yearbook` will
 automatically be changed to `Publication, Yearbook`. For this to work, source leaf values must be in Nomenclature
 *natural order*.

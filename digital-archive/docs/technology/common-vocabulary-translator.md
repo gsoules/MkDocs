@@ -409,7 +409,7 @@ digital-archive-diff.csv
 -   The `digital-archive-diff.csv` will contain update instructions if the CVT found differences
     between `input-previous-digital-archive-vocabulary` and the newly created
     `digital-archive-diff.csv`.
-    [Learn how to apply the updates to Digital Archive sites](/developer/site-maintenance/#common-vocabulary-updates).
+    [Learn how to apply the updates to Digital Archive sites](/technology/site-maintenance/#common-vocabulary-updates).
 
 -   If `input-previous-digital-archive-vocabulary` does not exist as an input file:
     -   `digital-archive-diff.csv` will be empty because there can be no differences without

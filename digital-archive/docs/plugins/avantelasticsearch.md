@@ -32,7 +32,7 @@ Local Index
 Shared Index
 :   Enable shared index
 
-See also the documentation for [installing AvantElasticsearch](../../../developer/install-digital-archive/#avantelasticsearch).
+See also the documentation for [installing AvantElasticsearch](../../../technology/install-digital-archive/#avantelasticsearch).
 
 ---
 

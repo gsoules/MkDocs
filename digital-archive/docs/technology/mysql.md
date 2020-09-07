@@ -21,7 +21,7 @@ but MySQL Workbench is more powerful and easier to use in many situations.
 -   The database should appear at left under the `Schemas` tab of the navigator
 -   Click the triangle icons to expand/contract the database, its tables, and table columns
 
-![Schema](mysql-workbench-1.jpg)
+![Schema](mysql-1.jpg)
 
 !!! warning ""
     If you can't connect, or you get a `Cannot Connect to Database Server` error, you may need
@@ -129,4 +129,4 @@ development server.
     -   Extract or move the `files` folder from the zip file to become the new `files` folder
         (the zip may contain a `files` folder nested in a `files` folder - do the right thing)
     -   Delete the zip file
--   You should now be able to use the imported site normally on localhost    
+-   You should now be able to use the imported site normally on localhost

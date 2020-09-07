@@ -26,7 +26,7 @@ Key
 Secret
 :   AWS Secret Access Key
 
-See also the documentation for [installing AvantS3](../../../developer/install-digital-archive/#avants3).
+See also the documentation for [installing AvantS3](../../../technology/install-digital-archive/#avants3).
 
 ---
 

@@ -37,7 +37,7 @@ Maintenance
 Item Type Name
 :   Specifies the name of the **Item Type** that will be used for every item in the installation.
 
-See also the documentation for [installing AvantAdmin](../../../developer/install-digital-archive/#avantadmin).
+See also the documentation for [installing AvantAdmin](../../../technology/install-digital-archive/#avantadmin).
 
 ## Dependencies
 The AvantAdmin plugin requires that the [AvantCommon] plugin be installed and activated.

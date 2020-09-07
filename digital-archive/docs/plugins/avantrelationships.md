@@ -28,7 +28,7 @@ The AvantRelationships plugin has these configuration options:
 
 The following sections describe each option in detail.
 
-See also the documentation for [installing AvantRelationships](../../../developer/install-digital-archive/#avantrelationships).
+See also the documentation for [installing AvantRelationships](../../../technology/install-digital-archive/#avantrelationships).
 
 ---
 

@@ -1371,20 +1371,20 @@ Preparation:
 
 -   Choose a *master site* to clone. The site must have no items.
 -   Create a `digitalarchive.zip` file from the master site
--   [Export the SQL script](/developer/copy-mysql-db/#export-database) from the master site
+-   [Export the SQL script](/technology/copy-mysql-db/#export-database) from the master site
 
 For each new site:
 
--   [Create a database](/developer/install-digital-archive/#create-a-database)
+-   [Create a database](/technology/install-digital-archive/#create-a-database)
 -   Copy and extract `digitalarchive.zip` into public_html
 -   Edit `db.ini` to point to the new database
--   In [MySQL Workbench](/developer/mysql-workbench/), import the master SQL:
+-   In [MySQL Workbench](/technology/mysql-workbench/), import the master SQL:
     -   `File > Open SQL Script`
     -   Edit the script:
         -   All places where the organization name or URL exists
         -   Item type
         -   AWS credentials
-    -   [Import the databse](/developer/copy-mysql-db/) from the master SQL
+    -   [Import the databse](/technology/copy-mysql-db/) from the master SQL
 -   Bring up the new site and login        
 -   Assign a new password to the super user. Logout and login again.
 -   Make any changes necessary for the site's organization e.g. to the simple pages

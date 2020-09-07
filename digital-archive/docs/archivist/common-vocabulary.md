@@ -14,7 +14,7 @@ collections, while  allowing each organization to extend or override the common 
 the [Vocabulary Editor](/archivist/vocabulary-editor/).
 
 The Common Vocabulary is a translation of the [Nomenclature](#nomenclature-40) vocabulary
-into a simpler form. Learn about the [Common Vocabulary Translator](/developer/common-vocabulary-translator/).
+into a simpler form. Learn about the [Common Vocabulary Translator](/technology/common-vocabulary-translator/).
 
 ---
 
@@ -336,7 +336,7 @@ can ingest them if desirable. Because each Digital Archive site can add its own 
 an organization would never have to wait for a new term to be added to Nomenclature.
 
 To learn how the Common Vocabulary gets created from Nomenclature, and how additional terms get added,
-read about the [Common Vocabulary Translator](/developer/common-vocabulary-translator/). When the
+read about the [Common Vocabulary Translator](/technology/common-vocabulary-translator/). When the
 Common Vocabulary Translator is used to add or modify a Common Vocabulary term, all Digital Archive
 sites can be automatically updated to receive the update and to convert site terms to common terms if
 appropriate. For example, if a number of sites have all added a mapped site term that then becomes a

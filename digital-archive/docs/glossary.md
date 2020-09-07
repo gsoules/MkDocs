@@ -130,8 +130,8 @@ Non-public item
     in **user** can see. In contrast, any user can see a **public item**.
 
 Omeka
-:   [Omeka](/developer/technologies/#omeka) is a web-publishing platform for the display of library, museum,
-    archives, and scholarly collections and exhibitions.The [Digital Archive software](/developer/technologies/)
+:   [Omeka](/technology/technologies/#omeka) is a web-publishing platform for the display of library, museum,
+    archives, and scholarly collections and exhibitions.The [Digital Archive software](/technology/technologies/)
     use Omeka as its foundation.
 
 Organization
@@ -189,7 +189,7 @@ Site vocabulary
 
 Subject
 :   **_Subject_** is a **field** to used to further classify a **Type**. 
-    [Learn about **_Type_** and **_Subject_**](/developer/common-vocabulary-translator/#common-vocabulary-type-and-subject).
+    [Learn about **_Type_** and **_Subject_**](/technology/common-vocabulary-translator/#common-vocabulary-type-and-subject).
 
 Super user (Omeka)
 :   An Omeka super user is someone with an Omeka login that allows them to do anything and everything in Omeka.
@@ -211,7 +211,7 @@ Term
 
 Type
 :   **_Type_** is a **field** used to indicate what an item is.
-    [Learn about **_Type_** and **_Subject_**](/developer/common-vocabulary-translator/#common-vocabulary-type-and-subject).
+    [Learn about **_Type_** and **_Subject_**](/technology/common-vocabulary-translator/#common-vocabulary-type-and-subject).
 
 Upload
 :   Upload refers to the process of copying a file from a personal computer to the Digital Archive which resides on a server.

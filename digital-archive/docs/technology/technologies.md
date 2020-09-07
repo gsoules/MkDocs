@@ -123,5 +123,6 @@ The Digital Archive utilizes the following software components (listed by catego
     -   [FPDF Library](http://www.fpdf.org/) by Olivier Plathey
 -   Python
     -   [Common Vocabulary Translator](https://github.com/gsoules/AvantCommonVocabulary) by George Soules
+    -   dBase Exporter by George Soules
 
 If you have technology related questions, please send them to gsoules@avantlogic.com.

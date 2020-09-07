@@ -127,7 +127,7 @@ Follow the steps below to add a new item.
 
     ![Error Message](items-5.jpg)
 
-    [Learn about when a **_Subject_** is and is not required](/developer/common-vocabulary-translator/#common-vocabulary-type-and-subject).
+    [Learn about when a **_Subject_** is and is not required](/technology/common-vocabulary-translator/#common-vocabulary-type-and-subject).
 
 6 &ndash; Review the new item
 :   After you add the item, you will be on the [admin item page](#admin-item-page-features).
@@ -184,7 +184,7 @@ Follow the steps below to edit an item.
 
     ![Error Message](items-5.jpg)
 
-    [Learn about when a **_Subject_** is and is not required](/developer/common-vocabulary-translator/#common-vocabulary-type-and-subject).
+    [Learn about when a **_Subject_** is and is not required](/technology/common-vocabulary-translator/#common-vocabulary-type-and-subject).
 
 ---
 

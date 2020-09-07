@@ -47,7 +47,7 @@ Type, Subject, and Keywords
     `document`, or `object` (a teacup, for example). An item's **subject** clarifies its type. For example, an item of type `photograph`
     could have the subjects `person` and `boat` to indicate what it is a photograph of.  A subject is not required
     for an item when its type is self-explanatory such as *teacup*. Read about
-    [Common Vocabulary **_Type_** and **_Subject_**](https://digitalarchive.us/docs/developer/common-vocabulary-translator/#common-vocabulary-type-and-subject).
+    [Common Vocabulary **_Type_** and **_Subject_**](https://digitalarchive.us/docs/technology/common-vocabulary-translator/#common-vocabulary-type-and-subject).
     
     **Keywords** are significant words in an item's **_Title_**, **_Description_** and all other metadata fields.
     There is no separate metadata field for keywords. They are simply the words an archivist chooses to describe an item.
@@ -109,7 +109,7 @@ Relationships
 George Soules and Charlotte Morrill developed the
 [Archive Relational Model](/relationships/archive-relational-model/)
 in 2016 for the Southwest Harbor Public Library in Maine. [AvantLogic Corporation](http://avantlogic.com/)
-developed the [Digital Archive technology](/developer/technologies/) to implement the model and showcase the Library’s
+developed the [Digital Archive technology](/technology/technologies/) to implement the model and showcase the Library’s
 large collection of historic photographs, documents, maps, and research materials. As of August 2020, sixteen cultural
 heritage organizations in Maine are using the Digital Archive. Of those, fourteen are
 [sharing their collections](https://swhplibrary.net/digitalarchive/avant/dashboard) online using the Digital Archive.

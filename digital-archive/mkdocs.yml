@@ -44,18 +44,18 @@ nav:
         Rebuilding Elasticsearch Indexes: administrator/reindex.md
         Import CSV data: administrator/import-csv.md
     - Technology:
-        The Digital Archive Software: developer/technologies.md
-        Common Vocabulary Translator: developer/common-vocabulary-translator.md
-        Web server: developer/web-host.md
-        MkDocs: developer/mkdocs.md
-        MySQL Workbench: developer/mysql-workbench.md
-        Copy a MySQL database: developer/copy-mysql-db.md
-        Install a Digital Archive site: developer/install-digital-archive.md
-        GitHub: developer/github.md
-        PHP: developer/php-development.md
-        Python: developer/python.md
-        AWS: developer/aws.md
-        Site maintenance: developer/site-maintenance.md
+        The Digital Archive Software: technology/technologies.md
+        Install a Digital Archive site: technology/install-digital-archive.md
+        Common Vocabulary Translator: technology/common-vocabulary-translator.md
+        dBase Exporter: technology/dbase-exporter.md
+        Web server: technology/web-host.md
+        MkDocs: technology/mkdocs.md
+        MySQL: technology/mysql.md
+        GitHub: technology/github.md
+        PHP: technology/php.md
+        Python: technology/python.md
+        AWS: technology/aws.md
+        Site maintenance: technology/site-maintenance.md
     - Digital Archive plugins:
         AvantAdmin: plugins/avantadmin.md
         AvantCommon: plugins/avantcommon.md

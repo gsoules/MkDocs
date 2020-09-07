@@ -2,13 +2,7 @@
 
 ---
 
-## Create a PyCharm project
-
-
-
-### Tips
-
-### Python path
+## Python path
 
 To see the Python path
 
@@ -23,14 +17,7 @@ To see the Python path
 
 ```
 
-### Build a .exe with pyinstaller
-
--   Go to `Python\PastPerfect\pp_export\`
--   Right click and choose `Git Bash Here`
--   Type `pyinstaller --onefile pp_export.py`
--   pyinstaller will create  `Python\PastPerfect\pp_export\dist\pp_export.exe`
-
-### Run a Python program from a Command or Bash window
+## Run a Python program from a Command or Bash window
 
 Specify the `-u` option so that console output goes immediately to the window without getting buffered.
 Without the option, you won't see any output until the program completes.
@@ -39,7 +26,7 @@ Without the option, you won't see any output until the program completes.
 python -u <filename>.py
 ```    
 
-### yum
+## yum
 
 `yum install <package name>` or `sudo yum install <package name>`
 
@@ -57,7 +44,7 @@ Installing collected packages: utm
 Successfully installed utm-0.5.0
 ```
 
-### MySQL Connector Python documentation
+## MySQL Connector Python documentation
 
 <https://dev.mysql.com/doc/connector-python/en/connector-python-introduction.html>
 

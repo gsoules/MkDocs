@@ -43,7 +43,7 @@ to searching only. For development and debugging purposes, you can *temporarily*
 The examples in this section all use `myindex` as the index name.
 
 To use Kibana to view actual JSON for an AvantElasticsearch search, follow the steps to  
-[execute Elasticsearch query in Kibana](/developer/php-development/#execute-elasticsearch-query-in-kibana)
+[execute Elasticsearch query in Kibana](/technology/php-development/#execute-elasticsearch-query-in-kibana)
 
 
 ##### Show mappings

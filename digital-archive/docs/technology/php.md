@@ -13,7 +13,7 @@
 -   Copy/paste the value of `$kibana` into the Kibana Dev Tools
 -   Use Kibana's Auto Indent to format it
 
-See the [Kibana](/developer/aws/#kibana) section on the AWS page.
+See the [Kibana](/technology/aws/#kibana) section on the AWS page.
 
 ## See SQL queries and logging
 

@@ -102,7 +102,7 @@ This method involves more steps, but is faster because uploading one large file 
 time than FTPing several folders that each contain dozens of files.
 
 - Compress the zoom tiles folder into a single zip file
-- [Upload and extract the zip file](../../developer/web-host#upload-and-extract-a-zip-file) into the 
+- [Upload and extract the zip file](../../technology/web-host#upload-and-extract-a-zip-file) into the 
 `digitalarchive/files/zoom` folder
 
 ## Filezilla FTP settings
