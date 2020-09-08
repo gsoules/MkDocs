@@ -6,16 +6,36 @@
 
 ```
 [options]
-organization = Mount Desert Island Historical Society
-export = C:\Users\gsoules\Desktop
+organization = Your Historical Society
+export = C:\xampp\htdocs\omeka\files\hybrid
 data = C:\pp5\Data
 delete_last_export = no
 fields = 
-	GPARENT
-	PARENT
+	DATE
+	PLACE
+	CREATOR
+	PUBLISHER
+	COLLECTION
 	DESCRIP
-last_export = 2020-03-16 08:06:39
+last_export = 2020-09-05 10:10:15
+
+[ftp]
+host = ftp.yourdomain.net
+user = hybrid@yourdomain.net
+password = kxxxxxxxxx9
+
+[import]
+site = yrsite
+url = http://yourdomain/digitalarchive
+password = abcd1234
 ```
+
+## Add an export column
+
+-	Add an element for the column in Omeka
+-	Add to column mapping in AvantHybrid configuration
+-	Add the column to the .config file above
+-	Export all records and import them
 
 ## Export data to a CSV file
 
