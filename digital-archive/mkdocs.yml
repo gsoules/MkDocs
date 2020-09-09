@@ -47,7 +47,7 @@ nav:
         The Digital Archive Software: technology/technologies.md
         Install a Digital Archive site: technology/install-digital-archive.md
         Common Vocabulary Translator: technology/common-vocabulary-translator.md
-        dBase Exporter: technology/dbase-exporter.md
+        PastPerfect Exporter: technology/pastperfect-exporter.md
         Web server: technology/web-host.md
         MkDocs: technology/mkdocs.md
         MySQL: technology/mysql.md
