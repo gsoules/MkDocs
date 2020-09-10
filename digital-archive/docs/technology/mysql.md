@@ -79,6 +79,8 @@ to add a database connection.
 Follow these steps to copy a production database to use for testing on a local
 development server.
 
+### Export SQL database
+
 -   Go to to phpAdmin on the server
 -   Truncate the session table in the left panel
     -   Click `omeka_sessions` table
@@ -91,6 +93,9 @@ development server.
     -   Keep the `Quick` export method and the `SQL` format
     -   Click the **_Go_** button
     -   Save the file on the local computer
+
+### Import SQL into new database
+
 -   Go to phpAdmin on localhost
     -   Run the XAMPP Control Panel
     -   Click the Apache module's **_Admin_** button
@@ -106,6 +111,9 @@ development server.
     -   Choose `File > Open SQL Script`
     -   Locate the exported SQL file and click the **_Open_** button
     -   Click the lightening bolt icon to import the SQL
+
+### Use the database on localhost
+
 -   Edit `db.ini` to use new database
     -   Keep the `host`, `username`, `password`, and `charset` settings for localhost
     -   Change `dbname` and `prefix` to match the new database

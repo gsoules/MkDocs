@@ -139,4 +139,11 @@ how the image from item 11562 is being used as the cover for item 13579.
 
 ![Example of a cover image](reference-items-2.jpg)
 
+---
+
+!!! note ""
+    There is a known problem where sometimes a newly added cover image does not display as an item's
+    thumbnail image. If this occurs, simply edit the item and save it again without making any changes.
+    This second save should cause the thumbnail to appear.
+
     

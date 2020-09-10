@@ -62,8 +62,8 @@ use [cPanel] to create a new empty database and a database user for the Digital 
 -	Click the `Next Step` button
 
 !!! note
-    If you want to populate the new database with data from an existing Digital Archive database,
-    follow the instructions to [copy a MySQL database](copy-mysql-db.md).
+    If you want to populate the new database with data from an existing Digital Archive database, follow the instructions to
+    [copy a MySQL database](/technology/mysql/#copy-a-server-database-to-use-on-localhost).
 
 ### Create a user
 
@@ -86,7 +86,7 @@ use [cPanel] to create a new empty database and a database user for the Digital 
 
 ### Configure MySQL Workbench
 
--   [Add a database connection to MySQL Workbench](mysql-workbench.md#add-a-database-connection)
+-   [Add a database connection to MySQL Workbench](mysql.md#add-a-database-connection)
 
 ---
 
@@ -580,7 +580,7 @@ create a single Item Type having the elements needed by the organization.
 ---
 
 ###	Delete unused item types
--   Open the database in [MySQL Workbench](mysql-workbench.md#open-a-database)
+-   Open the database in [MySQL Workbench](mysql.md#open-a-database)
 -	Right click on the `omeka_item_types` table and choose `Select Rows`
 -	Select all the rows
 -	Right click on the selection and choose `Delete Rows`
@@ -1371,20 +1371,20 @@ Preparation:
 
 -   Choose a *master site* to clone. The site must have no items.
 -   Create a `digitalarchive.zip` file from the master site
--   [Export the SQL script](/technology/copy-mysql-db/#export-database) from the master site
+-   [Export the SQL script](/technology/mysql/#export-sql-database) from the master site
 
 For each new site:
 
 -   [Create a database](/technology/install-digital-archive/#create-a-database)
 -   Copy and extract `digitalarchive.zip` into public_html
 -   Edit `db.ini` to point to the new database
--   In [MySQL Workbench](/technology/mysql-workbench/), import the master SQL:
+-   In [MySQL Workbench](/technology/mysql/), import the master SQL:
     -   `File > Open SQL Script`
     -   Edit the script:
         -   All places where the organization name or URL exists
         -   Item type
         -   AWS credentials
-    -   [Import the databse](/technology/copy-mysql-db/) from the master SQL
+    -   [Import the database](/technology/mysql/#export-sql-database) from the master SQL
 -   Bring up the new site and login        
 -   Assign a new password to the super user. Logout and login again.
 -   Make any changes necessary for the site's organization e.g. to the simple pages

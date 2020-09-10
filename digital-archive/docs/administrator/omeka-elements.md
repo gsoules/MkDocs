@@ -35,7 +35,7 @@ correct name; however, if the element already exists and there are items contain
 metadata for the element, the only option is to go into the MySQL database and edit
 the `omeka_elements` table. Find the element in the table and then change its name
 in the **_name_** column. When you go back into Omeka, the element will appear
-with its new name. This can be done using [MySQL Workbench](../technology/mysql-workbench.md).
+with its new name. This can be done using [MySQL Workbench](../technology/mysql.md).
 If you don't have access to your MySQL database, ask your Digital Archive developer
 to rename the element for you.
 

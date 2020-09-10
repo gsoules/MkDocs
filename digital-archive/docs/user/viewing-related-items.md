@@ -50,3 +50,9 @@ at upper right, to go back to the previous visualization. In any visualization, 
 click on a thumbnail to go to that item's page.
 
 ---
+
+!!! note ""
+    The visualization does not display images for [hybrid items](/plugins/avanthybrid/). It will display placeholder
+    images instead. 
+
+---
