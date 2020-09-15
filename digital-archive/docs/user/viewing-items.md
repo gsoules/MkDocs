@@ -15,6 +15,9 @@ The appearance of an item's thumbnail tells you something about the item:
 
 -   A blue double border (items 13178 and 13023) indicates that the item is
     a [Reference item](/relationships/reference-items).
+-   A blue double border with a manila colored matte around the image (no example shown)
+    indicates that the item is a Reference item and the image is its
+    [cover image](/relationships/reference-items/#what-a-cover-image-looks-like).
 -   A dotted border (item 13325) indicates that the item has two or more attachments.
 -   A placeholder thumbnail indicates that the item has no attachments. The placeholder
     for item 13023 indicates that it is a Reference item for a structure.

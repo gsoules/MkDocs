@@ -45,6 +45,10 @@ related items.
 
 ![Three photographs of the same woman](reference-items-4.jpg)
 
+Four of the Reference items shown above have a manila colored matte around the image to indicate that
+the photo is the [cover image](/relationships/reference-items/#cover-images-for-reference-items)
+for the Reference item. Item 13772 is also a Reference item, but it has no cover image.
+
 As you can see, Reference Items are simple, but powerful. If you have not done so already, be sure to learn
 about the [Archive Relational Model](/relationships/archive-relational-model/) to understand relationships
 in general.
@@ -115,13 +119,20 @@ blue double border.
 ### What a cover image looks like
 
 The cover image appears in the upper left corner of the Reference Item’s page as though
-it were attached with a paperclip. This feature gives some "life" to the Reference Item's
+it were attached with a paperclip to a manila folder containing the reference information.
+This feature gives some "life" to the Reference Item's
 page so that you see the person, not just the PDF file. The cover image also appears as
 the thumbnail for Reference Items that do not have a PDF file attached to them such as
 the ones in the
 [second example above](/relationships/reference-items/#relating-reference-items-to-each-other).
 
 ![Example of a cover image](reference-items-1.jpg)
+
+In search results, a cover image appears with a manila colored matte around the image to help
+distinguish its reference item from the item for the image itself. In the example below,  
+image 16193 on the left is the cover image for Reference item 15143.
+
+![Example of a cover image](reference-items-5.jpg)
 
 ### Setting a cover image
 
