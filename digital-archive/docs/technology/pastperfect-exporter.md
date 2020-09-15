@@ -6,6 +6,21 @@ used by PastPerfect into a file suitable for import into the Digital Archive usi
 
 ---
 
+Always exports:
+
+PPID
+OBJECTID never blanks or duplicates
+CAT as one of the four PP names
+OBJNAME translated to CV natural order, never non-nomenclature
+SUBJECTS as-is
+TITLE
+IMAGE
+THUMB
+WEBINCLUDE as 1 or 0
+SITE end of the path for the record
+
+---
+
 ## Exporter software
 
 ### .config file options
