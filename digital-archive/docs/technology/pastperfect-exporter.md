@@ -80,8 +80,8 @@ fields =
 	DESCRIP
 
 [request]
-id = mdihs
-password = rock34XQ
+id = ahs
+password = aQ75RkG9
 url = http://yourdomain/digitalarchive/avant/remote
 
 [admin]
@@ -105,17 +105,17 @@ pp5data
 	`C:\pp5\Data`  
 	`\\NAS\PastPerfect\Data`
 
-	You can determine the folder location by going to the PastPerfect System Information screen and
-	looking at the Data Folder field in the Computer Information section.
+	You can determine the folder location by going to the PastPerfect **_System Information_** screen and
+	looking at the **_Data Folder_** field in the **_Computer Information_** section.
 
 fields
 :	The `fields` option lets you specify which PastPerfect catalog table columns PPE will export
-	in addition to the fields that it always exports as [described above](#what-gets-exported).
+	in addition to the fields that it always exports ([see what gets exported](#what-gets-exported)) above.
 
 ### Request options
 
 id
-:	The `id` option must be three to six characters that must exactly match the
+:	The `id` option must be three to six characters that exactly match the
 	[**_Import ID_** option](/plugins/avanthybrid/#configuration-options) on the AvantHybrid configuration page.
 
 password
@@ -142,6 +142,10 @@ catalog
 :	The `catalog` option must be set to either `all` or to one of the PastPerfect catalog names
 	`ARCHIVES`, `LIBRARY`, `OBJECTS`, and `PHOTOS`. Any other value will result in an error.
 
+	The only time you would specify a specific catalog would be if you were doing an initial
+	export and wanted to export the catalogs one at a time to make sure that everything looks
+	good for one catalog before proceeding with another.
+
 details
 :	Set the `details` option to `yes` only if you want to see additional statistics. Currently,
 	the only additional statistics is a listing of non-unique OBJECTID values.
@@ -154,8 +158,9 @@ dryrun
 
 force
 :	Force should always be set to `no`. The only exception is if for some reason you need to force
-	every hybrid item in your Digital Archive to get updated even if it's corresponding PastPerfect
-	record has not changed. Se the  See the section below on adding a new export column as an example when
+	every hybrid item in your Digital Archive to get updated even if its corresponding PastPerfect
+	record has not changed. See the section below on
+	[adding a new export column](#adding-a-new-export-column) as an example of when
 	you might use this option.
 
 limit
@@ -178,16 +183,17 @@ trace
 
 Here is an explanation of the algorithm PPE performs when you run the `pp_export.exe` program.
 
--	Make a request to AvantHybrid to get a list of all the hybrid items in the Digital Archive
+-	Make a request to AvantHybrid to fetch a list of all the hybrid items in the Digital Archive
 	along with the date and time when each was added or last updated.
 -	Read data from the PastPerfect LEXICON table to get a list of Nomenclature terms.
--	Read data from the PastPerfect MEDIA table to get the file names of files attached to records.
--	Read data from each of the PastPerfect catalogs (ARCHIVE, LIBRARY, OJBECTS, and PHOTOS). Create
-	a source record for each catalog record and	add it to a list of source records, skipping any 
+-	Read data from the PastPerfect MEDIA table to get the names of files attached to records.
+-	Read data from each of the PastPerfect catalogs (ARCHIVE, LIBRARY, OJBECTS, and PHOTOS).
+-	Create a source record for each catalog record and add it to a list of source records, skipping any 
 	that are rejected.
 	(see the [what gets exported section](#what-gets-exported) above).
--	Analyze the data, convert Nomenclature terms from inverted to natural order, and report statistics
-	as shown in the next section below.
+-	Analyze the data, convert Nomenclature terms from
+	[inverted to natural order](/technology/common-vocabulary-translator/#leaf), and report
+	[statistics](/technology/pastperfect-exporter/#statistics) as shown in the next section below.
 -	Loop over the source records one at a time. For each source record:
 	-	If it does not exist in the Digital Archive, mark it to be added.
 	-	If it exists in the Digital Archive, but has been changed in PastPerfect since it was last
@@ -197,10 +203,11 @@ Here is an explanation of the algorithm PPE performs when you run the `pp_export
 	-	If it has no corresponding source record, add a placeholder record to the list
 		of source records and mark it to be deleted.		
 -	Loop over the source records. For each that has been marked as add, update or delete,
-	make an HTTP request to AvantHybrid to perform the action. Ignore those marked as unchanged.
+	make an [HTTP request to AvantHybrid](/plugins/avanthybrid/#http-requests) to perform the
+	action. Ignore those marked as unchanged.
 
 If the algorithm gets interrupted before completion, it will pick up where it left off the next
-time the PPE is run. For example, if while exporting 100 records, the computer crashes, or the
+time PPE is run. For example, if while exporting 100 records, the computer crashes, or the
 internet goes down, after only 25 records have been imported into the Digital Archive, when the
 system is working and the PPE is run again, it will detect that only 75 records have to be imported
 and import them. This is possible because the PPE algorithm is stateless, meaning that it can always
@@ -260,6 +267,7 @@ want to add a column, follow these steps.
 -	Run the PPE
 -	Set the `force` configuration option to `no`
 -	Set the `bulk` configuration option to `no`
+-	[Rebuild your Digital Archive Elasticsearch indexes](/administrator/reindex)
 
 Assuming that `catalogs` is set to `all` and `limit` is set to `0`, the steps above will
 update every hybrid item in the Digital Archive to include the new column. Be aware that
@@ -325,6 +333,12 @@ pushd \\NAS\ppexport\DigitalArchive
 cmd /K export_pp.exe
 popd
 ```
+
+### Recommendation for a new installation
+
+Here are recommendations for a first-time export of all PastPerfect records into the Digital Archive.
+
+
 
 
 
