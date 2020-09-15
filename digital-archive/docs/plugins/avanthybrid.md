@@ -88,7 +88,7 @@ When you add a new source record and image in PastPerfect:
     in the Digital Archive, a subsequent import of the data for that item would clobber your changes.
 
     After changing records in PastPerfect, or adding images to records, be sure to run PastPerfect's
-    Web Publishing Feature to syncronize your local PastPerfect data and images with PastPerfect Online.
+    Web Publishing utility to synchronize your local PastPerfect data and images with PastPerfect Online.
     If you don't do this, the data and images exported by the PastPerfect Exporter into the Digital Archive
     will become out of sync with the data and images on PastPerfect Online.
 
@@ -268,7 +268,7 @@ hybrid-fetch
 ``` json
 {
     "status":"OK",
-    "site-id":"xyz",
+    "site-id":"ahs",
     "results":
         {
             "B427FDC4-5A2A-42AA-A146-337349578482":"2020-09-15 10:41:47",
@@ -310,7 +310,7 @@ The AvantHybrid's import feature is normally invoked via a remote POST request t
 site's `avant/remote` page. It can also be invoked by a developer who is logged in as an administrator and makes
 a GET request passing the POST arguments as query string parameters as shown in the example below.
 
-`http://localhost/omeka/avant/remote?id=xyz&password=abcd1234&action=hybrid-add&options=trace&debug`
+`http://localhost/omeka/avant/remote?id=ahs&password=aQ75RkG9&action=hybrid-add&options=trace&debug`
 
 The `debug` argument is used to make the response appear in the browser as plain text instead of as JSON.
 
@@ -323,7 +323,7 @@ The response is JSON that contains three values: `status`, `site-id`, and `resul
 ``` json
 {
     "status":"OK",
-    "site-id":"xyz",
+    "site-id":"ahs",
     "results":"Updated item 1052 for record B427FDC4-5A2A-42AA-A146-337349578482"
 }
 ```

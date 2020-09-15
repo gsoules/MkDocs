@@ -1,9 +1,25 @@
 # PastPerfect Exporter
 
-The PastPerfect Exporter (PPE) is a software program that exports records PastPerfect and
-imports them into the Digital Archive as hybrid items by making HTTP requests to the
-[AvantHybrid](/plugins/avanthybrid/) plugin.
+The PastPerfect Exporter (PPE) is a software program that exports PastPerfect records from
+a Windows 10 computer and imports them into the Digital Archive as
+[hybrid items](/plugins/avanthybrid/#avanthybrid).
 
+---
+
+!!! note ""
+	This documentation is intended for administrators and developers who will set up and maintain
+	the PastPerfect Exporter. It assumes that you have read the documentation for
+	[AvantHybrid](/plugins/avanthybrid/).
+
+	To simply use the PPE, go to the `ppexport` folder on your PastPerfect computer and double-click
+	on the `ExportPastPerfectToDigitalArchive.bat` file. The PPE will run and display progress and
+	[statistics](#statistics) in a window. When PPE is finished, you can close the window. Your PastPerfect
+	data will be synchronized with your Digital Archive.
+
+	**Important**: After changing records in PastPerfect, or adding images to records, be sure to run PastPerfect's
+    Web Publishing utility to synchronize your local PastPerfect data and images with PastPerfect Online.
+    If you don't do this, the data and images exported by PPE into the Digital Archive
+    will become out of sync with the data and images on PastPerfect Online.
 ---
 
 ## What gets exported
@@ -49,9 +65,11 @@ As example of what the PPE exports is shown below as a JSON string.
 
 ## pp_export.config
 
+The `export_pp.config` file is the "user interface" to the PPE. You edit this file to control
+how the PPE operates. Below is a sample file followed by an explanation of each option.
+
 ``` text
-[options]
-organization = Your organization name goes here
+[data]
 pp5data = \\NAS\PastPerfect\Data
 fields =
 	DATE
@@ -61,10 +79,10 @@ fields =
 	COLLECTION
 	DESCRIP
 
-[import]
+[request]
 id = mdihs
-url = http://yourdomain/digitalarchive/avant/remote
 password = rock34XQ
+url = http://yourdomain/digitalarchive/avant/remote
 
 [admin]
 bulk = no
@@ -76,6 +94,40 @@ limit = 0
 private = no
 trace = no
 ```
+
+### Data options
+
+pp5data
+:	The `pp5data` option specifies the path to the PastPerfect installation's `Data` folder on the
+	Windows computer or network that hosts PastPerfect.
+
+	Examples:  
+	`C:\pp5\Data`  
+	`\\NAS\PastPerfect\Data`
+
+	You can determine the folder location by going to the PastPerfect System Information screen and
+	looking at the Data Folder field in the Computer Information section.
+
+fields
+:	The `fields` option lets you specify which PastPerfect catalog table columns PPE will export
+	in addition to the fields that it always exports as [described above](#what-gets-exported).
+
+### Request options
+
+id
+:	The `id` option must be three to six characters that must exactly match the
+	[**_Import ID_** option](/plugins/avanthybrid/#configuration-options) on the AvantHybrid configuration page.
+
+password
+:	The `passsword` option must be eight characters that exactly match the
+	[**_Import Password_** option](/plugins/avanthybrid/#configuration-options) on the AvantHybrid configuration page.
+
+url
+:	The `url` option specifies the URL of the remote request page on the Digital Archive server.
+	It is the URL of the server followed by `/avant/remote`.
+
+### Admin options
+
 bulk
 :	The `bulk` option should always be set to `no`. The only exception is if you will be exporting
 	hundreds or thousands of items and you want to speed up the export process. This would be the
@@ -122,7 +174,76 @@ trace
 :	This is a developer option that can be set to `yes` to have AvantHybrid report additional information
 	about its response to a request.		
 
-## How it works	
+## How it works
+
+Here is an explanation of the algorithm PPE performs when you run the `pp_export.exe` program.
+
+-	Make a request to AvantHybrid to get a list of all the hybrid items in the Digital Archive
+	along with the date and time when each was added or last updated.
+-	Read data from the PastPerfect LEXICON table to get a list of Nomenclature terms.
+-	Read data from the PastPerfect MEDIA table to get the file names of files attached to records.
+-	Read data from each of the PastPerfect catalogs (ARCHIVE, LIBRARY, OJBECTS, and PHOTOS). Create
+	a source record for each catalog record and	add it to a list of source records, skipping any 
+	that are rejected.
+	(see the [what gets exported section](#what-gets-exported) above).
+-	Analyze the data, convert Nomenclature terms from inverted to natural order, and report statistics
+	as shown in the next section below.
+-	Loop over the source records one at a time. For each source record:
+	-	If it does not exist in the Digital Archive, mark it to be added.
+	-	If it exists in the Digital Archive, but has been changed in PastPerfect since it was last
+		added or updated in the Digital Archive, mark it to be updated.
+	-	Otherwise mark the source record as unchanged.
+-	Loop over the hybrid items in the Digital Archive. For each hybrid item:
+	-	If it has no corresponding source record, add a placeholder record to the list
+		of source records and mark it to be deleted.		
+-	Loop over the source records. For each that has been marked as add, update or delete,
+	make an HTTP request to AvantHybrid to perform the action. Ignore those marked as unchanged.
+
+If the algorithm gets interrupted before completion, it will pick up where it left off the next
+time the PPE is run. For example, if while exporting 100 records, the computer crashes, or the
+internet goes down, after only 25 records have been imported into the Digital Archive, when the
+system is working and the PPE is run again, it will detect that only 75 records have to be imported
+and import them. This is possible because the PPE algorithm is stateless, meaning that it can always
+figure out what it needs to do by analyzing the data in both PastPerfect and in the Digital Archive
+without needing to know what state it was in when it got interrupted.
+
+## Statistics
+
+Each time PPE runs it reports statistics that you can use to determine what
+improvements you need to make to your PastPerfect data. By copy/pasting the statistics
+into some kind of a log document, you can maintain a record of how your PastPerfect collection
+has grown and/or gotten cleaned up over time.
+
+Sample statistics are show below for an organization having the **_Import ID_** `ahs`.
+
+``` text
+Fetch hybrid items from ahs Digital Archive
+=============================================
+hybrid-fetch 0.26s : 13 hybrid items fetched
+
+Read data from ahs PastPerfect catalogs: C:/pp5/Data/
+=======================================================
+Read 13766 records from LEXICON3.DBF............................ 0.41s
+Read 7704 records from MEDIA.DBF................ 0.69s
+Read 5995 records from ARCHIVES.DBF............ 9.37s
+Read 887 records from LIBRARY.DBF.. 1.28s
+Read 1453 records from OBJECTS.DBF... 1.98s
+Read 6809 records from PHOTOS.DBF........... 10.03s
+Completed in 23.86 seconds
+
+PastPerfect statistics for ahs on 2020-09-15
+==============================================
+Examined 15144 source records
+Found 5602 Object Names that are not in Nomenclature
+Accepted 12458 source records
+Skipped 2686 source records because:
+   301 records have Web Export unchecked
+   2385 records have no Title
+   147 records have no Object Name
+   896 records have no Object ID
+   244 records use a non-unique Object ID:
+
+```
 
 ## Adding a new export column
 
@@ -164,7 +285,7 @@ access to and interpretation of the PastPerfect dBase files is performed by the 
 
 ### export_pp.exe
 
-To allow the exporter to run on a Windows computer where PastPerfect is used, without having to have
+To allow the exporter to run on a Windows 10 computer where PastPerfect is used, without having to have
 Python 3 installed on that same computer, `export_pp.py` gets turned into a standalone `.exe`
 program using [pyinstaller](https://www.pyinstaller.org). The resulting `export_pp.exe`
 file can simply be copied to and run on the Windows computer. It requires no installer and no
@@ -189,6 +310,21 @@ If you don't run the program from a Command Prompt window, it will automatically
 open a Command Prompt window to run in, but the window will close when execution ends
 and you won't be able to see the results.
 
+To make it easy for the PastPerfect administrator to run the PPE, do the following:
+
+-	Create a folder called `ppexport`
+-	Create a folder called `ppexport\DigitalArchive`
+-	Copy `export_pp.exe` and `export_pp.config` to the `DigitalArchive` folder
+-	In the `ppexport` folder, create a batch file named `ExportPastPerfectToDigitalArchive.bat`
+	with the contents similar to those shown below. If the `ppexport` folder is not on a network,
+	change the batch file to CD to the folder instead of using `pushd`
+-	Instruct the administrator to go to the `ppexport` folder and run the batch file	
+
+```
+pushd \\NAS\ppexport\DigitalArchive
+cmd /K export_pp.exe
+popd
+```
 
 
 
