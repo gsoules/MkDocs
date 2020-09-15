@@ -247,17 +247,38 @@ data
 'SITE': 'archive/<hybrid-id>', 'CAT': 'Archives', 'SUBJECTS': 'Gardens;History',
 'DATE': '1934', 'PLACE': '', 'CREATOR': '', 'PUBLISHER': '', 'COLLECTION': '',
 'DESCRIP': 'Yellow bound yearbook program with pencil reading Garden Club of Mt. Desert.'}
-
 ```
 
 ### HTTP actions
 
 The `action` argument of the HTTP request must be one of the following:
 
+-   `hybrid-fetch`
 -   `hybrid-add`
 -   `hybrid-update`
 -   `hybrid-delete`
 -   `hybrid-delete-all`
+
+hybrid-fetch
+:   The `hybrid-fetch` action requests that AvantHybrid return a list of all hybrid items in the Digital
+    Archive. The list is a JSON string containing a key/value pair for every hybrid item. The 
+    key is the hybrid item's Id and the value is the date and time when the hybrid item was added to or
+    last updated in the Digital Archive. The example below shows a partial response to this request.
+
+``` json
+{
+    "status":"OK",
+    "site-id":"xyz",
+    "results":
+        {
+            "B427FDC4-5A2A-42AA-A146-337349578482":"2020-09-15 10:41:47",
+            "4DC3489E-DDB2-40F7-BA97-289319265115":"2020-09-15 13:03:12",
+            "8ACFFAE1-E96A-4A88-935A-425394802117":"2020-09-15 13:03:11",
+            "FEF5148F-B4B4-4261-825A-428752422927":"2020-09-15 13:03:13",
+            ...
+        }
+}
+```
 
 hybrid-add
 :   The `hybrid-add` action requests that AvantHybrid create a new hybrid item for the source record 
@@ -273,10 +294,10 @@ hybrid-delete
 
 hybrid-delete-all
 :   The `hybrid-delete-all` action requests that AvantHybrid delete *every* hybrid item from the Digital Archive.
+    It will also delete any files attached to those items and remove any relationships for those items.
 
-    **Use this action with caution**. The only times you might use it are if you no longer want records from
-    another database to appear in the Digital Archive, or if you have changed which columns are being imported
-    and you want to delete all the old hybrid items and import all of them again.
+    **Use this action with caution**. The only time you should use it are if you no longer want records from
+    another database to appear in the Digital Archive.
 
     **Important:** The delete all action is performed as a [bulk import](#bulk-import) whether or not
     `bulk` is passed in the `options` argument. As such, you must
@@ -311,9 +332,10 @@ If AvantHybrid accepted the request, the value of `status` will be `OK` and the 
 argument passed to the request. For security purposes, the caller should verify that the IDs match. A `status` other than
 `OK` will indicate why the request was rejected (for example, an invalid ID, password, or action).
 
-The `results` value for an accepted request is simply an informative message indicating what action
+The `results` value for an accepted request is usually just an informative message indicating what action
 AvantHybrid performed. If `trace` was passed to the request in the `options` argument, the result may
-contain additional information of interest to developers.
+contain additional information of interest to developers. The exception is the `hyrbrid-fetch` request
+which returns a JSON string of hybrid items as the result.
 
 ### Bulk import
 
