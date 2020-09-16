@@ -6,13 +6,16 @@ The AvantHybrid plugin provides support for Digital Archive items that originate
 in, another collection management program, such as PastPerfect, but are displayed by, and searchable from,
 the Digital Archive. They are called *hybrid* items because they are formed from two difference sources of data.
 
-AvantLogic developed this plugin, along with the [PastPerfect Exporter](/technology/pastperfect-exporter/)
-to provide a way for organizations who use PastPerfect, to share their collections
-using the Digital Archive while continuing to perform collection management using PastPerfect. However, 
-*the AvantHybrid plugin has no knowledge of PastPerfect or the format of its data*. AvantHybrid will work with
-data from any source database as long as its data conforms to the [data format](#data-format) described later.
+AvantLogic developed this plugin, along with the [PastPerfect Exporter](/technology/pastperfect-exporter/),
+to provide a way for organizations that use PastPerfect, to share their collections
+using the Digital Archive while continuing to perform collection management using PastPerfect.
 
+---
 
+!!! note ""
+    AvantHybrid will work with data from any source database as long as the source records sent to
+    AvantHybrid conform to the [data format](#data-format) described later. The plugin has no knowledge
+    of how PastPerfect works or how it stores its data.
 
 ---
 
@@ -30,7 +33,7 @@ Source record
 :   A source record is a **source database** record which has a corresponding **hybrid item** in the Digital Archive.
     The word "record" is a database term referring to a collection of fields about the same item in a database. While the terms *record*
     and *item* are synonymous, this AvantHybrid documentation uses *record* as a way to distinguish data stored in a
-    **source database** from a **hyrbid item**'s data stored in the Digital Archive.
+    **source database** from a **hyrbid item**'s metadata stored in the Digital Archive.
 
 Source database software
 :   Source database software refers to a computer program that is used to add, edit, and delete records in
@@ -46,15 +49,16 @@ Image server
 
 The AvantHybrid plugin:
 
--   **[Imports data](#data-import)** that has been exported from a source database. The import feature:
+-   **[Imports data](#data-import)** that is sent to it via
+    [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) requests. The import feature:
     -   Creates new hybrid items for new source records added to the source database
     -   Updates hybrid items whose source records have changed in the source database
     -   Deletes hybrid items that no longer exist in the source database
 -   **Displays hybrid items** in the Digital Archive by displaying an item's:
     -   Metadata which AvantHybrid imported from the source database
     -   Images located on the source database software's image server
--   **Lets you attach files** (such as a PDF or a zoomable image) hybrid items
--   **Lets you add relationships** to, hybrid items
+-   **Lets you attach files** (such as a PDF or a zoomable image) to hybrid items
+-   **Lets you add relationships** to hybrid items
 
 > Example
 
@@ -67,8 +71,9 @@ When you add a new source record and image in PastPerfect:
     -   Stores the record's image on the local PastPerfect desktop computer or network
 -   When you run PastPerfect's Web Publishing Wizard, PastPerfect uploads the image to the
     Amazon S3 image server used by PastPerfect Online
--   When you run the [PastPerfect Exporter](/technology/pastperfect-exporter/) to import data
+-   When you run the [PastPerfect Exporter](/technology/pastperfect-exporter/) (PPE) to import data
     into the Digital Archive, AvantHybrid:
+    -   Responds to the `add` request sent to AvantHybrid from PPE via HTTP
     -   Creates a new hybrid item corresponding to the new PastPerfect source record
     -   Copies the source record's metadata to the Digital Archive
     -   Records the URLs for the source record's image(s), but does not copy the image files
@@ -76,8 +81,8 @@ When you add a new source record and image in PastPerfect:
 -   When you view the hybrid item in the Digital Archive, the AvantHybrid plugin:
     -   Displays the hybrid item's metadata from the Digital Archive
     -   Makes a request to the Amazon S3 image server to display the hybrid item's images
--   When you later edit the source record's metadata in PastPerfect and then run the
-    PastPerfect Exporter, AvantHybrid will *completely replace*, not merge,
+-   When you later edit the source record's metadata in PastPerfect and then run PPE again,
+    AvantHybrid *completely replaces*, not merges,
     the hybrid item's metadata with the data from the source record.
 ---
 
@@ -87,69 +92,72 @@ When you add a new source record and image in PastPerfect:
     record completely replaces existing hybrid metadata. As such, if you were to edit the hybrid item
     in the Digital Archive, a subsequent import of the data for that item would clobber your changes.
 
-    After changing records in PastPerfect, or adding images to records, be sure to run PastPerfect's
+    After making any changes to records in PastPerfect, or adding images to records, be sure to run PastPerfect's
     Web Publishing utility to synchronize your local PastPerfect data and images with PastPerfect Online.
     If you don't do this, the data and images exported by the PastPerfect Exporter into the Digital Archive
     will become out of sync with the data and images on PastPerfect Online.
 
 ## Configuration options
 AvantHybrid has these configuration options. Once they are properly set for your installation,
-you'll probably never need to update them again.
+you'll probably never need to update them again. A screenshot showing all the options appears later.
 
 Image URL
 :   Use this option to specify the base URL for hybrid images and thumbnails. AvantHybrid will
-    append the values of the `<image>` and `<thumb>` columns to form the URL for an image.
+    append the values of each source record's `<image>` and `<thumb>` columns to form the URL for an image.
 
 Site URL
 :   Use this option to specify the base URL for hybrid records. This option is only required
     if the **_Site Element_** option is specified. AvantHybrid will
-    append the value of the `<site>` column to form the URL for a source record's online webpage.
+    append the value of each source records's `<site>` column to form the URL for a source record's online webpage.
 
 Site Element
 :   Use this option to specify the name of the Omeka element used to display
     a link to the webpage for a source record.  If this option is used, the **_Site URL_**
-    option must be specified. The element should be specified in the
+    option must be specified. The element's name should be specified in the
     [External Link option](/plugins/avantelements/#external-link-option)
-    of the AvantElements plugin as shown in the screenshot below taken from the AvantElements configuration page.
+    of the AvantElements plugin as shown in the screenshot below taken from the AvantElements
+    configuration page. In the screenshot, the element's name is `PastPerfect`.
 
 ![AvantHybrid configuration page](avanthybrid-2.jpg)
 
 Import ID
-:   This option specifies a three to six character site ID that must be passed when making a remote
-    request to AvantHybrid to import source records.
+:   This option specifies a three to six character site ID that must be passed when making
+    an HTTP request to AvantHybrid to import a source record.
 
 Import Password
-:   This option specifies an eight character password that must be passed when making a remote
-    request to AvantHybrid to import source records.
+:   This option specifies an eight character password that must be passed when making
+    an HTTP request to AvantHybrid to import a source record.
 
 Column Mapping
-:   Use this option to associate source record columns with hybrid item element properties and
-    Omeka element names. The option requires that *all* of the following properties be mapped:
+:   Use this option to associate source record columns with hybrid item element properties
+    (shown in angle brackets) and
+    with Omeka element names. The option requires that *all* of the following properties be mapped:
 
     -   `<hybrid-id>` is an identifier that uniquely identifies a source record in the source database
     -   `<image>` forms the URL for the source record's image when appended to **_Image URL_**
     -   `<thumb>` forms the URL for the source record's thumbnail when appended to **_Image URL_**
-    -   `<public>` is a value of '1' if the hybrid item should be public
+    -   `<public>` is a value of `1` if the hybrid item should be public
     -   `<site>` forms a link to the source record's webpage when appended to **_Site URL_**
 
     The mappings for these properties are highlighted in yellow in the screenshot that follows.
 
 Use Common Vocabulary
 :   Checking this option will cause AvantHybrid to attempt to convert **_Type_** and **_Subject_** values from
-    each source record to [Common Vocabulary](/archivist/common-vocabulary/) terms. If the source record value
+    each source record to [Common Vocabulary](/archivist/common-vocabulary/) terms. If the source record's
+    **_Type_** or **_Subject_** value
     matches a [Common Vocabulary leaf](/technology/common-vocabulary-translator/#leaf), AvantHybrid will change
     the value  to the corresponding Common Vocabulary term. For example, it will automatically change , the
     source record Type `Yearbook` to `Publication, Yearbook`. If no match is found, AvantHybrid will prepend `Other, `
-    to the value. For this to work, source leaf values must be in Nomenclature  *natural order*
-    (the [PastPerfect Exporter](/technology/pastperfect-exporter/) automatically convert's PastPerfect's
-    inverted order to natural order).
+    to the value to indicate that it's not a Common Vocabulary term. For this to work, source leaf values must
+    be in Nomenclature  *natural order* (the PastPerfect Exporter automatically
+    [convert's PastPerfect's inverted order to natural order](/technology/pastperfect-exporter/#how-it-works)).
 
 Delete Tables
 :   WARNING: Checking this option will cause all of these configuration options, and all information about
     hybrid items, to be permanently deleted if you uninstall this plugin.
 
 Here is a screenshot showing all of the AvantHybrid configuration options.
-The yellow highlighter points out required Column Mapping properties
+The yellow highlighter points out required Column Mapping properties.
 
 ![AvantHybrid configuration page](avanthybrid-1.jpg)
 
@@ -185,6 +193,9 @@ This section describes the format of the data that columns in source records mus
      
     Example: `archive/<hybrid-id>`
     
+    For this example, `<hybrid-id>` will get replaced so that the value of `<site>` becomes something like
+    `archive/B427FDC4-5A2A-42AA-A146-337349578482`.
+
     The link might not be valid if the item is private since private items may not have a source record web page.
 
 Element names
@@ -194,10 +205,10 @@ Element names
 
 ## Data import
 
-The AvantHybrid plugin imports one source record at a time upon receipt of an HTTP request to add,
-update, or delete the corresponding hybrid item. There is no other mechanism for importing source
-records into the Digital Archive as hybrid items. The HTTP requests are made by a program such as
-the [PastPerfect Exporter](/technology/pastperfect-exporter/).
+The AvantHybrid plugin imports one source record for each HTTP request it receives to add,
+update, or delete the corresponding hybrid item. The HTTP requests are made by a program such as
+the [PastPerfect Exporter](/technology/pastperfect-exporter/). There is no other mechanism for
+importing source records into the Digital Archive as hybrid items.
 
 ### HTTP requests
 
@@ -232,7 +243,7 @@ options
     -   `bulk`
     -   `trace`
 
-    The `trace` option is for developers how want to see information about how AvantHybrid processed the request.
+    The `trace` option is for developers who want to see information about how AvantHybrid processed the request.
 
     The `bulk` option is explained later in the Bulk import section.
 
@@ -312,7 +323,7 @@ a GET request passing the POST arguments as query string parameters as shown in 
 
 `http://localhost/omeka/avant/remote?id=ahs&password=aQ75RkG9&action=hybrid-add&options=trace&debug`
 
-The `debug` argument is used to make the response appear in the browser as plain text instead of as JSON.
+The `debug` argument makes the response appear in the browser as plain text instead of as JSON.
 
 ### Request response
 
@@ -349,7 +360,7 @@ made, **you must** [rebuild the site's Elasticsearch indexes](/administrator/rei
 
 As this documentation has explained, AvantHybrid only imports one source record at a time. It has no
 knowledge of the source database or what source records need to be added, updated, or deleted in the
-Digital Archive. Correct synchronization, via HTTP requests to AvantHybrid, between the source database
+Digital Archive. Correct synchronization between the source database
 and the Digital Archive is entirely the responsibility of the program making the HTTP requests. To
 learn more, read about the [PastPerfect Exporter](/technology/pastperfect-exporter/).
 

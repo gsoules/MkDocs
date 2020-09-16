@@ -44,9 +44,12 @@ The PPE rejects any records where:
 
 The PPE exports these pseudo columns:
 
--	IMAGE as a semicolon separated list of the record's image file names
--	THUMB as a semicolon separated list of `IMAGE` values` prefixed by their PPO folder number
--	SITE as the PPO folder containing the source record
+-	IMAGE as a semicolon separated list of the record's image file names prefixed by their
+	PastPerfect Online (PPO) folder number, for example `008/00105612161.jpg`
+-	THUMB as a semicolon separated list of the record's thumbnail file names prefixed by
+	their PPO folder number	and their PPO thumbnails folder name, for example  
+	`008/thumbs/00105612161.jpg`
+-	SITE as the PPO folder containing the source record, for example `archive/<hybrid-id>`
 
 The PPE Exports other columns as specified by the `fields` config option.
 
@@ -147,8 +150,11 @@ catalog
 	good for one catalog before proceeding with another.
 
 details
-:	Set the `details` option to `yes` only if you want to see additional statistics. Currently,
-	the only additional statistics is a listing of non-unique OBJECTID values.
+:	Set the `details` option to `yes` if you want to see additional statistics:
+
+	-	OBJECTIDs for records with no Title
+	-	OBJECTIDs for records with no OBJNAME
+	-	OBJECTIDs for records with non-unique OBJECTID (count appears in parentheses) 
 
 dryrun
 :	Set the `dryrun` option to `yes` when you want to see what actions PPE will take, but without
@@ -171,8 +177,8 @@ limit
 	PastPerfect records.
 
 private
-:	The `private` option controls whether PastPerfect records that are not set to be exported to
-	PastPerfect Online will get exported to the Digital Archive. Set the option to `yes` to export
+:	The `private` option controls whether PastPerfect records that have their **_Web Export_**
+	option *unchecked* should to be exported to the Digital Archive. Set the option to `yes` to export
 	them as non-public Digital Archive hybrid items or set it to `no` to skip them during export.
 
 trace
@@ -207,16 +213,16 @@ Here is an explanation of the algorithm PPE performs when you run the `pp_export
 	action. Ignore those marked as unchanged.
 
 If the algorithm gets interrupted before completion, it will pick up where it left off the next
-time PPE is run. For example, if while exporting 100 records, the computer crashes, or the
-internet goes down, after only 25 records have been imported into the Digital Archive, when the
-system is working and the PPE is run again, it will detect that only 75 records have to be imported
+time PPE is run. For example, suppose that while exporting 100 records, the computer crashes, or the
+internet goes down, after only 25 records have been imported into the Digital Archive. When the
+system is working and PPE is run again, PPE will detect that only 75 records have to be imported
 and import them. This is possible because the PPE algorithm is stateless, meaning that it can always
 figure out what it needs to do by analyzing the data in both PastPerfect and in the Digital Archive
 without needing to know what state it was in when it got interrupted.
 
 ## Statistics
 
-Each time PPE runs it reports statistics that you can use to determine what
+Each time PPE runs, it reports statistics that you can use to determine what
 improvements you need to make to your PastPerfect data. By copy/pasting the statistics
 into some kind of a log document, you can maintain a record of how your PastPerfect collection
 has grown and/or gotten cleaned up over time.
@@ -224,10 +230,6 @@ has grown and/or gotten cleaned up over time.
 Sample statistics are show below for an organization having the **_Import ID_** `ahs`.
 
 ``` text
-Fetch hybrid items from ahs Digital Archive
-=============================================
-hybrid-fetch 0.26s : 13 hybrid items fetched
-
 Read data from ahs PastPerfect catalogs: C:/pp5/Data/
 =======================================================
 Read 13766 records from LEXICON3.DBF............................ 0.41s
@@ -277,7 +279,7 @@ indexes after the updates finish as explained for the `bulk` option.
 
 ## PastPerfect Exporter software
 
-The PPE is implemented as a Python program that was developed by George Soules of AvantLogic Corporation.
+The PPE is implemented as a Python 3 program that was developed by George Soules of AvantLogic Corporation.
 It was written for organizations who want to continue using PastPerfect as their primary collections
 management software, but also want to share their collections online with other other organizations
 that use the Digital Archive for online sharing. It is not intended for use as a PastPerfect migration
@@ -287,9 +289,10 @@ The source code is available upon request as open source for use in non-commerci
 
 The program consists of a single Python script named `export_pp.py` that imports a Python package
 named `avant_dbfread` which is a near-exact copy of Ole Martin Bjorndalen's
-[dbfread](https://github.com/olemb/dbfread). The only modification is to the `FieldParser.decode_text`
+[dbfread](https://github.com/olemb/dbfread). The only modification to dbread is to the
+`FieldParser.decode_text` method
 so that it handles a `UnicodeDecodeError` exception without terminating processing. All direct
-access to and interpretation of the PastPerfect dBase files is performed by the dbfread logic.
+access to and reading of the PastPerfect dBase files is performed by the dbfread logic.
 
 ### export_pp.exe
 
@@ -320,12 +323,11 @@ and you won't be able to see the results.
 
 To make it easy for the PastPerfect administrator to run the PPE, do the following:
 
--	Create a folder called `ppexport`
--	Create a folder called `ppexport\DigitalArchive`
+-	Create a folder on the PastPerfect computer called `ppexport`
+-	Create a subfolder called `ppexport\DigitalArchive`
 -	Copy `export_pp.exe` and `export_pp.config` to the `DigitalArchive` folder
 -	In the `ppexport` folder, create a batch file named `ExportPastPerfectToDigitalArchive.bat`
-	with the contents similar to those shown below. If the `ppexport` folder is not on a network,
-	change the batch file to CD to the folder instead of using `pushd`
+	with contents similar to one of the examples shown below.
 -	Instruct the administrator to go to the `ppexport` folder and run the batch file	
 
 ```
@@ -334,9 +336,29 @@ cmd /K export_pp.exe
 popd
 ```
 
-### Recommendation for a new installation
+```
+CD /D C:\utilities\ppexport\DigitalArchive
+cmd /K export_pp.exe
+```
 
-Here are recommendations for a first-time export of all PastPerfect records into the Digital Archive.
+### First-time export
+
+Here are recommendations for how to approach a first-time export of all PastPerfect records into the Digital Archive.
+
+-	Set the `bulk` option to `yes`
+-	Set the `limit` option to `100` 
+-	Set `catalog` to just one catalog
+-	Run PPE
+-	Rebuild the Digital Archive Elasticsearch indexes
+-	Verify that everything looks good
+-	Increase the limit or set it to `0`
+-	Repeat the steps above until all the catalogs have been exported
+-	Set `bulk` to `no`
+
+---
+
+
+  
 
 
 
