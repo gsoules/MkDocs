@@ -2,7 +2,7 @@
 
 The Digital Archive supports zoomable images using the web-based viewer 
 [OpenSeadragon](https://openseadragon.github.io/). It expects tile sources created by the 
-[Zoomify](https://openseadragon.github.io/examples/tilesource-zoomify/) desktop program.
+[Zoomify](http://www.zoomify.com/) desktop program.
 
 To make an image zoomable is simply a matter of using Zoomify to create the tiles from the image’s 
 high resolution file, and then uploading a folder containing the tiles to the appropriate location 
@@ -12,7 +12,13 @@ it automatically displays the image using the OpenSeadragon viewer.
 ---
 
 !!! note ""
-    You must be able to upload files to your Digital Archive webserver to perform these steps.
+    **To create zoomable images**:
+
+    -   You must know how to configure and use an FTP program to upload files to your Digital Archive webserver.
+        If you are not comfortable with FTP, seek help from someone who is.
+    -   Request FTP login credentials from your Digital Archive developer.
+    -   Get a copy of the [Zoomify](http://www.zoomify.com/compare.htm) desktop program
+        to use on your Windows or Mac computer.
 
 ## Create tiles
 -   Choose the high resolution file you want to make zoomable.  
@@ -20,8 +26,7 @@ it automatically displays the image using the OpenSeadragon viewer.
 -   Copy the high resolution image to a temporary location such as a folder on your desktop.
     Do not use a Dropbox folder because doing so will cause Dropbox to start syncing the generated
     tiles to the Dropbox cloud.
--   Run the `Zoomify Unlimited Converter.exe` program which is located in the  
-    `Digital Archive SWHPL\Zoomify` Dropbox folder.
+-   Run the Zoomify desktop program
 -   Set:
     -	**_Output Path_**: `Same as input file`
     -	**_Output Format_**: `Zoomify folders`
