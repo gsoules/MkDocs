@@ -6,29 +6,23 @@
 
 To update the `plugins` and `themes` folders on all Digital Archive sites:
 
--   Go to cPanel for `digitalarchive.us` and choose `Terminal`
+-   Open a terminal window for `digitalarchive.us` using *one* of these methods:
+    -   Go to cPanel for `digitalarchive.us` and choose `Terminal`
+    -   Use PUTTY
 -   `cd bin`
--   `sudo ./sync-digitalarchive`
+
+-   Choose one of these commands:
+```
+$ sudo ./sync-digitalarchive <site-name> 
+$ sudo ./sync-digitalarchive ALL 
+$ sudo ./sync-digitalarchive <site-name> installation
+```
 -   Type the password for user `daus`
 -   Type an option:
     -   `y` to perform a dry run
     -   `Y` to perform the sync
     -   `n` or any other character to exit
 -   Press `Enter`
-
-![run sync-digitalarchive](site-maintenance-1.jpg)
-
-The output is written to `log.txt`
-
-### Sync site
-
-To sync `themes/` and `plugins/`
-
-```
-$ sudo ./sync-digitalarchive <site-name> 
-$ sudo ./sync-digitalarchive ALL 
-$ sudo ./sync-digitalarchive <site-name> installation
-```
 
 Adding the `installation` argument will also sync:
 ```
@@ -39,6 +33,28 @@ error_log
 admin/
 application/
 install/
+```
+
+The output is written to `bin/logs/sync-HH-MM-SS.log`
+
+## Server requests
+
+From a terminal:
+
+-   Choose one of these commands:
+
+```
+remote-request <request> <site-name>
+remote-request <request> ALL
+```
+
+-   Requests:
+```
+garbage-collection
+ping
+es-health-check
+vocab-update
+vocab-rebuild
 ```
 
 ## Common vocabulary updates

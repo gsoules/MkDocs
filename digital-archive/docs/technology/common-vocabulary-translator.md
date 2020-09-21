@@ -202,81 +202,79 @@ that the CVT follows.
 
 Nomenclature Category                                   | Common Vocabulary
 :---                                                    | :---
-Category 01: Built Environment Objects                  | All translate to `Object` except for terms with Nomenclature Class `Structures` which translates to `Structures`
+Category 01: Built Environment Objects                  | All translate to `Object` except for terms with Nomenclature Class `Structures` which translates to Subject `Structures` and to Type `Object, Structures`
 Category 02: Furnishings                                | All translate to `Object`
 Category 03: Personal Objects                           | All translate to `Object`
 Category 04: Tools & Equipment for Materials            | All translate to `Object`
 Category 05: Tools & Equipment for Science & Technology | All translate to `Object`
 Category 06: Tools & Equipment for Communication        | All translate to `Object` except `Picture Postcard` which translates to `Image`
-Category 07: Distribution & Transportation Objects      | All translate to either `Object`, `Transportation`, or `Vessel` depending on whether they are some kind of transport vehicle like a car or boat, or a component like a tire or a sail.
+Category 07: Distribution & Transportation Objects      | All translate to `Object` except for transport vehicles like cars, boats, and trains which are translated to Subject `Transportation` or `Vessels` and to Type `Object, Transportation` or `Object, Vessels`
 Category 08: Communication Objects                      | Most translate to `Document`, `Image`, `Map` or `Publication` unless they are none of those, in which case they translate to `Object`.
 Category 09: Recreational Objects                       | All translate to `Object`
 Category 10: Unclassifiable Objects                     | All translate to `Object`
 
-Except for `Object`, `Structures`, `Transportation` and `Vessels`, the table above does not
-translate any Nomenclature terms to the other subjects listed in the previous table such
-as `Businesses`, `Events`, and `Nature`. That's because none of the other subjects classify
-human-made subjects and therefore there are no corresponding Nomenclature terms.
+Note: Although vessels are a form of transportation, `Vessels` is elevated to a top level Subject term
+because boats and ships are so prominent in the collections of coastal communities.
 
-While `Vessel` is a form of `Transportation`, it is elevated to be a top level term
-because boats and ships are so prominent in the collections of coastal communities like Mount Desert Island.
 ### Rationale for how Nomenclature terms get translated
 
-There are many ways that Nomenclature could be morphed into the Common Vocabulary.  
-Here is the reasoning behind the way the CVT does it.
+There are many ways that Nomenclature *could* be morphed into a Common Vocabulary.  
+Here is an explanation of, and the reasoning behind, the way the CVT does it.
 
-Terms for museum-size objects
-:   Nomenclature terms for smallish physical objects, like those that might be part of a museum's
-    collection, are translated to *both* the **_Type_** vocabulary *and* to the **_Subject_** vocabulary.
+#### Type vocabulary
+
+*All* Nomenclature terms are translated to the **_Type_** vocabulary. In other words, every term
+in Nomenclature can be found in the **_Type_** vocabulary.
     
-    Terms for museum-sized objects become both **_Type_** *and* **_Subject_** terms because collections
-    generally have either an actual object such as a hat, or they have a photograph of, or documents about,
-    an object such as a person. For the hat, the item's **_Type_** would be `Object, Clothing, Hat`
-    with no **_Subject_**. For a photograph of a hat factory, the item's **_Type_** would be
-    `Image, Photograph` and the **_Subject_** would be `Structures, Factory`.
-    
-    The idea is that *most object terms can be used for either* **_Type_** or the **_Subject_**
-    depending on whether the item is *part* of the collection (**_Type_**)
-    or if the item in the collection depicts, or is about, the item (**_Subject_**).
+The top-level terms `Structures`, `Transportation`, and `Vessels` are included in the **_Type_** vocabulary as  
+sub-types of `Object` (e.g. `Object, Structures`) so that they are not top-level **_Type_** terms which
+would be rarely used in most collections. They are however top-level terms in the **_Subject_** vocabulary.
+For instance, most collections won't have any items of type `Transportation, Automobile`, but many will
+have photograph or document items having the **_Subject_** `Transportation, Automobile`. If a collection does
+contain a car, the item's **_Type_** would be `Object, Transportation, Automobile`.
 
-Terms for huge objects    
-:   Nomenclature terms for very large physical objects like houses, boats, and bridges,
-    are translated *only* to the **_Subject_** vocabulary; however, the CVT adds two special
-    terms to the **_Type_** vocabulary, `Object, Structure` and `Object, Transportation`,
-    to use as the **_Type_** for huge objects.
+#### Subject vocabulary
 
-    Terms for large physical objects like bridges are translated to the **_Subject_** vocabulary
-    and *not* added to the **_Subject_** vocabulary as they are for museum-size objects, because
-    museums rarely have these kinds of objects in their collections and so there's no sense in having all
-    the terms for those objects cluttering up the **_Type_** vocabulary.
-    
-    In a case where a collection does actually contain
-    something like a church building, the church item's **_Type_** can be set to the special
-    **_Type_**  `Object, Structure` and its **_Subject_** can be set to `Structures, Ceremonial, Church`.
+Many, but not all Nomenclature terms *are* also translated to the **_Subject_** vocabulary.
 
-    If a collection contains many large objects, such as cars, the organization can use the  
-    [Vocabulary Editor](/archivist/vocabulary-editor) to add top-level **_Type_** terms for various kinds of
-    automobiles, and map them to `Object, Transportation`.
+**Translated**:
+Nomenclature terms for physical, three dimensional objects, are translated to the **_Subject_** vocabulary.
 
-Other terms
-:   Most other Nomenclature terms for objects that are mostly two dimensional, are translated *only* to the
-    **_Type_** vocabulary as `Document`, `Image`, `Map`, or `Publication`.
+**Not translated**:
+Objects that are more or less two dimensional are *not* translated to the **_Subject_** vocabulary. They
+are translated to the **_Type_** vocabulary as `Document`, `Image`, `Map`, or `Publication`.
 
-    Terms for things like people, animals, businesses, organizations, and events that do not exist in
-    Nomenclature, are added to the **_Subject_** vocabulary.
+#### Rationale
 
-    Terms for the names of towns and villages are added to the **_Place_** vocabulary.
+Terms for physical objects become both **_Type_** *and* **_Subject_** terms because collections
+generally have either an actual object such as a hat, or they have a photograph of, or documents about,
+an object such as a picture of a person wearing a hat.
 
-    The term `Reference` is added to the **_Type_** vocabulary.
-    [Learn about Reference Items](/relationships/reference-items).
+For an actual hat that's in the collection,
+the item's **_Type_** would be `Object, Clothing, Hat` with no **_Subject_**. For a photograph
+of someone wearing a hat, the item's **_Type_** would be
+`Image, Photograph` and the **_Subject_**s would be `People` and `Object, Clothing, Hat`.
 
-    The term `Set` is added to the **_Type_** vocabulary.
-    [Learn about Item Sets](/relationships/kinds-of-relationships/#item-sets).
+The idea is that terms used to classify a physical object can usually be used for either **_Type_**
+*or*  **_Subject_** (but not both) depending on whether it's a physical item is in the collection (**_Type_**)
+or if the item in the collection *depicts*, or *is about*, the item (**_Subject_**).
 
-    To see exactly what non-Nomenclature terms the CVT adds to the Common Vocabulary,
-    you can look at the
-    [additional terms file](https://github.com/gsoules/AvantCommonVocabulary/blob/master/data/input-additional-terms.csv)
-    which tells the CVT what terms to add. 
+#### Terms not in Nomenclature
+Terms for things like people, animals, businesses, organizations, and events that do not exist in
+Nomenclature, have been added to the **_Subject_** vocabulary.
+
+Terms for the names of towns and villages are in the **_Place_** vocabulary.
+ 
+The term `Reference` has been added to the **_Type_** vocabulary.
+[Learn about Reference Items](/relationships/reference-items).
+
+The term `Set` has been  added to the **_Type_** vocabulary.
+[Learn about Item Sets](/relationships/kinds-of-relationships/#item-sets).
+
+To see exactly what non-Nomenclature terms the CVT adds to the Common Vocabulary,
+you can look at the
+[additional terms file](https://github.com/gsoules/AvantCommonVocabulary/blob/master/data/input-additional-terms.csv)
+which tells the CVT what terms to add. 
 
 ## Translation process
 
