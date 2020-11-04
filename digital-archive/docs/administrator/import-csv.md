@@ -26,7 +26,7 @@ You can also import files to be attached to an imported item.
     **UTF-8 encoding**
 
     AvantImport will only import a CSV file that has [UTF-8](https://en.wikipedia.org/wiki/UTF-8) encoding.
-    This is to ensure that text containing non-ASCII characters, like the the `é` in `Hébert` will import
+    This is to ensure that text containing non-ASCII characters, like the `é` in `Hébert` will import
     without triggering an error when saved by Omeka to the MySQL database.
 
     When saving an Excel file as CSV, choose the `CSV UTF-8` option as shown below.

@@ -33,7 +33,7 @@ from other applications on the web server. For example, some installations use a
 folder and a `wp` folder side-by-side where the `wp` folder contains a WordPress application
 for content related to the Digital Archive collection. If would be very messy, and
 make application updates difficult, if the Digital Archive and WordPress files were
-together in the the same `public_html`.
+together in the same `public_html`.
 
 !!! warning ""
     **Do not** create the `digitalarchive` folder at this time.  
@@ -1139,7 +1139,7 @@ Follow these steps to create the folder used to store the tiles for zoomable ima
 -   Create these two folders:
     -   `public_html/digitalarchive/files/zoom`
     -   `public_html/digitalarchive/files/zoom/images`
--   Copy the the OpenSeadragon icons from `public_html/digitalarchive/plugins/AvantZoom/images` to
+-   Copy the OpenSeadragon icons from `public_html/digitalarchive/plugins/AvantZoom/images` to
     `public_html/digitalarchive/files/zoom/images`    
 
 ### Create limited FTP account

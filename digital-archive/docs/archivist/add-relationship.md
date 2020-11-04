@@ -108,7 +108,7 @@ You've now gathered all the items that are related to Mary. Now it's time to add
 
     To get to the editor from the **_Recently Viewed Items_** page:
 
-    -   Click the the **_Relationships_** link for Mary's Reference item (see the pointing finger at
+    -   Click the **_Relationships_** link for Mary's Reference item (see the pointing finger at
         the bottom of the screenshot above).
     -   The **_Relationships Editor_** displays as shown in the screenshot below.
 

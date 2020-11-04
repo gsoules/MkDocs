@@ -197,7 +197,7 @@ are meeting the cataloging needs of many organizations.
 
 The table below gives a general sense of which Nomenclature Categories translate to which
 Common Vocabulary top level terms. To see how specific Classes, Subclasses, and
-individual terms translate, you can look at the the [translation rules](#translation-rules)
+individual terms translate, you can look at the [translation rules](#translation-rules)
 that the CVT follows.
 
 Nomenclature Category                                   | Common Vocabulary

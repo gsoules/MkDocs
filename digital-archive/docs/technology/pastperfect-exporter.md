@@ -263,7 +263,7 @@ want to add a column, follow these steps.
 -	Add an element for the column in Omeka
 -	Add the element to the [Column Mapping](plugins/avanthybrid/#configuration-options)
 	option in the AvantHybrid configuration
--	Add the column to the the `fields` option in the `pp_export.config`
+-	Add the column to the `fields` option in the `pp_export.config`
 -	Set the `force` configuration option to `yes`
 -	Set the `bulk` configuration option to `yes`
 -	Run the PPE
