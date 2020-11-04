@@ -110,8 +110,40 @@ See [this post](https://gist.github.com/nepsilon/156387acf9e1e72d48fa35c4fabef0b
 
 ## Untrack files already in a repository
 
-See [this article](http://www.codeblocq.com/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/)
-and [this one](https://alvinalexander.com/git/git-rm-file-git-repository-dont-track-accidentally-added)
-on how to untrack files that have already
-been added to a repositiory.
+From [Jonathan Klughertz](http://www.codeblocq.com/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/)
+
+If you have added/committed some files to your git repository and you then add them to your `.gitignore`, the files will still be present in your repository. Follow these steps to get rid of them and to ignore them in the future.
+
+**Step 1: Commit all your changes**
+
+Before proceeding, make sure all your changes are committed, including your updated `.gitignore` file.
+
+**Step 2: Remove everything from the repository**
+
+To clear your repo, use:
+
+```
+git rm -r --cached .
+```
+
+- `rm` is the remove command
+- `-r` will allow recursive removal
+- `–-cached` will only remove files from the index. Your files will still be there.
+- `.` indicates that all files will be untracked. You can untrack a specific file with `git rm --cached foo.txt`
+
+The `rm` command can be unforgiving. If you wish to try what it does beforehand, add the `-n` or `--dry-run` flag to test things out.
+
+**Step 3: Re add everything**
+
+```
+git add .
+```
+
+**Step 4: Commit**
+
+```
+git commit -m "A comment about what you just did"
+```
+
+Your repository is clean. Push the changes to your remote to verify that the changes are effective there as well.
 
