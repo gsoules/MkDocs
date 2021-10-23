@@ -46,6 +46,8 @@ From a terminal:
 ```
 remote-request <request> <site-name>
 remote-request <request> ALL
+
+[daus@avantlogic bin]$ ./nightly-cron-job
 ```
 
 -   Requests:
@@ -83,10 +85,43 @@ http://localhost/omeka/avant/remote?action=refresh-common&password=ABC123
 ```
 
 ## Omeka updates
+Update a Digital Archive site to use a new release of Omeka. Updating involves copying Omeka core files from the release to the site folder. Since the Digital Archive does not modify any Omeka core files, these is no need to review changes to those files. 
 
-The Omeka core files are updated by the Omeka team a few times each year.
+### Download the new release
+- View the new release of Omeka Classic on [omeka.org](https://omeka.org/classic/download/).
+- Download the latest release from the [releases page](https://github.com/omeka/Omeka/releases) on GidHub.
+    - The release file will have a name like `omeka-3.0.1.zip`.
+- Put the zip file on the desktop or other folder that is not deeply nested. In a deeply nested folder, some files will get an unzip error because their resulting file path is too long.    
+- Unzip the release into a work folder named as the release e.g. `omeka-3.0.1`.
+- Move the work folder to the `Omeka Releases` folder for safe keeping.
+- Delete the zip file.
 
-*Instructions to be added here for applying Omeka updates*
+### Update the local development site
+
+!!! note ""
+    Before proceeding, run Omeka on the development site to verify it runs properly with the *current release*. There should be no issues, but if, for example, something in the environment changed that created a problem, find and fix it first so you won't think it's related to the new release.
+
+- Make a backup copy of the current release folder **except for the `files` folder** which is huge.
+- Use [Beyond Compare](https://www.scootersoftware.com/) or similar diff tool to compare the current and new release folders.
+- Copy (**do not Mirror**) the following **core files** to `C:\xampp\htdocs\omeka`:
+```
+admin
+application
+install
+plugins/ExhibitBuilder
+plugins/SimplePages
+themes/default
+bootstrap.php
+README.md
+```
+
+![update files](update-1.jpg)
+
+### Verify that the new release works properly
+Normally the site should just come up, though on releases of Omeka prior to 3.0 you were presented with a dialog to update the database. It appears that 3.0 updates the database automatically.
+
+#### Troubleshooting
+Past updates of release Omeka 2.* have always gone smoothly, but 3.0 presented problems. When it first came up it reported a Zend_Controller_Exception and then an InvalidArgumentException. The errors appeared to be triggered by a plugin and by AvantTheme, though later there were no issues with either, so it probably had to do with the interim transition from the old to the new release. The solution was to back out the new release, and with the older version running, deactivate all of the Avant plugins and switch from AvantTheme to the default Omeka theme. After updating the site again with the new release, the errors went away and none reoccurred after switching back to AvantTheme and activating the Avant plugins.
 
 ## Running scripts
 
