@@ -17,7 +17,7 @@ The web host must be an Apache web server that satisfies the
 [system requirements](https://omeka.org/classic/docs/Installation/System_Requirements/)
 for [Omeka Classic](https://omeka.org/classic/). AvantLogic uses
 [Reclaim Hosting](https://reclaimhosting.com/) as its host.
-Learn now to [Create a new Reclaim account](web-host.md#create-a-new-account).
+Learn now to [Create a new Reclaim account](web-host.md#create-a-new-cpanel-account).
 
 **Site name**
 

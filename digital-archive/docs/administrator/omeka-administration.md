@@ -64,9 +64,9 @@ fields, you can learn how to use the [Omeka Bulk Metadata Editor](https://omeka.
     If you are not comfortable with reindexing, don't make bulk changes, or consult with your Digital
     Archive developer.
 
----
-
-!!! note "Note"
+!!! warning "Important"
     If you use the Bulk Editor to change the value of a **_Type_**, **_Subject_**, or **_Place_** field,
-    you should use the **_Vocabulary Editor_** to first rebuild your Site Terms table *before* reindexing.
+    you must use the **_Vocabulary Editor_** to first rebuild your Site Terms table *before* rebuilding
+    Elasticsearch indexes. Instructions for how to rebuild the Site Terms table are in the documentation
+    for [rebuilding indexes](/administrator/reindex/).
 ---

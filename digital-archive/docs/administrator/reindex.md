@@ -57,8 +57,11 @@ the change to both MySQL and the Elasticsearch indexes.
 The synchronization mechanism described above works perfectly until you make changes
 using one of the "back door" methods listed below:
 
--   Update metadata field values using the [Bulk Metadata Editor](/administrator/omeka-administration/#make-bulk-edits)
+-   Update metadata field values using the
+    [Bulk Metadata Editor](/administrator/omeka-administration/#make-bulk-edits)
 -   Bulk edit or delete items using the Omeka **_Browse Items_** page
+-   Import into the Digital Archive from PastPerfect using the
+    [`bulk` option](/plugins/avanthybrid/#bulk-import)
 -   Directly edit your MySQL database to
     [rename an Omeka element](/administrator/omeka-elements/#rename-an-element)
 -   Add or remove an Omeka element        
@@ -80,7 +83,27 @@ the changes were made. There's no harm done if this happens, but it can be confu
 Follow the step below to update your site's private (local) Elasticsearch index and the shared index so
 that both indexes are in sync with your MySQL database.
 
-1 &ndash; Go to the **_Elasticsearch Indexing_** page
+1 &ndash; Rebuild the Site Terms table
+
+:   If you used a "back door" method listed above that changed the value of
+    the vocabulary terms **_Type_**, **_Subject_**, or **_Place_** field in any record, you must
+    rebuild the installation's Site Terms table *before* rebuilding the Elasticsearch indexes.
+    This is necessary so that "back door" changes to vocabulary terms get added to the table.
+
+    **If no vocabulary terms were changed, skip this step.**
+
+    To rebuild the Site Terms table:
+
+	-	Go to the [Vocabulary Editor](/archivist/vocabulary-editor/)
+	-	Click the **_Rebuild Site Terms table_** button
+    -   Wait for the operation to report "Build Completed - Page will reload"
+
+    If you ever see `UNTRACKED` appear in the **_Refine Your Search_** panel, it's probably because
+    **_Type_**, **_Subject_**, or **_Place_** fields were changed using a "back door" method and
+    reindexing was performed *without* first rebuilding the Site Terms table. To get rid of 
+    `UNTRACKED`, perform all of the steps in this section.
+
+2 &ndash; Go to the **_Elasticsearch Indexing_** page
 
 :   Click on **_Elasticsearch_** in the left admin menu to see the page shown below.
 
@@ -91,9 +114,9 @@ that both indexes are in sync with your MySQL database.
 !!! note ""
     In the steps that follow, **do not change** the value of the **_Indexing ID_** field.
 
-2 &ndash; Export all items from Omeka
+3 &ndash; Export all items from Omeka
 
-:   Select the first radio button and then click the **_Start_** button.
+:   Select the first option `Export all items from Omeka` and click the **_Start_** button.
 
     This step exports all of the items from the MySQL database into a form that
     will allow them to be imported into an Elasticsearch index.
@@ -121,15 +144,16 @@ Execution time: 149 seconds
 DONE
 ```
 
-3 &ndash; Import into a new local index
+4 &ndash; Import into a new local index
 :   This step will create a new private (local) index containing the exported items.
 
-    Select the second radio button on the **_Elasticsearch Indexing_** page above and then click the **_Start_** button.
+    Select the second option `Import into new local index` on the **_Elasticsearch Indexing_**
+    page above and click the **_Start_** button.
 
-4 &ndash; Import into existing shared index
+5 &ndash; Import into existing shared index
 :   This step adds the exported items to the shared index.
 
-    Select the fourth radio button and then click the **_Start_** button.
+    Select the third option `Import into existing shared index` and click the **_Start_** button.
 
     The progress for this last step is shown below. Indexing
     is much faster than exporting.

@@ -60,7 +60,7 @@ Follow the steps below to create a new cPanel account. Also see the
 -   Click the `Create a New Account` button
 -   Enter:
     -   **Domain** = *domain name e.g. historytrust.net*
-    -   **Username** = *filled in automatically, but you can change it*
+    -   **Username** = *filled in automatically, change to use same convention as other accounts e.g. htnet*
     -   **Password** & **Re-type Password** *automatically filled in when you:*
         -   Click the `Password Generator` button
         -   Copy the password to a safe place

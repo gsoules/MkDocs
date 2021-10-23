@@ -1,30 +1,85 @@
 # PastPerfect Exporter
 
-The PastPerfect Exporter (PPE) is a software program that exports PastPerfect records from
+The PastPerfect Exporter is a software program that exports PastPerfect records from
 a Windows 10 computer and imports them into the Digital Archive as
 [hybrid items](/plugins/avanthybrid/#avanthybrid).
 
 ---
 
 !!! note ""
-	This documentation is intended for administrators and developers who will set up and maintain
-	the PastPerfect Exporter. It assumes that you have read the documentation for
-	[AvantHybrid](/plugins/avanthybrid/).
-
-	To simply use the PPE, go to the `ppexport` folder on your PastPerfect computer and double-click
-	on the `ExportPastPerfectToDigitalArchive.bat` file. The PPE will run and display progress and
-	[statistics](#statistics) in a window. When PPE is finished, you can close the window. Your PastPerfect
-	data will be synchronized with your Digital Archive.
-
-	**Important**: After changing records in PastPerfect, or adding images to records, be sure to run PastPerfect's
-    Web Publishing utility to synchronize your local PastPerfect data and images with PastPerfect Online.
-    If you don't do this, the data and images exported by PPE into the Digital Archive
-    will become out of sync with the data and images on PastPerfect Online.
+	This documentation is intended for administrators who will use the PastPerfect Exporter, and
+	for developers who will set it up and maintain it. Technical information about the export
+	mechanism is provided in the documentation [AvantHybrid](/plugins/avanthybrid/).
 ---
+
+## Periodic export
+
+You should periodically export changes from your PastPerfect database to the Digital Archive.  
+How frequently you perform an export is up to you. You could export on a schedule such as
+weekly or monthly, or you could export right after making changes.
+
+Changes include:
+
+-	Editing existing records
+-	Attaching or removing record images
+-	Adding new records
+-	Deleting records
+-	Enabling or disabling web export to PastPerfect Online for a record
+
+When you disable web export for a record, the export removes it from the Digital Archive.
+When you enable web export for a record, the export adds it to the Digital Archive.
+
+**The export only modifies the Digital Archive. It makes no changes to your PastPerfect data.**
+
+---
+
+Follow these steps to export your PastPerfect changes to the Digital Archive.
+
+1 &ndash; Run the PastPerfect Web Publishing utility
+:	Before you export to the Digital Archive, you must synchronize your local PastPerfect data
+	and images with your PastPerfect Online website. If you don't do this, the Digital Archive
+	will not be able to display images that you recently added or modified in your PastPerfect
+	desktop installation because those images will not be accessible from PastPerfect Online.
+
+2 &ndash; Open Windows Explorer
+: 	On your PastPerfect PC or network, navigate to the `ppExport` folder. In the example below,
+	the folder is `C:\ppExport`. On a network computer it might be something like `\\NAS\PastPerfect\`.
+	![Windows Explorer](pastperfect-exporter-1.jpg)
+
+3 &ndash; Double-click on `ExportPastPerfectToDigitalArchive`
+:	A Command Window will open as shown below and the export will begin automatically.
+
+![Windows Explorer](pastperfect-exporter-2.jpg)
+
+4 &ndash; Wait for the export to complete
+:	How long the export takes depends on how many records you added, edited, or deleted
+	in PastPerfect since the last export. It may take only a few seconds to export a
+	small number of records or several minutes to export many records.
+
+	If your PC loses power or the internet goes down during the export process, just
+	start again later at step 2. The export will pickup where it left off when
+	it was interrupted.
+
+5 &ndash; Close the Command Window
+:	The export is done when a message like the one below appears at the bottom of the window.
+```
+90 records imported
+Import completed in 89.36 seconds
+```
+:	Close the window by clicking the X in the upper right corner.
+
+6 &ndash; View the exported items
+:	Go to the Digital Archive to view the exported items. 
+
+---
+
+!!! note ""
+	The remainder of the documentation on this page is intended for administrators and developers.  
+	You don't need to read or understand the following sections to simply export your data.
 
 ## What gets exported
 
-The PPE always exports the following columns from PastPerfect's catalog tables:
+The PastPerfect Exporter (PPE) exports the following columns from PastPerfect's catalog tables:
 
 -	PPID
 -	OBJECTID
@@ -51,7 +106,7 @@ The PPE exports these pseudo columns:
 	`008/thumbs/00105612161.jpg`
 -	SITE as the PPO folder containing the source record, for example `archive/<hybrid-id>`
 
-The PPE Exports other columns as specified by the `fields` config option.
+The PPE exports other columns as specified by the `fields` config option.
 
 As example of what the PPE exports is shown below as a JSON string.
 
@@ -89,7 +144,6 @@ url = http://yourdomain/digitalarchive/avant/remote
 
 [admin]
 bulk = no
-catalog = all
 details = no
 dryrun = no
 force = no
@@ -140,14 +194,6 @@ bulk
 	how it works. As noted in that documentation, when you use this option, you'll need to 
 	[rebuild your Digital Archive Elasticsearch indexes](/administrator/reindex) when you are done
 	importing.
-
-catalog
-:	The `catalog` option must be set to either `all` or to one of the PastPerfect catalog names
-	`ARCHIVES`, `LIBRARY`, `OBJECTS`, and `PHOTOS`. Any other value will result in an error.
-
-	The only time you would specify a specific catalog would be if you were doing an initial
-	export and wanted to export the catalogs one at a time to make sure that everything looks
-	good for one catalog before proceeding with another.
 
 details
 :	Set the `details` option to `yes` if you want to see additional statistics:
@@ -271,7 +317,7 @@ want to add a column, follow these steps.
 -	Set the `bulk` configuration option to `no`
 -	[Rebuild your Digital Archive Elasticsearch indexes](/administrator/reindex)
 
-Assuming that `catalogs` is set to `all` and `limit` is set to `0`, the steps above will
+Assuming that `limit` is set to `0`, the steps above will
 update every hybrid item in the Digital Archive to include the new column. Be aware that
 if you have thousands of PastPerfect records, this could take a long time. Also, because
 you'll be using the `bulk` option, you'll need to rebuild your Elasticsearch
@@ -345,17 +391,28 @@ cmd /K export_pp.exe
 
 Here are recommendations for how to approach a first-time export of all PastPerfect records into the Digital Archive.
 
--	Set the `bulk` option to `yes`
--	Set the `limit` option to `100` 
--	Set `catalog` to just one catalog
+-	Set PPE configuration options:
+	-	**_dryrun_**: `no`
+	-	**_bulk_**: `yes`
+	-	**_limit_**: a small number like `10` 
 -	Run PPE
--	Rebuild the Digital Archive Elasticsearch indexes
 -	Verify that everything looks good
--	Increase the limit or set it to `0`
--	Repeat the steps above until all the catalogs have been exported
--	Set `bulk` to `no`
+-	Increase **_limit_** or set it to `0` for no limit
+-	Repeat the steps above until all records for all catalogs have been exported
 
----
+When the export has completed:
+
+-	Restore normal PPE configuration options:
+	-	**_dryrun_**: `no`
+	-	**_bulk_**: `no`
+	-	**_limit_**: `0`
+-	Go to the Digital Archive
+-	Rebuild the Site Terms table:
+	-	Go to the [Vocabulary Editor](/archivist/vocabulary-editor/)
+	-	Click the **_Rebuild Site Terms table_** button
+	-	You must do this step *before* rebuilding the Elasticsearch indexes.
+-	[Rebuild the Digital Archive Elasticsearch indexes](/administrator/reindex/)
+
 
 
   
