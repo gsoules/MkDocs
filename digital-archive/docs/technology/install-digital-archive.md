@@ -45,20 +45,20 @@ together in the same `public_html`.
 A new Reclaim Hosting account does not come with a database. Follow the steps below to
 use [cPanel] to create a new empty database and a database user for the Digital Archive.
 
+### Create a database
+
 !!! warning "Important"
     cPanel will automatically prefix any database or user name that you choose with the
     first seven letters of the domain name, followed by `_`. For example, if you specify
-    the name `foo` and the domain name is `avantlogic` the actual name will be `avantlog_foo`.
+    the name `omeka` and the domain name is `swhpl` the actual name will be `shwpl_omeka`.
     Keep this in mind because the name you choose will really be a suffix.
 
-### Create a database
-
+-   In WHM, select the account where the installation will be performed
 -	Go to [cPanel] and choose `MySQL Database Wizard`
 -	In wizard Step 1:
     -   Decide on the database name suffix
         -   A good choice is `omeka`
-        -   Example: `avantlog_omeka`
-    -   Enter the database name in the **New Database** field
+    -   Enter the suffix in the **New Database** field
 -	Click the `Next Step` button
 
 !!! note
@@ -70,8 +70,7 @@ use [cPanel] to create a new empty database and a database user for the Digital 
 -	In wizard Step 2:
     -   Decide on the user name suffix
         -   A good choice is `archivist`
-        -   Example: `avantlog_archivist`
-    -   Enter the user name in the **Username** field
+    -   Enter the suffix in the **Username** field
 -   Click the `Password Generator` button
 -   In the popup dialog:
     -   If you don't like the password, click the `Generate Password` button to get another
@@ -91,9 +90,11 @@ use [cPanel] to create a new empty database and a database user for the Digital 
 ---
 
 ### Change database storage engine
+!!! note ""
+    This step is only necessary when using AvantSearch **without** AvantElasticsearch. 
 
 These steps change the storage engine for the `search_texts` table from `MyISAM` to `InnoDB`. They also add a `FULLTEXT` index to the `title` column of the `search_texts` table. To learn the reason for making these changes, see the AvantSearch
-plugin topics on [improving search results](../../plugins/avantsearch/avantsearch/#improving-search-results)
+plugin topics on [improving search results](../../plugins/avantsearch/#improving-search-results)
 and the [Titles Only option](../../plugins/avantsearch/avantsearch/#titles-only-option).
 
 Follow these steps to change the storage engine:
@@ -122,13 +123,14 @@ Follow these steps to upload the Omeka Classic files to the web server. You can 
 [Omeka's installation instructions](https://omeka.org/classic/docs/Installation/Installation/).
 
 -	Download the latest Omeka Classic release from <http://omeka.org/classic/download>  
-    As of 2/6/2020, the latest release was `omeka-2.7.1.zip`
+    As of 10/23/2021, the latest release was `omeka-3.0.1.zip`
 -	Go to [cPanel] and choose `File Manager`
 -   Navigate into the `public_html` folder
 -   [Upload and extract the zip file](web-host.md#upload-and-extract-a-zip-file)
 -   A new folder having the same name as the zip file will appear
 -   Rename the new folder from the zip file's name to `digitalarchive`
--   Copy `favicon.png` to the `public_html` folder
+-   Delete the zip file.
+-   Copy `C:\xampp\htdocs\favicon.png` to the `public_html` folder
 
 ---
 
@@ -139,7 +141,7 @@ The *username*, *password*, and *dbname* values come from the [create MySQL data
 
 
 -	Go to [cPanel] and choose `File Manager`
--	Navigate *into* the `digitalarchive` folder
+-	Navigate *into* the `public_html/digitalarchive` folder
 -   Edit `db.ini`
 -	Replace occurrences of `"XXXXXXX"` as follows:
     -	**host**     = `"localhost"`
@@ -523,7 +525,7 @@ For each of the plugin zip files:
 -   Extract the zip file
 -   Click the cPanel `Reload` menu item to see the resulting folder
 -   Delete the zip file
--   Rename the folder from the zip file name to the Plugin Name from the table above
+-   Rename the folder to remove `-master`
 
 *There does not seem to be a way to extract all of them at once.*
 
@@ -552,7 +554,7 @@ Before you can install the theme, install AvantCommon by following these steps:
 -   On the `Configure Plugin: AvantCommon` page:
     -   Don't enter any values for now
     -   Click the `Save Changes` button
--   The pink shading should be gone from all of the plugins except for AvantS3
+-   The pink shading should be gone from all of the plugins except for AvantReport
 -	Click `Appearance` in the top menu bar
 -   On the `Themes` page, click the `Use this theme` button for AvantTheme
 -   AvantTheme is now the current theme
@@ -634,6 +636,9 @@ recommended sequence for the Digital Archive.
 ## FTP access
 
 This section describes how to set up FTP access for a superuser.
+
+!!! note ""
+    This is an optional step during installation. It can be done later if/when the organization needs FTP access e.g. to upload zoom tiles.
 
 ### Set up superuser FTP access
 
@@ -878,11 +883,31 @@ Follow these steps to install and configure the Simple Vocab plugin:
 -   Leave **Apply to Files** unchecked
 -   Click the `Save Changes` button
 -   Click `Simple Vocab` in Omeka's left admin menu
--   Add vocabularies for the **Rights**, **Subject**, and **Type** elements  
-    For each element:
-    -   Choose the element name from the **Element** dropdown
-    -   Copy/paste the values from another installation into **Vocabulary Terms**
+-   Add vocabularies for the **Rights**, **Subject**, and **Type** elements (see below)
 -   Click the `Save Changes` button
+
+Rights
+``` text
+In Copyright
+In Copyright - Educational Use Permitted
+In Copyright - Non-Commercial Use Permitted
+In Copyright - Rights-holder(s) Unlocatable or Unidentifiable
+No Copyright - United States
+No Copyright - Non-Commercial Use Only
+Copyright Not Evaluated
+Copyright Undetermined
+No Known Copyright
+```
+
+Subject
+``` text
+Use the Vocabulary Editor to specify Subject terms
+```
+
+Type
+``` text 
+Use the Vocabulary Editor to specify Type terms
+```
 
 ---
 ## AvantAdmin

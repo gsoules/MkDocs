@@ -62,6 +62,18 @@ To commit changes:
 
 To push your committed changes to GitHub, click the **_Push origin_** button at the top of GitHub Desktop.
 
+## Create a new release
+On the plugin's main GigHub page:
+
+- Click on the `Releases` link in the right panel (not the link for a specific release)
+- Click the **_Draft a new release_** button
+- Click the **_Choose a tag_** dropdown
+    - Type a tag in the form `v0.0.0`
+    - Click **_Create new tag: v0.0.0 on publish_**
+- Specify the release title in the form `Release v0.0.0`
+- Click the **_Publish release_** button
+
+
 ## Rollback a commit
 
 Follow these steps to rollback a commit without losing any changes. Use this technique in the situation where

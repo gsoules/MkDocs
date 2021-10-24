@@ -72,6 +72,7 @@ to add a database connection.
 -   Click the `OK` button on the `Successfully made the MySQL connection` dialog
 -	Click the `Close` button at lower right
 -	**Quit MySQL Workbench** to work around a bug where new connections don't open
+-   Run MySQL Workbench again
 -   [Open the database](#open-a-database) to verify that you can connect to it
 
 ## Copy a server database to use on localhost

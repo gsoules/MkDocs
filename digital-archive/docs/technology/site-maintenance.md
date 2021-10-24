@@ -2,58 +2,131 @@
 
 ---
 
-## Plugin and Theme updates
+## Command line interface
+Most site maintenance tasks can only be peformed from the command line while logged into the digitalarchive.us (**daus**) account on the server. Use *one* of these methods:
 
-To update the `plugins` and `themes` folders on all Digital Archive sites:
+-   cPanel Terminal for `digitalarchive.us`
+-   [PUTTY](https://www.putty.org/)
+    - Login as `daus`
+    - Type the password when prompted
 
--   Open a terminal window for `digitalarchive.us` using *one* of these methods:
-    -   Go to cPanel for `digitalarchive.us` and choose `Terminal`
-    -   Use PUTTY
--   `cd bin`
+The cPanel method is okay for something quick, but the PUTTY terminal is faster and better.
 
--   Choose one of these commands:
+!!! note ""
+    To minimize typing when entering a command, you can partially type a file or directory name and then press tab-space to complete it (press the space bar while holding down the tab key).
+
+### Editing files
+The site maintenance files are located in the `bin` and `bin/python` directories in the daus account.
+
+Use *one* of these methods to edit site maintenance files:
+
+-   cPanel File Manager
+-   [Nano editor](https://www.nano-editor.org/):
+    -   `nano <file-name>` e.g. `nano digital-archive-sites.csv`
+    -   Perform edits
+    -   `^X` to exit
+    -   `Y` to save changes
+    -   Press `Enter` to write to the same file
+
+## Add a new site
+To enable site maintenance for a new Digital Archive site:
+
+-   Log in into `digitalarchive.us`
+-   Add the site's [organization ID](https://swhplibrary.net/digitalarchive/avant/dashboard) to the site list:
+    -   Edit `bin/python/digital-archive-sites.csv` to add the site ID
+-   Add the site's cPanel user name to the sync script:
+    -   Edit `bin/sync-digitalarchive` to add the user name
+
+!!! note ""
+    If the site is a subdomain, add special case login in `bin/sync-digitalarchive` for its path.
+
+!!! note ""
+    After you add a new site and then run `sync-digitalarchive`, all of the site's files will get updated because they are syncing with the master copies which have different timestamps than the ones uploaded as part of the manual [site installation](/technology/install-digital-archive/) process.
+
+## Software updates
+After making changes to Digital Archive plugins, or after [upgrading to a new release of Omeka](/technology/site-maintenance/#upgrade-to-a-new-release-of-omeka), you have to update the Digital Archive sites. There are two steps:
+
+1.   Sync the local and master files
+1.   Push the master files to the site(s) to be updated
+
+### Sync local and master files
+The master files for a Digital Archive installation are located on the `digitalarchive.us` (daus) server in the `digitalarchive` directory which is not publically accessible.
+
+To update the master files with the local development files:
+
+-   Run Beyond Compare
+-   Run the `DAUS 3.0 INSTALLATION` session
+-   **Mirror Right** local `C:\xampp\htdocs\omeka` to `public_html/digitalarchive` on the daus server
+
+!!! warning ""
+    **Important**: Be sure to **mirror**, not copy the files.
+
+### Push updates to the sites
+You can very quickly push only the updated master files to one or all Digital Archive sites from the `daus` command line.
+
+To update the `plugins` and `themes` folders, choose one of these commands:
 ```
-$ sudo ./sync-digitalarchive <site-name> 
-$ sudo ./sync-digitalarchive ALL 
-$ sudo ./sync-digitalarchive <site-name> installation
+$ sudo ./sync-digitalarchive <cpanel-user-name> 
+$ sudo ./sync-digitalarchive ALL
 ```
--   Type the password for user `daus`
--   Type an option:
+
+Example for the the `abc` site having the cPanel user name `abcnet`:
+```
+$ sudo ./sync-digitalarchive abcnet 
+```
+
+-   When prompted, type the password for user `daus`
+-   Then type an option:
     -   `y` to perform a dry run
     -   `Y` to perform the sync
     -   `n` or any other character to exit
 -   Press `Enter`
 
-Adding the `installation` argument will also sync:
+The script will sync these folders:
 ```
+themes/
+plugins/
+```
+
+To update *all* installation files and folders, use this command:
+```
+$ sudo ./sync-digitalarchive <cpanel-user-name | ALL> installation
+```
+
+With the `installation` argument, the script will sync these files and folders:
+```
+themes/
+plugins/
+application/
+install/
+admin/
 es.ini
 bootstrap.php
 index.php
-error_log
-admin/
-application/
-install/
+error_log (copies an empty log to the site)
 ```
 
-The output is written to `bin/logs/sync-HH-MM-SS.log`
+The output from a sync operation is written to `bin/logs/sync-HH-MM-SS.log`
 
-## Server requests
+## Site requests
+From the command line you can send requests to one or all Digital Archive sites. A pyhon script sends the request to a site via HTTP and the site responds to indicate whether and how it handled the request.
 
-From a terminal:
-
--   Choose one of these commands:
+From the `daus` command line choose one of these commands:
 
 ```
-remote-request <request> <site-name>
+remote-request <request> <site-id>
 remote-request <request> ALL
-
-[daus@avantlogic bin]$ ./nightly-cron-job
 ```
 
--   Requests:
+Example of a request to a site having ID `abc`:
 ```
-garbage-collection
+[daus@avantlogic bin]$ remote-request ping abc
+```
+
+The supported requests are:
+```
 ping
+garbage-collection
 es-health-check
 vocab-update
 vocab-rebuild
@@ -61,30 +134,59 @@ vocab-rebuild
 
 ## Common vocabulary updates
 
-To update the common vocabulary:
+To update the common vocabulary on one or all Digital Archive sites:
 
--   Make changes to one or more of the following files:
+-   Make updates to one or more of the following files:
     -   `input-translations.csv`
     -   `input-additional-terms.csv`
     -   `input-nomenclature-sortEn_2020-05-18.csv` (replace with latest version from Nomenclature)
--   Run `build_common_facets.py`
+-   Run `build_common_facets.py`. The script:
+    - Creates these files:
+        -   `digital-archive-vocabulary.csv`
+        -   `digital-archive-diff.csv`
+    - Uploads the two files to:
+        -    `digitalarchive.us/public_html/vocabulary` via FTP         
 -   Test the changes locally and build again until satisifed
 -   When done making changes:
     -   Delete local file `input-previous-digital-archive-vocabulary.csv`
     -   Rename local file  `digital-archive-vocabulary.csv` to `input-previous-digital-archive-vocabulary.csv`
-    -   Upload `digital-archive-vocabulary.csv` to `digitalarchive.us/public_html/vocabulary`
--   Verify that `digital-archive-diff.csv` file was successfully FTPed to `digitalarchive.us/public_html/vocabulary`
--   Go to the `vocabularly` folder on `digitalarchive.us`
--   Verify that `/vocabulry/data/digital-archive-sites.csv` has the correct site information
--   Run `python3 refresh_common_vocabulary.py`
+-   Verify that `digital-archive-diff.csv` was FTPed to `digitalarchive.us/public_html/vocabulary`
+-   Make a `vocab-update` site request for one site or all sites (see example below)
 
-It is also possible for a developer to simulate a remote update locally via the query string:
+Example update request:
+``` text
+[daus@avantlogic bin]$ remote-request  vocab-update nehl
+Request 'vocab-update' to  nehl'? (y/n) y
+Post "vocab-update" request to  nehl"
+2021-10-24 20:49:00.781881 Request:[vocab-update > nehl]
+Response: nehl] Commands processed: 23. Items refreshed: 3
+```
+In the example above, the site reported back that it processed 23 commands (ADD, UPDATE, or DELETE) and updated 3 items as a result. In this particular case, there were 22 ADD commands and 1 UPDATE command. Since no items could be using the newly added vocabulary terms, none could be affected, but 3 items were using the term that was updated.
+
+If you make the exact same request second time, the same number of commands will be processed, but no items will be affected.
+
+A developer can simulate a remote vocabulary update locally via the query string:
 
 ``` text
-http://localhost/omeka/avant/remote?action=refresh-common&password=ABC123
+http://localhost/omeka/avant/remote?action=vocab-update&password=ABC123
 ```
 
-## Omeka updates
+### Nightly cron job
+Every night a cron job runs a python script to send these requests to each site:
+
+-   `garbage-collection`
+-   `es-health-check`
+
+The garbage collection request tells the site to clean out its sessions table to remove old records, many of which are for visits from bots and crawlers.
+
+The health check requests tells the site to compare its Elasticsearch document count to its MySQL records count to veryify that they are the same. If the check fails, the script sends email to the Digital Archive administrator.
+
+You can manually run the cron job like this: 
+```
+[daus@avantlogic bin]$ ./nightly-cron-job
+```
+
+## Upgrade to a new release of Omeka
 Update a Digital Archive site to use a new release of Omeka. Updating involves copying Omeka core files from the release to the site folder. Since the Digital Archive does not modify any Omeka core files, these is no need to review changes to those files. 
 
 ### Download the new release
@@ -121,17 +223,15 @@ README.md
 Normally the site should just come up, though on releases of Omeka prior to 3.0 you were presented with a dialog to update the database. It appears that 3.0 updates the database automatically.
 
 #### Troubleshooting
-Past updates of release Omeka 2.* have always gone smoothly, but 3.0 presented problems. When it first came up it reported a Zend_Controller_Exception and then an InvalidArgumentException. The errors appeared to be triggered by a plugin and by AvantTheme, though later there were no issues with either, so it probably had to do with the interim transition from the old to the new release. The solution was to back out the new release, and with the older version running, deactivate all of the Avant plugins and switch from AvantTheme to the default Omeka theme. After updating the site again with the new release, the errors went away and none reoccurred after switching back to AvantTheme and activating the Avant plugins.
+Past updates of release Omeka 2 have always gone smoothly, but 3.0 presented problems. When it first came up it reported a Zend_Controller_Exception and then an InvalidArgumentException. The errors appeared to be triggered by a plugin and by AvantTheme, though later there were no issues with either, so it probably had to do with the interim transition from the old to the new release. The solution was to back out the new release, and with the older version running, deactivate all of the Avant plugins and switch from AvantTheme to the default Omeka theme. After updating the site again with the new release, the errors went away and none reoccurred after switching back to AvantTheme and activating the Avant plugins.
 
 ## Running scripts
-
-### CRON jobs
 
 ### Root privileges
 A user with root privileges can run bash scripte that modify files on every Digital Archive installation on the server.
 
 To assign a user root privileges via sudo:
--   Go to WHM and choose `Manage Wheel Groupt Users`
+-   Go to WHM and choose `Manage Wheel Group Users`
 -   Add a user to the wheel group
 
 A user in the `wheel` group can use the system's `su` and `sudo` utilities.
