@@ -806,7 +806,7 @@ Verify that the plugin is working as expected.
 -	Verify that the `12345` folders got deleted from the `/digitalarchive/files` folders
 
 !!! warning ""
-    You won't be able to view the public page for an item until [AvantAdmin] has been installed.
+    Do not attempt to add any more items until the installation is completed including setting up AvantElasticsearch and AvantVocabulary.
 
 !!! note ""
     If using Filezilla, you may need to disconnect and reconnect to verify that the files got deleted
@@ -1026,7 +1026,7 @@ Date: 160
 Creator
 ```
 
--   Enter the **SimpleVocab** specifiers shown below plus any others
+-   Enter the **Vocabulary Field** specifiers shown below plus any others
 ``` plaintext
 Type: 320
 Subject: 320
@@ -1053,15 +1053,45 @@ Publisher
 Identifier, default: DigitalArchive, getDefaultIdentifier
 Identifier, validate: DigitalArchive, validateIdentifier
 Rights, filter: DigitalArchive, filterRights
-Date, filter: Swhpl, filterDate
+Date, filter: DigitalArchive, filterDate
 <item>, validate: DigitalArchive, validateItem
 ```
 
 -   Verify that you have set all of the options correctly
 -   Click the `Save Changes` button
 
+### Change Element Set order
+
+- Click `Settings` in the top menu bar
+- Click the `Element Sets` tab
+- Click the `Edit` link for Dublin Core
+- Reorder the elements by dragging them to the order shown below.
+- Click the `Save Changes` button
+
+```
+Identifier
+Title
+Type
+Subject
+Description
+Date
+Creator
+Publisher
+Source
+Contributor
+Rights
+Relation
+Format
+Language
+Coverage
+```
+
+
 ---
 ## AvantImport
+
+!!! note ""
+    Skip this task if the installation will not be importing items from a CSV file.
 
 Follow these steps to install the AvantImport plugin:
 
@@ -1095,16 +1125,10 @@ Publisher: Published
 -   Click the `Save Changes` button
 
 ---
-## AvantReport
-
-AvantReport has no configuration options.
-Follow these steps to install [AvantReport]:
-
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `AvantReport`
-
----
 ##  AvantSearch
+
+!!! note ""
+    Ignore the MyISAM warning if the installation will be using Elasticsearch.
 
 Follow these steps to install and configure the [AvantSearch] plugin:
 
@@ -1147,6 +1171,15 @@ Date
 -   Click the `Save Changes` button
 
 ---
+## AvantReport
+
+AvantReport has no configuration options.
+Follow these steps to install [AvantReport]:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `AvantReport`
+
+---
 ## AvantZoom
 
 AvantZoom has no configuration options.
@@ -1185,6 +1218,22 @@ installation folders.
 ![Administrator FTP account](install-digital-archive-3.jpg)
 
 ---
+## AvantS3
+
+!!! note ""
+    Skip this task if the installation will not be using S3.
+
+Follow these steps to install and configure [AvantS3]:
+
+-	Go to the Omeka `Plugins` page
+-	Click the `Install` button for `AvantS3`
+-   Go to the configuration options page for the AvantElements plugin
+-   Add the code below to the end of the **Custom Callback** specifiers
+``` plaintext
+Identifier, filter: DigitalArchive, filterIdentifierS3
+```
+
+---
 ## AvantElasticsearch
 
 ### Create AWS credentials
@@ -1194,21 +1243,25 @@ AvantElasticsearch configuration page.
 
 -	Go to <https://aws.amazon.com/>
 -   Click the `Sign In to the Console` button at upper right
--   Sign-in as the root user using the root user email and password (look for the link that says
-`Sign-in using root user email`)
--   You should now be on the `AWS Management Console` page
+-   Enter the Account ID ending in `4548`
+-   If the page says **_Sign is as IAM user_**, click the `Sign-in using root user email` link
+-   Enter the root user email
+-   Type in the characters on the Security Check page
+-   Enter the root user password
+-   You should now be on the **_AWS Management Console_** page
 -	In the top menu dropdown for the logged in user, choose `My Security Credentials`
--   You should now be on the `Your Security Credentials` page
+-   You should now be on the **_Your Security Credentials_** page
 -	Click `Users` in the left menu
 -	Click the `Add User` button at the top
 -	Type the organization abbreviation for the `User name` e.g. `swhpl`
 -	For  **Access type** check the `Programmatic Access` box
 -	Click the `Next: Permissions` button
--	In the **Add User to Group** section, click the contributor group
+-	In the **Add User to Group** section, click the `contributor` group
 -	Click the `Next: Tags` button
 -	Click the `Next: Review` button
 -	Click the `Create User` button
--	Copy the **Access Key ID** and **Secret Access Key** to the Accounts Excel sheet  
+-   Click the `Show` link for the **Secret Access Key**
+-	Copy the **Access Key ID** and **Secret Access Key** to the `AWS Keys` tab of the `Digital Archive Accounts` Excel sheet  
     *This is the only opportunity to obtain the secret key*
 -	Click the `Close` button
 
@@ -1221,12 +1274,15 @@ Follow these steps to install and configure the [AvantElasticsearch] plugin:
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantElasticsearch`
 
-### Edit config.ini
+#### Edit es.ini
 
--   Set `shared_index_name` to the name of the shared index.
+Follow these steps to allow the installation to share its items with other Digital Archive installations via the shared AWS Elasticsearch index:
+
+-   In cPanel, edit `public_html/digitalarchive/es.ini`
+-   Set `shared_index_name` to the name of the shared index e.g. `acadia`
 
 !!! danger "Shared Index"
-    If you need to be able to create a new local or shared index, add:
+    **FOR ADMINISTRAOR ACCOUNT ONLY:** If the account needs to be able to create a new local or shared index, add:
      `new_local_index_allowed = true` and/or `new_shared_index_allowed = true`
       to the `es.ini` file which is located in `/digitalarchve` (in the same root
       folder as `db.ini`). This will cause new radio buttons to appear on the
@@ -1235,7 +1291,20 @@ Follow these steps to install and configure the [AvantElasticsearch] plugin:
       for all sites in the shared index and therefore should only be performed
       when creating a shared index that does not already exist.
 
-### Enable Elastticsearch in AvantSearch
+#### Configure the AvantElasticsearch plugin
+-   Set **Contributor Id** e.g. `swhpl`
+-   Set **Contributor** e.g. `Southwest Harbor Public Libary`
+-   Set **Host** to the AWS Domain Endpoint which can be found in:
+    -   The `AWS Keys` tab of the `Digital Archive Accounts` Excel sheet and on AWS and in
+    -   `Amazon OpenSearch Service > Domains > digitalarchive`
+    -   Example: `search-digitalarchive-6wn********************o4q.us-east-2.es.amazonaws.com`
+-   Set **Region** to `us-east-2`
+-   Set **Key** and **Secret** to the keys obtained in the step above to create AWS credentials
+-   Check **Local Index**
+-   Check **Shared Index**
+
+
+### Enable Elasticsearch in AvantSearch
 -   Go to the configuration options page for the [AvantSearch] plugin
 -   Check the **Elasticsearch** checkbox
 
@@ -1249,23 +1318,61 @@ Follow these steps to install and configure [AvantVocabulary]:
 -   On the `Configure Plugin` page, leave `Delete Tables` unchecked
 -   Click the `Save Changes` button
 -   Click `Vocabulary Editor` in the left admin menu
--   Click the `Rebuild Common Terms table` and click `OK` on the confirmation dialog
--   Wait for the build to report that it has completed (it writes about 15,000 records)
--   Click the `Rebuild Local Terms table` and click `OK` on the warning dialog
--   Wait for the build to report that it has completed (this will be very fast on a new installation)
+-   Click the `Rebuild Common Terms table` button and click `OK` on the confirmation dialog
+-   Wait for the build to report that it has completed (it writes about 30,000 records)
+-   Click the `Rebuild Local Terms table` button and click `OK` on the warning dialog
+-   Wait for the build to say that it has completed and will reload the page (this will be very fast on a new installation)
+
+
+### Add vocabulary terms
+At this stage the only vocabulary terms that will be set for the site are Places which is kind `4` in the site terms table. If you look at the table you'll see that those are the only kind of rows there.
+
+You'll now need to add some Type and Subject terms so that the organization has something to work with; however, there is an issue with the AvantVocabulary plugin whereby you can't add a new term unless there is at least one term in the table. To work around this, manually add one Subject (`Image, Photograph`) and one Type (`People`) to the site terms table using MySql Workbench as shown below.
+
+![Site terms table](install-digital-archive-11.jpg)
+
+Note that to eliminate the default value of null, in the `site_term` column, you'll need to first add a value of one space, apply the changes, then delete the space and apply again.
+
+Now go to the **_Vocabulary Editor_**, click the `Rebuild Local Terms table` button and click `OK` on the warning dialog.
+
+The two terms should show and and you should now be able to add new terms.
+
+Suggestions for an initial set of Types:
+``` text
+Document, Correspondence, Letter
+Image, Photograph
+Map
+Object, Writing, Postcard
+Publication, Clipping, Newspaper Clipping
+Reference
+```
+
+Suggestions for an initial set of Subjects:
+``` text
+Nature, Animals
+People
+Places, Island
+Structures, Commercial, Lodging, Hotel
+Transportation, Automobile
+```
 
 ---
-## AvantS3
+## Reindex the local Elasticsearch index
 
-Follow these steps to install and configure [AvantS3]:
+-   Add a new item with just the minimal fields
+-   If you check to see the site's items, you'll see a `No items found` message and an Elasticsearch error
+-   Click `Elasticsearch` in the left menu
+-   Export all items
+-   Import into new **local** index
+-   You should now be able to see the item with no errors
 
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `AvantS3`
--   Go to the configuration options page for the AvantElements plugin
--   Add the code below to the end of the **Custom Callback** specifiers
-``` plaintext
-Identifier, filter: DigitalArchive, filterIdentifierS3
-```
+---
+## Test the Installation
+
+-   Add a photo to the item
+-   Make the item public
+-   Test that the item appears on the other sites as shared
+-   Test that the new site appears on the Contributing Organizations page
 
 ---
 ## Site styling
@@ -1276,12 +1383,17 @@ Identifier, filter: DigitalArchive, filterIdentifierS3
 -   Click `Navigation` on the `Appearance` page menu bar
 -	Uncheck `Browse Items`
 -   Uncheck `Browse Collections`
--	In the `Add a Link to the Navigation` section
-    -	**Label**: About
-    -	*URL*: the organization’s home page
-    -	Click the `Add Link`
-    -	Check the box for `About`
-    -	Click the `Save Changes` button 
+-   In the **Add a Link to the Navigation** section:
+    -   Type `landing` for the **Label**
+    -   Type `https://<site-url>/digitalarchive/find?query=&view=4` for the **URL**
+    -   Click the `Add Link` button
+    -   Change **Select a Homepage** to `landing`
+    -   Leave the `landing` item unchecked
+-   Click the `Save Changes` button
+
+Test that the landing page works by clicking the site's name located at left in the admin header. Unless you've added items to the site, you'll get a `No items found` error which is okay. Change the `Search` dropdown at the bottom to `All Sites` to verify that results come up from other sites.
+
+-	Edit the `About` Simple Page to add some information about the organization
 -	Add any other menu items    
 
 ### Logo and styling
