@@ -203,6 +203,26 @@ Follow these steps to create a subdomain in an existing account.
 
 ---
 
+## Transfer a domain
+
+Follow these steps to transfer a domain that is registered with Reclaim to another registrar such as GoDaddy:
+
+-	Login to the AvantLogic Reclaim Hosting account
+-   In the Client Area, click the `Action Domains` button
+-   Click the `Manage Domain` button for the domain to be transferred
+-   On the **_Information_** page for the domain:
+    -   Click the `Registrar Lock` link
+    -   On the R**_egistrar Lock_** page:
+        - Click the `Disable Registrar Lock` button to unlock the domain
+    -   Go back to the **_Information_** page
+    -   Click `Management Tools > Get EPP Code`
+    -   Copy the entire message e.g. `The EPP Code for your domain is: 3zlk[QyhGL` and email it to the organization doing the transfer.
+-   An email will arrive saying the request was made and when transfer will occur (in 3 or 4 days)
+-   You can check the [Who Is](https://www.whois.com) status for a domain to verify that a transfer is pending.
+-   **Important**: Transfer a domain at least two weeks before it is set to expire. Waiting until it is expired or nearly expired may make it impossible to do a transfer without first renewing the domain for another year.
+
+---
+
 ## Create a new Reclaim account
 Follow these steps to create a new Reclaim Hosting account. You would do this, for example, if you wanted
 to provide a client with their own Reclaim account for hosting their website. You might also create a
