@@ -1,5 +1,27 @@
 # PHP Development
 
+## PhpStorm
+PHP development is done on a Windows 10 PC with XAMPP and MySQL installed. This section describes how to edit and debug PHP files.
+
+-   Run the XAMPP Control Panel
+    - Start Apache
+    - Start MySQL
+    - Close or hide the panel
+
+-   Run PhpStorm
+    - Open the Digital Archive project: `C:\xampp\htdocs\omeka`
+
+How To:
+
+- Global search of files: `shift-ctrl-f` (press `Esc` to close the panel)
+- Run a site in debugging mode: `Run > Debug 'Omeka'`
+
+GIT:
+
+Syncing:
+
+-   Use [Beyond Compare](/technology/install-digital-archive/#beyond-compare) to sync changes to themes and plugins files.
+
 ## Force style.css reload
 
 -   Edit `themes\AvantTheme\common\header.php`

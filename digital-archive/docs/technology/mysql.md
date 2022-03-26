@@ -82,7 +82,8 @@ development server.
 
 ### Export SQL database
 
--   Go to to phpAdmin on the server
+-   In WHM, open the cPanel for the account
+-   In cPanel, choose `phpMyAdmin`
 -   Truncate the session table in the left panel
     -   Click `omeka_sessions` table
     -   Click **_Operations_** in the top menu
@@ -107,24 +108,27 @@ development server.
     -   Choose `utf8_unicode_ci` for the character set
     -   Click the **_Create_** button
 -   Import the data    
-    -   Run MySQL Workbench fo localhost 
+    -   Run MySQL Workbench for localhost 
     -   Double click on the name of the new database
     -   Choose `File > Open SQL Script`
     -   Locate the exported SQL file and click the **_Open_** button
     -   Click the lightening bolt icon to import the SQL
+    -   Click the refresh icon in the Navigator panel to see the tables
 
 ### Use the database on localhost
 
--   Edit `db.ini` to use new database
+-   Edit `db.ini` to use the new database
+    -   Make a copy of the localhost settings
+    -   Comment out the original setttings
     -   Keep the `host`, `username`, `password`, and `charset` settings for localhost
-    -   Change `dbname` and `prefix` to match the new database
+    -   Change `dbname` to match the new database and make sure `prefix` is set to `omeka_` unless SWHPL in which case it's `omek_`. 
 -   Run Omeka on localhost
-    -   Go to `http://localhost/omeka//admin/`
+    -   Go to `http://localhost/omeka/users/login`
     -   Login as a user for the imported database
     -   Go to the **_Appearance_** page and click the **_Navigation_** tab
     -   Change the URL for the `Landing` page to be `http://localhost/omeka/'
     -   Click the **_Save Changes_** button
--   Go to the AvantElasticsearch config page and change **_Contributor Id_** to `devb`
+-   Go to the AvantElasticsearch plugin config page and change **_Contributor Id_** to `devb`
 -   Go to the **_Elasticsearch Indexing_** page:
     -   Export all items
     -   Import into new local `devb`

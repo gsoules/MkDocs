@@ -7,7 +7,7 @@ a Windows 10 computer and imports them into the Digital Archive as
 ---
 
 !!! note ""
-	This documentation is intended for administrators who will use the PastPerfect Exporter, and
+	This documentation is intended for PastPerfect administrators who will use the PastPerfect Exporter, and
 	for developers who will set it up and maintain it. Technical information about the export
 	mechanism is provided in the documentation [AvantHybrid](/plugins/avanthybrid/).
 ---
@@ -20,7 +20,7 @@ weekly or monthly, or you could export right after making changes.
 
 Changes include:
 
--	Editing existing records
+-	Editing existing records to change metadata
 -	Attaching or removing record images
 -	Adding new records
 -	Deleting records
@@ -35,21 +35,25 @@ When you enable web export for a record, the export adds it to the Digital Archi
 
 Follow these steps to export your PastPerfect changes to the Digital Archive.
 
-1 &ndash; Run the PastPerfect Web Publishing utility
-:	Before you export to the Digital Archive, you must synchronize your local PastPerfect data
-	and images with your PastPerfect Online website. If you don't do this, the Digital Archive
-	will not be able to display images that you recently added or modified in your PastPerfect
-	desktop installation because those images will not be accessible from PastPerfect Online.
+1 &ndash; Web Export your PastPerfect records to PastPerfect Online
+:	Before you export to the Digital Archive, you should synchronize your local PastPerfect data and images with your PastPerfect Online website by running the PastPerfect Web Publishing utility.	If you don't do this, the Digital Archive will not be able to display images that you recently added or modified in your PastPerfect desktop installation because those images will not be accessible from PastPerfect Online. If you export a record to the Digital Archive that has never been exported to PastPerfect Online, the item's `View this item using PastPerfect Online` link in the Digital Archive will go to PastPerfect Online but no record will be found there.
 
-2 &ndash; Open Windows Explorer
-: 	On your PastPerfect PC or network, navigate to the `ppExport` folder. In the example below,
-	the folder is `C:\ppExport`. On a network computer it might be something like `\\NAS\PastPerfect\`.
+2 &ndash; Go to the folder containing the PastPerfect Exporter
+: 	On your PastPerfect PC or network, use Windows Explorer to navigate to the `ppExport` folder. In the example below,
+	the folder is `C:\ppExport`.
+
 	![Windows Explorer](pastperfect-exporter-1.jpg)
 
-3 &ndash; Double-click on `ExportPastPerfectToDigitalArchive`
-:	A Command Window will open as shown below and the export will begin automatically.
+3 &ndash; Run the PastPerfectExporter
+:	Run the PastPerfect Exporter by double-clicking on `export_pp` as shown in the screenshot above. A Command Window will open as shown below. It will prompt you to type a command:
 
-![Windows Explorer](pastperfect-exporter-2.jpg)
+	- Type `export` to export your PastPerfect data to the Digital Archive
+	- Type `dryrun` to see what would be exported, but without actually exporting anything
+	- Type `exit` do nothing and close the window
+
+	![Exporter Start](pastperfect-exporter-2.jpg)
+
+	A good practice is to first do a dry run to learn what the export is going to do, and then, if the report looks okay, do the actual export.
 
 4 &ndash; Wait for the export to complete
 :	How long the export takes depends on how many records you added, edited, or deleted
@@ -60,16 +64,28 @@ Follow these steps to export your PastPerfect changes to the Digital Archive.
 	start again later at step 2. The export will pickup where it left off when
 	it was interrupted.
 
-5 &ndash; Close the Command Window
-:	The export is done when a message like the one below appears at the bottom of the window.
-```
-90 records imported
-Import completed in 89.36 seconds
-```
-:	Close the window by clicking the X in the upper right corner.
+5 &ndash; Exit the Command Window
+:	The export is done when the message shown below appears at the bottom of the window.
 
-6 &ndash; View the exported items
+	![Exporter End](pastperfect-exporter-3.jpg)
+
+	Close the window by typing `exit` and then pressing the **_Enter_** key.
+	
+6 &ndash; Log File	
+:	Whether you do a dry run or an export, the results are written to a log file located in the `logs` folder as shown in 
+the screenshot for step 2 above. The log file name is the date and time when the export began. An example of a log file name is `2022-03-26 02-36 PM.log`. The log file contains the same information that appeared in the command window so that you have a record of the export or dry run. If you do a lot of exports, you should occasionally delete older logs files so that the `logs` folder does not get too cluttered.
+
+7 &ndash; View the exported items
 :	Go to the Digital Archive to view the exported items. 
+
+---
+
+## Bad PastPerfect records
+The export may report that a PastPerfect record was skipped for various reasons and identify the records as `[No Object ID in catalog L]`. The `L` at the end means that the record is in the Library catalog. A `A`, `O`, or `P` means the Archive, Objects, or Photos catalog.
+
+To find these bad records, go to the catalog and click the **_Find_** button. In the **_Instant Find_** section of the **_Find_** dialog, choose `Object ID` as the field and erase the text area as shown by the red arrow. Then press the **_Find Now_** button to find the records in that catalog that have no Object Id. If those records have other metadata, you can fill in the Object Id, otherwise you can delete the record.
+
+![Bad PastPerfect Records](pastperfect-exporter-4.jpg)
 
 ---
 
@@ -121,14 +137,14 @@ As example of what the PPE exports is shown below as a JSON string.
 
 ---
 
-## pp_export.config
+## pp_config.txt
 
-The `export_pp.config` file is the "user interface" to the PPE. You edit this file to control
+The `config_pp.txt` file is the "user interface" to the PPE. You edit this file to control
 how the PPE operates. Below is a sample file followed by an explanation of each option.
 
 ``` text
 [data]
-pp5data = \\NAS\PastPerfect\Data
+pp5data = \\DELL7\PastPerfect\Data
 fields =
 	DATE
 	PLACE
@@ -145,7 +161,7 @@ url = http://yourdomain/digitalarchive/avant/remote
 [admin]
 bulk = no
 details = no
-dryrun = no
+strict = yes
 force = no
 limit = 0
 private = no
@@ -160,7 +176,7 @@ pp5data
 
 	Examples:  
 	`C:\pp5\Data`  
-	`\\NAS\PastPerfect\Data`
+	`\\DELL7\PastPerfect\Data`
 
 	You can determine the folder location by going to the PastPerfect **_System Information_** screen and
 	looking at the **_Data Folder_** field in the **_Computer Information_** section.
@@ -202,12 +218,6 @@ details
 	-	OBJECTIDs for records with no OBJNAME
 	-	OBJECTIDs for records with non-unique OBJECTID (count appears in parentheses) 
 
-dryrun
-:	Set the `dryrun` option to `yes` when you want to see what actions PPE will take, but without
-	actually calling AvantHybrid to import into the Digital Archive. This is a quick and safe way
-	to learn what hybrid items will get added, updated, or deleted in the Digital Archive. When you
-	are happy with the actions, set the option to `no`.
-
 force
 :	Force should always be set to `no`. The only exception is if for some reason you need to force
 	every hybrid item in your Digital Archive to get updated even if its corresponding PastPerfect
@@ -226,6 +236,9 @@ private
 :	The `private` option controls whether PastPerfect records that have their **_Web Export_**
 	option *unchecked* should to be exported to the Digital Archive. Set the option to `yes` to export
 	them as non-public Digital Archive hybrid items or set it to `no` to skip them during export.
+
+strict
+:	The `strict` option controls whether the exporter will exclude from the export any PastPerfect records having an Object Name that does not conform to Nomenclature 4.0. Set the option to `yes` to prevent export of those records. Set the option to `no` to allow them to be exported. Note that if you set the option to `no` and export some nonconforming records, and then at a later date set the option to `yes` and do an export, the nonconforming records will be deleted from your Digital Archive.
 
 trace
 :	This is a developer option that can be set to `yes` to have AvantHybrid report additional information
@@ -363,36 +376,11 @@ Follow these steps to run `export_pp.exe`:
 -	CD to the `dist` folder
 -	Type `export_pp.exe`
 
-If you don't run the program from a Command Prompt window, it will automatically
-open a Command Prompt window to run in, but the window will close when execution ends
-and you won't be able to see the results.
-
-To make it easy for the PastPerfect administrator to run the PPE, do the following:
-
--	Create a folder on the PastPerfect computer called `ppexport`
--	Create a subfolder called `ppexport\DigitalArchive`
--	Copy `export_pp.exe` and `export_pp.config` to the `DigitalArchive` folder
--	In the `ppexport` folder, create a batch file named `ExportPastPerfectToDigitalArchive.bat`
-	with contents similar to one of the examples shown below.
--	Instruct the administrator to go to the `ppexport` folder and run the batch file	
-
-```
-pushd \\NAS\ppexport\DigitalArchive
-cmd /K export_pp.exe
-popd
-```
-
-```
-CD /D C:\utilities\ppexport\DigitalArchive
-cmd /K export_pp.exe
-```
-
 ### First-time export
 
 Here are recommendations for how to approach a first-time export of all PastPerfect records into the Digital Archive.
 
 -	Set PPE configuration options:
-	-	**_dryrun_**: `no`
 	-	**_bulk_**: `yes`
 	-	**_limit_**: a small number like `10` 
 -	Run PPE
@@ -403,7 +391,6 @@ Here are recommendations for how to approach a first-time export of all PastPerf
 When the export has completed:
 
 -	Restore normal PPE configuration options:
-	-	**_dryrun_**: `no`
 	-	**_bulk_**: `no`
 	-	**_limit_**: `0`
 -	Go to the Digital Archive

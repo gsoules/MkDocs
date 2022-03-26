@@ -9,8 +9,8 @@
 -   Click the **_Next_** button
 -   Enter the root user password
 -   Click the **_Sign in_** button
--   On the **_AWS Management Console_** page, find and click on **_Elasticsearch Service_**
--   You'll now be on the **_Amazon Elasticsearch Service dashboard_** page
+-   On the **_AWS Management Console_** page, find and click on **_Amazon OpenSearch Service_**
+-   You'll now be on the **_Amazon OpenSearch Service dashboard_** page
 
 ## Modify the access policy
 
