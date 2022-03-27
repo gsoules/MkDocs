@@ -64,7 +64,9 @@ To update the master files with the local development files:
 ### Push updates to the sites
 You can very quickly push only the updated master files to one or all Digital Archive sites from the `daus` command line.
 
-To update the `plugins` and `themes` folders, choose one of these commands:
+**Update only plugins and themes**
+
+To update just the `plugins` and `themes` folders, choose one of these commands:
 ```
 $ sudo ./sync-digitalarchive <cpanel-user-name> 
 $ sudo ./sync-digitalarchive ALL
@@ -88,9 +90,15 @@ themes/
 plugins/
 ```
 
-To update *all* installation files and folders, use this command:
+!!! Note ""
+    If an updated plugin's version number changed, you will need to manually go to each site's plugins page to upgrade the plugin. If you don't do this, the plugin won't work which will probably break the site. A common occurrence of this is an Omeka update to the Simple Pages plugin.
+
+**Update all installation files**
+
+To update *all* installation files and folders, choose one of these commands:
 ```
-$ sudo ./sync-digitalarchive <cpanel-user-name | ALL> installation
+$ sudo ./sync-digitalarchive <cpanel-user-name> installation
+$ sudo ./sync-digitalarchive ALL installation
 ```
 
 With the `installation` argument, the script will sync these files and folders:
@@ -118,9 +126,10 @@ remote-request <request> <site-id>
 remote-request <request> ALL
 ```
 
-Example of a request to a site having ID `abc`:
+Examples of request to a site having ID `abc`:
 ```
 [daus@avantlogic bin]$ remote-request ping abc
+[daus@avantlogic bin]$ remote-request es-health-check abc
 ```
 
 The supported requests are:
@@ -177,21 +186,33 @@ Every night a cron job runs a python script to send these requests to each site:
 -   `garbage-collection`
 -   `es-health-check`
 
-The garbage collection request tells the site to clean out its sessions table to remove old records, many of which are for visits from bots and crawlers.
-
-The health check requests tells the site to compare its Elasticsearch document count to its MySQL records count to veryify that they are the same. If the check fails, the script sends email to the Digital Archive administrator.
-
 You can manually run the cron job like this: 
-```
+``` text
 [daus@avantlogic bin]$ ./nightly-cron-job
 ```
+
+The **garbage collection** request tells the site to clean out its sessions table to remove old records, many of which are for visits from bots and crawlers.
+
+The **health check** requests tells the site to compare its Elasticsearch document count to its MySQL records count to verify that they are the same. If the check fails, the script sends email to the Digital Archive administrator as shown in the example below.
+
+``` text
+FAIL: SQL:3077 Index:3075 Missing:3054,3080
+```
+
+Normally the health check will never fail, but if it does, the email will indicate which MySQL records are missing from the Elasticsearch index. In the message above, the numbers 3054 and 3080 are Omeka item Ids, not Digital Archive item identifiers. To correct the problem, first locate a missing item in the Digital Archive using a URL like the one below.
+
+``` text
+https://yourdomain.net/admin/avant/show/3054
+```
+
+ Edit the item by making a minor change to a field (e.g. add a blank space to the end of a sentence), and then save the item. This will cause the item to get re-synced with the Elasticsearch index. Run the health check again to see if the problem has been fixed.
 
 ## Upgrade to a new release of Omeka
 Update a Digital Archive site to use a new release of Omeka. Updating involves copying Omeka core files from the release to the site folder. Since the Digital Archive does not modify any Omeka core files, these is no need to review changes to those files. 
 
 ### Download the new release
 - View the new release of Omeka Classic on [omeka.org](https://omeka.org/classic/download/).
-- Download the latest release from the [releases page](https://github.com/omeka/Omeka/releases) on GidHub.
+- Download the latest release from the [releases page](https://github.com/omeka/Omeka/releases) on GitHub.
     - The release file will have a name like `omeka-3.0.1.zip`.
 - Put the zip file on the desktop or other folder that is not deeply nested. In a deeply nested folder, some files will get an unzip error because their resulting file path is too long.    
 - Unzip the release into a work folder named as the release e.g. `omeka-3.0.1`.
@@ -203,8 +224,8 @@ Update a Digital Archive site to use a new release of Omeka. Updating involves c
 !!! note ""
     Before proceeding, run Omeka on the development site to verify it runs properly with the *current release*. There should be no issues, but if, for example, something in the environment changed that created a problem, find and fix it first so you won't think it's related to the new release.
 
-- Make a backup copy of the current release folder **except for the `files` folder** which is huge.
 - Use [Beyond Compare](https://www.scootersoftware.com/) or similar diff tool to compare the current and new release folders.
+- Make a backup copy of the current release folder **except for the `files` folder** which is huge.
 - Copy (**do not Mirror**) the following **core files** to `C:\xampp\htdocs\omeka`:
 ```
 admin
@@ -221,6 +242,8 @@ README.md
 
 ### Verify that the new release works properly
 Normally the site should just come up, though on releases of Omeka prior to 3.0 you were presented with a dialog to update the database. It appears that 3.0 updates the database automatically.
+
+See the [Software updates](/technology/site-maintenance/#software-updates) for how to deploy the upgrade to all Digital Archive installations.
 
 #### Troubleshooting
 Past updates of release Omeka 2 have always gone smoothly, but 3.0 presented problems. When it first came up it reported a Zend_Controller_Exception and then an InvalidArgumentException. The errors appeared to be triggered by a plugin and by AvantTheme, though later there were no issues with either, so it probably had to do with the interim transition from the old to the new release. The solution was to back out the new release, and with the older version running, deactivate all of the Avant plugins and switch from AvantTheme to the default Omeka theme. After updating the site again with the new release, the errors went away and none reoccurred after switching back to AvantTheme and activating the Avant plugins.

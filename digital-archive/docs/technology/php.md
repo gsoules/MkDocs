@@ -16,11 +16,24 @@ How To:
 - Global search of files: `shift-ctrl-f` (press `Esc` to close the panel)
 - Run a site in debugging mode: `Run > Debug 'Omeka'`
 
-GIT:
-
 Syncing:
 
 -   Use [Beyond Compare](/technology/install-digital-archive/#beyond-compare) to sync changes to themes and plugins files.
+
+### Debugging a remote request
+
+Remote requests are normally posted to a production instance of the Digital Archive. For development purposes, a logged-in super user can make GET requests in order to get into the debugger to set breakpoints. This technique is supported by the `AvantAdmin::handleRemoteRequest()` method for URLs like these:
+
+``` text
+http://localhost/omeka/avant/remote?id=devb&action=es-health-check&password=XDVIPG
+```
+
+``` text
+http://localhost/omeka/avant/remote?id=devb&password=rnfeKH1C&action=hybrid-add
+```
+The first request above is for a remote health check request.
+
+The second request above is for a `hybrid-add` action, but the URL does not contain the data to be added. Because of the nature and length of the data, it's not practical to pass it as query string argument, but you can copy/paste the data you want to test with into the the `$data` variable in method `HybridImport::getSourceRecordData()`.
 
 ## Force style.css reload
 

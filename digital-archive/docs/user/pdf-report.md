@@ -10,6 +10,9 @@ The sections below describe the three kinds of PDF reports you can create:
 -   Compact search results report
 -   Detailed search results report
 
+!!! Note ""
+    You can only create a PDF report of search results when viewing the results in [Table View](/user/viewing-search-results/#table-view). You cannot create a report in [Grid](/user/viewing-search-results/#grid-view) or [Index](/user/viewing-search-results/#index-view) View.
+
 ## Single item report
 
 Follow these steps to create a PDF report for a single item:

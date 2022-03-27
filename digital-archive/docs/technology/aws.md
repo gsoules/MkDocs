@@ -43,7 +43,7 @@ to searching only. For development and debugging purposes, you can *temporarily*
 The examples in this section all use `myindex` as the index name.
 
 To use Kibana to view actual JSON for an AvantElasticsearch search, follow the steps to  
-[execute Elasticsearch query in Kibana](/technology/php-development/#execute-elasticsearch-query-in-kibana)
+[execute Elasticsearch query in Kibana](/technology/php/#execute-elasticsearch-query-in-kibana)
 
 
 ##### Show mappings
@@ -62,6 +62,21 @@ GET myindex/_search
   "query": {
     "match_all": {}
   }  , "size": 2000
+}
+```
+
+This example will return all items where the contributor Id is `swhpl`.
+
+``` json
+GET acadia/_search
+{
+  "query": {
+    "terms": {
+      "item.contributor-id": [
+        "swhpl"
+      ]
+    }
+  }
 }
 ```
 
