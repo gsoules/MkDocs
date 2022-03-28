@@ -124,6 +124,9 @@ The screenshot below shows an example of a detailed search results report with i
 
 ![Item report](pdf-report-1.jpg)
 
+!!! Note ""
+    The report might not contain images for some [hybrid items](/plugins/avanthybrid/#avanthybrid) that were imported from PastPerfect. It depends on whether PastPerfect Online makes the image data available to the report generator.
+
 ##### Detailed search results report without images
 
 If there are more than 1,000 search results, the detailed search results report will be created without

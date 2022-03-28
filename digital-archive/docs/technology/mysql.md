@@ -123,11 +123,12 @@ development server.
     -   Keep the `host`, `username`, `password`, and `charset` settings for localhost
     -   Change `dbname` to match the new database and make sure `prefix` is set to `omeka_` unless SWHPL in which case it's `omek_`. 
 -   Run Omeka on localhost
-    -   Go to `http://localhost/omeka/users/login`
+    -   Go to `http://localhost/omeka/admin/users/login` (DO NOT RUN FROM PhpStorm    )
     -   Login as a user for the imported database
     -   Go to the **_Appearance_** page and click the **_Navigation_** tab
-    -   Change the URL for the `Landing` page to be `http://localhost/omeka/'
+    -   Change the URL for the `Landing` page to be `http://localhost/omeka/find?query=&view=4'
     -   Click the **_Save Changes_** button
+    -   Set the Homepage back to the Landing page and save again
 -   Go to the AvantElasticsearch plugin config page and change **_Contributor Id_** to `devb`
 -   Go to the **_Elasticsearch Indexing_** page:
     -   Export all items
