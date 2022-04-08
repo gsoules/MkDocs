@@ -998,7 +998,7 @@ Subject
 ```    
 
 -   Leave **External Link** blank
--	Check the **Hide Descriptions** checkbox
+-	Check the **External Link Icon** checkbox
 -   Enter the **Validation** specifiers shown below plus any others
 
 ``` plaintext

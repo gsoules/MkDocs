@@ -5,72 +5,75 @@ nav:
     - Find & Discover: index.md
     - Glossary: glossary.md
     - For Users:
-        Getting Started for Users: user/getting-started-user.md
-        How to Search: user/how-to-search.md
-        Viewing Search Results: user/viewing-search-results.md
-        Viewing Items: user/viewing-items.md
-        Viewing Related Items: user/viewing-related-items.md
-        Flag Items to View Later: user/recently-viewed.md
-        Share Search Results: user/sharing-search-results.md
-        Create PDF Reports: user/pdf-report.md
-        Use the Digital Notebook: user/digital-notebook.md
+        - Getting Started for Users: user/getting-started-user.md
+        - How to Search: user/how-to-search.md
+        - Viewing Search Results: user/viewing-search-results.md
+        - Viewing Items: user/viewing-items.md
+        - Viewing Related Items: user/viewing-related-items.md
+        - Flag Items to View Later: user/recently-viewed.md
+        - Share Search Results: user/sharing-search-results.md
+        - Create PDF Reports: user/pdf-report.md
+        - Use the Digital Notebook: user/digital-notebook.md
     - For Archivists:
-        Getting Started for Archivists: archivist/getting-started-archivist.md
-        Logging into the Digital Archive: archivist/logging-in.md
-        Special Features for Archivists: archivist/special-features-archivist.md
-        Working with Items: archivist/items.md
-        Attach an Image or PDF to an Item: archivist/attach-file.md
-        Add Relationships to an Item: archivist/add-relationship.md
-        Create an Item Set: archivist/item-set.md
-        What Gets Searched: archivist/what-gets-searched.md
-        Common Vocabulary: archivist/common-vocabulary.md
-        Vocabulary Editor: archivist/vocabulary-editor.md
-        Best Practices: archivist/best-practices.md
+        - Getting Started for Archivists: archivist/getting-started-archivist.md
+        - Logging into the Digital Archive: archivist/logging-in.md
+        - Special Features for Archivists: archivist/special-features-archivist.md
+        - Working with Items: archivist/items.md
+        - Attach an Image or PDF to an Item: archivist/attach-file.md
+        - Add Relationships to an Item: archivist/add-relationship.md
+        - Create an Item Set: archivist/item-set.md
+        - What Gets Searched: archivist/what-gets-searched.md
+        - Common Vocabulary: archivist/common-vocabulary.md
+        - Vocabulary Editor: archivist/vocabulary-editor.md
+        - Best Practices: archivist/best-practices.md
     - Relationships:
-        Getting Started with Relationships: relationships/getting-started-relationships.md
-        Archive Relational Model: relationships/archive-relational-model.md
-        Reference Items: relationships/reference-items.md
-        Kinds of Relationships: relationships/kinds-of-relationships.md
-        Relationships Editor: relationships/relationships-editor.md
-        Relationship Types: relationships/relationship-types.md
-        Relationship Rules: relationships/relationship-rules.md
+        - Getting Started with Relationships: relationships/getting-started-relationships.md
+        - Archive Relational Model: relationships/archive-relational-model.md
+        - Reference Items: relationships/reference-items.md
+        - Kinds of Relationships: relationships/kinds-of-relationships.md
+        - Relationships Editor: relationships/relationships-editor.md
+        - Relationship Types: relationships/relationship-types.md
+        - Relationship Rules: relationships/relationship-rules.md
     - Site Administration:
-        Getting Started for Administrators: administrator/getting-started-administrator.md
-        Omeka Administration: administrator/omeka-administration.md
-        Add a New User: administrator/add-new-user.md
-        Omeka Elements: administrator/omeka-elements.md
-        Digital Archive Administration: administrator/digital-archive-administration.md
-        Zoomable images: administrator/zoomable-images.md
-        Rebuilding Elasticsearch Indexes: administrator/reindex.md
-        Import CSV data: administrator/import-csv.md
+        - Getting Started for Administrators: administrator/getting-started-administrator.md
+        - Omeka Administration: administrator/omeka-administration.md
+        - Add a New User: administrator/add-new-user.md
+        - Omeka Elements: administrator/omeka-elements.md
+        - Digital Archive Administration: administrator/digital-archive-administration.md
+        - Zoomable images: administrator/zoomable-images.md
+        - Rebuilding Elasticsearch Indexes: administrator/reindex.md
+        - Import CSV data: administrator/import-csv.md
     - Technology:
-        The Digital Archive Software: technology/technologies.md
-        Install a Digital Archive site: technology/install-digital-archive.md
-        Common Vocabulary Translator: technology/common-vocabulary-translator.md
-        PastPerfect Exporter: technology/pastperfect-exporter.md
-        Web server: technology/web-host.md
-        MkDocs: technology/mkdocs.md
-        MySQL: technology/mysql.md
-        GitHub: technology/github.md
-        PHP: technology/php.md
-        Python: technology/python.md
-        AWS: technology/aws.md
-        Site maintenance: technology/site-maintenance.md
+        - The Digital Archive Software: technology/technologies.md
+        - Install a Digital Archive site: technology/install-digital-archive.md
+        - Common Vocabulary Translator: technology/common-vocabulary-translator.md
+        - PastPerfect Exporter: technology/pastperfect-exporter.md
+        - Web server: technology/web-host.md
+        - MkDocs: technology/mkdocs.md
+        - MySQL: technology/mysql.md
+        - GitHub: technology/github.md
+        - PHP: technology/php.md
+        - Python: technology/python.md
+        - AWS: technology/aws.md
+        - Site maintenance: technology/site-maintenance.md
     - Digital Archive plugins:
-        AvantAdmin: plugins/avantadmin.md
-        AvantCommon: plugins/avantcommon.md
-        AvantCustom: plugins/avantcustom.md
-        AvantDPLA: plugins/avantdpla.md
-        AvantElasticsearch: plugins/avantelasticsearch.md
-        AvantElements: plugins/avantelements.md
-        AvantHybrid: plugins/avanthybrid.md
-        AvantImport: plugins/avantimport.md
-        AvantRelationships: plugins/avantrelationships.md
-        AvantS3: plugins/avants3.md
-        AvantReport: plugins/avantreport.md
-        AvantSearch: plugins/avantsearch.md
-        AvantVocabulary: plugins/avantvocabulary.md
-        AvantZoom: plugins/avantzoom.md
+        - AvantAdmin: plugins/avantadmin.md
+        - AvantCommon: plugins/avantcommon.md
+        - AvantCustom: plugins/avantcustom.md
+        - AvantDPLA: plugins/avantdpla.md
+        - AvantElasticsearch: plugins/avantelasticsearch.md
+        - AvantElements: plugins/avantelements.md
+        - AvantHybrid: plugins/avanthybrid.md
+        - AvantImport: plugins/avantimport.md
+        - AvantLocation: plugins/avantlocation.md
+        - AvantRelationships: plugins/avantrelationships.md
+        - AvantS3: plugins/avants3.md
+        - AvantReport: plugins/avantreport.md
+        - AvantSearch: plugins/avantsearch.md
+        - AvantVocabulary: plugins/avantvocabulary.md
+        - AvantZoom: plugins/avantzoom.md
+    - Release Notes:
+        - New Features: release/new-features.md
 
 theme:
     name: readthedocs

@@ -22,11 +22,15 @@ The AvantCommon plugin has these configuration options:
 -   [Default Value](#default-value-option)
 -   [Display Order](#display-order-option)
 -   [External Link](#external-link-option)
--   [Hide Descriptions](#hide-descriptions-option)
+-   [External Link Icon](#external-link-icon-option)
 -   [Implicit Link](#implicit-link-option)
+-   [Placeholder](#placeholder-option)
 -   [Read-only Field](#read-only-field-option)
 -   [Suggest](#suggest-option)
+-   [Textarea Rows](#textarea-rows-option)
 -   [Text Field](#text-field-option)
+-   [Show Comment](#show-comment-option)
+-   [Show Description](#show-descriptions-option)
 -   [Title Sync](#title-sync-option)
 -   [Validation](#validation-option)
 -   [Vocabulary Field](#vocabulary-field-option)
@@ -39,6 +43,7 @@ See also the documentation for [installing AvantElements](../../../technology/in
 ### Allow Add Input option
 This option overrides Omeka's default behavior of displaying an "Add Input" button for every element on the admin Edit
 page. AvantElements reverses this behavior so that the button appears only on the elements specified with this option.
+To allow Add Input for all elements, enter `all_elements`.
 
 ##### Syntax:
 
@@ -51,7 +56,7 @@ page. AvantElements reverses this behavior so that the checkbox appears only on 
 
 ##### Syntax:
 
-Specify each element name on a separate row.
+Specify each element name on a separate row. To allow HTML for all elements, enter `all_elements`.
 
 ---
 ### Checkbox Field option
@@ -88,9 +93,8 @@ Approved: Yes
 
 ---
 ### Custom Callback option
-This is an advanced feature intended for you only by PHP programmers who have at least basic familiarity with how
-Omeka plugins work. The Custom Callback option lets you specify actions to be performed by custom written PHP functions
-that you provide.
+This is an advanced feature intended for use by PHP programmers are familiar with how
+Omeka plugins work. The Custom Callback option lets you specify actions to be performed by custom written PHP functions that you provide.
 
 ##### Syntax:
 
@@ -134,6 +138,7 @@ error that prevents the item from being saved. For example, to validate that the
 Type value.
 -   `<item>, save` is called after the item is saved and cannot be used to report an error. Use this callback to
 execute logic such as updating a table in the database.
+
 ---
 ### Default Value option
 Use the Default Value option to provide text that should be automatically filled in for an element when you add a new item.
@@ -208,7 +213,7 @@ Web Resource: View this item online
 
 ##### Element Value Syntax:
 
-The syntax for the value of an element that is used as an External Link is
+The syntax for the value of an element that is used as an External Link that is created by using the External Link option described above. The icon indicates that the link is to another website.
 
 ``` plaintext
 [ <link-text> <newline> ] [ <protocol> ] <url>
@@ -236,10 +241,8 @@ The examples above will generate a hyperlink like the one shown below:
 ```
 
 ---
-### Hide Descriptions option
-When checked, this option hides the descriptive information that Omeka normally displays on the admin Edit page to
-explain what Dublin Core means and what each element is used for. Use this option to make the Edit page more compact
-and to hide information that is often not useful to anyone, but a first time user.
+### External Link Icon option
+When checked, this option will display an external link icon following the external link.
 
 ---
 ### Implicit Link option
@@ -289,6 +292,28 @@ public static function filterPlace($item, $elementId, $text)
 ```
 
 ---
+### Placeholder option
+Use the Placeholder option to provide text that should appear in an empty text field as a placeholder. Placeholder text is usually light gray to indicate that it is a suggestion for what kind of input to use for the field, but it is not actual input.
+
+##### Syntax:
+
+The syntax for each row of the Default Value option is
+``` plaintext
+<element-name> ":" <value>
+```
+
+Where:
+
+-   `<element-name>` is the name of an Omeka element.
+-   `<value>` is the placeholder text that should be used for the element when its field is empty.
+
+##### Example:
+``` plaintext
+Title:Provide a clear and concise title for the item.
+Description:Provide a detailed description of the item with lots of keywords.
+```
+
+---
 ### Read-only Field option
 Elements listed using this option appear on the admin Edit page as read-only text. Use this option for element values
 that are set by a plugin or other mechanism, but cannot be edited by an administrator.
@@ -296,6 +321,25 @@ that are set by a plugin or other mechanism, but cannot be edited by an administ
 ##### Syntax:
 
 Specify each element name on a separate row.
+
+---
+### Show Comment Option
+This option shows an element's comment if it has one. By default, AvantElements hides all comments, but you can use this option to show them for one or more elements.
+
+###### Syntax:
+
+On separate rows specify the name of each element that should have its comment shown. Leave the field blank to hide the comments for all elements. To show comments for all elements, enter `all_elements`.
+
+You can add a comment to a Dublin Core field as explained in the Omeka Documentation for [annotating elements](https://omeka.org/classic/docs/Admin/Settings/Element_Sets/#annotate-elements).
+
+---
+### Show Description option
+This option shows the descriptive information that Omeka normally displays on the admin Edit page for a field. By default, AvantElements hides all descriptions, but you can use this option to show them for one or more elements.
+###### Syntax:
+
+On separate rows specify the name of each element that should have its description shown. Leave the field blank to hide the descriptions for all elements. To show descriptions for all elements, enter `all_elements`.
+
+You can add or edit the description for a non-Dublin Core field as explained in the Omeka Documentation for [editing item type elements](https://omeka.org/classic/docs/Admin/Settings/Item_Type_Elements/#edit-item-type-element-descriptions).
 
 ---
 ### Suggest option
@@ -333,6 +377,10 @@ Where:
 -   `<element-name>` is the name of an Omeka element.
 -   `<width>` is an optional integer parameter indicating the width in pixels of the text box. If the parameter is omitted, the 
 text box occupies the maximum available width.
+
+---
+### Textarea Rows option
+The Textarea Rows option specifies how many rows will display for a textarea element on the admin Edit page. The value must be an integer >= 1. Note some browsers automatically add one more row than what you specify.
 
 ---
 ### Title Sync option
@@ -382,7 +430,11 @@ Rule|Explanation
 required | The element value must not be blank or contain only spaces.
 date | The element value must be a date in the form YYYY-MM-DD e.g. 2018-05-29. This format ensures that dates will sort properly.
 year | The element value must be a four digit year
+number | The element value must be a number
 simple-text | The element value must not contain carriage returns, tabs, leading or trailing spaces, en or em dashes. If the text contains any of these, AvantElements will not report an error, but before saving the item, it will remove carriage returns and tabs, strip leading or trailing spaces, and replace an en or em dash with a hyphen.  This option is especially useful for the Title element to ensure that every title has simple, consistent formatting that can be reliably searched.
+upper-case | The element value must be uppercase. If the text is not uppercase, AvantElements will not report an error, but before saving the item, will convert it to uppercase.
+lower-case | The element value must be lowercase. If the text is not lowercase, AvantElements will not report an error, but before saving the item, will convert it to lowercase.
+
 
 You can specify more than one rule as shown in the example below for the Title element.
 

@@ -26,6 +26,17 @@ AvantAdmin provides the following benefits:
 -   Prevents Research role users from accessing admin pages
 -   Shows last 100 modified and recently added items on the Dashboard page
 -   Provides a down-for-maintenance feature
+-   `[avant_simple_page_css]` shortcode (see next section below)
+
+### Avant Simple Page shortcode
+AvantAdmin provides a short code named `[avant_simple_page_css]`. Placing the shortcode at the begining of the text for a page created with the [Simple Pages](https://omeka.org/classic/docs/Plugins/SimplePages/) plugin will prevent the page from being styled like other Digital Archive pages.
+
+The shortcode will allow your simple page content to use the entire page area below the banner and menu without any width limitation, padding, borders, or white space that would otherwise exist. Below is an example showing use of the shortcode in a simple page.
+
+``` html
+[avant_simple_page_css]
+YOUR SIMPLE PAGE HTML TEXT GOES HERE
+```
 
 ## Configuration options
 AvantAdmin has these configuration options:

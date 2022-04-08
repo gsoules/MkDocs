@@ -61,6 +61,9 @@ a **Catalogue #** element to store a catalogue number such as `2018.123.001`, yo
 `Catalogue #` as the alias. Note that the alias will appear in search results and as the
 identifier for thumbnails.
 
+!!! note ""
+    If you change this option to start using an alias, or to use a different alieas, or to stop using an alias, and you are using the [AvantElasticsearch plugin](/plugins/avantelasticsearch), you will need to [reindex the site](http://127.0.0.1:8000/administrator/reindex/#how-to-rebuild-elasticsearch-indexes) after making the change.
+
 ---
 
 ### Identifier Element option

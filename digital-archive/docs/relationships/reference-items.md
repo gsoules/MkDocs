@@ -45,7 +45,7 @@ related items.
 
 ![Three photographs of the same woman](reference-items-4.jpg)
 
-Four of the Reference items shown above have a manila colored matte around the image to indicate that
+Four of the Reference items shown above have an icon to indicate that
 the photo is the [cover image](/relationships/reference-items/#cover-images-for-reference-items)
 for the Reference item. Item 13772 is also a Reference item, but it has no cover image.
 
@@ -128,9 +128,9 @@ the ones in the
 
 ![Example of a cover image](reference-items-1.jpg)
 
-In search results, a cover image appears with a manila colored matte around the image to help
-distinguish its reference item from the item for the image itself. In the example below,  
-image 16193 on the left is the cover image for Reference item 15143.
+**Cover image in search results**
+
+In search results, a cover image appears with an icon that looks like a paperclip attached to a document. The icon lets you know that there is more to the item than just the image. In the example below, item 11562 on the left is the image used as the cover image for Reference item 13579. If you clicked on item 11562 you would see the item for that particular image. If you clicked on item 13579 you would see the reference item for Annie Clark as shown in the screenshot above.
 
 ![Example of a cover image](reference-items-5.jpg)
 

@@ -12,31 +12,14 @@
 -   On the **_AWS Management Console_** page, find and click on **_Amazon OpenSearch Service_**
 -   You'll now be on the **_Amazon OpenSearch Service dashboard_** page
 
-## Modify the access policy
+## Access policy
+
+Normally there should be no reason to every modify the  access policy, but here is how to see it.
 
 -   Login in to AWS as the root user
--   Click the `digitalarchive` domain on the **_Amazon Elasticsearch Service dashboard_** page
--   Choose **_Modify access policy_** from the **_Actions_** dropdown
+-   Click the `digitalarchive` domain on the **_Amazon OpenSearch Service dashboard_** page
+-   Click on the  **Security configuration_** tab
 
-Normally, the access policy should be specified as shown below to limit anonymous access
-to searching only. For development and debugging purposes, you can *temporarily* remove
-`/_search` from the end of the **_Resource_** to allow access from the Kibana developer tools.
-
-``` json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "*"
-      },
-      "Action": "es:*",
-      "Resource": "arn:aws:es:us-east-2:0xxxxxxxxxx8:domain/digitalarchive/*/_search"
-    }
-  ]
-}
-```
 
 ## Kibana
 
