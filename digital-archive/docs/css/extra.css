@@ -88,6 +88,7 @@ div.section dl dd ul {
 
 table {
     margin-bottom: 16px;
+    width:95% !important;
 }
 
 tr:nth-child(even) {background-color: #f2f2f2;}
