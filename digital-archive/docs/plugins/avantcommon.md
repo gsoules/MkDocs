@@ -17,6 +17,7 @@ AvantCommon provides common logic to support the following plugins:
 
 AvantCommon has these configuration options:
 
+-   [Custom Text](#custom-text-option)
 -   [Enable Lightbox](#enable-lighbox-option)
 -   [Identifer Alias](#identifier-alias-option)
 -   [Identifer Element](#identifier-element-option)
@@ -28,6 +29,23 @@ AvantCommon has these configuration options:
 The following sections describe each option in detail.
 
 See also the documentation for [installing AvantCommon](../../../technology/install-digital-archive/#avantcommon).
+
+---
+
+### Custom Text option
+This option lets you provide your own text to use in place of the default text that the Digital Archive displays for some user interface elements.
+
+Id | Default Text
+-- | --
+image_tooltip | See larger image
+image_thumb_tooltip | See larger image (click title to view item)
+php_thumb_tooltip | Read this PDF file
+item_link_tooltip | View this item
+fallback_thumb_tooltip | Click title to view item
+flagged_items_link_text | Flagged Items
+flagged_items_tooltip | See your flagged items
+
+The Id values you specify must exactly match the values in the table above. If an Id does not match, the default text will be used. 
 
 ---
 

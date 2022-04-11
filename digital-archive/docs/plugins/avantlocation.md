@@ -120,6 +120,8 @@ The table's column titles (Date, Status, Location, and Who) come from the plugin
 
 Notice how when the object went back into storage on `2022-04-08`, it was stored in a new location (archive room instead of basement). The plugin automatically records the current value of the **Storage Location** element in the history whenever the **Temporary Location** element's value is blank or `<none>`. Thus, if the object is moved to a new storage location, the new location gets recorded in the history.
 
+To display the history in table format, you must add an entry to the AvantElements Custom Callback option as explained later in step 5 of the [installation preparation](/plugins/avantlocation/#preparation) section.
+
 **Changing the location for a batch of items**
 
 When you need to change the location information for a batch of items, such as when loaning several objects to another museum, you can use the **Location Move Date** and **Location Move By** fields on the [AvantLocation configuration](/plugins/avantlocation/#configuration-options) page to set a date and a person identifier that will be used as the Date and Who values in the **Location History**. This way, the date can reflect the actual date of the move (instead of the date on which you edit the items) and the person can be someone other than the Digital Archive administrator who is editing the items.
@@ -128,9 +130,91 @@ When you are done editing a batch of items, be sure to go back to the AvantLocat
 
 
 ## Dependencies
-The AvantHybrid plugin requires that the [AvantCommon] plugin be installed and activated.
+The AvantLocation plugin requires that the [AvantCommon] and [AvantElements] plugins be installed and activated.
 
 ## Installation
+
+### Preparation
+
+Before [installing the plugin](/plugins/avantlocation/#plugin-installation), perform each of the steps that follow.
+
+1 &ndash; Add location tracking elements
+
+: Add location tracking elements to your Omeka installation as described in the [configuration options](/plugins/avantlocation/#configuration-options) section. Example element names are:
+
+    - **Location Status**
+    - **Temporary Location**
+    - **Storage Location**
+    - **Location History**
+    - **Location** (optional)
+
+2 &ndash; Make elements private
+
+: Make all of the elements [private](/plugins/avantcommon/#private-elements-option) except for **Location**. This is a recommendation, not a requirement.
+
+3 &ndash; Create dropdown lists
+
+: To make location tracking easier and to prevent data entry errors, use the [Simple Vocab](https://omeka.org/classic/docs/Plugins/SimpleVocab/) plugin to create dropdown lists for the elements shown in the examples below. Choose vocab values that are appropriate for your museum.
+
+    **Location Status**
+
+    ```
+    On View
+    In Storage
+    On Loan
+    Out for Restoration
+    ```
+
+    **Temporary Location**
+
+    ```
+    Museum East Gallery
+    Museum West Gallery
+    Andy Warhol Museum
+    Art Institute of Chicago
+    Restoration company 1
+    ```
+
+    **Storage Location**
+
+    ```
+    Basement  Shelf 1A, Box 1
+    Basement  Shelf 1A, Box 2
+    Archive Room, Box 10
+    Oversize shelf
+    Flat file
+    2D art rack
+    ```
+
+    As an alternative to using the Simple Vocab plugin for the **Storage Location** element, you could use a [suggest field](/plugins/avantelements/#suggest-option). If you have a lot of different storage locations, a suggest field will save you from having to update the Simple Vocab list each time you need to enter a new location.
+
+4 &ndash; Enable the public location feature
+
+:   If you want to show a [public location](/plugins/avantlocation/#public-location), use the [AvantElements](/plugins/avantelements) plugin to:
+
+    - Make the **Location** element [read-only](/plugins/avantelements/#read-only-field-option)
+    - Make the **Location** element be a [text-field](/plugins/avantelements/#text-field-option)
+    - Add [placeholder](/plugins/avantelements/#placeholder-option) text for the **Location** element
+
+    The screenshot below shows these setting on the AvantElements configuration page.
+
+    ![AvantLocation configuration page](avantlocation-4.jpg)
+
+5 &ndash; Location history table formatting
+
+: In order to display the location history in table format you must add an entry to the AvantElements [Custom Callback](/plugins/avantelements/#custom-callback-option) option like the one below.
+
+    ```
+    Location History, filter: AvantLocation, filterHistory
+    ```
+
+    In the example above, the name of the location history element is `Location History`. The screenshot below shows what the entry looks like on the AvantElements configuration page.
+    
+    ![AvantLocation configuration page](avantlocation-5.jpg)
+
+    If you don't add the entry, the history will not display in a table. Instead it will display showing the `|` column separators the same as on the Edit page.
+
+### Plugin installation
 
 To install the AvantLocation plugin, follow these steps:
 
@@ -139,6 +223,7 @@ To install the AvantLocation plugin, follow these steps:
 1. Unzip `AvantLocation-master.zip` into your Omeka `plugins` folder
 1. Rename the folder to `AvantLocation`
 1. Activate the plugin from the Omeka `Plugins` page
+1. Provide the required values on the configuration page
 
 ## Warning
 
@@ -170,6 +255,7 @@ Copyright
 -   See [LICENSE](https://github.com/gsoules/AvantLocation/blob/master/LICENSE) for more information.
 
 [AvantCommon]: avantcommon.md
+[AvantElements]: avantelements.md
 
 
 
