@@ -16,7 +16,9 @@ which resets the flag to gray and removes the item from the flagged items list.
 
 ![Thumbnails showing recently-viewed flags](recently-viewed-1.jpg)
 
-You can also flag an item while you are view an item by clicking the flag that appears next to the item's identifier. For this example, lets suppose that while viewing item 13178 you clicked its flag.
+You can also flag an item while you are view an item by clicking the flag that appears next to the item's identifier. For this example, lets suppose that while viewing item 13178 you clicked its flag as shown in the screenshot below.
+
+![Flag an item](recently-viewed-4.jpg)
 
 ### Flagged items page
 

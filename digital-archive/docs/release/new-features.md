@@ -6,7 +6,7 @@
 
 ### Audio player
 
-Items that have MP3 files attached to them now display an audio player that allows you to start, stop, scrub, and mute the sound. A screenshot appears below.
+Items that have MP3 files attached to them now display an audio player that allows you to start, stop, scrub, and mute the sound. A screenshot taken from an [item that uses the new feature](https://swhplibrary.net/digitalarchive/items/show/12751) appears below.
 
 ![audio player](audio-player-1.jpg)
 
