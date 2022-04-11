@@ -2,7 +2,20 @@
 
 ---
 
-**Coming Soon**
+**April 12, 2022**
+
+### Audio player
+
+Items that have MP3 files attached to them now display an audio player that allows you to start, stop, scrub, and mute the sound. A screenshot appears below.
+
+![audio player](audio-player-1.jpg)
+
+---
+!!! note ""
+    Thank you to Sadie Cooley of the [Southwest Harbor Public Library](https://swhplibrary.org/digital-archive/) for suggesting this feature.
+---
+
+**April 11, 2022**
 
 ### Flagged items replaces Recently Viewed items
 
