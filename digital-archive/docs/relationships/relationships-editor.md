@@ -33,7 +33,7 @@ Section &ndash; C
     `a Documentary item or object`. 
 
 Section &ndash; D
-:   Lists recently viewed items and indicates with an **_Add_** button which ones can be
+:   Lists flagged items and indicates with an **_Add_** button which ones can be
     added as a related item for the primary item. 
 
 **_Add_** button  &ndash; 1
@@ -52,8 +52,8 @@ Relationship selector  &ndash; 2
 ## How it works
 
 The **_Relationships Editor_** page is designed to work in conjunction with the
-[Recently Viewed Items](/user/recently-viewed/#recently-viewed-items-page) list. That is, before going to the
-**_Relationships Editor_** page, you should have populated the recently viewed items list with only those items that
+[Flagged Items](/user/recently-viewed/#flagged-items-page) list. That is, before going to the
+**_Relationships Editor_** page, you should have populated the flagged items list with only those items that
 you want to work with on the **_Relationships Editor_** page, though if a few rogue items sneak in, you can
 simply click their **_Remove_** link to get rid of them.
 
@@ -62,12 +62,12 @@ selector (2), the software evaluates:
 
 -   The **_Type_** and **_Subject_** of the primary item
 -   The selected relationship
--   The recently viewed item
+-   The flagged item
 
 Based on the evaluation, the software:
 
 -   Populate the relationship selector (2) with only those relationships that the primary item  can be the source of
--   Displays an **_Add_** button next to recently viewed items that satisfy the rules to be the target of the primary
+-   Displays an **_Add_** button next to flagged items that satisfy the rules to be the target of the primary
     item for the selected relationship
 
 This mechanism ensures that you cannot add an invalid relationship. It does not, however, prevent you from adding an
@@ -78,7 +78,7 @@ not the kind of mention intended by the *about/mentioned by* relationship. An ap
 one for item 16194 which is their wedding announcement.
 
 In summary, the **_Relationships Editor_** page makes it very easy to add relationships, but it the archivist's
-responsibility to a) go the page after having first populated the recent items list with related items, and b) be
+responsibility to a) go the page after having first populated the Flagged Items list with related items, and b) be
 careful to add relationships that are not just valid, but appropriate.
 
 

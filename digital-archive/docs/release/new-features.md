@@ -2,11 +2,11 @@
 
 ---
 
-**April 12, 2022**
+**Coming Soon**
 
 ### Flagged items replaces Recently Viewed items
 
-The [Flagging Items to View Later](/user/recently-viewed/#flagging-items-to-view-later) feature has been modified to create a list of flagged items instead of a list of recently viewed items. Previously, whenever you visited an item, it was added to the recently viewed items list even if that was not your intention. Now you explicitly flag items that you want to visit later. As before, you can flag items from the search results page, and now you can also flag an item when you are viewing the item.
+The [Flagging Items to View Later](/user/recently-viewed/#flagging-items-to-view-later) feature has been modified to create a list of flagged items instead of a list of recently viewed items. Previously, whenever you visited an item, it was added to the list even if that was not your intention. Now you explicitly flag items that you want to visit later. As before, you can flag items from the search results page, and now you can also flag an item when you are viewing it.
 
 ### Custom text option
 

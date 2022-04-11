@@ -36,8 +36,8 @@ Search results
 
     ![Search results quick links](items-15.jpg)  
 
-Recently Viewed Items page
-:   The quick links also appear on the **_Recently Viewed Items_** page.
+Flagged Items page
+:   The quick links also appear on the **_Flagged Items_** page.
 
     ![Search results quick links](items-16.jpg)  
 

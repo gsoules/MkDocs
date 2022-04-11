@@ -22,8 +22,8 @@ The appearance of an item's thumbnail tells you something about the item:
 -   A placeholder thumbnail indicates that the item has no attachments. The placeholder
     for item 13023 indicates that it is a Reference item for a structure.
 -   A blue flag next to the item number (items 13325 and 14997) indicates that the item has either been marked to view
-    later or that it is already on the recently viewed items list. A gray flag indicates that
-    the item is not on the recently viewed items list. [Learn about flagging items](/user/recently-viewed).
+    later or that it is already on the flagged items list. A gray flag indicates that
+    the item is not on the flagged items list. [Learn about flagging items](/user/recently-viewed).
 
 ## Click the title to view the item
 

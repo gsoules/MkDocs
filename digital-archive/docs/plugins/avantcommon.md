@@ -19,9 +19,9 @@ AvantCommon has these configuration options:
 
 -   [Custom Text](#custom-text-option)
 -   [Enable Lightbox](#enable-lighbox-option)
--   [Identifer Alias](#identifier-alias-option)
--   [Identifer Element](#identifier-element-option)
--   [Identifer Prefix](#identifier-prefix-option)
+-   [Identifier Alias](#identifier-alias-option)
+-   [Identifier Element](#identifier-element-option)
+-   [Identifier Prefix](#identifier-prefix-option)
 -   [Private Elements](#private-elements-option)
 -   [Request Image URL](#request-image-url-option)
 -   [Unused Elements](#unused-elements-option)
@@ -44,9 +44,14 @@ item_link_tooltip | View this item
 fallback_thumb_tooltip | Click title to view item
 flagged_items_link_text | Flagged Items
 flagged_items_tooltip | See your flagged items
+flag_item_tooltip | Add to flagged items list
+unflag_item_tooltip | Remove from flagged items list
 
 The Id values you specify must exactly match the values in the table above. If an Id does not match, the default text will be used. 
 
+The screenshot below shows an example use of the Custom Text option.
+
+![Custom text](custom-text-1.jpg)
 ---
 
 ### Enable Lightbox option

@@ -45,12 +45,12 @@ you have about her: photos, a newspaper clipping, and information about her husb
 
 Follow the steps below to do the same thing using the Digital Archive.
 
-1 &ndash; Clear your Recent Items list
-:   The recent items list is your work area. To clear it off:
+1 &ndash; Clear your Flagged Items list
+:   The Flagged Items list is your work area. To empty the list:
 
-    -   Go to the [**_Recently Viewed Items_**](/user/recently-viewed/#recently-viewed-items-page) page
-        by clicking the **_Recent Items_** link that appears on the banner of every page under the search box
-    -   On the **_Recently Viewed Items_** page, click the **_Clear all_** link
+    -   Go to the [**_Flagged Items_**](/user/recently-viewed/#flagged-items-page) page
+        by clicking the **_Flagged Items_** link that appears on the banner of every page under the search box
+    -   On the **_Flagged Items_** page, click the **_Clear all_** link
 
 2 &ndash; Create a Reference Item for the primary item
 :   -   Follow the steps to [add a new item](/archivist/items/#add-a-new-item)
@@ -80,7 +80,7 @@ A PDF can contain a gold mine of keywords. It was because of the presence of the
 
 4 &ndash; View or flag related items
 :   As you find items that you want to relate to your primary item, either view them or flag them.   
-    When you view or flag an item, it gets added to your recently viewed items list.
+    When you view or flag an item, it gets added to your flagged items list.
     
     -   View an item by clicking its title in the search results, *or*
     -   [Flag an item](/user/recently-viewed/#flagging-items-to-view-later) by clicking the little
@@ -88,10 +88,10 @@ A PDF can contain a gold mine of keywords. It was because of the presence of the
 
     The screenshot above shows that the five items have been flagged.
 
-5 &ndash; Go to the **_Recently Viewed Items_** page
+5 &ndash; Go to the **_Flagged Items_** page
 :   Now that you have found and flagged the items you want to relate to Mary:
 
-    -   Go to the [**_Recently Viewed Items_**](/user/recently-viewed/#recently-viewed-items-page) page to see them
+    -   Go to the [**_Flagged Items_**](/user/recently-viewed/#flagged-items-page) page to see them
     -   Click the **_Remove_** link on any items that may have crept in while you were searching
     -   Click the **_Relationships_** link on the primary item (Mary's Reference Item)
 
@@ -106,7 +106,7 @@ You've now gathered all the items that are related to Mary. Now it's time to add
 6 &ndash; Go to the Relationships Editor
 :   You add, edit, or remove relationships using the [**_Relationships Editor_**](/relationships/relationships-editor/).
 
-    To get to the editor from the **_Recently Viewed Items_** page:
+    To get to the editor from the **_Flagged Items_** page:
 
     -   Click the **_Relationships_** link for Mary's Reference item (see the pointing finger at
         the bottom of the screenshot above).
@@ -117,7 +117,7 @@ You've now gathered all the items that are related to Mary. Now it's time to add
 ![Relationships link](add-relationship-5.jpg)
 
 7 &ndash; Relate photos to the primary item
-:   The page above shows that for the *depicted by* relationship (in the dropdown list), two recently viewed items have an
+:   The page above shows that for the *depicted by* relationship (in the dropdown list), two flagged items have an
     **_Add_** button to indicate that they are eligible to be added as related items. They are the two photos
     in which Mary appears &ndash; those photos depict Mary.
     
@@ -126,7 +126,7 @@ You've now gathered all the items that are related to Mary. Now it's time to add
 
 ![Relationships link](add-relationship-6.jpg)
     
-:   The two photos you just added still appear in the recently viewed items list, but their **_Add_** buttons
+:   The two photos you just added still appear in the flagged items list, but their **_Add_** buttons
     are now disabled. No other items in the list have **_Add_** buttons because none *depict* Mary. If you like,
     you can remove the photos from the list by clicking their **_Remove_** links.
 

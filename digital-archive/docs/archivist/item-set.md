@@ -6,8 +6,8 @@ The steps for creating an item set are nearly the same as for
 [adding relationships to an item](/archivist/add-relationship/) and so only the differences
 are expanded upon here.
 
-1 &ndash; Clear your Recent Items list
-:   -   Go to the [**_Recently Viewed Items_**](/user/recently-viewed/#recently-viewed-items-page) page
+1 &ndash; Clear your Flagged Items list
+:   -   Go to the [**_Flagged Items_**](/user/recently-viewed/#flagged-items-page) page
     -   Click the **_Clear all_** link
 
 2 &ndash; Create an Item Set item 
@@ -21,13 +21,13 @@ are expanded upon here.
     -   [Flag each item](/user/recently-viewed/#flagging-items-to-view-later)
 
 4 &ndash; Review the items that will go into the set
-:   -   Go to the [**_Recently Viewed Items_**](/user/recently-viewed/#recently-viewed-items-page) page
+:   -   Go to the [**_Flagged Items_**](/user/recently-viewed/#flagged-items-page) page
     -   Verify that the items you want in the set are there and remove any others
     -   Click the **_Relationships_** link on the item set item created in step 2 above
 
 5 &ndash; Add the items to the set
 :   -   On the **_Relationships Editor_** page, choose *set contains* from the dropdown list
-    -   Click the **_Add_** button for each of the items in the recently viewed items list
+    -   Click the **_Add_** button for each of the items in the flagged items list
 
 ![Item set relationships](item-set-1.jpg)
 
