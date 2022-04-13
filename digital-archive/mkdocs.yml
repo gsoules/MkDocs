@@ -66,6 +66,7 @@ nav:
         - AvantHybrid: plugins/avanthybrid.md
         - AvantImport: plugins/avantimport.md
         - AvantLocation: plugins/avantlocation.md
+        - AvantMapsAlive: plugins/avantmapsalive.md
         - AvantRelationships: plugins/avantrelationships.md
         - AvantS3: plugins/avants3.md
         - AvantReport: plugins/avantreport.md
