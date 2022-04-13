@@ -6,16 +6,22 @@
 
 ### Audio player
 
-Items that have MP3 files attached to them now display an audio player that allows you to start, stop, scrub, and mute the sound. A screenshot taken from an [item that uses the new feature](https://swhplibrary.net/digitalarchive/items/show/12751) appears below.
+Items that have MP3 files attached to them now display an audio player that allows you to start, pause, scrub, and mute the sound. A screenshot showing the player appears below.
 
 ![audio player](audio-player-1.jpg)
+
+---
+
+If the item's type is set to `Document, Recording, Audio Recording` its icon will display as shown below.
+
+![audio player](audio-player-2.jpg)
 
 ---
 !!! note ""
     Thank you to Sadie Cooley of the [Southwest Harbor Public Library](https://swhplibrary.org/digital-archive/) for suggesting this feature.
 ---
 
-**April 11, 2022**
+**April 10, 2022**
 
 ### Flagged items replaces Recently Viewed items
 
@@ -27,8 +33,9 @@ The AvantCommon plugin has a new [Custom Text](/plugins/avantcommon/#custom-text
 
 ### AvantLocation plugin
 
-The new [AvantLocation](/plugins/avantlocation/) plugin provides a way for an organization, such as a museum, to track the physical location of an object over time as it moves from one place to another. For example, suppose you have a Digital Archive item for a bird carving that is in storage. You then move the object to be on view in the museum, later move it back to storage, then loan it to to another museum, and finally return it to storage. The plugin lets you record date and location for each move. When you view the object's Digital Archive item, you'll see a history of where the object has been.
+The new [AvantLocation](/plugins/avantlocation/) plugin provides a way for an organization, such as a museum, to track the physical location of an object over time as it moves from one place to another. For example, suppose you have a Digital Archive item for a bird carving that is in storage. You then move the object to be on view in the museum, later move it back to storage, then loan it to to another museum, and finally return it to storage. The plugin lets you record date and location for each move. When you view the object's Digital Archive item, you'll see a history of where the object has been as shown in the screenshot below.
 
+![location history](/plugins/avantlocation-3.jpg)
 
 ### Simple page shortcode
 
