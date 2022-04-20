@@ -2,6 +2,23 @@
 
 ---
 
+**April 18, 2022**
+
+### MapsAlive plugin
+
+The [MapsAlive](/plugins/mapsalive/) plugin lets you display your Digital Archive content on an interactive map created with [MapsAlive](https://www.mapsalive.com). It lets your Omeka installation act as a [MapsAlive Live Data](https://www.mapsalive.com/docs/livedata-intro/) server that allows your interactive map to obtain metadata and images from your Omeka items in real time and present the information using HTML that you specify on the MapsAlive configuration page.
+
+** Click or touch a red dot to see how it works**
+
+<script type="module" id="ma-85015" src="https://tour.mapsalive.com/85015/mapsalive-module.js"></script>
+<div class="ma-85015" data-flex-height="300"></div>
+
+---
+!!! note ""
+    AvantLogic developed this plugin in conjunction with a project for the [Maine State Museum](https://mainestatemuseum.org/), funded by the [Andrew W. Mellon Foundation](https://mellon.org/), to support improvements in a digital archive documenting the history of Indigenous people in the Northeastern United States.
+
+---
+
 **April 12, 2022**
 
 ### Audio player

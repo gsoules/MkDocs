@@ -1,3 +1,0 @@
-# AvantMapsAlive
-
-Coming soon.

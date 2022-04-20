@@ -3,13 +3,17 @@
     content: "";
 }
 
-h2, h3, h4 {
+h2, h3, h4, h5 {
     margin-top: 18px;
+    margin-bottom: 8px !important;
 }
 
-/* Reduce the spacing below the header. */
+h4 {
+    font-size: 100%;
+}
+
 h5 {
-	margin-block-end: 0.5em; 
+    font-size: 90%;
 }
 
 /* Make the sidebar title bigger. */
@@ -58,15 +62,9 @@ div.wy-menu.wy-menu-vertical a {
     padding: 4px 12px 4px 12px;
 }
 
-/* Indent code, images, tables, and lists. */
-pre, img, table {
-    margin-left: 18px;
-}
-
 p {
     margin-bottom: 12px;
 }
-
 
 p + ul {
 	margin-top: 0;

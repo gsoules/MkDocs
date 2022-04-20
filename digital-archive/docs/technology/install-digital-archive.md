@@ -1227,8 +1227,12 @@ Follow these steps to install and configure [AvantS3]:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantS3`
+
+If you are not using the AvantCustom plugin, also follow these steps:
+
 -   Go to the configuration options page for the AvantElements plugin
 -   Add the code below to the end of the **Custom Callback** specifiers
+
 ``` plaintext
 Identifier, filter: DigitalArchive, filterIdentifierS3
 ```

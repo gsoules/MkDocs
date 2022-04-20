@@ -66,13 +66,13 @@ nav:
         - AvantHybrid: plugins/avanthybrid.md
         - AvantImport: plugins/avantimport.md
         - AvantLocation: plugins/avantlocation.md
-        - AvantMapsAlive: plugins/avantmapsalive.md
         - AvantRelationships: plugins/avantrelationships.md
         - AvantS3: plugins/avants3.md
         - AvantReport: plugins/avantreport.md
         - AvantSearch: plugins/avantsearch.md
         - AvantVocabulary: plugins/avantvocabulary.md
         - AvantZoom: plugins/avantzoom.md
+        - MapsAlive: plugins/mapsalive.md
     - Release Notes:
         - New Features: release/new-features.md
 
