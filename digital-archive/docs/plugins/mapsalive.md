@@ -286,7 +286,18 @@ Template: Example4, Identifier, HTML
 
 #### Live Data call
 
-When the map makes a Live Data call to the plugin, it passes data values in the `data` argument. When passing more than one value, use `~~` (two tilde characters) as a separator. For example, the map could pass `"Franklin Square~~December 1884"` to provide the two data values `Franklin Square` and `December 1884`.  
+When the map makes a Live Data call to the plugin, it passes data values in the `data` argument. When passing more than one value, use `~~` (two tilde characters) as a separator. For example, the map could pass `"Franklin Square~~December 1884"` to provide the two data values `Franklin Square` and `December 1884`.
+
+A convenient way to provide data for individual hotspots is to store the data values as the hotspot's content using the text editor on the MapsAlive [**_Edit Hotspot Content_** screen](https://www.mapsalive.com/docs/ref-hotspots/#hotspot-content-editor). For example, you could type `"Franklin Square~~December 1884"` as the hotspot's content. To pass the content to the MapsAlive plugin for use by a data specifier, code your [request function](/plugins/mapsalive/#request-function) to pass the content in the `data` argument like this:
+
+``` javascript
+function getLiveDataFromOmeka(items) {
+   let api = MapsAlive.getApi();
+   let url = "https://myomekasite.net/mapsalive";
+   let data = api.currentHotspot.plainText;
+   api.liveData.requestHotspot("json", 0, url, "items", items, "template", "demo", "data", data);
+}
+```
 
 ---
 
