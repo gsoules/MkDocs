@@ -73,7 +73,7 @@ Templates specify the form and appearance of the information that the plugin ret
 Where:
 
 -   `<template-name>` is a name you choose for the template. Each template must have a unique name and only letters, digits, and `_` are allowed. Template names are case-sensitive.
--   `<item-identifier>` is the name of the Omeka element to be used as the unique identifier for the Omeka items that will provide information for the template. Typically it will be the `Identifier` element, but you can use any element, such as `Catalog #`,that *uniquely* identifies items. If more than one item has the same identifier, the plugin will only get information for one of the items.
+-   `<item-identifier>` is the name of the Omeka element to be used as the unique identifier for the Omeka items that will provide information for the template. Typically it will be the `Identifier` element, but you can use any element, such as `Catalog #`,that *uniquely* identifies items. If more than one item has the same identifier, the plugin will only get information for one of the items. To use the Omeka item Id as the identifier, specify `omeka_id`.
 -   `<format>` is either `HTML` or `JSON` to describe the contents of the template. Typically you will write templates as HTML, but you can write them in JSON if you want to let the map's JavaScript process and format the data. Use of JSON templates is discussed later on.
 
 Below is an example of a template followed by an example of what the resulting Live Data response might look like. If you compare the two, you'll see that the response is the template filled in with information from an Omeka item.
