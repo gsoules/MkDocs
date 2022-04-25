@@ -2,16 +2,15 @@
 
 ---
 
-**April 18, 2022**
+**April 22, 2022**
 
 ### MapsAlive plugin
 
-The [MapsAlive](/plugins/mapsalive/) plugin lets you display your Digital Archive content on an interactive map created with [MapsAlive](https://www.mapsalive.com). It lets your Omeka installation act as a [MapsAlive Live Data](https://www.mapsalive.com/docs/livedata-intro/) server that allows your interactive map to obtain metadata and images from your Omeka items in real time and present the information using HTML that you specify on the MapsAlive configuration page.
+The [MapsAlive plugin](/plugins/mapsalive/)  lets you display your Digital Archive content on an interactive map created with [MapsAlive](https://www.mapsalive.com) interactive map software. The plugin lets your Omeka installation act as a [MapsAlive Live Data](https://www.mapsalive.com/public/mapsalive-features/live-data/) server that allows your interactive map to obtain metadata and images in real time from your Omeka database and present the information using HTML that you specify on the MapsAlive plugin configuration page.
 
-** Click or touch a red dot to see how it works**
+**See [interactive maps from the Southwest Harbor Public Library](https://swhplibrary.net/digitalarchive/interactive-maps) that use the plugin.**
 
-<script type="module" id="ma-85015" src="https://tour.mapsalive.com/85015/mapsalive-module.js"></script>
-<div class="ma-85015" data-flex-height="300"></div>
+![swhpl maps page](mapsalive-plugin.jpg)
 
 ---
 !!! note ""

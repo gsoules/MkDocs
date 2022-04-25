@@ -4,12 +4,12 @@ The MapsAlive plugin lets you display your Omeka content (metadata and images) o
 created with [MapsAlive](https://www.mapsalive.com). MapsAlive is a web application that lets you create
 interactive maps and diagrams that you can  insert into web pages like this one.
 
-**Try it now with the map below.** Click or touch the red dot markers, pan and zoom the map, and select locations from the menu.
-The text and pictures you see are being requested in real time by the plugin from the Southwest Harbor Public Library's
-[Omeka database](https://myomekasite.net).
+**Try it now with the map below.** Click or touch the building shape markers, pan and zoom the map, and select locations from the menu.
+The text and pictures you see are being requested in real time by the plugin from the [Southwest Harbor Public Library's
+Omeka site](https://swhplibrary.net/).
 
 <script type="module" id="ma-85023" src="https://tour.mapsalive.com/85023/mapsalive-module.js"></script>
-<div class="ma-85023" data-flex-height="300" style="margin-bottom:12px"></div>
+<div class="ma-85023" data-page="2" data-flex-height="300" style="margin-bottom:12px"></div>
 
 #### Maps that use this plugin
 Here are interactive maps that use this plugin. They will give you ideas for how you can use an interactive map with your own Omeka items.
@@ -25,7 +25,7 @@ An interactive map makes requests to the server and the server responds with inf
 
 It works like this:
 
--   A user selects a hotspot on your interactive map by mousing over, or clicking, or touching it.
+-   A user selects a hotspot on your interactive map by mousing over, clicking, or touching it.
 -   The map asks the MapsAlive plugin to get information for that hotspot.
 -   The plugin gets the information from items in your Omeka database.
 -   The plugin inserts the data into an HTML [template](/plugins/mapsalive/#templates) that you define.
@@ -80,7 +80,7 @@ function getLiveDataFromOmeka(items) {
 :   When a user mouses over, clicks, or touches a hotspot, the hotspot will call the request function which will call the MapsAlive plugin. The plugin will return the Omeka item information for that hotspot as the HTML defined in your template.
 
     - Choose **Hotspot > Advanced Hotspot Options** from the Tour Builder menu.
-    - Find the **Live Data Options** section on the [MapsAlive **_Advanced Hotspot Options_**](https://www.mapsalive.com/docs/livedata-request-hotspot/#request-function) screen.
+    - Find the **Live Data Options** section on the MapsAlive [**_Advanced Hotspot Options_**](https://www.mapsalive.com/docs/livedata-request-hotspot/#request-function) screen.
 
         ![live data call](mapsalive-5.jpg)
 
@@ -148,7 +148,7 @@ Template: Example1, Identifier, HTML
 </div>
 ```
 
-The screenshot below shows what the information from the Omeka item might look like when displayed on a map inside a [popup](https://www.mapsalive.com/docs/ref-popups/) that has been [styled using CSS](/plugins/mapsalive/#styling-with-css).
+The screenshot below shows what the information from the Omeka item might look like when displayed on a map inside a [popup](https://www.mapsalive.com/docs/start-intro/#popup) that has been [styled using CSS](/plugins/mapsalive/#styling-with-css).
 
 ![hotspot](mapsalive-3.jpg)
 
@@ -180,7 +180,7 @@ A specifier can include an item index option to indicate which of multiple items
 To better understand what the item index is for, suppose you have two items about a building. The first item has a photo, but no other information. The second has a description of the building plus another photo. You could use the template below to display the description from the second item and the images from both items.
 
 ``` plaintext
-Template: Example2, Catalog #, HTML
+Template: Example2, Identifier, HTML
 <div>${element, Description, 2}</div>
 <div>${file, img, 1}</div>
 <div>${file, img, 2}</div>
@@ -192,7 +192,11 @@ A map hotspot passes item identifiers to the plugin in a comma-separated list. I
 
 ![hotspot](mapsalive-7.jpg)
 
-It you pass values that don't match any of your Omeka items, blank values will be used for any [element specifiers](/plugins/mapsalive/#element-specifier) that refer to those items.
+The example above uses integers as item identifiers, but you can use other values. For example, if your template specified `Catalog #` instead of `Identifer`, your map might pass `"81.1.93,96.2.1"` to provide the identifiers for items having catalog numbers `81.1.93` and `96.2.1`.
+
+#### Bad identifiers
+
+If your map passes a bad identifier value, that is, a value that doesn't match any of your Omeka items, a blank value will be used for any [element specifiers](/plugins/mapsalive/#element-specifier) that refer to that item. To catch this kinds of error while you are developing your interactive map, you can turn on the warnings option so that it will be easy to spot bad identifiers. See the `warnings` argument in the [MapsAlive plugin arguments](/plugins/mapsalive/#mapsalive-plugin-arguments) section.
 
 ---
 
@@ -261,7 +265,14 @@ Option | Description
 url|The location of the file on the Omeka website.
 width|The width of an image file in pixels.
 height|The height of an image file in pixels.
-img|This is a special feature that returns a fully-formed `<img>` tag for the image. It saves you from having to code the tag yourself and it ensures that the tag includes the image dimensions plus CSS to adjust the image to fit its container if the container is narrower and/or shorter than the image's width and height.
+img|This is a special convenience feature that creates a fully-formed `<img>` tag for the image. It is explained in the next section.
+
+#### img property
+The `img` property saves you from having to code an &lt;img> tag and it ensures that the tag has the correct attributes and styling to:
+
+-   Tell the browser the image's dimensions to prevent the image from initially appearing too small and then resizing after the browser has downloaded it and determined its dimensions. 
+-   Adjust the image's size to fit a container that is narrower and/or shorter than the image's width and height. This is done by setting the image width to scale to 100% of its container width and letting the browser calculate the scaled height.
+-   Prevent extra white space that can appear below an image due to [the way browsers render inline images](https://stackoverflow.com/questions/5804256/image-inside-div-has-extra-space-below-the-image). The problem is fixed by setting the `vertical-align` style.
 
 This is how you use the `img` property:
 
@@ -271,8 +282,11 @@ ${file, fullsize, img}
 
 Here is an example showing the &lt;img> tag that gets created for you.
 ``` html
-<img src='the-file-url-will-be-here' width='300' height='246' style='max-width:100%; height:auto;'>
+<img src='https://myomekasite.net/files/thumbnails/10247' width='300' height='246'
+   style='max-width:100%; height:auto; vertical-align:middle;'>
 ```
+
+If you choose to code the &lt;img> tag yourself, be sure to take all of the above into consideration.
 
 ### Item specifier
 
@@ -288,7 +302,7 @@ Where:
 
 Option | Description
 ---|---
-&lt;property&gt;|One of item file properties: `url` or `id`.<br><br>The URL is the one used to display the item on an Omeka site.<br><br>The Id is the number that Omeka uses to identify the item in the Omeka database.
+&lt;property&gt;|One of these item properties: `url` or `id`.<br><br>The URL is the one used to display the item on an Omeka site.<br><br>The Id is the number that Omeka uses to identify the item in the Omeka database.
 &lt;item&#8209;index&gt;|An optional item index explained in the [specifier item index](/plugins/mapsalive/#specifier-item-index) section above.
 
 ##### Example:
@@ -334,7 +348,7 @@ Template: Example4, Identifier, HTML
 <div>${data, 2}</div>
 ```
 
-#### #### How a hotspot passes data values to the plugin
+#### How a hotspot passes data values to the plugin
 
 A map hotspot passes data values to the plugin in a double-tilde-separated list. In the example below, the hotspot is passing the item identifier `1001` and the text `"Franklin Square~~December 1884"` to provide the two data values `Franklin Square` and `December 1884`.
 
@@ -397,7 +411,7 @@ The one restriction when using a repeat section is that specifiers in the rows *
 
 #### How a hotspot passes identifiers for repeating items to the plugin
 
-A map hotspot passes it passes identifiers for both the non-repeating and repeating items together in a semicolon-separated list. In the example below, the hotspot is passing `"1001;2001,2002"` to provide the non-repeating identifier `1001` and two repeating identifiers `2001` and `2002`. If you only want to pass repeating items, code `0` before the semicolon like this: `"0;2001,2002"`
+A map hotspot passes identifiers for both the non-repeating and repeating items together in a semicolon-separated list. In the example below, the hotspot is passing `"1001;2001,2002"` to provide the non-repeating identifier `1001` and two repeating identifiers `2001` and `2002`. If you only want to pass repeating items, code `0` before the semicolon like this: `"0;2001,2002"`
 
 ![hotspot](mapsalive-9.jpg)
 
@@ -412,7 +426,7 @@ The resulting HTML when using template Example6 above might look like this:
 ## Using the plugin with a MapsAlive map
 
 The [getting started](/plugins/mapsalive/#getting-started) section at the beginning of this documentation explains what you need to do to create an interactive map that displays information from your Omeka items.
-This section provide some additional information, but to fully understand how it all works, read the MapsAlive documentation for using its [Live Data](https://www.mapsalive.com/docs/livedata-intro) feature to [request hotspot content](https://www.mapsalive.com/docs/livedata-request-hotspot/).
+This section provides some additional information, but to fully understand how it all works, read the MapsAlive documentation for using its [Live Data](https://www.mapsalive.com/docs/livedata-intro) feature to [request hotspot content](https://www.mapsalive.com/docs/livedata-request-hotspot/).
 
 #### Request function
 
@@ -428,16 +442,19 @@ function getLiveDataFromOmeka(items) {
 }
 ```
 
+#### MapsAlive plugin arguments
+
 The table below explains the arguments passed to the [requestHotspot API method](https://www.mapsalive.com/docs/api-methods/#livedatarequesthotspot) when it is used to call the MapsAlive plugin.
 
 Argument | Description
 ---|---
 "json"|Tells MapsAlive that the response will come back from the MapsAlive plugin as JSON. Always specify "json" regardless of whether your template uses HTML or JSON format.
-0|Tells MapsAlive to only requests the data once and cache the response so that it does not call the MapsAlive plugin more than once for the same hotspot.
+0|Tells MapsAlive to only request the data once and cache the response so that it does not call the MapsAlive plugin more than once for the same hotspot.
 url|The root URL of your Omeka site with `/mapsalive` at the end. Adding `/mapsalive` to the URL is what causes the MapsAlive plugin to be called.
 template|Tells the plugin which template to use. Template names are case-sensitive.
 items|Passes a comma-separated list of item identifiers to the plugin. See [how a hotspot passes item identifiers to the plugin](/plugins/mapsalive/#how-a-hotspot-passes-item-identifiers-to-the-plugin). Also see [how a hotspot passes identifiers for repeating items to the plugin](/plugins/mapsalive/#how-a-hotspot-passes-identifiers-for-repeating-items-to-the-plugin) 
-data|Passes a double-tilde-separated list of data values to the plugin. This argument/value pair can be omitted if you are not passing data. It is shown here with an empty string only for clarity. [See how a hotspot passes data values to the plugin](/plugins/mapsalive/#how-a-hotspot-passes-data-values-to-the-plugin).
+data|Passes a double-tilde-separated list of data values to the plugin. This argument/value pair can be omitted if you are not passing data. It is shown here with an empty string only for clarity. See [how a hotspot passes data values to the plugin](/plugins/mapsalive/#how-a-hotspot-passes-data-values-to-the-plugin).
+warnings|Set this argument to `on` to have the plugin report [bad identifiers](/plugins/mapsalive/#bad-identifiers). The option is not shown in the example above, but to use it, add `", warnings", "on"` at the end of the argument list. When the plugin detects a bad identifier, it will insert text like this: "[ITEM 1022 NOT FOUND]". To turn warnings off, remove the argument or set its value to `off`.
 
 
 ## Using JSON templates

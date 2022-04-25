@@ -131,6 +131,11 @@ div.admonition {
     margin-left: 18px;
 }
 
+/* Prevent <hr> tags in MapsAlive tour content from being styled by Materials Markdown. */
+.maTour hr {
+    margin:auto;
+}
+
 /* Don't indent an admonition that appears immediately after an <hr>. */
 hr + div.admonition {
     margin-left: 0;
