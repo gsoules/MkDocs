@@ -194,9 +194,9 @@ A map hotspot passes item identifiers to the plugin in a comma-separated list. I
 
 The example above uses integers as item identifiers, but you can use other values. For example, if your template specified `Catalog #` instead of `Identifer`, your map might pass `"81.1.93,96.2.1"` to provide the identifiers for items having catalog numbers `81.1.93` and `96.2.1`.
 
-#### Bad identifiers
+#### Bad identifier warning
 
-If your map passes a bad identifier value, that is, a value that doesn't match any of your Omeka items, a blank value will be used for any [element specifiers](/plugins/mapsalive/#element-specifier) that refer to that item. To catch this kinds of error while you are developing your interactive map, you can turn on the warnings option so that it will be easy to spot bad identifiers. See the `warnings` argument in the [MapsAlive plugin arguments](/plugins/mapsalive/#mapsalive-plugin-arguments) section.
+If your map passes a bad identifier value, that is, a value that doesn't match any of your published Omeka items, the plugin will insert warning text like this: "[ITEM 1022 NOT FOUND]". To prevent the plugin from inserting this warning, see the `warnings` argument in the [MapsAlive plugin arguments](/plugins/mapsalive/#mapsalive-plugin-arguments) section.
 
 ---
 
@@ -225,7 +225,7 @@ ${element, Description, 2}
 
 #### Unpublished items and private elements
 
-The element specifier only returns a value for published items. It returns an empty string for items that have not been published. For a published item, it will return a value for *any* element including ones you have made private or hidden using a plugin like [AvantCommon](/plugins/avantcommon/#private-elements-option) or [HideElements](https://omeka.org/classic/plugins/HideElements/). So be careful not to include an element specifier for an element that you do not want the public to see.
+The element specifier only shows a value for published items. It shows a [bad identifier warning](/plugins/mapsalive/#bad-identifier-warning) for items that have not been published. For a published item, it will return a value for *any* element including ones you have made private or hidden using a plugin like [AvantCommon](/plugins/avantcommon/#private-elements-option) or [HideElements](https://omeka.org/classic/plugins/HideElements/). So be careful not to include an element specifier for an element that you do not want the public to see.
 
 ---
 
@@ -454,7 +454,7 @@ url|The root URL of your Omeka site with `/mapsalive` at the end. Adding `/mapsa
 template|Tells the plugin which template to use. Template names are case-sensitive.
 items|Passes a comma-separated list of item identifiers to the plugin. See [how a hotspot passes item identifiers to the plugin](/plugins/mapsalive/#how-a-hotspot-passes-item-identifiers-to-the-plugin). Also see [how a hotspot passes identifiers for repeating items to the plugin](/plugins/mapsalive/#how-a-hotspot-passes-identifiers-for-repeating-items-to-the-plugin) 
 data|Passes a double-tilde-separated list of data values to the plugin. This argument/value pair can be omitted if you are not passing data. It is shown here with an empty string only for clarity. See [how a hotspot passes data values to the plugin](/plugins/mapsalive/#how-a-hotspot-passes-data-values-to-the-plugin).
-warnings|Set this argument to `on` to have the plugin report [bad identifiers](/plugins/mapsalive/#bad-identifiers). The option is not shown in the example above, but to use it, add `", warnings", "on"` at the end of the argument list. When the plugin detects a bad identifier, it will insert text like this: "[ITEM 1022 NOT FOUND]". To turn warnings off, remove the argument or set its value to `off`.
+warnings|Lets you disable warnings for [bad identifiers](/plugins/mapsalive/#bad-identifier-warning). The option is not shown in the example above, but to use it, add `", warnings", "off"` at the end of the argument list.
 
 
 ## Using JSON templates
