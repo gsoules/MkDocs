@@ -65,14 +65,31 @@ To push your committed changes to GitHub, click the **_Push origin_** button at 
 ## Create a new release
 On the plugin's main GigHub page:
 
+- Be sure all recent changes have been pushed from GitHub desktop.
 - Click on the `Releases` link in the right panel (not the link for a specific release)
-- Click the **_Draft a new release_** button
+- Click the **_Draft a new release_** button. You must be logged in to see the button.
 - Click the **_Choose a tag_** dropdown
-    - Type a tag in the form `v0.0.0`
+    - Type a tag in the form `v1.0.0`
     - Click **_Create new tag: v0.0.0 on publish_**
-- Specify the release title in the form `Release v0.0.0`
+- Specify the release title in the form `Release v1.0.0`
 - Click the **_Publish release_** button
+- In GitHub desktop, click the **_Fetch Origin_** button to get new tag into the local repository.
 
+If you want the release to be published on the Omeka plugins site, follow the steps below. These steps will use the `MapsAlive`
+plugin and tag `v1.3` as examples.
+
+- Read the Omeka instructions to [Register an Addon](https://omeka.org/s/docs/developer/register_an_addon/).
+- In Windows Explorer, go *into* the folder containing the plugin's repository e.g. `C:\xampp\htdocs\omeka\plugins\MapsAlive`.
+- Update `.gitattributes` per the Addon instructions.
+- Right click and choose `Git Bash Here`.
+- Type `git archive --output=MapsAlive-v1.3.zip --prefix=MapsAlive/ v1.3`.
+- In this example, `MapsAlive` is the "Addon directory name" referred to in the instructions.
+- Press Enter.
+- If you get `fatal: Not a valid object name`, make sure that you did a fetch origin in GitHub desktop after publishing the release with that tag.
+- The command should have created a file named `MapsAlive-v1.3.zip` that contains one top-level folder named `MapsAlive`.
+- On the GitHub site, edit the release by clicking the pencil icon.
+- Drag the zip file into the section where you can attach binaries.
+- Click the **_Update Release_** button.
 
 ## Rollback a commit
 

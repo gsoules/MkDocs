@@ -285,8 +285,9 @@ Here is an example showing the &lt;img> tag that gets created for you.
 <img src='https://myomekasite.net/files/thumbnails/10247' width='300' height='246'
    style='max-width:100%; height:auto; vertical-align:middle;'>
 ```
+If the item does not have the request image, the property will produce a [bad identifier warning](/plugins/mapsalive/#bad-identifier-warning), or nothing at all if warnings are turned off.
 
-If you choose to code the &lt;img> tag yourself, be sure to take all of the above into consideration.
+If you choose to code the &lt;img> tag yourself, be sure to take the above into consideration.
 
 ### Item specifier
 
