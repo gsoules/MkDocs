@@ -65,6 +65,7 @@ To push your committed changes to GitHub, click the **_Push origin_** button at 
 ## Create a new release
 On the plugin's main GigHub page:
 
+- Check that the plugin.ini file has the correct version. The version number there will be the one that appears on the Omeka Plugins page.
 - Be sure all recent changes have been pushed from GitHub desktop.
 - Click on the `Releases` link in the right panel (not the link for a specific release)
 - Click the **_Draft a new release_** button. You must be logged in to see the button.
