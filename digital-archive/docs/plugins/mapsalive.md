@@ -2,7 +2,8 @@
 
 The MapsAlive plugin lets you display your Omeka content (metadata and images) on an interactive map that was
 created with [MapsAlive](https://www.mapsalive.com). MapsAlive is a web application that lets you create
-interactive maps and diagrams that you can  insert into web pages like this one.
+interactive maps and diagrams that you can  insert into web pages like this one. The plugin works with the MapsAlive
+[free trial](https://www.mapsalive.com/public/free-trial/), and with the [Plus or Pro Plan](https://www.mapsalive.com/public/pricing/).
 
 **Try it now with the map below.** Click or touch the building shape markers, pan and zoom the map, and select locations from the menu.
 The text and pictures you see are being requested in real time by the plugin from the [Southwest Harbor Public Library's
@@ -26,23 +27,22 @@ An interactive map makes requests to the server and the server responds with inf
 It works like this:
 
 -   A user selects a hotspot on your interactive map by mousing over, clicking, or touching it.
--   The map asks the MapsAlive plugin to get information for that hotspot.
--   The plugin gets the information from items in your Omeka database.
+-   The map asks the MapsAlive plugin to get data, such as image URLs and text, for that hotspot.
+-   The plugin gets the data from items in your Omeka database.
 -   The plugin inserts the data into an HTML [template](/plugins/mapsalive/#templates) that you define.
 -   The plugin sends the HTML back to the map.
 -   The map displays the information about the hotspot the user selected.
 
 ## Getting started
 
-Here are the steps for creating an interactive map that displays information from your Omeka items. Assuming you are familiar with using MapsAlive, these steps should take about five minutes.
+Here are the steps for creating an interactive map that displays information from your Omeka items. If you are familiar with using MapsAlive, these steps should take about five minutes.
 
 1 &ndash; Define a template
 :   On the MapsAlive plugin's [configuration page](/plugins/mapsalive/#configuration-options), define a template. The screenshot below shows a template that creates HTML for an Omeka item's title, photo, and a "View this item" link.
 
     ![configuration](mapsalive-1.jpg)
 
-    For convenience, here is a template that you can copy/paste:
-
+<p style="margin:0 0 4px 26px;">For convenience, here is a template that you can copy/paste into the Templates field.</p>
 <div style="margin-left:26px">
 ``` plaintext
 Template: Example1, Identifier, HTML
@@ -53,7 +53,11 @@ ${file, fullsize, img}
 </div>
 
 2 &ndash; Create a MapsAlive tour
-:   In MapsAlive, [create a new MapsAlive tour](https://www.mapsalive.com/docs/start-first-tour/). Use a map image that shows locations of items in your Omeka database. Add a few hotspots to the map and place them on locations of interest.
+:   In MapsAlive, [create a new MapsAlive tour](https://www.mapsalive.com/docs/start-first-tour/).
+
+    - Use a map image that shows locations of items in your Omeka database.
+    - Create a few hotspots and place them on the map at locations of interest.
+    - Don't upload images for the hotspots or type any text for them. The map will display images and text from your Omeka site as explained in step 4 below.
 
 3 &ndash; Add a request function to the tour
 :   In MapsAlive, add a [request function](/plugins/mapsalive/#request-function) that will call the MapsAlive plugin.
@@ -64,20 +68,17 @@ ${file, fullsize, img}
     - Change `Example1` to be the name of the template you defined in step 1 above.
     - Change `myomekasite.net` to be your Omeka site. Leave `/mapsalive` at the end of the URL.
 
-    For convenience, here is a function that you can copy/paste:
-
-<div style="margin-left:26px">
-``` plaintext
-function getLiveDataFromOmeka(items) {
-    let api = MapsAlive.getApi();
-    let url = "https://myomekasite.net/mapsalive";
-    api.liveData.requestHotspot("json", 0, url, "template", "Example1", "items", items);
-}
-```
+<p style="margin:0 0 4px 26px;">For convenience, here is a function that you can copy/paste into the JavaScript field.</p>
+<div style="margin:0 0 24px 26px;padding:4px 0 4px 12px;font-size:12px;background:#f8f8f8;border:1px solid #e1e4e5;">
+    <pre style="margin:0">function getLiveDataFromOmeka(items) {</pre>
+    <pre style="margin:0">   let api = MapsAlive.getApi()</pre>
+    <pre style="margin:0">   let url = "https://myomekasite.net/mapsalive";</pre>
+    <pre style="margin:0">   api.liveData.requestHotspot("json", 0, url, "template", "Example1", "items", items);</pre>
+    <pre style="margin:0">}</pre>
 </div>
 
 4 &ndash; Make the hotspots call the request function
-:   When a user mouses over, clicks, or touches a hotspot, the hotspot will call the request function which will call the MapsAlive plugin. The plugin will return the Omeka item information for that hotspot as the HTML defined in your template.
+:   When a user mouses over, clicks, or touches a hotspot, the hotspot will call the request function which will call the MapsAlive plugin. The plugin will return the Omeka item metadata and image URLs for that hotspot and insert them into the HTML defined in your [template](/plugins/mapsalive/#templates).
 
     - Choose **Hotspot > Advanced Hotspot Options** from the Tour Builder menu.
     - Find the **Live Data Options** section on the MapsAlive [**_Advanced Hotspot Options_**](https://www.mapsalive.com/docs/livedata-request-hotspot/#request-function) screen.
@@ -88,16 +89,41 @@ function getLiveDataFromOmeka(items) {
     
     - Check the **Uses Live Data** option.
     - Type a call to the request function as shown in the screenshot above.
-    - Change `10247` to be the Omeka item identifier that contains information for that hotspot.
+    - Change `10247` to be the Omeka item identifier for that hotspot.
 
+<p style="margin:0 0 4px 26px;">For convenience, here is a call that you can copy/paste into the Request Function field.</p>
+<div style="margin-left:26px">
+``` plaintext
+getLiveDataFromOmeka("10247")
+```
+</div>
 
 5 &ndash; Try out your interactive map 
 :   -   View your map on the MapsAlive [Tour Preview](https://www.mapsalive.com/docs/start-tour-preview/) screen.
-    -   Test that your hotspots display your Omeka item data.
+    -   Mouse over, click, or touch the hotspots to see them display your Omeka item data.
+    -   Learn about [using CSS](/plugins/mapsalive/#styling-with-css) to style the information displayed by your template.
+    
+6 &ndash; Troubleshooting 
+:  Here are common problems you may encounter when you view the hotspots on your map.
 
-For more information, see the section on [using the plugin with a MapsAlive map](/plugins/mapsalive/#using-the-plugin-with-a-mapsalive-map).
+    - "**Live Data request failed**" will display if the URL you specified in step 3 above is not correct. The URL must be the address of your Omeka site with `/mapsalve` at the end. To determine if the URL is correct, paste it into the address bar of your browser. A correct URL will display the message shown below which means that the plugin got called, but with no [arguments](/plugins/mapsalive/#mapsalive-plugin-arguments). If you see any other result, the URL is not correct.
+<div style="margin-left:48px;margin-top:-34px">
+``` plaintext
+{
+    "error": "No item identifier(s) provided"
+}
+```
+</div>
 
-If you need help using [MapsAlive](https://www.mapsalive.com) or this plugin, contact support@mapsalive.com.    
+:    - The hotspot displays an unwanted image that you uploaded to MapsAlive, followed by the images and data from your Omeka site. To remove the unwanted image:
+        - Go to MapsAlive
+        - Choose **Hotspot > Edit Hotspot Content** from the Tour Builder menu
+        - In the **_Photo_** section, click the **Remove Photo** link that appears next to the thumbnail
+    - If the image and text from your Omeka site display, but the appearance is very plain, you'll need to add some [styling using CSS](/plugins/mapsalive/#styling-with-css).
+
+:   If the problem you are having is not listed above, please contact <mailto:support@mapsalive.com>.
+
+:   For more information, see the section on [using the plugin with a MapsAlive map](/plugins/mapsalive/#using-the-plugin-with-a-mapsalive-map).
 
 ## Configuration options
 
@@ -513,7 +539,7 @@ The browser will display JSON like in the example above.
 
 ## Styling with CSS
 
-The examples in this documentation have deliberately been kept simple, but in practice you'll usually want to include CSS class names in your HTML templates so that the map's CSS can style the HTML elements.
+The examples in this documentation have deliberately been kept simple, but in practice you'll usually want to include [CSS](https://www.w3schools.com/css/) class names in your HTML templates so that the map's CSS can style the HTML elements.
 
 The HTML below contains class names `wrapper` and `title-element` that make it easy to apply styling.
 
