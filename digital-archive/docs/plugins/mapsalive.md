@@ -37,7 +37,16 @@ It works like this:
 
 Here are the steps for creating an interactive map that displays information from your Omeka items. If you are familiar with using MapsAlive, these steps should take about five minutes.
 
-1 &ndash; Define a template
+1 &ndash; Add the MapsAlive plugin to your Omeka installation
+:   If the plugin is not already installed, follow these steps:
+
+    -   Downloaded the plugin from the [Omeka Classic plugins page](https://omeka.org/classic/plugins/MapsAlive/) or from [GitHub](https://github.com/gsoules/MapsAlive-Plugin).
+    -   Follow the steps in the installation section.
+    -   On your Omeka installation's Plugin page, locate the MapsAlive plugin.
+    -   Click on the **_Configure_** button. If the **_Install_** button is showing instead of the **_Configure_** button, click the **_Install_** button to activate the plugin. Both buttons will take you to the plugin's configuration page.
+
+
+2 &ndash; Define a template
 :   On the MapsAlive plugin's [configuration page](/plugins/mapsalive/#configuration-options), define a template. The screenshot below shows a template that creates HTML for an Omeka item's title, photo, and a "View this item" link.
 
     ![configuration](mapsalive-1.jpg)
@@ -46,26 +55,36 @@ Here are the steps for creating an interactive map that displays information fro
 <div style="margin-left:26px">
 ``` plaintext
 Template: Example1, Identifier, HTML
-<div>${element, Title}</div>
-${file, fullsize, img}
-<div><a href='${item, url}'>View this item</a></div>
+<div class='wrapper'>
+    <div class='title-element'>${element, Title}</div>
+    ${file, fullsize, img}
+    <div class="view-link"><a href='${item, url}'>View this item</a></div>
+</div>
 ```
 </div>
 
-2 &ndash; Create a MapsAlive tour
+3 &ndash; Create a MapsAlive tour
 :   In MapsAlive, [create a new MapsAlive tour](https://www.mapsalive.com/docs/start-first-tour/).
 
     - Use a map image that shows locations of items in your Omeka database.
     - Create a few hotspots and place them on the map at locations of interest.
-    - Don't upload images for the hotspots or type any text for them. The map will display images and text from your Omeka site as explained in step 4 below.
+    - Don't upload images for the hotspots or type any text for them.
 
-3 &ndash; Add a request function to the tour
+    If using MapsAlive's step-by-step instructions to create a new tour:
+
+    - After you choose a map image:
+        - Ignore the instructions for adding hotspots and uploading an image.
+        - Instead, just click the **Add New Hotspot** icon two times to add two hotspots.
+        - Then click the **Map Editor** icon.
+    - Resume following the instructions on the **_Map Editor_** screen.
+
+4 &ndash; Add a request function to the tour
 :   In MapsAlive, add a [request function](/plugins/mapsalive/#request-function) that will call the MapsAlive plugin.
 
     - Choose **Tour > Custom HTML** from the Tour Builder menu.
     - On the [**_Custom HTML_**](https://www.mapsalive.com/docs/start-custom-html) screen, type the function shown below into the [JavaScript](https://www.mapsalive.com/docs/start-custom-html/#javascript) field.
     ![request function](mapsalive-4.jpg)
-    - Change `Example1` to be the name of the template you defined in step 1 above.
+    - Change `Example1` to be the name of the template you defined in step 2 above.
     - Change `myomekasite.net` to be your Omeka site. Leave `/mapsalive` at the end of the URL.
 
 <p style="margin:0 0 4px 26px;">For convenience, here is a function that you can copy/paste into the JavaScript field.</p>
@@ -77,7 +96,7 @@ ${file, fullsize, img}
     <pre style="margin:0">}</pre>
 </div>
 
-4 &ndash; Make the hotspots call the request function
+5 &ndash; Make the hotspots call the request function
 :   When a user mouses over, clicks, or touches a hotspot, the hotspot will call the request function which will call the MapsAlive plugin. The plugin will return the Omeka item metadata and image URLs for that hotspot and insert them into the HTML defined in your [template](/plugins/mapsalive/#templates).
 
     - Choose **Hotspot > Advanced Hotspot Options** from the Tour Builder menu.
@@ -98,15 +117,15 @@ getLiveDataFromOmeka("10247")
 ```
 </div>
 
-5 &ndash; Try out your interactive map 
+6 &ndash; Try out your interactive map 
 :   -   View your map on the MapsAlive [Tour Preview](https://www.mapsalive.com/docs/start-tour-preview/) screen.
     -   Mouse over, click, or touch the hotspots to see them display your Omeka item data.
     -   Learn about [using CSS](/plugins/mapsalive/#styling-with-css) to style the information displayed by your template.
     
-6 &ndash; Troubleshooting 
+7 &ndash; Troubleshooting 
 :  Here are common problems you may encounter when you view the hotspots on your map.
 
-    - "**Live Data request failed**" will display if the URL you specified in step 3 above is not correct. The URL must be the address of your Omeka site with `/mapsalve` at the end. To determine if the URL is correct, paste it into the address bar of your browser. A correct URL will display the message shown below which means that the plugin got called, but with no [arguments](/plugins/mapsalive/#mapsalive-plugin-arguments). If you see any other result, the URL is not correct.
+    - "**Live Data request failed**" will display if the URL you specified in step 4 above is not correct. The URL must be the address of your Omeka site with `/mapsalve` at the end. To determine if the URL is correct, paste it into the address bar of your browser. A correct URL will display the message shown below which means that the plugin got called, but with no [arguments](/plugins/mapsalive/#mapsalive-plugin-arguments). If you see any other result, the URL is not correct.
 <div style="margin-left:48px;margin-top:-34px">
 ``` plaintext
 {
@@ -544,12 +563,12 @@ The examples in this documentation have deliberately been kept simple, but in pr
 The HTML below contains class names `wrapper` and `title-element` that make it easy to apply styling.
 
 ``` plaintext
-Template: Example7, Identifier, HTML
+Template: Example1, Identifier, HTML
 <div class='wrapper'>
     <div class='title-element'>${element, Title}</div>
     ${file, fullsize, img}
-    <div><a href='${item, url}'>View this item</a></div>
-</div>    
+    <div class="view-link"><a href='${item, url}'>View this item</a></div>
+</div> 
 ```
 
 The first screenshot below shows what the HTML looks like without styling and the second screenshot shows what it looks like with styling.
@@ -558,32 +577,31 @@ The first screenshot below shows what the HTML looks like without styling and th
 
 ![hotspot](mapsalive-3.jpg)
 
-The CSS for the second screenshot appears below. You put the CSS for a map's hotspots in the map's CSS section on the [Custom HTML](https://www.mapsalive.com/docs/start-custom-html/?h=custom+htm#css) screen in MapsAlive.
+The CSS for the second screenshot appears below.
 
-``` css
-.wrapper img {
-   border: 2px solid black;
-}
+Here is CSS you can copy/paste into the CSS section on the [Custom HTML](https://www.mapsalive.com/docs/start-custom-html/?h=custom+htm#css) screen in MapsAlive.
 
-.wrapper {
-   padding: 4px 12px 0 12px;
-   text-align: center;
-}
-
-.title-element {
-   font-size: 18px;
-   font-weight: bold;
-   margin-bottom: 4px;
-   color: firebrick;
-}
-
-.view-link a {
-   color: green;
-   font-size: 16px;
-   text-decoration: none;
-}
-```
-
-
-
-
+<div style="padding:4px 0 4px 12px;font-size:12px;background:#f8f8f8;border:1px solid #e1e4e5;">
+    <pre style="margin:0">.wrapper img {</pre>
+    <pre style="margin:0">   border: 2px solid black;</pre>
+    <pre style="margin:0">   margin-bottom: 8px;</pre>
+    <pre style="margin:0">}</pre>
+    <br>
+    <pre style="margin:0">.wrapper {</pre>
+    <pre style="margin:0">   padding: 4px 12px 0 12px;</pre>
+    <pre style="margin:0">   text-align: center;</pre>
+    <pre style="margin:0">}</pre>
+    <br>
+    <pre style="margin:0">.title-element {</pre>
+    <pre style="margin:0">   font-size: 18px;</pre>
+    <pre style="margin:0">   font-weight: bold;</pre>
+    <pre style="margin:0">   margin-bottom: 4px;</pre>
+    <pre style="margin:0">   color: firebrick;</pre>
+    <pre style="margin:0">}</pre>
+    <br>
+    <pre style="margin:0">.view-link a {</pre>
+    <pre style="margin:0">   color: green;;</pre>
+    <pre style="margin:0">   font-size: 16px;</pre>
+    <pre style="margin:0">   text-decoration: none;</pre>
+    <pre style="margin:0">}</pre>
+</div>

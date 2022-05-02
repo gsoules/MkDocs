@@ -61,7 +61,7 @@ To see an example of a simple page that uses the shortcode, see the Wendell Gill
 
 ---
 !!! note ""
-    Thank you to the [Wendell Gilley Musuem](https://www.wendellgilleymuseum.org) for contributing these features and to the [Stephen & Tabitha King Foundation](https://www.stkfoundation.org) for providing the funding.
+    Thank you to the [Wendell Gilley Musuem](https://wendellgilleymuseum.net/digitalarchive) for contributing these features and to the [Stephen & Tabitha King Foundation](https://www.stkfoundation.org) for providing the funding.
 ---
 
 **April 5, 2022**
