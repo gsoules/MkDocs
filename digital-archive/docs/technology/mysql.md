@@ -61,7 +61,7 @@ to add a database connection.
     -	**Connection Method:** `Standard (TCP/IP)`
     -	**Hostname:** same as the **Connection Name**
     -	**Port:** `3306`
-    -	**Username:** the database username
+    -	**Username:** the database username e.g. `swhpl_omeka`
 -	Click `Store in Vault` to set the password. On the popup dialog:
     -   Enter the database password in the **Password** field
     -   Click the `OK` button

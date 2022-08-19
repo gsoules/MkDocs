@@ -55,7 +55,7 @@ use [cPanel] to create a new empty database and a database user for the Digital 
 
 -   In WHM, select the account where the installation will be performed
 -	Go to [cPanel] and choose `MySQL Database Wizard`
--	In wizard Step 1:
+-	In wizard Step 1 Create a Database:
     -   Decide on the database name suffix
         -   A good choice is `omeka`
     -   Enter the suffix in the **New Database** field
@@ -67,7 +67,7 @@ use [cPanel] to create a new empty database and a database user for the Digital 
 
 ### Create a user
 
--	In wizard Step 2:
+-	In wizard Step 2 Create Database Users:
     -   Decide on the user name suffix
         -   A good choice is `archivist`
     -   Enter the suffix in the **Username** field
@@ -79,7 +79,7 @@ use [cPanel] to create a new empty database and a database user for the Digital 
     -   Click the `Use Password` button
     -   The two password fields get filled in with the generated password automatically
 -	Click the `Create User` button
--	In wizard Step 3:
+-	In wizard Step 3 Add user to the database:
     -   Check the `ALL PRIVILEGES` checkbox at the top
     -	Click the `Next Step` button
 
@@ -123,7 +123,7 @@ Follow these steps to upload the Omeka Classic files to the web server. You can 
 [Omeka's installation instructions](https://omeka.org/classic/docs/Installation/Installation/).
 
 -	Download the latest Omeka Classic release from <http://omeka.org/classic/download>  
-    As of 10/23/2021, the latest release was `omeka-3.0.1.zip`
+    As of 8/12/2022, the latest release was `omeka-3.0.3.zip`
 -	Go to [cPanel] and choose `File Manager`
 -   Navigate into the `public_html` folder
 -   [Upload and extract the zip file](web-host.md#upload-and-extract-a-zip-file)
@@ -554,7 +554,7 @@ Before you can install the theme, install AvantCommon by following these steps:
 -   On the `Configure Plugin: AvantCommon` page:
     -   Don't enter any values for now
     -   Click the `Save Changes` button
--   The pink shading should be gone from all of the plugins except for AvantReport
+-   The pink shading should be gone from all of the plugins except for AvantLocation, AvantReport, and AvantVocabulary.
 -	Click `Appearance` in the top menu bar
 -   On the `Themes` page, click the `Use this theme` button for AvantTheme
 -   AvantTheme is now the current theme
@@ -883,7 +883,7 @@ Follow these steps to install and configure the Simple Vocab plugin:
 -   Leave **Apply to Files** unchecked
 -   Click the `Save Changes` button
 -   Click `Simple Vocab` in Omeka's left admin menu
--   Add vocabularies for the **Rights**, **Subject**, and **Type** elements (see below)
+-   Add vocabularies for the **Rights**, **Subject**, **Type**, and **Place** elements (see below)
 -   Click the `Save Changes` button
 
 Rights
@@ -907,6 +907,11 @@ Use the Vocabulary Editor to specify Subject terms
 Type
 ``` text 
 Use the Vocabulary Editor to specify Type terms
+```
+
+Place
+``` text 
+Use the Vocabulary Editor to specify Place terms
 ```
 
 ---
@@ -1114,7 +1119,7 @@ Follow these steps to install  the [AvantRelationships] plugin:
 -	Set **Visualization Preview** to `At designated location`
 -   Set **Max Direct Items** to `6`
 -   Set **Max Indirect Items** to `8`
--   Enter the **Implicit Relationship** specifier shown below plus any others
+-   Enter the **Title Relationships** specifier shown below plus any others
 
 ``` plaintext
 Creator: Created
@@ -1260,7 +1265,7 @@ AvantElasticsearch configuration page.
 -	Type the organization abbreviation for the `User name` e.g. `swhpl`
 -	For  **Access type** check the `Programmatic Access` box
 -	Click the `Next: Permissions` button
--	In the **Add User to Group** section, click the `contributor` group
+-	In the **Add User to Group** section, check the box for `contributor` group
 -	Click the `Next: Tags` button
 -	Click the `Next: Review` button
 -	Click the `Create User` button
@@ -1331,7 +1336,10 @@ Follow these steps to install and configure [AvantVocabulary]:
 ### Add vocabulary terms
 At this stage the only vocabulary terms that will be set for the site are Places which is kind `4` in the site terms table. If you look at the table you'll see that those are the only kind of rows there.
 
-You'll now need to add some Type and Subject terms so that the organization has something to work with; however, there is an issue with the AvantVocabulary plugin whereby you can't add a new term unless there is at least one term in the table. To work around this, manually add one Subject (`Image, Photograph`) and one Type (`People`) to the site terms table using MySql Workbench as shown below.
+You'll now need to add some Type and Subject terms so that the organization has something to work with.
+
+!!! note "Work Around"
+    There is currently an issue with the AvantVocabulary plugin whereby you can't add a new term unless there is at least one term in the table.To work around this, manually add one Subject (`Image, Photograph`) and one Type (`People`) to the site terms table using MySql Workbench as shown below.
 
 ![Site terms table](install-digital-archive-11.jpg)
 
@@ -1364,9 +1372,9 @@ Transportation, Automobile
 ## Reindex the local Elasticsearch index
 
 -   Add a new item with just the minimal fields
--   If you check to see the site's items, you'll see a `No items found` message and an Elasticsearch error
+-   If you check to see the site's search results, you'll see a `No items found` message and an Elasticsearch error
 -   Click `Elasticsearch` in the left menu
--   Export all items
+-   Export all items from Omeka
 -   Import into new **local** index
 -   You should now be able to see the item with no errors
 
