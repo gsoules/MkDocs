@@ -13,7 +13,6 @@ nav:
         - Flag Items to View Later: user/recently-viewed.md
         - Share Search Results: user/sharing-search-results.md
         - Create PDF Reports: user/pdf-report.md
-        - Use the Digital Notebook: user/digital-notebook.md
     - For Archivists:
         - Getting Started for Archivists: archivist/getting-started-archivist.md
         - Logging into the Digital Archive: archivist/logging-in.md
@@ -26,6 +25,7 @@ nav:
         - Common Vocabulary: archivist/common-vocabulary.md
         - Vocabulary Editor: archivist/vocabulary-editor.md
         - Best Practices: archivist/best-practices.md
+        - Accessioning: archivist/accessioning.md
     - Relationships:
         - Getting Started with Relationships: relationships/getting-started-relationships.md
         - Archive Relational Model: relationships/archive-relational-model.md

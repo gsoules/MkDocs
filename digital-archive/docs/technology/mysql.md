@@ -119,28 +119,28 @@ development server.
 
 -   Edit `db.ini` to use the new database
     -   Make a copy of the localhost settings
-    -   Comment out the original setttings
+    -   Comment out the original settings
     -   Keep the `host`, `username`, `password`, and `charset` settings for localhost
     -   Change `dbname` to match the new database and make sure `prefix` is set to `omeka_` unless SWHPL in which case it's `omek_`. 
--   Run Omeka on localhost
-    -   Go to `http://localhost/omeka/admin/users/login` (DO NOT RUN FROM PhpStorm    )
+-   Manually run Omeka on localhost (DO NOT RUN FROM PhpStorm)
+    -   Go to `http://localhost/omeka/admin/users/login`
     -   Login as a user for the imported database
     -   Go to the **_Appearance_** page and click the **_Navigation_** tab
     -   Change the URL for the `Landing` page to be `http://localhost/omeka/find?query=&view=4'
     -   Click the **_Save Changes_** button
     -   Set the Homepage back to the Landing page and save again
--   Go to the AvantElasticsearch plugin config page and change **_Contributor Id_** to `devb`
+-   Go to the AvantElasticsearch plugin config page and change **_Contributor Id_** to `deva` (or `devb`)
 -   Go to the **_Elasticsearch Indexing_** page:
     -   Export all items
-    -   Import into new local `devb`
+    -   Import into new local `devb` (or `devb`)
     -   Import into new existing shared `devshr`
 -   Get latest files from the server (just ones added/changed since date of last DB)
     -   Go to the `public_html/digitalarchive/files` folder for the site being imported
-    -   Compress the folder into a zip file
+    -   [Compress the folder into a zip file](/technology/web-host/#compress-a-large-folder-on-the-server)
     -   Download the zip file into `C:\xampp\htdocs\omeka`
     -   Delete the zip file from the server
     -   Rename `C:\xampp\htdocs\omeka\files` to e.g. `files-swhpl`
     -   Extract or move the `files` folder from the zip file to become the new `files` folder
-        (the zip may contain a `files` folder nested in a `files` folder - do the right thing)
+        (the zip may contain a `files` folder nested in a `files` folder - do the right thing). Extracting a very large zip file can take a long time.
     -   Delete the zip file
 -   You should now be able to use the imported site normally on localhost

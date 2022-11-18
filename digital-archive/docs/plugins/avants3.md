@@ -26,6 +26,9 @@ Key
 Secret
 :   AWS Secret Access Key
 
+Accession Element
+:   Name of the element used for an item's accession number, or blank if not using S3 accession features
+
 See also the documentation for [installing AvantS3](../../../technology/install-digital-archive/#avants3).
 
 ---

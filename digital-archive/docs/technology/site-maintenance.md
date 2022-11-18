@@ -21,6 +21,7 @@ The site maintenance files are located in the `bin` and `bin/python` directories
 Use *one* of these methods to edit site maintenance files:
 
 -   cPanel File Manager
+    -   Open cPanel for the `digitalarchive.us` account
 -   [Nano editor](https://www.nano-editor.org/):
     -   `nano <file-name>` e.g. `nano digital-archive-sites.csv`
     -   Perform edits
@@ -141,6 +142,8 @@ vocab-update
 vocab-rebuild
 ```
 
+The output from site request operations is appended to `bin/logs/requests.log`
+
 ## Common vocabulary updates
 
 To update the common vocabulary on one or all Digital Archive sites:
@@ -181,7 +184,7 @@ http://localhost/omeka/avant/remote?action=vocab-update&password=ABC123
 ```
 
 ### Nightly cron job
-Every night a cron job runs a python script to send these requests to each site:
+Every night a [Linux cron job](https://support.reclaimhosting.com/hc/en-us/articles/4405854324119-Setting-Up-Cron-Jobs-in-cPanel#setting-up-cron-jobs-in-cpanel-0-0) runs a python script to send these requests to each site:
 
 -   `garbage-collection`
 -   `es-health-check`

@@ -22,6 +22,13 @@ into the **_Global Site Tag_** field as shown below.
 
 ![Google Analytics](omeka-administration-1.jpg)
 
+!!! note ""
+    In order to save HTML in the **_Global Site Tag_** field as shown above, you need to be sure that the
+    **Enable HTML Filtering** filtering option is *unchecked* on the Omeka **_Settings_** tab on the
+    **_Security_** page.  If the option is checked, the `<script>` tags within the HTML will
+    disappear when you save the **_Appearance_** page.
+
+
 ## Change the site's appearance
 
 You can make these changes to your site's appearance:

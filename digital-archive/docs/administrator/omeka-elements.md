@@ -85,3 +85,14 @@ Coverage
 -   Click the **_Edit_** link below the organization's Item Type name
 -	Drag the elements into the desired order
 -   Click the **_Save Changes_** button
+
+## Make an other element appear with Dublin Core elements
+Normally Dublin Core elements appear in a group on the **_Edit Item_** page above a group of other elements.
+It is possible however to show an other element within the Dublin Core group, for example to have an
+`Accession #` element appear above or below the `Identifier` element. You can't do this yourself, so ask your Digital Archive administrator to do it for you by following these steps:
+
+-   In the `omeka_elements` table, change the other element's `element_set_id` from 3 to 1.
+-   Remove the other element from the **_Item Types_** (see Other elements section above).
+-   Position the element within the Dublin Core element set (see Dublin Core elements section above).
+
+
