@@ -3,10 +3,10 @@
 ---
 
 !!! note ""
-    This section describes how the [Southwest Harbor Public Library](https://swhplibrary.org) (SWHPL) performs accessioning for its [Digital Archive](https://swhplibrary.net). The information is provided solely for information sharing purposes and is not a recommendation for how other organizations should perform accessioning.
+    This section describes how the [Southwest Harbor Public Library](https://swhplibrary.org) (SWHPL) performs accessioning for its [Digital Archive](https://swhplibrary.net). The information is provided solely for information sharing purposes.
 
-At SWHPL, accessioning is the process of transferring archival materials from a donor or from the backlog into the Library's accessions database, and eventually,
-into the Digital Archive where they become publicly accessible.
+At SWHPL, accessioning is the process of transferring archival materials from a donor, or from the backlog, into the Library's accessions
+database, and eventually, into the Digital Archive where the items become publicly accessible.
 
 ---
 
@@ -52,14 +52,13 @@ Accession
     As a general rule, an accession should not contain more than a few hundred items. 
 
     When the accession is for a *new donation*, the items are what was donated, for example, the contents of a shoebox. When a new donation consists
-    of a very large number of items, the archivist should divide the itmes among multiple accessions to make each more manageable.
+    of a very large number of items, the archivist should divide the items among multiple accessions to make each more manageable.
     
-    When the accession is from the *backlog*, the items are whatever the archivist who created the accession chose, for example, all the physical items
-    in a binder, or all the files in a folder on the *archival hard drive*. If the folder has a large number of files and subfolders, the archivist
-    should divide the files among multiple accessions to make each more manageable.
+    When the accession is from the *backlog*, the items are whatever the archivist who creates the accession chooses. For example, they could choose
+    all the physical items in a binder, or all the digital files in a folder on the *archival hard drive*. If the folder has a large number of files, the archivist should divide the files among multiple accessions to make each more manageable.
 
 Accessions Database
-:   A database, separate from the Digital Archive database, that SWHPL uses to to record information about accessions and everything
+:   A database, separate from the Digital Archive database, that SWHPL uses to record information about accessions and everything
     related to them like donors and the locations of digital files. Learn more in the [Accessions database](#accessions-database) section.
 
 Accession Number
@@ -77,12 +76,12 @@ Archival Materials
 
 Archive Closet
 :   A locked room (formerly a large closet) on the second floor of the Library where physical *archival materials* are stored.
-    The room contains four shelving units and each self within a unit is numbered. For example, the first shelf on unit 1 is 1-1,
+    The room contains four shelving units and each shelf within a unit is numbered. For example, the first shelf on unit 1 is 1-1,
     and the third shelf on unit 2 is 2-3.
     
-    The *accessions database* contains a table of shelves showing a photograph of the shelves
-    contents. The binders and boxes on each shelf are labeled with an accession number. In some cases, the contents of an accession
-    or on multiple shelves.
+    The binders and boxes on each shelf are labeled with an accession number. In some cases, the contents of an accession
+    or on multiple shelves. The *accessions database* contains an Archive Closet table showing a photographs of the shelf
+    contents so that an archivist can look at a shelf without going into the closet.
 
 Backlog
 :   Physical and digitized versions of *archival materials* that have not yet been accessioned and have not been ingested into
@@ -90,7 +89,7 @@ Backlog
 
 Collection
 :   A loose term used to identify *items* that came from the same source, usually a donor, or are of the same kind of item.
-    In the Digital Archive, an item's collection identifier is specified in the Source field. The items in a large collection
+    In the Digital Archive, an item's collection identifier is specified in the **_Source_** field. The items in a large collection
     usually come from multiple accessions or no accession at all in the case of items that pre-date the accessioning process.
     The primary use of this identifier is to relate accessions in the *accession database* that are related either by content,
     such as a postcard collection, or by a donor designation, such as The Smith Family Collection.
@@ -107,19 +106,20 @@ Item
 Item Number
 :   SWHPL uses an integer, starting at 1000, to identify a single *item* in the Digital Archive. The item number is specified
     in the Identifier field. A Digital Archive item also has an Accession field which specifies the item's *accession number*
-    if it has one (most items don't have an accession number because most pre-date the accessioning process).
+    if it has one (most items don't have an accession number because most pre-date the accessioning process). As of November
+    2022, the most recent item number was around 16675.
 
 New Donation
-:   A donation of physical or digital *items* from a donor that was made starting around the year 2000 when accessioning process
-    was first implemented. The word "new" distinguishes these donations from those page prior to 2000.
+:   A donation of physical or digital *items* from a donor that was made starting around the year 2000 when the accessioning process
+    described here was first implemented. The word "new" distinguishes these donations from those made prior to 2000.
 
 Non-accessioned Item
 :   An *item* that does not belong to an accession. At present, most of the items in the SWHPL Digital Archive are non-accessioned
     items because they were added to the archive before the accessioning process was in place.
     
-    In the Digital Archive, the Accession
+    In the Digital Archive, the **_Accession_**
     field is left blank for a non-accessioned item, though in reality, there are many items that do belong to an accession, but
-    their Accession field was not updated when the accession was created because of the overhead involved.
+    their **_Accession_** field was not updated when the accession was created because of the overhead involved.
 
 S3
 :   Cloud storage using Amazon's Simple Storage Service. S3 is an integral part of SWHPL's accessioning process.
@@ -372,15 +372,24 @@ only shows works that is actually being performed or is slated to be performed v
 ![Accessioning diagram](accessioning-4.jpg)
 
 ## Tools
-This section describes the software tools that SWHPL uses to manage its accessioning process.
+This section describes the software tools that SWHPL uses to carry out its accessioning process.
 
-### AvantS3
+#### Contact Sheet app
+The Contact Sheet app is a custom-written Python application written for SWHPL by AvantLogic. It allows an archivist to create 30-up and 1-up
+contact sheets from a folder of files. Documentation will be added here in the future. An example appears below.
 
-### Contact Sheet maker app
+![Accessioning diagram](accessioning-11.jpg)
 
-### S3 Browser
+#### AvantS3
+AvantS3 is the [plugin](/plugins/avants3) that allows Amazon AWS S3 to be integrated with the Digital Archive.
 
-### S3 AWS Console
+#### AWS Management Console for S3
+The [AWS Management Console](https://aws.amazon.com/console) is how you access and work with AWS services such as S3.
+Learn how SWHPL uses it for [uploading files to S3](/archivist/attach-file/#upload-files-to-your-s3-server).
+
+#### S3 Browser
+[S3 Browser](https://s3browser.com) is 3rd-party Windows utility that makes it possible and/or easier to perform tasks
+than with the AWS Management Console for S3.
 
 
 
