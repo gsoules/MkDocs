@@ -8,6 +8,8 @@
 At SWHPL, accessioning is the process of transferring archival materials from a donor or from the backlog into the Library's accessions database, and eventually,
 into the Digital Archive where they become publicly accessible.
 
+---
+
 ## Accessioning Goals
 Accessioning is much more than a bookkeeping process. It is how SWHPL assists researchers and honors donors by making contributions accessible to the public as quickly
 as possible. 
@@ -38,6 +40,8 @@ and ingest items into the Digital Archive. Subsequent sections in this documenta
 #### Transferability
 The accessioning process must be such that responsibility for accessioning and the Digital Archive can be transferred to a new archivist with minimal
 dependence on tribal knowledge, that is, unwritten knowledge that resides only in the minds of a few individuals.
+
+---
 
 ## Terminology
 
@@ -125,148 +129,158 @@ Uncurated Accession
 :   An accession containing items that have not yet been individually or collectively curated to derive metadata to describe them.
     Also referred to as a UA.
 
+---
+
 ## Accession components
 The diagram below ties together the discussion and terminology presented thus far. It shows the three kinds of item sources (backlog, new donation, and items created before the accession process was in place), and how those items are associated with accessions and with collections.
 
 ![Accessioning diagram](accessioning-1.jpg)
 
-## Accessioning steps
-The flowchart below shows the sequence of steps that SWHPL archivists perform as part of the accessioning process. The steps at right (shown
-in green) result in creation of a single Digital Archive item for the entire accession. The item's type is set to reflect the nature of
-the content, for example, `Image, Photograph`. The steps at left and in the middle (shown in yellow) also result in creation of a single Digital
-Archive item, but its type is set to `Uncurated Accession`. 
+---
+
+## Accessioning work flow
+The flowchart below shows the sequence of steps in the accessioning process.
+
+-   Yellow steps at left and middle produce a Digital Archive item for an uncurated accession.
+-   Green steps at right produce a curated Digital Archive item for the accession's images. 
+
+The process makes an accession's items publicly accessible very quickly. For an uncurated accession, only the
+index is initially accessible, but it allows the public to search the Digital Archive without having to wait
+for scanning to occur which is usually the most time-consuming step.
 
 ![Accessioning diagram](accessioning-2.jpg)
 
-The steps above show that both items have a contact sheet attached to them, but the uncurated accession item's contact sheet contains 30 thumbnails
-per page whereas each page in the curated item's contact sheet shows a single image. More importantly, the accession process for the curated item
-is complete whereas the ingestion step still awaits the uncurated accession item.
+---
 
-In both cases, the process makes the accession's items publicly accessible as quickly as possible. For the uncurated accession, only the
-index is initially accessible until the items have been scanned, but this allows the public to search the Digital Archive without having to wait
-for scanning to occur which is usually the most time-consuming step.
+## Accessioning steps
+This section explains each step in the accessioning work flow shown in the previous section.
 
-### Explanation of steps
-
+In the explanations below, `####` means the accession number.
 
 1 &ndash; Record deed of gift
-:   Procure a signed and dated gift of deed form from the donor.
+:   Procure a signed and dated deed of gift form from the donor.
 
 2 &ndash; Create new accession
 :   This step results in an accession number which will be needed in subsequent steps.
 
-    -   Add a new row to the Accessions table.
-    -   Provide values for every field for which information is available.
-    -   Write the accession number on the deed of gift form if one exists.
+    -   Open the **_New Accession Form_** in Airtable (shown in the [Accessions table](#accessions-table) section below.
+    -   Fill in all required fields.
+     -  For accessions from the archival hard drive, use the form's **_Digital Files_** selector to
+        choose the folders that are part of new accession.
+   -   Add the accession number to the deed of gift form.
 
-3A &ndash; Create private UA item in DA
+---
+
+3A &ndash; Add private UA item to Digital Archive
 :   This step results in an item identifier number which will be needed in subsequent steps.
 
     -   [Add a new item](/archivist/items/#add-a-new-item) to the Digital Archive and leave it set to
         [private](/archivist/special-features-archivist/#private-metadata-fields).
     -   Set the item's Type to `Uncurated Accession`.
     -   Set the item's Accession # to the accession number.
+    -   Provide as much metadata in other fields as is known about the accession's contents.
 
 4A &ndash; Create index PDF and upload to S3\Accessions
-:   The real work of accessioning occurs in this step. The archivist needs to assess the items in the accession and
-    create a table in a Word document that lists the contents of the accession. Depending on the nature of the
-    accession and how much time the archivist has, the table may be complete and detailed, or it may be sparse, only
+:   The real work of accessioning occurs in this step. The archivist assesses the items in the accession and
+    creates a table in a Word document that lists the contents of the accession. Depending on information available,
+    the table may be complete and detailed, or it may be sparse, only
     identifying the most significant items in the accession.
 
     When creating the index, use as many relevant keywords as possible since the text in the index will be searchable.
-    What is, or is not, in the index will determine whether someone will be able to search for and find something of
+    The words in the index will determine whether someone will be able to search for and find something of
     interest in the accession.
 
-    In the sub-steps that follow `####` means the accession number.
-
-    -   Create the index as a Word document.
+    -   Create the index as a Word document named `accession-index-####.docx`.
     -   Save the index as a PDF file named `accession-index-####.pdf`.
     -   Create a new S3 folder named `S3\Accessions\####`.
-    -   Upload the PDF file, but not the Word document, to the S3 folder.
+    -   Upload the PDF and Word files to the S3 folder.
 
 5A &ndash; Attach index to UA item and make item public
-:   
+:   This step makes the UA's index PDF publicly accessible.
 
-    -   In the Digital Archive, [edit the item](/archivist/items/#edit-an-item) created in step 3A above.
-    -   Go to the **_Files_** tab. The **_Files_** page should display the contents of the S3 accession folder created in step 4A above.
-    -   Check the box for the index PDF file uploaded in step 4A above.
+    -   In the Digital Archive, [edit the item](/archivist/items/#edit-an-item) created in step 3A.
+    -   Go to the **_Files_** tab to see the contents of `S3\Accessions\####` created in step 4A.
+    -   Check the box for the index PDF file uploaded in step 4A.
     -   Make the item public.
     -   Save the item.
     -   Verify that the index PDF appears as the item's image.
-    -   Update the accession in the Accessions table to indicate that it's next step is either scanning or creating a contact sheet.
-
-    Depending on the importance of the accession, the archivist may continue to the next step or mark the accession in the work queue
-    as being Done, causing the accession to disappear from the work queue until it is added back at some point in the future. Even
-    if work on this accession temporarily stops, it is now accessible by virtue of the fact that its index is searchable in the
-    Digital Archive.
+    -   Update the Accessions table to set the accession's Next Step to scanning or contact sheet.
 
 6A &ndash; Digitize items
 :   Scan or photograph the items in the accession to create digital files. Name the files according to their identifiers in the index
-    file created in step 4A above.
+    file created in step 4A.
 
 7A &ndash; Create 30-up contact sheet
-:   Run the contact sheet app to create a PDF file containing thumbnails of the items in the accession's S3 folder.
+:   This step creates a PDF file containing thumbnails of the accession's items.
 
     -   Go to the folder containing the digitized items.
-    -   Remove any files that you don't want to include in the contact sheet.
+    -   Remove any files that should not appear in the contact sheet.
     -   Run the contact sheet app and choose 30-up as the contact sheet type.
-    -   The app will save the file as `accession-contact-sheet-####.pdf` where `####` is the accession number
+    -   The app will save the file as `accession-contact-sheet-####.pdf`.
 
 8A &ndash; Upload files and contact sheet to `S3\Accessions`
-:   Upload the files and the contact sheet PDF to `S3\Accessions\####` where `####` is the accession number.
+:   Upload the accessions files and the contact sheet to `S3\Accessions\####`.
 
 
 9A &ndash; Attach contact sheet to public UA item
-:   
+:   This step makes thumbnails of the accession's images publicly accessible.
 
-    -   In the Digital Archive, [edit the item](/archivist/items/#edit-an-item) created in step 3A above.
-    -   Go to the **_Files_** tab. The **_Files_** page should display the contents of the S3 accession folder created in step 4A above.
-    -   Check the box for the contact sheet PDF file uploaded in step 7A above.
+    -   In the Digital Archive, [edit the item](/archivist/items/#edit-an-item) created in step 3A.
+    -   Go to the **_Files_** tab to see the contents of `S3\Accessions\####` created in step 4A.
+    -   Check only the box for the contact sheet PDF file uploaded in step 8A.
     -   Save the item.
     -   Verify that the contact sheet appears as the item's image.
-    -   Update the accession in the Accessions table to indicate that it's next step is ingestion.
+    -   Update the Accessions table to set the accession's Next Step to ingestion.
 
-10A &ndash; Ingest individual items into DA
-:   At this point, accessioning is complete and the work of curating occurs in this step.
-    For most accessions, only some of the items should be ingested into the Digital Archive as individual items.
+10A &ndash; Ingest individual items into Digital Archive
+:   At this point, accessioning is complete and the work of curating begins.
+    For most accessions, only the most important items wll be ingested into the Digital Archive as individual items.
 
     One criterion for ingestion is whether there is sufficient knowledge of an item to provide metadata that distinguishes
-    the item from other items. Typically this information comes from the index or other supplementary documentation
-    that is included with the accession, but if there is insufficient information, it may be necessary to research the item
+    the item from other items. Typically, this information comes from the index or other supplementary documentation
+    that is included with the accession, but it may be necessary to research the item
     to obtain additional information.
 
-3B &ndash; Create private curated item in DA
+---
+
+3B &ndash; Add private curated item to Digital Archive
 :   This step results in an item identifier number which will be needed in subsequent steps.
 
     -   [Add a new item](/archivist/items/#add-a-new-item) to the Digital Archive and leave it set to
         [private](/archivist/special-features-archivist/#private-metadata-fields).
     -   Set the item's Type and Subject based on the contents of the accession.
     -   Set the item's Accession # to the accession number.
+    -   Provide as much metadata in other fields as is known about the accession's contents.
 
 4B &ndash; Create 1-up contact sheet
-:   Run the contact sheet app to create a PDF file containing the item's images.
+:   This step creates a PDF file containing large images of the accession's items.
 
     -   Go to the folder containing the digitized items.
-    -   Remove any files that you don't want to include in the contact sheet.
+    -   Remove any files that should not appear in the contact sheet.
     -   Run the contact sheet app and choose 1-up as the contact sheet type.
-    -   The app will save the file as `item-######.pdf` where `######` is the identifier number from step 3B above.
+    -   The app will save the file as `item-######.pdf` where `######` is the identifier from step 3B.
+
+    As an alternative to a contact sheet, an archivist could attach individual web-sized images files and 
+    and upload those in step 5B. Creating the contact sheet is simply more expedient.
 
 5B &ndash; Upload files and contact sheet to `S3\Database`
-:   
-    -   Create a new S3 folder named `S3\Database\####` where `####` and `######` are the item's identifier number
+:   This step creates an S3 folder for the curated item and uploads files.
+
+    -   Create a new S3 folder named `S3\Database\####\#####` where `####` and `######` are the item's identifier number
         grouping and identifier. For example, if the identifier is `12345`, the grouping is `12000` and
         the identifier is `12345`.
     -   Upload the files and the contact sheet PDF to the newly created S3 folder.
 
 6B &ndash; Attach contact sheet to item and make item public
-:   
+:   This step makes the accession's images publicly accessible.
 
-    -   In the Digital Archive, [edit the item](/archivist/items/#edit-an-item) created in step 3B above.
-    -   Go to the **_Files_** tab. The **_Files_** page should display the contents of the S3 database folder created in step 5B above.
-    -   Check the box for the contact sheet PDF file uploaded in step 5B above.
+    -   In the Digital Archive, [edit the item](/archivist/items/#edit-an-item) created in step 3B.
+    -   Go to the **_Files_** tab to see the contents of `S3\Database\####\#####` created in step 5B.
+    -   Check the box for the contact sheet PDF file uploaded in step 5B.
     -   Save the item.
     -   Verify that the contact sheet appears as the item's image.
-    -   Update the accession in the Accessions table to indicate that it's next step is Completed.
+    -   Update the Accessions table to set the accession's Next Step to completed.
+
 
 ## Accessions Database
 SWHPL uses [Airtable](https://www.airtable.com/) as its accessions database to record information about accessions and related information.
@@ -274,10 +288,27 @@ The diagram below shows the five tables in the database followed by an explanati
 
 ![Accessioning diagram](accessioning-3.jpg)
 
+The lines connecting the tables indicate the relationships between tables.
+
+-   The Tasks table has a many-to-one relationship with the Accessions table because more than one task can
+    be associated with an accession. For example, one archivist could be indexing the accession while another
+    is performing research on it.
+-   The Donors table has a one-to-many relationship with the Accessions table because a donor can give more than one accession.
+-   The Digital Files table has a many-to-one relationship with the Accessions table because more than one folder of
+    digital files can be associated with an accession.
+-   The Deaccessions table has a one-to-one relationship with the Accessions table because only one record in
+    the Accessions table can have a corresponding record in the Deaccessions table.
+
 ### Accessions table
 The Accessions table contains one record for each SWHPL accession. The records contain fields for storing information that is
 specific to a single accession such as the Id of the donor, but not information about the donor. The donor information is kept
 in the Donor table because the same donor could be associated with more than one accession. 
+
+You add a new accession to the table by opening the **_New Accession Form_** in Airtable and then filling out the fields
+shown in the screenshot below. Always add new records using the form, not by editing the table directly, because the
+form ensures that required fields are filled in.
+
+![Accessioning diagram](accessioning-9.jpg)
 
 The screenshot below shows just some of the fields and a few of the rows of the Accessions table. Note the **_Next Step_** field
 which indicates where each accession is within the accessioning process.
@@ -288,27 +319,55 @@ which indicates where each accession is within the accessioning process.
 The Donor table contains information about each unique donor. It also shows which accessions the donor has given. You can double-click
 on an accession number to see the information for that accession. SWHPL uses donor ID 1000 to indicate that the donor is unknown.
 
+You add a new donor to the table by opening the **_New Donor Form_** in Airtable and then filling out the fields.
+Always add new records using the form, not by editing the table directly, because the
+form ensures that required fields are filled in.
+
 The screenshot below shows some of the fields and a few of the rows of the Donor table.
 ![Accessioning diagram](accessioning-7.jpg)
 
-### Digital File Locations table
+### Digital Files table
+The Digital Files table is the largest SWHPL table. It contains more than 3,500 rows representing the more than 3,500 folders
+on the archival hard drive. Little by little, SWHPL archivists create accessions from the folders, chipping away at the enormous backlog.
+In the process they discover folders that can be rejected for various reasons such as being redundant or containing files with insufficient
+quality. The table contains a **_Rejected_** field (not shown in the screenshot below) to record the reason a folder was rejected.
+
+An important use of the Digital Files table at SWHPL is to track which folders on the archival hard drive have been uploaded
+to S3 as part of the accessioning process. When every row in the table has an accession associated with it (or has been rejected), the
+entire backlog of digital files will have finally been accessioned and stored in the cloud.
 
 The screenshot below shows some of the fields and a few of the many rows of the Digital File Location table.
 ![Accessioning diagram](accessioning-8.jpg)
 
 ### Deaccessions table
+The Deaccessions table is used to keep a record of which accessions have been deaccessioned. A deaccessioned record still exists in the
+Accessions table so that information about it is never lost, but the Accessions table is normally filtered to hide records for accessions
+in the Deaccessions table.
+
+!!! warning "Warning"
+    Never deaccession by deleting a record from the Accessions table. Instead, add a record to the Deaccessions table.
+
 The screenshot below shows most of the fields and a few of the rows of the Deaccessions table.
 ![Accessioning diagram](accessioning-6.jpg)
 
-### Work Queue table
-The work queue is used to maintain a relatively short and not overwhelming list of work that is in progress and work to be done in the near
-future. An available resource always know exactly what they should do next.
-s
--   The Work Queue table has a many-to-one relationship with the Accessions table to allow one or more tasks in the queue
-    to be associated with the same accession.
+### Tasks table
+The Tasks table is used to achieve the [manageability goal](/archivist/accessioning/#manageability) described earlier.
+The purpose of the Task table is to allow the curator to quickly see who is doing what, and to make it easy for archivists
+to know what they should be working on.
 
-The screenshot below shows most of the fields and rows that are typically visible in the Work Queue table at any given
-time.
+The Task table should always reflect reality based on the availability of resources. For example, if at the present time no
+archivists are available to work, there should be no In Progress tasks. If a task was in progress when an archivist
+became unavailable, its priority should be lowered (perhaps to Next or High) to record its importance for when resources
+become available again.
+
+You add a new task to the table by opening the **_New Task Form_** in Airtable and then filling out the fields
+as shown below.
+
+![Accessioning diagram](accessioning-10.jpg)
+
+The screenshot below shows the fields and rows that are typically visible in the Tasks table at any given
+time. You want to minimize the number of In Progress and Next tasks so that the table
+only shows works that is actually being performed or is slated to be performed very soon.
 
 ![Accessioning diagram](accessioning-4.jpg)
 
