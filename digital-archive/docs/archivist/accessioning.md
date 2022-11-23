@@ -356,67 +356,31 @@ The Accessions table contains one record for each SWHPL accession. The records c
 specific to a single accession such as the Id of the donor, but not information about the donor. The donor information is kept
 in the Donor table because the same donor could be associated with more than one accession. 
 
-You add a new accession to the table by opening the **_New Accession Form_** in Airtable and then filling out the fields
-shown in the screenshot below.
-
-!!! Note ""
-    Always add new records using the form, not by editing the table directly, because the
-    form ensures that required fields are filled in.
-
-To use the form:
-
--   View the **_Accessions_** table in Airtable.
--   Click the **_New Accession Form_** view.
--   Click the **_Open form_** button in the top menu.
--   Fill in all required fields.
-    -   Use the next largest available number as the accession number.
-    -   Set the **_Next Step_** field as appropriate, usually `Assess` or `Create Index`
-    -   For accessions from the archival hard drive, use the form's **_Digital Files_** selector
-        to choose the folders that are part of the new accession.
--   Click the **_Submit_** button at the bottom of the form.
--   A new record will have been added to the **_Accessions_** table
-
-![Accessioning diagram](accessioning-9.jpg)
+Learn how to [add a new accession to the **_Accessions_** table](#add-a-new-accession-to-the-accessions-table).
 
 The screenshot below shows just some of the fields and a few of the rows of the Accessions table. Note the **_Next Step_** field
 which indicates where each accession is within the accessioning process.
 
 ![Accessioning diagram](accessioning-5.jpg)
 
+### Deaccessions table
+The Deaccessions table is used to keep a record of which accessions have been deaccessioned. A deaccessioned record still
+exists in the Accessions table so that information about it is never lost, but the Accessions table is normally filtered
+to hide records for accessions in the Deaccessions table.
+
+Learn how to [deaccession an accession](#deaccession-an-accession).
+
+The screenshot below shows most of the fields and a few of the rows of the Deaccessions table.
+![Accessioning diagram](accessioning-6.jpg)
+
 ### Donors table
 The Donor table contains information about each unique donor. It also shows which accessions the donor has given. You can double-click
 on an accession number to see the information for that accession. SWHPL uses donor ID 1000 to indicate that the donor is unknown.
 
-You add a new donor to the table by opening the **_New Donor Form_** in Airtable and then filling out the fields.
-Always add new records using the form, not by editing the table directly, because the
-form ensures that required fields are filled in.
+Learn how to [add a new donor to the **_Donor_** table](#add-a-new-donor-to-the-donor-table).
 
 The screenshot below shows some of the fields and a few of the rows of the Donor table.
 ![Accessioning diagram](accessioning-7.jpg)
-
-### Digital Files table
-The Digital Files table is the largest SWHPL table. It contains more than 3,500 rows representing the more than 3,500 folders
-on the archival hard drive. Little by little, SWHPL archivists create accessions from the folders, chipping away at the enormous backlog.
-In the process, they discover folders that can be rejected for various reasons such as being redundant or containing files with insufficient
-quality. The table contains a **_Rejected_** field (not shown in the screenshot below) to record the reason a folder was rejected.
-
-An important use of the Digital Files table at SWHPL is to track which folders on the archival hard drive have been uploaded
-to S3 as part of the accessioning process. When every row in the table has an accession associated with it (or has been rejected), the
-entire backlog of digital files will have finally been accessioned and stored in the cloud.
-
-The screenshot below shows some of the fields and a few of the many rows of the Digital File Location table.
-![Accessioning diagram](accessioning-8.jpg)
-
-### Deaccessions table
-The Deaccessions table is used to keep a record of which accessions have been deaccessioned. A deaccessioned record still exists in the
-Accessions table so that information about it is never lost, but the Accessions table is normally filtered to hide records for accessions
-in the Deaccessions table.
-
-!!! warning "Warning"
-    Never deaccession by deleting a record from the Accessions table. Instead, add a record to the Deaccessions table.
-
-The screenshot below shows most of the fields and a few of the rows of the Deaccessions table.
-![Accessioning diagram](accessioning-6.jpg)
 
 ### Tasks table
 The Tasks table is used to achieve the [manageability goal](/archivist/accessioning/#manageability) described earlier.
@@ -428,10 +392,7 @@ archivists are available to work, there should be no In Progress tasks. If a tas
 became unavailable, its priority should be lowered (perhaps to Next or High) to record its importance for when resources
 become available again.
 
-You add a new task to the table by opening the **_New Task Form_** in Airtable and then filling out the fields
-as shown below.
-
-![Accessioning diagram](accessioning-10.jpg)
+Learn how to [add a new task to the **_Task_** table](#add-a-new-task-to-the-task-table).
 
 The screenshot below shows the fields and rows that are typically visible in the Tasks table at any given
 time. You want to minimize the number of In Progress and Next tasks so that the table
@@ -439,25 +400,18 @@ only shows work that is being performed or is slated to be performed very soon.
 
 ![Accessioning diagram](accessioning-4.jpg)
 
-## Choosing an accession's next step
-This section explains the meaning of the values in the **_Next Step_** field in the **_Accessions_** table.
+### Digital Files table
+The Digital Files table is the largest SWHPL table. It contains more than 3,500 rows representing the more than 3,500 folders
+on the archival hard drive. Little by little, SWHPL archivists create accessions from the folders, chipping away at the enormous backlog. In the process, they discover folders that can be rejected for various reasons such as being redundant or containing files with insufficient quality. The table contains a **_Rejected_** field (not shown in the screenshot below) to record the reason a folder was rejected.
 
-Step                        | Meaning
-----------------------------| ------------
-**_Assess_**                | Determine what the next step should be. Only choose this option for a new accession when it's not obvious what to do next such as when it's not known whether the accession items are already in the Digital Archive and the accession can be considered **_Completed_** or if an index is required, or if the accession is small enough that a curated item should be created from it or if a UA should be created.
-**_Create index_**          | See how to [create an index for an accession](#create-an-index-for-an-accession).
-**_Create curated item_**   | and two
-**_Create UA_**             | threee
-**_Create contact sheet_**  | threee
-**_Scanning_**              | threee
-**_Ingest item into DA_**   | threee
-**_Break into separate accessions_**   | threee
-**_Special treatment_**   | threee
-**_Find materials_**   | threee
-**_Research_**   | threee
-**_Completed_**   | threee
+You may never need to add a record to this table. If you do, add it manually, using existing records as examples.
 
+An important use of the Digital Files table at SWHPL is to track which folders on the archival hard drive have been uploaded
+to S3 as part of the accessioning process. When every row in the table has an accession associated with it (or has been rejected), the
+entire backlog of digital files will have finally been accessioned and stored in the cloud.
 
+The screenshot below shows some of the fields and a few of the many rows of the Digital File Location table.
+![Accessioning diagram](accessioning-8.jpg)
 
 ## Deed of gift
 
@@ -494,25 +448,90 @@ These S3 Browser features do not exist in the S3 console:
 ## How To
 This section explains how to perform common accessioning tasks.
 
-### Add a new accession to the Accessions table
-If the accession is from a new donor, [add the donor to the **_Donor_** table](#add-a-new-donor-to-the-donor-table).
+---
 
+### Add a new accession to the Accessions table
+Follow these steps to add a new record to the **_Accessions_** table.
+
+-   If the accession is from a new donor, first [add the donor to the **_Donor_** table](#add-a-new-donor-to-the-donor-table).
 -   View the **_Accessions_** table in Airtable.
 -   Click the **_New Accession Form_** view.
--   Click the **_Open form_** button in the top menu.
+-   Click the **_Open form_** button in the top menu (red arrow in screenshot below).
+
+    ![Accessioning diagram](accessioning-12.jpg)
+
 -   A form like in the screenshot below appears (all fields will be in one column).
--   Fill in all required fields.
+-   Fill in required fields.
     -   Use the next largest available number as the accession number.
-    -   [Choose a next step](#choosing-an-accessions-next-step) for the accession.
+    -   [Choose a next step](#choose-an-accessions-next-step) for the accession.
     -   For accessions from the archival hard drive, use the form's **_Digital Files_** selector
         to choose the folders that are part of the new accession.
 -   Click the **_Submit_** button at the bottom of the form.
 -   A new record will have been added to the **_Accessions_** table.
 
+!!! Note ""
+    Always add new accessions using the **_New Accession Form_**, not by editing the table directly.  
+    Using the form is easier and ensures that required fields are filled in.
+
 ![Accessioning diagram](accessioning-9.jpg)
 
+---
+
+## Choose an accession's next step
+This section explains the meaning of the values in the **_Next Step_** field in the **_Accessions_** table.
+
+Step                        | Meaning
+----------------------------| ------------
+**_Assess_**                | Determine what the next step should be. Only choose this option for a new accession when it's not obvious what to do next such as when it's not known whether the accession items are already in the Digital Archive and the accession can be considered **_Completed_** or if an index is required, or if the accession is small enough that a curated item should be created from it or if a UA should be created.
+**_Create index_**          | See how to [create an index for an accession](#create-an-index-for-an-accession).
+**_Create curated item_**   | and two
+**_Create UA_**             | threee
+**_Create contact sheet_**  | threee
+**_Scanning_**              | threee
+**_Ingest item into DA_**   | threee
+**_Break into separate accessions_**   | threee
+**_Special treatment_**   | threee
+**_Find materials_**   | threee
+**_Research_**   | threee
+**_Completed_**   | threee
+
+--- 
+
+### Add a new task to the task table
+Follow these steps to add a new record to the **_Tasks_** table.
+
+-   View the **_Tasks_** table in Airtable.
+-   Click the **_New Task Form_** view.
+-   Click the **_Open form_** button in the top menu (red arrow in screenshot below).
+
+    ![Accessioning diagram](accessioning-17.jpg)
+
+-   A form like in the screenshot below appears.
+-   Fill in the fields.
+-   Click the **_Submit_** button at the bottom of the form.
+-   A new record will have been added to the **_Tasks_** table.
+
+![Accessioning diagram](accessioning-10.jpg)
+
+---
+
 ### Add a new donor to the Donor table
-xxx
+Follow these steps to add a new record to the **_Donor_** table.
+
+-   View the **_Donor_** table in Airtable.
+-   Click the **_New Donor Form_** view.
+-   Click the **_Open form_** button in the top menu (red arrow in screenshot below).
+
+    ![Accessioning diagram](accessioning-13.jpg)
+
+-   A form like in the screenshot below appears.
+-   Use the next largest available number as the donor number.
+-   Click the **_Submit_** button at the bottom of the form.
+-   A new record will have been added to the **_Donor_** table.
+
+![Accessioning diagram](accessioning-14.jpg)
+
+---
 
 ### Add a note to an accession record
 Use the notation `<date>-<initials>:<text>`
@@ -520,8 +539,38 @@ Use the notation `<date>-<initials>:<text>`
 ###### Example
 `11/23/2022 - GS: The donor says they will pick up the materials next June.`
 
+---
+
 ### Create an index for an accession
 yyy
+
+---
+
+### Deaccession an accession
+You deaccession an accession by adding a record to the **_Deaccessions_** table.
+
+!!! warning "Warning"
+    Never deaccession by deleting a record from the Accessions table.  
+    Doing so will cause all information about the accession to be lost.
+
+Follow these steps to add a new record to the **_Deccessions_** table.
+
+-   View the **_Deaccessions_** table in Airtable.
+-   Click the **_Deaccession Form_** view.
+-   Click the **_Open form_** button in the top menu (red arrow in screenshot below).
+
+    ![Accessioning diagram](accessioning-16.jpg)
+
+-   A form like in the screenshot below appears.
+-   Choose the accession to be deaccessions using the **_Accession_** selector
+-   Enter the date.
+-   Choose your initials from the **_Archivist_** field. 
+-   Type a reason for the deaccession in the **_Reason_** field.
+-   Click the **_Submit_** button at the bottom of the form.
+-   A new record will have been added to the **_Deaccessions_** table.
+
+![Accessioning diagram](accessioning-15.jpg)
+
 ---
 
 ## Google Drive
