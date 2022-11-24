@@ -8,7 +8,42 @@
 At SWHPL (pronounced *swiple*, rhymes with *triple*), accessioning is the process of transferring archival materials from a donor, or the Library's
 backlog, into the Library's accessions database, and eventually, into the Digital Archive where the items become publicly accessible.
 
-#### History
+### Contents
+
+-   [Accessioning goals](#accessioning-goals)
+-   [Terminology](#terminology)
+-   [Accessions vs Collections](#accessions-vs-collections)
+-   [Accessioning workflow](#accessioning-workflow)
+    -   [Workflow steps](#workflow-steps)
+-   [Accessions database](#accessions-database)
+    -   [**_Accessions_** table](#accessions-table)
+    -   [**_Deaccessions_** table](#deaccessions-table)
+    -   [**_Donors_** table](#donors-table)
+    -   [**_Tasks_** table](#tasks-table)
+    -   [**_Digital Files_** table](#digital-files-table)
+-   [How To](#how-to)
+    -   [Add a new accession to the Accessions table](#add-a-new-accession-to-the-accessions-table)
+    -   [Choose an accession's next step](#choose-an-accessions-next-step)
+    -   [Add a new task to the task table](#add-a-new-task-to-the-task-table)
+    -   [Add a new donor to the Donor table](#add-a-new-donor-to-the-donor-table)
+    -   [Add a note to an accession record](#add-a-note-to-an-accession-record)
+    -   [Create an index for an accession](#create-an-index-for-an-accession)
+    -   [Deaccession an accession](#deaccession-an-accession)
+    -   [Scan documents and images](#scan-documents-and-images)
+-   [Accepting a donation for accession](#accepting-a-donation-for-accession)    
+    -   [Collection development policy](#collection-development-policy)
+    -   [Deed of gift](#deed-of-gift)
+    -   [Storing physical items](#storing-physical-items)
+-   [Tools](#tools)
+    -   [Contact sheet app](#contact-sheet-app)
+    -   [Avant S3](#avants3)
+    -   [AWS Management Console for S3](#aws-management-console-for-s3)
+    -   [S3 Browser](#s3-browser)
+    -   [PDF Editor](#pdf-editor)
+    -   [Epson scanner software](#epson-scanner-software)
+
+
+### History
 In early 2020, SWHPL had no formal accessioning process and no longer had a curator. At that time, the Digital Archive already had more than
 10,000 items and an even greater backlog of materials, none of which were accessible to the public. In an effort to reduce the backlog and
 better handle new donations, George Soules and Elliot Santavicca developed an initial accessioning process. In October 2022, George assumed
@@ -17,7 +52,7 @@ document the process described here.
 
 ---
 
-## Accessioning Goals
+## Accessioning goals
 Accessioning is much more than a bookkeeping process. It is how SWHPL assists researchers and honors community members by making donor contributions accessible to the public via the Digital Archive as quickly as possible. 
 
 #### Accessibility
@@ -44,8 +79,7 @@ The Library achieves its goal of manageability by providing archivists with the 
 and ingest items into the Digital Archive. Subsequent sections in this documentation describe those processes and tools.
 
 #### Transferability
-The accessioning process must be such that responsibility for accessioning and the Digital Archive can be transferred to a new archivist with minimal
-dependence on tribal knowledge, that is, unwritten knowledge that resides only in the minds of a few individuals.
+The accessioning process must be such that responsibility for accessioning and the Digital Archive can be transferred to a new archivist with minimal dependence on institutional knowledge that resides only in the minds of a few individuals.
 
 ---
 
@@ -72,7 +106,7 @@ Accession Number
     new accession. The number appears in the **_Accession #_** field of Digital Archive items, though it's blank for most items.
     This is because most items were added to the Digital Archive before the accessioning process was established.
     
-    Note that some items with a blank **_Accession #_** field belong to an an accession that was recently created, but the
+    Note that some items with a blank **_Accession #_** field belong to an accession that was recently created, but the
     **_Accession #_** fields for the accession's items were not updated when the accession was created because of the extra time that would
     be required to perform this bookkeeping task.
 
@@ -94,7 +128,7 @@ Archive Closet
     and the third shelf on unit 2 is 2-3.
     
     The binders and boxes on each shelf are labeled with an accession number. In some cases, the contents of an accession
-    are kept on multiple shelves. The *accessions database* contains an Archive Closet table showing a photographs of the shelf
+    are kept on multiple shelves. The *accessions database* contains an Archive Closet table showing a photograph of the shelf's
     contents so that an archivist can look at a shelf without going into the closet.
 
 Backlog
@@ -108,7 +142,7 @@ Collection
     to a collection because they were added to the Digital Archive before consistent use of collection names was established. 
     
     Items in a collection often come from multiple accessions. For instance, each donation from the Smith family would
-    be assigned to a separate accessions, but the items in each accession would belong to the "Smith Family Collection".
+    be assigned to separate accessions, but the items in each accession would belong to the "Smith Family Collection".
     
     If the items in a collection were added to the Digital Archive before the accessioning process was established,
     those items will not be associated with any accessions.
@@ -121,6 +155,9 @@ Contact Sheet
 Curated Item
 :   A Digital Archive item that has metadata and file attachments. All Digital Archive items are curated items with the exception
     of *uncurated accession items*.
+
+Digital Archive Shared Drive
+:   A Google Drive that is shared with Library personnel and the curator or other archivists who are not Library employees.
 
 Item
 :   Generically, an item is a single object (physical or digital) such as a photograph, document, map, or book. In the Digital
@@ -162,7 +199,7 @@ is when all the items came from the same source, such as the Smith family, even 
 the Smith's collected over time. The second kind of association is when the items are somehow similar to each
 other such as a collection of postcards or glass plates.
 
-Over time, the Smith family might make several donations. Each donation is recorded as a separate accessions, but all of
+Over time, the Smith family might make several donations. Each donation is recorded as a separate accession, but all of
 the items from all of the donations are identified as belonging to the "Smith Family Collection".
 
 In the Digital Archive, an item's **_Source_** field shows what collection, if any, an item belongs to. If a user clicks on
@@ -192,8 +229,10 @@ for scanning to occur which is usually the most time-consuming step.
 
 ---
 
-## Accessioning steps
-This section explains each step in the accessioning workflow shown in the previous section.
+### Workflow steps
+This section explains each step in the accessioning workflow shown in the previous section. See the section on
+[accepting a donation for accession](#accepting-a-donation-for-accession) to learn about the policy and procedures
+that must be adhered to prior to acceptance of a new donation.
 
 In the explanations below, `####` means the accession number.
 
@@ -223,16 +262,10 @@ In the explanations below, `####` means the accession number.
     -   Provide as much metadata in other fields as is known about the accession's contents.
 
 4A &ndash; Create index PDF and upload to S3\Accessions
-:   The real work of accessioning occurs in this step. The archivist assesses the items in the accession and
-    creates a table in a Word document that lists the contents of the accession. Depending on the information available,
-    the table may be complete and detailed, or it may be sparse, only
-    identifying the most significant items in the accession.
+:   This step produces a searchable index that, once attached to the UA in step 5A, makes a detailed description of the
+    accession searchable via the Digital Archive.
 
-    When creating the index, use as many relevant keywords as possible since the text in the index will be searchable.
-    The words in the index will determine whether someone will be able to search for and find something of
-    interest in the accession.
-
-    -   Make a copy of the [Google Drive](#google-drive) file named `accession-index-template.docx`
+    -   Make a copy of the [Digital Archive Shared Drive](digital-archive-shared-drive) file named `accession-index-template.docx`
     -   Rename the copy to `accession-index-####.docx` where `####` is the accession number.
     -   [Index the accession](#create-an-index-for-an-accession).
     -   Save the index Word document as a PDF file named `accession-index-####.pdf`.
@@ -248,8 +281,8 @@ In the explanations below, `####` means the accession number.
     -   Make the item public.
     -   Save the item.
     -   Verify that the index PDF appears as the item's image.
-    -   Add a relation ship from the UA to its Reference Item if one exists.
-    -   Update the Accessions table to set the accession's Next Step to scanning or contact sheet.
+    -   Add a relationship from the UA to its Reference Item if one exists.
+    -   Update the Accessions table to set the accession's **_Next Step_** to `Scanning` or `Contact sheet`.
 
 6A &ndash; Digitize items
 :   Scan or photograph the items in the accession to create digital files. Name the files according to their identifiers in the index
@@ -275,7 +308,7 @@ In the explanations below, `####` means the accession number.
     -   Check only the box for the contact sheet PDF file uploaded in step 8A.
     -   Save the item.
     -   Verify that the contact sheet appears as the item's image.
-    -   Update the Accessions table to set the accession's Next Step to ingestion.
+    -   Update the Accessions table to set the accession's **_Next Step_** to `Ingest item into DA`.
 
 10A &ndash; Ingest individual items into Digital Archive
 :   At this point, accessioning is complete and the work of curating begins.
@@ -326,8 +359,8 @@ In the explanations below, `####` means the accession number.
     -   Make the item public.
     -   Save the item.
     -   Verify that the contact sheet appears as the item's image.
-    -   Add a relation ship from the item to its Reference Item if one exists.
-    -   Update the Accessions table to set the accession's Next Step to completed.
+    -   Add a relationship from the item to its Reference Item if one exists.
+    -   Update the Accessions table to set the accession's **_Next Step_** to `Completed`.
 
 
 ## Accessions Database
@@ -413,38 +446,6 @@ entire backlog of digital files will have finally been accessioned and stored in
 The screenshot below shows some of the fields and a few of the many rows of the Digital File Location table.
 ![Accessioning diagram](accessioning-8.jpg)
 
-## Deed of gift
-
-Describe what the fields mean
-
-## Storing physical items
-Discuss transferring accession to archival boxes, labeling, multiple accessions within a box etc.
-
-## Tools
-This section describes the software tools that SWHPL uses to carry out its accessioning process.
-
-#### Contact Sheet app
-The Contact Sheet app is a custom-written Python application created for SWHPL by AvantLogic. It allows an archivist to create 30-up and 1-up
-contact sheets from a folder of files. Documentation will be added here in the future. An example appears below.
-
-![Accessioning diagram](accessioning-11.jpg)
-
-#### AvantS3
-AvantS3 is the [plugin](/plugins/avants3) that allows Amazon AWS S3 to be integrated with the Digital Archive.
-
-#### AWS Management Console for S3
-The [AWS Management Console](https://aws.amazon.com/console) is how you access and work with AWS services such as S3.
-Learn how SWHPL uses it for [uploading files to S3](/archivist/attach-file/#upload-files-to-your-s3-server).
-
-#### S3 Browser
-[S3 Browser](https://s3browser.com) is a 3rd-party Windows utility that makes it possible and/or easier to perform tasks
-than with the AWS Management Console for S3.
-
-These S3 Browser features do not exist in the S3 console:
-
--   Preview an image (with the console, you have to download the image to view it).
--   Download multiple files or a folder (the console only lets you download one file at a time).
-
 ## How To
 This section explains how to perform common accessioning tasks.
 
@@ -478,22 +479,23 @@ Follow these steps to add a new record to the **_Accessions_** table.
 ---
 
 ## Choose an accession's next step
-This section explains the meaning of the values in the **_Next Step_** field in the **_Accessions_** table.
+This section explains the meaning of the values in the **_Next Step_** field in the **_Accessions_** table. The numbers
+in the Workflow column refer to numbered steps in the [accessioning workflow diagram](#accessioning-workflow).
 
-Step                        | Meaning
-----------------------------| ------------
-**_Assess_**                | Determine what the next step should be. Only choose this option for a new accession when it's not obvious what to do next such as when it's not known whether the accession items are already in the Digital Archive and the accession can be considered **_Completed_** or if an index is required, or if the accession is small enough that a curated item should be created from it or if a UA should be created.
-**_Create index_**          | See how to [create an index for an accession](#create-an-index-for-an-accession).
-**_Create curated item_**   | and two
-**_Create UA_**             | threee
-**_Create contact sheet_**  | threee
-**_Scanning_**              | threee
-**_Ingest item into DA_**   | threee
-**_Break into separate accessions_**   | threee
-**_Special treatment_**   | threee
-**_Find materials_**   | threee
-**_Research_**   | threee
-**_Completed_**   | threee
+Step                        | Meaning       | Workflow
+----------------------------| --------------| --- 
+**_Assess_**                | Determine what the next step should be. Only choose this option for a new accession when it's not obvious what to do next such as when it's not known whether the accession items are already in the Digital Archive and the accession can be considered **_Completed_** or if an index is required, or if the accession is small enough that a curated item should be created from it or if a UA should be created. | 2
+**_Create index_**          | See how to [create an index for an accession](#create-an-index-for-an-accession).|3A - 5A
+**_Create curated item_**   | Choose this option when the accession is small, and the items are all similar or closely related, and digital files exist for the items.| 3B - 6B
+**_Create UA_**             | Choose this option when the accession is large, or the items are dissimilar or unrelated, or no digital files exist for the items. | 3A - 9A
+**_Create contact sheet_**  | Create either a 30-up or 1-up contact sheet. | 7A or 4B
+**_Scanning_**              | Scan items from the accession that are candidates for ingestion into the Digital Archive. | 6A
+**_Ingest item into DA_**   | Create individual curated items from the most important items in the accession. | 10A
+**_Break into separate accessions_**   | Divide the accession into two or more smaller accessions that are each more manageable than the current accession.
+**_Special treatment_**   | Choose this option when none of the other options apply. An example of special treatment would be to OCR the PDF files in an accession before proceeding with another step. Another example would be to reconcile confusing or contracting information about the accession.
+**_Find materials_**   | Choose this option when the location of the materials is unknown and they are needed for scanning or to return to the donor.
+**_Research_**   | Choose this option when research must be performed before any other step can be performed.
+**_Completed_**   | All the steps for the accession have been performed and there is nothing else to do.
 
 --- 
 
@@ -542,7 +544,31 @@ Use the notation `<date>-<initials>:<text>`
 ---
 
 ### Create an index for an accession
-yyy
+The real work of accessioning begins with indexing the accession's contents. The archivist examines the items
+in the accession and creates a table in a Word document with one row for each item. Depending on the information available,
+the table may be complete and detailed, or it may be sparse, only identifying the most significant items in the accession,
+or only those items for which information is known.
+
+When creating the index, use as many relevant keywords as possible since the text in the index will be searchable.
+The words in the index will determine whether someone will be able to search for and find something of
+interest in the accession.
+
+The index table should contain the columns listed below and possibly others if there is other information to record such as which
+of a set of albums and item is contained in.
+
+-   **Item number**: An identification number used for [file naming](#file-naming) when the item is scanned.
+-   **Description**: A concise, but keyword-rich description of the item.
+-   **Date**: The date of the item if known.
+-   **Notes**: Other information about the item. 
+
+Below is a screenshot showing an example of a typical index where there is a lot of information for some
+items and none for others.
+
+![Accessioning diagram](accessioning-19.jpg)
+
+In addition to making the accession accessible and searchable via the Digital Archive, the index also provides a guide
+for someone who is tasked with scanning the items in the accession. The use the table's Description column to identify
+items and use the Item Number to derive the scan's file name.
 
 ---
 
@@ -562,7 +588,7 @@ Follow these steps to add a new record to the **_Deccessions_** table.
     ![Accessioning diagram](accessioning-16.jpg)
 
 -   A form like in the screenshot below appears.
--   Choose the accession to be deaccessions using the **_Accession_** selector
+-   Choose the accession to be deaccessioned by using the **_Accession_** selector
 -   Enter the date.
 -   Choose your initials from the **_Archivist_** field. 
 -   Type a reason for the deaccession in the **_Reason_** field.
@@ -573,5 +599,145 @@ Follow these steps to add a new record to the **_Deccessions_** table.
 
 ---
 
-## Google Drive
+### Scan documents and images
+
+The process for scanning documents is the same as for scanning images, such as photographs, except for the
+format in which the file produced by the scanner is saved. Images should always be saved as TIFF files and
+documents should usually be saved as PDF files.
+
+!!! Note ""
+    Wear gloves (Nitrile, vinyl, or cloth, but no latex) when handling aging materials. Whether or not you
+    are wearing gloves, handle items by their edges to avoid leaving fingerprints.
+
+#### File naming
+
+Use the [accessions index file](#create-an-index-for-an-accession) as a guide for what file name to use for each item.
+
+The file name format is `####-###` where `####` is the four-digit accession number and `###` is the three-digit item sequence within the accession. For example, the third file in accession `1234` would be named `1234-003.tiff`.
+
+To have the [scanner software](#epson-scanner-software) automatically create a sequence of file names:
+
+-   Click **_File Save Setting_** next to the **_Scan_** button .
+-   Select the **_Save Location_** (one folder for the scans of one accession).
+-   Set **_Prefix_** as `####-` (include dash with no space after) where `####` is the accession number.
+-   Set the start number to `001` or the next number if the accession is already partially scanned. 
+-   Set **_Image Format Type_** to `PDF` for documents or `TIFF` for images. 
+
+#### Documents and images
+
+-   **_Mode_**: `Professional Mode`
+-   **_Document Type_**: `Reflective`
+-   **_Image Type_**: `24-bit color`
+-   **_Resolution_**: `600` dpi
+
+An exception is made to use `Grayscale` for the **_Image Type_** when the original contains no color or when the
+document's color is of no significance. Grayscale scans produce much smaller files than color scans.
+
+#### Scanning documents
+
+Use a sheet of black paper behind non-opaque pages, if necessary, so the text on the reverse side does not show through into the scan.
+
+Save scans as a PDF file (not a TIFF or JPEG).
+
+An exception is made for using TIFF when the document does not contain text
+that cannot be recognized by OCR, such as cursive or poor-quality printed text, and when it would be better to make the
+item accessible as an image file rather than a PDF.
+
+#### Scanning images
+
+Save scans as a TIFF file (not JPEG).
+
+An exception is made for using JPEG instead of TIFF when the originals are low-quality
+and don't justify the larger file size of TIFF files.
+
+---
+
+## Accepting a donation for accession
+
+When a donor offers to give or loan materials to the Library, the curator decides whether to accept some or all of the materials based on the accession’s relevance per SWHPL's [Collection Development Policy](#collection-development-policy). If the curator accepts the materials, the donor must sign the Library’s [deed of gift](#deed-of-gift) form.
+
+One criterion for accepting a gift is whether it includes sufficient information about the materials from which an archivist
+can produce metadata. For example, an album of photographs with no information about each photo will generally not be as
+desirable as one where each photo is accompanied by words identifying the subjects, location of photos, and the photographer.
+If there is no such identification, and the subject or location of the photos is not obvious, the curator may opt to not accept
+the donation.
+
+Once the Library has opted to accept a donation:
+
+-   An archivist:
+    -   Procures a signed deed of gift form from the donor.
+    -   [Adds the new accession to the Accessions table](#add-a-new-accession-to-the-accessions-table).
+    -   Adds the new accession number to the deed of gift form.
+    -   Scans the deed of gift form as a PDF and stores it on the Digital Archive Shared Drive.
+    -   [Stores the materials in the archive closet](#storing-physical-items-in-the-archive-closet).
+-   The curator:
+    -   Assigns a ranking to the accession to indicate its importance relative to other materials in the backlog. The ranking helps determine when the materials will be curated for ingestion into the Digital Archive.
+
+
+### Collection development policy
+
+The SWHPL collection development is in file `Master - SWHPL DA Collection Development Policy mm-dd-yyyy.docx` on the Digital Archive Shared Drive. The curator will consult the policy to determine whether to accept all or part of a donation.
+
+### Deed of gift
+
+The deed of gift form records the transfer of materials from a donor to the Library. The form is in file `Deed of Gift form mm-dd-yyyy.pdf` on the Digital Archive Shared Drive.
+
+The archivist must ensure that the form is filled out properly per the descriptions below:
+
+-   **Description of materials**: A concise list of what is contained in the accession. If some of the items are contained
+    within containers, the description should identify each container and its contents.
+-   **Other information**: Additional information about the gift or materials such as who collected the materials, or who
+    could be contacted to get more information.
+-   **Text to be used as the source of the gift**: The exact wording that should appear in the **_Source_** field for
+    Digital Archive items from the accession, for example "The Smith Family Collection".
+    **Disposition of separated-out materials**: Yes or no to indicate if the donor wants to receive back any materials
+    that the Library chooses not to include in the accession.
+
+![Accessioning diagram](accessioning-18.jpg)
+
+### Storing physical items
+Upon acceptance of materials from a donor for a new accession, the archivist performs these actions:
+
+-   Assigns the accession to a shelf on one of the shelving units in the archive closest.
+-   Records the shelf in the accession's **_Physical Location_** field in the [**_Accessions_** table](#accessions-table).
+-   If necessary, transfers the materials into an archival container such as a Hollinger box.
+-   Labels the container with the accession number. If the container holds other accessions, a label for the
+    new accession is appended to the other labels on the container.
+    Photographs the shelf and updates the photo for that shelf in the **_Archive Closet_** table.
+
+## Tools
+This section describes the software tools that SWHPL uses to carry out its accessioning process.
+
+### Contact Sheet app
+The Contact Sheet app is a custom-written Python application created for SWHPL by AvantLogic. It allows an archivist to create 30-up and 1-up
+contact sheets from a folder of files. Documentation will be added here in the future. An example of a 30-up sheet appears below.
+
+![Accessioning diagram](accessioning-11.jpg)
+
+### AvantS3
+AvantS3 is the [plugin](/plugins/avants3) that allows Amazon AWS S3 to be integrated with the Digital Archive.
+
+### AWS Management Console for S3
+The [AWS Management Console](https://aws.amazon.com/console) is how you access and work with AWS services such as S3.
+Learn how SWHPL uses it for [uploading files to S3](/archivist/attach-file/#upload-files-to-your-s3-server).
+
+### S3 Browser
+[S3 Browser](https://s3browser.com) is a 3rd-party Windows utility that makes it possible and/or easier to perform tasks
+than with the AWS Management Console for S3.
+
+These S3 Browser features do not exist in the S3 console:
+
+-   Preview an image (with the console, you have to download the image to view it).
+-   Download multiple files or a folder (the console only lets you download one file at a time).
+
+### PDF Editor
+SWHPL uses both Foxit and Adobe Acrobat Pro for working with PDF files to:
+
+-   Perform optical character recognition (OCR) of images containing printed text.
+-   File size compression.
+
+### Epson scanner software
+SWHPL uses Epson scanners and Epson drivers and programs.
+
+---
 
