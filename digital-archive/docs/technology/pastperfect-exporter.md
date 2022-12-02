@@ -320,7 +320,7 @@ columns that you want to have appear in the Digital Archive. However, if later y
 want to add a column, follow these steps.
 
 -	Add an element for the column in Omeka
--	Add the element to the [Column Mapping](plugins/avanthybrid/#configuration-options)
+-	Add the element to the [Column Mapping](/plugins/avanthybrid/#configuration-options)
 	option in the AvantHybrid configuration
 -	Add the column to the `fields` option in the `pp_export.config`
 -	Set the `force` configuration option to `yes`
