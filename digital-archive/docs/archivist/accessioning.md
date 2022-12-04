@@ -11,9 +11,9 @@ At SWHPL (pronounced *swiple*, rhymes with *triple*), *accessioning* is the proc
 
 -   [Accession and curation goals](#accession-and-curation-goals)
 -   [Terminology](#terminology)
--   [Backlog reduction strategy](#backlog-reduction-strategy)
 -   [Accessions vs Collections](#accessions-vs-collections)
--   [Accessioning workflow](#accessioning-workflow)
+-   [Backlog reduction strategy](#backlog-reduction-strategy)
+-   [Accessioning and curating workflow](#accessioning-and-curating-workflow)
     -   [Workflow steps](#workflow-steps)
 -   [Accessions database](#accessions-database)
     -   [**_Accessions_** table](#accessions-table)
@@ -81,7 +81,7 @@ of this goal is critical to ensure that the Library can continue to meet the oth
 
 ## Terminology
 
-This section defines the terms used throughout this accessioning documentation. Italics within a definition refer to another term in this section
+This section defines the terms used throughout this accessioning and curating documentation. Italics within a definition refer to another term in this section
 
 Accession
 :   In museum parlance, an accession is typically defined as one or more items acquired at the same
@@ -222,59 +222,6 @@ Uncurated Accession Item
 
 ---
 
-## Backlog reduction strategy
-Desmond Tutu once said that “there is only one way to eat an elephant: a bite at a time.” What he meant is that everything in life that seems daunting, overwhelming, and even impossible can be accomplished gradually by taking on just a little at a time.
-
-Tutu's philosophy applies to backlog reduction, but only when combined with an efficient accessioning and curating process. Without an efficient process to guide them, an archivist is like a deer in the headlights staring at what seems like an insurmountable challenge and not knowing how to approach it or get it under control. Simply taking one bite at a time is not enough because it will take forever.
-
-### What doesn't work
-Before describing how SWHPL eats the elephant, let's discuss a strategy that is *not* effective at achieving the Library's [accession and curation goals](#accession-and-curation-goals).
-
--   Randomly curating one item at a time.
--   Devoting effort to the newest things instead of the most important.
--   Attempting to curate an entire accession from start to finish.
--   Allowing a foolish consistency to waste precious time.
--   Letting perfect become the enemy of good.
-
-The list above describes a linear, shinier is better process whereby archivists attempt to eat and digest every bit of the elephant, starting at the trunk and working toward the tail, but then switching to devour a new beast when one comes along. The problem with this approach is that it equally favors important and unimportant items and wastes time on tasks such as consistently indexing and labeling every item in an accession when some of them should be ignored because they are not candidates for the Digital Archive. 
-
-Another fault with this process is to delay making an item accessible to the public until it has been fully researched, digitized, and post-processed to look as good as possible. A better approach would be to make a good-enough version of the item available and then track what additional tasks could be performed in the future to make it even better.
-
-### What does work
-The list below highlights the key elements of the strategy that SWHPL employs.
-
--   Prioritizing items and tasks based on the [accession and curation goals](#accession-and-curation-goals).
--   Dividing large accessions into sub-accessions and processing them in steps.
--   Making partial information about not-yet-curated items available to the public.
--   Only performing work that contributes to the goals.
--   Quickly producing a quantity of good results instead of a minuscule amount of perfect results.
-
-This list describes a holistic process that divides the work into prioritized pieces. Multiple pieces can be worked on in parallel by different people. Each piece can be worked on in steps by individuals. The amount of work required to complete a step can be easily managed by a single archivist in a small amount of time and every step contributes toward the [accession and curation goals](#accession-and-curation-goals). Most importantly, the steps are sequenced in a way that makes partial information about items available to the public without waiting until all steps for that item have been completed.
-
-### The importance of sub-accessions
-A key element of the strategy described here is the division of large accessions into sub-accessions. This is best understood by an example.
-
-The Library accepts as a gift a crate containing a photo album, a manila folder full of documents and type-written letters, and a box of glass plate negatives. An archivist [creates a new accession](#add-a-new-accession-to-the-accessions-table), number `1234`, and labels the crate with that number. The curator determines that of all the items, the letters are of most immediate interest because they were written by someone for whom the Library often receives requests for information.
-
-Since it could be quite a while before a volunteer becomes available to scan and OCR the letters, the curator assigns an archivist to create an index for them, a task that should only take an hour or so.
-
-Upon receiving this assignment, the archivist:
-
--   Creates a sub-accession for the letters and assigns it number `1234_01`.
--   Removes the letters from the crate and puts them in an archival box labeled with that number.
--   Puts the box on a shelf in the archive closet, perhaps next to, but not inside the crate.
--   [Creates an index](#create-an-index-for-an-accession) for the letters.
--   Adds the index to the Digital Archive as an uncurated accession item.
--   [Sets the **_Next Step_**](#choose-an-accessions-next-step) for the sub-accession `1234_01` to `Scanning`.
-
-At this point, partial information about the letters is now accessible to the public, and the accession database records that the letters still need to be scanned. The remainder of the primary accession is still in the crate, and because the letters have been removed from the crate, archivists know that what's left in the crate has not yet been processed. Eventually, over time, as other items in the accession are deemed important enough to work on relative to everything else in the backlog, more sub-accessions will get created and the process just described will be repeated until the crate is empty and can be disposed of.
-
-An empty crate does not necessarily mean that all items from the primary accession have been added to the Digital Archive. It may even be the case that none of the items have made it that far. This is because each sub-accession has its own **_Next Step_** such as `Create index` or `Scanning`. The crate's emptiness simply means that the entire primary accession has been divided into sub-accessions which can be worked on in parallel based on importance and availability of an archivist. In this example, it may be the case that nothing else in the primary accession is important as the letters and so archivists devote time to other accessions before eventually getting back to this accession one day.
-
-Note that as an alternative to emptying the crate, you could store sub-accession items back in the create as long as they are within their own container that is clearly labeled. You'll know the create was "emptied" when all of its contents are sub-accessions.
-
----
-
 ## Accessions vs Collections
 It is important to understand the difference between accessions and collections. Items in an accession are associated with
 one another by virtue of the fact that they were all accessioned together at the same time from the same source.
@@ -302,11 +249,91 @@ The diagram below shows the distinction between accessions and collections. The 
 to the single "Smith Collection". The single item from accession 1500 belongs to the "Postcard Collection". Both collections might also contain
 items that were added to the Digital Archive before the accessioning and curating process was established.
 
-![Accessioning diagram](accessioning-1.jpg)
+![image](accessioning-1.jpg)
 
 ---
 
-## Accessioning workflow
+## Backlog reduction strategy
+Desmond Tutu once said that “there is only one way to eat an elephant: a bite at a time.” What he meant is that everything in life that seems daunting, overwhelming, and even impossible can be accomplished gradually by taking on just a little at a time.
+
+Tutu's philosophy applies to backlog reduction, but only when combined with an efficient accessioning and curating process. Without a process to guide them, an archivist is like a deer in the headlights staring at what seems like an insurmountable challenge and not knowing how to approach it or get it under control. Simply taking one bite at a time is not enough because it will take forever.
+
+### What doesn't work
+Before describing how SWHPL eats the elephant, let's discuss a strategy that is *not* effective at achieving the Library's [accession and curation goals](#accession-and-curation-goals).
+
+-   Randomly curating one item at a time.
+-   Devoting effort to the newest things instead of the most important.
+-   Attempting to curate an entire accession from start to finish.
+-   Being consistent for consistency's sake.
+-   Letting perfect become the enemy of good.
+
+The list above describes a linear, shinier is better process whereby archivists attempt to eat and digest every bit of the elephant, starting at the trunk and working toward the tail, but then switching to devour a new beast when one comes along. This approach equally favors important and unimportant items and wastes time performing unproductive tasks such as indexing and labeling every item in an accession instead of only those that are the best candidates for the Digital Archive.
+
+Another fault with this process is that it delays making an item accessible to the public until it has been fully researched, digitized, and post-processed to look as good as possible. A better approach would be to make a good-enough version of the item available and then track what additional tasks could be performed in the future to make it even better.
+
+### What does work
+The list below highlights the key elements of the strategy that SWHPL employs.
+
+-   Prioritizing items and tasks based on the [accession and curation goals](#accession-and-curation-goals).
+-   Dividing large accessions into sub-accessions and processing them in steps.
+-   Making partial information about not-yet-curated items available to the public.
+-   Only performing work that contributes to the goals.
+-   Quickly producing a quantity of good results instead of a minuscule amount of perfect results.
+
+This list describes a holistic process that divides the work into prioritized pieces. Multiple pieces can be worked on in parallel by different people. Each piece can be worked on in steps by individuals. The amount of work required to complete a step can be easily managed by a single archivist in a small amount of time and every step contributes toward the [accession and curation goals](#accession-and-curation-goals). Most importantly, the steps are sequenced in a way that makes partial information about items available to the public without waiting until all steps for that item have been completed.
+
+### The importance of sub-accessions
+A key element of the backlog reduction strategy is the division of large accessions into sub-accessions. This division breaks the work of processing an entire accession into manageable pieces that can each be started and completed by one person in an estimable amount of time. It also allows the grouping of similar items which organizes the primary accession and introduces the efficiency of processing like items all at the same time,for example scanning all the negatives in one sub-accession and then creating PDFs from documents in another sub-accession.
+
+How archivists use sub-accessions is different for the physical backlog than for the digital backlog.
+
+#### Physical backlog
+Use of sub-accessions for the physical backlog is best understood by an example.
+
+The Library accepts as a gift a crate containing a photo album, a manila folder full of documents and type-written letters, and a box of glass plate negatives. An archivist [creates a new accession](#add-a-new-accession-to-the-accessions-table), number `1234`, and labels the crate with that number. The curator determines that of all the items, the letters are of most immediate interest because they were written by someone for whom the Library often receives requests for information.
+
+Since it could be quite a while before a volunteer becomes available to scan and OCR the letters, the curator assigns an archivist to create an index for them, a task that should only take an hour or so.
+
+Upon receiving this assignment, the archivist:
+
+-   Creates a sub-accession for the letters and assigns it number `1234_01`.
+-   Removes the letters from the crate and puts them in an archival box labeled with that number.
+-   Puts the box on a shelf in the archive closet, perhaps next to, but not inside the crate.
+-   [Creates an index](#create-an-index-for-an-accession) for the letters.
+-   Adds the index to the Digital Archive as an uncurated accession item.
+-   [Sets the **_Next Step_**](#choose-an-accessions-next-step) for the sub-accession `1234_01` to `Scanning`.
+
+At this point, partial information about the letters is now accessible to the public, and the accession database records that the letters still need to be scanned. The remainder of the primary accession is still in the crate, and because the letters have been removed from the crate, archivists know that what's left in the crate has not yet been processed. Eventually, over time, as other items in the accession are deemed important enough to work on relative to everything else in the backlog, more sub-accessions will get created and the process just described will be repeated until the crate is empty and can be disposed of.
+
+An empty crate does not necessarily mean that all items from the primary accession have been added to the Digital Archive. It may even be the case that none of the items have made it that far. This is because each sub-accession has its own **_Next Step_** such as `Create index` or `Scanning`. The crate's emptiness simply means that the entire primary accession has been divided into sub-accessions which can be worked on in parallel based on importance and availability of an archivist. In this example, it may be the case that nothing else in the primary accession is important as the letters and so archivists devote time to other accessions before eventually getting back to this accession one day.
+
+Note that as an alternative to emptying the crate, you could store sub-accession items back in the create as long as they are within their own container that is clearly labeled. You'll know the create was "emptied" when all of its contents are sub-accessions.
+
+#### Digital backlog
+The SWHPL digital backlog consists of a hierarchy of nested folders that together contain tens of thousands of files. At the higher levels of the hierarchy, the folders are unrelated, but deeper down there are folders that contain sub-folders that are closely related. The screenshot below shows the `Carroll` folder and some of its 131 sub-folders which together contain 1,295 files.
+
+![image](accessioning-22.jpg)
+
+Because everything in the `Carroll` folder is about the Carroll family, an archivist chose to treat the folder as a single accession, number `1002`. Since an attempt to curate this accession as a whole would be overwhelming, the archivist broke off one piece, Jacob Carroll's letters, into a sub-accession `1002_01`. This is the equivalent of removing the three-ring binder from the crate in the previous example. They recorded this action in the [**_Accessions_** table](#accessions-table) as shown below.
+
+![image](accessioning-24.jpg)
+
+The archivist also updated the [**_Digital Files_** table](#digital-files-table) to mark `CARROLL - JACOB WILLIAM CARROLL - LETTERS` and its sub-folders as belonging to sub-accession `1002_01` as shown below.
+
+![image](accessioning-23.jpg)
+
+Having performed the simple bookkeeping tasks just described, the archivist is free to focus solely on Jacob's letters without the burden of having to deal with the entire Carroll accession. Later they can choose another folder to break into a sub-accession.
+
+#### One bite at a time.
+![image](accessioning-25.jpg)
+
+The two previous examples demonstrated that it is not necessary to completely break an accession into sub-accessions at the outset. While that might make sense for a smaller accession, for a large one like the Carroll family, it would require evaluation of the entire accession of 1,295 files to determine how to divide it. That task alone could feel like trying to eat a whole baby elephant which is still a large creature. In contrast, by creating just one sub-accession, an archivist can quickly make its items available to the public and gain a sense of personal accomplishment from having contributed toward the [goal of accessibility](#accessibility).
+
+One-at-a-time creation of sub-accessions is manageable because of cross-checks that are built into the process. The cross-checks make it easy to see what parts of a primary accession have been broken out into sub-accessions and which have not. For physical accessions, the cross-check is whether the crate is empty. For digital accessions, the cross-check is whether the **_Accession_** column in the [**_Digital Files_** table](#digital-files-table) is filled in for every folder in the primary accession. In the screenshot above, it is obvious that many sub-folders in the `\SCANS\Carroll` folder have not yet become sub-accessions because the **_Accession_** column in their row is blank. Because those rows stand out, it's easy for an archivist to see which sub-folders have not yet been processed.
+
+---
+
+## Accessioning and curating workflow
 The flowchart below shows the sequence of steps in the accessioning and curating process.
 
 -   Yellow steps at left and middle produce an uncurated accession item.
@@ -317,7 +344,7 @@ to search the Digital Archive without having to wait for scanning and curating t
 In the chart below, the word "Accessible" in blue indicates the point within the process when an accession becomes
 public and searchable in the Digital Archive. 
 
-![Accessioning diagram](accessioning-2.jpg)
+![image](accessioning-2.jpg)
 
 ---
 
@@ -463,7 +490,7 @@ In the explanations below, `####` means the accession number.
 SWHPL uses [Airtable](https://www.airtable.com/) as its accessions database. The database records information about accessions
 and related information. The diagram below shows five tables in the database followed by explanations of each table.
 
-![Accessioning diagram](accessioning-3.jpg)
+![image](accessioning-3.jpg)
 
 The lines connecting the tables indicate the relationships between tables.
 
@@ -490,7 +517,12 @@ Learn how to [add a new accession to the **_Accessions_** table](#add-a-new-acce
 The screenshot below shows just some of the fields and a few of the rows of the **_Accessions_** table. Note the **_Next Step_** field
 which indicates where each accession is within the accessioning and curating process.
 
-![Accessioning diagram](accessioning-5.jpg)
+![image](accessioning-5.jpg)
+
+#### Sub-accessions
+Sub-accessions appear in the **_Accessions_** table immediately below their primary accession (when the view is sorted by the accession number) as shown below.
+
+![image](accessioning-21.jpg)
 
 ### Deaccessions table
 The **_Deaccessions_** table is used to keep a record of which accessions have been deaccessioned. A deaccessioned record still
@@ -500,7 +532,7 @@ to hide records for accessions in the **_Deaccessions_** table.
 Learn how to [deaccession an accession](#deaccession-an-accession).
 
 The screenshot below shows most of the fields and a few of the rows of the **_Deaccessions_** table.
-![Accessioning diagram](accessioning-6.jpg)
+![image](accessioning-6.jpg)
 
 ### Donors table
 The **_Donors_** table contains information about each unique donor. It also shows which accessions the donor has given. You can double-click
@@ -509,7 +541,7 @@ on an accession number to see the information for that accession. SWHPL uses don
 Learn how to [add a new donor to the **_Donors_** table](#add-a-new-donor-to-the-donors-table).
 
 The screenshot below shows some of the fields and a few of the rows of the **_Donors_** table.
-![Accessioning diagram](accessioning-7.jpg)
+![image](accessioning-7.jpg)
 
 ### Tasks table
 SWHPL uses the **_Tasks_** table to achieve the [efficiency goal](/archivist/accessioning/#efficiency) described earlier.
@@ -521,13 +553,13 @@ archivists are available to work, there should be no In Progress tasks. If a tas
 becomes unavailable, its priority should be lowered (perhaps to Next or High) to record its importance for when resources
 become available again.
 
-Learn how to [add a new task to the **_Task_** table](#add-a-new-task-to-the-task-table).
+Learn how to [add a new task to the **_Task_** table](#add-a-new-task-to-the-tasks-table).
 
 The screenshot below shows the fields and rows that are typically visible in the **_Tasks_** table at any given
 time. You want to minimize the number of In Progress and Next tasks so that the table
 only shows work that is being performed or is slated to be performed very soon.
 
-![Accessioning diagram](accessioning-4.jpg)
+![image](accessioning-4.jpg)
 
 ### Digital Files table
 The **_Digital Files_** table is the largest SWHPL table. It contains more than 3,500 rows representing the more than 3,500 folders
@@ -540,7 +572,7 @@ to S3 as part of the accessioning and curating process. When every row in the ta
 entire backlog of digital files will have finally been accessioned and stored in S3.
 
 The screenshot below shows some of the fields and a few of the many rows of the **_Digital Files_** table.
-![Accessioning diagram](accessioning-8.jpg)
+![image](accessioning-8.jpg)
 
 ## How To
 This section explains how to perform common accessioning tasks.
@@ -555,7 +587,7 @@ Follow these steps to add a new record to the **_Accessions_** table for an acce
 -   In the **_Views_** sidebar, click **_New Accession Form_**.
 -   Click the **_Open form_** button in the top menu (red arrow in screenshot below).
 
-    ![Accessioning diagram](accessioning-12.jpg)
+    ![image](accessioning-12.jpg)
 
 -   A form like in the screenshot below appears.
 -   Fill in required fields.
@@ -573,13 +605,13 @@ Follow these steps to add a new record to the **_Accessions_** table for an acce
     Always add new accessions using the **_New Accession Form_**, not by editing the table directly.  
     Using the form is easier and ensures that required fields are filled in.
 
-![Accessioning diagram](accessioning-9.jpg)
+![image](accessioning-9.jpg)
 
 ---
 
 ## Choose an accession's next step
 This section explains the meaning of the values in the **_Next Step_** field in the **_Accessions_** table. The numbers
-in the **_Workflow_** column refer to numbered steps in the [accessioning workflow diagram](#accessioning-workflow).
+in the **_Workflow_** column refer to numbered steps in the [accessioning and curating workflow diagram](#accessioning-and-curating-workflow).
 
 Step                        | Meaning       | Workflow
 ----------------------------| --------------| --- 
@@ -606,14 +638,14 @@ Follow these steps to add a new record to the **_Tasks_** table.
 -   In the **_Views_** sidebar, click  **_New Task Form_**.
 -   Click the **_Open form_** button in the top menu (red arrow in screenshot below).
 
-    ![Accessioning diagram](accessioning-17.jpg)
+    ![image](accessioning-17.jpg)
 
 -   A form like in the screenshot below appears.
 -   Fill in the fields.
 -   Click the **_Submit_** button at the bottom of the form.
 -   A new record will be added to the **_Tasks_** table.
 
-![Accessioning diagram](accessioning-10.jpg)
+![image](accessioning-10.jpg)
 
 ---
 
@@ -624,14 +656,14 @@ Follow these steps to add a new record to the **_Donors_** table.
 -   In the **_Views_** sidebar, click **_New Donor Form_**.
 -   Click the **_Open form_** button in the top menu (red arrow in screenshot below).
 
-    ![Accessioning diagram](accessioning-13.jpg)
+    ![image](accessioning-13.jpg)
 
 -   A form like in the screenshot below appears.
 -   Use the next largest available number as the donor number.
 -   Click the **_Submit_** button at the bottom of the form.
 -   A new record will be added to the **_Donors_** table.
 
-![Accessioning diagram](accessioning-14.jpg)
+![image](accessioning-14.jpg)
 
 ---
 
@@ -669,7 +701,7 @@ of a set of photo albums a photograph item is contained in.
 Below is a screenshot showing an example of a typical index where there is a lot of information for some
 items and none for others.
 
-![Accessioning diagram](accessioning-19.jpg)
+![image](accessioning-19.jpg)
 
 In addition to making the accession accessible and searchable via the Digital Archive, the index also provides a guide
 for someone who is tasked with scanning the items in the accession. They will use the table's Description column to identify
@@ -690,7 +722,7 @@ Follow these steps to add a new record to the **_Deccessions_** table.
 -   In the **_Views_** sidebar, click **_Deaccession Form_**.
 -   Click the **_Open form_** button in the top menu (red arrow in screenshot below).
 
-    ![Accessioning diagram](accessioning-16.jpg)
+    ![image](accessioning-16.jpg)
 
 -   A form like in the screenshot below appears.
 -   Choose the accession to be deaccessioned by using the **_Accession_** selector
@@ -700,7 +732,7 @@ Follow these steps to add a new record to the **_Deccessions_** table.
 -   Click the **_Submit_** button at the bottom of the form.
 -   A new record will be added to the **_Deaccessions_** table.
 
-![Accessioning diagram](accessioning-15.jpg)
+![image](accessioning-15.jpg)
 
 ---
 
@@ -786,7 +818,7 @@ Once the Library has opted to accept a donation:
         -   Scans the deed of gift form as a PDF and moves it to the Google Drive  
             `Accessioning\Deeds of Gift` folder.
         -   Stores the original signed form in the deeds of gift notebook in the archive closet.
-    -   [Stores the materials in the archive closet](#storing-physical-items-in-the-archive-closet).
+    -   [Stores the materials in the archive closet](#storing-physical-items).
 -   The curator:
     -   Assigns a ranking to the accession to indicate its importance relative to other materials in the backlog. The ranking helps determine when the materials will be curated and added to the Digital Archive.
 
@@ -798,7 +830,7 @@ Google Drive `Policies and Procedures` folder. The curator will consult the poli
 
 ### Deed of gift
 
-The deed of gift form records the transfer of materials from a donor to the Library. The form is in file `Deed of Gift form mm-dd-yyyy.pdf` on the [Google Drive](google-drive).
+The deed of gift form records the transfer of materials from a donor to the Library. The form is in file `Deed of Gift form mm-dd-yyyy.pdf` on the Google Drive.
 
 The archivist must ensure that the form is filled out properly per the descriptions below:
 
@@ -813,7 +845,7 @@ The archivist must ensure that the form is filled out properly per the descripti
 
 The screenshot below shows a deed of gift form.
 
-![Accessioning diagram](accessioning-18.jpg)
+![image](accessioning-18.jpg)
 
 ### Storing physical items
 Upon acceptance of materials from a donor for a new accession, the archivist performs these actions:
@@ -832,7 +864,7 @@ This section describes the software tools that SWHPL uses to carry out its acces
 The Contact Sheet app is a custom-written Python application created for SWHPL by AvantLogic. It allows an archivist to create 30-up and 1-up
 contact sheets from a folder of files. Documentation will be added here in the future. Examples of a 30-up and 1-up contact sheet appear below.
 
-![Accessioning diagram](accessioning-11.jpg)
+![image](accessioning-11.jpg)
 
 ### AvantS3
 AvantS3 is the [plugin](/plugins/avants3) that allows Amazon AWS S3 to be integrated with the Digital Archive.
