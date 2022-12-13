@@ -70,8 +70,7 @@ SWHPL achieves its accessibility goal by following an accessioning and curating 
 The Library achieves its goal of efficiency by providing archivists with the right tools, and a documented process for using those tools, to accession and curate materials. This documentation describes those tools and processes.
 
 ### Backlog reduction
-An overarching goal at SWHPL is to reduce and eventually eliminate the Library's backlog of tens of thousands of digital and physical items. The Library does not know the exact number of items in the backlog because these items were acquired before the Library followed the accessioning and curating process described here. By breaking the backlog into manageable sets of items, and then accessioning those sets, the Library will eventually get a handle on what's in the backlog and how large it is.
-
+An overarching goal at SWHPL is to reduce and eventually eliminate the Library's backlog of tens of thousands of digital and physical items. As the backlog is reduced, more and more items become publicly accessible. SWHPL works toward this goal by following a [backlog reduction strategy](#backlog-reduction-strategy).
 
 ### Transferability
 The accessioning and curating process must be such that responsibility for accessioning and the Digital Archive can be transferred to a new archivist with minimal dependence on institutional knowledge that resides only in the minds of a few individuals. Achievement
@@ -254,6 +253,8 @@ items that were added to the Digital Archive before the accessioning and curatin
 ---
 
 ## Backlog reduction strategy
+ As of November 2022, the Library did not know the exact number of items in the backlog because most were acquired before the Library followed the accessioning and curating process described here. The number is, however, overwhelmingly large when you count the tens of thousands of digital files and thousands of physical items. 
+
 Desmond Tutu once said that “there is only one way to eat an elephant: a bite at a time.” What he meant is that everything in life that seems daunting, overwhelming, and even impossible can be accomplished gradually by taking on just a little at a time.
 
 Tutu's philosophy applies to backlog reduction, but only when combined with an efficient accessioning and curating process. Without a process to guide them, an archivist is like a deer in the headlights staring at what seems like an insurmountable challenge and not knowing how to approach it or get it under control. Simply taking one bite at a time is not enough because it will take forever.
@@ -292,7 +293,7 @@ Use of sub-accessions for the physical backlog is best understood by an example.
 
 The Library accepts as a gift a crate containing a photo album, a manila folder full of documents and type-written letters, and a box of glass plate negatives. An archivist [creates a new accession](#add-a-new-accession-to-the-accessions-table), number `1234`, and labels the crate with that number. The curator determines that of all the items, the letters are of most immediate interest because they were written by someone for whom the Library often receives requests for information.
 
-Since it could be quite a while before a volunteer becomes available to scan and OCR the letters, the curator assigns an archivist to create an index for them, a task that should only take an hour or so.
+Since it could be quite a while before a volunteer becomes available to scan and OCR the letters, the curator assigns an archivist to create an index for them.
 
 Upon receiving this assignment, the archivist:
 
@@ -301,11 +302,11 @@ Upon receiving this assignment, the archivist:
 -   Puts the box on a shelf in the archive closet, perhaps next to, but not inside the crate.
 -   [Creates an index](#create-an-index-for-an-accession) for the letters.
 -   Adds the index to the Digital Archive as an uncurated accession item.
--   [Sets the **_Next Step_**](#choose-an-accessions-next-step) for the sub-accession `1234_01` to `Scanning`.
+-   [Sets the **_Next Step_**](#choose-an-accessions-next-step) for the sub-accession `1234_01` to `Digitize`.
 
 At this point, partial information about the letters is now accessible to the public, and the accession database records that the letters still need to be scanned. The remainder of the primary accession is still in the crate, and because the letters have been removed from the crate, archivists know that what's left in the crate has not yet been processed. Eventually, over time, as other items in the accession are deemed important enough to work on relative to everything else in the backlog, more sub-accessions will get created and the process just described will be repeated until the crate is empty and can be disposed of.
 
-An empty crate does not necessarily mean that all items from the primary accession have been added to the Digital Archive. It may even be the case that none of the items have made it that far. This is because each sub-accession has its own **_Next Step_** such as `Create index` or `Scanning`. The crate's emptiness simply means that the entire primary accession has been divided into sub-accessions which can be worked on in parallel based on importance and availability of an archivist. In this example, it may be the case that nothing else in the primary accession is important as the letters and so archivists devote time to other accessions before eventually getting back to this accession one day.
+An empty crate does not necessarily mean that all items from the primary accession have been added to the Digital Archive. It may even be the case that none of the items have made it that far. This is because each sub-accession has its own **_Next Step_** such as `Create index` or `Digitize`. The crate's emptiness simply means that the entire primary accession has been divided into sub-accessions which can be worked on in parallel based on importance and availability of an archivist. In this example, it may be the case that nothing else in the primary accession is important as the letters and so archivists devote time to other accessions before eventually getting back to this accession one day.
 
 Note that as an alternative to emptying the crate, you could store sub-accession items back in the create as long as they are within their own container that is clearly labeled. You'll know the create was "emptied" when all of its contents are sub-accessions.
 
@@ -402,7 +403,7 @@ In the explanations below, `####` means the accession number.
     -   Save the item.
     -   Verify that the index PDF appears as the item's image.
     -   Add a relationship from the UA to a relevant [Reference Item](/relationships/reference-items) if one exists.
-    -   Update the **Accessions** table to set the accession's **_Next Step_** to `Scanning` or `Contact sheet`.
+    -   Update the **Accessions** table to set the accession's **_Next Step_** to `Digitize` or `Contact sheet`.
 
 6A &ndash; Digitize items
 :   Scan or photograph the items in the accession to create digital files. Name the files according to their identifiers
@@ -550,8 +551,7 @@ to know what they should be working on.
 
 The **_Tasks_** table should always reflect reality based on the availability of resources. For example, if at the present time no
 archivists are available to work, there should be no In Progress tasks. If a task was in progress when an archivist
-becomes unavailable, its priority should be lowered (perhaps to Next or High) to record its importance for when resources
-become available again.
+becomes unavailable, its **_Stage_** should be changed (perhaps to `Next` or `Queued`) to record where the work should be picked up when resources become available again.
 
 Learn how to [add a new task to the **_Task_** table](#add-a-new-task-to-the-tasks-table).
 
@@ -693,7 +693,7 @@ interest in the accession.
 The index table should contain the columns listed below and possibly others if there is other information to record such as which
 of a set of photo albums a photograph item is contained in.
 
--   **Item number**: An identification number used for [file naming](#file-naming) when the item is scanned.
+-   **ID number**: An identification number used for [file naming](#file-naming) when the item is or was scanned.
 -   **Description**: A concise, but keyword-rich description of the item.
 -   **Date**: The date of the item if known.
 -   **Notes**: Other information about the item. 
@@ -788,6 +788,12 @@ Optimize the PDF file:
 
 #### Scanning images
 
+George Soules of the Southwest Harbor Public Library developed the diagram below based on
+his professional experience working with digital images, empirical evidence, and from having
+worked with many of the tens of thousands of images scanned by Library volunteers.
+
+![Scanning decision tree](best-practices-3.jpg)
+
 Save scans as a TIFF file (not JPEG).
 
 It is okay to use JPEG when the originals are low-quality and don't justify the larger file size of TIFF files.
@@ -866,6 +872,12 @@ contact sheets from a folder of files. Documentation will be added here in the f
 
 ![image](accessioning-11.jpg)
 
+#### Known bugs
+Here are problems that occasionally occur with the generated PDF file.
+
+1.  An image sometimes appears with a black background. This occurs only with some, but not all images that are contained in a PDF that have transparency such as a PNG image.
+1.  The image for a TIF file sometimes appears so faded as to be almost white. A solution is to duplicate the images using [Irfanview](#irfanview) to create new TIF files that don't have this problem. Do this by converting from TIF to TIF without resizing.
+
 ### AvantS3
 AvantS3 is the [plugin](/plugins/avants3) that allows Amazon AWS S3 to be integrated with the Digital Archive.
 
@@ -881,6 +893,7 @@ These S3 Browser features do not exist in the S3 console:
 
 -   Preview an image (with the console, you have to download the image to view it).
 -   Download multiple files or a folder (the console only lets you download one file at a time).
+-   Permanently delete files and folders (requires S3 Browser Pro configured with admin credentials)
 
 #### Permanently delete a deleted folder
 Follow the steps below when you have deleted a folder, but not its prior versions.
@@ -904,6 +917,17 @@ SWHPL uses both Foxit and Adobe Acrobat Pro for working with PDF files to:
 
 ### Epson scanner software
 SWHPL uses Epson scanners and Epson drivers and programs.
+
+https://epson.com/Support/Scanners/Perfection-Series/Epson-Perfection-V600-Photo/s/SPT_B11B198011
+
+-   Download
+-   Open .exe file
+-   Install
+
+RUn the app
+-   Choose `Professional Mode`
+-   
+
 
 ### IrfanView
 Archivists use the [Irfanview Graphic Viewer](https://www.irfanview.com/) utility to convert and resize image files.
