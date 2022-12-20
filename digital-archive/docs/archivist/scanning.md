@@ -40,7 +40,7 @@ of the marquee you choose on the **_Preview_** screen.
 
 ![scanning](scanning-1.jpg)
 
-### Choosing the output file location type:
+### Choosing the output file location type
 
 To set the location and type of the output file produced by the scanner:
 
@@ -63,7 +63,7 @@ Follow these steps to scan an image or document that you have placed on the scan
     -   If the preview is not rotated correctly, correct it using the rotate left or right buttons.
     -   Move the mouse over the preview area. The cursor will change to a large plus (+).
     -   Click the mouse at the upper-left corner of the item to be scanned and drag to the lower-right corner.
-    -   When you release the mouse, marching ants will delimit the area to be scanned.
+    -   When you release the mouse, a dashed rectangle will delimit the area to be scanned.
     -   Adjust the scan area if necessary by moving the cursor over the ants until it changes to a double-headed arrow,
         then click-drag to adjust.
 -   On the main EPSON Scan dialog, click the **_Scan_** button.
@@ -82,18 +82,23 @@ items, closing the lid etc.
 -   On the **_Preview_** screen:
     -   Perform the same operation described above to draw a marquee around the first item.
     -   Then just move the mouse to the upper-left corner of the next item and click-drag another marquee around it.
-        Notice that the marching ants on the first marquee turn to a solid line.
+        Notice that the dashed rectangle on the first marquee turns to a solid rectangle.
     -   Repeat for each item.
-    -   When done drawing all the marquees, click the **_All_** button. Marching ants will appear
-        for all of the marquees. If you don't click the button, only the selected marquee gets scanned.
+    -   When done drawing all the marquees, click the **_All_** button. Dashed rectangles will appear
+        for all of the marquees as shown in the screenshot below. If you don't click the button, only the selected marquee gets scanned.
 -   On the main EPSON Scan dialog, click the **_Scan_** button.
 -   The scanner will scan the area delimited by each marquee, one at a time, and create a separate file for each marquee.
 
 There are buttons in the **_Marquee_** section of the **_Preview_** screen that you can use when drawing
 marquees, but just following the steps above will be quickest and easiest most of the time.
 
+![scanning](scanning-2.jpg)
+
 ## Preview tips
 -   Drag the **_Preview_** screen window to make the preview area larger.
 -   You can use the **_Zoom_** button to zoom in on just the area delimited by one marquee. Use it when need to make a more precise selection.
 -   Use the **_Delete_** key to delete the currently selected marquee(s).
 -   Move a marquee by click-dragging inside (the mouse turns to a hand).
+-   If you are selecting multiple items that all are the same size, you can draw the marquee for one and then click
+    the **_Copies the selected marquee_** button to duplicate the marquee and drag it over another item. The button looks
+    like two overlapping squares.

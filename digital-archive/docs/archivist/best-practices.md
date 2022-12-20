@@ -4,21 +4,6 @@ The best practices on this page are recommendations from archivists at the South
 Public Library. They are based on their practical experience using the Digital Archive 
 for four years with a collection of 12,000 items, 10,000 images, and 1,900 documents.
 
-## Login credentials
-
-Be security conscious. You might not think a Digital Archive account is that important,
-or that the information is very sensitive, but to allow access to the wrong people is asking for trouble.  
-A malicious person, or even a well-meaning one, can do a lot of damage.
-
-Guard your collection by following these recommendations:
-
--   Do not use the same login for multiple people
--   Give each archivist their own user name and password
--   Do not share your login name and password with *anyone*
--   Do not set your password to something that's easy to guess
--   Do not use a password that you use for any other website
-
-
 ## Metadata
 
 ### Title field
@@ -187,6 +172,31 @@ At first, the effort to add relationships may seem daunting, but once you unders
 work, learn how easy it is to add them, and experience seeing parts of your collection come
 alive, sometimes discovering connections that you never even know existed, you'll be hooked.
 
+## Uploading files
+
+**Avoid uploading large, multi-megabyte files** when [attaching an image or document](/archivist/attach-file/)
+to an item. 
+
+Images that you upload to the Digital Archive should generally be no more 1200px on the long edge.
+To learn about resolution, see the [Scanning 101 workshop slides](Scanning-101-Workshot-by-George-Soules.pdf)
+starting on page 52. If the image has a lot of detail, like a map, you might go as high as 2000px, but
+better still, make the image [zoomable](/administrator/zoomable-images/).
+
+An exception on file size is lengthy PDF files that have hundreds of pages and/or contain a lot of images. It is not uncommon
+for an un-optimized PDF file to be tens or even hundreds of megabytes in size. As a general rule, try to keep them under 40MB.
+To reduce the size of PDF files, learn about [creating PDF files from scans](/archivist/creating-pdfs).
+
+Digital Archive sites are configured to reject the uploading of files that are larger than 150MB. This limit is
+far larger than the recommended maximum size of about 40MB, but is set like this to allow for the occasional situation where
+it's not possible to get by with a smaller file.
+
+### Be kind to users
+Large images and PDFs take longer to display which diminishes the user experience
+for people without very high-speed internet service. Users of mobile devices who have to pay
+extra, or whose cell service gets downgraded, when they exceed their bandwidth limit, will hate you.
+**Don't be that organization that carelessly uploads huge files with no consideration for people who
+have slow or metered internet access**.
+
 ## Archival file management
 
 Put a process in place to manage and protect your archival assets using offsite or cloud storage.
@@ -201,23 +211,17 @@ You need access to the high resolution files because web-sized images are not su
 printing except at very small sizes. If accessing your high resolution images involves a difficult
 or cumbersome process, you will cringe every time you get an image request.
 
-## Uploading files
+## Login credentials
 
-**Avoid uploading large, multi-megabyte files** when [attaching an image or document](/archivist/attach-file/)
-to an item. 
+Be security conscious. You might not think a Digital Archive account is that important,
+or that the information is very sensitive, but to allow access to the wrong people is asking for trouble.  
+A malicious person, or even a well-meaning one, can do a lot of damage.
 
-Images that you upload to the Digital Archive should generally be no more 1200px on the long edge.
-To learn about resolution, see [Scanning 101 workshop slides](Scanning-101-Workshot-by-George-Soules.pdf)
-starting on page 52. If the image has a lot of detail, like a map, you might go as high as 2000px, but
-better still, make the image [zoomable](/administrator/zoomable-images/).
+Guard your collection by following these recommendations:
 
-An exception on file size is lengthy PDF files that have hundreds of pages and/or contain a lot of images. It is not uncommon
-for an un-optimized PDF file to be tens or even hundreds of megabytes in size. As a general rule, try to keep them under 40MB.
-To reduce the size of PDF files, learn about [creating PDF files from scans](/archivist/creating-pdfs).
+-   Do not use the same login for multiple people
+-   Give each archivist their own user name and password
+-   Do not share your login name and password with *anyone*
+-   Do not set your password to something that's easy to guess
+-   Do not use a password that you use for any other website
 
-### Be kind to users
-Large images and PDFs take longer to display which diminishes the user experience
-for people without very high-speed internet service. Users of mobile devices who have to pay
-extra, or whose cell service gets downgraded, when they exceed their bandwidth limit, will hate you.
-**Don't be that organization that carelessly uploads huge files with no consideration for people who
-have slow or metered internet access**.
