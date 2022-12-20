@@ -2,7 +2,22 @@
 
 The best practices on this page are recommendations from archivists at the Southwest Harbor
 Public Library. They are based on their practical experience using the Digital Archive 
-for four years with a collection of 12,000 items, 10,000 images, and 1,600 documents.
+for four years with a collection of 12,000 items, 10,000 images, and 1,900 documents.
+
+## Login credentials
+
+Be security conscious. You might not think a Digital Archive account is that important,
+or that the information is very sensitive, but to allow access to the wrong people is asking for trouble.  
+A malicious person, or even a well-meaning one, can do a lot of damage.
+
+Guard your collection by following these recommendations:
+
+-   Do not use the same login for multiple people
+-   Give each archivist their own user name and password
+-   Do not share your login name and password with *anyone*
+-   Do not set your password to something that's easy to guess
+-   Do not use a password that you use for any other website
+
 
 ## Metadata
 
@@ -172,30 +187,11 @@ At first, the effort to add relationships may seem daunting, but once you unders
 work, learn how easy it is to add them, and experience seeing parts of your collection come
 alive, sometimes discovering connections that you never even know existed, you'll be hooked.
 
-## Uploading files
-
-**Never upload large, multi-megabyte files** when [attaching an image or document](/archivist/attach-file/)
-to an item. 
-
-An exception is lengthy PDF files that have hundreds of pages and/or contain a lot of images.
-If you are creating a PDF file from a Word document, only use small images in the document.
-
-Images that you upload should generally be no more 1200px on the long edge. If you don't know
-what that means, consult with someone who does. If the image has a lot of detail, like a map,
-you might go as high as 2000px, but better still, make the image [zoomable](/administrator/zoomable-images/).
-
-
-**Be kind to users**.  Large images take longer to display which diminishes the user experience
-especially for people without broadband internet service. Users of mobile devices who have to pay
-extra, or whose cell service gets downgraded, when they exceed their bandwidth limit, will hate you.
-Don't be that organization that carelessly uploads huge files with no consideration for people who
-have limited internet access.
-
 ## Archival file management
 
 Put a process in place to manage and protect your archival assets using offsite or cloud storage.
-As implied by the section above on uploading large files, the Digital Archive only stores web-sized
-images. **You cannot use the Digital Archive as a repository for archival assets** such as the original,
+As implied by the section below on uploading large files, the Digital Archive should only be used to store web-sized
+images. **You must not use the Digital Archive as a repository for archival assets** such as the original,
 multi-megabyte TIFF files that a scanner produces.
 
 Whatever archival assess management scheme you use, **it should be quick and easy to locate and retrieve the high
@@ -205,38 +201,23 @@ You need access to the high resolution files because web-sized images are not su
 printing except at very small sizes. If accessing your high resolution images involves a difficult
 or cumbersome process, you will cringe every time you get an image request.
 
-## Scanning
+## Uploading files
 
-Scanning presents one of the biggest challenges for archivists. Here are two documents that demystify
-the process and describe best practices for scanning.
+**Avoid uploading large, multi-megabyte files** when [attaching an image or document](/archivist/attach-file/)
+to an item. 
 
--   [Scanner PPI decision tree](Scanner-PPI-Decision-Tree-by-George-Soules.pdf)
-    (shown below, but read the document for an explanation)
--   [Scanning 101 workshop slides](Scanning-101-Workshot-by-George-Soules.pdf)
+Images that you upload to the Digital Archive should generally be no more 1200px on the long edge.
+To learn about resolution, see [Scanning 101 workshop slides](Scanning-101-Workshot-by-George-Soules.pdf)
+starting on page 52. If the image has a lot of detail, like a map, you might go as high as 2000px, but
+better still, make the image [zoomable](/administrator/zoomable-images/).
 
-George Soules of the Southwest Harbor Public Library developed the diagram below based on
-his professional experience working with digital images, empirical evidence, and from having
-worked with many of the tens of thousands of images scanned by Library volunteers.
+An exception on file size is lengthy PDF files that have hundreds of pages and/or contain a lot of images. It is not uncommon
+for an un-optimized PDF file to be tens or even hundreds of megabytes in size. As a general rule, try to keep them under 40MB.
+To reduce the size of PDF files, learn about [creating PDF files from scans](/archivist/creating-pdfs).
 
-![Scanning decision tree](best-practices-3.jpg)
-
-
-## Login credentials
-
-Be security conscious. You might not think a Digital Archive account is that important,
-or that the information is very sensitive, but to allow access to the wrong people is asking for trouble.  
-A malicious person, or even a well-meaning one, can do a lot of damage.
-
-Guard your collection by following these recommendations:
-
--   Do not use the same login for multiple people
--   Give each archivist their own user name and password
--   Do not share your login name and password with *anyone*
--   Do not set your password to something that's easy to guess
--   Do not use a password that you use for any other website
-
----
-
-
-
-
+### Be kind to users
+Large images and PDFs take longer to display which diminishes the user experience
+for people without very high-speed internet service. Users of mobile devices who have to pay
+extra, or whose cell service gets downgraded, when they exceed their bandwidth limit, will hate you.
+**Don't be that organization that carelessly uploads huge files with no consideration for people who
+have slow or metered internet access**.

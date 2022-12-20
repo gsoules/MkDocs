@@ -609,7 +609,7 @@ Follow these steps to add a new record to the **_Accessions_** table for an acce
 
 ---
 
-## Choose an accession's next step
+### Choose an accession's next step
 This section explains the meaning of the values in the **_Next Step_** field in the **_Accessions_** table. The numbers
 in the **_Workflow_** column refer to numbered steps in the [accessioning and curating workflow diagram](#accessioning-and-curating-workflow).
 
@@ -738,66 +738,26 @@ Follow these steps to add a new record to the **_Deccessions_** table.
 
 ### Scan documents and images
 
-The process for scanning documents is the same as for scanning images, such as photographs, except for the
-format in which the file produced by the scanner is saved. Images should usually be saved as TIFF files and
-documents should usually be saved as PDF files.
+For detailed information on scanning, see the [documentation on scanning](/archivist/scanning/).
 
-!!! Note ""
-    This online Digital Archive documentation contains extensive information about scanning.  
-    [Learn about scanning](/archivist/best-practices/#scanning).
-
-#### File naming
+#### Naming scan files using the accession number
 
 Use the [accessions index file](#create-an-index-for-an-accession) as a guide for what file name to use for each item.
 
-The file name format is `####-###` where `####` is the four-digit accession number and `###` is the three-digit item sequence within the accession. For example, the third file in accession `1234` would be named `1234-003.tiff`.
+The file name format is `####-###` where `####` is the four-digit accession number and `###` is the three-digit item sequence within the accession. For example, the third file in accession `1071` would be named `1071-003.tiff`.
 
-To have the [scanner software](#epson-scanner-software) automatically create a sequence of file names:
+To have the Epson [scanner software](#epson-scanner-software) automatically create a sequence of file names:
 
--   Click **_File Save Setting_** next to the **_Scan_** button .
--   Select the **_Save Location_** (one folder for the scans of one accession).
--   Set **_Prefix_** as `####-` (include dash with no space after) where `####` is the accession number.
--   Set the start number to `001` or the next number if the accession is already partially scanned. 
--   Set **_Image Format Type_** to `PDF` for documents or `TIFF` for images. 
+-   Click the **_File Save Settings_** button next to the **_Scan_** button (looks like a folder and a photo).
+-   On the **_File Save Settings_** dialog (see screenshot below):
+    -   Choose `Other` for the **_Location_**.
+    -   Browse to the folder where you want to save the scans for the accession.
+    -   Set **_Prefix_** as `####-` (include dash with no space after) where `####` is the accession number.
+    -   Set **_Start Number_** to `001` or the next index number if the accession is partially scanned. 
+    -   Set **_Image Format_** to `TIFF`.
+-   Click the **_OK_** button.
 
-#### Documents and images
-
--   **_Mode_**: `Professional Mode`
--   **_Document Type_**: `Reflective`
--   **_Image Type_**: `24-bit color`
--   **_Resolution_**: `600` dpi
-
-It is okay to use `Grayscale` for the **_Image Type_** when the original contains no color or when the
-document's color is of no significance. Grayscale scans produce much smaller files than color scans.
-
-#### Scanning documents
-
-Use a sheet of black paper behind non-opaque pages, if necessary, so the text on the reverse side does not show through into the scan.
-
-Save scans as a PDF file (not a TIFF or JPEG).
-
-It is okay to use TIFF when:
-
--   The document does not contain text that can be recognized by OCR, such as cursive or poor-quality printed text.
--   When it would be better to make the item accessible as an image file rather than a PDF.
-
-Optimize the PDF file:
-
--   OCR the file if it contains text that can be recognized by OCR.
--   Create a compressed copy of the file that is small enough for upload to the Digital Archive.
-
-#### Scanning images
-
-George Soules of the Southwest Harbor Public Library developed the diagram below based on
-his professional experience working with digital images, empirical evidence, and from having
-worked with many of the tens of thousands of images scanned by Library volunteers.
-
-![Scanning decision tree](best-practices-3.jpg)
-
-Save scans as a TIFF file (not JPEG).
-
-It is okay to use JPEG when the originals are low-quality and don't justify the larger file size of TIFF files.
-
+![image](accessioning-20.jpg)
 ---
 
 ## Accepting a donation for accession
@@ -912,8 +872,11 @@ Follow the steps below when you have deleted a folder, but not its prior version
 ### PDF Editor
 SWHPL uses both Foxit and Adobe Acrobat Pro for working with PDF files to:
 
+-   Combine TIFF files from the scanner into a PDF file.
 -   Perform optical character recognition (OCR) of images containing printed text.
--   File size compression.
+-   Optimize PDF files to make them smaller.
+
+See [creating PDFs from scans](/archivist/creating-pdfs/).
 
 ### Epson scanner software
 SWHPL uses Epson scanners and Epson drivers and programs.

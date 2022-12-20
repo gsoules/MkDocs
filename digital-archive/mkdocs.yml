@@ -25,6 +25,8 @@ nav:
         - Common Vocabulary: archivist/common-vocabulary.md
         - Vocabulary Editor: archivist/vocabulary-editor.md
         - Best Practices: archivist/best-practices.md
+        - Scanning: archivist/scanning.md
+        - Creating PDF Files from scans: archivist/creating-pdfs.md
         - Accessioning and Curating: archivist/accessioning.md
     - Relationships:
         - Getting Started with Relationships: relationships/getting-started-relationships.md
