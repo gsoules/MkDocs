@@ -1,13 +1,13 @@
 # Creating PDFs from scans
 
-This section describes the best way to create a PDF file from one or more scanned documents or photographs.
+This section describes the best way to create a PDF file from files output by a scanner when you [scan documents or photographs](/archivist/scanning/#scanning).
 The best way is one that:
 
 -   Preserves all of the information your scanner produced.
 -   Provides sufficient quality for viewing in the Digital Archive.
 -   Creates a PDF file that can be viewed by users who have slow or metered internet access.
 
-### Rules for creating a right-sized PDF file
+## Rules for creating a right-sized PDF file
 Here is a summary of the best way to create a PDF in most situations.
 
 -   [Configure your scanner software to create TIFF files](/archivist/scanning/#choosing-the-output-file-location-type).
@@ -19,12 +19,14 @@ Here is a summary of the best way to create a PDF in most situations.
 -   [Attach the smaller PDF](/archivist/attach-file/#attach-an-image-or-pdf-to-an-item) to a Digital Archive item.
 -   Move the TIFF files and the unoptimized PDF to your [archival storage](/archivist/best-practices/#archival-file-management) area.
 
+![pdf](pdf-1.jpg)
+
 By following the steps above, you'll produce a right-sized PDF for uploading to the Digital Archive and you'll also
 have original high-resolution scans that can be used for close examination of the scanned materials or for making prints.
 
-#### Why the rules are important and when they can be broken
+### Why the rules are important and when they can be broken
 
-##### Create TIFF files from the scanner
+#### Create TIFF files from the scanner
 You scan to TIFF files because TIFFs store all of the information produced by the scanner. If you scan to JPEG or to PDF,
 fine image detail that might be important to you later will be irreversibly lost. This is because both JPG and PDF files use a
 compressed *lossy* format that throws data away to make files smaller.
@@ -40,13 +42,13 @@ Examples are type-written or typeset text where the words, not an image of the w
 books, and other textual material, you can scan the pages directly to a single PDF which is a much faster than scanning to
 individual TIFF files. Furthermore, you can scan at 300 PPI and possibly using grayscale instead of color, to produce smaller files.
 
-##### Optimize the PDF file created from the TIFF files   
+#### Optimize the PDF file created from the TIFF files   
 You optimize a PDF to create a smaller copy because the original PDF file can be tens or hundreds of megabytes in size, making it
 [too large to upload](/archivist/best-practices/#uploading-files) the the Digital Archive.
 
 You can skip the PDF optimization step if the original PDF is of an [acceptable size for uploading to the Digital Archive](/archivist/best-practices/#archival-file-management). This may be the case when there are not a lot of pages and the scans were done using a PPI of 400 or less.
 
-### How PDF files store images
+## How PDF files store images
 
 Before proceeding, it may help to understand how PDF files store images and why PDF files can get to be so large.
 A PDF file is simply a container for text and images. This container does not store the original TIFF, or JPEG, or PNG images that go into
@@ -65,7 +67,7 @@ The only way to further reduce the size of a PDF containing high-resolution imag
 is lower, but still preserves enough detail so that the image looks good on a computer monitor. This is what happens when you optimize
 a PDF as will be explained later.
 
-### The importance of compression and resolution
+## The importance of compression and resolution
 A very important thing to understand about compression and resolution is that on a computer monitor, an uncompressed high-resolution
 image will usually look the same as a compressed, lower-resolution image. They may even look nearly same when zoomed in to 200%, but
 at 400% the compressed, lower-resolution image might look soft because the fine details are missing. If the original image was low quality,
@@ -85,8 +87,7 @@ The  sections that follow explain how to perform the steps.
 -   Combine TIFF files into a PDF file
 -   Create an optimized copy of the PDF
 
-### Combine TIFF files into a PDF file
-
+## Combine TIFF files into a PDF file
 The easiest way to combine TIFF files into a PDF is to select all the files in Windows Explorer and then right-click
 to bring up the menu item `Combine files in Acrobat` or `Combine files in Foxit`. On Windows 11 you may need to
 first click on `Show more options` to get to the menu that shows the `Combine` option.
@@ -99,27 +100,112 @@ Choose the large icon.
 
 That's all there is to it. You know have a large PDF that you can optimize to create a smaller PDF as explained in the next section.
 
-### Create an optimized copy of the PDF
+
+## Create an optimized copy of the PDF
 You create an optimized copy of a PDF by running the Acrobat or Foxit PDF optimizer and then doing a Save As to create a new file rather
 than overwriting the original.
 
 This section explains how to optimize a PDF file to make it smaller. There instructions are for Adobe Acrobat Pro or FoxIt PDF Editor.
-If you are using other software, look to see if similar feature is available.
+If you are using other software, look to see if an optimization feature is available.
 
-#### Adobe Acrobat Pro
+--- 
+
+### Adobe Acrobat Pro
 
 -   View the PDF to be optimized.
--   Choose ...
+-   Choose **_File > Save as Other > Optimized PDF..._** from the menu
 
-#### FoxIt PDF Editor
+The screenshot below shows the options when **_Images_** is selected in the left menu.
+
+![pdf](pdf-2.jpg)
+
+Go to the [Optimization settings](#optimization-settings) section below.
+
 ---
 
--   View the PDF to be optimized.
--   Choose ...
+### FoxIt PDF Editor
 
+-   View the PDF to be optimized.
+-   Choose **_File > Optimize PDF_** from the menu
+
+The screenshot below shows the options when **_Compress Images_** is selected in the left menu.
+
+![pdf](pdf-3.jpg)
+
+Go to the [Optimization settings](#optimization-settings) section below.
+
+---
 
 ### Optimization settings
+The optimization settings for Acrobat and Foxit are nearly identical, but the two programs tend to produce
+different results. Also, every PDF file is different and so you may need to experiment to get the best result
+for a specific file.
 
+This section focuses on the settings for color images, but the concepts are the same for monochrome images.
+The key options are **_Downsample_** and **_Compression_**, each of which has multiple sub-options.
+
+#### Downsample options
+Downsampling is the process of scaling an image down to smaller dimensions by discarding some of the image's
+pixels using a downsampling algorithm. Here are guidelines for what options to choose.
+
+- Choose `Bicubic Downsampling` for the downsampling algorithm.
+- Type a ppi value in the first field and accept the value that appears in the second field.
+- Choose a ppi that is between 1/2 and 1/4 of the resolution used for scanning.
+
+Think of the ppi value like this. If you scanned an image at 600 ppi, typing 300 in the first field
+would be equivalent to rescanning the image at 300 ppi and the result would be in an image that had
+only 25% of the original pixels (because doubling the ppi quadruples image size and therefore halving
+it reduces the size by 75%). Setting the ppi to 150 would result in an image that had only 4% of the
+original pixels. The same percentage reductions would apply if the image was scanned at 400 ppi and you typed
+200 or 100 in the first field.
+
+The quality of the optimized PDF when viewed on a computer monitor will vary depending on the nature of
+the images, and so you'll need to experiment to choose a value that results in a PDF that has both
+acceptable quality and file size. When viewed on a computer monitor at 100%, you would probably not
+notice the difference between 600, 300 and 150 ppi results, but when zoomed in to 200% or 400%, the
+150 ppi result would look softer (not as sharp).
+
+The screenshot below shows what part of an image looks like when viewed at 200% on a computer monitor.
+The image was scanned at 600 ppi. From left to right, the images are shown at 600 ppi (before the PDF
+was optimized), 300 ppi, and 150 ppi.
+
+![pdf](pdf-4.jpg)
+
+As a guideline, cut the scanned resolution in half when the image may need to be viewed zoomed-in and
+file size is less important. Cut it to a quarter if file size is most important.
+
+You can see the effects of downsampling in the [PPI decision tree](Scanner-PPI-Decision-Tree-by-George-Soules.pdf)
+document on pages 3 and 4.
+
+#### Compression options
+
+The **_Compression_** option is easy to choose. First, always choose `JPEG` for the type of compression. For **_Quality_**
+choose `High` when using Acrobat Pro and choose `Medium` when using Foxit. Based on experiments, Acrobat produced good
+results with high quality, but not with medium quality whereas Foxit results for high and medium were similar, but the
+resulting file size was much smaller with medium. Acrobat created an even smaller file at high quality than Foxit did with
+medium.
+
+Since you'll probably be using only one PDF program, you'll need to do your own experiments to determine which settings
+give you the best combination of quality and file size.
+
+## Alternate approach for creating a right-sized PDF
+This section describes an alternate approach that is not recommended, but is explained in case you come up with this idea and
+then don't get the result you expect.
+
+The alternate approach is to first create right-sized JPEG files from the scanner's TIFFs and then combine the JPEGs into
+a right-sized PDF. In other words, compress and down-size the TIFFs yourself instead of by optimizing the large PDF.
+
+This approach eliminates the step of optimizing the PDF, but adds the step of converting and compressing the TIFFs into JPEGs.
+It also requires that you calculate and set the correct resolution property for the JPEG files before combining them into the PDF. If you don't reset
+the resolution, the PDF page may look tiny and have to be zoomed in a lot, perhaps 500% or more, to be readable.
+
+The PDF looks tiny because PDF viewers
+like Acrobat display images based on their resolution setting, e.g. 600 PPI, not on their actual resolution e.g. 6000 px x 4000 px. If you reduce a
+6000 px x 4000 px TIFF to a 1200 px x 800 px JPEG and display it with the resolution set to 600 ppi, the image will be only 2" wide (1200 px / 600 ppi = 2");
+You would need to change the resolution to 150 PPI for the image to display at 8" wide (1200 px / 150 ppi = 8").
+
+This approach is not recommended because of the extra steps involved and also because you'll end up with a bunch of small JPEG files that you don't need
+after the PDF has been created.
 
 
 

@@ -33,7 +33,7 @@ of the differences between scans made at different resolutions.
 ## Typical scanner settings
 
 The most common settings for scanning a color image using the Epson scanner software are shown in the screenshot below.
-The biggest variable is the **_Resolution_** setting which can range from 300 to 1200 depending on what you are scanning.
+The biggest variable is the **_Resolution_** setting which can range from 300 ppi to 1200 ppi depending on what you are scanning.
 You'll also change the **_Image Type_** from color to grayscale when scanning black & white documents or images.
 Don't change the **_Document Size_** because it's set automatically to the scanner table size or to the size
 of the marquee you choose on the **_Preview_** screen. 
