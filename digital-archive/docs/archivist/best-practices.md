@@ -175,7 +175,7 @@ alive, sometimes discovering connections that you never even know existed, you'l
 ## Uploading files
 
 **Avoid uploading large, multi-megabyte files** when [attaching an image or document](/archivist/attach-file/)
-to an item. 
+to an item. Ideally, a file attachment should be less than a megabyte, though that's not always possible.
 
 Images that you upload to the Digital Archive should generally be no more 1200px on the long edge.
 To learn about resolution, see the [Scanning 101 workshop slides](Scanning-101-Workshot-by-George-Soules.pdf)

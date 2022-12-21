@@ -7,7 +7,7 @@ understand what all the different options mean and how to choose the right ones.
 ### Choosing the right PPI when scanning images.
 
 The diagram below will help you quickly determine what PPI to use to scan an image. For type-written and
-typeset *documents*, you can generally use 300 ppi. For *images*, the choice depends on the
+typeset *documents*, you can generally use 300 ppi, but for *images*, the choice depends on the
 quality of the original and what you intend to do with the scan.
 
 ![Scanning decision tree](best-practices-3.jpg)
@@ -24,7 +24,7 @@ of the differences between scans made at different resolutions.
 -   A resolution of 300 ppi is plenty for letter-size documents that are primarily text. And unless the
     documents contain color, they can be scanned using 8-bit Grayscale. An exception would be, for example, a type-written
     page that had been written or doodled on using a colored pen, or if the page contained a color image.
-    A resolution of 300 ppi is also fine for OCR purposes.
+    A resolution of 300 ppi is also fine for OCR (optical character recognition) purposes.
 -   An image scanned as 24-bit color, will produce a file that is 3 times the size as the same image scanned as 8-bit Grayscale.
     That's because 24 bits is 3 times as many bits as 8 bits. Similarly, the file for an image scanned as 16-bit Grayscale
     will be 2/3 the size of the file for the same image scanned as 24-bit color.
@@ -64,13 +64,13 @@ Follow these steps to scan an image or document that you have placed on the scan
     -   Move the mouse over the preview area. The cursor will change to a large plus (+).
     -   Click the mouse at the upper-left corner of the item to be scanned and drag to the lower-right corner.
     -   When you release the mouse, a dashed rectangle will delimit the area to be scanned.
-    -   Adjust the scan area if necessary by moving the cursor over the ants until it changes to a double-headed arrow,
+    -   Adjust the scan area if necessary by moving the cursor over the rectangle until the cursor changes to a double-headed arrow,
         then click-drag to adjust.
 -   On the main EPSON Scan dialog, click the **_Scan_** button.
--   The scanner will operate and when done, it will create a file.
+-   The scanner will operate, and when finished, it will create a file.
 
 When scanning several items that all the same size, you only need to perform the preview step for the first item.
-After that, you can put the next item on the scanner table and the just click the **_Scan_** button.
+After that, you can put the next item in the same place on the scanner table and the just click the **_Scan_** button.
 
 ## Scanning multiple items at the same time
 You can save a lot of time when scanning small items, such as snapshot-sized photos, by placing multiple items on the
@@ -81,24 +81,30 @@ items, closing the lid etc.
 -   Click the **_Preview_** button.
 -   On the **_Preview_** screen:
     -   Perform the same operation described above to draw a marquee around the first item.
-    -   Then just move the mouse to the upper-left corner of the next item and click-drag another marquee around it.
-        Notice that the dashed rectangle on the first marquee turns to a solid rectangle.
+    -   Release the mouse button, move to the upper-left corner of the next item, and click-drag a marquee around it.
+        The dashed rectangle on the first marquee turns to a solid rectangle.
     -   Repeat for each item.
     -   When done drawing all the marquees, click the **_All_** button. Dashed rectangles will appear
         for all of the marquees as shown in the screenshot below. If you don't click the button, only the selected marquee gets scanned.
 -   On the main EPSON Scan dialog, click the **_Scan_** button.
 -   The scanner will scan the area delimited by each marquee, one at a time, and create a separate file for each marquee.
 
+![scanning](scanning-2.jpg)
+
 There are buttons in the **_Marquee_** section of the **_Preview_** screen that you can use when drawing
 marquees, but just following the steps above will be quickest and easiest most of the time.
 
-![scanning](scanning-2.jpg)
-
 ## Preview tips
 -   Drag the **_Preview_** screen window to make the preview area larger.
--   You can use the **_Zoom_** button to zoom in on just the area delimited by one marquee. Use it when need to make a more precise selection.
+-   Use the **_Zoom_** button to zoom in on just the area delimited by one marquee. Do this when you need to make a more precise selection.
 -   Use the **_Delete_** key to delete the currently selected marquee(s).
 -   Move a marquee by click-dragging inside (the mouse turns to a hand).
 -   If you are selecting multiple items that all are the same size, you can draw the marquee for one and then click
     the **_Copies the selected marquee_** button to duplicate the marquee and drag it over another item. The button looks
     like two overlapping squares.
+
+--- 
+
+Learn about [creating a PDF file](/archivist/creating-pdfs/) from your scans.    
+
+---
