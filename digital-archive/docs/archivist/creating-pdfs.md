@@ -142,7 +142,13 @@ different results. Also, every PDF file is different and so you may need to expe
 for a specific file.
 
 This section focuses on the settings for color images, but the concepts are the same for monochrome images.
-The key options are **_Downsample_** and **_Compression_**, each of which has multiple sub-options.
+The key options are:
+
+- **_Downsample_**
+- **_Compression_**
+
+Downsampling reduces the resolution of images contained in the PDF and compression makes the downsized images
+take up less space in the PDF file. It is the combination of the two settings that makes the PDF file itself smaller.
 
 #### Downsample options
 Downsampling is the process of scaling an image down to smaller dimensions by discarding some of the image's
@@ -151,6 +157,9 @@ pixels using a downsampling algorithm. Here are guidelines for what options to c
 - Choose `Bicubic Downsampling` for the downsampling algorithm.
 - Type a ppi value in the first field and accept the value that appears in the second field.
 - Choose a ppi that is between 1/2 and 1/4 of the resolution used for scanning.
+
+As a guideline, cut the scanned resolution in half when the image may need to be viewed zoomed-in and
+file size is less important. Cut it to a quarter if file size is most important.
 
 Think of the ppi value like this. If you scanned an image at 600 ppi, typing 300 in the first field
 would be equivalent to rescanning the image at 300 ppi and the result would be in an image that had
@@ -165,28 +174,35 @@ acceptable quality and file size. When viewed on a computer monitor at 100%, you
 notice the difference between 600, 300 and 150 ppi results, but when zoomed in to 200% or 400%, the
 150 ppi result would look softer (not as sharp).
 
-The screenshot below shows what part of an image looks like when viewed at 200% on a computer monitor.
-The image was scanned at 600 ppi. From left to right, the images are shown at 600 ppi (before the PDF
-was optimized), 300 ppi, and 150 ppi.
+The screenshot below shows one of 13 scans from a photo album having pages 11.7" x 8.5" pages. The
+red rectangle shows the part of the page that is shown in the next set of screenshots.
+
+![pdf](pdf-5.jpg)
+
+The screenshots below shows what part of a page from the photo album looks like when viewed on
+a computer monitor zoomed in to 200%. The image was scanned at 600 ppi. From left to right, the
+images are shown at 600 ppi (before the PDF was optimized), 300 ppi, and 150 ppi. The files sizes
+(106 MB, 17 MB, and 6 MB) are for all 13 pages of the album.
 
 ![pdf](pdf-4.jpg)
-
-As a guideline, cut the scanned resolution in half when the image may need to be viewed zoomed-in and
-file size is less important. Cut it to a quarter if file size is most important.
 
 You can see the effects of downsampling in the [PPI decision tree](Scanner-PPI-Decision-Tree-by-George-Soules.pdf)
 document on pages 3 and 4.
 
 #### Compression options
 
-The **_Compression_** option is easy to choose. First, always choose `JPEG` for the type of compression. For **_Quality_**
-choose `High` when using Acrobat Pro and choose `Medium` when using Foxit. Based on experiments, Acrobat produced good
-results with high quality, but not with medium quality whereas Foxit results for high and medium were similar, but the
-resulting file size was much smaller with medium. Acrobat created an even smaller file at high quality than Foxit did with
-medium.
+The **_Compression_** option is easy to choose.
 
-Since you'll probably be using only one PDF program, you'll need to do your own experiments to determine which settings
-give you the best combination of quality and file size.
+- Choose `JPEG` for the type of compression.
+- Choose `High` **_Quality_** when using Acrobat Pro.
+- Choose `Medium` **_Quality_** when using Foxit.
+
+Based on experiments, Acrobat produced good results with high quality, but not with medium quality. Foxit results for high and medium quality
+were similar, but the resulting file size was much smaller with medium. However, Acrobat created an even smaller file at high quality than
+Foxit did with medium. More testing is needed, but it may be that Acrobat is the better product for PDF optimization.
+
+Whichever program you use, you'll need to do your own experiments to determine which settings
+give you the best combination of quality and file size for specific PDF files.
 
 ## Alternate approach for creating a right-sized PDF
 This section describes an alternate approach that is not recommended, but is explained in case you come up with this idea and
