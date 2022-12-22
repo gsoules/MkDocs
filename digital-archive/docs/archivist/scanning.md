@@ -69,8 +69,8 @@ Follow these steps to scan an image or document that you have placed on the scan
 -   On the main EPSON Scan dialog, click the **_Scan_** button.
 -   The scanner will operate, and when finished, it will create a file.
 
-When scanning several items that all the same size, you only need to perform the preview step for the first item.
-After that, you can put the next item in the same place on the scanner table and the just click the **_Scan_** button.
+When scanning several items that are the same size, you only need to perform the preview step for the first item.
+After that, you can put the next item in the same place on the scanner table and just click the **_Scan_** button.
 
 ## Scanning multiple items at the same time
 You can save a lot of time when scanning small items, such as snapshot-sized photos, by placing multiple items on the

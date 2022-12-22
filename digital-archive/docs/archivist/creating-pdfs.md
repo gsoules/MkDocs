@@ -33,7 +33,7 @@ You scan to TIFF files because TIFFs store all of the information produced by th
 fine image detail that might be important later for viewing or image post-production will be irreversibly lost.
 This is because both JPG and PDF files use a compressed *lossy* format that throws data away to make files smaller.
 
-An analogy for lossy compression would be like removing some of the down from a winter jacket so that you could squish it to be
+An analogy for lossy compression would be like removing some of the goose down from a winter jacket so that you could squish it to be
 small enough to fit inside your carry-on suitcase. When you unpack the jacket, the remaining down might fluff up enough that you won't
 notice any difference in how the jacket looks, but in really cold weather, the jacket won't be as warm as it used to be. In contrast,
 TIFF files use lossless compression which would be like squishing the jacket without removing any down, but if that wasn't enough,
@@ -41,14 +41,14 @@ you'd need to use a larger suitcase.
 
 The exception to the TIFF rule is when the materials you are scanning do not need to be preserved with the highest quality possible.
 Examples are type-written or typeset text where the words, not an image of the words, is what's most important. For letters,
-books, and other textual material, you can scan the pages directly to a single PDF which is a much faster than scanning to
+books, and other textual material, you can scan the pages directly to a single PDF which is much faster than scanning to
 individual TIFF files and then combining them into a PDF. Furthermore, you can scan at 300 PPI, possibly using grayscale instead
 of color, to produce smaller files.
 
 #### Rule: Optimize the PDF file created from the TIFF files   
 You optimize a PDF to create a smaller *copy* while keeping the original PDF file which can be tens or hundreds of megabytes in size.
 Using the winter jacket analogy, this
-would be like having two identical winter jackets and removing down from one to take on your trip, but still having the other
+would be like having two identical winter jackets and removing goose down from one to take on your trip, but still having the other
 to keep you warm on the coldest days. 
 
 You can skip the PDF optimization step if the original PDF is of an [acceptable size for uploading to the Digital Archive](/archivist/best-practices/#uploading-files). This may be the case when there are not a lot of pages and the scans were done using a PPI of 400 or less.
@@ -56,13 +56,13 @@ You can skip the PDF optimization step if the original PDF is of an [acceptable 
 ## How PDF files store images
 
 Before proceeding, it may help to understand how PDF files store images and why PDF files can get to be so large.
-A PDF file is simply a container for text and images. This container does not store the original TIFF, or JPEG, or PNG images that go into
+A PDF file is simply a container for text and images. This container does not store the original TIFF, or JPEG, or PNG images that go
 into, but rather, it stores compressed versions of images in a lossy format like JPEG as was explained earlier. This makes the
 size of the PDF smaller; however, after an image has been compressed and stored in the PDF, you cannot retrieve the original image
 in its original form.
 
-Using the analogy of the winter jacket squished to fit inside a suitcase, once you take some of the down out,
-you can't put it back in again and the jacket will never be as warm again as it used to be. For images this means you can never
+Using the analogy of the winter jacket squished to fit inside a suitcase, once you take some of the goose down out,
+you can't put it back in again and the jacket will never be as warm again as it used to be. For images, this means you can never
 retrieve the finest details that the scanner captured.
 
 Image compression makes the PDF smaller, but it does not affect image *resolution* (to learn about resolution, see pages 52 - 61 of the 
@@ -76,7 +76,7 @@ a PDF as will be explained later.
 
 ## The importance of compression and resolution
 A very important thing to understand about compression and resolution is that on a computer monitor, an uncompressed high-resolution
-image will usually look the same as a compressed, lower-resolution image. They may even look nearly same when zoomed in to 200%, but
+image will usually look the same as a compressed, lower-resolution image. They may even look nearly identical when zoomed in to 200%, but
 at 400% the compressed, lower-resolution image might look soft because the fine details are missing.
 
 If the original image was low quality,
@@ -112,7 +112,7 @@ That's all there is to it. You know have a large PDF that you can optimize to cr
 You create an optimized copy of a PDF by running the Acrobat or Foxit PDF optimizer and then doing a Save As to create a new file rather
 than overwriting the original.
 
-This section explains how to optimize a PDF file to make it smaller. There instructions are for Adobe Acrobat Pro or FoxIt PDF Editor.
+This section explains how to optimize a PDF file to make it smaller. These instructions are for Adobe Acrobat Pro or FoxIt PDF Editor.
 If you are using other software, look to see if an optimization feature is available.
 
 --- 
@@ -149,7 +149,7 @@ The optimization settings for Acrobat and Foxit are nearly identical. The key op
 - **_Downsample_**
 - **_Compression_**
 
-Downsampling reduces image resolution and compression makes the downsized images
+Downsampling reduces image resolution and compression make the downsized images
 take up less space in the PDF file. The combination of the two settings makes the PDF file itself smaller.
 
 #### Downsample options
@@ -184,28 +184,27 @@ it reduces the size by 75%). Setting the ppi to 150 would result in an image tha
 original pixels. The same percentage reductions would apply if the image was scanned at 400 ppi and you typed
 200 or 100 in the first field.
 
-The quality of the optimized PDF when viewed on a computer monitor will vary depending on the nature of
-the images, but when viewed on a computer monitor at 100%, you would probably not
-notice the difference between 600, 300 and 150 ppi results, but when zoomed in to 200% or 400%, the
-150 ppi result might look softer (not as sharp).
-
 The screenshot below shows one of 13 scans from a photo album having pages 11.7" x 8.5" pages. The
 red rectangle shows the part of the page that is shown in the next set of screenshots.
 
 ![pdf](pdf-5.jpg)
 
-The screenshots below shows what a part of the photo album page above looks like when viewed on
-a computer monitor zoomed in to 200%. The page was scanned at 600 ppi. From left to right, the
-images are shown at 600 ppi (before the PDF was optimized), 300 ppi, and 150 ppi. The files sizes
-(106 MB, 17 MB, and 6 MB) are for the PDF file containing all 13 pages of the album.
+The screenshots below shows a part of the photo album page above zoomed to 200% on a computer monitor.
+The page was scanned at 600 ppi and then converted to a PDF. The image at left is from the PDF
+before it was optimized. The other two images are from versions of the PDF optimized at 300 ppi and 150 ppi.
+The files sizes (106 MB, 17 MB, and 6 MB) are for the PDF files containing all 13 pages of the album.
 
 ![pdf](pdf-4.jpg)
+
+In comparing the three images above, notice how the hand-written text above the image is sharp at 600 ppi
+and 300 ppi, but is a little soft at 150 ppi. However, the sailboats look almost the same in all three images.
+That's because the print itself did not contain much fine detail to begin with.
 
 You can see more examples of downsampling in the [PPI decision tree](Scanner-PPI-Decision-Tree-by-George-Soules.pdf)
 document on pages 3 and 4.
 
 ## Alternate approach for creating a right-sized PDF
-This last section describes an alternate approach that is not recommended, but is explained in case you come up with this idea and
+This last section describes an alternate approach that is not recommended but is explained in case you come up with this idea and
 then don't get the result you expect.
 
 The alternate approach is to first create right-sized JPEG files from the scanner's TIFFs and then combine the JPEGs into
