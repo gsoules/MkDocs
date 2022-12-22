@@ -21,13 +21,13 @@ At SWHPL (pronounced *swiple*, rhymes with *triple*), *accessioning* is the proc
     -   [**_Donors_** table](#donors-table)
     -   [**_Tasks_** table](#tasks-table)
     -   [**_Digital Files_** table](#digital-files-table)
+-   [Accession index](#accession-index)
 -   [How To](#how-to)
     -   [Add a new accession to the **_Accessions_** table](#add-a-new-accession-to-the-accessions-table)
     -   [Choose an accession's next step](#choose-an-accessions-next-step)
     -   [Add a new task to the **_Tasks_** table](#add-a-new-task-to-the-tasks-table)
     -   [Add a new donor to the **_Donors_** table](#add-a-new-donor-to-the-donors-table)
     -   [Add a note to an accession record](#add-a-note-to-an-accession-record)
-    -   [Create an index for an accession](#create-an-index-for-an-accession)
     -   [Deaccession an accession](#deaccession-an-accession)
     -   [Scan documents and images](#scan-documents-and-images)
 -   [Accepting a donation for accession](#accepting-a-donation-for-accession)    
@@ -300,7 +300,7 @@ Upon receiving this assignment, the archivist:
 -   Creates a sub-accession for the letters and assigns it number `1234_01`.
 -   Removes the letters from the crate and puts them in an archival box labeled with that number.
 -   Puts the box on a shelf in the archive closet, perhaps next to, but not inside the crate.
--   [Creates an index](#create-an-index-for-an-accession) for the letters.
+-   [Creates an index](#accession-index) for the letters.
 -   Adds the index to the Digital Archive as an uncurated accession item.
 -   [Sets the **_Next Step_**](#choose-an-accessions-next-step) for the sub-accession `1234_01` to `Digitize`.
 
@@ -388,7 +388,7 @@ In the explanations below, `####` means the accession number.
     -   Make a copy of the file named `accession-index-template.docx` which is   
         located in the Google Drive `Policies and Procedures` folder.
     -   Rename the copy to `accession-index-####.docx` where `####` is the accession number.
-    -   Follow the instructions for how to [create an index for an accession](#create-an-index-for-an-accession).
+    -   Follow the instructions for [creating an index for an accession](#accession-index).
     -   Save the index Word document as a PDF file named `accession-index-####.pdf`.
     -   Create a new S3 folder named `S3\Accessions\####`.
     -   Upload the PDF and Word files to the S3 folder.
@@ -574,10 +574,55 @@ entire backlog of digital files will have finally been accessioned and stored in
 The screenshot below shows some of the fields and a few of the many rows of the **_Digital Files_** table.
 ![image](accessioning-8.jpg)
 
-## How To
-This section explains how to perform common accessioning tasks.
+---
+
+## Accession Index
+- Create diagram showing indexing process.
+    -    Accession reviewed by curator at outset
+    -    Archivist creates index, asks curator for help filling in blanks
+    -    Archivist submits index to curator for approval
+- Each row should contain all available metadata, same as would go into a DA item.
+- Index should not have blank entries
+- To fill in blanks, try to find related items in DA to determine whether to keep or separate an item.
+- Use a separate table in the index file to list items that have been separated.
+- Mention that the index can just be text in a UAs Description field when appropriate.
+
+
+
+The real work of accessioning begins with indexing the accession's contents. The archivist examines the items
+in the accession and creates a table in a Word document with one row for each item. Depending on the information available,
+the table may be complete and detailed, or it may be sparse, only identifying the most significant items in the accession,
+or only those items for which information is known.
+
+When creating the index, use as many relevant keywords as possible since the text in the index will be searchable.
+The words in the index will determine whether someone will be able to search for and find something of
+interest in the accession.
+
+The index table should contain the columns listed below and possibly others if there is other information to record such as which
+of a set of photo albums a photograph item is contained in.
+
+-   **ID number**: An identification number used for [file naming](#file-naming) when the item is or was scanned.
+-   **Description**: A concise, but keyword-rich description of the item.
+-   **Date**: The date of the item if known.
+-   **Notes**: Other information about the item. 
+
+Below is a screenshot showing an example of a typical index where there is a lot of information for some
+items and none for others.
+
+![image](accessioning-19.jpg)
+
+In addition to making the accession accessible and searchable via the Digital Archive, the index also provides a guide
+for someone who is tasked with scanning the items in the accession. They will use the table's Description column to identify
+items and use the Item Number to derive the scan's file name.
+
+### Auto-numbering index table rows
+
+![image](accessioning-26.jpg)
 
 ---
+
+## How To
+The topics in this section explain how to perform common accessioning tasks.
 
 ### Add a new accession to the Accessions table
 Follow these steps to add a new record to the **_Accessions_** table for an accession or sub-accession.
@@ -616,7 +661,7 @@ in the **_Workflow_** column refer to numbered steps in the [accessioning and cu
 Step                        | Meaning       | Workflow
 ----------------------------| --------------| --- 
 **_Assess_**                | Determine what the next step should be. Only choose this option for a new accession when it's not obvious what to do next such as when it's not known whether the accession items are already in the Digital Archive and the accession can be considered **_Completed_** or if an index is required, or if the accession is small enough that a curated item should be created from it or if a UA should be created. | 2
-**_Create index_**          | Create a PDF index file containing an inventory of what's in the accession. See how to [create an index for an accession](#create-an-index-for-an-accession).|3A - 5A
+**_Create index_**          | Create an [accession index](#accession-index) PDF containing an inventory of what's in the accession.|3A - 5A
 **_Create curated item_**   | Create a single Digital Archive item for the accession. Choose this option when the accession is small, and the items are all similar or closely related, and digital files exist for the items.| 3B - 6B
 **_Create UA_**             | Create an uncurated accession (UA) item for the accession. Choose this option when the accession is large, *or* the items are dissimilar or unrelated, *or* no digital files exist for the items. | 3A - 9A
 **_Create contact sheet_**  | Create either a 30-up or 1-up contact sheet. | 7A or 4B
@@ -680,35 +725,6 @@ Use the notation `<date>-<initials>:<text>`
 
 ---
 
-### Create an index for an accession
-The real work of accessioning begins with indexing the accession's contents. The archivist examines the items
-in the accession and creates a table in a Word document with one row for each item. Depending on the information available,
-the table may be complete and detailed, or it may be sparse, only identifying the most significant items in the accession,
-or only those items for which information is known.
-
-When creating the index, use as many relevant keywords as possible since the text in the index will be searchable.
-The words in the index will determine whether someone will be able to search for and find something of
-interest in the accession.
-
-The index table should contain the columns listed below and possibly others if there is other information to record such as which
-of a set of photo albums a photograph item is contained in.
-
--   **ID number**: An identification number used for [file naming](#file-naming) when the item is or was scanned.
--   **Description**: A concise, but keyword-rich description of the item.
--   **Date**: The date of the item if known.
--   **Notes**: Other information about the item. 
-
-Below is a screenshot showing an example of a typical index where there is a lot of information for some
-items and none for others.
-
-![image](accessioning-19.jpg)
-
-In addition to making the accession accessible and searchable via the Digital Archive, the index also provides a guide
-for someone who is tasked with scanning the items in the accession. They will use the table's Description column to identify
-items and use the Item Number to derive the scan's file name.
-
----
-
 ### Deaccession an accession
 You deaccession an accession by adding a record to the **_Deaccessions_** table.
 
@@ -742,7 +758,7 @@ For detailed information on scanning, see the [documentation on scanning](/archi
 
 #### Naming scan files using the accession number
 
-Use the [accessions index file](#create-an-index-for-an-accession) as a guide for what file name to use for each item.
+Use the [accession's index file](#accession-index) as a guide for what file name to use for each item.
 
 The file name format is `####-###` where `####` is the four-digit accession number and `###` is the three-digit item sequence within the accession. For example, the third file in accession `1071` would be named `1071-003.tiff`.
 

@@ -16,6 +16,7 @@ Here is a summary of the best way to create a PDF in most situations.
     or [FoxIt PDF Editor](https://www.foxit.com/pdf-editor/) to:
     -   [Combine the TIFF files into a PDF file](#combining-scan-files-into-a-pdf-file).
     -   Create an [optimized copy of the PDF](#how-to-optimize-a-pdf-file) that has a smaller file size than the original.
+-   [OCR the optimized PDF](#ocr-optical-character-recognition)
 -   [Attach the smaller PDF](/archivist/attach-file/#attach-an-image-or-pdf-to-an-item) to a Digital Archive item.
 -   Move the TIFF files to your [archival storage](/archivist/best-practices/#archival-file-management) area.
 
@@ -202,6 +203,32 @@ That's because the print itself did not contain much fine detail to begin with.
 
 You can see more examples of downsampling in the [PPI decision tree](Scanner-PPI-Decision-Tree-by-George-Soules.pdf)
 document on pages 3 and 4.
+
+## OCR (optical character recognition)
+Use OCR to make a PDF searchable both in the Digital Archive and while viewing the PDF. Only perform this step if the PDF contains
+type-written or typeset text that you want people to be able to search using the Digital Archive.
+OCR may not work on hand-written or highly-stylized text.
+
+OCR adds searchable text internally within the PDF file, but the increase in file size is negligible.
+
+Occasionally, the OCR process will cause some pages in the PDF to become skewed. You either have to live with it or remove
+and add back those pages, which will then no longer be searchable.
+
+### OCR with Adobe Acrobat Pro
+
+-   View the PDF to be optimized.
+-   Choose the **_Scan & OCR_** tool.
+-   On the **_Scan & OCR_** tool page:
+    -   Choose **_Recognize Text > In the file_**.
+    -   Click the **_Recognize Text_** button.
+-   Save the file.
+
+---
+
+### OCR with FoxIt PDF Editor
+When you use Foxit to open a PDF that has not been processed for text recognition, a dialog will automatically appear with a link that says
+`Recognize Text`. Click the link to start the OCR process. If the dialog is not displayed, you can initiate OCR by clicking
+the **_Quick OCR_** button on the **_Home_** tab. When the process completes, save the file.
 
 ## Alternate approach for creating a right-sized PDF
 This last section describes an alternate approach that is not recommended but is explained in case you come up with this idea and
