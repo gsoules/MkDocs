@@ -230,6 +230,40 @@ When you use Foxit to open a PDF that has not been processed for text recognitio
 `Recognize Text`. Click the link to start the OCR process. If the dialog is not displayed, you can initiate OCR by clicking
 the **_Quick OCR_** button on the **_Home_** tab. When the process completes, save the file.
 
+## PDF analysis
+For people who really want to understand what's going on with the images inside a PDF file, both Acrobat and Foxit provide a tool
+called Preflight. This is optional reading.
+
+To access the Preflight tool:
+
+-   **Acrobat**: From the **_Tools_** page choose **_Print Production > Preflight_**
+-   **Foxit**:  From the **_Convert_** tab choose **_Preflight_**
+
+To learn about the images in a PDF file, on the **_Preflight_** dialog:
+
+-   Select the **_Profiles_** section
+-   Expand **_PDF analysis_**
+-   Click on **_List page objects, grouped by type of object_**
+-   Click the **_Analyze_** button
+-   The **_Results_** section is automatically selected
+-   Expand **_Resolution of color ..._** 
+-   Expand Page 1 (or another page)
+-   Expand **_Images_**
+-   An example of image data appears below. It shows that the image dimensions are  
+    7019 px x 5200 px and that the resolution is 600.
+
+![pdf](pdf-7.jpg)
+
+If you were to optimize the PDF by reducing the resolution to 300, the data would change to look as shown below. Cutting the resolution
+in half (from 600 to 300) had a corresponding affect on the dimensions which are now 3510 px x 2550 px.
+
+![pdf](pdf-8.jpg)
+
+The information above confirms that the change from a resolution of 600 to 300 had the desired affect within the PDF. More importantly,
+in this example, the size of the PDF file was reduced from 106 MB to 53 MB using High quality, to 28 MB using Medium quality, and to 13 MB using
+Low quality.
+
+
 ## Alternate approach for creating a right-sized PDF
 This last section describes an alternate approach that is not recommended but is explained in case you come up with this idea and
 then don't get the result you expect.
@@ -238,17 +272,15 @@ The alternate approach is to first create right-sized JPEG files from the scanne
 a right-sized PDF. In other words, compress and downsize the TIFFs yourself instead of optimizing a large PDF.
 
 This approach eliminates the step of optimizing the PDF, but adds the step of converting and compressing the TIFFs into JPEGs.
-It also requires that you calculate and set the correct print resolution for the JPEG files before combining them into the PDF.
-You need to use a program like Photoshop or IrfanView to set the print resolution.
-If you don't reset the print resolution correctly, the PDF page may look tiny and have to be zoomed in a lot, perhaps 500% or more, to be readable.
+It also requires that you calculate and set the correct resolution for the JPEG files before combining them into the PDF.
+You need to use a program like Photoshop or IrfanView to set the resolution.
+If you don't reset the resolution correctly, the PDF page may look tiny and have to be zoomed in a lot, perhaps 500% or more, to be readable.
 
 The PDF looks tiny because PDF viewers
-like Acrobat display images based on their print resolution, e.g. 600 ppi, not on their resolution dimensions e.g. 6000 px x 4000 px.
-If you reduce and convert that large image to 1200 px x 800 px and display it with the print resolution set to  
+like Acrobat display images based on their resolution, e.g. 600 ppi, not on their resolution dimensions e.g. 6000 px x 4000 px.
+If you reduce and convert that large image to 1200 px x 800 px and display it with the resolution set to  
 600 ppi, the image will display ("print") on the screen at only 2" wide (1200 px / 600 ppi = 2").  
-You would need to change the print resolution to 150 ppi for
-the image to display at  
-8" wide (1200 px / 150 ppi = 8").
+You would need to change the resolution to 150 ppi for the image to display at 8" wide (1200 px / 150 ppi = 8").
 
 This approach is not recommended because of the extra steps involved and also because you'll end up with a bunch of small JPEG files that you don't need
 after the PDF has been created.
