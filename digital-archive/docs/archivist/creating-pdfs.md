@@ -172,9 +172,9 @@ Compression makes an image take up less space in a file without changing the ima
 - Choose `High` **_Quality_** when using Acrobat Pro.
 - Choose `Medium` **_Quality_** when using Foxit.
 
-Based on experiments, Acrobat produced good results with high quality, but not with medium quality. Foxit results for high and medium quality
-were similar, but the resulting file size was much smaller with medium. However, Acrobat created an even smaller file at high quality than
-Foxit did with medium.
+Based on experiments, Acrobat produced good results with High quality, but not with Medium quality. Foxit results for High and Medium quality
+were similar, but the resulting file size was much smaller with Medium. However, Acrobat created an even smaller file at High quality than
+Foxit did with Medium.
 
 #### More on downsampling and compression
 Think of the ppi value that you specify in the first field of the **_Downsample_** option like this.
@@ -230,38 +230,47 @@ When you use Foxit to open a PDF that has not been processed for text recognitio
 `Recognize Text`. Click the link to start the OCR process. If the dialog is not displayed, you can initiate OCR by clicking
 the **_Quick OCR_** button on the **_Home_** tab. When the process completes, save the file.
 
-## PDF analysis
+## PDF image analysis
 For people who really want to understand what's going on with the images inside a PDF file, both Acrobat and Foxit provide a tool
-called Preflight. This is optional reading.
+called Preflight. This is optional reading for inquiring minds.
 
 To access the Preflight tool:
 
 -   **Acrobat**: From the **_Tools_** page choose **_Print Production > Preflight_**
 -   **Foxit**:  From the **_Convert_** tab choose **_Preflight_**
 
-To learn about the images in a PDF file, on the **_Preflight_** dialog:
+Here's how to learn about the images in a PDF file (there are many other things you can learn too).
 
--   Select the **_Profiles_** section
+On the **_Preflight_** dialog:
+
+-   Select the **_Profiles_** section (left menu in Foxit as shown below, upper tabs in Acrobat)
 -   Expand **_PDF analysis_**
 -   Click on **_List page objects, grouped by type of object_**
 -   Click the **_Analyze_** button
--   The **_Results_** section is automatically selected
--   Expand **_Resolution of color ..._** 
+
+![pdf](pdf-9.jpg)
+
+The **_Results_** section is automatically selected. In the **_Results_** section:
+
+-   Expand **_Resolution of color and grayscale images ..._** 
 -   Expand Page 1 (or another page)
 -   Expand **_Images_**
--   An example of image data appears below. It shows that the image dimensions are  
-    7019 px x 5200 px and that the resolution is 600.
+
+The image data is shown in the screenshot below. The image is  a scan of a photo album page that is 11.7" wide. The data shows that the image
+dimensions are 7019 px x 5200 px and that the resolution is 600 ppi. Doing the math tells us that this image will display at 11.7" wide
+because 7019 px / 600 ppi = 11.7".
 
 ![pdf](pdf-7.jpg)
 
-If you were to optimize the PDF by reducing the resolution to 300, the data would change to look as shown below. Cutting the resolution
-in half (from 600 to 300) had a corresponding affect on the dimensions which are now 3510 px x 2550 px.
+If you were to optimize the PDF by reducing the resolution to 300 ppi, the data would change to look as shown below. Cutting the resolution
+in half (from 600 to 300) had a corresponding affect on the dimensions which are now 3510 px x 2550 px. Doing the math tells us that this
+image will also display at 11.7" wide because 3510 px / 300 ppi = 11.7".
 
 ![pdf](pdf-8.jpg)
 
-The information above confirms that the change from a resolution of 600 to 300 had the desired affect within the PDF. More importantly,
-in this example, the size of the PDF file was reduced from 106 MB to 53 MB using High quality, to 28 MB using Medium quality, and to 13 MB using
-Low quality.
+The data above confirms that the reduction in resolution from 600 to 300 had the desired affect within the PDF. More importantly,
+in this example, the size of the PDF file was reduced from 106 MB to 53 MB using High quality compression. The file size is 28 MB using
+Medium quality compression, and 13 MB using Low quality compression.
 
 
 ## Alternate approach for creating a right-sized PDF
