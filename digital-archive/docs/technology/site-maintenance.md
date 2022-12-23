@@ -22,6 +22,9 @@ Use *one* of these methods to edit site maintenance files:
 
 -   cPanel File Manager
     -   Open cPanel for the `digitalarchive.us` account
+    -   Run **_File Manager_**
+    -   Navigate to the `bin` folder `/home/daus/bin` which contains scripts, python, and data files
+
 -   [Nano editor](https://www.nano-editor.org/):
     -   `nano <file-name>` e.g. `nano digital-archive-sites.csv`
     -   Perform edits
@@ -56,7 +59,7 @@ The master files for a Digital Archive installation are located on the `digitala
 To update the master files with the local development files:
 
 -   Run Beyond Compare
--   Run the `DAUS 3.0 INSTALLATION` session
+-   Run the `DAUS\DAUS PLUGINS and THEMES` session
 -   **Mirror Right** local `C:\xampp\htdocs\omeka` to `public_html/digitalarchive` on the daus server
 
 !!! warning ""
@@ -67,8 +70,12 @@ You can very quickly push only the updated master files to one or all Digital Ar
 
 **Update only plugins and themes**
 
-To update just the `plugins` and `themes` folders, choose one of these commands:
+-   [Login to the server using the command line](#command-line-interface).
+
+To update just the `plugins` and `themes` folders, choose one of the commands below. The first command has no
+parameter and will display all of the valid user names e.g. `swhplibr`.
 ```
+$ sudo ./sync-digitalarchive 
 $ sudo ./sync-digitalarchive <cpanel-user-name> 
 $ sudo ./sync-digitalarchive ALL
 ```
@@ -95,6 +102,8 @@ plugins/
     If an updated plugin's version number changed, you will need to manually go to each site's plugins page to upgrade the plugin. If you don't do this, the plugin won't work which will probably break the site. A common occurrence of this is an Omeka update to the Simple Pages plugin.
 
 **Update all installation files**
+
+-   [Login to the server using the command line](#command-line-interface).
 
 To update *all* installation files and folders, choose one of these commands:
 ```
