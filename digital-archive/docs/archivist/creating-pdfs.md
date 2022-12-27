@@ -15,7 +15,7 @@ Here is a summary of the best way to create a PDF in most situations.
 -   Use a PDF program like [Adobe Acrobat Pro](https://www.adobe.com/acrobat/complete-pdf-solution.html)
     or [FoxIt PDF Editor](https://www.foxit.com/pdf-editor/) to:
     -   [Combine the TIFF files into a PDF file](#combining-scan-files-into-a-pdf-file).
-    -   Create an [optimized copy of the PDF](#how-to-optimize-a-pdf-file) that has a smaller file size than the original.
+    -   Create an [optimized copy of the PDF](#create-an-optimized-copy-of-the-pdf) that has a smaller file size than the original.
 -   [OCR the optimized PDF](#ocr-optical-character-recognition)
 -   [Attach the smaller PDF](/archivist/attach-file/#attach-an-image-or-pdf-to-an-item) to a Digital Archive item.
 -   Move the TIFF files to your [archival storage](/archivist/best-practices/#archival-file-management) area.
@@ -45,6 +45,9 @@ Examples are type-written or typeset text where the words, not an image of the w
 books, and other textual material, you can scan the pages directly to a single PDF which is much faster than scanning to
 individual TIFF files and then combining them into a PDF. Furthermore, you can scan at 300 PPI, possibly using grayscale instead
 of color, to produce smaller files.
+
+If you opt to create a PDF file directly from the scanner, you can still create an [optimized copy of the PDF](#create-an-optimized-copy-of-the-pdf)
+that has a smaller file size than the original.
 
 #### Rule: Optimize the PDF file created from the TIFF files   
 You optimize a PDF to create a smaller *copy* while keeping the original PDF file which can be tens or hundreds of megabytes in size.

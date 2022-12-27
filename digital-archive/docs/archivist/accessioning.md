@@ -385,11 +385,7 @@ In the explanations below, `####` means the accession number.
 :   This step produces a searchable index that, once attached to the UA in step 5A, makes a detailed description of the
     accession searchable via the Digital Archive.
 
-    -   Make a copy of the file named `accession-index-template.docx` which is   
-        located in the Google Drive `Policies and Procedures` folder.
-    -   Rename the copy to `accession-index-####.docx` where `####` is the accession number.
-    -   Follow the instructions for [creating an index for an accession](#accession-index).
-    -   Save the index Word document as a PDF file named `accession-index-####.pdf`.
+    -   Follow the instructions for [creating an accession index](#creating-an-accession-index).
     -   Create a new S3 folder named `S3\Accessions\####`.
     -   Upload the PDF and Word files to the S3 folder.
 
@@ -577,47 +573,115 @@ The screenshot below shows some of the fields and a few of the many rows of the 
 ---
 
 ## Accession Index
-- Create diagram showing indexing process.
-    -    Accession reviewed by curator at outset
-    -    Archivist creates index, asks curator for help filling in blanks
-    -    Archivist submits index to curator for approval
-- Each row should contain all available metadata, same as would go into a DA item.
-- Index should not have blank entries
-- To fill in blanks, try to find related items in DA to determine whether to keep or separate an item.
-- Use a separate table in the index file to list items that have been separated.
-- Mention that the index can just be text in a UAs Description field when appropriate.
 
+An accession index is an inventory of what's in an accession. The index
+contributes to the [goal of accessibility](#accessibility) by making the contents of an accession searchable
+even if the accession's individual items have not yet been added to the Digital Archive.
 
-
-The real work of accessioning begins with indexing the accession's contents. The archivist examines the items
-in the accession and creates a table in a Word document with one row for each item. Depending on the information available,
-the table may be complete and detailed, or it may be sparse, only identifying the most significant items in the accession,
-or only those items for which information is known.
-
-When creating the index, use as many relevant keywords as possible since the text in the index will be searchable.
-The words in the index will determine whether someone will be able to search for and find something of
-interest in the accession.
-
-The index table should contain the columns listed below and possibly others if there is other information to record such as which
-of a set of photo albums a photograph item is contained in.
-
--   **ID number**: An identification number used for [file naming](#file-naming) when the item is or was scanned.
--   **Description**: A concise, but keyword-rich description of the item.
--   **Date**: The date of the item if known.
--   **Notes**: Other information about the item. 
-
-Below is a screenshot showing an example of a typical index where there is a lot of information for some
-items and none for others.
+In most cases, an archivist creates an accession Index as a Word document and then converts it to a PDF file.
+Below is an example of a typical accession index.
 
 ![image](accessioning-19.jpg)
 
-In addition to making the accession accessible and searchable via the Digital Archive, the index also provides a guide
-for someone who is tasked with scanning the items in the accession. They will use the table's Description column to identify
-items and use the Item Number to derive the scan's file name.
+For some accessions it is sufficient to create a very simple index and paste it into the **_Description_** field
+for the accession's Digital Archive item. Below is an example of this kind of accession index.
 
-### Auto-numbering index table rows
+![image](accessioning-27.jpg)
+
+ The simpler index
+would be appropriate when little is known about the individual items, or as a way to quickly make an accession
+accessible when there is not enough time to create a more detailed index. The simpler index can also be sufficient if
+the accession has a [contact sheet](#accession-contact-sheet) containing keyword-rich file names which add to the
+accession's searchability.
+
+### Creating an accession index
+This section explain the key elements involved in creating an accession index:
+
+-   Curator assessment of the accession
+-   Item ID numbers
+-   Accession index template
+-   Metadata
+-   Curator approval of the index file
+
+#### Curator assessment of the accession
+Before an archivist creates an index for an accession, the curator should assess the items in the accession
+to determine which items should be: 
+
+-   Separated out because they don't satisfy the [collection development policy](#collection-development-policy).
+-   Assigned individual ID numbers and be listed on individual rows in the index.
+-   Treated as a set to be described on one row in the index.
+-   Eventually be digitized.
+
+This assessment effort by the curator ensures that the time an archivist spends creating the accession index will
+be focused on items that the curator deemed most important.
+
+#### Item ID numbers
+Index creation and scanning are faster and easier when the accession items identified by the curator as needing ID numbers
+are labeled with those numbers *before* indexing or scanning the items. For prints and documents, this is usually done
+by writing the ID number in pencil in an inconspicuous place such as the back of the print or document. A pen may be required
+if pencil will not mark. If the item cannot be marked inconspicuously, the item can be placed in a clear sleeve with the ID number
+written on the sleeve with a sharpie. Do not rely on sticky notes for this purpose since they might detach leaving the item unidentified.
+
+Pre-labeling the items ensures that the physical items match the items in the index which is especially helpful if the
+materials get mixed up while handling them.
+
+The ID number is usually the accession number (or sub-accession number) followed by a hyphen followed by a three digit number
+with leading zeros. For example `2014-001`, or `1071_03-071`. If the item is already a digital file, the file name can
+be used as the ID "number" or it can be renamed to follow the usual accession item numbering scheme.
+
+When it comes time to scan the accession's items, the person doing the scanning uses the ID numbers as the item file names.
+
+#### Accession index template
+An archivist creates an accession-index from a template. To use the template:
+
+-   Make a copy of the file named `accession-index-template.docx` which is   
+    located in the Google Drive `Policies and Procedures` folder.
+-   Rename the copy to `accession-index-####.docx` where `####` is the accession number.
+
+The template file contains two columns: `ID Number` and `Description` but you can add additional columns
+to provide information that is unique to the items in the accession. For example, when scanning the pages
+of a photo album without first removing each photo, and without marring the album pages with ID numbers,
+you can identify photos by their position on the album page. The example below does this by using a `Position` column.
+
+![image](accessioning-28.jpg)
+
+You can also add notes in the form of paragraphs above and/or below the table as shown in the examples in this section.
+
+##### Auto-numbering index table rows
+When creating a long index, you can save time by having Microsoft Word automatically number the index
+rows for you. To do this, remove all but the first row from the template, select the ID Number cell in that row, and
+then define a numbering format as shown below. The format will be applied when you add new rows,
+saving you from having to type the number each time.
 
 ![image](accessioning-26.jpg)
+
+#### Metadata
+When filling out the description for index rows, use as many relevant keywords as possible since that
+text will be searchable. The words you choose will determine whether someone will be able to search for
+and find something of interest to them in the accession.
+
+In the description, include as much metadata as you know about the item. For example, for a postcard,
+include the names of the publisher and photographer if known, a description of the postcard's photo
+(from the card's text or, if not provided, your own words), and the date if there is a postmark. If
+the back of the card is of interest, use two rows in the index, one for the front and one for the back,
+so that the person scanning the card will know to scan both sides.
+
+To decide what metadata to include in the description, think about it this way. Later, when this item
+gets added to the Digital Archive, the metadata should be sufficient to fill in the item's fields
+just by looking at the index and the scan, without having to retrieve and handle the physical item.
+
+When using acronyms, spell out the first instance, for example write "Acadia National Park (ANP)" the
+first time instead of just "ANP".
+
+#### Separated out items
+When the accessions contains items that the curator separated out, add a paragraph or a separate table
+to the accession index that briefly describes those items.
+
+#### Curator approval of the index file
+When the index is complete, the archivist:
+
+- Submits the index to the curator for approval.
+- Saves the approved index Word document as a PDF file named `accession-index-####.pdf` where `####` is the accession number.
 
 ---
 
