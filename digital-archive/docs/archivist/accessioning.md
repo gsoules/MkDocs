@@ -25,7 +25,6 @@ At SWHPL (pronounced *swiple*, rhymes with *triple*), *accessioning* is the proc
 -   [How To](#how-to)
     -   [Add a new accession to the **_Accessions_** table](#add-a-new-accession-to-the-accessions-table)
     -   [Choose an accession's next step](#choose-an-accessions-next-step)
-    -   [Add a new task to the **_Tasks_** table](#add-a-new-task-to-the-tasks-table)
     -   [Add a new donor to the **_Donors_** table](#add-a-new-donor-to-the-donors-table)
     -   [Add a note to an accession record](#add-a-note-to-an-accession-record)
     -   [Deaccession an accession](#deaccession-an-accession)
@@ -521,6 +520,18 @@ Sub-accessions appear in the **_Accessions_** table immediately below their prim
 
 ![image](accessioning-21.jpg)
 
+#### Prioritizing accessions
+The **_Accessions_** table contains a **_Priority_** field that is set by the curator to rank an accession relative to other accessions with
+regard to when the accession should get attention. The priority values 1 to 5 represent lowest to highest priority, except for 0 which means not yet determined.
+A way to think about the values 1 to 5 is: lowest, low, medium, high, and highest priority. Very few accessions should have priority 5. Only
+use 5 to identify accessions that should soon make their way into the [**_Task_** table](#tasks-table). An accession with priority 1 is so unimportant
+that perhaps it should be deaccessioned.
+
+An accession's priority should not be interpreted to indicate its importance within the collection, though that is usually the case. The curator may
+temporarily assign a high priority to accessions of lower importance for administrative purposes. For example, while assessing a set of accessions to
+determine their importance, the curator may set the priority of each to 5 so that they can then view all the accessions grouped by priority and have
+those accessions all appear in the same group.
+
 ### Deaccessions table
 The **_Deaccessions_** table is used to keep a record of which accessions have been deaccessioned. A deaccessioned record still
 exists in the **_Accessions_** table so that information about it is never lost, but the **_Accessions_** table is normally filtered
@@ -738,24 +749,6 @@ Step                        | Meaning       | Workflow
 **_None_**   | Additional work could be performed on the accession, such as scanning, but the items do not warrant further effort.
 **_Completed_**   | All the steps for the accession have been performed and there is nothing else to do.
 
---- 
-
-### Add a new task to the Tasks table
-Follow these steps to add a new record to the **_Tasks_** table.
-
--   View the **_Tasks_** table in Airtable.
--   In the **_Views_** sidebar, click  **_New Task Form_**.
--   Click the **_Open form_** button in the top menu (red arrow in screenshot below).
-
-    ![image](accessioning-17.jpg)
-
--   A form like in the screenshot below appears.
--   Fill in the fields.
--   Click the **_Submit_** button at the bottom of the form.
--   A new record will be added to the **_Tasks_** table.
-
-![image](accessioning-10.jpg)
-
 ---
 
 ### Add a new donor to the Donors table
@@ -961,15 +954,16 @@ See [creating PDFs from scans](/archivist/creating-pdfs/).
 ### Epson scanner software
 SWHPL uses Epson scanners and Epson drivers and programs.
 
-https://epson.com/Support/Scanners/Perfection-Series/Epson-Perfection-V600-Photo/s/SPT_B11B198011
+To install the software on a PC, download the scanner driver and Epson Scan Utility for your scanner.
+The driver and software for the Epson V600 scanner is available [here](https://epson.com/Support/Scanners/Perfection-Series/Epson-Perfection-V600-Photo/s/SPT_B11B198011).
 
--   Download
--   Open .exe file
--   Install
+After you download the software:
 
-RUn the app
--   Choose `Professional Mode`
--   
+-   Open the `.exe` file
+-   follow the installation steps
+-   Run the program using Professional Mode
+
+Learn about [scanning](/archivist/scanning/#scanning).
 
 
 ### IrfanView
