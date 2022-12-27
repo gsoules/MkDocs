@@ -589,7 +589,7 @@ An accession index is an inventory of what's in an accession. The index
 contributes to the [goal of accessibility](#accessibility) by making the contents of an accession searchable
 even if the accession's individual items have not yet been added to the Digital Archive.
 
-In most cases, an archivist creates an accession Index as a Word document and then converts it to a PDF file.
+In most cases, an archivist creates an accession index as a Word document and then converts it to a PDF file.
 Below is an example of a typical accession index.
 
 ![image](accessioning-19.jpg)
@@ -636,14 +636,14 @@ written on the sleeve with a sharpie. Do not rely on sticky notes for this purpo
 Pre-labeling the items ensures that the physical items match the items in the index which is especially helpful if the
 materials get mixed up while handling them.
 
-The ID number is usually the accession number (or sub-accession number) followed by a hyphen followed by a three digit number
+The ID number is usually the accession number (or sub-accession number) followed by a hyphen followed by a three-digit number
 with leading zeros. For example `2014-001`, or `1071_03-071`. If the item is already a digital file, the file name can
 be used as the ID "number" or it can be renamed to follow the usual accession item numbering scheme.
 
 When it comes time to scan the accession's items, the person doing the scanning uses the ID numbers as the item file names.
 
 #### Accession index template
-An archivist creates an accession-index from a template. To use the template:
+An archivist creates an accession index from a template. To use the template:
 
 -   Make a copy of the file named `accession-index-template.docx` which is   
     located in the Google Drive `Policies and Procedures` folder.
@@ -681,11 +681,11 @@ To decide what metadata to include in the description, think about it this way. 
 gets added to the Digital Archive, the metadata should be sufficient to fill in the item's fields
 just by looking at the index and the scan, without having to retrieve and handle the physical item.
 
-When using acronyms, spell out the first instance, for example write "Acadia National Park (ANP)" the
+When using acronyms, spell out the first instance, for example, write "Acadia National Park (ANP)" the
 first time instead of just "ANP".
 
 #### Separated out items
-When the accessions contains items that the curator separated out, add a paragraph or a separate table
+When an accession contains items that the curator separated out, add a paragraph or a separate table
 to the accession index that briefly describes those items.
 
 #### Curator approval of the index file
@@ -697,7 +697,7 @@ When the index is complete, the archivist:
 ---
 
 ## How To
-The topics in this section explain how to perform common accessioning tasks.
+The topics in this section explains how to perform common accessioning tasks.
 
 ### Add a new accession to the Accessions table
 Follow these steps to add a new record to the **_Accessions_** table for an accession or sub-accession.
@@ -817,7 +817,8 @@ For detailed information on scanning, see the [documentation on scanning](/archi
 
 Use the [accession's index file](#accession-index) as a guide for what file name to use for each item.
 
-The file name format is `####-###` where `####` is the four-digit accession number and `###` is the three-digit item sequence within the accession. For example, the third file in accession `1071` would be named `1071-003.tiff`.
+The file name format is `####-###` where `####` is the four-digit accession number and `###` is the three-digit
+item sequence within the accession. For example, the third file in accession `1071` would be named `1071-003.tiff`.
 
 To have the Epson [scanner software](#epson-scanner-software) automatically create a sequence of file names:
 
@@ -960,7 +961,7 @@ The driver and software for the Epson V600 scanner is available [here](https://e
 After you download the software:
 
 -   Open the `.exe` file
--   follow the installation steps
+-   Follow the installation steps
 -   Run the program using Professional Mode
 
 Learn about [scanning](/archivist/scanning/#scanning).
