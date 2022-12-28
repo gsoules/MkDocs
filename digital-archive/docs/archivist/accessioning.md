@@ -353,7 +353,13 @@ This section explains each step in the accessioning workflow shown in the previo
 [accepting a donation for accession](#accepting-a-donation-for-accession) to learn about the policy and procedures
 that archivists adhere to prior to acceptance of a new donation.
 
-In the explanations below, `####` means the accession number.
+##### S3 accession folder
+The steps below often refer to the "accessions's S3 folder" which, for a primary accession, is the accession number, but 
+for a sub-accession it means accession number\sub-accession number. For example, for primary accession `1012`, the S3
+accession folder is `1012`. For sub-accession `2026_02`, the accession folder is `2026\2026_02`. This is because S3
+sub-accession folders are contained within their primary S3 accession folder.
+
+In the steps below, `####` means the accession number.
 
 1 &ndash; Record deed of gift
 :   Procure a signed and dated deed of gift form from the donor.
@@ -385,14 +391,14 @@ In the explanations below, `####` means the accession number.
     accession searchable via the Digital Archive.
 
     -   Follow the instructions for [creating an accession index](#creating-an-accession-index).
-    -   Create a new S3 folder named `S3\Accessions\####`.
+    -   Create a new [S3 folder for the accession](#s3-accession-folder).
     -   Upload the PDF and Word files to the S3 folder.
 
 5A &ndash; Attach index to UA item and make item public
 :   This step makes the UA's index PDF publicly accessible.
 
     -   In the Digital Archive, [edit the item](/archivist/items/#edit-an-item) created in step 3A.
-    -   Go to the **_Files_** tab to see the contents of `S3\Accessions\####` created in step 4A.
+    -   Go to the **_Files_** tab to see the contents of the [accessions's S3 folder](#s3-accession-folder) created in step 4A.
     -   Check the box for the index PDF file uploaded in step 4A.
     -   Make the item public.
     -   Save the item.
@@ -413,14 +419,14 @@ In the explanations below, `####` means the accession number.
     -   The app will save the file within the folder as `accession-contact-sheet-####.pdf`.
 
 8A &ndash; Upload files and contact sheet to `S3\Accessions`
-:   Upload the accessions files and the contact sheet to `S3\Accessions\####`.
+:   Upload the accessions files and the contact sheet to the [accessions's S3 folder](#s3-accession-folder).
 
 
 9A &ndash; Attach contact sheet to public UA item
 :   This step makes thumbnails of the accession's images publicly accessible.
 
     -   In the Digital Archive, [edit the item](/archivist/items/#edit-an-item) created in step 3A.
-    -   Go to the **_Files_** tab to see the contents of `S3\Accessions\####` created in step 4A.
+    -   Go to the **_Files_** tab to see the contents of the [accessions's S3 folder](#s3-accession-folder) created in step 4A.
     -   Check only the box for the contact sheet PDF file uploaded in step 8A.
     -   Save the item.
     -   Verify that the contact sheet appears as the item's first image.
@@ -466,7 +472,7 @@ In the explanations below, `####` means the accession number.
         grouping and identifier. For example, if the identifier is `12345`, the grouping is `12000` and
         the identifier is `12345`.
     -   Upload only the contact sheet PDF to the newly created S3 folder.  
-        The accessions files stay in `S3\Accessions\####`.
+        The accessions files stay in the [accessions's S3 folder](##s3-accession-folder).
 
 6B &ndash; Attach contact sheet to item and make item public
 :   This step makes the accession's images publicly accessible.
@@ -991,8 +997,8 @@ Archivists use the [Irfanview Graphic Viewer](https://www.irfanview.com/) utilit
 
 Irfanview can do the following on individual files or on a batch of files:
 
--   Convert TIFF to JPEG
 -   Resize images
+-   Convert TIFF to JPEG
 -   Rename files
 -   Many, many other features
 
