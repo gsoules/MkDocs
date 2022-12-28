@@ -660,9 +660,24 @@ You can also add notes in the form of paragraphs above and/or below the table as
 
 ##### Auto-numbering index table rows
 When creating a long index, you can save time by having Microsoft Word automatically number the index
-rows for you. To do this, remove all but the first row from the template, select the ID Number cell in that row, and
-then define a numbering format as shown below. The format will be applied when you add new rows,
-saving you from having to type the number each time.
+rows for you. Here are the steps to set up auto-numbering.
+
+-   Remove all but the first row from the template.
+-   Click in the `ID Number` cell of the first and only row.
+-   On the **_Home_** tab expand the **_Numbering_** dropdown (see left screenshot below).
+-   At the bottom of the dropdown, click **_Define New Number Format..._** (red arrow in screenshot).
+-   On the **_Define New Number Format_** panel (see right screenshot below):
+    -   Choose `001, 002, 003, ...` for the **_Number style_**.
+    -   Edit **_Number format_** to use the accession number as a prefix e.g. `1027-` or `2026_03-`.
+    -   Remove the period at the end of the **_Number format_**.
+    -   Click the OK button.
+-   A formatted number will appear in the cell.
+-   Right-click in the cell and choose **_Adjust List Indents..._** from the menu.
+-   Set **_Number position_** and **_Text indent_** to `0` and choose `Nothing` for **_Follow number with_**.
+
+When you add a new row, the `ID Number` cell will get filled-in automatically with the next number.
+
+The screenshots below show the dialogs and fields mentioned in the steps above.
 
 ![image](accessioning-26.jpg)
 
@@ -906,11 +921,15 @@ contact sheets from a folder of files. Documentation will be added here in the f
 
 ![image](accessioning-11.jpg)
 
-#### Known bugs
+#### Known issues
 Here are problems that occasionally occur with the generated PDF file.
 
-1.  An image sometimes appears with a black background. This occurs only with some, but not all images that are contained in a PDF that have transparency such as a PNG image.
-1.  The image for a TIF file sometimes appears so faded as to be almost white. A solution is to duplicate the images using [Irfanview](#irfanview) to create new TIF files that don't have this problem. Do this by converting from TIF to TIF without resizing.
+1.  An image sometimes appears with a black background. This occurs only with some, but not all images that are contained in a PDF that have transparency such as a PNG image. There is no known workaround.
+1.  The image for a TIFF file will be white or almost white. This occurs if the scan was done using 16-bit Grayscale instead of the
+recommended 8-bit Grayscale. You can fix the file without rescanning it in one of these two ways:
+    -   Open the file in [Irfanview](#irfanview) and then save it as a new TIFF file. This will change the the file to use
+        8 bits per pixel instead of 16 bits per pixel.
+    -   Open the file in Photoshop, change the Image > Mode to be 8 Bits/Channel instead of 16 Bits/Channel, and save the file.
 
 ### AvantS3
 AvantS3 is the [plugin](/plugins/avants3) that allows Amazon AWS S3 to be integrated with the Digital Archive.
@@ -978,6 +997,34 @@ Irfanview can do the following on individual files or on a batch of files:
 -   Many, many other features
 
 As of November 2022, the current version of the 64-bit version for Windows was 4.60.
+
+
+#### Resize an image to make it smaller
+Follow the steps below to make an image smaller.
+
+-   Open the file in IrfanView
+-   Choose **_Image > Resize/Resample_** from the menu
+-   Choose the **_Set new size_** radio button
+-   Enter a **_Width_** or a **_Height_** but not both
+-   Click the OK button
+-   Choose **_File > Save (original folder)_** from the menu (or use Ctrl+S)
+-   To also convert the image to JPEG:
+    -   Select `JPG` from the **_Save as type_** dropdown
+-   Click the **_Save_** button
+
+![image](accessioning-10.jpg)
+
+When creating a JPEG file to use as a Digital Archive item attachment, use `1200` for the width when the image
+is wide or use `1200` for the height when the image is tall.
+
+#### Convert TIFF to JPEG
+Follow the steps below to convert a TIFF image to JPEG without resizing the image.
+To also resize the image, follow the resize steps in the previous section.
+
+-   Open the file in IrfanView
+-   Choose **_File > Save (original folder)_** from the menu (or use Ctrl+S)
+-   Select `JPG` from the **_Save as type_** dropdown
+-   Click the **_Save_** button
 
 ### Zoomify
 Used to create tiles for [zoomable images](/administrator/zoomable-images/#zoomable-images) in the Digital Archive.

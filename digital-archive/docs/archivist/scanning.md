@@ -26,8 +26,12 @@ of the differences between scans made at different resolutions.
     page that had been written or doodled on using a colored pen, or if the page contained a color image.
     A resolution of 300 ppi is also fine for OCR (optical character recognition) purposes.
 -   An image scanned as 24-bit color, will produce a file that is 3 times the size as the same image scanned as 8-bit Grayscale.
-    That's because 24 bits is 3 times as many bits as 8 bits. Similarly, the file for an image scanned as 16-bit Grayscale
-    will be 2/3 the size of the file for the same image scanned as 24-bit color.
+    That's because 24 bits is 3 times as many bits as 8 bits.
+
+!!! Note ""
+    When using Grayscale, choose 8-bit, not 16-bit. A 16-bit scan will produce a file that is twice the size
+    as when using 8-bit with no perceivable difference in quality. The only time to use 16-bit is if you plan
+    to perform heavy post-processing of the image using a program like Photoshop.
 
 
 ## Typical scanner settings

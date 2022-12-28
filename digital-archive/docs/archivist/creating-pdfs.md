@@ -43,7 +43,7 @@ you'd need to use a larger suitcase.
 The exception to the TIFF rule is when the materials you are scanning do not need to be preserved with the highest quality possible.
 Examples are type-written or typeset text where the words, not an image of the words, is what's most important. For letters,
 books, and other textual material, you can scan the pages directly to a single PDF which is much faster than scanning to
-individual TIFF files and then combining them into a PDF. Furthermore, you can scan at 300 PPI, possibly using grayscale instead
+individual TIFF files and then combining them into a PDF. Furthermore, you can scan at 300 PPI, possibly using 8-bit grayscale instead
 of color, to produce smaller files.
 
 If you opt to create a PDF file directly from the scanner, you can still create an [optimized copy of the PDF](#create-an-optimized-copy-of-the-pdf)
