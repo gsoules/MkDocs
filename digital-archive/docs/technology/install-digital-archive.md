@@ -1247,7 +1247,7 @@ Identifier, filter: DigitalArchive, filterIdentifierS3
 
 ### Create AWS credentials
 
-Before installating AvantElasticsearch, create the AWS credentials that you'll need to provide on the
+Before installing AvantElasticsearch, create the AWS credentials that you'll need to provide on the
 AvantElasticsearch configuration page.
 
 -	Go to <https://aws.amazon.com/>
@@ -1255,11 +1255,10 @@ AvantElasticsearch configuration page.
 -   Enter the Account ID ending in `4548`
 -   If the page says **_Sign is as IAM user_**, click the `Sign-in using root user email` link
 -   Enter the root user email
--   Type in the characters on the Security Check page
 -   Enter the root user password
 -   You should now be on the **_AWS Management Console_** page
--	In the top menu dropdown for the logged in user, choose `My Security Credentials`
--   You should now be on the **_Your Security Credentials_** page
+-	In the top menu dropdown for the logged in user, choose `Security Credentials (root user)`
+-   You should now be on the **_My Security Credentials_** page
 -	Click `Users` in the left menu
 -	Click the `Add User` button at the top
 -	Type the organization abbreviation for the `User name` e.g. `swhpl`
