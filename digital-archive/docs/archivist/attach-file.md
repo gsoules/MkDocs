@@ -8,10 +8,9 @@ you also see the image or PDF. You can attach multiple image and/or PDF files to
 This page explains two methods for attaching image or PDF files to an item:
 
 -   [Upload files to your Digital Archive](#upload-files-to-your-digital-archive)
--   [Upload files to your S3 server](#upload-files-to-your-s3-server)
+-   [Choose files stored in S3](#choose-files-stored-in-s3)
 
-The second method is only available if your Digital Archive installation uses [AvantS3](/plugins/avants3)
-to store archival assets on Amazon AWS S3. If you don't know what S3 is, use the first method.
+If not [using S3](/archivist/using-s3/), you must use the first method. If using S3, you must use the second method.
 
 ---
 
@@ -105,100 +104,26 @@ Follow the steps below to attach a file to an item by uploading the file to your
     name which can become confusing if you are relying on file names to know which Digital
     Archive files correspond to archival versions of those files that your are storing somewhere else.
 
-## Upload files to your S3 server
+## Choose files stored in S3
 
 *Skip this section if your installation is not using S3*.
 
-1 &ndash; Go to the item's S3 page on AWS
-:   The screenshot below shows the [admin item view page](/archivist/items/#view-an-item)
-    for a newly created item that has metadata, but no attachments.
-    
-    Click the S3 link to get to the item's S3 page on AWS in a new browser tab.
-    The S3 link is next to the item's **_Identifier_**.
-    
-    ![New items with no S3 files](attach-file-13.jpg)
+The steps for attaching an image or PDF to an item when [using S3](/archivist/using-s3/) are explained in these places:
 
-    If you are going to S3 for the first time today, you'll need to login, but only once a day.
-
-    ![S3 login page](attach-file-12.jpg)
-
-2 &ndash; Upload files to S3
-:   Once logged in you will see the S3 page for the item. S3 *automatically* creates and manages a 
-    location for the uploaded files based on the item's **_identifier_** &ndash; you don't have to 
-    create a folder or do anything else before uploading files.
-    
-    Drag files onto the S3 page, or click the **_Upload_** button to
-    browse for files on your computer.
-
-    The screenshot below shows what the page looks like after uploading two files for item 16159: a JPEG
-    version of the file and the original high resolution TIFF file from the scanner.
-
-    ![S3 with files](attach-file-8.jpg)
-
-    Once you are done uploading files, you can close the S3 browser tab.
-
-    
-3 &ndash; Select the S3 file(s) to attach to the item
-:   Go to the **_Files_** tab of the [**_Edit Item_** page](/archivist/items/#edit-an-item).
-
-    The S3 files from AWS appear in a list. Files that can be attached to the item have
-    a checkbox next to them. Files without a checkbox are ones the Digital Archive, and browsers
-    in general, do not support such as TIFF files, Word documents, and spreadsheets.
-
-    The screenshot below shows both of the files that were uploaded to S3 in step 2 above,
-    but only the JPG file has a checkbox.
-
-    Check the boxes for the files you want to attach to the item.
-
-    ![S3 Files tab](attach-file-9.jpg)
-
-4 &ndash; Click the **_Save Changes_** button
-:   When you click the **_Save Changes_** button, the [AvantS3 plugin](/plugins/avants3) will:
-
-    -   Download the checked files from your S3 server
-    -   Downsize JPEG images to be 1200px on the long edge
-    -   Attach the files to the item
-    
-    When the save has completed, the item will appear as shown below.
-
-    ![Item view with S3 files](attach-file-10.jpg)
-
-5 &ndash; Change the file attachments (optional)
-:   The steps for reordering and deleting S3 attachments are the same as explained for  
-    [uploading files to the Digital Archive](#upload-files-to-your-digital-archive) when not using S3.
-    However, when you delete an attachment, the file itself remains in S3 and continues to
-    show up in the S3 files list. That's because the list is only a reflection of what's stored
-    on your S3 server. As such, you cannot accidentally delete an archival asset from the
-    Digital Archive.
-
-    To replace an attached file with a newer version having the same file name:
-    
-    -   Upload the newer file to S3
-    -   S3 keeps a copy of the older version in case you make a mistake and need to recover it
-    -   On the **_Files_** tab of the [**_Edit Item_** page](/archivist/items/#edit-an-item), check the box
-        for the file that got updated
-    -   Click the **_Save Changes_** button
-    -   The Digital Archive will replace the older attachment with the newer one using the same file name 
-        (you don't need to first delete the older file as you do when not using S3)
-
-    In the screenshot below, note that the **_Action_** column value for file `JPH Receipt 1977.jpg`
-    says `Replace existing file` whereas in step 3 above it said `Add to item`. That's because the
-    Digital Archive knows which S3 files can be attached and which are already attached. This makes it
-    easy to tell if you inadvertently forgot to attach an S3 file to the item.
-    
-    ![Files tab with S3 files](attach-file-11.jpg)
+-   [Logging into S3](/archivist/using-s3/#logging-into-s3)
+-   [Uploading files to S3](/archivist/using-s3/#uploading-files-to-s3)
+-   [Attaching S3 files to items](/archivist/using-s3/#attaching-s3-files-to-items)
 
 > A note on using S3
 
 Archivists at the Southwest Harbor Public Library have found that using S3 is far superior to
 other methods they tried for managing archival files and their corresponding Digital Archive items.
-The S3 method is simple, fast, easy, and safe.
 Previously they used Dropbox to store archival assets, but the Dropbox approach required many
 manual steps and was error prone. Dropbox can also get  expensive if you need accounts for
-multiple archivists. S3 storage is relatively inexpensive by comparison. Once set up, S3 works very well,
-but to use it requires that all of your archival assets reside on S3, organized in folders as required
+multiple archivists. S3 storage is inexpensive by comparison. Once set up, S3 works very well,
+but to use it requires that all of your archival assets reside on S3 and are organized in folders as required
 by the  [AvantS3 plugin](/plugins/avants3). In other words, AvantS3 is not something you can just start
-using without the effort and expense required to first switch over to S3 from another technology.
+using without the effort and expense required to switch over to S3 from another storage option.
 
 
 

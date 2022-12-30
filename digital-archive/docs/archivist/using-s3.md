@@ -153,11 +153,79 @@ You *don't* create a subfolder in Items Storage folder for that item because its
 If you need to create additional files while curating the item, for example, a web-sized JPEG of a scan, you add those
 files to the accession's folder in Accessions Storage.
 
-## Uploading S3 files
+## Uploading files to S3
+2 &ndash; Upload files to S3
+:   Once logged in you will see the S3 page for the item. S3 *automatically* creates and manages a 
+    location for the uploaded files based on the item's **_identifier_** &ndash; you don't have to 
+    create a folder or do anything else before uploading files.
+    
+    Drag files onto the S3 page, or click the **_Upload_** button to
+    browse for files on your computer.
+
+    The screenshot below shows what the page looks like after uploading two files for item 16159: a JPEG
+    version of the file and the original high resolution TIFF file from the scanner.
+
+    ![S3 with files](attach-file-8.jpg)
+
+    Once you are done uploading files, you can close the S3 browser tab.
+
 
 ## Attaching S3 files to items
-## Accessing S3 files
+    
+3 &ndash; Select the S3 file(s) to attach to the item
+:   Go to the **_Files_** tab of the [**_Edit Item_** page](/archivist/items/#edit-an-item).
+
+    The S3 files from AWS appear in a list. Files that can be attached to the item have
+    a checkbox next to them. Files without a checkbox are ones the Digital Archive, and browsers
+    in general, do not support such as TIFF files, Word documents, and spreadsheets.
+
+    The screenshot below shows both of the files that were uploaded to S3 in step 2 above,
+    but only the JPG file has a checkbox.
+
+    Check the boxes for the files you want to attach to the item.
+
+    ![S3 Files tab](attach-file-9.jpg)
+
+4 &ndash; Click the **_Save Changes_** button
+:   When you click the **_Save Changes_** button, the [AvantS3 plugin](/plugins/avants3) will:
+
+    -   Download the checked files from your S3 server
+    -   Downsize JPEG images to be 1200px on the long edge
+    -   Attach the files to the item
+    
+    When the save has completed, the item will appear as shown below.
+
+    ![Item view with S3 files](attach-file-10.jpg)
+
+5 &ndash; Change the file attachments (optional)
+:   The steps for reordering and deleting S3 attachments are the same as explained for  
+    [uploading files to the Digital Archive](#upload-files-to-your-digital-archive) when not using S3.
+    However, when you delete an attachment, the file itself remains in S3 and continues to
+    show up in the S3 files list. That's because the list is only a reflection of what's stored
+    on your S3 server. As such, you cannot accidentally delete an archival asset from the
+    Digital Archive.
+
+    To replace an attached file with a newer version having the same file name:
+    
+    -   Upload the newer file to S3
+    -   S3 keeps a copy of the older version in case you make a mistake and need to recover it
+    -   On the **_Files_** tab of the [**_Edit Item_** page](/archivist/items/#edit-an-item), check the box
+        for the file that got updated
+    -   Click the **_Save Changes_** button
+    -   The Digital Archive will replace the older attachment with the newer one using the same file name 
+        (you don't need to first delete the older file as you do when not using S3)
+
+    In the screenshot below, note that the **_Action_** column value for file `JPH Receipt 1977.jpg`
+    says `Replace existing file` whereas in step 3 above it said `Add to item`. That's because the
+    Digital Archive knows which S3 files can be attached and which are already attached. This makes it
+    easy to tell if you inadvertently forgot to attach an S3 file to the item.
+    
+    ![Files tab with S3 files](attach-file-11.jpg)
+
+
+
+
 ## S3 Cautions
 -   Permanent deletions
 -   Move or rename is really a copy
-## Using S3 Browser
+## Using the S3 Browser utility
