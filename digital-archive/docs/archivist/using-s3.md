@@ -20,6 +20,7 @@ These are the primary advantages that S3 offers for a Digital Archive site:
 -   Online access to digital assets by archivists working remotely.
 -   Easy access to digital assets with a single click from the Digital Archive.
 -   Easy one-click attachment of files to Digital Archive items.
+-   Automatic downsizing of JPEG files when attached to an item.
 
 ## Logging into S3
 Follow the steps below to log in to the Amazon Web Services (AWS) Management Console for S3.
@@ -49,7 +50,7 @@ used for the Digital Archive as will be explained in the following sections.
 ## Storage for Items and Accessions
 
 S3 is not a traditional folder-oriented hierarchical file system like you are familiar with on a PC or a Mac. S3 storage is implemented
-using things called buckets, objects, and prefixes, but fortunately, these can be thought of and viewed using familiar terms like folders, subfolders, and files. You do however have to be very careful when working with S3 as explained in the [S3 cautions](#s3-cautions) section.
+using things called buckets, objects, and prefixes, but fortunately, these can be thought of and viewed using familiar terms like folders, subfolders, and files. You do however have to be very careful when working with S3 as explained in the [S3 limitations and cautions](#s3-limitations-and-cautions) section.
 
 SWHPL's S3 storage for the Digital Archive is in a *bucket* named `swhpl-digital-archive`. It is divided into two top-level storage folders:
 
@@ -280,19 +281,23 @@ The previous sections have been about uploading files to S3 and attaching S3 fil
 It is often the case, however, that you simply want to see the S3 files for an item or an accession.
 
 For example, suppose a patron is viewing item 16693 and requests a high-resolution copy of the photograph.
+To immediately access the high-resolution image, all you have to do is view the item and click the `S3` 
+link as shown by the red arrow in the screenshot below.
 
 ![image](s3-16.jpg)
 
-To immediately access the high-resolution image, all you have to do is click the `S3` link as shown by the
-red arrow in the screenshot above. Clicking the link takes you to the S3 folder where the file is stored as
-shown below. You can download the file to make it available to the requestor.
+ Clicking the link takes you to the S3 folder where the file is stored as
+shown below. You can then download the file to make it available to the requestor.
 
 ![image](s3-17.jpg)
 
-The `S3` links also appear when viewing an item using the Omeka administrator interface, but they only ever
-appear to a logged-in Digital Archive user.
+When an item's files are in Items Storage instead of in Accessions Storage, the `S3` link appears next
+to the identifier number, as shown below, instead of the accession number. The `S3` links only appear
+when you are logged-in to the Digital Archive as an administrator.
 
-## S3 Cautions
+![image](s3-20.jpg)
+
+## S3 limitations and cautions
 There are some things to be aware of when using the S3 console.
 
 -   When you delete a file, a hidden version of the file remains.
