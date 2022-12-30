@@ -36,8 +36,6 @@ At SWHPL (pronounced *swiple*, rhymes with *triple*), *accessioning* is the proc
 -   [Tools](#tools)
     -   [Contact sheet app](#contact-sheet-app)
     -   [Avant S3](#avants3)
-    -   [AWS Management Console for S3](#aws-management-console-for-s3)
-    -   [S3 Browser](#s3-browser)
     -   [PDF Editor](#pdf-editor)
     -   [Epson scanner software](#epson-scanner-software)
     -   [IrfanView](#irfanview)
@@ -939,35 +937,7 @@ recommended 8-bit Grayscale. You can fix the file without rescanning it in one o
     -   Open the file in Photoshop, change the Image > Mode to be 8 Bits/Channel instead of 16 Bits/Channel, and save the file.
 
 ### AvantS3
-AvantS3 is the [plugin](/plugins/avants3) that allows Amazon AWS S3 to be integrated with the Digital Archive.
-
-### AWS Management Console for S3
-The [AWS Management Console](https://aws.amazon.com/console) is how you access and work with AWS services such as S3.
-Learn how SWHPL uses it for [uploading files to S3](/archivist/attach-file/#upload-files-to-your-s3-server).
-
-### S3 Browser
-[S3 Browser](https://s3browser.com) is a 3rd-party Windows utility that makes it possible and/or easier to perform tasks
-than with the AWS Management Console for S3.
-
-These S3 Browser features do not exist in the S3 console:
-
--   Preview an image (with the console, you have to download the image to view it).
--   Download multiple files or a folder (the console only lets you download one file at a time).
--   Permanently delete files and folders (requires S3 Browser Pro configured with admin credentials)
-
-#### Permanently delete a deleted folder
-Follow the steps below when you have deleted a folder, but not its prior versions.
-
--   Choose an S3 folder (e.g. `Accessions`) from the upper right panel that contains the folder you want to delete.
--   Choose the **_Versions_** tab in the lower panel.
--   Wait for the version information to load (takes several seconds).
--   Choose `Show only deleted files` from the **_Filters_** dropdown at lower right.
--   Wait for the filtered version information to appear.
--   Select the folder to be deleted and all of its contents.
--   Click the **_Delete_** button (with red X) at the bottom of the panel.
--   Click the **_Yes_** button on the confirmation dialog.
--   The version information will refresh.
--   Choose the **_Tasks_** tab in the lower panel so you won't keep having to wait for the version information to load.
+See [Using S3](/archivist/using-s3/)
 
 ### PDF Editor
 SWHPL uses both Foxit and Adobe Acrobat Pro for working with PDF files to:
