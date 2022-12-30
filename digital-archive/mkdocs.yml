@@ -28,6 +28,7 @@ nav:
         - Scanning: archivist/scanning.md
         - Creating PDF Files from scans: archivist/creating-pdfs.md
         - Accessioning and Curating: archivist/accessioning.md
+        - Using S3: archivist/using-s3.md
     - Relationships:
         - Getting Started with Relationships: relationships/getting-started-relationships.md
         - Archive Relational Model: relationships/archive-relational-model.md
