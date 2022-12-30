@@ -23,25 +23,26 @@ These are the primary advantages that S3 offers for a Digital Archive site:
 -   Automatic downsizing of JPEG files when attached to an item.
 
 ## Logging into S3
-Follow the steps below to log in to the Amazon Web Services (AWS) Management Console for S3.
+Follow the steps below to log in to the Amazon Web Services (AWS) Management Console for S3,
+subsequently referred to as simply the S3 console.
 
 -   First log in to the Digital Archive and go to the Dashboard.
 -   Then click the `S3 Management Console` link to get to the AWS login page.
--   You can also access the console by going directly to `console.aws.amazon.com/s3`.
+-   You can also access the S3 console by going directly to `console.aws.amazon.com/s3`.
 
 ![image](s3-6.jpg)
 
-If you are already logged into S3, the link will take you to the management console.
+If you are already logged into S3, the link will take you to the S3 console.
 
 On the AWS sign-in page, enter your credentials and click the **_Sign in_** button.
 
 ![image](s3-5.jpg)
 
-After you click the **_Sign in_** button, the management console appears as shown below.
+After you click the **_Sign in_** button, the S3 console appears as shown below.
 
 ![image](s3-7.jpg)
 
-In the screenshot above, the bottom of the console shows the two kinds of storage
+In the screenshot above, the bottom of the S3 console shows the two kinds of storage
 used for the Digital Archive as will be explained in the following sections.
 
 -   Clicking on `Accessions` gets you to Accessions Storage
@@ -161,6 +162,11 @@ Another special case is when you add an individual item to the Digital Archive a
 You *don't* create a subfolder in Items Storage folder for that item because its files are already in Accessions Storage.
 If you need to create additional files while curating the item, for example, a web-sized JPEG of a scan, you add those
 files to the accession's folder in Accessions Storage.
+
+One last case is items that are part of an accession, but were added to the Digital Archive before support for accessions
+was added to the AvantS3 plugin. Some of the files for those items might be in both Accessions Storage and in Items Storage.
+You can detect an item like this because [when you view it](#accessing-s3-files), you'll see an `S3` link next to both the
+item's identifier and its accession number whereas for other items, the link only appears next to one or the other.
 
 ## Uploading files to S3
 Before you can upload files to S3, you must first [log into S3](#logging-into-s3).
@@ -287,7 +293,7 @@ link as shown by the red arrow in the screenshot below.
 ![image](s3-16.jpg)
 
  Clicking the link takes you to the S3 folder where the file is stored as
-shown below. You can then download the file to make it available to the requestor.
+shown below. You can then download the file to make it available to the person who requested it.
 
 ![image](s3-17.jpg)
 
@@ -310,7 +316,7 @@ those files. If you delete a file or folder, you are not actually freeing up any
 
 Furthermore, the S3 console will not let you preview an image and it won't let you download more than one file at a time.
 
-To work around those limitations, use the [S3 Browser utility](#s3-browser-utility).
+To work around the S3 conole's limitations, use the [S3 Browser utility](#s3-browser-utility).
 
 ## S3 Browser utility
 [S3 Browser](https://s3browser.com) is a 3rd-party Windows utility that makes it possible and/or easier to perform tasks
@@ -318,8 +324,8 @@ than with the AWS Management Console for S3.
 
 These S3 Browser features do not exist in the S3 console:
 
--   Preview an image (with the console, you have to download the image to view it).
--   Download multiple files or a folder (the console only lets you download one file at a time).
+-   Preview an image (with the S3 console, you have to download the image to view it).
+-   Download multiple files or a folder (the S3 console only lets you download one file at a time).
 -   Permanently delete files and folders (requires S3 Browser Pro configured with admin credentials)
 
 ### Preview an image
