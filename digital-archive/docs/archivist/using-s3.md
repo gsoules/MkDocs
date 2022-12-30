@@ -154,21 +154,52 @@ If you need to create additional files while curating the item, for example, a w
 files to the accession's folder in Accessions Storage.
 
 ## Uploading files to S3
-2 &ndash; Upload files to S3
-:   Once logged in you will see the S3 page for the item. S3 *automatically* creates and manages a 
-    location for the uploaded files based on the item's **_identifier_** &ndash; you don't have to 
-    create a folder or do anything else before uploading files.
-    
-    Drag files onto the S3 page, or click the **_Upload_** button to
-    browse for files on your computer.
+Before you can upload files to S3, you must first [log into S3](#logging-into-s3).
 
-    The screenshot below shows what the page looks like after uploading two files for item 16159: a JPEG
-    version of the file and the original high resolution TIFF file from the scanner.
+### Creating a new S3 folder
+If the folder that you want to upload files to does not yet exist, create it following the steps below.
 
-    ![S3 with files](attach-file-8.jpg)
+-   Determine the name of the new folder:
+    -   For an item, the folder name is the item's identifier number. As such, you need to first add the item to
+        the Digital Archive so that you know its identifier before you can create an S3 folder for the item.
+    -   For an accession, the folder name is the accession number or sub-accession number.        
+-   Go to the S3 folder that will *contain* the new folder.
+    -   For an item, the containing folder is `swhpl-digital-archive > Database > `#####` where
+        `#####` is the item's [group folder](#item-groups).
+    -   For a primary accession, the containing folder is `swhpl-digital-archive > Accessions`.
+    -   For a sub-accession, the containing folder is `swhpl-digital-archive > Accessions` > `####` where
+        `####` is the number of the primary accession.
+-   Click the **_Create folder_** button to get to the page shown below.
 
-    Once you are done uploading files, you can close the S3 browser tab.
+![image](s3-8.jpg)
 
+On the **_Create folder_** page, type the new folder name in the **_Folder name_** field and click the **_Create folder_** button.
+To go to the new folder, click the folder name link in the upper-left where it says "Successfully created folder." Or you
+can navigate to the new folder in the usual way.
+
+![image](s3-10.jpg)
+
+### Upload files to an S3 folder
+
+-   In the S3 console, go to the S3 folder. If the folder does not exist, [create the folder](#creating-a-new-s3-folder).
+-   On your computer, open the folder that contains the files to be uploaded.
+-   Drag files from your computer folder onto the S3 page.
+
+The entire screen becomes a drop target as shown in the screenshot below.
+
+![image](s3-9.jpg)
+
+As an alternative to dragging files to upload, you can click the S3 **_Upload_** button to go to an S3 page
+that will let you browse for files or a folder on your computer.
+
+After you drag the files, an upload confirmation page appears as shown below. Verify that the files
+it shows are the ones you want to upload and then click the **_Upload_** button.
+
+![image](s3-11.jpg)
+
+During the upload a progress bar appears at the top of the page as shown below. When the upload completes, a status page appears.
+
+![image](s3-12.jpg)
 
 ## Attaching S3 files to items
     
