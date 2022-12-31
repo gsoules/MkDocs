@@ -305,7 +305,7 @@ when you are logged-in to the Digital Archive as an administrator.
 ![image](s3-20.jpg)
 
 ## S3 limitations and cautions
-#### Cautions
+### Cautions
 There are some things to be aware of when using the S3 console.
 
 -   When you delete a file, a hidden version of the file remains.
@@ -316,14 +316,71 @@ It's like this for safety reasons, so that you can undo a mistake. However, if y
 a folder that contains a lots of files, you are actually doubling the amount of storage required for
 those files. If you delete a file or folder, you are not actually freeing up any space.
 
-#### Limitations
+### Limitations
 The S3 console:
 
 -   Does not provide a way to preview an image (you have to download the image to view it).
 -   Will only let you download one file at a time.
--   Makes it very difficult to permanently delete a file or folder.
+-   Makes it difficult to permanently delete a file or folder.
 
-To work around these limitations, use the S3 Browser utility described below.
+To work around these limitations, use the [S3 Browser utility](#s3-browser-utility) described below.
+
+## Deleting files and folders with the S3 console
+This section explains how to delete, or permanently delete, a file using the S3 console. As you will
+see, deleting a file only marks it deleted and hides the file, but keeps the old version of the file.
+Permanently deleting a file removes it from S3, after which, the file cannot be recovered.
+
+### Delete a file, but keep a copy of the deleted version
+-   Disable the **_Show versions_** option.
+-   Select the file by checking its box.
+-   Click the **_Delete_** button.
+-   On the **_Delete object_** page type `delete` in the **_Delete objects?_** field.
+-   Click the **_Delete objects_** button.
+
+![image](s3-22.jpg)
+
+After the deletion, the deleted file will no longer display as shown below. 
+
+![image](s3-23.jpg)
+
+If you enable the **_Show versions_** option, you'll see the deleted file along with its delete marker.
+
+![image](s3-24.jpg)
+
+To restore the file, delete its delete marker.
+
+### Permanently delete a file
+-   Enable the **_Show versions_** option.
+-   Select the file by checking its box.
+-   Click the **_Delete_** button.
+-   On the **_Delete object_** page type `permanently delete` in the **_Delete objects?_** field.
+-   Click the **_Delete objects_** button.
+
+![image](s3-21.jpg)
+
+Notice the difference between the screenshot above, and the first screenshot in the previous section where the
+**_Show versions_** option was disabled. When the option is enabled, you see the file's version ID. Because you
+have checked the box for a specific version of the file, the file will be permanently deleted. In the previous
+section, since no version ID was showing, the file was only marked as deleted.
+
+### Permanently delete a folder
+-   Go into the folder to view its files (don't delete the folder itself).
+-   Enable the **_Show versions_** option.
+-   Select all the files by checking the box that is to the left of the **_Name_** column header.
+-   Click the **_Delete_** button.
+-   On the **_Delete object_** page type `permanently delete` in the **_Delete objects?_** field.
+-   Click the **_Delete objects_** button.
+
+If the folder contains subfolders, you'll need to first permanently delete each subfolder. If a folder contains
+more than 300 files, you'll have to delete the files in groups of 300 until the folder is empty. For a folder with
+lots of files and subfolders, it's much faster and easier to use the  
+[S3 Browser utility](#s3-browser-utility).
+
+Deleting all of the files in a folder deletes the folder itself if the folder was uploaded to S3.
+The folder won't be deleted if you created it using the **_Create folder_** button or the S3 Browser utility.
+If you explicitly delete the folder, it won't appear in the S3 console when the **_Show versions_** option
+is disabled, but you'll still see it when the option is enabled. To permanently delete the folder, you'll need to
+use the [S3 Browser utility](#s3-browser-utility).
 
 ## S3 Browser utility
 [S3 Browser](https://s3browser.com) is a 3rd-party Windows utility that lets you perform tasks that are difficult
@@ -346,21 +403,33 @@ To download multiple files:
 
 ![image](s3-19.jpg)
 
-### Permanently delete a deleted folder
+### Permanently delete a folder
 *This feature requires S3 Browser Pro configured with admin credentials.*
 
-Permanently deleting a folder in the S3 console can be a tedious process, especially when it contains
-subfolders.
+To permanently delete a folder:
 
-First delete the folder using the S3 console, then follow the steps below.
-
--   Choose an S3 folder (e.g. `Accessions`) from the upper right panel that contains the folder you want to delete.
+-   Select the folder and delete it using the **_Delete_** button in the *upper* panel.
+-   Choose the folder's parent folder.
 -   Choose the **_Versions_** tab in the lower panel.
--   Wait for the version information to load (takes several seconds).
+-   Wait for the version information to load.
 -   Choose `Show only deleted files` from the **_Filters_** dropdown at lower right.
--   Wait for the filtered version information to appear.
--   Select the folder to be deleted and all of its contents.
--   Click the **_Delete_** button (with red X) at the bottom of the panel.
--   Click the **_Yes_** button on the confirmation dialog.
--   The version information will refresh.
--   Choose the **_Tasks_** tab in the lower panel so you won't keep having to wait for the version information to load.
+-   Wait for the filtered version information to load.
+-   Select all of the keys (Ctrl-A)
+-   Delete the keys using the **_Delete_** button in the *lower* panel.
+
+![image](s3-26.jpg)
+
+This solution works even if the folder contains more than 300 files and/or if it contains subfolders.
+
+### Permanently delete an empty deleted folder 
+*This feature requires S3 Browser Pro configured with admin credentials.*
+
+Deleting all of the files in a folder normally deletes the folder itself if the folder was uploaded to S3.
+The folder won't be deleted if you created it using the S3 console of the S3 Browser utility.
+
+To permanently delete the folder:
+
+-   Follow the steps above for permanently deleting a folder but the only keys you'll need to select
+    will be for the folder itself.
+
+![image](s3-25.jpg)
