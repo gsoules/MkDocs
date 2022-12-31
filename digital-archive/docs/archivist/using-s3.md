@@ -62,11 +62,12 @@ Items Storage is used to store the files for individual Digital Archive items wh
 all of the files for an accession and its sub-accessions.
 
 ### Items Storage folder
-The Items Storage folder `swhpl-digital-archive > Database` stores files that are associated with individual items in the Digital Archive database.
-All files for a single item are kept together in a subfolder that has the same name as the item's identifier number.
-For example, the files for item `12139` are stored in a folder named `12139`.
+The Items Storage folder `swhpl-digital-archive > Database` stores files that are associated with individual items in the
+Digital Archive database, but only for items that are not part of an accession. All files for a single item are kept together
+in a subfolder that has the same name as the item's identifier number. For example, the files for item `12139` are stored
+in a folder named `12139`.
 
-#### Item groups
+#### Grouping folders
 At the top level of the Items Storage folder are 16 grouping subfolders named `1000`, `2000`, up to `16000`. Each of these folders
 can contain up to 1,000 subfolders for individual items. For example, folder `12000` contains folders for items `12000`,
 `12001`, `12002` and so on. The grouping folders make it easy to find an item's folder. If you are looking for the files
@@ -103,16 +104,16 @@ research materials like the notes-to-work-from document in the example below.
 ![image](s3-3.jpg)
 
 Keeping the original Word document together with the PDF makes it easy for an archivist to update the Reference Item
-if necessary. They update the Word document, create a new PDF, upload both files to S3, and then replace the item's
-old PDF with the updated PDF.
+if necessary. They update the Word document, create a new PDF, upload both files to S3, and then
+[attach the PDF to the item](#attaching-s3-files-to-items) to replace the old PDF.
 
 ### Accessions Storage folder
 The Accessions Storage folder `swhpl-digital-archive > Accessions` stores files that belong to an accession or sub-accession. At the top level of the Accessions Storage folder are
 subfolders having a four-digit number that matches an accession number for a *primary* accession in the [Accessions table](#accessions-table). If an accession has sub-accessions, folders for the sub-accessions are stored in the primary accession's folder.
 [Learn about accessioning](/archivist/accessioning).
 
-For example, primary accession `2026` has a top-level folder in the Accessions Storage folder and each of its sub-accessions have their
-own subfolder like, `2026_01`, `2026_02` and so on. In S3 it looks like this:
+For example, primary accession `2026` has a top-level folder in the Accessions Storage folder and each of its sub-accessions has its
+own subfolder: `2026_01`, `2026_02`, `2026_03`, and `2026_04`. The S3 folder for the primary accession `2026` looks like this:
 
 ![image](s3-1.jpg)
 
@@ -127,7 +128,7 @@ for an archivist to learn what files are in the accession and to find a file of 
 ### Which kind of storage to use
 
 Whether you store files in Items Storage versus Accessions Storage depends on whether the
-files are for an accession or for an item that does not belong to an accession. The rules are explained below.
+files are for an accession or for an item that does not belong to an accession. Here are the rules.
 
 #### When to use Items Storage
 You create a subfolder in the Items Storage folder *only* when *both* of these conditions are true:
@@ -148,29 +149,29 @@ be put into Items Storage.
 You create a subfolder in the Accessions Storage folder only when 
 [adding a new accession](/archivist/accessioning/#add-a-new-accession-to-the-accessions-table).
 
+If after you have created an accession, you add an individual item to the Digital Archive, and that items
+files are part of the accession, the files you [attach to the item](#attaching-s3-files-to-items) come
+from the accession's folder. You don't create a folder for the item in Items Storage. If you need to create
+additional files while curating the item, for example, a JPEG version of a TIFF file,
+you add those files to the accession's folder.
+
 #### Special cases
 By following the rules above, an item's files will either be in Accessions Storage or in Items Storage, but
-not in both places. However, the case may arise where an accession contains a file that you want to attach to
-an existing item that is not part of that accession.
+not in both places. However, there are some cases where a file could be stored in both places.
 
-For example, while processing a new accession you scan something that would be a perfect addition to an existing item,
-but that item is not part of the accession. In that case, you can make a web-sized JPEG of the scan and store it in the
-item's subfolder in Items Storage. That way, the original scan stays in Accessions Storage, but the JPEG gets stored with the
-item's other files in Items Storage.
+The first case is when you find a file in an accession that should be added to an *existing* item, but that item
+is not part of the accession. In that case, you need to make a copy of the file and store it in the item's folder
+in Items Storage. If the file is a large TIFF, you only need to copy a small JPEG version of the file to the item's folder.
 
-Another special case is when you add an individual item to the Digital Archive and that item's files are part of an accession.
-You *don't* create a subfolder in Items Storage folder for that item because its files are already in Accessions Storage.
-If you need to create additional files while curating the item, for example, a web-sized JPEG of a scan, you add those
-files to the accession's folder in Accessions Storage.
-
-One last case is items that are part of an accession, but were added to the Digital Archive before support for accessions
-was added to the AvantS3 plugin. Some of the files for those items might be in both Accessions Storage and in Items Storage.
-You can detect an item like this because [when you view it](#accessing-s3-files), you'll see an `S3` link next to both the
-item's identifier and its accession number whereas for other items, the link only appears next to one or the other.
+The second case has to do with items that are part of an accession, but were added to the Digital Archive before the
+Avant S3 plugin had support for accessions. Some of the files for those items might be in both Accessions Storage and
+in Items Storage. You can detect an item like this because [when you view it](#accessing-s3-files), you'll see an `S3`
+link next to both the item's identifier and its accession number whereas for other items, the link only appears next
+to one or the other.
 
 ## Uploading files to S3
-Before you can upload files to S3, you must first [log into S3](#logging-into-s3).
-You may also need to create an S3 folder that will contain the files.
+The discussion so far has been about using files that are already in S3. This section explains how you upload
+files to S3. The discussion assumes that you are already [logged into S3](#logging-into-s3).
 
 ### Create a new S3 folder
 If the folder that you want to upload files to does not yet exist, create it following the steps below.
@@ -180,24 +181,26 @@ If the folder that you want to upload files to does not yet exist, create it fol
         the Digital Archive so that you know its identifier before you can create an S3 folder for the item.
     -   For an accession, the folder name is the accession number or sub-accession number.        
 -   Go to the S3 folder that will *contain* the new folder.
-    -   For an item, the containing folder is `swhpl-digital-archive > Database > `#####` where
-        `#####` is the item's [group folder](#item-groups).
+    -   For an item, the containing folder is `swhpl-digital-archive > Database > #####` where
+        `#####` is the item's [grouping folder](#grouping-folders).
     -   For a primary accession, the containing folder is `swhpl-digital-archive > Accessions`.
-    -   For a sub-accession, the containing folder is `swhpl-digital-archive > Accessions` > `####` where
+    -   For a sub-accession, the containing folder is `swhpl-digital-archive > Accessions > ####` where
         `####` is the number of the primary accession.
--   Click the **_Create folder_** button to get to the page shown below.
+-   Click the S3 console's **_Create folder_** button to get to the page shown below.
 
 ![image](s3-8.jpg)
 
-On the **_Create folder_** page, type the new folder name in the **_Folder name_** field and click the **_Create folder_** button.
-To go to the new folder, click the folder name link in the upper-left where it says "Successfully created folder." Or you
-can navigate to the new folder in the usual way.
+On the **_Create folder_** page, type the new folder name in the **_Folder name_** field and click the  
+**_Create folder_** button. After the folder has been created, you can go to it by clicking the folder
+name link in the upper-left where it says "Successfully created folder." Or you can navigate to the new
+folder in the usual way.
 
 ![image](s3-10.jpg)
 
 ### Upload files to an S3 folder
+Follow these steps to get files from your computer into an S3 folder:
 
--   In the S3 console, go to the S3 folder. If the folder does not exist, [create the folder](#creating-a-new-s3-folder).
+-   In the S3 console, go to the S3 folder. If the folder does not exist, [create the folder](#create-a-new-s3-folder).
 -   On your computer, open the folder that contains the files to be uploaded.
 -   Drag files from your computer folder onto the S3 page.
 
@@ -213,11 +216,14 @@ it shows are the ones you want to upload and then click the **_Upload_** button.
 
 ![image](s3-11.jpg)
 
-During the upload, a progress bar appears at the top of the page as shown below. When the upload completes, a status page appears.
+During the upload, a progress bar appears at the top of the page as shown below. When the upload completes, a status page will
+appear to let you know that the upload succeeded, or if there were any errors, to explain what went wrong.
 
 ![image](s3-12.jpg)
 
 ## Attaching S3 files to items
+You can attach S3 files to an item using the Digital Archive as shown in the next screenshot.
+
 To attach S3 files to an item:
 
 -   Edit the item
@@ -227,9 +233,7 @@ To attach S3 files to an item:
 
 ![image](s3-13.jpg)
 
-Check the files you want to attach and click the **_Save Changes_** button.
-
-The [AvantS3 plugin](/plugins/avants3) will:
+When you click the **_Save Changes_** button, the [AvantS3 plugin](/plugins/avants3) will:
 
 -   Download the checked files from Amazon S3 to your Digital Archive server.
 -   Downsize JPEG images to be 1200px on the long edge.
@@ -259,28 +263,25 @@ For both Items and Accessions storage, files that can be attached to the item ha
 Files without a checkbox are ones the Digital Archive, and browsers in general, do not support such
 as TIFF files and Word documents.
 
-Notice in the example above, that file `2014-002.jpg` is unchecked. This is because the archivist chose to
-not attach it to the item.
-
 ### Reorder or delete attachments
 
 The steps for reordering and deleting S3 attachments are the same as explained for 
 [uploading files to the Digital Archive](/archivist/attach-file/#upload-files-to-your-digital-archive) when not using S3.
 However, when you delete an attachment, the file itself remains in S3 and continues to
 show up in the S3 files list. That's because the list is only a reflection of what's stored
-on S3. As such, you cannot accidentally delete an archival asset from the Digital Archive.
+on S3.
 
 ### Replace an attached file with an updated version
 
 To replace an attached file with a newer version having the same file name:
     
 -   Upload the newer file to S3.
--   S3 keeps a copy of the older version in case you make a mistake and need to recover it.
--   On the **_Files_** tab of the [**_Edit Item_** page](/archivist/items/#edit-an-item), check the box
-    for the file that got updated.
+-   Edit the item and go to the **_Files_** tab.
+-   Check the box for the file that got updated.
 -   Click the **_Save Changes_** button.
--   The Digital Archive will replace the older attachment with the newer one using the same file name 
-    (you don't need to first delete the older file as you do when not using S3).
+
+The Digital Archive will replace the older file with the newer one using the same file name. 
+You don't need to first delete the older file as you do when not using S3.
 
 ## Accessing S3 files
 The previous sections have been about uploading files to S3 and attaching S3 files to Digital Archive items.
@@ -304,32 +305,32 @@ when you are logged-in to the Digital Archive as an administrator.
 ![image](s3-20.jpg)
 
 ## S3 limitations and cautions
+#### Cautions
 There are some things to be aware of when using the S3 console.
 
 -   When you delete a file, a hidden version of the file remains.
 -   When you delete a folder, a hidden version of the folder and all of its file remains.
--   When you rename or move a file or folder, a hidden version of the original folder remains.
+-   When you rename a folder, a hidden version of the original folder remains.
 
 It's like this for safety reasons, so that you can undo a mistake. However, if you rename, or move
 a folder that contains a lots of files, you are actually doubling the amount of storage required for
 those files. If you delete a file or folder, you are not actually freeing up any space.
 
-Furthermore, the S3 console will not let you preview an image and it won't let you download more than one file at a time.
+#### Limitations
+The S3 console:
 
-To work around the S3 conole's limitations, use the [S3 Browser utility](#s3-browser-utility).
+-   Does not provide a way to preview an image (you have to download the image to view it).
+-   Will only let you download one file at a time.
+-   Makes it very difficult to permanently delete a file or folder.
+
+To work around these limitations, use the S3 Browser utility described below.
 
 ## S3 Browser utility
-[S3 Browser](https://s3browser.com) is a 3rd-party Windows utility that makes it possible and/or easier to perform tasks
-than with the AWS Management Console for S3.
-
-These S3 Browser features do not exist in the S3 console:
-
--   Preview an image (with the S3 console, you have to download the image to view it).
--   Download multiple files or a folder (the S3 console only lets you download one file at a time).
--   Permanently delete files and folders (requires S3 Browser Pro configured with admin credentials)
+[S3 Browser](https://s3browser.com) is a 3rd-party Windows utility that lets you perform tasks that are difficult
+or not possible using the AWS Management Console for S3.
 
 ### Preview an image
-To preview and image with the S3 Browser utility:
+To preview and image:
 
 -   Select the file
 -   Choose the **_Preview_** tab in the lower panel
@@ -337,7 +338,7 @@ To preview and image with the S3 Browser utility:
 ![image](s3-18.jpg)
 
 ### Download multiple files
-To download multiple files with the S3 Browser utility:
+To download multiple files:
 
 -   Select the files
 -   Click the **_Download_** button
@@ -346,6 +347,8 @@ To download multiple files with the S3 Browser utility:
 ![image](s3-19.jpg)
 
 ### Permanently delete a deleted folder
+*This feature requires S3 Browser Pro configured with admin credentials.*
+
 Permanently deleting a folder in the S3 console can be a tedious process, especially when it contains
 subfolders.
 
