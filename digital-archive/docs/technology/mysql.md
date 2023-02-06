@@ -75,7 +75,7 @@ to add a database connection.
 -   Run MySQL Workbench again
 -   [Open the database](#open-a-database) to verify that you can connect to it
 
-## Copy a server database to use on localhost
+## Copy a database to use on another server
 
 Follow these steps to copy a production database to use for testing on a local
 development server.
@@ -95,8 +95,33 @@ development server.
     -   Keep the `Quick` export method and the `SQL` format
     -   Click the **_Go_** button
     -   Save the file on the local computer
+    -   Upload the file to the server if it will be imported to a database there
 
-### Import SQL into new database
+### Create a new database
+
+-   Go to cPanel account for the database e.g. daus
+-   In cPanel, open the **_MySQL Databases_** tool
+-   Create a new database
+-   Add a user to the database
+-   Give the database all privileges 
+
+### Import SQL into an existing database using the command line
+
+-   Go to cPanel account for the database e.g. daus
+-   Open a Terminal window
+-   CD to the folder containing the .sql file
+-   `mysql -u root  -p db_name < exported.sql`
+-   When prompted, type the root password for the database
+
+To get the root password:
+
+-   Run WHM as root
+-   Open a WHM Terminal window (not a cPanel Terminal window)
+-   Type `cat /root/.my.cnf`
+
+Example: `mysql -u root -p daus_swhpl < swhpl.sql`
+
+### Import SQL into new local development database
 
 -   Go to phpAdmin on localhost
     -   Run the XAMPP Control Panel

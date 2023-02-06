@@ -18,7 +18,7 @@ The **_Title_** field is **more important than any other field** because:
 
 -   Write keyword-rich titles that concisely describe items in 10 words or less
 -   Put important, but non-essential information in the **_Description_**, not the **_Title_**
--   Choose a titling convention and use it religiously. 
+-   Choose a titling convention and use it consistently. 
 
 ### Type field
 

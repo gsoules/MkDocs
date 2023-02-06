@@ -2,6 +2,48 @@
 
 ---
 
+## Install a Python module for all accounts
+
+- Open a WHM Terminal window
+- Use pip3. For example, to install the `requests` module, type:  
+  `pip3 install requests`
+
+To see a list of installed modules type:
+`pip3 list --format=columns`
+
+``` text
+[daus@vps89189 bin]$ pip3 list --format=columns
+Package            Version
+------------------ ---------
+certifi            2022.12.7
+charset-normalizer 2.0.12
+dbus-python        1.2.4
+decorator          4.2.1
+dnspython          1.15.0
+gpg                1.13.1
+idna               3.4
+iotop              0.6
+isc                2.0
+libcomps           0.1.18
+nftables           0.1
+pcp                5.0
+pip                9.0.3
+ply                3.9
+pygobject          3.28.3
+pyparsing          2.1.10
+python-dateutil    2.6.1
+requests           2.27.1
+rpm                4.14.3
+selinux            2.9
+setuptools         39.2.0
+six                1.11.0
+slip               0.6.4
+slip.dbus          0.6.4
+urllib3            1.26.14
+```
+
+To install a module for only one account, open the Terminal window from that account's cPanel.
+
 ## Python path
 
 To see the Python path

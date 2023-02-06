@@ -3,7 +3,8 @@
 ---
 
 !!! note ""
-    This section describes how the [Southwest Harbor Public Library](https://swhplibrary.org) (SWHPL) performs accessioning and curating for its [Digital Archive](https://swhplibrary.net). The information is provided solely for information-sharing purposes.
+    This section describes how the [Southwest Harbor Public Library](https://swhplibrary.org) (SWHPL) performs accessioning and curating for its [Digital Archive](https://swhplibrary.net). The information is provided solely for information-sharing purposes.  
+    For an overview of this topic [watch a one-hour video presentation](https://youtu.be/haz4kE2YIe0).
 
 At SWHPL (pronounced *swiple*, rhymes with *triple*), *accessioning* is the process of transferring archival materials from a donor, or the backlog, and recording information about the accession in the Library's accessions database. *Curating* is the process of making the materials in an accession publicly accessible as searchable and viewable items in the Digital Archive.
 
@@ -261,7 +262,7 @@ Before describing how SWHPL eats the elephant, let's discuss a strategy that is 
 
 -   Randomly curating one item at a time.
 -   Devoting effort to the newest things instead of the most important.
--   Attempting to curate an entire accession from start to finish.
+-   Attempting to curate a large accession from start to finish.
 -   Being consistent for consistency's sake.
 -   Letting perfect become the enemy of good.
 
@@ -281,7 +282,7 @@ The list below highlights the key elements of the strategy that SWHPL employs.
 This list describes a holistic process that divides the work into prioritized pieces. Multiple pieces can be worked on in parallel by different people. Each piece can be worked on in steps by individuals. The amount of work required to complete a step can be easily managed by a single archivist in a small amount of time and every step contributes toward the [accession and curation goals](#accession-and-curation-goals). Most importantly, the steps are sequenced in a way that makes partial information about items available to the public without waiting until all steps for that item have been completed.
 
 ### The importance of sub-accessions
-A key element of the backlog reduction strategy is the division of large accessions into sub-accessions. This division breaks the work of processing an entire accession into manageable pieces that can each be started and completed by one person in an estimable amount of time. It also allows the grouping of similar items which organizes the primary accession and introduces the efficiency of processing like items all at the same time,for example scanning all the negatives in one sub-accession and then creating PDFs from documents in another sub-accession.
+A key element of the backlog reduction strategy is the division of large accessions into sub-accessions. This division breaks the work of processing a large accession into manageable pieces that can each be started and completed by one person in an estimable amount of time. It also allows the grouping of similar items which organizes the primary accession and introduces the efficiency of processing like items all at the same time,for example scanning all the negatives in one sub-accession and then creating PDFs from documents in another sub-accession.
 
 How archivists use sub-accessions is different for the physical backlog than for the digital backlog.
 
@@ -332,24 +333,24 @@ One-at-a-time creation of sub-accessions is manageable because of cross-checks t
 ---
 
 ## Accessioning and curating workflow
-The flowchart below shows the sequence of steps in the accessioning and curating process.
+The flowchart below shows the sequence of steps in the accessioning and curating process. The process
+makes information about an accession's items publicly accessible as quickly as possible.
 
--   Yellow steps at left and middle produce an uncurated accession item.
--   Green steps at right produce a curated item for the accession's images. 
+In the steps, the word "Accessible" in blue text indicates the point at which some information about the accession
+becomes publicly accessible. In the diagram, the stopwatch icons indicate steps that can take a long
+time, hours or even days.
 
-The process makes information about an accession's items publicly accessible very quickly because it allows the public
-to search the Digital Archive without having to wait for scanning and curating to occur which are the most time-consuming steps.
-In the chart below, the word "Accessible" in blue indicates the point within the process when an accession becomes
-public and searchable in the Digital Archive. 
+There are two paths, **A** and **B**, which distinguish between the sequence of steps necessary for working
+with physical items versus digital items. Path **A** applies to donations of physical items, and to items from the
+physical backlog. Path **B** applies to accessions that come from the digital backlog
+and also for donations of digital files.
 
-![image](accessioning-2.jpg)
+![image](accessioning-29.jpg)
 
 ---
 
 ### Workflow steps
-This section explains each step in the accessioning workflow shown in the previous section. See the section on
-[accepting a donation for accession](#accepting-a-donation-for-accession) to learn about the policy and procedures
-that archivists adhere to prior to acceptance of a new donation.
+This section explains each step in the workflow diagram shown above.
 
 ##### S3 accession folder
 The steps below often refer to the "accessions's S3 folder" which, for a primary accession, is named using the accession number, but 
@@ -359,78 +360,80 @@ sub-accession folders are contained within their primary S3 accession folder. [L
 
 In the steps below, `####` means the accession number.
 
-1 &ndash; Record deed of gift
-:   Procure a signed and dated deed of gift form from the donor.
-
-2 &ndash; Create new accession or sub-accession
-:   This step results in an accession number which will be needed in subsequent steps.
-
-    -   Follow the instructions for how to [add a new accession to the **_Accession_** table](#add-a-new-accession-to-the-accessions-table).
-    -   For a new donation, Record the accession number on the deed of gift form.
-
----
-
-!!! Note ""
-    If the accession is from the digital backlog and there is no existing index and you will
-    not be creating an index, skip **3A** and **4A** and go to **7A**
-    to create the contact sheet and make the item public.
-
-3A &ndash; Add private UA item to Digital Archive
+1 &ndash; Create private UA (Uncurated Accession)
 :   This step results in an item identifier number which will be needed in subsequent steps.
 
-    -   [Add a new item](/archivist/items/#add-a-new-item) to the Digital Archive and leave it set to
+    -   [Add a new item](/archivist/items/#add-a-new-item) (the UA) to the Digital Archive and leave it set to
         [private](/archivist/special-features-archivist/#private-metadata-fields).
     -   Set the item's **_Type_** to `Uncurated Accession`.
     -   Set the item's **_Accession #_** to the accession number.
     -   Provide as much metadata in other fields as is known about the accession's contents.
+    -   Create a new [S3 folder for the accession](#s3-accession-folder).
 
-4A &ndash; Create index PDF and upload to S3\Accessions
-:   This step produces a searchable index that, once attached to the UA in step 5A, makes a detailed description of the
+---
+
+2A &ndash; Create index
+:   This step produces a searchable index that makes a detailed description of the
     accession searchable via the Digital Archive.
 
     -   Follow the instructions for [creating an accession index](#creating-an-accession-index).
-    -   Create a new [S3 folder for the accession](#s3-accession-folder).
     -   Upload the PDF and Word files to the S3 folder.
+    -   Attach the index to the UA:
+        -   In the Digital Archive, [edit the item](/archivist/items/#edit-an-item) created in step **1**.
+        -   Go to the **_Files_** tab to see the contents of the [accessions's S3 folder](#s3-accession-folder).
+        -   Check the box for the index PDF file.
+        -   Save the item.
+        -   Verify that the index PDF appears as the item's image.
+        -   Add a relationship from the UA to a relevant [Reference Item](/relationships/reference-items) if one exists.
 
-5A &ndash; Attach index to UA item and make item public
-:   This step makes the UA's index PDF publicly accessible.
+3A &ndash; Make the item public
+:   Change the UA from [non-public](/archivist/special-features-archivist/#non-public-items) to public.
 
-    -   In the Digital Archive, [edit the item](/archivist/items/#edit-an-item) created in step 3A.
-    -   Go to the **_Files_** tab to see the contents of the [accessions's S3 folder](#s3-accession-folder) created in step 4A.
-    -   Check the box for the index PDF file uploaded in step 4A.
-    -   Make the item public.
-    -   Save the item.
-    -   Verify that the index PDF appears as the item's image.
-    -   Add a relationship from the UA to a relevant [Reference Item](/relationships/reference-items) if one exists.
-    -   Update the **Accessions** table to set the accession's **_Next Step_** to `Digitize` or `Contact sheet`.
-
-6A &ndash; Digitize items
+4A &ndash; Digitize items
 :   Scan or photograph the items in the accession to create digital files. Name the files according to their identifiers
-    in the index file created in step 4A.
+    in the index file created in step **2A**.
 
-7A &ndash; Create 30-up contact sheet
+5A &ndash; Upload files to S3
+:   Upload the accession's files to the [accessions's S3 folder](#s3-accession-folder).
+
+6A &ndash; Create contact sheet
 :   This step creates a PDF file containing thumbnails of the accession's items.
 
     -   Go to the folder on your computer that contains the digitized items.
     -   Remove any files that should not appear in the contact sheet.
     -   Run the contact sheet app and choose `30-up` as the contact sheet type.
     -   The app will save the file within the folder as `accession-contact-sheet-####.pdf`.
+    -   Upload the contact sheet to the S3 folder
+    -   Attach the contact sheet to the UA:
+        -   In the Digital Archive, [edit the item](/archivist/items/#edit-an-item) created in step 3A.
+        -   Go to the **_Files_** tab to see the contents of the [accessions's S3 folder](#s3-accession-folder) created in step 4A.
+        -   Check only the box for the contact sheet PDF file uploaded in step 8A.
+        -   Save the item.
+        -   Verify that the contact sheet appears as the item's first image.
+        -   Update the **_Accessions_** table to set the accession's **_Next Step_** to `Add item to DA`.
 
-8A &ndash; Upload files and contact sheet to `S3\Accessions`
-:   Upload the accessions files and the contact sheet to the [accessions's S3 folder](#s3-accession-folder).
+---
 
+2B &ndash; Upload files to S3
+:   Upload the accession's files to the [accessions's S3 folder](#s3-accession-folder).
 
-9A &ndash; Attach contact sheet to public UA item
-:   This step makes thumbnails of the accession's images publicly accessible.
+3B &ndash; Create contact sheet
+:   Same as step **6A** above.
 
-    -   In the Digital Archive, [edit the item](/archivist/items/#edit-an-item) created in step 3A.
-    -   Go to the **_Files_** tab to see the contents of the [accessions's S3 folder](#s3-accession-folder) created in step 4A.
-    -   Check only the box for the contact sheet PDF file uploaded in step 8A.
-    -   Save the item.
-    -   Verify that the contact sheet appears as the item's first image.
-    -   Update the **_Accessions_** table to set the accession's **_Next Step_** to `Add item to DA`.
+4B &ndash; Add metadata to UA
+:   Write a paragraph or two in the UA's **_Description_** field describing the contents of the contact sheet.
+    Use keywords that will help someone find the UA. This step is very important, especially if the file names
+    in the contact sheet are not meaningful and thus won't contribute to searchability.
 
-10A &ndash; Add individual items to Digital Archive
+5B &ndash; Make the item public
+:   Change the UA from [non-public](/archivist/special-features-archivist/#non-public-items) to public.
+
+6B &ndash; Create index
+:   Same as step **2A** above.
+
+---
+
+7 &ndash; Curate items
 :   At this point, accessioning is complete and the work of curating begins.
     For most accessions, only the most important items will be added to the Digital Archive as individual items.
 
@@ -438,53 +441,6 @@ In the steps below, `####` means the accession number.
     the item to provide metadata that distinguishes the item from other items. Typically, this information comes from
     the index or other supplementary documentation that is included with the accession, but it may be necessary to
     research the item to obtain additional information.
-
----
-
-3B &ndash; Add private curated item to Digital Archive
-:   This step results in an item identifier number which will be needed in subsequent steps.
-
-    -   [Add a new item](/archivist/items/#add-a-new-item) to the Digital Archive and leave it set to
-        [private](/archivist/special-features-archivist/#private-metadata-fields).
-    -   Set the item's **_Type_** and **_Subject_** based on the contents of the accession.
-    -   Set the item's **_Accession #_** to the accession number.
-    -   Provide as much metadata in other fields as is known about the accession's contents.
-
-4B &ndash; Create 1-up contact sheet
-:   This step creates a PDF file containing large images of the accession's items.
-
-    -   Go to the folder on your computer that contains the digitized items.  
-        You may need to download the files from S3 using the [S3 Browser](#s3-browser) tool.
-    -   Remove any files that should not appear in the contact sheet.
-    -   Run the contact sheet app and choose `1-up` as the contact sheet type.
-    -   Specify the identifier from step 3B when prompted.
-    -   The app will save the file as `item-######.pdf` where `######` is the identifier from step 3B.
-
-    As an alternative to a contact sheet, an archivist could attach individual web-sized image files 
-    and upload those in step 5B. Creating the contact sheet is simply more expedient.
-
-5B &ndash; Upload contact sheet to `S3\Database`
-:   This step creates an S3 folder for the curated item and uploads its contact sheet.
-
-    -   Create a new S3 folder named `S3\Database\####\#####` where `####` and `######` are the item's identifier number
-        grouping and identifier. For example, if the identifier is `12345`, the grouping is `12000` and
-        the identifier is `12345`.
-    -   Upload only the contact sheet PDF to the newly created S3 folder.  
-        The accessions files stay in the [accessions's S3 folder](##s3-accession-folder).
-
-6B &ndash; Attach contact sheet to item and make item public
-:   This step makes the accession's images publicly accessible.
-
-    -   In the Digital Archive, [edit the item](/archivist/items/#edit-an-item) created in step 3B.
-    -   Go to the **_Files_** tab to see the contents of `S3\Database\####\#####` created in step 5B.  
-        The only file should be the contact sheet PDF.
-    -   Check the box for the contact sheet PDF file.
-    -   Make the item public.
-    -   Save the item.
-    -   Verify that the contact sheet appears as the item's image.
-    -   Add a relationship from the item to a relevant [Reference Item](/relationships/reference-items) if one exists.
-    -   Update the **_Accessions_** table to set the accession's **_Next Step_** to `Completed`.
-
 
 ## Accessions Database
 SWHPL uses [Airtable](https://www.airtable.com/) as its accessions database. The database records information about accessions

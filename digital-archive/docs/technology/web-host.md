@@ -253,7 +253,7 @@ separate account for a Digital Archive installation that will not be hosted on t
 -   Use yum instead of pip to install on centos.
 -   Use <https://www.whatsmydns.net/> to see what DNS a site is using from various locations
 
-## Compress a large folder on the server
+## Compress a large folder on the server using zip
 
 Use the zip command to avoid issues using the cPanel Compress feature. Also, the zip
 command reports what it's doing. As an example, to compress the `files` folder of a Digital Archive
@@ -264,7 +264,18 @@ installation:
 -   Type the command below
 
 ```
-zip -r files.zip files
+zip -r file-name.zip directory
+```
+
+## Compress and extract a large folder using tar
+
+Compress
+```
+tar -czvf files-name.tar.gz directory
+```
+Extract
+```
+tar -xzvf files-name.tar.gz
 ```
 
 ## Jet Backup

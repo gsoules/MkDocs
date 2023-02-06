@@ -20,6 +20,9 @@ See also the documentation for [installing AvantVocabulary](../../../technology/
 ## Dependencies
 The AvantVocabulary plugin requires that the [AvantElasticsearch] plugin be installed and activated.
 
+The plugin acquires its vocabulary data from a CSV file located at
+`https://digitalarchive.us/vocabulary/digital-archive-vocabulary.csv`. The file is subject to change without notice. You may want to modify your copy of the plugin to read the vocabulary from a local CSV file that you can maintain yourself. You could do that by editing the `buildCommonTermsTable` method in `AvantVocabularyTableBuilder.php`.
+
 ## Installation
 
 To install the AvantVocabulary plugin, follow these steps:
@@ -69,3 +72,4 @@ Copyright
 [AvantSearch]:        avantsearch.md
 [AvantS3]:            avants3.md
 [AvantZoom]:          avantzoom.md
+[AvantElasticsearch]: avantelasticsearch.md

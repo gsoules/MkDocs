@@ -48,11 +48,14 @@ knowledge of the following Omeka elements and how they are used in these install
 -   **_Address_**
 -   **_Date_**
 
-This AvantElaticsearch plugin works only with Elasticsearch on Amazon Web Services (AWS).
-
 The host Linux OS must have pdftotext installed.
 
 The Omeka files folder must contain a directory named `elasticsearch`.
+
+---
+
+!!! warning ""
+    This AvantElaticsearch plugin has been tested with AWS Elasticsearch up to v6.8. It might not work with Elasticsearch 7.x, or with AWS Opensearch due to changes in how mapping types work. The plugin relies on the `_doc` mapping. For more information [see this article](https://stackoverflow.com/questions/58824489/where-to-put-include-type-name-in-config-exs).
 
 ## Installation
 
@@ -63,6 +66,46 @@ To install the AvantElasticsearch plugin, follow these steps:
 1. Unzip `AvantElasticsearch-master.zip` into your Omeka `plugins` folder
 1. Rename the folder to `AvantElasticsearch`
 1. Activate the plugin from the Omeka `Plugins` page
+
+## es.ini file
+The AvantElasticsearch plugin requires that a file named `es.ini` be located in the root folder
+`public_html/digitalarchive` of the installation. The file is not distributed with the plugin,
+but you can create it from the sample below. You'll need to edit `es.ini` when you
+[install the plugin](/technology/install-digital-archive/#edit-esini).
+
+``` ini
+[config]
+; These options should only exist on a Digital Archive site used by a developer. They are read by
+; AvantElasticsearch to determine if it's okay to create new indexes which is a dangerous operation.
+new_shared_index_allowed = true
+
+; Name of the Elasticsearch index that multiple Digital Archive sites share.
+shared_index_name = 'devshr'
+
+; Names of Omeka elements that are common among contributors.
+common_elements = 'Identifier, Title, Type, Subject, Creator, Date, Place, Rights, Description'
+
+; Names of common elements that can be used to sort shared search results in Table View layouts.
+; They are listed in left-to-right order as they will appear in Table View layouts for shared search results.
+common_sort_columns = 'Title, Type, Subject, Creator, Date, Place, Rights, Description'
+
+; Layout definitions. The first number is the layout Id which once set, should not be changed since it gets used
+; in query strings that serve as permalinks to queries. The number following 'shared_layouts' is just an index and
+; has no relationship to the layout Id.
+shared_layouts.1 = '1, Details'
+shared_layouts.2 = '2, Type / Subject, Identifier, Title, Type, Subject'
+shared_layouts.3 = '3, Place / Date, Identifier, Title, Place, Date'
+shared_layouts.4 = '4, Creator / Rights, Identifier, Title, Creator, Rights'
+
+; Synonyms for fuzzy searching. The values should be all lowercase.
+synonyms.1 = 'rd, road'
+synonyms.2 = 'pt, point'
+synonyms.3 = 'ave, avenue'
+synonyms.4 = 'st, street'
+```
+
+The options `common_elements`, `common_sort_columns` and `shared_layouts` control which of these things
+are enabled when [searching all sites](/user/how-to-search/#search-one-site-or-all-sites). Think of them as the common denominators among all site. They filter out elements, sort columns, and [search result layouts](/plugins/avantsearch/#layouts-option) that are unique to some individual sites.
 
 ## Warning
 

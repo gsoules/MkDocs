@@ -40,7 +40,7 @@ The most common settings for scanning a color image using the Epson scanner soft
 The biggest variable is the **_Resolution_** setting which can range from 300 ppi to 1200 ppi depending on what you are scanning.
 You'll also change the **_Image Type_** from color to grayscale when scanning black & white documents or images.
 Don't change the **_Document Size_** because it's set automatically to the scanner table size or to the size
-of the marquee you choose on the **_Preview_** screen. 
+of the marquee you drew on the **_Preview_** screen to delimit the scan area. 
 
 ![scanning](scanning-1.jpg)
 
@@ -67,7 +67,7 @@ Follow these steps to scan an image or document that you have placed on the scan
     -   If the preview is not rotated correctly, correct it using the rotate left or right buttons.
     -   Move the mouse over the preview area. The cursor will change to a large plus (+).
     -   Click the mouse at the upper-left corner of the item to be scanned and drag to the lower-right corner.
-    -   When you release the mouse, a dashed rectangle will delimit the area to be scanned.
+    -   When you release the mouse, a dashed rectangle (the marquee) will delimit the area to be scanned.
     -   Adjust the scan area if necessary by moving the cursor over the rectangle until the cursor changes to a double-headed arrow,
         then click-drag to adjust.
 -   On the main EPSON Scan dialog, click the **_Scan_** button.
