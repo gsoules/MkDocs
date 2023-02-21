@@ -3,7 +3,7 @@
 ---
 
 ## Command line interface
-Most site maintenance tasks can only be peformed from the command line while logged into the digitalarchive.us (**daus**) account on the server. Use *one* of these methods:
+Most site maintenance tasks can only be performed from the command line while logged into the digitalarchive.us (**daus**) account on the server. Use *one* of these methods:
 
 -   cPanel Terminal for `digitalarchive.us`
 -   [PUTTY](https://www.putty.org/)
