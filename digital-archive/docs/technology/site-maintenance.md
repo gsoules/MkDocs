@@ -249,8 +249,18 @@ themes/default
 bootstrap.php
 README.md
 ```
-
 ![update files](update-1.jpg)
+
+---
+
+!!! note "Development Server"
+    If you are updating Omeka on the Windows XAMPP development server, and then, only if core file  
+    `application\libraries\Omeka\File\Derivative\Strategy\ExternalImageMagick.php` has changed in the new Omeka release,
+    edit the file to define the ImageMagick constant as:  
+    `const IMAGEMAGICK_CONVERT_COMMAND = 'magick.exe';`  
+    This change ensures that **_ImageMagick Directory Path_** on the Omeka **_Settings_** page works for the ImageMagick executable
+    `magick.exe` in Windows folder e.g. `C:\Program Files\ImageMagick-7.1.0-Q16-HDRI`.  
+    DO NOT MAKE THIS CHANGE on the Linux server. On Linux, leave the constant defined as `convert`.
 
 ### Verify that the new release works properly
 Normally the site should just come up, though on releases of Omeka prior to 3.0 you were presented with a dialog to update the database. It appears that 3.0 updates the database automatically.
