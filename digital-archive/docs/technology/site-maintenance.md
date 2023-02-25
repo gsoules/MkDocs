@@ -262,6 +262,14 @@ README.md
     `magick.exe` in Windows folder e.g. `C:\Program Files\ImageMagick-7.1.0-Q16-HDRI`.  
     DO NOT MAKE THIS CHANGE on the Linux server. On Linux, leave the constant defined as `convert`.
 
+---
+
+!!! note "PHP 8.1"
+    There is a PHP 8.1 deprecation error Omeka 3.1 in  `application\models\Mixin\ElementText.php`  
+    regarding null passed to strlen. To work around it, I changed line 524 to test for null:  
+    `if ($elementText == null || !strlen($elementText)) {`  
+    Remove this note when the code is fixed in a newer Omeka release.
+
 ### Verify that the new release works properly
 Normally the site should just come up, though on releases of Omeka prior to 3.0 you were presented with a dialog to update the database. It appears that 3.0 updates the database automatically.
 
