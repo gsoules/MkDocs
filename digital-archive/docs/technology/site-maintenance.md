@@ -254,7 +254,7 @@ README.md
 ---
 
 !!! note "Development Server"
-    If you are updating Omeka on the Windows XAMPP development server, and then, only if core file  
+    If you are updating Omeka on the Windows XAMPP development server, whether or not
     `application\libraries\Omeka\File\Derivative\Strategy\ExternalImageMagick.php` has changed in the new Omeka release,
     edit the file to define the ImageMagick constant as:  
     `const IMAGEMAGICK_CONVERT_COMMAND = 'magick.exe';`  
