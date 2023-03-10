@@ -266,8 +266,15 @@ README.md
 
 !!! note "PHP 8.1"
     There is a PHP 8.1 deprecation error Omeka 3.1 in  `application\models\Mixin\ElementText.php`  
-    regarding null passed to strlen. To work around it, I changed line 524 to test for null:  
+    regarding null passed to `strlen`. To work around it, I changed line 524 to test for null:  
     `if ($elementText == null || !strlen($elementText)) {`  
+    Remove this note when the code is fixed in a newer Omeka release.
+
+---
+
+!!! note "PHP 8.1"
+    There is a PHP 8.1 deprecation error Omeka 3.1 in  `C:\xampp\htdocs\omeka\application\libraries\Omeka\File\MimeType\Detect\Strategy\FileCommand.php`  
+    regarding null passed to `trim`. To work around it, I changed the `detect` function to test for null.
     Remove this note when the code is fixed in a newer Omeka release.
 
 ### Verify that the new release works properly
