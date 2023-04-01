@@ -403,7 +403,7 @@ In the steps below, `####` means the accession number.
     -   Remove any files that should not appear in the contact sheet.
     -   Run the contact sheet app and choose `30-up` as the contact sheet type.
     -   The app will save the file within the folder as `accession-contact-sheet-####.pdf`.
-    -   Upload the contact sheet to the S3 folder
+    -   Upload the contact sheet to the root level of the accession's S3 folder.
     -   Attach the contact sheet to the UA:
         -   In the Digital Archive, [edit the item](/archivist/items/#edit-an-item) created in step 3A.
         -   Go to the **_Files_** tab to see the contents of the [accessions's S3 folder](#s3-accession-folder) created in step 4A.

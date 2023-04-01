@@ -368,6 +368,8 @@ however, some commercial bots can hit a single Digital Archive site as often as 
 The `robots.txt` file is used to block specific bots while allowing others to access the site. As of
 September 2020, the bots listed below were the worst offenders, though their behavior was not malicious.
 
+To see bot traffic, use the cPanel tool Awstats and click the Robots/Spiders visitor link in the left panel.
+
 Edit (or create) `public_html/robots.txt` to contain the content below:
 
 ```

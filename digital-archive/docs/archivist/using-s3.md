@@ -263,6 +263,14 @@ For both Items and Accessions storage, files that can be attached to the item ha
 Files without a checkbox are ones the Digital Archive, and browsers in general, do not support such
 as TIFF files and Word documents.
 
+---
+
+!!! note ""
+    The latest version of AvantS3 supports TIFF files. When you choose a TIFF file from the list, AvantS3 downloads the file
+    from S3, converts it to JPEG, and resizes it. It then attaches the resized JPEG file to the item. This saves you from
+    having to perform all those steps manually.
+
+
 ### Reorder or delete attachments
 
 The steps for reordering and deleting S3 attachments are the same as explained for 
