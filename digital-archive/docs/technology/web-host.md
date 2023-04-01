@@ -1,7 +1,8 @@
 # Web server administration
 
+
 This page explains how to perform Digital Archive related web host administration tasks
-on a [Reclaim Hosting](https://reclaimhosting.com/) web server.
+on an [InMotion](https://inmotionhosting.com/) virtual pritave server (VPS).
 
 ---
 
@@ -15,7 +16,7 @@ on a [Reclaim Hosting](https://reclaimhosting.com/) web server.
 
 ## WHM
 
-WMH stands for Web Host Manager. All of the Digital Archive sites are hosted on a dedicated Linux server which you manage using [WHM](https://cpanel.net/products/). The login page is: <https://avantlogic.reclaimhosting.com:2087 >.
+WMH stands for Web Host Manager. All of the Digital Archive sites are hosted on a dedicated Linux server which you manage using [WHM](https://cpanel.net/products/).
 
 To learn more about WHM, visit <https://docs.cpanel.net/whm/>
 
@@ -23,118 +24,6 @@ To learn more about WHM, visit <https://docs.cpanel.net/whm/>
     Use the search box at the top to quickly find a feature. For example, as you type `ftp`,
     the features will immediately narrow down to just those related to FTP. This same technique
     works in [cPanel].
-
----
-
-## cPanel
-cPanel is a control panel that lets you manage many aspects of the
-web host environment for a single WHM account. To access the cPanel for an account:
-
--   Go to [WHM] and choose `List Accounts`
--   Click the cPanel icon in the row for the account
--   The cPanel home page will appear
-
-![cPanel](web-host-3.jpg)
-
-The cPanel home page is divided into sections like DATABASES, FILES etc.
-as shown in the screenshot below. Each section contains a set of related features you can choose from.
-To learn more about cPanel, visit <https://cpanel.net/>
-
-![cPanel](web-host-1.jpg)
-
----
-
-## Restore a backup
-Explain how to use Jetback
-
----
-
-## Create a new cPanel account
-Follow the steps below to create a new cPanel account. Also see the
-[WHM documentation](https://docs.cpanel.net/whm/account-functions/create-a-new-account/86/)
-                    https://docs.cpanel.net/whm/account-functions/create-a-new-account/86/
-
-### Create the account
-
--   Go to [WHM] and choose `List Accounts`
--   Click the `Create a New Account` button
--   Enter:
-    -   **Domain** = *domain name e.g. historytrust.net*
-    -   **Username** = *filled in automatically, change to use same convention as other accounts e.g. htnet*
-    -   **Password** & **Re-type Password** *automatically filled in when you:*
-        -   Click the `Password Generator` button
-        -   Copy the password to a safe place
-        -   Check the `I have copied this password` checkbox
-        -   Click the `Use Password` button
-    -   **Email** = `gsoules@avantlogic.com`
-    -   **Choose a Package** = `Archive`
-    -   **Select Options Manually** = *leave unchecked*
-    -   **Settings** panel = *accept defaults*
-    -   **Mail Routing Settings** panel = *accept defaults*
-    -   **Reseller Settings** panel  = *accept defaults (unchecked)*
-    -   **DNS Settings** panel = If using a domain registered:
-        -   With reclaim, accept defaults
-        -   Another registrar like Godaddy, check the `Use the nameservers` checkbox
--   Click the `Create` button
--   Review the `Account Creation Status` information
-    
-### Set the name servers
-
-!!! warning ""
-    Skip this step if the site will be hosted on reclaimhosting.com
-
-If the domain is registered with another registrar (not with reclaim) e.g. Godaddy or bluehost:
-
--   Login into the registrar account for the domain
--   Set the name servers to:
-    -   `ns1.reclaimhosting.com`
-    -   `ns2.reclaimhosting.com`
-
-### Install an SSL certificate
-Note that you cannot install the certificate for a non-reclaim domain until the name servers have been
-pointed to reclaim.
-
--   Go to [WHM] and choose `List Accounts`
--   Click the cPanel icon in the cPanel column of the row for the newly created account
--   In [cPanel] choose `Lets Encrypt SSL`
--   In the `Issue a new certificate` section, click te `+Issue` link
--   On the next page, click the `Issue` button
--   Wait for the certifcate to be issued -- it can take a while
--   If you get an error, try again
--   Close the page that says the certificate is now installed
-
-### Add an index.html page
-By default, a new account has only an empty `cgi-bin` folder in its `public_html` folder.
-Add an index.html page so that something nice appears when someone goes to the site. Below is an
-example. Be sure to replace `XYZ` with the organization's name.
-
-```
-<html>
-<head>
-<title></title>
-</head>
-<body>
-<h2 style="text-align: center;margin-top:40px;"><span style="font-family:arial,helvetica,sans-serif;">Future home of XYZ&#39;s Digital Archive site</span></h2>
-</body>
-</html>
-```
-
-### Edit .htaccess to force https
-
-!!! note ""
-    To perform this task, you'll need to change the cPanel File Manager settings to `Show Hidden Files`
-    in order to be able to see the `.htacces` file.
-
-By default, the site will not use https until you add the lines shown below to the top of the `public_html/.htaccess` file.
-
-```
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
-```
-Go to the site to verify that the URL is automatially changed to use https.
-
-There is also a [cPanel option](https://blog.cpanel.com/force-https-redirection/) for forcing HTTPS, but Digital Archive installations use the method described above.
 
 ---
 
@@ -176,78 +65,6 @@ Follow these steps to upload a zip file to the web server and extract (unzip) it
 
 ---
 
-## Create a subdomain
-Follow these steps to create a subdomain in an existing account.
-
--   Go to [cpanel] and choose `Subdomains`
--   In the `Subdomain` field enter the subdomain name
--   Don't change the `Domain` and `Document Root` fields
--   Click the `Create` button
--   Return to the [cpanel] home page and choose `File Manager`
--   Verify that a new folder for the domain exists,  
-    for example: `/home/avantlog/mysubdomain.avantlogic.net`
-
----
-
-## Purchase a domain
-
--	Login to the AvantLogic Reclaim Hosting account
--   In the Client Area, click `Domains > Register a New Domain` in the top menu
--   Enter the domain name and choose the suffix e.g. `.net`
--   Click the `Check Availability` button
--   In the `Congratulations` section that appears, click the `Continue` button
--   Accept the `Unprotected WHOIS` and click the `Continue` button
--   Check the `I have read and agree...` check box
--   Click the `Complete Order` button
--   Close the `Order Confirmation` page
-
----
-
-## Transfer a domain
-
-Follow these steps to transfer a domain that is registered with Reclaim to another registrar such as GoDaddy:
-
--	Login to the AvantLogic Reclaim Hosting account
--   In the Client Area, click the `Action Domains` button
--   Click the `Manage Domain` button for the domain to be transferred
--   On the **_Information_** page for the domain:
-    -   Click the `Registrar Lock` link
-    -   On the R**_egistrar Lock_** page:
-        - Click the `Disable Registrar Lock` button to unlock the domain
-    -   Go back to the **_Information_** page
-    -   Click `Management Tools > Get EPP Code`
-    -   Copy the entire message e.g. `The EPP Code for your domain is: 3zlk[QyhGL` and email it to the organization doing the transfer.
--   An email will arrive saying the request was made and when transfer will occur (in 3 or 4 days)
--   You can check the [Who Is](https://www.whois.com) status for a domain to verify that a transfer is pending.
--   **Important**: Transfer a domain at least two weeks before it is set to expire. Waiting until it is expired or nearly expired may make it impossible to do a transfer without first renewing the domain for another year.
-
----
-
-## Create a new Reclaim account
-Follow these steps to create a new Reclaim Hosting account. You would do this, for example, if you wanted
-to provide a client with their own Reclaim account for hosting their website. You might also create a
-separate account for a Digital Archive installation that will not be hosted on the dedicated WHM server.
-
--   If you already have an account with Reclaim Hosting and want to add another:
-    -	Login to your account
-    -	Choose `Accounts` > `Add an Account`
--   If you don't have an account:
-    -   Find and click the `Sign Up` button
--	Choose `Organization Plan` ($100/year) and click `Order Now`
--	Verify that the domain is available and choose the `Register a new domain` radio button
--	Choose billing cycle $100.00 USD Annually
--	Click `Checkout`
--	On the `Domains Configuration` page click `Continue`
--	On the `Review & Checkout` page
-    -	Total should be $100
-    -	The `Existing Customer` tab should be selected
-    -	For `Payment Method` choose `Use Existing Card (PayPal)`
-    -	Click `Complete Order`
--	Open the New Account Information email from reclaim and copy the cPanel information into the passwords spreadsheet.
--	Verify that you can login to cPanel directly as this organization (as opposed to from the administrator account)
-
---
-
 ## Tips & Tricks
 -   Use <https://skipdns.link> to access a site that's not accessible before switching DNS or namesevers.
 -   Use yum instead of pip to install on centos.
@@ -278,33 +95,6 @@ Extract
 tar -xzvf files-name.tar.gz
 ```
 
-## Jet Backup
-
-To get a backed-up file or a database for an account:
-
--   Log in to WHM
--   Choose the JetBackup feature
--   Click on the **_Restore & Download_** icon (circle with two arrowheads)
--   Type the username of the account into the **_Find Account_** in order to narrow
-    the list of accounts to only the one you will be working with
--   Choose what you want to get from the **_Backup Type_** dropdown
--   Check the checkbox for the account
--   Click the **_Choose Other Backup_** button to select the date of the backup to use
--   If getting a file:
-    -   Click the **_Browse Files_** button to select the file(s)
-    -   Navigate to the file(s)
-    -   Click the **_Download_** button to initiate the download
-    -   Click the OK button on the `Your download request is in progress` dialog
-    -   Click the download file link located in the **_Downloads_** section at upper right
--   If getting a database:
-    -   Click the **_Download_** button to initiate the download
-    -   Follow the steps below to extract the contents
-    -   The contents will be a single `.sql` file that you can then execute in MySQL Workbench
-        following the steps for how to
-        [copy a server database to use on localhost](/technology/mysql/#copy-a-server-database-to-use-on-localhost)
-
-![cPanel](web-host-4.jpg)
-
 ##### What to do with the download file
 
 Download files are in tar.gz format. Follow these steps to get the contents.
@@ -318,3 +108,27 @@ Download files are in tar.gz format. Follow these steps to get the contents.
 
 [WHM]: #whm
 [cPanel]: #cpanel 
+
+## InMotion
+
+### View logs for child processes
+To see if any sites are hitting their `max_children` limit, open a WHM Terminal window and type the command below:
+```
+cat /opt/cpanel/ea-php81/root/usr/var/log/php-fpm/error.log |grep max_children
+```
+
+### Check server status and uptime
+
+`WHM > Apache Status`
+
+### Edit the crontab file
+
+-   Open a WHM Terminal window
+-   `export EDITOR=nano`
+-   `crontab - e`
+
+### Reboot the server
+
+`WHH > System Reboot > Graceful Server Reboot`
+
+---

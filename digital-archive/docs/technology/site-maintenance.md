@@ -101,8 +101,8 @@ plugins/
 
 To update *all* installation files and folders, choose one of these commands:
 ```
-$ sudo ./sync-digitalarchive <cpanel-user-name> installation
-$ sudo ./sync-digitalarchive ALL installation
+$ ./sync-digitalarchive <cpanel-user-name> installation
+$ ./sync-digitalarchive ALL installation
 ```
 
 With the `installation` argument, the script will sync these files and folders:
@@ -187,7 +187,7 @@ http://localhost/omeka/avant/remote?action=vocab-update&password=ABC123
 ```
 
 ### Nightly cron job
-Every night a [Linux cron job](https://support.reclaimhosting.com/hc/en-us/articles/4405854324119-Setting-Up-Cron-Jobs-in-cPanel#setting-up-cron-jobs-in-cpanel-0-0) runs a python script to send these requests to each site:
+Every night a [Linux cron job](https://www.inmotionhosting.com/support/edu/control-web-panel/cwp-cron-jobs/) runs a python script to send these requests to each site:
 
 -   `garbage-collection`
 -   `es-health-check`
@@ -267,21 +267,6 @@ README.md
 ---
 
 !!! note "PHP 8.1"
-    There is a PHP 8.1 deprecation error Omeka 3.1 in  `application\models\Mixin\ElementText.php`  
-    regarding null passed to `strlen`. To work around it, I changed line 524 to test for null:  
-    `if ($elementText == null || !strlen($elementText)) {`  
-    Remove this note when the code is fixed in a newer Omeka release.
-
----
-
-!!! note "PHP 8.1"
-    There is a PHP 8.1 deprecation error Omeka 3.1 in  `C:\xampp\htdocs\omeka\application\libraries\Omeka\File\MimeType\Detect\Strategy\FileCommand.php`  
-    regarding null passed to `trim`. To work around it, I changed the `detect` function to test for null.
-    Remove this note when the code is fixed in a newer Omeka release.
-
----
-
-!!! note "PHP 8.1"
     There is a PHP 8.1 deprecation error Omeka 3.1 in  `C:\xampp\htdocs\omeka\application\views/helpers/Shortcodes.php`  
     regarding null passed to `strois`. To work around it, I added a test for null.
     Remove this note when the code is fixed in a newer Omeka release.
@@ -297,7 +282,7 @@ Past updates of release Omeka 2 have always gone smoothly, but 3.0 presented pro
 ## Running scripts
 
 ### Root privileges
-A user with root privileges can run bash scripte that modify files on every Digital Archive installation on the server.
+A user with root privileges can run bash scripts that modify files on every Digital Archive installation on the server.
 
 To assign a user root privileges via sudo:
 -   Go to WHM and choose `Manage Wheel Group Users`

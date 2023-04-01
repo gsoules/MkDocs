@@ -16,8 +16,7 @@ This page explains all of the tasks that AvantLogic performs to install and conf
 The web host must be an Apache web server that satisfies the 
 [system requirements](https://omeka.org/classic/docs/Installation/System_Requirements/)
 for [Omeka Classic](https://omeka.org/classic/). AvantLogic uses
-[Reclaim Hosting](https://reclaimhosting.com/) as its host.
-Learn now to [Create a new Reclaim account](web-host.md#create-a-new-cpanel-account).
+[InMotion Hosting](https://inmotionhosting.com/) as its host.
 
 **Site name**
 
@@ -42,7 +41,7 @@ together in the same `public_html`.
 ---
 ## MySQL database
 
-A new Reclaim Hosting account does not come with a database. Follow the steps below to
+A new cPanel account does not come with a database. Follow the steps below to
 use [cPanel] to create a new empty database and a database user for the Digital Archive.
 
 ### Create a database

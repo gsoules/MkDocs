@@ -94,5 +94,39 @@ To see queries as they occur:
 -   Open `C:\xampp\htdocs\omeka-2.6\application\libraries\Zend\Db\Select.php`
 -   Set a breakpoint on line 1379 where `__toString()` returns the SQL
 
+---
+
+## Setting up a new development environment
+Here are some of the trickiest things you need to do when setting up a development environment
+on a new computer.
+
+-   Get CURL to work with Xampp
+    -	Edit `C:\xampp\apache\conf\httpd.conf`
+    -	Add this line: `LoadFile "C:\xampp\php\libssh2.dll"`
+    -	See [this article](https://gist.github.com/alecos71/de26b0079b963a690e798375b8561dfa])
+-   Install imagick (Image Magic):
+    -   See [this article](https://phpandmysql.com/extras/install-imagemagick-and-imagick-xampp)
+    -   Set Omeka **_ImageMagick DIrectory Path_** to `C:\Program Files\ImageMagick-7.1.0-Q16-HDRI`
+-	Get GD to work by adding this line to `php.ini`:
+    -    `extension=php_gd.dll`
+-   Install `pdftotext.exe` by copying the file from another machine into the `c:\xampp`.
+-   Enable XDEBUG to work with PHPStorm:
+    -   Download and install xdebug from: [3.xdebug.org](https://3.xdebug.org/download) and copy to `xampp\php\ext`.
+    -   Configure PHPStorm to use XDebug
+    -   Add the lines below to the end of `php.ini`:
+
+``` text
+[XDebug]
+zend_extension = C:\xampp\php\ext\php_xdebug-3.2.1-8.1-vs16-x86_64.dll
+xdebug.remote_enable=1
+xdebug.remote_host=localhost
+xdebug.remote_port=9000
+xdebug.remote_handler=dbgp
+xdebug.remote_autostart=0
+xdebug.mode=debug
+```
+
+Restart Apache after making these kinds of changes.
 
 ---
+

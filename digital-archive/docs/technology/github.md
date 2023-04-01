@@ -29,6 +29,13 @@ To upload the local repository to GitHub:
 - On the confirmation dialog, uncheck or check the `Keep this code private` checkbox
 - Click the **_Publish repository_** button
 
+## Rename a GitHub desktop repository
+See [this article](https://docs.github.com/en/repositories/creating-and-managing-repositories/renaming-a-repository). 
+
+-   Rename it on github.com
+-   Sync with desktop github
+-   Close and repopen the desktop app.
+
 ## Commit changes locally
 
 As you make changes to files in your text editor and save them locally, you also see the changes in GitHub Desktop.
