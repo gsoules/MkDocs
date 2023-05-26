@@ -117,6 +117,12 @@ To see if any sites are hitting their `max_children` limit, open a WHM Terminal 
 cat /opt/cpanel/ea-php81/root/usr/var/log/php-fpm/error.log |grep max_children
 ```
 
+### Check the status of SSL certificates
+
+-   Go to the cPanel for `digitalarchive.us`
+-   Choose SSL/TLS Status in the Security section
+
+
 ### Check server status and uptime
 
 `WHM > Apache Status`
