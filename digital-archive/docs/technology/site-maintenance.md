@@ -336,4 +336,15 @@ See: <https://viralpatel.net/blogs/reseting-mysql-autoincrement-column/>
 
 where n will be the id for the next record created.
 
+
+## Backup and restore database
+
+### Restore
+
+- Login to InMotion WHM as root
+- Choose **_List Accounts_**
+- Click the cPanel icon for `digitalarchive.us`
+- Choose **_Backup Manager_** tool
+- In the **_Backup Type_** section expand **_MySQL_**
+- Choose the restore options and click the **_Restore_** button
 ---
