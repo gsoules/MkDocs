@@ -99,6 +99,13 @@ The rules above for [creating a right-sized PDF file](#rules-for-creating-a-righ
 -   Combine TIFF files into a PDF file
 -   Create an optimized copy of the PDF
 
+---
+
+!!! Note ""
+    As an alternative to PDF programs like Acrobat and Foxit, you might also consider using online PDF tools like
+    [ilovepdf](https://www.ilovepdf.com/) or [smallpdf](https://smallpdf.com/). Some Digital Archive users
+    have gotten excellent results with the free versions of these services.
+
 ## Combine TIFF files into a PDF file
 The easiest way to combine TIFF files into a PDF is to select all the files in Windows Explorer and then right-click
 to bring up the menu item `Combine files in Acrobat` or `Combine files in Foxit`. On Windows 11 you may need to

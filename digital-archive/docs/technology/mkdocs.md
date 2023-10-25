@@ -37,15 +37,18 @@ deploy the MkDocs website so that other people can see your changes.
 
 To build the MkDocs website:
 
-- Go to the `MkDocs repository`
-- Open a Command or Git Bash window
-- CD to the `digital-archive` folder if not there already
+- In Windows Explorer, navigate to the MkDocs repository  
+`Dropbox\Digital Archive AvantLogic\MkDocs\digital-archive`
+- Open a Windows PowerShell or Git Bash window
 - Run the following command:
 
 ```
 mkdocs build
 ```
 ![mkdocs build](mkdocs-2.jpg)
+
+If you get the message `Error: Config file 'mkdocs.yml' does not exist` you are not in the `digita-archive` folder containing
+the `mkdocs.yml` file. CD to that folder.
 
 The build updates the files in the `site` folder in the `MkDocs repository` with any changes made since the last build.
 You can now deploy these files to the server.
@@ -67,9 +70,9 @@ in the instructions for installing a Digital Archive site.
 
 MkDocs comes with a built-in dev-server that lets you preview your documentation as you work on it. To run the server:
 
-- Go to the `MkDocs repository`
-- Open a Command or Git Bash window
-- CD to the `digital-archive` folder if not there already
+- In Windows Explorer, navigate to the MkDocs repository  
+`Dropbox\Digital Archive AvantLogic\MkDocs\digital-archive`
+- Open a Windows PowerShell or Git Bash window
 - Run the following command:
 
 ```
@@ -77,6 +80,9 @@ mkdocs serve
 ```
 
 ![mkdocs serve](mkdocs-1.jpg)
+
+If you get the message `Error: Config file 'mkdocs.yml' does not exist` you are not in the `digita-archive` folder containing
+the `mkdocs.yml` file. CD to that folder.
 
 With the server running, you can now open <http://127.0.0.1:8000> in your browser to see the default home page being displayed.
 When you edit a Markdown file and then save it, your changes automatically appear in the browser.

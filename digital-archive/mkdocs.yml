@@ -4,6 +4,7 @@ copyright: 'Copyright &copy; 2023 AvantLogic Corporation'
 nav:
     - Find & Discover: index.md
     - Glossary: glossary.md
+    - Benefits: benefits.md
     - For Users:
         - Getting Started for Users: user/getting-started-user.md
         - How to Search: user/how-to-search.md
@@ -51,7 +52,7 @@ nav:
         - Install a Digital Archive site: technology/install-digital-archive.md
         - Common Vocabulary Translator: technology/common-vocabulary-translator.md
         - PastPerfect Exporter: technology/pastperfect-exporter.md
-        - Web server: technology/web-host.md
+        - Linux server: technology/linux-server.md
         - MkDocs: technology/mkdocs.md
         - MySQL: technology/mysql.md
         - GitHub: technology/github.md

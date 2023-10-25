@@ -37,7 +37,7 @@ allow MySQL Workbench to remotely access a database.
 -   Get the IP address of the computer on which use MySQL Workbench
     -	In a browser window type `myipaddress` in the address bar
     -   Your IP address will appear, or there will be links to sites that will show the address
--	Go to [cPanel](web-host.md#cpanel)
+-	Go to [cPanel](linux-server.md#cpanel)
 -	In the `DATABASES` section, click `Remote MySQL`
     -	Paste the IP address in the **Host** field under `Add Access Hosts`
     -	Click the `Add Host` button
@@ -161,7 +161,7 @@ Example: `mysql -u root -p daus_swhpl < swhpl.sql`
     -   Import into new existing shared `devshr`
 -   Get latest files from the server (just ones added/changed since date of last DB)
     -   Go to the `public_html/digitalarchive/files` folder for the site being imported
-    -   [Compress the folder into a zip file](/technology/web-host/#compress-a-large-folder-on-the-server)
+    -   [Compress the folder into a zip file](/technology/linux-server/#compress-a-large-folder-on-the-server)
     -   Download the zip file into `C:\xampp\htdocs\omeka`
     -   Delete the zip file from the server
     -   Rename `C:\xampp\htdocs\omeka\files` to e.g. `files-swhpl`

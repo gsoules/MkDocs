@@ -1,4 +1,4 @@
-# Web server administration
+# Linux server administration
 
 
 This page explains how to perform Digital Archive related web host administration tasks
@@ -23,7 +23,7 @@ To learn more about WHM, visit <https://docs.cpanel.net/whm/>
 !!! note "Tip"
     Use the search box at the top to quickly find a feature. For example, as you type `ftp`,
     the features will immediately narrow down to just those related to FTP. This same technique
-    works in [cPanel].
+    works in cPanel.
 
 ---
 
@@ -38,14 +38,14 @@ Follow these steps to upload a zip file to the web server and extract (unzip) it
 
 ### Upload the zip file
 
--   Go to [cpanel] and choose `File Manager`
+-   Go to cPanel and choose `File Manager`
 -   Navigate *into* the folder where a new folder should be created for the zip file contents.  
     For example, if uploading an Omeka plugin, navigate into the `plugins` folder.
 -   Click `Upload` in the top menu        
 -	Select or drag-in the zip file to begin uploading it
 -   Wait for the upload to complete. When complete, the progress bar will:
     -   Show 100% *and* change color from blue to green  
-        ![cPanel](web-host-2.jpg)
+        !cPanel(linux-server-2.jpg)
 -   Click the `Go Back to` link at the bottom of the page to return to the parent folder
 -   Verify that the zip file is there. If not, click `Reload` in the menu above the file list
 
@@ -106,16 +106,62 @@ Download files are in tar.gz format. Follow these steps to get the contents.
 
 ---
 
-[WHM]: #whm
-[cPanel]: #cpanel 
+## Advanced System Administration
 
-## InMotion
+### Configure PHP settings
+
+To specify PHP configuration settings for a single site:
+
+-   Log into WHM
+-   Choose `List Accounts`
+-	Go to cPanel for the `digitalarchive.us` domain
+-   Choose `MultiPHP INI Editor`
+-   Select the `Basic Mode` tab
+-   Choose the site from the dropdown menu
+-   Make the desired setting changes
+-   Click the `Apply` button
+
+### Contact Manager
+
+To control what notifications get emailed to you as the WHM administrator:
+
+-   Log into WHM
+-   Go to `Contact Manager`
+
+Use the `Communication Type` tab to set the level of notification for Email (recommend `High only`).
+
+Use the `Notifications` tab to set the importance of various kinds of notices. Not all notices
+are listed. If you are receiving unexpected emails for notifications you don't want to see, contact Inmotion support.
+
+
+### Disk Usage
+
+To determine how much disk space each site it using:
+
+-   Log into WHM
+-   Choose `List Accounts`
+-	Go to cPanel for the `digitalarchive.us` domain
+-   Choose `Disk Usage`
+-   Scroll to the bottom of the page where disk usage is listed by directory
+-   Expand the `domains` directory to see usage for each domain 
+
 
 ### View logs for child processes
 To see if any sites are hitting their `max_children` limit, open a WHM Terminal window and type the command below:
 ```
 cat /opt/cpanel/ea-php81/root/usr/var/log/php-fpm/error.log |grep max_children
 ```
+
+To change the `max_children` limit for an individual site:
+
+-   Log into WHM
+-   Go to `MultiPHP Manager`
+-   Choose the `User Domain Settings` tab to see a list of sites
+-   Find the site of interest and click its `PHP-FPM Settings` button
+-   Change the value of the `Max Children` field
+-   Click the `Update` button at the bottom of the page
+-   To go back to the list of sites, click `Go Back To User Domain Settings`
+
 
 ### Check the status of SSL certificates
 
@@ -126,6 +172,19 @@ cat /opt/cpanel/ea-php81/root/usr/var/log/php-fpm/error.log |grep max_children
 ### Check server status and uptime
 
 `WHM > Apache Status`
+
+### Blocked IP addresses
+To view blocked IP address, and to perform other IP operations:
+
+-   Log into WHM
+-   Go to `ConfigServer Security & Firewall`
+
+To check for a blocked IP address:
+
+-   Scroll to the `csf - ConfigServer Firewall` section
+-   Paste the IP address in the text field next to the `Search for IP` button
+-   Click the button
+
 
 ### Edit the crontab file
 
@@ -138,3 +197,4 @@ cat /opt/cpanel/ea-php81/root/usr/var/log/php-fpm/error.log |grep max_children
 `WHH > System Reboot > Graceful Server Reboot`
 
 ---
+

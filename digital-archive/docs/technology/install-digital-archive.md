@@ -125,7 +125,7 @@ Follow these steps to upload the Omeka Classic files to the web server. You can 
     As of 8/12/2022, the latest release was `omeka-3.0.3.zip`
 -	Go to [cPanel] and choose `File Manager`
 -   Navigate into the `public_html` folder
--   [Upload and extract the zip file](web-host.md#upload-and-extract-a-zip-file)
+-   [Upload and extract the zip file](linux-server.md#upload-and-extract-a-zip-file)
 -   A new folder having the same name as the zip file will appear
 -   Rename the new folder from the zip file's name to `digitalarchive`
 -   Delete the zip file.
@@ -496,7 +496,7 @@ Follow these steps to locate and download each zip file one at a time:
 
 !!! note ""
     The sections that follow assume that you are familiar with the process to
-    [upload and extract a zip file](web-host.md#upload-and-extract-a-zip-file).
+    [upload and extract a zip file](linux-server.md#upload-and-extract-a-zip-file).
 
 ### Upload and extract the theme
 
@@ -1452,7 +1452,7 @@ This case applies when using subdomains for hosting multiple instances of the Di
 on the same web server for development and testing purposes. The following sections point out some
 things you should be aware of.
 
-Learn [how to create a subdomain](web-host.md#create-a-subdomain).
+Learn [how to create a subdomain](linux-server.md#create-a-subdomain).
 
 **Database name and user**
 
@@ -1553,4 +1553,4 @@ For each new site:
 [AvantS3]:            ../../plugins/avants3
 [AvantZoom]:          ../../plugins/avantzoom
 [AvantVocabulary]:    ../../plugins/avantvocabulary
-[cPanel]:             web-host.md#cpanel
+[cPanel]:             linux-server.md#cpanel
