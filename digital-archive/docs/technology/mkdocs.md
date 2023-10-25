@@ -23,8 +23,7 @@ The website's files and folders are maintained in the AvantLogic `MkDocs reposit
     Wherever this page refers to the `MkDocs repository` it means the location of the
      MKDocs working files and folders. That location is 
     an `AvantLogic Digital Archive Dropbox` folder named `\MkDocs\digital-archive`.
-    Additionally, these files are stored on [GitHub](../technology/github.md) at <https://github.com/gsoules/MkDocs>
-    which is currently a private repository accessible only to its collaborators.
+    Additionally, these files are stored on [GitHub](../technology/github.md) at <https://github.com/gsoules/MkDocs>.
 
 The navigation structure for the website is configured in the `mydocs.yml` file.
 

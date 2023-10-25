@@ -49,6 +49,7 @@ nav:
         - Import CSV data: administrator/import-csv.md
     - Technology:
         - The Digital Archive Software: technology/technologies.md
+        - Site maintenance: technology/site-maintenance.md
         - Install a Digital Archive site: technology/install-digital-archive.md
         - Common Vocabulary Translator: technology/common-vocabulary-translator.md
         - PastPerfect Exporter: technology/pastperfect-exporter.md
@@ -59,7 +60,6 @@ nav:
         - PHP: technology/php.md
         - Python: technology/python.md
         - AWS: technology/aws.md
-        - Site maintenance: technology/site-maintenance.md
     - Digital Archive plugins:
         - AvantAdmin: plugins/avantadmin.md
         - AvantCommon: plugins/avantcommon.md

@@ -35,7 +35,7 @@ To enable site maintenance for a new Digital Archive site:
     After you add a new site and then run `sync-digitalarchive`, all of the site's files will get updated because they are syncing with the master copies which have different timestamps than the ones uploaded as part of the manual [site installation](/technology/install-digital-archive/) process.
 
 ## Software updates
-After making changes to Digital Archive plugins, or after [upgrading to a new release of Omeka](/technology/site-maintenance/#upgrade-to-a-new-release-of-omeka), you have to update the Digital Archive sites. There are two steps:
+After making changes to Digital Archive plugins, or after [upgrading to a new release of Omeka](/technology/site-maintenance/#upgrade-to-new-omeka-release), you have to update the Digital Archive sites. There are two steps:
 
 1.   Sync the local and master files
 1.   Push the master files to the site(s) to be updated
@@ -147,6 +147,83 @@ vocab-rebuild
 
 The output from site request operations is appended to `bin/logs/requests.log`
 
+---
+
+## Upgrade to new Omeka release
+This section explains how to upgrade the Digital Archive's Omeka core files to a new release of Omeka.
+Updating involves copying Omeka core files from the release to the site folder. Since the Digital Archive
+does not modify any Omeka core files, these is no need to review changes to those files.
+Read all of these instructions before proceeding. The steps should take about a half hour.
+
+### Download the new release
+- View the new release of Omeka Classic on [omeka.org](https://omeka.org/classic/download/).
+- Download the latest release from the [releases page](https://github.com/omeka/Omeka/releases) on GitHub.
+    - The release file will have a name like `omeka-3.0.1.zip`.
+- Put the zip file on the desktop or other folder that is not deeply nested. In a deeply nested folder, some files will get an unzip error because their resulting file path is too long.    
+- Unzip the release into a work folder named as the release e.g. `omeka-3.0.1`.
+- Delete the zip file.
+- Move the work folder to `Digital Archive AvantLogic\Omeka\Omeka Downloads\Omeka Releases`.  
+Make sure the folder contains the release files as shown below, not a single folder containing the release files
+as sometimes happen when you unzip a file from GitHub.
+
+![update files](update-2.jpg)
+
+### Update the local development site
+
+!!! note ""
+    Before proceeding, run Omeka on the development site to verify it runs properly with the *current release*. There should be no issues, but if, for example, something in the environment changed that created a problem, find and fix it first so you won't think it's related to the new release.
+
+-   Make a temporary backup copy of the current release folder `xampp\htdocs\omeka`:
+    -   Create an empty backup folder on the desktop named `omeka-backup`.
+    -   Open the `xampp\htdocs\omeka` folder.
+    -   Select all the folders and files *except* for the `files` folder which is huge.
+    -   Copy the selected items to the backup folder (takes about a minute).
+-   Use [Beyond Compare](https://www.scootersoftware.com/) to compare the current and new release folders:
+    -   Run Beyond Compare.
+    -   Edit the `DAUS > omeak-3.x <--> xampp\htdocs\omeka` session.
+    -   Change the source to the folder containing the new release.
+
+Use Beyond Compare to **Copy** (do not Mirror) the following core files to `C:\xampp\htdocs\omeka`:
+```
+admin
+application
+install
+plugins/ExhibitBuilder
+plugins/SimplePages
+themes/default
+bootstrap.php
+README.md
+```
+Do not copy any folders or files that are not listed above.
+If a folder or file has not changed, you don't need to copy it.
+Ctrl-click folders and files to select the ones to be copied as shown below.
+
+![update files](update-1.jpg)
+
+---
+
+!!! note "Development Server"
+    If you are updating Omeka on the Windows XAMPP development server, edit
+    `xampp\htdocs\omeka\application\libraries\Omeka\File\Derivative\Strategy\ExternalImageMagick.php`  
+    to define the ImageMagick constant as: `const IMAGEMAGICK_CONVERT_COMMAND = 'magick.exe';`  
+    This change ensures that **_ImageMagick Directory Path_** on the Omeka **_Settings_** page works for the ImageMagick executable
+    `magick.exe` in Windows folder e.g. `C:\Program Files\ImageMagick-7.1.0-Q16-HDRI`.  
+    DO NOT MAKE THIS CHANGE on the Linux server. On Linux, leave the constant defined as `convert`.
+
+### Verify that the new release works properly
+Normally the site should just come up, though on releases of Omeka prior to 3.0 you were presented with a dialog to update the database. It appears that 3.0 updates the database automatically.
+
+Verify that the new release is installed by going to the Dashboard page and looking at the Omeka version in the lower right corner.
+
+When you are comfortable that the upgrade is okay, you can delete the temporary backup folder created earlier.
+
+See the [Software updates](/technology/site-maintenance/#software-updates) section for how to deploy the upgrade to all Digital Archive installations.
+
+#### Troubleshooting
+Past updates of release Omeka 2 have always gone smoothly, but 3.0 presented problems. When it first came up it reported a Zend_Controller_Exception and then an InvalidArgumentException. The errors appeared to be triggered by a plugin and by AvantTheme, though later there were no issues with either, so it probably had to do with the interim transition from the old to the new release. The solution was to back out the new release, and with the older version running, deactivate all of the Avant plugins and switch from AvantTheme to the default Omeka theme. After updating the site again with the new release, the errors went away and none reoccurred after switching back to AvantTheme and activating the Avant plugins.
+
+---
+
 ## Common vocabulary updates
 
 To update the common vocabulary on one or all Digital Archive sites:
@@ -185,8 +262,9 @@ A developer can simulate a remote vocabulary update locally via the query string
 ``` text
 http://localhost/omeka/avant/remote?action=vocab-update&password=ABC123
 ```
+---
 
-### Nightly cron job
+## Nightly cron job
 Every night a [Linux cron job](https://www.inmotionhosting.com/support/edu/control-web-panel/cwp-cron-jobs/) runs a python script to send these requests to each site:
 
 -   `garbage-collection`
@@ -213,71 +291,7 @@ https://yourdomain.net/admin/avant/show/3054
 
  Edit the item by making a minor change to a field (e.g. add a blank space to the end of a sentence), and then save the item. This will cause the item to get re-synced with the Elasticsearch index. Run the health check again to see if the problem has been fixed.
 
-## Upgrade to a new release of Omeka
-Update a Digital Archive site to use a new release of Omeka. Updating involves copying Omeka core files from the release to the site folder. Since the Digital Archive does not modify any Omeka core files, these is no need to review changes to those files. 
-
-### Download the new release
-- View the new release of Omeka Classic on [omeka.org](https://omeka.org/classic/download/).
-- Download the latest release from the [releases page](https://github.com/omeka/Omeka/releases) on GitHub.
-    - The release file will have a name like `omeka-3.0.1.zip`.
-- Put the zip file on the desktop or other folder that is not deeply nested. In a deeply nested folder, some files will get an unzip error because their resulting file path is too long.    
-- Unzip the release into a work folder named as the release e.g. `omeka-3.0.1`.
-- Move the work folder to `Digital Archive AvantLogic\Omeka\Omeka Downloads\Omeka Releases`.
-- Delete the zip file.
-
-### Update the local development site
-
-!!! note ""
-    Before proceeding, run Omeka on the development site to verify it runs properly with the *current release*. There should be no issues, but if, for example, something in the environment changed that created a problem, find and fix it first so you won't think it's related to the new release.
-
--   Make a temporary backup copy of the current release folder `xampp\htdocs\omeka`:
-    -   Create an empty backup folder on the desktop.
-    -   Open the `omeka` folder.
-    -   Select all the folders and files *except* for the `files` folder which is huge.
-    -   Copy the selected items to the backup folder (takes about a minute).
--   Use [Beyond Compare](https://www.scootersoftware.com/) to compare the current and new release folders:
-    -   Run Beyond Compare.
-    -   Edit the `DAUS > omeak-3.x <--> xampp\htdocs\omeka` session.
-    -   Change the source to the folder containing the new release.
-
-Use Beyond Compare to Copy (**do not Mirror**) the following **core files** to `C:\xampp\htdocs\omeka`:
-```
-admin
-application
-install
-plugins/ExhibitBuilder
-plugins/SimplePages
-themes/default
-bootstrap.php
-README.md
-```
-![update files](update-1.jpg)
-
 ---
-
-!!! note "Development Server"
-    If you are updating Omeka on the Windows XAMPP development server, whether or not
-    `application\libraries\Omeka\File\Derivative\Strategy\ExternalImageMagick.php` has changed in the new Omeka release,
-    edit the file to define the ImageMagick constant as:  
-    `const IMAGEMAGICK_CONVERT_COMMAND = 'magick.exe';`  
-    This change ensures that **_ImageMagick Directory Path_** on the Omeka **_Settings_** page works for the ImageMagick executable
-    `magick.exe` in Windows folder e.g. `C:\Program Files\ImageMagick-7.1.0-Q16-HDRI`.  
-    DO NOT MAKE THIS CHANGE on the Linux server. On Linux, leave the constant defined as `convert`.
-
----
-
-!!! note "PHP 8.1"
-    There is a PHP 8.1 deprecation error Omeka 3.1 in  `C:\xampp\htdocs\omeka\application\views/helpers/Shortcodes.php`  
-    regarding null passed to `strois`. To work around it, I added a test for null.
-    Remove this note when the code is fixed in a newer Omeka release.
-
-### Verify that the new release works properly
-Normally the site should just come up, though on releases of Omeka prior to 3.0 you were presented with a dialog to update the database. It appears that 3.0 updates the database automatically.
-
-See the [Software updates](/technology/site-maintenance/#software-updates) for how to deploy the upgrade to all Digital Archive installations.
-
-#### Troubleshooting
-Past updates of release Omeka 2 have always gone smoothly, but 3.0 presented problems. When it first came up it reported a Zend_Controller_Exception and then an InvalidArgumentException. The errors appeared to be triggered by a plugin and by AvantTheme, though later there were no issues with either, so it probably had to do with the interim transition from the old to the new release. The solution was to back out the new release, and with the older version running, deactivate all of the Avant plugins and switch from AvantTheme to the default Omeka theme. After updating the site again with the new release, the errors went away and none reoccurred after switching back to AvantTheme and activating the Avant plugins.
 
 ## Running scripts
 
