@@ -46,11 +46,13 @@ The master files for a Digital Archive installation are located on the `digitala
 To update the master files with the local development files:
 
 -   Run Beyond Compare
--   Run the `DAUS\DAUS PLUGINS and THEMES` session
--   **Mirror Right** local `C:\xampp\htdocs\omeka` to `public_html/digitalarchive` on the daus server
+-   Run one of these sessions:
+    -   `DAUS\DAUS PLUGINS and THEMES` (use if only plugin or theme files were updated)
+    -   `DAUS\DAUS ALL FILES` (use after doing an Omeka upgrade)
+-   **Mirror Right** local `C:\xampp\htdocs\omeka` to `public_html/digitalarchive-master` on the daus server
 
 !!! warning ""
-    **Important**: Be sure to **mirror**, not copy the files.
+    **Important**: Be sure to **MIRROR**, not copy the files.
 
 ### Push updates to one site or all sites
 You can very quickly push only the updated master files to one or all Digital Archive sites from the `daus` command line.
@@ -208,7 +210,10 @@ Ctrl-click folders and files to select the ones to be copied as shown below.
     to define the ImageMagick constant as: `const IMAGEMAGICK_CONVERT_COMMAND = 'magick.exe';`  
     This change ensures that **_ImageMagick Directory Path_** on the Omeka **_Settings_** page works for the ImageMagick executable
     `magick.exe` in Windows folder e.g. `C:\Program Files\ImageMagick-7.1.0-Q16-HDRI`.  
-    DO NOT MAKE THIS CHANGE on the Linux server. On Linux, leave the constant defined as `convert`.
+    DO NOT MAKE THIS CHANGE on the Linux server. On Linux, leave the constant defined as `convert`.  
+    The Beyond Compare session `DAUS_ALL_FILES` excludes this file so that the edited version won't get mirrored
+    to the server. However, if the Omeka upgrade changed the file, you'll need to manually copy it to the server without
+    the change to the `IMAGEMAGICK_CONVERT_COMMAND` constant (it needs to be `convert` on the server).
 
 ### Verify that the new release works properly
 Normally the site should just come up, though on releases of Omeka prior to 3.0 you were presented with a dialog to update the database. It appears that 3.0 updates the database automatically.

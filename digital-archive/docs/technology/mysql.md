@@ -39,7 +39,7 @@ allow MySQL Workbench to remotely access a database.
     -   Your IP address will appear, or there will be links to sites that will show the address
 -	Go to [cPanel](linux-server.md#cpanel)
 -	In the `DATABASES` section, click `Remote MySQL`
-    -	Paste the IP address in the **Host** field under `Add Access Hosts`
+    -	In the `Add Access Hosts` section, paste the IP address in the **Host** field
     -	Click the `Add Host` button
 -   If your IP address ever changes, you'll need to perform these steps again
 

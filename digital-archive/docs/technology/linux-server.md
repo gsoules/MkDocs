@@ -163,6 +163,16 @@ To change the `max_children` limit for an individual site:
 -   To go back to the list of sites, click `Go Back To User Domain Settings`
 
 
+### View the CSF config file
+
+-   Log into WHM
+-   Choose `Terminal`
+-   Type `cd /etc/csf`
+-   Type `less csf.conf`
+-   Use the up and down arrow keys to scroll a line at a time
+-   Type `q` to quit
+
+
 ### Check the status of SSL certificates
 
 -   Go to the cPanel for `digitalarchive.us`

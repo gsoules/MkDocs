@@ -416,14 +416,18 @@ To download multiple files:
 
 To permanently delete a folder:
 
--   Select the folder and delete it using the **_Delete_** button in the *upper* panel.
--   Choose the folder's parent folder.
+-   Select the folder.
+-   Click the **_Delete_** button located below the file/folder window of the *upper* panel.
+-   Click the **_Yes_** button on the confirmation dialog.
+-   Choose the deleted folder's parent folder.
 -   Choose the **_Versions_** tab in the lower panel.
 -   Wait for the version information to load.
 -   Choose `Show only deleted files` from the **_Filters_** dropdown at lower right.
 -   Wait for the filtered version information to load.
--   Select all of the keys (Ctrl-A)
+-   Each key in the list should show `(deleted)` as shown in the screenshot below.
+-   Select all of the keys by using Ctrl-A.
 -   Delete the keys using the **_Delete_** button in the *lower* panel.
+-   Click the **_Yes_** button on the confirmation dialog.
 
 ![image](s3-26.jpg)
 
