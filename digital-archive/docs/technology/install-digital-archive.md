@@ -787,9 +787,10 @@ Verify that the plugin is working as expected.
 -   Click the `Add Item` button
 
 #### Upload a test image
--   On the `Browse Items` page, click the `Edit` link under the `Test 1` item
+-	Click `Items` in Omeka's left admin menu
+-   Click the `Edit` link under the `Test 1` item
 -	Click on the `Files` tab at the top of the page
--   Click the `Browse...` button
+-   Click the `Choose File` button
 -   Browse for an image
 -	Click the `Save Changes` button
 -   You should now be on the `Item` page for new item.
@@ -859,12 +860,10 @@ Follow these steps to install the Simple Pages plugin:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `Simple Pages`
+-   Go to the Omeka `Settings` > `Security` page
+-   Uncheck the **Enable HTML Filtering** checkbox to allow all HTML tags such as `<img>`
 
 !!! note "Notes"
-    To allow all HTML, e.g. `<img>` tags, go to `Settings` > `Security` and uncheck the
-    **Enable HTML Filtering** checkbox. Otherwise, filtered elements get removed when you
-    save the Simple page.
-
     When adding Simple pages, be sure to check the box for `Publish this page?` so it will show
     up in the Omeka navigation section.
 
@@ -881,7 +880,7 @@ Follow these steps to install and configure the Simple Vocab plugin:
 -   Click the `Save Changes` button
 -   Click `Simple Vocab` in Omeka's left admin menu
 -   Add vocabularies for the **Rights**, **Subject**, **Type**, and **Place** elements (see below)
--   Click the `Save Changes` button
+-   Click the `Save Changes` button after specifying values for each element
 
 Rights
 ``` text
@@ -895,6 +894,9 @@ Copyright Not Evaluated
 Copyright Undetermined
 No Known Copyright
 ```
+
+If you will be using the `AvantVocabulary`plugin, set **Subject**, **Type**, and **Place** as shown
+below. Otherwise, provide the values you want.
 
 Subject
 ``` text
@@ -932,7 +934,7 @@ Follow these steps to configure the [AvantCommon] plugin:
 -	Go to the Omeka `Plugins` page
 -	Click the `Configure` button for `AvantAdmin`
 -	Enter the **Identifier** as `Identifier`
--   Enter an **Alias** if applicable
+-   Enter an **Alias** if applicable or leave blank
 -	Enter any **Private Elements**
 -	Enter the **Unused Elements** shown below plus any others
 
@@ -1168,8 +1170,8 @@ Date
 ```
 
 -   Enter `Identifier` for **Integer Sorting**
--   Leave **Address Sorting** unchecked
--   Leave **Elasticsearch** unchecked
+-   Leave **Address Sorting** unchecked (will not be available if there is no `Address` element)
+-   Leave **Elasticsearch** unchecked (will not be available until AvantElasticsearch is installed)
 -   Click the `Save Changes` button
 
 ---
@@ -1196,9 +1198,9 @@ To learn about using AvantZoom, see the documentation for [zoomable images](../.
 Follow these steps to create the folder used to store the tiles for zoomable images.
 
 -	Go to [cPanel] and choose `File Manager`
--   Create these two folders:
-    -   `public_html/digitalarchive/files/zoom`
-    -   `public_html/digitalarchive/files/zoom/images`
+-   Create these two folders within the `files` folder of the site folder:
+    -   `files/zoom`
+    -   `files/zoom/images`
 -   Copy the OpenSeadragon icons from `public_html/digitalarchive/plugins/AvantZoom/images` to
     `public_html/digitalarchive/files/zoom/images`    
 
@@ -1241,6 +1243,9 @@ Identifier, filter: DigitalArchive, filterIdentifierS3
 
 ---
 ## AvantElasticsearch
+
+!!! note ""
+    Skip this task if the installation will not be using AvantElasticsearch.
 
 ### Create AWS credentials
 
@@ -1316,6 +1321,9 @@ Follow these steps to allow the installation to share its items with other Digit
 ---
 ## AvantVocabulary
 
+!!! note ""
+    Skip this task if the installation will not be using AvantVocabulary.
+
 Follow these steps to install and configure [AvantVocabulary]:
 
 -	Go to the Omeka `Plugins` page
@@ -1367,6 +1375,9 @@ Transportation, Automobile
 ---
 ## Reindex the local Elasticsearch index
 
+!!! note ""
+    Skip this task if the installation is not using AvantElasticsearch.
+
 -   Add a new item with just the minimal fields
 -   If you check to see the site's search results, you'll see a `No items found` message and an Elasticsearch error
 -   Click `Elasticsearch` in the left menu
@@ -1374,8 +1385,7 @@ Transportation, Automobile
 -   Import into new **local** index
 -   You should now be able to see the item with no errors
 
----
-## Test the Installation
+#### Test the Elasticsearch installation
 
 -   Add a photo to the item
 -   Make the item public
@@ -1448,7 +1458,7 @@ This case applies when using subdomains for hosting multiple instances of the Di
 on the same web server for development and testing purposes. The following sections point out some
 things you should be aware of.
 
-Learn [how to create a subdomain](linux-server.md#create-a-subdomain).
+Learn [how to create a subdomain](/technology/install-digital-archive/#site-folder).
 
 **Database name and user**
 
@@ -1506,36 +1516,6 @@ code below near the top of the file after `RewriteEngine on`. Don't add code for
 ```
 
 ---
-
-## Bulk site installation
-
-This section discusses installation of multiple sites whereby most of the steps above can be
-skipped by effectively cloning an existing site.
-
-Preparation:
-
--   Choose a *master site* to clone. The site must have no items.
--   Create a `digitalarchive.zip` file from the master site
--   [Export the SQL script](/technology/mysql/#export-sql-database) from the master site
-
-For each new site:
-
--   [Create a database](/technology/install-digital-archive/#create-a-database)
--   Copy and extract `digitalarchive.zip` into public_html
--   Edit `db.ini` to point to the new database
--   In [MySQL Workbench](/technology/mysql/), import the master SQL:
-    -   `File > Open SQL Script`
-    -   Edit the script:
-        -   All places where the organization name or URL exists
-        -   Item type
-        -   AWS credentials
-    -   [Import the database](/technology/mysql/#export-sql-database) from the master SQL
--   Bring up the new site and login        
--   Assign a new password to the super user. Logout and login again.
--   Make any changes necessary for the site's organization e.g. to the simple pages
--   [Import data from a CSV file](/administrator/import-csv)
-
-
 
 [AvantAdmin]:         ../../plugins/avantadmin
 [AvantCommon]:        ../../plugins/avantcommon
