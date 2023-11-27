@@ -24,9 +24,15 @@ Some of the installation steps require that you specify a *site name*. Choose a 
 meaningful name that you and others will recognize when performing system administration. An acronym
 is usually a good choice. For example, the site name for the Southwest Harbor Public Library is `swhpl`.
 
-**Installation folder**
+### Site folder
 
-The Digital Archive files will be installed in `public_html/digitalarchive`. AvantLogic uses
+The files for a Digital Archive installation reside in what this documentation refers to as the site folder.
+The location of the folder varies depending on whether the installation is standalone (has its own cPanel
+account on the server) or is a subdomain installation (shares the same cPanel account as other installations).
+
+**Standalone installation folder**
+
+On a standalone installation, the Digital Archive files will be installed in `/public_html/digitalarchive`. AvantLogic uses
 the `digitalarchive` folder to isolate the Digital Archive files
 from other applications on the web server. For example, some installations use a `digitalarchive`
 folder and a `wp` folder side-by-side where the `wp` folder contains a WordPress application
@@ -38,13 +44,28 @@ together in the same `public_html`.
     **Do not** create the `digitalarchive` folder at this time.  
     It will get created later during the *Install Omeka Classic files* step.
 
+**Subdomain installation folder**
+
+On a subdomain installation, the Digital Archive files will be installed in `/domains/site-name` for a subdomain e.g. `demo.digitalarchive.us`.
+Create the subdomain now before continuing.
+
+-   Go to cPanel for `digitalarchive.us`
+-   Use the `File Manager` tool to create a new subfolder in the `domains` folder e.g. `/domains/demo`
+-   Choose the `Domains` tool
+-   Click the `Create a New Domain` button
+-   Enter the domain name e.g. `demo.digitalarchive.us`
+-   Enter the document root e.g. `/domains/demo`
+-   Leave the share document root option unchecked
+-   Click the `Submit` button
+
 ---
 ## MySQL database
 
-A new cPanel account does not come with a database. Follow the steps below to
-use [cPanel] to create a new empty database and a database user for the Digital Archive.
+Follow the steps below to use [cPanel] to create a new empty database and a database user for the Digital Archive installation.
 
-### Create a database
+### Standalone installation
+
+#### Create a database
 
 !!! warning "Important"
     cPanel will automatically prefix any database or user name that you choose with the
@@ -64,11 +85,12 @@ use [cPanel] to create a new empty database and a database user for the Digital 
     If you want to populate the new database with data from an existing Digital Archive database, follow the instructions to
     [copy a MySQL database](/technology/mysql/#copy-a-server-database-to-use-on-localhost).
 
-### Create a user
+#### Create a user
 
 -	In wizard Step 2 Create Database Users:
     -   Decide on the user name suffix
-        -   A good choice is `archivist`
+        -   A good choice for a standalone installation is `archivist`
+        -   A good choice for a subdomain installation is `admin`
     -   Enter the suffix in the **Username** field
 -   Click the `Password Generator` button
 -   In the popup dialog:
@@ -82,36 +104,29 @@ use [cPanel] to create a new empty database and a database user for the Digital 
     -   Check the `ALL PRIVILEGES` checkbox at the top
     -	Click the `Next Step` button
 
+### subdomain installation
+
+#### Create a database
+
+-	Go to [cPanel] and choose `MySQL Databases`
+-	In the Create New Database section enter the site name e.g. `demo` as the database name
+-	Click the `Create Database` button
+-   On the database added page, click `Go Back`
+-   In the Add User To Database section
+    -   Choose `daus_admin` as the user
+    -   Choose the new database name as the database e.g. `daus_demo`
+    -   Click the `Add` button
+-   On the Manage User Privileges page
+    -   Check the  `ALL PRIVILEGES` box
+    -   Click the `Make Changes` button
+
+
 ### Configure MySQL Workbench
 
+This step is only necessary for a standalone installation. For a subdomain installation, the new
+database will already be availale in MySQL Workbench as one of the `digitalarchive.us` databases.
+
 -   [Add a database connection to MySQL Workbench](mysql.md#add-a-database-connection)
-
----
-
-### Change database storage engine
-!!! note ""
-    This step is only necessary when using AvantSearch **without** AvantElasticsearch. 
-
-These steps change the storage engine for the `search_texts` table from `MyISAM` to `InnoDB`. They also add a `FULLTEXT` index to the `title` column of the `search_texts` table. To learn the reason for making these changes, see the AvantSearch
-plugin topics on [improving search results](../../plugins/avantsearch/#improving-search-results)
-and the [Titles Only option](../../plugins/avantsearch/avantsearch/#titles-only-option).
-
-Follow these steps to change the storage engine:
-
--	Go to [cPanel] and choose `phpMYAdmin`
--	In the left panel, click on the Omeka database name to see its tables
--	Click on the `omeka_search_texts` table in the left panel
--	Click on the `Operations` tab
--	In the `Table Options` section, change **Storage Engine** from `MyISAM` to `InnoDB`
--	Click the `Go` button in the lower right of the section
--	Click on the `omkea_search_texts` table
--	Click the `Structure` tab
--	On the row for `title`, click `Fulltext` among the actions at the far right.
-    If the browser window is too narrow to see all the options, click on `More`
-    and choose `Fulltext` from the dropdown menu
--	On the `Confirm` dialog click the `OK` button to alter the table
--	`Title` now appears in the `Indexes` section showing with Type as `FULLTEXT`
--	Close the phpMyAdmin browser tab
 
 ---
 ## Omeka installation
@@ -122,14 +137,27 @@ Follow these steps to upload the Omeka Classic files to the web server. You can 
 [Omeka's installation instructions](https://omeka.org/classic/docs/Installation/Installation/).
 
 -	Download the latest Omeka Classic release from <http://omeka.org/classic/download>  
-    As of 8/12/2022, the latest release was `omeka-3.0.3.zip`
+    As of 11/22/2023, the latest release was `omeka-3.1.2.zip`
 -	Go to [cPanel] and choose `File Manager`
+
+#### Standalone installation
 -   Navigate into the `public_html` folder
 -   [Upload and extract the zip file](linux-server.md#upload-and-extract-a-zip-file)
 -   A new folder having the same name as the zip file will appear
 -   Rename the new folder from the zip file's name to `digitalarchive`
 -   Delete the zip file.
 -   Copy `C:\xampp\htdocs\favicon.png` to the `public_html` folder
+
+#### Subdomain installation
+-   Navigate into the site folder e.g. `domains/demo`
+-   [Upload and extract the zip file](linux-server.md#upload-and-extract-a-zip-file)
+-   A new folder having the same name as the zip file will appear
+-   Navigate into  the new folder
+-   Select all of the files and move them to the site folder e.g. `domains/demo`
+-   Navigate back up to the site folder
+-   Delete the zip file
+-   Delete the now empty folder having the same name as the zip file
+-   Copy `C:\xampp\htdocs\favicon.png` to the site folder
 
 ---
 
@@ -140,7 +168,7 @@ The *username*, *password*, and *dbname* values come from the [create MySQL data
 
 
 -	Go to [cPanel] and choose `File Manager`
--	Navigate *into* the `public_html/digitalarchive` folder
+-	Navigate *into* the site folder
 -   Edit `db.ini`
 -	Replace occurrences of `"XXXXXXX"` as follows:
     -	**host**     = `"localhost"`
@@ -160,7 +188,7 @@ To learn more, see the Omeka documentation for the [database configuration file]
 
 ---
 
-### Enable error reporting
+### Enable error reporting and HTTPS
 
 This step allows PHP errors to appear in the browser. Normally you would not want
 this for a production site, but it's better to become aware of a problem if it occurs.
@@ -171,8 +199,8 @@ and in the steps to [configure site security](#configure-site-security).
 -	Go to [cPanel] and choose `File Manager`
 -   Allow hidden files to be displayed:
     -   Click the `Settings` button in the upper right of the File Manager
-    -   Check th box for `Show Hidden Files`
--	Navigate *into* the `digitalarchive` folder
+    -   Check the box for `Show Hidden Files`
+-	Navigate *into* the site folder
 -   Edit `.htaccess`
 -	Uncomment `SetEnv APPLICATION_ENV development`
 -   Add the code below to force URLs to HTTPs
@@ -194,7 +222,7 @@ Follow these steps to enable Omeka error logging so that a history of errors wil
 To learn more, see the Omeka documentation for [retrieving error messages](https://omeka.org/classic/docs/Troubleshooting/Retrieving_Error_Messages/#activate-error-logging).
 
 -	Go to [cPanel] and choose `File Manager`
--	Navigate *into* the `digitalarchive/application/config/` folder
+-	Navigate *into* the site's `application/config/` folder
 -   Edit `config.ini`
 -	Change `log.errors` from `false` to `true`
 -   Change `background.php.path` from blank to `/usr/local/bin/php`
@@ -301,62 +329,34 @@ Follows these steps to finishing configuring Omeka.
         or contact your host's technical support and ask them to tell you the path 
 
 ---
+
+### Change database storage engine
+!!! note ""
+    This step is only necessary when using AvantSearch **without** AvantElasticsearch. 
+
+These steps change the storage engine for the `search_texts` table from `MyISAM` to `InnoDB`. They also add a `FULLTEXT` index to the `title` column of the `search_texts` table. To learn the reason for making these changes, see the AvantSearch
+plugin topics on [improving search results](../../plugins/avantsearch/#improving-search-results)
+and the [Titles Only option](../../plugins/avantsearch/avantsearch/#titles-only-option).
+
+Follow these steps to change the storage engine:
+
+-	Go to [cPanel] and choose `phpMYAdmin`
+-	In the left panel, click on the Omeka database name to see its tables
+-	Click on the `omeka_search_texts` table in the left panel
+-	Click on the `Operations` tab
+-	In the `Table Options` section, change **Storage Engine** from `MyISAM` to `InnoDB`
+-	Click the `Go` button in the lower right of the section
+-	Click on the `omkea_search_texts` table
+-	Click the `Structure` tab
+-	On the row for `title`, click `Fulltext` among the actions at the far right.
+    If the browser window is too narrow to see all the options, click on `More`
+    and choose `Fulltext` from the dropdown menu
+-	On the `Confirm` dialog click the `OK` button to alter the table
+-	`Title` now appears in the `Indexes` section showing with Type as `FULLTEXT`
+-	Close the phpMyAdmin browser tab
+
+---
 ## Web server settings
-
-### Configure site security
-
-By default, an Omeka installation uses HTTP for every page except the login page which uses HTTPS.
-Perform the steps below to follow the best practice of using HTTPS for all pages.
-
-!!! danger "Warning"
-    This task requires that you edit the site's `.htaccess` file. Even the slightest
-    error in this file can result in an **internal server error** which will prevent the site
-    from loading. Be very careful.
-
--	Go to [cPanel] and choose `File Manager`
--	Navigate *into* the `public_html` folder
--   If the folder does not contain a `.htaccess` file, create a new empty .htaccess file
--   Edit `.htaccess`
--   Add the code shown below at the top of the file
--   Save your changes and close the file
--   Test that all pages are HTTPS and that the redirect works correctly
-
-```
-# Turn on rewrites.
-RewriteEngine on
-
-# Force all URLs to HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
-
-# Redirect the root and only the root to the default folder
-RedirectMatch ^/$ /digitalarchive
-```
-
-!!! warning ""
-    If the redirect does not appear to be working, flush the browser cache.
-
-!!! note
-    The code above redirects root requests. For instance, if someone attempts to go to `avantlogic.net`
-    which is the web server root, they will be redirected to `avantlogic.net/digitalarchive/find` which
-    displays search results for the most recently modified items. If you left off `/find`, Omeka would redirect to the default home page. You can change the default home page on the `Navigation` tab of the Omeka admin `Appearance` page as described in the [Omeka documentation](https://omeka.org/classic/docs/Admin/Appearance/Navigation/). For example, you could set the default home page to be an *About* page that you created with
-    the Simple Pages plugin. Alternatively, you can change `.htaccess` to redirect to a specific
-    URL as explained below.
-
-You can change the `RedirectMatch` line to redirect to a specific URL.
-For example, if the Omeka installation has an `About` page, you could redirect there like this:
-
-```
-RedirectMatch ^/$ /digitalarchive/about
-```
-You can even redirect to a page of search results, for example, to display a site content index:
-
-``` plaintext
-RedirectMatch ^/$ /digitalarchive/find?view=2&index=53
-```    
-
-See [this post](https://stackoverflow.com/questions/990392/htaccess-rewrite-to-redirect-root-url-to-subdirectory)
-to learn why using RedirectMatch works than RewriteRule for this purpose.
 
 ---
 
@@ -422,9 +422,8 @@ Follow these steps to determine if the default configuration for background proc
 -	Click the `Index Records` button (even though there are no records to index)
 -   You should see a green message `Indexing records. This may take a while...`
 -	If instead you get an error that the configured PHP path is  or does not point to a PHP-CLI binary:
-    -	Look at this [article](https://community.reclaimhosting.com/t/setting-the-php-cli-path-in-omeka-classic/231) to determine the correct background path
     -	Edit `digitalarchive/application/config/config.ini`
-    -	Set `background.php.path` to the correct path for the server
+    -	Set `background.php.path` to the correct path for the server e.g. `/usr/local/bin/php`
     -   Save changes and close the `config.ini` file
     -	Verify that the Index Records operations works with no error
 
@@ -437,7 +436,7 @@ Follow these steps to determine if the default configuration for background proc
 
 It is now time to acquire the zip files containing the plugins, and the theme, required
 by the Digital Archive. This section explains where to locate the files and how to add
-them to the installation so that later you can install and configure the them and each plugin.
+them to the installation so that later you can install and configure them and each plugin.
 To *add* them means to upload them to the web server and extract them into the proper installation folders.
 
 ### Get Digital Archive zip files
@@ -555,14 +554,10 @@ Before you can install the theme, install AvantCommon by following these steps:
 -   On the `Configure Plugin: AvantCommon` page:
     -   Don't enter any values for now
     -   Click the `Save Changes` button
--   The pink shading should be gone from all of the plugins except for AvantLocation, AvantReport, and AvantVocabulary.
+-   The pink shading should be gone from all of the plugins except for AvantLocation, AvantRelationships, AvantReport, and AvantVocabulary.
 -	Click `Appearance` in the top menu bar
 -   On the `Themes` page, click the `Use this theme` button for AvantTheme
 -   AvantTheme is now the current theme
--   Click the `Configure Theme` button
--   For **Logo File** browse to `Digital Archive AvantLogic\Installations\Template`
--   Choose `logo.jpg`
--   Click the `Save Changes` button
 
 ### Remove unused themes
 
@@ -777,7 +772,8 @@ Follow these steps to install and configure the Archive Repertory plugin:
     - Special derivative folders options:
         - **Other derivative folders**: leave blank
         - **Process**: `Omeka internal`
-        - **Max downloads**: `30000000`
+        - **Max size for downloads**: `30000000`
+        - **Confirm downloaded**: Unchecked
         - **Legal**: `I agree with terms of use.`
 - Click the `Save Changes` button
 
