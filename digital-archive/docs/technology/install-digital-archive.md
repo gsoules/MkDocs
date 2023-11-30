@@ -1258,29 +1258,42 @@ AvantElasticsearch configuration page.
 -   If the page says **_Sign is as IAM user_**, click the `Sign-in using root user email` link
 -   Enter the root user email
 -   Enter the root user password
+-   Provide the Google Authenticator code
 -   You should now be on the **_AWS Management Console_** page
 -	In the top menu dropdown for the logged in user, choose `Security Credentials (root user)`
 -   You should now be on the **_My Security Credentials_** page
 -	Click `Users` in the left menu
--	Click the `Add User` button at the top
--	Type the organization abbreviation for the `User name` e.g. `swhpl`
--	For  **Access type** check the `Programmatic Access` box
--	Click the `Next: Permissions` button
--	In the **Add User to Group** section, check the box for `contributor` group
--	Click the `Next: Tags` button
--	Click the `Next: Review` button
--	Click the `Create User` button
+-	Click the `Create User` button at the top right
+-	For the `User name` type the organization abbreviation in lowercase e.g. `swhpl`
+-   Leave the access to AWS Management Console option unchecked
+-	Click the `Next` button
+-	In the **Permissions options** section, choose `Add user to group`
+-	In the **User groups** section, check the box for `contributor` group
+-	Click the `Next` button
+-	Click the `Create user` button
+-   Click the new user in the list of users
+-	In the **Summary** section, click `Create access key`
+-   On the **_Access key best practices_** page choose `Other`
+-   Click the `Next button`
+-   On the **_Set description tag_** page click the `Create access key` button
+-   You should now be on the **_Retrieve access keys_** page
 -   Click the `Show` link for the **Secret Access Key**
 -	Copy the **Access Key ID** and **Secret Access Key** to the `AWS Keys` tab of the `Digital Archive Accounts` Excel sheet  
     *This is the only opportunity to obtain the secret key*
--	Click the `Close` button
+-	Click the `Done` button
 
 ## Install the AvantElasticsearch plugin
 
 Follow these steps to install and configure the [AvantElasticsearch] plugin:
 
+**Create a folder needed by the AvantElasticsearch plugin**
+
 -   Go to [cPanel] and choose `File Manager`
--   Create this folder: `public_html/digitalarchive/files/elasticsearch`
+-   Navigate *into* the `files` folder of the site folder
+-   Create this subfolder: `files/elasticsearch`
+
+**Install the AvantElasticsearch plugin**
+
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantElasticsearch`
 
@@ -1288,7 +1301,7 @@ Follow these steps to install and configure the [AvantElasticsearch] plugin:
 
 Follow these steps to allow the installation to share its items with other Digital Archive installations via the shared AWS Elasticsearch index:
 
--   In cPanel, edit `public_html/digitalarchive/es.ini`
+-   In cPanel, edit `es.ini` in the site folder
 -   Set `shared_index_name` to the name of the shared index e.g. `acadia`
 
 !!! danger "Shared Index"
@@ -1403,7 +1416,9 @@ Transportation, Automobile
 -   Uncheck `Browse Collections`
 -   In the **Add a Link to the Navigation** section:
     -   Type `landing` for the **Label**
-    -   Type `https://<site-url>/digitalarchive/find?query=&view=4` for the **URL**
+    -   For **URL** choose:
+        -   For a standalone site: `https://<site-url>/digitalarchive/find?query=`
+        -   For a subdomain site: `https://<site-url>/find?query=`
     -   Click the `Add Link` button
     -   Change **Select a Homepage** to `landing`
     -   Leave the `landing` item unchecked

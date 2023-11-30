@@ -76,8 +76,8 @@ additional terms to the Common Vocabulary that do not exist in Nomenclature.
 [Elasticsearch](https://en.wikipedia.org/wiki/Elasticsearch) is an open-source, distributed search and analytics engine. Since its release in 2010, Elasticsearch has quickly become the most popular search engine. It is used by the Digital Archive for full-text search and for display of the facets in the **_Refine Your Search_** panel. Elasticsearch is the technology that makes it possible for Digital Archive users to
 [search one site or all sites](/user/how-to-search/#search-one-site-or-all-sites).
 
-The Digital Archive uses the  
-[Amazon OpenSearch Service](https://aws.amazon.com/elasticsearch-service/) to take advantage of the massive computing power of  
+The Digital Archive uses the
+[Amazon OpenSearch Service](https://aws.amazon.com/elasticsearch-service/) to take advantage of the massive computing power of
 [Amazon Web Services](https://en.wikipedia.org/wiki/Amazon_Web_Services) (AWS).
 
 ## Software Components Used By the Digital Archive

@@ -29,9 +29,6 @@ To enable site maintenance for a new Digital Archive site:
     -   Edit `bin/sync-digitalarchive` to add the user name
 
 !!! note ""
-    If the site is a subdomain, add special case login in `bin/sync-digitalarchive` for its path.
-
-!!! note ""
     After you add a new site and then run `sync-digitalarchive`, all of the site's files will get updated because they are syncing with the master copies which have different timestamps than the ones uploaded as part of the manual [site installation](/technology/install-digital-archive/) process.
 
 ## Software updates
