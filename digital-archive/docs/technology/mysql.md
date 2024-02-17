@@ -169,3 +169,7 @@ Example: `mysql -u root -p daus_swhpl < swhpl.sql`
         (the zip may contain a `files` folder nested in a `files` folder - do the right thing). Extracting a very large zip file can take a long time.
     -   Delete the zip file
 -   You should now be able to use the imported site normally on localhost
+
+## Fix the XAMPP “MySQL Shutdown Unexpectedly" error
+
+See [this article](https://kinsta.com/knowledgebase/xampp-mysql-shutdown-unexpectedly/) and try the Restore Your Database Backup solution.
