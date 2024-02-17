@@ -22,6 +22,7 @@ Feature | AvantSearch | Omeka Search
 Quick search                            | **Yes** - Feature | No
 Simple search for All Words             | **Yes** - Feature | No
 Search in Titles only                   | **Yes** - Advanced Search page option | No
+Search PDF file text                    | **Yes** - Advanced Search page option | No
 Search only items with images or files  | **Yes** - Advanced Search page option | No
 Date range search                       | **Yes** - Advanced Search page option | No
 User can specify number of results      | **Yes** - Advanced Search page option | No
@@ -44,6 +45,7 @@ The AvantSearch plugin has these configuration options:
 -   [Address Sorting](#address-sorting-option)
 -   [Columns](#columns-option)
 -   [Detail Layout](#detail-layout-option)
+-   [PDF Search](#pdf-search-option)
 -   [Elasticsearch](#elasticsearch-option)
 -   [Integer Sorting](#integer-sorting-option)
 -   [Layouts](#layouts-option)
@@ -160,9 +162,26 @@ and tags (see the [Glossary](/glossary)).
 
 ---
 
+### PDF Search option
+
+Check the **PDF Search** checkbox to allow searching of the text of PDF files that are attached to items. The PDF
+files must be searchable (born-digital or processed by OCR). When you check the box, the plugin extracts the text
+from the PDF files attached to each item and adds it to the `search_texts` table record for each item. This can take a
+long time if you have a lot of large PDF files, so be patient. By default, the `search_texts` table contains only
+metadata element values. The table is what Omeka uses for keyword searching.
+
+When you upload a PDF file to an item, or delete a PDF file, the plugin updates the `search_texts` table.
+
+You can disable PDF searching by unchecking the box for this option, that alone does not remove the PDF text from the
+`search_texts` table. To remove the PDF text, you need to rebuild the `search_texts` table by going to the Omeka Settings
+page and choosing the Search tab. Then click the **Index Records** button.
+
+---
+
 ### Elasticsearch option
 
 Check the **Elasticsearch** checkbox if using [AvantElasticsearch].
+The PDS Search and Elasticsearch options are mutually exclusive -- you can use one or the other or neither, but not both.
 
 ---
 
@@ -314,7 +333,7 @@ this program; if not, write to the Free Software Foundation, Inc.,
 ## Copyright
 
 -   Created by [gsoules](https://github.com/gsoules) 
--   Copyright George Soules, 2016-2020
+-   Copyright George Soules, 2016-2024
 -   See [LICENSE](https://github.com/gsoules/AvantSearch/blob/master/LICENSE) for more information
 
 
