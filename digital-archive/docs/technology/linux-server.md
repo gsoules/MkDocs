@@ -8,7 +8,7 @@ on an [InMotion](https://inmotionhosting.com/) virtual pritave server (VPS).
 
 !!! warning "Caution"
     This documentation on this page assumes that you already know, or will learn, how to perform basic
-    system adminstration tasks. For example, you must be able to navigate the file system, edit and delete
+    system administration tasks. For example, you must be able to navigate the file system, edit and delete
     files, and be familiar with system administration duties such as database management, permissions,
     FTP, and such. If these things are foreign to you, **do not** attempt to perform these tasks.
 
@@ -77,11 +77,11 @@ command reports what it's doing. As an example, to compress the `files` folder o
 installation:
 
 -   Open a terminal window
--   cd to the `digitalarchive` folder
+-   cd to the parent of the `files` folder
 -   Type the command below
 
 ```
-zip -r file-name.zip directory
+zip -r files.zip files
 ```
 
 ## Compress and extract a large folder using tar
@@ -136,14 +136,23 @@ are listed. If you are receiving unexpected emails for notifications you don't w
 
 ### Disk Usage
 
-To determine how much disk space each site it using:
+To determine how much disk space each site is using:
 
 -   Log into WHM
 -   Choose `List Accounts`
 -	Go to cPanel for the `digitalarchive.us` domain
 -   Choose `Disk Usage`
 -   Scroll to the bottom of the page where disk usage is listed by directory
--   Expand the `domains` directory to see usage for each domain 
+-   Expand the `domains` directory to see usage for each domain
+
+To see the size of child folders within a parent folder, in ascending order:
+
+-   Log into WHM
+-   Open a Terminal window
+-   Navigate to the parent folder
+-   Type `du -h | sort -h`
+
+Folders for each domain are in `/home/daus/domains/<site>`
 
 
 ### View logs for child processes
@@ -195,6 +204,35 @@ To check for a blocked IP address:
 -   Paste the IP address in the text field next to the `Search for IP` button
 -   Click the button
 
+
+To block an IP address:
+
+-   Scroll to the `csf - Quick Actions` section
+-   Paste the IP address in the text field next to the `Quick Deny Button` button
+-   Type `do not delete` in the comment field.
+-   Click the button
+
+To view all blocked IP address:
+
+-   Scroll to the `csf - ConfigServer Firewall` section
+-   Click the `Firewall Deny IPs` button to view the `etc/csf/csf.deny` file
+-   When done, click the `Return` button at the bottom of the page
+
+Note that each time a new entry is added to the `csf.deny` file, the oldest entry gets deleted.
+You can prevent that from happening by adding `do not delete` as the comment for the blocked IP.
+This trick is documented in the comments at the top of `csf.deny`.
+The default maximum number of entries is 200, but you could increase it by clicking the `Firewall Configuration`
+button and changing the value of `DENY_IP_LIMIT`
+
+To see which IPs are hitting domains:
+
+-   Open a WHM Terminal window
+-   Type `cd /var/log/apache2/domlogs` and press Enter
+-   Use the `ls` command to see the logs
+-   Use `cat`, `tail`, or the nano editor to view one of the logs
+
+You can also open cPanel and run the Metrics > Raw Access tool where you can download the current
+and archived logs as a `.gz` file.
 
 ### Edit the crontab file
 
