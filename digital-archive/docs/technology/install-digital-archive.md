@@ -429,7 +429,21 @@ Follow these steps to determine if the default configuration for background proc
 
 !!! note ""
     Finding the right path might be a trial and error process. Leaving `background.php.path = ""` works correctly on some servers. On others it needs to be set to `/usr/local/bin/php` or `/usr/bin/php-cli`.
-    If you are not successful, contact the host to ask for the right path.
+    If you are not successful, contact the host to ask for the right path. Also read the next section.
+
+#### Installations that don't support background processing
+
+Some installations such as XAMPP on Windows might not support background processing. In that case, you can
+have background jobs run in the foreground. To do this, edit the Omeka core file `/application/config/config.ini`
+as shown below:
+
+```
+jobs.dispatcher.default = "Omeka_Job_Dispatcher_Adapter_Synchronous"
+jobs.dispatcher.longRunning = "Omeka_Job_Dispatcher_Adapter_Synchronous"
+;jobs.dispatcher.longRunning = "Omeka_Job_Dispatcher_Adapter_BackgroundProcess"
+```
+
+When upgrading to a new release of Omeka, make sure that you edit the file again.
 
 ---
 ## Plugin acquisition
