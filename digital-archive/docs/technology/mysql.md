@@ -147,14 +147,14 @@ Example: `mysql -u root -p daus_swhpl < swhpl.sql`
     -   Comment out the original settings
     -   Keep the `host`, `username`, `password`, and `charset` settings for localhost
     -   Change `dbname` to match the new database and make sure `prefix` is set to `omeka_` unless SWHPL in which case it's `omek_`. 
--   Manually run Omeka on localhost (DO NOT RUN FROM PhpStorm)
-    -   Go to `http://localhost/omeka/admin/users/login`
-    -   Login as a user for the imported database
-    -   Go to the **_Appearance_** page and click the **_Navigation_** tab
-    -   Change the URL for the `Landing` page to be `http://localhost/omeka/find?query=&view=4'
-    -   Click the **_Save Changes_** button
-    -   Set the Homepage back to the Landing page and save again
--   Go to the AvantElasticsearch plugin config page and change **_Contributor Id_** to `deva` (or `devb`)
+    -   Manually run Omeka on localhost (**DO NOT RUN FROM PhpStorm**)
+        -   Go to `http://localhost/omeka/admin/users/login`
+        -   Login as a user for the imported database
+        -   Go to the **_Appearance_** page and click the **_Navigation_** tab
+            -   Change the URL for the `Landing` page to be `http://localhost/omeka/find?query=`
+            -   Click the **_Save Changes_** button
+            -   Set the Homepage back to the Landing page and save again
+        -   On the AvantElasticsearch plugin config page change **_Contributor Id_** to `deva` (or `devb`)
 -   Go to the **_Elasticsearch Indexing_** page:
     -   Export all items
     -   Import into new local `devb` (or `devb`)
