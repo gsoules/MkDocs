@@ -166,13 +166,19 @@ and tags (see the [Glossary](/glossary)).
 
 Check the **PDF Search** checkbox to allow searching of the text of PDF files that are attached to items. The PDF
 files must be searchable (born-digital or processed by OCR). When you check the box, the plugin extracts the text
-from the PDF files attached to each item and adds it to the `search_texts` table record for each item. This can take a
-long time if you have a lot of large PDF files, so be patient. By default, the `search_texts` table contains only
-metadata element values. The table is what Omeka uses for keyword searching.
+from the PDF files attached to each item and adds it to the `search_texts` table record for each item.
+By default, the `search_texts` table contains only metadata element values. The table is what Omeka uses for keyword searching.
 
-When you upload a PDF file to an item, or delete a PDF file, the plugin updates the `search_texts` table.
+---
+!!! note ""
+    Updating the `search_texts` table with PDF text can take a long time if you have many PDF files, so be patient.
+    You can monitor progress by looking at the log file `/plugins/AvantSearch/log-pdf-search.csv`.  
+    The log file gets recreated each time you enable this option.
 
-You can disable PDF searching by unchecking the box for this option, that alone does not remove the PDF text from the
+When you upload a PDF file to an item, or delete a PDF file, the plugin updates the `search_texts` table with the
+text of whatever PDFs are attached to the item after you save the item.
+
+You can disable PDF searching by unchecking the box for this option, but that alone does not remove the PDF text from the
 `search_texts` table. To remove the PDF text, you need to rebuild the `search_texts` table by going to the Omeka Settings
 page and choosing the Search tab. Then click the **Index Records** button.
 

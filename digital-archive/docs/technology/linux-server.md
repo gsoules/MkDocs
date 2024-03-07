@@ -2,7 +2,7 @@
 
 
 This page explains how to perform Digital Archive related web host administration tasks
-on an [InMotion](https://inmotionhosting.com/) virtual pritave server (VPS).
+on an [InMotion](https://inmotionhosting.com/) virtual private server (VPS) with [cPanel](https://cpanel.net/).
 
 ---
 

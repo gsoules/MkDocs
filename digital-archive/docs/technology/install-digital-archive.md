@@ -18,6 +18,8 @@ The web host must be an Apache web server that satisfies the
 for [Omeka Classic](https://omeka.org/classic/). AvantLogic uses
 [InMotion Hosting](https://inmotionhosting.com/) as its host.
 
+These instructions assume that the host has [cPanel]. If you don't have cPanel, see [Installing on a bare Linux server](#installing-on-a-bare-linux-server).
+
 **Site name**
 
 Some of the installation steps require that you specify a *site name*. Choose a concise and
@@ -1543,6 +1545,67 @@ code below near the top of the file after `RewriteEngine on`. Don't add code for
     RewriteCond %{HTTPS} off
     RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 ```
+
+## Installing on a bare Linux server
+
+This section provides a few tips for installing on a remote server that does not have cPanel.
+
+First, see [Linux server administration](/technology/linux-server) and pay particular attention to the places
+that provide information on how to perform operations using the command line and ignore the places that refer to
+WHM and cPanel.
+
+### SSH
+You can perform command line operations using [OpenSSH](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui) that is built into Windows 10 and 11. To connect to the remote server using SSH:
+
+-   Open a Windows terminal window (Command Prompt)
+-   Type `ssh` followed by the host name of the remote server
+-   Enter the password (does not show anything as you type)
+
+```text
+    C:\Users\username>ssh foo.bar.net
+    username@foo.bar.net's password:
+    Last login: Wed Mar  6 07:30:19 2024 from 74.75.232.104
+    [username@foo ~]$
+```
+
+You can now type Linux commands the same as you would using a cPanel Terminal window.
+
+### Troubleshooting
+
+#### 404 error when trying to go to any Omeka page
+
+This problem can occur if `mod_rewrite` is not installed. See [404 and Not Found](https://omeka.org/classic/docs/Troubleshooting/#404-and-not-found)
+in the [Omeka Classic User Manual](https://omeka.org/classic/docs/).
+
+The problem could also occur if the `.htaccess` file is not getting executed. One reason this could happen is if you leave the `.` off the
+beginning of the file name. You could try introducing an error into the file to determine if it is being executed.
+
+#### Destination directory is not writable error
+
+You'll get this permissions error when you attempt to add an item with a file attachment.
+
+See [Setting Directory Permissions](https://omeka.org/classic/docs/Installation/Setting_Directory_Permissions/#setting-directory-permissions)
+in the [Omeka Classic User Manual](https://omeka.org/classic/docs/).
+
+The problem occurs if the web server process doesn't have write access to the `files` directory and everything under it.
+The solution will depend on your server, but assuming that the web server runs as user `apache` you could do `chown -R apache` on the `files` directory to get the result below.
+
+``` text
+[username@foo digitalarchive.bar.org]$ ls -l files
+total 1180
+drwxrwsr-x. 125 apache digarc    4096 Mar  6 13:12 fullsize
+drwxrwsr-x.   2 apache digarc 1130496 Mar  6 13:02 import
+drwxrwsr-x. 125 apache digarc    4096 Mar  6 13:12 original
+drwxrwsr-x. 125 apache digarc    4096 Mar  6 13:12 square_thumbnails
+drwxrwsr-x.   2 apache digarc      68 Mar  5 11:30 theme_uploads
+drwxrwsr-x. 125 apache digarc    4096 Mar  6 13:12 thumbnails
+```
+
+
+
+
+
+
 
 ---
 
