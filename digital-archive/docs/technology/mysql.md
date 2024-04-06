@@ -172,4 +172,20 @@ Example: `mysql -u root -p daus_swhpl < swhpl.sql`
 
 ## Fix the XAMPP “MySQL Shutdown Unexpectedly" error
 
-See [this article](https://kinsta.com/knowledgebase/xampp-mysql-shutdown-unexpectedly/) and try the Restore Your Database Backup solution.
+From [this post](https://community.apachefriends.org/f/viewtopic.php?t=83059&sid=4ed5d5716223a33d892389ef90e38ddc) near the very end:
+``` text
+I call this the multi-master error. Your MariaDB thinks it is running in master replicant setting.
+
+Please try the following fix. It already helped lots of users solving the multi-master Problem:
+
+Open your folder "\xampp\mysql\data"
+Delete the file "multi-master.info"
+Delete all files beginning with "master-"
+Delete all files beginning with "mysql_relay-bin-"
+Delete all files beginning with "relay-log-"
+
+Now try to start mariadb the normal way again.
+```
+
+If the above files don't exist, then see [this article](https://kinsta.com/knowledgebase/xampp-mysql-shutdown-unexpectedly/) and try the Restore Your Database Backup solution.
+Beware however that while this fixes the problem, it renders all of the existing databases unusable and they have to be reimported.

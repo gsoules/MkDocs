@@ -201,16 +201,21 @@ Ctrl-click folders and files to select the ones to be copied as shown below.
 
 ---
 
-!!! note "Development Server"
-    If you are updating Omeka on the Windows XAMPP development server, edit
-    `xampp\htdocs\omeka\application\libraries\Omeka\File\Derivative\Strategy\ExternalImageMagick.php`  
-    to define the ImageMagick constant as: `const IMAGEMAGICK_CONVERT_COMMAND = 'magick.exe';`  
-    This change ensures that **_ImageMagick Directory Path_** on the Omeka **_Settings_** page works for the ImageMagick executable
-    `magick.exe` in Windows folder e.g. `C:\Program Files\ImageMagick-7.1.0-Q16-HDRI`.  
-    DO NOT MAKE THIS CHANGE on the Linux server. On Linux, leave the constant defined as `convert`.  
-    The Beyond Compare session `DAUS_ALL_FILES` excludes this file so that the edited version won't get mirrored
-    to the server. However, if the Omeka upgrade changed the file, you'll need to manually copy it to the server without
-    the change to the `IMAGEMAGICK_CONVERT_COMMAND` constant (it needs to be `convert` on the server).
+### ImageMagick and XAMPP
+If you are updating Omeka on the Windows XAMPP development server:
+
+- Edit `\omeka\application\libraries\Omeka\File\Derivative\Strategy\ExternalImageMagick.php`  
+- Define the ImageMagick constant as: `const IMAGEMAGICK_CONVERT_COMMAND = 'magick.exe';`  
+- This ensures that **_ImageMagick Directory Path_** on the Omeka **_Settings_** page works for the Windows ImageMagick executable
+`magick.exe`.
+- IMPORTANT: On Linux,you must leave the constant defined as `convert`.
+
+For a Windows installation set the **_ImageMagick Directory Path_** to  
+`C:\Program Files\ImageMagick-7.1.0-Q16-HDRI` (or whatever version is installed).
+
+The Beyond Compare session `DAUS_ALL_FILES` excludes `ExternalImageMagick.php` so that the edited version won't get mirrored
+to the server. However, if the Omeka upgrade changed the file, you'll need to manually copy it to the server without
+the change to the `IMAGEMAGICK_CONVERT_COMMAND` constant since it needs to be `convert` on the server.
 
 ### Verify that the new release works properly
 Normally the site should just come up, though on releases of Omeka prior to 3.0 you were presented with a dialog to update the database. It appears that 3.0 updates the database automatically.
