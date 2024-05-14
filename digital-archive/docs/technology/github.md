@@ -87,7 +87,7 @@ If you want the release to be published on the Omeka plugins site, follow the st
 plugin and tag `v1.3` as examples.
 
 - Read the Omeka instructions to [Register an Addon](https://omeka.org/s/docs/developer/register_an_addon/).
-- In Windows Explorer, go *into* the folder containing the plugin's repository e.g. `C:\xampp\htdocs\omeka\plugins\MapsAlive`.
+- In Windows Explorer, go *into* the folder containing the plugin's repository e.g. `C:\laragon\www\omeka\plugins\MapsAlive`.
 - Update `.gitattributes` per the Addon instructions.
 - Right click and choose `Git Bash Here`.
 - Type `git archive --output=MapsAlive-v1.3.zip --prefix=MapsAlive/ v1.3`.

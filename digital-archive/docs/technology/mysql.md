@@ -124,13 +124,13 @@ Example: `mysql -u root -p daus_swhpl < swhpl.sql`
 ### Import SQL into new local development database
 
 -   Go to phpAdmin on localhost
-    -   Run the XAMPP Control Panel
-    -   Click the Apache module's **_Admin_** button
+    -   Run the Laragon Control Panel
+    -   Click the **_Database_** button
     -   Click the `phpMyAdmin` link in the top menu
 -   Create a new DB with today's date in the name
     -   Click `New` in the left panel
     -   Type a database name
-    -   Choose `utf8_unicode_ci` for the character set
+    -   Choose `utf8mb4_unicode_ci` for the character set
     -   Click the **_Create_** button
 -   Import the data    
     -   Run MySQL Workbench for localhost 
@@ -162,30 +162,10 @@ Example: `mysql -u root -p daus_swhpl < swhpl.sql`
 -   Get latest files from the server (just ones added/changed since date of last DB)
     -   Go to the `public_html/digitalarchive/files` folder for the site being imported
     -   [Compress the folder into a zip file](/technology/linux-server/#compress-a-large-folder-on-the-server)
-    -   Download the zip file into `C:\xampp\htdocs\omeka`
+    -   Download the zip file into `C:\laragon\www\omeka`
     -   Delete the zip file from the server
-    -   Rename `C:\xampp\htdocs\omeka\files` to e.g. `files-swhpl`
+    -   Rename `C:\laragon\www\omeka\files` to e.g. `files-swhpl`
     -   Extract or move the `files` folder from the zip file to become the new `files` folder
         (the zip may contain a `files` folder nested in a `files` folder - do the right thing). Extracting a very large zip file can take a long time.
     -   Delete the zip file
 -   You should now be able to use the imported site normally on localhost
-
-## Fix the XAMPP “MySQL Shutdown Unexpectedly" error
-
-From [this post](https://community.apachefriends.org/f/viewtopic.php?t=83059&sid=4ed5d5716223a33d892389ef90e38ddc) near the very end:
-``` text
-I call this the multi-master error. Your MariaDB thinks it is running in master replicant setting.
-
-Please try the following fix. It already helped lots of users solving the multi-master Problem:
-
-Open your folder "\xampp\mysql\data"
-Delete the file "multi-master.info"
-Delete all files beginning with "master-"
-Delete all files beginning with "mysql_relay-bin-"
-Delete all files beginning with "relay-log-"
-
-Now try to start mariadb the normal way again.
-```
-
-If the above files don't exist, then see [this article](https://kinsta.com/knowledgebase/xampp-mysql-shutdown-unexpectedly/) and try the Restore Your Database Backup solution.
-Beware however that while this fixes the problem, it renders all of the existing databases unusable and they have to be reimported.

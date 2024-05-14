@@ -1,15 +1,25 @@
 # PHP Development
 
-## PhpStorm
-PHP development is done on a Windows 10 PC with XAMPP and MySQL installed. This section describes how to edit and debug PHP files.
+AvantLogic performs PHP development using:
 
--   Run the XAMPP Control Panel
-    - Start Apache
-    - Start MySQL
+- Windows 11
+- [Laragon](https://laragon.org/)
+- PHP Storm
+
+[Learn how to set up the environment](#setting-up-a-new-development-environment).
+
+## PhpStorm
+
+### Running the Digital Archive in PHP Storm
+
+This section describes how to edit and debug PHP files.
+
+-   Run the Laragon Control Panel
+    - Start All
     - Close or hide the panel
 
 -   Run PhpStorm
-    - Open the Digital Archive project: `C:\xampp\htdocs\omeka`
+    - Open the Digital Archive project: `C:\laragon\www\omeka`
 
 How To:
 
@@ -79,11 +89,11 @@ See the [Kibana](/technology/aws/#kibana) section on the AWS page.
 
 **To log queries to `errors.log`**
 
--   Edit `C:\xampp\htdocs\omeka\application\config\config.ini`
+-   Edit `C:\laragon\www\omeka\application\config\config.ini`
 -   Set:
     -   `log.sql = true`
     -   `log.priority = Zend_Log::DEBUG`
--	View `C:\xampp\htdocs\omeka-2.5\application\logs\errors.log` in PhpStorm
+-	View `C:\laragon\www\omeka-2.5\application\logs\errors.log` in PhpStorm
 -   If the file does not always refresh right away:
     -   Click in in the `errors.log` PhpStorm window
     -   Click in the browser window where you are debugging
@@ -91,7 +101,7 @@ See the [Kibana](/technology/aws/#kibana) section on the AWS page.
 
 To see queries as they occur:
 
--   Open `C:\xampp\htdocs\omeka-2.6\application\libraries\Zend\Db\Select.php`
+-   Open `C:\laragon\www\omeka-2.6\application\libraries\Zend\Db\Select.php`
 -   Set a breakpoint on line 1379 where `__toString()` returns the SQL
 
 ---
@@ -100,24 +110,22 @@ To see queries as they occur:
 Here are some of the trickiest things you need to do when setting up a development environment
 on a new computer.
 
--   Get CURL to work with Xampp
-    -	Edit `C:\xampp\apache\conf\httpd.conf`
-    -	Add this line: `LoadFile "C:\xampp\php\libssh2.dll"`
-    -	See [this article](https://gist.github.com/alecos71/de26b0079b963a690e798375b8561dfa])
--   Install imagick (Image Magic):
-    -   See [this article](https://phpandmysql.com/extras/install-imagemagick-and-imagick-xampp)
-    -   Set Omeka **_ImageMagick DIrectory Path_** to `C:\Program Files\ImageMagick-7.1.0-Q16-HDRI`
--	Get GD to work by adding this line to `php.ini`:
-    -    `extension=php_gd.dll`
--   Install `pdftotext.exe` by copying the file from another machine into the `c:\xampp`.
--   Enable XDEBUG to work with PHPStorm:
-    -   Download and install xdebug from: [3.xdebug.org](https://3.xdebug.org/download) and copy to `xampp\php\ext`.
-    -   Configure PHPStorm to use XDebug
-    -   Add the lines below to the end of `php.ini`:
+### Install Laragon
+-   Download and install Laragon
+-   Download the [zip file release of MariaDB](https://dlm.mariadb.com/browse/mariadb_server/163/1957/winx64-packages/) (not the .msi file)
+-   Extract the zip to `laragon\bin\mysql`
+-   Set Laragon to use MariaDB instead of MySQL by choosing MySQL > Version from the menu
+-   In the Laragon menu choose Apache > SSL > Enabled
+
+### Enable XDEBUG to work with PHP Storm:
+-   Download and install the appropriate TS version of the [Xdebug](https://xdebug.org/download#releases) dll for Laragon's version of PHP
+-   Copy the dll to `laragon\php\php-8.1.10-Win32-vs16-x64\ext`.
+-   Configure PHPStorm to use XDebug
+-   Add lines similar to those below to the end of `php.ini`:
 
 ``` text
 [XDebug]
-zend_extension = C:\xampp\php\ext\php_xdebug-3.2.1-8.1-vs16-x86_64.dll
+zend_extension = C:\laragon\bin\php\php-8.1.10-Win32-vs16-x64\ext\php_xdebug-3.3.2-8.1-vs16-x86_64.dll
 xdebug.remote_enable=1
 xdebug.remote_host=localhost
 xdebug.remote_port=9000
@@ -125,8 +133,18 @@ xdebug.remote_handler=dbgp
 xdebug.remote_autostart=0
 xdebug.mode=debug
 ```
+Restart Apache after making changes to `php.ini`.
 
-Restart Apache after making these kinds of changes.
+### Install pdftotext
+-   Copy the file `pdftotext.exe` from another machine into `c:\laragon`.
+-   Add the path `C:\laragon` to your Windows environment variables.
+-   Restart the PC to get the path change to take effect.
+
+
+### Install imagick (Image Magic):
+-   See [this article](https://phpandmysql.com/extras/install-imagemagick-and-imagick-xampp)
+(the article is for XAMPP but the result works for Laragon)
+-   Set Omeka **_ImageMagick DIrectory Path_** to `C:\Program Files\ImageMagick-7.1.0-Q16-HDRI`
 
 ---
 

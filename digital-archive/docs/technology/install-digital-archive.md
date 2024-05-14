@@ -148,7 +148,7 @@ Follow these steps to upload the Omeka Classic files to the web server. You can 
 -   A new folder having the same name as the zip file will appear
 -   Rename the new folder from the zip file's name to `digitalarchive`
 -   Delete the zip file.
--   Copy `C:\xampp\htdocs\favicon.png` to the `public_html` folder
+-   Copy `C:\laragon\www\favicon.png` to the `public_html` folder
 
 #### Subdomain installation
 -   Navigate into the site folder e.g. `domains/demo`
@@ -159,7 +159,7 @@ Follow these steps to upload the Omeka Classic files to the web server. You can 
 -   Navigate back up to the site folder
 -   Delete the zip file
 -   Delete the now empty folder having the same name as the zip file
--   Copy `C:\xampp\htdocs\favicon.png` to the site folder
+-   Copy `C:\laragon\www\favicon.png` to the site folder
 
 ---
 
@@ -696,7 +696,7 @@ and the remote site and then save two comparison sessions, one for the `themes` 
 -	Set the local site
     -	Click the folder icon in the upper right of the left pane
     -   Click `Local File System` in the left panel
-    -	Navigate to `C:\xampp\htdocs\omeka-2.6` in the right panel
+    -	Navigate to `C:\laragon\www\omeka-2.6` in the right panel
     -   Click the `OK` button
 -	Set the FTP site
     -	Click the folder icon in the upper right of the right pane

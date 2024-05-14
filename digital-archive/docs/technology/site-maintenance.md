@@ -46,7 +46,7 @@ To update the master files with the local development files:
 -   Run one of these sessions:
     -   `DAUS\DAUS PLUGINS and THEMES` (use if only plugin or theme files were updated)
     -   `DAUS\DAUS ALL FILES` (use after doing an Omeka upgrade)
--   **Mirror Right** local `C:\xampp\htdocs\omeka` to `public_html/digitalarchive-master` on the daus server
+-   **Mirror Right** local `C:\laragon\www\omeka` to `public_html/digitalarchive-master` on the daus server
 
 !!! warning ""
     **Important**: Be sure to **MIRROR**, not copy the files.
@@ -172,17 +172,17 @@ as sometimes happen when you unzip a file from GitHub.
 !!! note ""
     Before proceeding, run Omeka on the development site to verify it runs properly with the *current release*. There should be no issues, but if, for example, something in the environment changed that created a problem, find and fix it first so you won't think it's related to the new release.
 
--   Make a temporary backup copy of the current release folder `xampp\htdocs\omeka`:
+-   Make a temporary backup copy of the current release folder `laragon\www\omeka`:
     -   Create an empty backup folder on the desktop named `omeka-backup`.
-    -   Open the `xampp\htdocs\omeka` folder.
+    -   Open the `laragon\www\omeka` folder.
     -   Select all the folders and files *except* for the `files` folder which is huge.
     -   Copy the selected items to the backup folder (takes about a minute).
 -   Use [Beyond Compare](https://www.scootersoftware.com/) to compare the current and new release folders:
     -   Run Beyond Compare.
-    -   Edit the `DAUS > omeak-3.x <--> xampp\htdocs\omeka` session.
+    -   Edit the `DAUS > omeak-3.x <--> laragon\www\omeka` session.
     -   Change the source to the folder containing the new release.
 
-Use Beyond Compare to **Copy** (do not Mirror) the following core files to `C:\xampp\htdocs\omeka`:
+Use Beyond Compare to **Copy** (do not Mirror) the following core files to `C:\laragon\www\omeka`:
 ```
 admin
 application
@@ -201,8 +201,8 @@ Ctrl-click folders and files to select the ones to be copied as shown below.
 
 ---
 
-### ImageMagick and XAMPP
-If you are updating Omeka on the Windows XAMPP development server:
+### ImageMagick and Windows
+If you are updating Omeka on the Windows development server:
 
 - Edit `\omeka\application\libraries\Omeka\File\Derivative\Strategy\ExternalImageMagick.php`  
 - Define the ImageMagick constant as: `const IMAGEMAGICK_CONVERT_COMMAND = 'magick.exe';`  
