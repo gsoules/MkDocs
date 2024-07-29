@@ -209,8 +209,8 @@ To block an IP address:
 
 -   Scroll to the `csf - Quick Actions` section
 -   Paste the IP address in the text field next to the `Quick Deny Button` button
--   Type `do not delete` in the comment field.
--   Click the button
+-   Type `do not delete` in the comment field (see explanation below)
+-   Click the quick deny button
 
 To view all blocked IP address:
 
@@ -224,7 +224,14 @@ This trick is documented in the comments at the top of `csf.deny`.
 The default maximum number of entries is 200, but you could increase it by clicking the `Firewall Configuration`
 button and changing the value of `DENY_IP_LIMIT`
 
-To see which IPs are hitting domains:
+### High 5 minute load average alert 
+
+This and similar notices from Inmotion occur when a poorly behaved crawler hits a site excessively.
+To find the offender, view the `apachestatus.html` file that's attached to the notice. In the Client
+column, look for a pattern of repeated IP addresses that are making `GET /find` requests. Follow
+the steps in the previous section to block the address.
+
+Another way to see which IPs are hitting domains:
 
 -   Open a WHM Terminal window
 -   Type `cd /var/log/apache2/domlogs` and press Enter
