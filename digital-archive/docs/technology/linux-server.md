@@ -251,5 +251,8 @@ and archived logs as a `.gz` file.
 
 `WHH > System Reboot > Graceful Server Reboot`
 
+It the server is not responding or you are getting a 404 error trying to login to WHM,
+you can go to the AMP My Account page and click Restart VPS.
+
 ---
 
