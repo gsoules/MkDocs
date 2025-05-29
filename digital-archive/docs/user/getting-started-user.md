@@ -15,15 +15,6 @@ unless they log in as an [Archivist](/archivist/getting-started-archivist/) or
 
 > What a user can do with the Digital Archive:
 
-Search one collection or many
-:   You can search any or all *collections* in three different ways:
-
-    - Type keywords into the search box
-    - Click topics of interest in the **_Refine Your Search_** panel
-    - Use the **_Advanced Search_** page
-
-    [Learn how to search](/user/how-to-search)
-
 View search results in different ways
 :   You can view your search results in four different ways:
 
@@ -53,12 +44,6 @@ Create a PDF report that you can print
 :   You can save search results as a PDF document to print or email to someone.
 
     [Learn how to create a PDF of search results](/user/pdf-report)
-
-Use the Digital Notebook to save and organize what you find
-:   You can save and organize items that you find to the digital notebook. You can
-    share your notebook with others online.
-
-    [Learn how to use the Digital Notebook](/user/digital-notebook)
 
 ---    
 

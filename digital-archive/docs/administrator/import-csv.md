@@ -81,7 +81,6 @@ You can also import files to be attached to an imported item.
 ![importing files](import-csv-3.jpg)
 
 4 &ndash; Choose the import file
-:   -   **Deactivate the AvantElasticsearch plugin**
     -   Click **_Import CSV File_** in Omeka's left admin menu
     -   The **_Step 1_** page will appear
     -	Click the **_Browse_** button and choose a UTF-8 encoded CSV file to import
@@ -138,27 +137,7 @@ some columns to the right of the last column, delete them, and save the file.
     -   Reimport the copy of the import file that contains only the skipped rows
     -   Repeat this process as necessary until all the data is imported.
 
-8 &ndash; Rebuild the Site Terms table
-:   Because the import occurs with [Elasticsearch](/glossary/#elasticsearch) disabled, which in turn disables the
-    Common Vocabulary feature, you need to rebuild the site terms table.
-
-    -   **Activate the AvantElasticsearch plugin**
-    -   Choose **_Vocabulary Editor_** from the left admin menu
-    -   Click the **_Rebuild Site Terms table_** button
-    -   Click **_OK_** on the confirmation dialog
-    -   When the build completes, the page will reload and show the updated site terms
-
-    !!! note
-        You must rebuild the site terms table *before* rebuilding the Elasticsearch indexes.
-        If you reindex first, you'll see `UNTRACKED` in the **_Refine Your Search_** panel on any
-        new terms that came from the import that were not already in the site vocabulary.
-
-9 &ndash; Rebuild the Elasticsearch indexes
-:   Because the import occurs with [Elasticsearch](/glossary/#elasticsearch) disabled, you need to [rebuild
-    the site's Elasticsearch indexes](/administrator/reindex/). Be sure to do this **after**
-    you rebuild the site terms table.
-
-10 &ndash; Cleanup the import folder
+8 &ndash; Cleanup the import folder
 :   Once the import is successful, use FTP to delete the files from the `digitalarchive/files/import`
     folder on the server.
 
@@ -168,7 +147,6 @@ some columns to the right of the last column, delete them, and save the file.
 [AvantCustom]:        ../../plugins/avantcustom
 [AvantDPLA]:          ../../plugins/avantdpla
 [AvantElements]:      ../../plugins/avantelements
-[AvantElasticsearch]: ../../plugins/avantelasticsearch
 [AvantImport]:        ../../plugins/avantimport
 [AvantRelationships]: ../../plugins/avantrelationships
 [AvantSearch]:        ../../plugins/avantsearch

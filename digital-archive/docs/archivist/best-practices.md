@@ -112,38 +112,6 @@ or `PM` to indicate that the date of a postcard is its postmark.
 Your site's administrator can disable date validation, but the forms shown above ensure consistency and they
 allow items to be sorted by date.
 
-## Vocabularies
-
-The [Common Vocabulary](/archivist/common-vocabulary/) contains 15,000 terms, but
-there will be times when you'll need to add terms to your site's vocabulary because they don't 
-exist in the Common Vocabulary.
-
-##### Extending a term
-
-As a general rule, when using the [Vocabulary Editor](/archivist/vocabulary-editor/) to add a new term,
-always *extend* and *map* to an existing term. *Extend* means to use an existing term as a prefix
-for the new term. *Map* means to use the new term as the **Site Term** and the existing term as the **Common Term**.
-
-For example, you have a photograph of a special kind of boat known as a sardine carrier which is not in
-the common vocabulary. Add the term like this:
-
-![Extending a vocabulary term](best-practices-1.jpg)
-
-The site term `Vessels, Boat, Sardine Carrier` *extends* the common term `Vessels, Boat`.
-
-##### Elevating a term
-
-An exception to the above is when you want to elevate a term. *Elevate* means to move a term up
-higher within its hierarchy. For example, the focus of the Wendell Gilley Museum's collection is
-bird carvings. For them, carvings are as important as images are in a photographic collection.
-The museum elevated `Carving` to be a top level **_Type_** term by *not* using an existing common term as a prefix;
-however, they still map to the common term `Object, Art, Sculpture, Carving`.
-
-The screenshot below shows how they did this and its effect in the **_Refine Your Search_** panel
-which shows that they also elevated `Birds` and `Carvings` to be top level **_Subject_** terms.
-
-![Elevating a vocabulary term](best-practices-2.jpg)
-
 ## Reference Items
 
 Adhere *strictly* to these guidelines for [Reference Items](/relationships/reference-items/):

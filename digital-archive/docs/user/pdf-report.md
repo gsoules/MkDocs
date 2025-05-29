@@ -124,9 +124,6 @@ The screenshot below shows an example of a detailed search results report with i
 
 ![Item report](pdf-report-1.jpg)
 
-!!! Note ""
-    The report might not contain images for some [hybrid items](/plugins/avanthybrid/#avanthybrid) that were imported from PastPerfect. It depends on whether PastPerfect Online makes the image data available to the report generator.
-
 ##### Detailed search results report without images
 
 If there are more than 1,000 search results, the detailed search results report will be created without
@@ -134,27 +131,6 @@ images. Eliminating the images from long reports prevents the creation of huge P
 below shows a detailed search results report for 3,036 items. It has 1,125 pages.
 
 ![Item report](pdf-report-2.jpg)
-
-### Contributor ID
-
-Which items appear in a compact or detailed search results report depends on whether you are searching
-[one site or all sites](/user/how-to-search/#search-one-site-or-all-sites).
-When searching All Sites, you can tell which result came from which organization by
-looking at the **_Identifier_** field for the item. The **_Identifier_** will be
-prefixed with the ID of the contributing organization.
-
-The screenshot below shows a compact search results report containing eight items from four different
-organizations. The text highlighted in yellow is the contributor ID prefix.  
-To learn what the IDs mean, see the [site statistics](/user/how-to-search/#site-statistics) page.
-
-![Item report](pdf-report-8.jpg)
-
-A contributor ID prefix will also appear on the **_Identifier_** fields in a detailed search results report.
-
-The prefix will not appear in a report containing results for just one site because it is not necessary.
-However, when viewing search results from multiple sites, the prefix is important because two different
-organizations may be using the same **_Identifier_**. In other word, the
-**_Identifier_** values are not unique across organizations.
 
 ---
 

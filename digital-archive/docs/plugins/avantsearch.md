@@ -42,14 +42,28 @@ Search by File, Collection, Featured    | No | Yes
 
 The AvantSearch plugin has these configuration options:
 
--   [Address Sorting](#address-sorting-option)
--   [Columns](#columns-option)
--   [Detail Layout](#detail-layout-option)
--   [PDF Search](#pdf-search-option)
--   [Elasticsearch](#elasticsearch-option)
--   [Integer Sorting](#integer-sorting-option)
--   [Layouts](#layouts-option)
--   [Titles Only](#titles-only-option)
+- [AvantSearch](#avantsearch)
+  - [Differences from Omeka](#differences-from-omeka)
+  - [Configuration options](#configuration-options)
+    - [Address Sorting option](#address-sorting-option)
+    - [Columns option](#columns-option)
+        - [Syntax:](#syntax)
+      - [Column Order:](#column-order)
+    - [Detail Layout option](#detail-layout-option)
+        - [Syntax:](#syntax-1)
+    - [Integer Sorting option](#integer-sorting-option)
+    - [Layouts option](#layouts-option)
+        - [Syntax:](#syntax-2)
+    - [PDF Search option](#pdf-search-option)
+    - [Relevance searching](#relevance-searching)
+    - [Titles Only option](#titles-only-option)
+  - [Improving Search Results](#improving-search-results)
+  - [Dependencies](#dependencies)
+  - [Installation](#installation)
+  - [Warning](#warning)
+  - [License](#license)
+  - [Copyright](#copyright)
+  - [Credits](#credits)
 
 The following sections describe each option in detail.
 
@@ -162,35 +176,6 @@ and tags (see the [Glossary](/glossary)).
 
 ---
 
-### PDF Search option
-
-Check the **PDF Search** checkbox to allow searching of the text of PDF files that are attached to items. The PDF
-files must be searchable (born-digital or processed by OCR). When you check the box, the plugin extracts the text
-from the PDF files attached to each item and adds it to the `search_texts` table record for each item.
-By default, the `search_texts` table contains only metadata element values. The table is what Omeka uses for keyword searching.
-
----
-!!! note ""
-    Updating the `search_texts` table with PDF text can take a long time if you have many PDF files, so be patient.
-    You can monitor progress by looking at the log file `/plugins/AvantSearch/log-pdf-search.csv`.  
-    The log file gets recreated each time you enable this option.
-
-When you upload a PDF file to an item, or delete a PDF file, the plugin updates the `search_texts` table with the
-text of whatever PDFs are attached to the item after you save the item.
-
-You can disable PDF searching by unchecking the box for this option, but that alone does not remove the PDF text from the
-`search_texts` table. To remove the PDF text, you need to rebuild the `search_texts` table by going to the Omeka Settings
-page and choosing the Search tab. Then click the **Index Records** button.
-
----
-
-### Elasticsearch option
-
-Check the **Elasticsearch** checkbox if using [AvantElasticsearch].
-The PDS Search and Elasticsearch options are mutually exclusive -- you can use one or the other or neither, but not both.
-
----
-
 ### Integer Sorting option
 
 The Integer Sorting option lets you specify a list of elements for columns that should be sorted as integers instead
@@ -255,6 +240,42 @@ values on every layout. Repeating these columns is a convention, but is not requ
 
 ---
 
+### PDF Search option
+
+Check the **PDF Search** checkbox to allow searching of the text of PDF files that are attached to items. The PDF
+files must be searchable (born-digital or processed by OCR). When you check the box, the plugin extracts the text
+from the PDF files attached to each item and adds it to the `search_texts` table record for each item.
+By default, the `search_texts` table contains only metadata element values. The table is what Omeka uses for keyword searching.
+
+---
+!!! note ""
+    Updating the `search_texts` table with PDF text can take a long time if you have many PDF files, so be patient.
+    You can monitor progress by looking at the log file `/plugins/AvantSearch/log-pdf-search.csv`.  
+    The log file gets recreated each time you enable this option.
+
+When you upload a PDF file to an item, or delete a PDF file, the plugin updates the `search_texts` table with the
+text of whatever PDFs are attached to the item after you save the item.
+
+You can disable PDF searching by unchecking the box for this option, but that alone does not remove the PDF text from the
+`search_texts` table. To remove the PDF text, you need to rebuild the `search_texts` table by going to the Omeka Settings
+page and choosing the Search tab. Then click the **Index Records** button.
+
+---
+
+### Relevance searching
+
+Check the **Search by Relevance** checkbox to return the results of keywords searches sorted by relevance. Search results will be returned in order from most to least relevant, but only for keyword searches on 'All fields' with the 'All words' or 'Boolean' condition. Relevancy searching is not supported for 'Titles only', the 'Contains' condition, or when searching by fields, year range, or tags.
+
+The ranking of results is based on the following from highest to lowest:
+
+- The keywords appear in the Title field and the item's type is 'Reference'
+- The keywords appear in the Title field.
+- The item's type is 'Reference'
+- The keywords appear in the Description field
+- The keywords appear in other fields, but not in the Title or Description
+
+---
+
 ### Titles Only option
 When this option is checked, radio buttons will appear under the keywords text box on the Advanced Search page to let the user choose
 to search in all fields or in titles only. This feature is very helpful for narrowing search results down
@@ -273,11 +294,6 @@ section if it's not visible)
 ---
 
 ## Improving Search Results
-
-!!! note ""
-    The information in this section is only important when using AvantSearch *without* [AvantElasticsearch].
-    AvantElasticsearch uses an entirely different and more effective searching mechanism that is
-    independent of the underlying MySQL or MariaDB database.
 
 The AvantSearch plugin will work without any modifications to your database. However, read this section to
 learn how you can improve search results by changing just one setting.
@@ -353,7 +369,6 @@ index and hierarchical list features in the [Daniel-KM / Reference](https://gith
 [AvantCustom]:        avantcustom.md
 [AvantDPLA]:          avantdpla.md
 [AvantElements]:      avantelements.md
-[AvantElasticsearch]: avantelasticsearch.md
 [AvantRelationships]: avantrelationships.md
 [AvantSearch]:        avantsearch.md
 [AvantS3]:            avants3.md

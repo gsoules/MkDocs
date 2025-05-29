@@ -4,8 +4,6 @@ AvantCommon provides common logic to support the following plugins:
  
 * [AvantAdmin]
 * [AvantCustom]
-* [AvantDPLA]
-* [AvantElasticsearch]
 * [AvantElements]
 * [AvantRelationships]
 * [AvantSearch]
@@ -17,14 +15,22 @@ AvantCommon provides common logic to support the following plugins:
 
 AvantCommon has these configuration options:
 
--   [Custom Text](#custom-text-option)
--   [Enable Lightbox](#enable-lighbox-option)
--   [Identifier Alias](#identifier-alias-option)
--   [Identifier Element](#identifier-element-option)
--   [Identifier Prefix](#identifier-prefix-option)
--   [Private Elements](#private-elements-option)
--   [Request Image URL](#request-image-url-option)
--   [Unused Elements](#unused-elements-option)
+- [AvantCommon](#avantcommon)
+  - [Configuration options](#configuration-options)
+    - [Custom Text option](#custom-text-option)
+  - [](#)
+    - [Enable Lightbox option](#enable-lightbox-option)
+    - [Identifier Alias option](#identifier-alias-option)
+    - [Identifier Element option](#identifier-element-option)
+    - [Identifier Prefix option](#identifier-prefix-option)
+    - [Private Elements option](#private-elements-option)
+    - [Request Image URL option](#request-image-url-option)
+    - [Unused Elements option](#unused-elements-option)
+  - [Dependencies](#dependencies)
+  - [Installation](#installation)
+  - [Warning](#warning)
+  - [License](#license)
+  - [Copyright](#copyright)
 
 The following sections describe each option in detail.
 
@@ -84,9 +90,6 @@ a **Catalogue #** element to store a catalogue number such as `2018.123.001`, yo
 `Catalogue #` as the alias. Note that the alias will appear in search results and as the
 identifier for thumbnails.
 
-!!! note ""
-    If you change this option to start using an alias, or to use a different alieas, or to stop using an alias, and you are using the [AvantElasticsearch plugin](/plugins/avantelasticsearch), you will need to [reindex the site](http://127.0.0.1:8000/administrator/reindex/#how-to-rebuild-elasticsearch-indexes) after making the change.
-
 ---
 
 ### Identifier Element option
@@ -124,17 +127,16 @@ Here are key points regarding private elements:
 
 -   Private elements will not appear as field selections on the Advanced Search page unless
     you are logged in as an administrator.
--   The text of private elements will not be recorded in the `search_texts` table or in hte public
-    Elasticsearch index, and therefore will not be searched when performing a public keyword search.
+-   The text of private elements will not be recorded in the `search_texts` table and therefore will not be searched when performing a public keyword search.
     This is true whether or not you are logged in as an administrator.
 -   To search for text in private elements, an archivist can do a field search in those
     fields, either through the public Advanced Search page or using the native Omeka Advanced Search page.
 -   If you add an existing element to the private elements list, that element's text will still be
-    contained in the `search_texts` table and in the public Elasticsearch index and therefore be found
+    contained in the `search_texts` table and therefore be found
     via a keyword search. To hide the element's content, you must
-    [reindex your Omeka database](https://omeka.org/classic/docs/Admin/Settings/Search_Settings/) to force the `search_texts` table to be rebuilt without the private element text. You will also need to update the public Elasticsearch index.
+    [reindex your Omeka database](https://omeka.org/classic/docs/Admin/Settings/Search_Settings/) to force the `search_texts` table to be rebuilt without the private element text. 
 -   If you uninstall AvantSearch and want to make private elements searchable again, reindex
-    your Omeka database and Elasticsearch index as described in the previous bullet.
+    your Omeka database as described in the previous bullet.
  
 This features solves a problem in Omeka's native search whereby the text of all elements is searched, including
 information that is hidden from public users by the [Hide Elements](http://omeka.org/classic/plugins/HideElements/)
@@ -215,8 +217,6 @@ Copyright
 [AvantAdmin]:         avantadmin.md
 [AvantCommon]:        avantcommon.md
 [AvantCustom]:        avantcustom.md
-[AvantDPLA]:          avantdpla.md
-[AvantElasticsearch]: avantelasticsearch.md
 [AvantElements]:      avantelements.md
 [AvantRelationships]: avantrelationships.md
 [AvantSearch]:        avantsearch.md

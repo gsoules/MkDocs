@@ -64,18 +64,6 @@ Image and PDF Attachments
 
     [Learn about attaching files to an item](/archivist/attach-file)
 
-Facets
-:   In addition to keyword searching, you can find items by drilling down into a collection
-    based on its **_Subject_**, **_Type_**, **_Place_**, and **_Date_** **facets**.
-    Facets appears in the **_Refine Your Search_** panel. 
-    
-    Facets let you find items of interest with just a few mouse clicks. For example, if you are looking for images
-    of boats, but don't know what kind of boats are in the collection, you can use the **_Type_** and **_Subject_**
-    facets to narrow down search results to `Photographs` of `Vessels`. You can then further narrow down the
-    results to something more specific such as `Sailboat`.
-    
-    [Learn to search using facets](../../user/how-to-search/#search-using-facets)
-
 Reference Items
 :   A **Reference Item** is an item that has its type set to `Reference`. These are special items that serve as stand-ins
     for things in the real world that are typically not part of a collection, but that tie other items in the collection

@@ -34,8 +34,10 @@ See also the documentation for [installing AvantS3](../../../technology/install-
 ---
 
 ## Dependencies
-The AvantS3 plugin requires that the [AvantElasticsearch] plugin be installed and activated
-because AvantElasticsearch contains the AWS/S3 SDK that AvantS3 uses.
+The AvantS3 plugin depends on the existence of the AvantElasticsearch folder which contains
+the vendor/aws libraries that AvantS3 needs. The AvantElasticsearch plugin does not need to be installed.
+If AvantS3 needs to be installed without the AvantElasticsearch plugin folder present, the libraries will
+need to get copied into the AvantS3 plugin.
 
 ## Installation
 

@@ -15,8 +15,6 @@ The primary components of the Digital Archive are:
 -   Omeka theme
 -   Omeka plugins
 -   JavaScript libraries
--   Common Vocabulary Translator
--   Elasticsearch
 
 The sections that follow describe the components listed above.
 
@@ -64,22 +62,6 @@ The layout of graph elements is controlled by Cytoscape extensions. The Dagre la
 
 SWHPL archivists use a Windows desktop program called [Zoomify](https://openseadragon.github.io/examples/tilesource-zoomify/) to create the tiles for zoomable images. Running the program is a manual step that an archivist must take to create the tiles for an image in the Archive. Once created, the archivist uploads the tiles to the Digital Archive server. When a user views an item, the [AvantCustom](/plugins/avantcustom/) plugin automatically detects if tiles exist for it, and if so, invokes OpenSeadragon to display them.
 
-## Common Vocabulary Translator
-
-The Common Vocabulary Translator (CVT) is a Python program that translates the nearly 15,000
-[Nomenclature 4.0](/archivist/common-vocabulary/#nomenclature-40) terms into the simpler
-[Common Vocabulary](/archivist/common-vocabulary) terms used in the Digital Archive. It also adds
-additional terms to the Common Vocabulary that do not exist in Nomenclature.
-
-## Elasticsearch
-
-[Elasticsearch](https://en.wikipedia.org/wiki/Elasticsearch) is an open-source, distributed search and analytics engine. Since its release in 2010, Elasticsearch has quickly become the most popular search engine. It is used by the Digital Archive for full-text search and for display of the facets in the **_Refine Your Search_** panel. Elasticsearch is the technology that makes it possible for Digital Archive users to
-[search one site or all sites](/user/how-to-search/#search-one-site-or-all-sites).
-
-The Digital Archive uses the
-[Amazon OpenSearch Service](https://aws.amazon.com/elasticsearch-service/) to take advantage of the massive computing power of
-[Amazon Web Services](https://en.wikipedia.org/wiki/Amazon_Web_Services) (AWS).
-
 ## Software Components Used By the Digital Archive
 
 The Digital Archive utilizes the following software components (listed by category in alphabetical order). Most are freely available to any organization that wants to use or modify them, but please read the license for each one.
@@ -93,20 +75,14 @@ The Digital Archive utilizes the following software components (listed by catego
     -   [AvantAdmin](/plugins/avantadmin/) by George Soules
     -   [AvantCommon](/plugins/avantcommon/) by George Soules
     -   [AvantCustom](/plugins/avantcustom/) by George Soules
-    -   [AvantDpla](http://127.0.0.1:8000/plugins/avantdpla/) by George Soules
-    -   [AvantElasticsearch](/plugins/avantelasticsearch/) by George Soules
     -   [AvantElements](/plugins/avantelements/) by George Soules
-    -   [AvantHybrid](/plugins/avanthybrid/) by George Soules
     -   [AvantImport](/plugins/avantimport/) by George Soules
     -   [AvantRelationships](/plugins/avantrelationships/) by George Soules
     -   [AvantS3](/plugins/avants3/) by George Soules
     -   [AvantReport](/plugins/avantreport/) by George Soules
     -   [AvantSearch](/plugins/avantsearch/) by George Soules
-    -   [AvantVocabulary](/plugins/avantvocabulary/) by George Soules
     -   [AvantZoom](/plugins/avantzoom/) by George Soules
     -   [Bulk Metadata Editor](https://github.com/UCSCLibrary/BulkMetadataEditor) by UC Santa Cruz University Library, Daniel Berthereau
-    -   [Geolocation](https://github.com/gsoules/Geolocation) by Roy Rosenzweig Center for History and New Media
-    -   [OAI-PMH Repository](https://github.com/gsoules/OaiPmhRepository) by John Flatness
     -   [Simple Vocab](https://omeka.org/classic/docs/Plugins/SimpleVocab/) by Roy Rosenzweig Center for History and New Media
 -   Omeka theme
     -   [AvantTheme](https://github.com/gsoules/AvantTheme) by George Soules
@@ -122,6 +98,5 @@ The Digital Archive utilizes the following software components (listed by catego
     -   [FPDF Library](http://www.fpdf.org/) by Olivier Plathey
 -   Python
     -   [Common Vocabulary Translator](https://github.com/gsoules/AvantCommonVocabulary) by George Soules
-    -   [PastPerfect Exporter](/technology/pastperfect-exporter/) by George Soules
 
 If you have technology related questions, please send them to gsoules@avantlogic.com.

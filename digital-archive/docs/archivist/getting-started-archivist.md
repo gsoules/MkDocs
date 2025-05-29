@@ -23,7 +23,6 @@ in as an [Administrator](/administrator/getting-started-administrator/).
 
 -   [Learn about relationships](/relationships/getting-started-relationships/)
 -   [Add a relationship to an item](/archivist/add-relationship/)
--   [Learn about the Common Vocabulary](/archivist/common-vocabulary/)
 -   [Learn about best practices](/archivist/best-practices/)
 
 ---
@@ -38,7 +37,6 @@ Search the collection and work with search results
     -   [Flag items to view later](/user/recently-viewed)
     -   [Share search results with other people](/user/sharing-search-results)
     -   [Create a PDF report that you can print](/user/pdf-report)
-    -   [Use the Digital Notebook to save and organize what you find](/user/digital-notebook)
 
 Login to the Digital Archive
 :   An archivist has a user name and password that they use to login to the Digital Archive.  
@@ -113,8 +111,6 @@ Edit vocabularies
     -   **_Subject_**
     -   **_Place_**
     -   **_Rights_**
-
-    [Learn about editing vocabularies](/archivist/vocabulary-editor)
 
 ---    
     

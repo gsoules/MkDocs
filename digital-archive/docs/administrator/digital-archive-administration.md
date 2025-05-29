@@ -83,7 +83,6 @@ options that an administrator would change.
 [AvantAdmin](/plugins/avantadmin)                 | Do not modify
 [AvantCommon](/plugins/avantcommon)               | Specify which Omeka elements should be private
 [AvantCustom](/plugins/avantcustom)               | Has no configuration options
-[AvantElasticsearch](/plugins/avantelasticsearch) | Do not modify
 [AvantElements](/plugins/avantelements)           | Many options - [see the plugin documentation](/plugins/avantelements)
 [AvantRelationships](/plugins/avantrelationships) | Specify which fields have implicit relationships
 [AvantS3](/plugins/avants3)                       | Do not modify
@@ -96,15 +95,6 @@ button for the plugin you want to configure.
 !!! note "Caution"
     Be very careful when making changes to plugin configurations. If you are not sure about
     what you are doing, consult your Digital Archive developer.
-
-## Rebuild Elasticsearch indexes
-
-Some changes that you make using Omeka or Digital Archive administrative features, require
-that you rebuild your site's Elasticsearch indexes. This can happen, for example, if you
-[add a new Omeka element](/administrator/omeka-elements/), or modify a plugin
-configuration setting such as changing an existing element from private to public or vice-versa.
-
-Learn about [rebuilding Elasticsearch indexes](/administrator/reindex/).
 
 ## Import data from a CSV file
 

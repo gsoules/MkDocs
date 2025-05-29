@@ -122,14 +122,6 @@ Follow the steps below to use [cPanel] to create a new empty database and a data
     -   Check the  `ALL PRIVILEGES` box
     -   Click the `Make Changes` button
 
-
-### Configure MySQL Workbench
-
-This step is only necessary for a standalone installation. For a subdomain installation, the new
-database will already be availale in MySQL Workbench as one of the `digitalarchive.us` databases.
-
--   [Add a database connection to MySQL Workbench](mysql.md#add-a-database-connection)
-
 ---
 ## Omeka installation
 
@@ -333,8 +325,6 @@ Follows these steps to finishing configuring Omeka.
 ---
 
 ### Change database storage engine
-!!! note ""
-    This step is only necessary when using AvantSearch **without** AvantElasticsearch. 
 
 These steps change the storage engine for the `search_texts` table from `MyISAM` to `InnoDB`. They also add a `FULLTEXT` index to the `title` column of the `search_texts` table. To learn the reason for making these changes, see the AvantSearch
 plugin topics on [improving search results](../../plugins/avantsearch/#improving-search-results)
@@ -400,19 +390,6 @@ Disallow: /
 
 ---
 
-### Verify PDF support
-
-These steps verify that a program called `pdftotext` is installed on the web server.
-It is used by the  `AvantElasticsearch` plugin to 
-make PDF files searchable. If you won't be using `AvantElasticsearch`, you can skip this task.
-
--   Go to [cPanel] and choose `Terminal`
--   In the terminal window, type `pdftotext -v` and press `Enter`
--   The `pdftotext` program should display its version
--   If instead you see `command not found`, ask your host to install `pdftotext`
-
----
-
 ### Verify that background processing works
 Some Omeka operations are performed in the background. Examples are a request to reindex records
 and using the Bulk Edit plugin to perform bulk edits in the background.
@@ -467,8 +444,6 @@ Omeka plugin |ArchiveRepertory   |[ArchiveRepertory 2.15.7.zip](https://github.c
 Avant plugin |AvantAdmin         |[AvantAdmin-master.zip](https://github.com/gsoules/AvantAdmin)
 Avant plugin |AvantCommon        |[AvantCommon-master.zip](https://github.com/gsoules/AvantCommon)
 Avant plugin |AvantCustom        |[AvantCustom-master.zip](https://github.com/gsoules/AvantCustom)
-Avant plugin |AvantDPLA          |[AvantDPLA-master.zip](https://github.com/gsoules/AvantDpla)
-Avant plugin |AvantElasticsearch |[AvantElasticsearch-master.zip](https://github.com/gsoules/AvantElasticsearch)
 Avant plugin |AvantElements      |[AvantElements-master.zip](https://github.com/gsoules/AvantElements)
 Avant plugin |AvantImport        |[AvantImport-master.zip](https://github.com/gsoules/AvantImport)
 Avant plugin |AvantRelationships |[AvantRelationships-master.zip](https://github.com/gsoules/AvantRelationships)
@@ -478,8 +453,6 @@ Avant plugin |AvantSearch        |[AvantSearch-master.zip](https://github.com/gs
 Avant theme  |AvantTheme         |[AvantTheme-master.zip](https://github.com/gsoules/AvantTheme)
 Avant plugin |AvantZoom          |[AvantZoom-master.zip](https://github.com/gsoules/AvantZoom)
 Omeka plugin |BulkMetadataEditor |[BulkMetadataEditor.zip](https://github.com/UCSCLibrary/BulkMetadataEditor/releases/tag/2.4)
-Omeka plugin |Geolocation*       |[Geolocation.zip](https://github.com/gsoules/Geolocation)
-Omeka plugin |OaiPmhRepository   |[OaiPmhRepository-master.zip](https://github.com/gsoules/OaiPmhRepository)
 Omeka plugin |SimpleVocab        |[SimpleVocab-2.2.2.zip](https://github.com/omeka/plugin-SimpleVocab/releases/tag/v2.2.2)
 
 \* Indicates that the Omeka plugin has been modified by AvantLogic for the Digital Archive
@@ -594,7 +567,7 @@ create a single Item Type having the elements needed by the organization.
 ---
 
 ###	Delete unused item types
--   Open the database in [MySQL Workbench](mysql.md#open-a-database)
+-   Open the database in phpMyAdmin
 -	Right click on the `omeka_item_types` table and choose `Select Rows`
 -	Select all the rows
 -	Right click on the selection and choose `Delete Rows`
@@ -612,8 +585,6 @@ create a single Item Type having the elements needed by the organization.
 -	Click the `Apply` button in the lower right
 -	Click the `Apply` button on the `Apply SQL Script to Database` dialog
 -   When the deletion completes, click the `Finish` button
-
-You can now quit MySQL Workbench.
 
 ---
 
@@ -728,15 +699,11 @@ and the remote site and then save two comparison sessions, one for the `themes` 
 ``` plaintext
 .git
 .\ArchiveRepertory
-.\AvantDpla
-.\AvantElasticsearch\vendor
 .\BulkMetadataEditor
 .\CsvExport
 .\Dropbox
 .\ExhibitBuilder
 .\Gcihs
-.\Geolocation
-.\OaiPmhRepository
 .\SimplePages
 .\SimpleVocab
 ```
@@ -820,7 +787,7 @@ Verify that the plugin is working as expected.
 -	Verify that the `12345` folders got deleted from the `/digitalarchive/files` folders
 
 !!! warning ""
-    Do not attempt to add any more items until the installation is completed including setting up AvantElasticsearch and AvantVocabulary.
+    Do not attempt to add any more items until the installation is completed.
 
 !!! note ""
     If using Filezilla, you may need to disconnect and reconnect to verify that the files got deleted
@@ -835,37 +802,6 @@ Follow these steps to install Bulk Metadata Editor:
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `Bulk Metadata Editor`
 -   The plugin has no configuration options
-
----
-## Geolocation
-
-!!! note ""
-    Skip this task if the installation will not be using the Geolocation plugin.
-
-!!! warning ""
-    The only Digital Archive installation that has the Geolocation plugin installed is
-    Southwest Harbor Public Library and it uses a version modified by AvantLogic; however,
-    the Library has deactivated the plugin because too much advertising shows up in the maps.
-
-Follow these steps to install the Geolocation plugin:
-
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `Geolocation`
--   Configure the plugin as appropriate for the installation
--   Click the `Save Changes` button
-
----
-## OAI-PMH Repository
-
-!!! note ""
-    Skip this task if the installation will not ingested by the Digital Public Library of America.
-
-Follow these steps to install the OAI-PMH Repository plugin:
-
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `OAI-PMH Repository`
--   Configure the plugin as appropriate for the installation
--   Click the `Save Changes` button
 
 ---
 ## Simple Pages
@@ -975,18 +911,6 @@ Follow these steps to install [AvantCustom]:
 
 -	Go to the Omeka `Plugins` page
 -	Click the `Install` button for `AvantCustom`
--   The plugin has no configuration options
-
----
-## AvantDPLA
-
-!!! note ""
-    Skip this task if the installation will not ingested by the Digital Public Library of America.
-
-Follow these steps to install the AvantDPLA plugin:
-
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `AvantDPLA`
 -   The plugin has no configuration options
 
 ---
@@ -1147,9 +1071,6 @@ Publisher: Published
 ---
 ##  AvantSearch
 
-!!! note ""
-    Ignore the MyISAM warning if the installation will be using Elasticsearch.
-
 Follow these steps to install and configure the [AvantSearch] plugin:
 
 -	Go to the Omeka `Plugins` page
@@ -1187,7 +1108,6 @@ Date
 
 -   Enter `Identifier` for **Integer Sorting**
 -   Leave **Address Sorting** unchecked (will not be available if there is no `Address` element)
--   Leave **Elasticsearch** unchecked (will not be available until AvantElasticsearch is installed)
 -   Click the `Save Changes` button
 
 ---
@@ -1256,170 +1176,6 @@ If you are not using the AvantCustom plugin, also follow these steps:
 ``` plaintext
 Identifier, filter: DigitalArchive, filterIdentifierS3
 ```
-
----
-## AvantElasticsearch
-
-!!! note ""
-    Skip this task if the installation will not be using AvantElasticsearch.
-
-### Create AWS credentials
-
-Before installing AvantElasticsearch, create the AWS credentials that you'll need to provide on the
-AvantElasticsearch configuration page.
-
--	Go to <https://aws.amazon.com/>
--   Click the `Sign In to the Console` button at upper right
--   Enter the Account ID ending in `4548`
--   If the page says **_Sign is as IAM user_**, click the `Sign-in using root user email` link
--   Enter the root user email
--   Enter the root user password
--   Provide the Google Authenticator code
--   You should now be on the **_AWS Management Console_** page
--	In the top menu dropdown for the logged in user, choose `Security Credentials (root user)`
--   You should now be on the **_My Security Credentials_** page
--	Click `Users` in the left menu
--	Click the `Create User` button at the top right
--	For the `User name` type the organization abbreviation in lowercase e.g. `swhpl`
--   Leave the access to AWS Management Console option unchecked
--	Click the `Next` button
--	In the **Permissions options** section, choose `Add user to group`
--	In the **User groups** section, check the box for `contributor` group
--	Click the `Next` button
--	Click the `Create user` button
--   Click the new user in the list of users
--	In the **Summary** section, click `Create access key`
--   On the **_Access key best practices_** page choose `Other`
--   Click the `Next button`
--   On the **_Set description tag_** page click the `Create access key` button
--   You should now be on the **_Retrieve access keys_** page
--   Click the `Show` link for the **Secret Access Key**
--	Copy the **Access Key ID** and **Secret Access Key** to the `AWS Keys` tab of the `Digital Archive Accounts` Excel sheet  
-    *This is the only opportunity to obtain the secret key*
--	Click the `Done` button
-
-## Install the AvantElasticsearch plugin
-
-Follow these steps to install and configure the [AvantElasticsearch] plugin:
-
-**Create a folder needed by the AvantElasticsearch plugin**
-
--   Go to [cPanel] and choose `File Manager`
--   Navigate *into* the `files` folder of the site folder
--   Create this subfolder: `files/elasticsearch`
-
-**Install the AvantElasticsearch plugin**
-
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `AvantElasticsearch`
-
-#### Edit es.ini
-
-Follow these steps to allow the installation to share its items with other Digital Archive installations via the shared AWS Elasticsearch index:
-
--   In cPanel, edit `es.ini` in the site folder
--   Set `shared_index_name` to the name of the shared index e.g. `acadia`
-
-!!! danger "Shared Index"
-    **FOR ADMINISTRAOR ACCOUNT ONLY:** If the account needs to be able to create a new local or shared index, add:
-     `new_local_index_allowed = true` and/or `new_shared_index_allowed = true`
-      to the `es.ini` file which is located in `/digitalarchve` (in the same root
-      folder as `db.ini`). This will cause new radio buttons to appear on the
-      Elasticsearch page to allow import into a new index. This is an especially
-      dangerous operation for a shared index because it will destroy all the data
-      for all sites in the shared index and therefore should only be performed
-      when creating a shared index that does not already exist.
-
-#### Configure the AvantElasticsearch plugin
--   Set **Contributor Id** e.g. `swhpl`
--   Set **Contributor** e.g. `Southwest Harbor Public Libary`
--   Set **Host** to the AWS Domain Endpoint which can be found in:
-    -   The `AWS Keys` tab of the `Digital Archive Accounts` Excel sheet and on AWS and in
-    -   `Amazon OpenSearch Service > Domains > digitalarchive`
-    -   Example: `search-digitalarchive-6wn********************o4q.us-east-2.es.amazonaws.com`
--   Set **Region** to `us-east-2`
--   Set **Key** and **Secret** to the keys obtained in the step above to create AWS credentials
--   Check **Local Index**
--   Check **Shared Index**
-
-
-### Enable Elasticsearch in AvantSearch
--   Go to the configuration options page for the [AvantSearch] plugin
--   Check the **Elasticsearch** checkbox
-
----
-## AvantVocabulary
-
-!!! note ""
-    Skip this task if the installation will not be using AvantVocabulary.
-
-Follow these steps to install and configure [AvantVocabulary]:
-
--	Go to the Omeka `Plugins` page
--	Click the `Install` button for `AvantVocabulary`
--   On the `Configure Plugin` page, leave `Delete Tables` unchecked
--   Click the `Save Changes` button
--   Click `Vocabulary Editor` in the left admin menu
--   Click the `Rebuild Common Terms table` button and click `OK` on the confirmation dialog
--   Wait for the build to report that it has completed (it writes about 30,000 records)
--   Click the `Rebuild Local Terms table` button and click `OK` on the warning dialog
--   Wait for the build to say that it has completed and will reload the page (this will be very fast on a new installation)
-
-
-### Add vocabulary terms
-At this stage the only vocabulary terms that will be set for the site are Places which is kind `4` in the site terms table. If you look at the table you'll see that those are the only kind of rows there.
-
-You'll now need to add some Type and Subject terms so that the organization has something to work with.
-
-!!! note "Work Around"
-    There is currently an issue with the AvantVocabulary plugin whereby you can't add a new term unless there is at least one term in the table.To work around this, manually add one Subject (`Image, Photograph`) and one Type (`People`) to the site terms table using MySql Workbench as shown below.
-
-![Site terms table](install-digital-archive-11.jpg)
-
-Note that to eliminate the default value of null, in the `site_term` column, you'll need to first add a value of one space, apply the changes, then delete the space and apply again.
-
-Now go to the **_Vocabulary Editor_**, click the `Rebuild Local Terms table` button and click `OK` on the warning dialog.
-
-The two terms should show and and you should now be able to add new terms.
-
-Suggestions for an initial set of Types:
-``` text
-Document, Correspondence, Letter
-Image, Photograph
-Map
-Object, Writing, Postcard
-Publication, Clipping, Newspaper Clipping
-Reference
-```
-
-Suggestions for an initial set of Subjects:
-``` text
-Nature, Animals
-People
-Places, Island
-Structures, Commercial, Lodging, Hotel
-Transportation, Automobile
-```
-
----
-## Reindex the local Elasticsearch index
-
-!!! note ""
-    Skip this task if the installation is not using AvantElasticsearch.
-
--   Add a new item with just the minimal fields
--   If you check to see the site's search results, you'll see a `No items found` message and an Elasticsearch error
--   Click `Elasticsearch` in the left menu
--   Export all items from Omeka
--   Import into new **local** index
--   You should now be able to see the item with no errors
-
-#### Test the Elasticsearch installation
-
--   Add a photo to the item
--   Make the item public
--   Test that the item appears on the other sites as shared
--   Test that the new site appears on the Contributing Organizations page
 
 ---
 ## Site styling
@@ -1614,7 +1370,6 @@ drwxrwsr-x. 125 apache digarc    4096 Mar  6 13:12 thumbnails
 [AvantCustom]:        ../../plugins/avantcustom
 [AvantDPLA]:          ../../plugins/avantdpla
 [AvantElements]:      ../../plugins/avantelements
-[AvantElasticsearch]: ../../plugins/avantelasticsearch
 [AvantRelationships]: ../../plugins/avantrelationships
 [AvantSearch]:        ../../plugins/avantsearch
 [AvantReport]:        ../../plugins/avantreport

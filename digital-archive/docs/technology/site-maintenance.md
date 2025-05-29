@@ -231,46 +231,6 @@ Past updates of release Omeka 2 have always gone smoothly, but 3.0 presented pro
 
 ---
 
-## Common vocabulary updates
-
-To update the common vocabulary on one or all Digital Archive sites:
-
--   Make updates to one or more of the following files:
-    -   `input-translations.csv`
-    -   `input-additional-terms.csv`
-    -   `input-nomenclature-sortEn_2020-05-18.csv` (replace with latest version from Nomenclature)
--   Run `build_common_facets.py`. The script:
-    - Creates these files:
-        -   `digital-archive-vocabulary.csv`
-        -   `digital-archive-diff.csv`
-    - Uploads the two files to:
-        -    `digitalarchive.us/public_html/vocabulary` via FTP         
--   Test the changes locally and build again until satisifed
--   When done making changes:
-    -   Delete local file `input-previous-digital-archive-vocabulary.csv`
-    -   Rename local file  `digital-archive-vocabulary.csv` to `input-previous-digital-archive-vocabulary.csv`
--   Verify that `digital-archive-diff.csv` was FTPed to `digitalarchive.us/public_html/vocabulary`
--   Make a `vocab-update` site request for one site or all sites (see example below)
-
-Example update request:
-``` text
-[daus@avantlogic bin]$ remote-request  vocab-update nehl
-Request 'vocab-update' to  nehl'? (y/n) y
-Post "vocab-update" request to  nehl"
-2021-10-24 20:49:00.781881 Request:[vocab-update > nehl]
-Response: nehl] Commands processed: 23. Items refreshed: 3
-```
-In the example above, the site reported back that it processed 23 commands (ADD, UPDATE, or DELETE) and updated 3 items as a result. In this particular case, there were 22 ADD commands and 1 UPDATE command. Since no items could be using the newly added vocabulary terms, none could be affected, but 3 items were using the term that was updated.
-
-If you make the exact same request second time, the same number of commands will be processed, but no items will be affected.
-
-A developer can simulate a remote vocabulary update locally via the query string:
-
-``` text
-http://localhost/omeka/avant/remote?action=vocab-update&password=ABC123
-```
----
-
 ## Nightly cron job
 Every night a [Linux cron job](https://www.inmotionhosting.com/support/edu/control-web-panel/cwp-cron-jobs/) runs a python script to send these requests to each site:
 
@@ -283,20 +243,6 @@ You can manually run the cron job like this:
 ```
 
 The **garbage collection** request tells the site to clean out its sessions table to remove old records, many of which are for visits from bots and crawlers.
-
-The **health check** requests tells the site to compare its Elasticsearch document count to its MySQL records count to verify that they are the same. If the check fails, the script sends email to the Digital Archive administrator as shown in the example below.
-
-``` text
-FAIL: SQL:3077 Index:3075 Missing:3054,3080
-```
-
-Normally the health check will never fail, but if it does, the email will indicate which MySQL records are missing from the Elasticsearch index. In the message above, the numbers 3054 and 3080 are Omeka item Ids, not Digital Archive item identifiers. To correct the problem, first locate a missing item in the Digital Archive using a URL like the one below.
-
-``` text
-https://yourdomain.net/admin/avant/show/3054
-```
-
- Edit the item by making a minor change to a field (e.g. add a blank space to the end of a sentence), and then save the item. This will cause the item to get re-synced with the Elasticsearch index. Run the health check again to see if the problem has been fixed.
 
 ---
 

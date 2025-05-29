@@ -38,27 +38,10 @@ Remote requests are normally posted to a production instance of the Digital Arch
 http://localhost/omeka/avant/remote?id=devb&action=es-health-check&password=XDVIPG
 ```
 
-``` text
-http://localhost/omeka/avant/remote?id=devb&password=rnfeKH1C&action=hybrid-add
-```
-The first request above is for a remote health check request.
-
-The second request above is for a `hybrid-add` action, but the URL does not contain the data to be added. Because of the nature and length of the data, it's not practical to pass it as query string argument, but you can copy/paste the data you want to test with into the the `$data` variable in method `HybridImport::getSourceRecordData()`.
-
 ## Force style.css reload
 
 -   Edit `themes\AvantTheme\common\header.php`
 -   Bump `$version` passed to `queue_css_file('style', 'all', false, 'css', $version);`
-
-## Execute Elasticsearch query in Kibana
-
--   Open `AvantElasticsearchQueryBuilder::constructSearchQuery` in PhpStorm
--   Set a breakpoint on the last line of code `return $params`
--   Perform a search that triggers the breakpoint
--   Copy/paste the value of `$kibana` into the Kibana Dev Tools
--   Use Kibana's Auto Indent to format it
-
-See the [Kibana](/technology/aws/#kibana) section on the AWS page.
 
 ## See SQL queries and logging
 
@@ -71,11 +54,6 @@ See the [Kibana](/technology/aws/#kibana) section on the AWS page.
 -   Right click on `$sql` and choose **_Evaluate Expression_**
 -   On the **_Evaluate_** dialog enter `(string)$sql`
 -   Click the **_Evaluate_** button
--   In MySQL Workbench:
-    -   Choose **_File_** > **_New Query Tab_**
-    -   Paste the SQL into the empty query window
-    -	Click the Beautify/Reformat icon (looks like a wide paint brush)
-    -   Shift the text to the left so you can see it
 
 **To see queries emitted by Omeka**
 
@@ -85,7 +63,6 @@ See the [Kibana](/technology/aws/#kibana) section on the AWS page.
 -   Right-click on `$args` and choose **_Evaluate Expression_**
 -   In the **_Evaluate_** dialog type `(string)$args["select"]`
 -   Click the **_Evaluate_** button
--   Follow the previous set of steps to view the SQL in MySQL Workbench
 
 **To log queries to `errors.log`**
 

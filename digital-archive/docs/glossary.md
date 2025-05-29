@@ -24,20 +24,12 @@ Archival asset
 :   As archival asset is the original digital file from which the web-sized images that are displayed
     by the Digital Archive are derived. The TIFF file produced by a scanner is an archival asset.
 
-AWS
-:   AWS is an acronym for [Amazon Web Services](https://en.wikipedia.org/wiki/Amazon_Web_Services),
-    a subsidiary of Amazon that provides on-demand cloud computing platforms.
-
 Collection
 :   In this documentation, a collection refers to the set of **item**s (images, documents, maps, etc.) in
     an organization's Digital Archive **database**.
 
 Common term
 :   A common term is **term** that comes from the **Common Vocabulary**. 
-
-Common Vocabulary
-:   The [Common Vocabulary](/archivist/common-vocabulary/) is a set of **vocabulary** **term**s
-    organized as a **hierarchy**.
 
 Database
 :   A database is a structured set of data, stored and accessed electronically
@@ -47,18 +39,9 @@ Developer
 :   A developer is a software professional who maintains the Digital Archive software for one or more
     **sites**.
 
-Elasticsearch
-:   [Elasticsearch](/administrator/reindex/#what-elasticsearch-indexes-are-used-for)
-    is a distributed search and analytics engine that makes fast searching possible.
-
 Element (Omeka)
 :   An Omeka element is a container for a single **metadata** value such as title, description,
     type, or subject. In this documentation, element is synonymous with **field**.
-
-Facets
-:   Facets are the **_Subject_**, __*Type*__, **_Place_**, and **_Date_**
-    sections in the **_Refine Your Search_** panel. They allow users to easily
-    narrow down **search results** by clicking on **vocabulary** **term**s in the panel.
 
 Field
 :   A field refers to one of an **item**'s **metadata** elements. Examples of fields are
@@ -78,10 +61,6 @@ Hierarchy
 :   A hierarchy is a tiered grouping of related terms that are each unique, but have something in common.
     An example of a hierarchy is the term `Nature, Animals, Birds`. Birds are grouped under animals, and
     animals are grouped under nature.
-
-Index (Elasticsearch)
-:   An **Elasticsearch** index is like a table in a database, but is structured in a way that makes
-    it possible to search huge volumes of data and get back results instantly.
 
 Index View
 :   [Index View](/user/viewing-search-results/#index-view) is a way to view **search results** as an alphabetized list
@@ -120,11 +99,6 @@ Metadata
 MySQL
 :   MySQL is the relational **database** used by **Omeka** to store the **item**s in a **collection**.
 
-Nomenclature 4.0
-:   [Nomenclature](/archivist/common-vocabulary/#nomenclature-40) is a structured list of object
-    **term**s organized in a classification system for indexing and cataloging collections of human-made objects.
-    The latest version is 4.0.
-
 Non-public item
 :   A [non-public item](/archivist/special-features-archivist/#non-public-items) is an **item** that only a logged
     in **user** can see. In contrast, any user can see a **public item**.
@@ -140,11 +114,6 @@ Organization
 
 Private field
 :   A [private field](/archivist/what-gets-searched/) is a **field** that only a logged in **user** can see.
-
-Pseudo field
-:   A pseudo field is one that can be used for searching, or that appears in search results, but is not actually
-    a **field**. The pseudo fields are **tags**, [score](/archivist/what-gets-searched/#scoring)
-    and [contributor](/user/how-to-search/#contributor-id).
 
 Public field
 :   A [public field](/archivist/what-gets-searched/) is a **field** that anyone can see in a **public item**.
@@ -183,9 +152,6 @@ Site
 Site term
 :   A site term is a **term** that does *not* come from the **Common Vocabulary**. It is specific to an **organization**
     and is found in that organization's **site vocabulary**.
-
-Site vocabulary
-:   A site vocabulary is a set of **term**s that are specific to one **organization**'s Digital Archive **site**.
 
 Subject
 :   **_Subject_** is a **field** to used to further classify a **Type**. 
@@ -230,7 +196,3 @@ Visualization
 
 Vocabulary
 :   A vocabulary is a controlled list of **term**s that **archivist**s use when cataloging **item**s in their **collection**.
-
-Vocabulary Editor
-:   The [Vocabulary Editor](/archivist/vocabulary-editor/) lets you work with the **Common Vocabulary** to define
-    the set of **common terms** and **site**-specific **term**s that **archivist**s will use when working with **item**s in your **collection**. 
